@@ -1,0 +1,588 @@
+"item_upgrade_modifiers"
+{
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "BaseClass"                     "item_datadriven"
+
+    "Modifiers"
+    {
+        // Weapons
+
+        "modifier_weapon1"
+        {
+            "TextureName"   "upgrade_weapon1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "2"
+            }
+        }
+
+        "modifier_weapon2"
+        {
+            "TextureName"   "upgrade_weapon2"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "4"
+            }
+        }
+
+        "modifier_weapon4"
+        {
+            "TextureName"   "upgrade_weapon4"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "8"
+            }
+        }
+
+        "modifier_weapon5"
+        {
+            "TextureName"   "upgrade_weapon5"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "12"
+            }
+        }
+
+        "modifier_weapon6"
+        {
+            "TextureName"   "upgrade_weapon6"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "16"
+            }
+        }
+
+        "modifier_weapon7"
+        {
+            "TextureName"   "upgrade_weapon7"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "20"
+            }
+        }
+
+        "modifier_weapon8"
+        {
+            "TextureName"   "upgrade_weapon8"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "24"
+            }
+        }
+
+        "modifier_weapon9"
+        {
+            "TextureName"   "upgrade_weapon9"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "30"
+            }
+        }
+
+        "modifier_weapon10"
+        {
+            "TextureName"   "upgrade_weapon10"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "36"
+            }
+        }
+
+        "modifier_weapon11"
+        {
+            "TextureName"   "upgrade_weapon11"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "42"
+            }
+        }
+
+        "modifier_weapon12"
+        {
+            "TextureName"   "upgrade_weapon12"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "48"
+            }
+        }
+
+        "modifier_weapon13"
+        {
+            "TextureName"   "upgrade_weapon13"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "56"
+            }
+        }
+
+        "modifier_weapon14"
+        {
+            "TextureName"   "upgrade_weapon14"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "64"
+            }
+        }
+
+        "modifier_weapon15"
+        {
+            "TextureName"   "upgrade_weapon15"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "72"
+            }
+        }
+
+        "modifier_weapon16"
+        {
+            "TextureName"   "upgrade_weapon16"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "80"
+            }
+        }
+
+        "modifier_weapon17"
+        {
+            "TextureName"   "upgrade_weapon17"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "90"
+            }
+        }
+
+        "modifier_weapon18"
+        {
+            "TextureName"   "upgrade_weapon18"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "100"
+            }
+        }
+
+        "modifier_weapon19"
+        {
+            "TextureName"   "upgrade_weapon19"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "110"
+            }
+        }
+
+        "modifier_weapon20"
+        {
+            "TextureName"   "upgrade_weapon20"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "120"
+            }
+        }
+
+        "modifier_weapon21"
+        {
+            "TextureName"   "upgrade_weapon21"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "130"
+            }
+        }
+
+        "modifier_weapon22"
+        {
+            "TextureName"   "upgrade_weapon22"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "140"
+            }
+        }
+
+        "modifier_weapon23"
+        {
+            "TextureName"   "upgrade_weapon23"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "150"
+            }
+        }
+
+        "modifier_weapon24"
+        {
+            "TextureName"   "upgrade_weapon24"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "165"
+            }
+        }
+
+        "modifier_weapon25"
+        {
+            "TextureName"   "upgrade_weapon25"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "180"
+            }
+        }
+
+        "modifier_weapon26"
+        {
+            "TextureName"   "upgrade_weapon26"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "195"
+            }
+        }
+
+        "modifier_weapon27"
+        {
+            "TextureName"   "upgrade_weapon27"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "210"
+            }
+        }
+
+        "modifier_weapon28"
+        {
+            "TextureName"   "upgrade_weapon28"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "230"
+            }
+        }
+
+        "modifier_weapon29"
+        {
+            "TextureName"   "upgrade_weapon29"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "250"
+            }
+        }
+
+        "modifier_weapon30"
+        {
+            "TextureName"   "upgrade_weapon30"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "280"
+            }
+        }
+
+        // Helm
+        "modifier_helm1"
+        {
+            "TextureName"   "upgrade_helm1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "1"
+            }
+        }
+
+        "modifier_helm2"
+        {
+            "TextureName"   "upgrade_helm2"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "3"
+            }
+        }
+
+        "modifier_helm3"
+        {
+            "TextureName"   "upgrade_helm3"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "5"
+            }
+        }
+
+        "modifier_helm4"
+        {
+            "TextureName"   "upgrade_helm4"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "8"
+            }
+        }
+
+        "modifier_helm5"
+        {
+            "TextureName"   "upgrade_helm5"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "12"
+            }
+        }
+
+        "modifier_helm6"
+        {
+            "TextureName"   "upgrade_helm6"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "16"
+            }
+        }
+
+        "modifier_helm7"
+        {
+            "TextureName"   "upgrade_helm7"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "21"
+            }
+        }
+
+        "modifier_helm8"
+        {
+            "TextureName"   "upgrade_helm8"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "27"
+            }
+        }
+
+        "modifier_helm9"
+        {
+            "TextureName"   "upgrade_helm9"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "34"
+            }
+        }
+
+        "modifier_helm10"
+        {
+            "TextureName"   "upgrade_helm10"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "42"
+            }
+        }
+
+        "modifier_helm11"
+        {
+            "TextureName"   "upgrade_helm11"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "51"
+            }
+        }
+
+        "modifier_helm12"
+        {
+            "TextureName"   "upgrade_helm12"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "61"
+            }
+        }
+
+        "modifier_helm13"
+        {
+            "TextureName"   "upgrade_helm13"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "72"
+            }
+        }
+
+        "modifier_helm14"
+        {
+            "TextureName"   "upgrade_helm14"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "84"
+            }
+        }
+
+        "modifier_helm15"
+        {
+            "TextureName"   "upgrade_helm15"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "100"
+            }
+        }
+
+        // Armor
+        "modifier_armor1"
+        {
+            "TextureName"   "upgrade_armor1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "2"
+            }
+        }
+
+        "modifier_armor2"
+        {
+            "TextureName"   "upgrade_armor2"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "4"
+            }
+        }
+
+        "modifier_armor3"
+        {
+            "TextureName"   "upgrade_armor3"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "6"
+            }
+        }
+
+        "modifier_armor4"
+        {
+            "TextureName"   "upgrade_armor4"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "10"
+            }
+        }
+
+        "modifier_armor5"
+        {
+            "TextureName"   "upgrade_armor5"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "14"
+            }
+        }
+
+        "modifier_armor6"
+        {
+            "TextureName"   "upgrade_armor6"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "18"
+            }
+        }
+
+        "modifier_armor7"
+        {
+            "TextureName"   "upgrade_armor7"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "24"
+            }
+        }
+
+        "modifier_armor8"
+        {
+            "TextureName"   "upgrade_armor8"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "30"
+            }
+        }
+
+        "modifier_armor9"
+        {
+            "TextureName"   "upgrade_armor9"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "36"
+            }
+        }
+
+        "modifier_armor10"
+        {
+            "TextureName"   "upgrade_armor10"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "44"
+            }
+        }
+
+        "modifier_armor11"
+        {
+            "TextureName"   "upgrade_armor11"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "60"
+            }
+        }
+
+        // Wings
+        "modifier_wings1"
+        {
+            "TextureName"   "upgrade_wings1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "30"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "25"
+            }
+        }
+
+        "modifier_wings2"
+        {
+            "TextureName"   "upgrade_wings2"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "60"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "50"
+            }
+        }
+
+        "modifier_wings3"
+        {
+            "TextureName"   "upgrade_wings3"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "90"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "75"
+            }
+        }
+
+         "modifier_wings4"
+        {
+            "TextureName"   "upgrade_wings4"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "120"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "100"
+            }
+        }
+
+         "modifier_wings5"
+        {
+            "TextureName"   "upgrade_wings5"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "150"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "125"
+            }
+        }
+
+         "modifier_wings6"
+        {
+            "TextureName"   "upgrade_wings6"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "180"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "150"
+            }
+        }
+
+        "modifier_wings7"
+        {
+            "TextureName"   "upgrade_wings7"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "210"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "175"
+            }
+        }
+
+        "modifier_wings8"
+        {
+            "TextureName"   "upgrade_wings8"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "240"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "200"
+            }
+        }
+    }
+}

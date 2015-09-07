@@ -1,0 +1,73 @@
+"item_apply_modifiers"
+{
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"BaseClass"						"item_datadriven"
+
+	"Modifiers"
+	{
+		"modifier_hidden"
+		{
+			"IsHidden"				"1"  
+
+			"States"
+			{
+				"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_ROOTED"			"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+				//"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+				//"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED" //Builder is selectable while inside the building
+			}
+		}
+
+		"modifier_invulnerability_layer"
+		{
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+            "TextureName"       "modifier_invulnerable"
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_attackable"
+		{
+			"IsHidden"	"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_SPECIALLY_DENIABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_ability_layout4"
+        {
+        	"IsHidden"	"1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ABILITY_LAYOUT" "4"
+            }
+        }
+
+		"modifier_ability_layout5"
+        {
+        	"IsHidden"	"1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ABILITY_LAYOUT" "5"
+            }
+        }
+
+        "modifier_ability_layout6"
+        {
+        	"IsHidden"	"1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ABILITY_LAYOUT" "6"
+            }
+        }
+	}
+}

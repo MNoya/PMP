@@ -1,0 +1,38 @@
+"goblin_greed"
+{
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "goblin_greed"
+            
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "extra_bounty"      "2.0"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+        "particle"  "particles/units/heroes/hero_alchemist/alchemist_lasthit_coins.vpcf"
+        "particle"  "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
+    }
+
+    // Option: instead of changing the popup text globally, we add an extra one
+    "modifier_goblins_greed"
+    {
+        "Passive"   "1"
+        "IsHidden"  "0"
+
+        "OnKill"
+        {
+            "RunScript"
+            {
+                "ScriptFile"    "goblins_greed.lua"
+                "Function"      "GoblinsGreed"
+            }
+        }
+    }
+}

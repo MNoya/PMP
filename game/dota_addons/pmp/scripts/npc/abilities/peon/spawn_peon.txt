@@ -1,0 +1,68 @@
+// Spawn rate: 7 seconds
+// Spawn 1 at a time and increases with upgrade
+"spawn_peon"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_peon"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityCooldown"               "7"
+
+    "Modifiers"
+    {
+        "modifier_spawn_peon"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "ThinkInterval"     "1.0" //7.0
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "peon"
+                }
+            }
+        }
+    }
+}
+
+// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+"spawn_peon_leader"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_peon_leader"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityCooldown"               "180"
+
+    "Modifiers"
+    {
+        "modifier_spawn_peon_caster"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/shared.lua"
+                    "Function"      "StartCooldown"
+                }
+            }
+            "ThinkInterval"     "180.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "peon_leader"
+                }
+            }
+        }
+    }
+}

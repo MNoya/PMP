@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+    "maps"          "classic"
+    "IsPlayable"    "1"
+    "classic"
+    {
+        "MaxPlayers"     "12"
+    }
+}

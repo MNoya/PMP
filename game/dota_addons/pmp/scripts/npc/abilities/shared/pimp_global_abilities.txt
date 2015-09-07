@@ -1,0 +1,35 @@
+"pimp_damage"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "pimp_damage"
+    "MaxLevel"                      "20"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}
+
+"pimp_armor"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "pimp_armor"
+    "MaxLevel"                      "20"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}
+
+"pimp_speeds"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "pimp_speeds"
+    "MaxLevel"                      "20"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}
+
+"pimp_regen"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "pimp_regen"
+    "MaxLevel"                      "20"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}

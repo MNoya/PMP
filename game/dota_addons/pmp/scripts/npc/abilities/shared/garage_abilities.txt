@@ -1,0 +1,117 @@
+//upgrade_food_limit
+//upgrade_spawn_rate
+//build_barricades
+//repair_buildings
+
+"upgrade_food_limit"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "abilities/upgrade_food_limit.lua"
+    "AbilityTextureName"            "upgrade_food_limit"
+    "MaxLevel"                      "100"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityGoldCost"               "20"
+    "AbilityUpgradeGoldCost"        "10"
+}
+
+"upgrade_spawn_rate"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "abilities/upgrade_spawn_rate.lua"
+    "AbilityTextureName"            "upgrade_spawn_rate"
+    "MaxLevel"                      "9"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityGoldCost"               "100"
+    "AbilityUpgradeGoldCost"        "100"
+}
+
+"build_barricades"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityTextureName"        "build_barricades"
+    "MaxLevel"                  "1"
+        
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+    "AbilityCastPoint"          "0"
+    "AbilityCooldown"           "1"
+    "AbilityManaCost"           "0"
+    "AbilityGoldCost"           "50"
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/garage.lua"
+            "Function"      "BuildBarricades"
+        }
+    }
+}
+
+"barricade_hit"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityTextureName"        "build_barricades"
+    "MaxLevel"                  "1"
+    
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "Modifiers"
+    {
+        "modifier_barricade"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+
+            "States"
+            {
+                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_LOW_ATTACK_PRIORITY" "MODIFIER_STATE_VALUE_ENABLED"
+            }
+    
+            "OnTakeDamage"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/garage.lua"
+                    "Function"      "BarricadeHit"
+                }
+            }
+        }
+    }
+}
+"repair_buildings"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityTextureName"        "repair_buildings"
+    "MaxLevel"                  "1"
+        
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BUILDING"
+        
+    "AbilityCastPoint"          "0"
+    "AbilityCooldown"           "1"
+    "AbilityManaCost"           "0"
+    "AbilityGoldCost"           "100"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"           "FIELD_INTEGER"
+            "repair_percent"     "20"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/garage.lua"
+            "Function"      "RepairBuildings"
+        }
+    }
+}

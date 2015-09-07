@@ -1,0 +1,500 @@
+//50 20% x2
+//130 21% x2,2
+//210 22% x2,4
+//290 23% x2,6
+//370 25% x2,8
+"critical_strike"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+    "AbilityTextureName"            "upgrade_critical_strike"
+    "MaxLevel"                      "5"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "crit_mult"                 "200 220 240 260 280"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "crit_chance"               "20 21 22 23 25"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+        "particle"  "particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_critical_strike"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackStart"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"  "modifier_critical_strike"
+                    "Target"        "CASTER"
+                }
+
+                "Random"
+                {
+                    "Chance" "%crit_chance"
+                    "OnSuccess"
+                    {
+                        "FireSound"
+                        {
+                            "EffectName"    "Hero_SkeletonKing.CriticalStrike"
+                            "Target"        "CASTER"
+                        }
+
+                        "FireEffect"
+                        {
+                            "EffectName"        "particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
+                            "EffectAttachType"  "follow_origin"
+                            "Target"            "CASTER"
+                        }
+
+                        "ApplyModifier"
+                        {
+                            "ModifierName"  "modifier_critical_strike_crit"
+                            "Target"        "CASTER"    
+                        }        
+                    }
+                }
+            }
+        }
+
+        "modifier_critical_strike_crit"
+        {
+            "IsHidden"  "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_mult"
+            }
+
+            "OnAttackLanded"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"  "modifier_critical_strike_crit"
+                    "Target"        "CASTER"    
+                }
+            }
+        }
+    }
+}
+
+//100 20% 10d 1s
+//200 21% 15d 2s
+//300 22% 20d 3s
+//400 23% 25d 4s
+//500 25% 30d 5s
+"stun_hit"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+    "AbilityTextureName"            "upgrade_stun_hit"
+    "MaxLevel"                      "5"
+
+    "precache"
+    {
+        "particle"          "particles/units/heroes/hero_spirit_breaker/spirit_breaker_greater_bash.vpcf"
+        "particle"          "particles/generic_gameplay/generic_stunned.vpcf"
+    }
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "1.0 2.0 3.0 4.0 5.0"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "stun_chance"           "20 21 22 23 25"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"          "10 15 20 25 30"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_stun_hit"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "OnAttackLanded"
+            {
+                "Random"
+                {
+                    "Chance"        "%stun_chance"
+                    "PseudoRandom"  "DOTA_PSEUDO_RANDOM_FACELESS_BASH"
+
+                    "OnSuccess"
+                    {
+                        "FireSound"
+                        {
+                            "EffectName"    "Hero_FacelessVoid.TimeLockImpact"
+                            "Target"        "TARGET"
+                        }
+
+                        "ApplyModifier"
+                        {
+                            "ModifierName"  "modifier_stun_hit_debuff"
+                            "Duration"      "%duration"
+                            "Target"
+                            {
+                                "Center"    "TARGET"
+                                "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                            }
+                        }
+
+                        "Knockback"
+                        {
+                            "Target"
+                            {
+                                "Center"    "TARGET"
+                                "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                            }
+                            "Center"            "CASTER"
+                            "Distance"          "100"
+                            "Duration"          "0.1"
+                            "Height"            "30"
+                            "IsFixedDistance"   "1"
+                            "ShouldStun"        "1"    
+                        }
+
+                        "Damage"
+                        {
+                            "Target"    "TARGET"
+                            "Type"      "DAMAGE_TYPE_MAGICAL"
+                            "Damage"    "%bonus_damage"
+                        }
+                    }
+                }
+            }
+        }
+
+        "modifier_stun_hit_debuff"
+        {
+            "IsDebuff"  "1"
+            "OverrideAnimation" "ACT_DOTA_DISABLED"
+            "EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+            "EffectAttachType"  "follow_overhead"
+
+            "OnCreated"
+            {
+                "FireEffect"
+                {
+                    "EffectName"        "particles/units/heroes/hero_spirit_breaker/spirit_breaker_greater_bash.vpcf"
+                    "EffectAttachType"  "attach_hitloc"
+                    "Target"            "TARGET"
+                }
+            }
+
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+}
+
+
+//3dps 5s
+//4dps 5s
+//6dps 5s
+//9dps 5s
+//12dps
+"poisoned_weapons"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL"
+    "AbilityTextureName"        "upgrade_poisoned_weapons"
+    "MaxLevel"                  "5"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage_per_second"     "3 4 6 9 12"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "5"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_poisoned_weapons"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackLanded"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName"  "modifier_poisoned_weapons_debuff"
+                    "Target"
+                    {
+                        "Center"    "TARGET"
+                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                        "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                    }
+                    "Duration"      "%duration"
+                }
+            }
+        }
+
+        "modifier_poisoned_weapons_debuff"
+        {
+            "IsDebuff"          "1"
+            "IsPurgable"        "1"
+            "EffectName"        "particles/neutral_fx/gnoll_poison_debuff.vpcf"
+            "EffectAttachType"  "attach_hitloc"
+
+            "ThinkInterval"     "1.0"
+            "OnIntervalThink"
+            {
+                "Damage"
+                {
+                    "Target"        "TARGET"
+                    "Type"          "DAMAGE_TYPE_MAGICAL"
+                    "Damage"        "%damage_per_second"
+                }
+            }
+        }
+    }
+}
+
+//20% 20d 250aoe
+//21% 25d 250aoe
+//22% 30d 250aoe
+//23% 35d 250aoe
+//25% 40d 250aoe
+"pulverize"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityTextureName"        "upgrade_pulverize"
+    "MaxLevel"                  "1"
+
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL"
+
+     "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "chance"                "20 21 22 23 25"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "extra_damage"          "20 25 30 35 40"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "250"
+        }       
+    }
+
+    "precache"
+    {
+        "particle"  "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_aftershock_egset.vpcf"
+        "particle"  "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_aftershock_dust_egset.vpcf"
+        "particle"  "particles/units/heroes/hero_earthshaker/earthshaker_totem_blur.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_pulverize"        
+        {
+            "IsHidden"  "1"
+            "Passive"   "1"
+
+            "OnAttackStart"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"  "modifier_pulverize_attack"
+                    "Target"        "CASTER"
+                }
+
+                "Random"
+                {
+                    "Chance" "%chance"
+                    "OnSuccess"
+                    {
+                        "ApplyModifier"
+                        {
+                            "ModifierName" "modifier_pulverize_attack"
+                            "Target"       "CASTER" 
+                        }
+                    }
+                }
+            }
+        }
+
+        "modifier_pulverize_attack"
+        {
+            "IsHidden"  "1"
+            "OnAttackLanded"
+            {
+                "Damage"
+                {
+                    "Target"
+                    {
+                        "Center"    "TARGET"
+                        "Radius"    "%radius"
+                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                        "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                    }
+                    "Type"          "DAMAGE_TYPE_MAGICAL"
+                    "Damage"        "%extra_damage"
+                }
+
+                "FireEffect"
+                {
+                    "EffectName"        "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_aftershock_egset.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                    "ControlPoints"
+                    {
+                        "01"    "%radius/2 1 1"
+                    }
+                }
+
+                "FireEffect"
+                {
+                    "EffectName"        "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_aftershock_dust_egset.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+
+                "FireEffect"
+                {
+                    "EffectName"        "particles/units/heroes/hero_earthshaker/earthshaker_totem_blur.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+
+                "RemoveModifier"
+                {
+                    "ModifierName"    "modifier_pulverize_attack"
+                    "Target"          "CASTER"
+                }
+            }
+        }
+    }
+}
+
+//20%
+//21%
+//22%
+//23%
+//25%
+
+// Note: This scaling seems flawed. The first level costs 55 gold, while going from 1 to 5 costs over 700 gold just for a 5% increase.
+"dodge"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+    "AbilityTextureName"        "upgrade_dodge"
+    "MaxLevel"                  "5"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"         "FIELD_INTEGER"
+            "dodge_chance"     "20 21 22 23 25"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_dodge"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_EVASION_CONSTANT" "%dodge_chance"
+            }
+        }
+    }
+}
+
+//20%
+//30%
+//40%
+//50%
+//65%
+"spiked_armor"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitDamageType"     "DAMAGE_TYPE_PURE"
+    "AbilityTextureName"        "upgrade_spiked_armor"
+    "MaxLevel"                  "5"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "melee_damage_return" "20 30 40 50 65"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_spiked_armor"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "OnAttacked"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spiked_armor.lua"
+                    "Function"      "Return"
+                    "Damage"        "%attack_damage"
+                }
+            }
+        }
+    }
+}

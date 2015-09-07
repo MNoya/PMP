@@ -1,0 +1,62 @@
+"peon_cleave"
+{
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "peon_cleave"
+            
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "cleave_radius"     "200.0"
+        }
+        
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "cleave_percent"    "8"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_peon_cleave"
+        {
+            "Passive"   "1"
+            "IsHidden"  "0"
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/shared.lua"
+                    "Function"      "HideAbility" //Make space for the upgradeable abilities
+                }
+            }
+
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/peon/cleave.lua"
+                    "Function"      "Cleave"
+                    "Target"
+                    {
+                        "Center"    "CASTER"
+                        "Radius"    "%cleave_radius"
+                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                        "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                    }
+                    "Damage"        "%attack_damage"
+                }
+                "FireEffect"
+                {
+                    "EffectName"        "particles/custom/cleave.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "CASTER"
+                }
+            }
+        }
+    }
+}

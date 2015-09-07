@@ -1,0 +1,267 @@
+// Calls forth a bolt of lightning that bounces up to 3 times, dealing 30 damage on the primary target. Each Jump deals 5% less damage.
+"peon_chain_lightning"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "peon_chain_lightning"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
+
+    "AbilityCastRange"              "700"
+    "AbilityCastPoint"              "0.2"
+    "AbilityCooldown"               "15.0"
+
+    "AbilityManaCost"               "40"
+
+    "precache"
+    {
+        "particle"  "particles/items_fx/chain_lightning.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+    }
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lightning_damage"      "30"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lightning_bounces"     "3"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bounce_range"          "500"
+        }
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lightning_decay"       "5"
+        }
+        "05"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "time_between_bounces"  "0.2"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/peon/chain_lightning.lua"
+            "Function"      "ChainLightning"
+        }
+    }
+}
+
+// Increases the attack speed of a friendly unit by 40% and their movement speed by 25%. Lasts 60 seconds.
+"peon_bloodlust"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityTextureName"        "peon_bloodlust"
+    "MaxLevel"                  "1"
+        
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+        
+    "AbilityCastRange"          "600"
+    "AbilityCastPoint"          "0"
+    "AbilityCooldown"           "1"
+    "AbilityManaCost"           "15"
+        
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "60"
+        }
+        "02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "attack_speed_increase"         "40"
+        }
+        "03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "movement_speed_increase"       "25"
+        }
+        "04"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "scaling_factor"                "0.3"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+        "soundfile" "sounds/weapons/hero/ogre_magi/bloodlust_target.vsnd"
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/peon/bloodlust.lua"
+            "Function"      "Bloodlust"
+        }
+        
+        "FireEffect"
+        {
+            "EffectName"       "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast.vpcf"
+            "EffectAttachType" "follow_customorigin"
+            "Target"           "CASTER"
+            "ControlPointEntities"
+            {
+                "CASTER" "attach_attack1" //Start
+                "CASTER" "attach_origin"  //Velocity noise, not used
+                "CASTER" "attach_attack2" //Hands
+                "TARGET" "attach_hitloc"  //Hit
+            }
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_bloodlust"
+        {
+            "IsBuff"            "1"
+            "IsPurgable"        "1"
+            "Duration"          "%duration"
+
+            "EffectName"            "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_buff.vpcf"
+            "EffectAttachType"      "follow_origin"
+
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_increase"
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed_increase"
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/peon/bloodlust.lua"
+                    "Function"      "BloodlustDelete"
+                }
+            }
+        }
+
+        "modifier_bloodlust_autocast_aura"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "Aura"              "modifier_bloodlust_autocast_attackstart"
+            "Aura_Radius"       "%autocast_radius"
+            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Types"        "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/peon/bloodlust.lua"
+                    "Function"      "ToggleOnAutocast"
+                }
+            }
+        }
+
+        "modifier_bloodlust_autocast_attackstart"
+        {
+            "IsHidden"  "1"
+            "OnAttacked"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/peon/bloodlust.lua"
+                    "Function"      "BloodlustAutocast"
+                }
+            }
+        }
+    }
+}
+
+// Reveal the targeted area for 8 seconds. Also reveals invisible units.
+"peon_far_sight"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "peon_far_sight"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+
+    "AbilityCastPoint"              "0.3"
+    "AbilityCooldown"               "30.0"
+
+    "AbilityManaCost"               "10"
+
+    "precache"
+    {
+        "particle"  "particles/items_fx/dust_of_appearance.vpcf"
+    }
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "reveal_radius" "800"
+        }
+        "02"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "duration"      "8"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/peon/far_sight.lua"
+            "Function"      "FarSight"
+            "Target"        "POINT"
+        }
+
+        "CreateThinker"
+        {
+            "ModifierName"  "modifier_far_sight"
+            "Target"        "POINT"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_far_sight"
+        {   
+            "IsHidden"          "1"
+            "Duration"          "%duration"
+            "Aura"              "modifier_far_sight_vision"
+            "Aura_Radius"       "%reveal_radius"
+            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Aura_Types"        "DOTA_UNIT_TARGET_ALL"
+        }
+
+        "modifier_far_sight_vision"
+        {
+            "States"
+            {
+                "MODIFIER_STATE_INVISIBLE"      "MODIFIER_STATE_VALUE_DISABLED"
+            }
+        }
+    }
+}
