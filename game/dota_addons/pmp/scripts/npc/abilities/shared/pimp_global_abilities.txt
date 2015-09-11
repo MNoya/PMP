@@ -3,8 +3,30 @@
     "BaseClass"                     "ability_datadriven"
     "AbilityTextureName"            "pimp_damage"
     "MaxLevel"                      "20"
+    "LevelsBetweenUpgrades"         "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "OnUpgrade"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "PimpUpgrade"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_pimp_damage"
+        {
+            "IsHidden"           "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "1"
+            }
+        }
+    }        
 }
 
 "pimp_armor"
@@ -12,17 +34,62 @@
     "BaseClass"                     "ability_datadriven"
     "AbilityTextureName"            "pimp_armor"
     "MaxLevel"                      "20"
+    "LevelsBetweenUpgrades"         "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "OnUpgrade"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "PimpUpgrade"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_pimp_armor"
+        {
+            "IsHidden"           "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "1"
+            }
+        }
+    }
 }
 
-"pimp_speeds"
+"pimp_speed"
 {
     "BaseClass"                     "ability_datadriven"
-    "AbilityTextureName"            "pimp_speeds"
+    "AbilityTextureName"            "pimp_speed"
     "MaxLevel"                      "20"
+    "LevelsBetweenUpgrades"         "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "OnUpgrade"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "PimpUpgrade"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_pimp_speed"
+        {
+            "IsHidden"           "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "5"
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "5" 
+            }
+        }
+    }
 }
 
 "pimp_regen"
@@ -30,6 +97,28 @@
     "BaseClass"                     "ability_datadriven"
     "AbilityTextureName"            "pimp_regen"
     "MaxLevel"                      "20"
+    "LevelsBetweenUpgrades"         "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "OnUpgrade"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "PimpUpgrade"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_pimp_regen"
+        {
+            "IsHidden"           "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "0.5"
+            }
+        }
+    }
 }

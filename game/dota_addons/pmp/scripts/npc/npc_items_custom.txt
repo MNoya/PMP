@@ -1395,100 +1395,100 @@
 	            }
 	        }
 	
-	        // Armor
-	        "modifier_armor1"
+	        // Shield
+	        "modifier_shield1"
 	        {
-	            "TextureName"   "upgrade_armor1"
+	            "TextureName"   "upgrade_shield1"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "2"
 	            }
 	        }
 	
-	        "modifier_armor2"
+	        "modifier_shield2"
 	        {
-	            "TextureName"   "upgrade_armor2"
+	            "TextureName"   "upgrade_shield2"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "4"
 	            }
 	        }
 	
-	        "modifier_armor3"
+	        "modifier_shield3"
 	        {
-	            "TextureName"   "upgrade_armor3"
+	            "TextureName"   "upgrade_shield3"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "6"
 	            }
 	        }
 	
-	        "modifier_armor4"
+	        "modifier_shield4"
 	        {
-	            "TextureName"   "upgrade_armor4"
+	            "TextureName"   "upgrade_shield4"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "10"
 	            }
 	        }
 	
-	        "modifier_armor5"
+	        "modifier_shield5"
 	        {
-	            "TextureName"   "upgrade_armor5"
+	            "TextureName"   "upgrade_shield5"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "14"
 	            }
 	        }
 	
-	        "modifier_armor6"
+	        "modifier_shield6"
 	        {
-	            "TextureName"   "upgrade_armor6"
+	            "TextureName"   "upgrade_shield6"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "18"
 	            }
 	        }
 	
-	        "modifier_armor7"
+	        "modifier_shield7"
 	        {
-	            "TextureName"   "upgrade_armor7"
+	            "TextureName"   "upgrade_shield7"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "24"
 	            }
 	        }
 	
-	        "modifier_armor8"
+	        "modifier_shield8"
 	        {
-	            "TextureName"   "upgrade_armor8"
+	            "TextureName"   "upgrade_shield8"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "30"
 	            }
 	        }
 	
-	        "modifier_armor9"
+	        "modifier_shield9"
 	        {
-	            "TextureName"   "upgrade_armor9"
+	            "TextureName"   "upgrade_shield9"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "36"
 	            }
 	        }
 	
-	        "modifier_armor10"
+	        "modifier_shield10"
 	        {
-	            "TextureName"   "upgrade_armor10"
+	            "TextureName"   "upgrade_shield10"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "44"
 	            }
 	        }
 	
-	        "modifier_armor11"
+	        "modifier_shield11"
 	        {
-	            "TextureName"   "upgrade_armor11"
+	            "TextureName"   "upgrade_shield11"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "60"
@@ -1556,7 +1556,7 @@
 	            }
 	        }
 	
-	         "modifier_wings7"
+	        "modifier_wings7"
 	        {
 	            "TextureName"   "upgrade_wings7"
 	            "Properties"
@@ -1566,7 +1566,7 @@
 	            }
 	        }
 	
-	         "modifier_wings8"
+	        "modifier_wings8"
 	        {
 	            "TextureName"   "upgrade_wings8"
 	            "Properties"

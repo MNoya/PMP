@@ -4,8 +4,7 @@ CHEAT_CODES = {
     ["music"]       = function(...) PMP:Music(...) end,
     ["stopmusic"]   = function(...) PMP:StopMusic(...) end,
     ["pimp"]        = function(...) PMP:SetUpgrade(...) end,    -- upgrade [weapon/helm/armor/wings/health/critical_strike/stun_hit/poisoned_weapons/pulverize/dodge/spiked_armor] [level]
-    
-    --reset
+    ["reset"]       = function(...) PMP:ResetAllUpgrades(...) end
     --bot race
     --set type model x y z
 }

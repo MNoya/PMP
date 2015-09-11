@@ -65,7 +65,7 @@
   	font-weight: bold;
     text-align: center;
     text-shadow: 0px 0px 3px 2.0 #000000;
-
+    color: #ffffff;
     vertical-align: center;
     margin-bottom: 8px;
     margin-left: 42px;
@@ -77,27 +77,6 @@
 	height:26px;
 	background-image: url("s2r://panorama/images/custom_game/food_icon.png"); 
 	background-size: 100% 100%;
-}
-
-
-.UpkeepPanel
-{
-	width: 500px;
-    height: 200px;
-
-    horizontal-align: center;
-    vertical-align: top;
-}
-
-#UpkeepText
-{
-    font-size: 50px;
-  	font-family: Radiance;
-  	font-weight: bold;
-    text-shadow: 4px 4px 4px #000000;
-
-    margin-top: 80px;
-    horizontal-align: center;
 }
 
 .Red

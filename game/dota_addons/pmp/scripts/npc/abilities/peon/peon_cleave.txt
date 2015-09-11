@@ -37,26 +37,33 @@
 
             "OnAttackLanded"
             {
-                "RunScript"
+
+                "CleaveAttack"
                 {
-                    "ScriptFile"    "abilities/peon/cleave.lua"
-                    "Function"      "Cleave"
-                    "Target"
-                    {
-                        "Center"    "CASTER"
-                        "Radius"    "%cleave_radius"
-                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                    }
-                    "Damage"        "%attack_damage"
-                }
-                "FireEffect"
-                {
-                    "EffectName"        "particles/custom/cleave.vpcf"
-                    "EffectAttachType"  "follow_origin"
-                    "Target"            "CASTER"
+                    "CleavePercent"         "%cleave_percent"
+                    "CleaveRadius"          "%cleave_radius"
+                    "CleaveEffect"          "particles/items_fx/battlefury_cleave.vpcf"
                 }
             }
+            //    "RunScript"
+            //    {
+            //        "ScriptFile"    "abilities/peon/cleave.lua"
+            //        "Function"      "Cleave"
+            //        "Target"
+            //        {
+            //            "Center"    "CASTER"
+            //            "Radius"    "%cleave_radius"
+            //            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            //            "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            //        }
+            //        "Damage"        "%attack_damage"
+            //    }
+            //    "FireEffect"
+            //    {
+            //        "EffectName"        "particles/custom/cleave.vpcf"
+            //        "EffectAttachType"  "follow_origin"
+            //        "Target"            "CASTER"
+            //    }
         }
     }
 }

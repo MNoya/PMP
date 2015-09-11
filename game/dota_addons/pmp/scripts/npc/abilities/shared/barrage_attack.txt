@@ -1,0 +1,47 @@
+"barrage_attack"
+{
+    "BaseClass"                     "ability_datadriven"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "OnProjectileHitUnit"
+    {
+        "DeleteOnHit"    "1"
+        "Damage"
+        {
+            "Target"        "TARGET"
+            "Type"          "DAMAGE_TYPE_PHYSICAL"
+            "Damage"        "500"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_barrage_attack"
+        {
+            "Passive"       "1"
+            "IsHidden"      "0"
+            
+            "OnAttack"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/barrage.lua"
+                    "Function"      "BarrageAttack"
+                    "Target"
+                    {
+                        "Center"    "CASTER"
+                        "Radius"    "600"
+                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                        "Types"     "DOTA_UNIT_TARGET_BASIC"
+                    }
+                }
+            }
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "500"
+            }
+        }
+    }
+}

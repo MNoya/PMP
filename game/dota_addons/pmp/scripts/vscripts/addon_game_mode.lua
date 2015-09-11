@@ -28,6 +28,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("peon_garage", context)
 	PrecacheUnitByNameSync("peon_pimpery", context)	
 	PrecacheUnitByNameSync("peon_tower", context)
+	PrecacheUnitByNameSync("peon_ghost", context)
 
 	PrecacheUnitByNameSync("npc_dota_hero_axe", context)
 	PrecacheUnitByNameSync("npc_dota_hero_sven", context)

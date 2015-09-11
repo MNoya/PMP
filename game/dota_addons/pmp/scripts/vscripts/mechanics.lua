@@ -143,6 +143,12 @@ function GetFoodCost( unit_name )
     return unit_table and unit_table["FoodCost"] or 0
 end
 
+function GetLumberBounty( unit )
+    local unit_name = unit:GetUnitName()
+    local unit_table = GameRules.UnitKV[unit_name]
+    return unit_table and unit_table["BountyLumber"] or 0
+end
+
 
 ------------------------------------------------
 --               Boolean checks               --
@@ -232,6 +238,12 @@ function GetOriginalModelScale( unit )
     return unit_table and unit_table["ModelScale"] or unit:GetModelScale()
 end
 
+function GetRangedProjectileName( unit )
+    local unit_name = unit:GetUnitName()
+    local unit_table = unit:IsHero() and GameRules.HeroKV[unit_name] or GameRules.UnitKV[unit_name]
+    return unit_table and unit_table["ProjectileModel"] or ""
+end
+
 ------------------------------------------------
 --               Global item applier          --
 ------------------------------------------------
@@ -300,23 +312,6 @@ end
 
 ----------------------------------------------
 
--- Units should have no "BountyGoldMin" and "BountyGoldMax", using "GoldCost" and "LumberCost" instead 
-function GiveBountyToTeam( teamNumber, unit )
-    local gold_bounty = GetGoldCost(unit)
-    local lumber_bounty = GetLumberCost(unit)
-    for i=0,DOTA_MAX_DOTA_MAX_TEAM_PLAYERS do
-        if IsValidPlayerID(i) then
-            local player = PlayerResource:GetPlayer(i)
-            local hero = player:GetAssignedHero()
-            ModifyGold(hero, gold_bounty)
-            PopupGoldGain(hero, gold_bounty)
-
-            ModifyLumber(hero, lumber_bounty)
-            PopupLumber(hero, lumber_bounty)
-        end 
-    end
-end
-
 --Modify Gold/Lumber should handle 0 value if they aren't doing it already
 --Get Gold/Lumber Cost should handle nil value (default to 0)
 function ReduceInvulnerabilityCount( hero )
@@ -341,6 +336,22 @@ function GetPlayerTowers( playerID )
 
     return hero.towers
 end
+
+function GetPlayerBarricades( playerID )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local barricades = {}
+    for k,v in pairs(hero.barricades) do
+        if IsValidAlive(v) then
+            table.insert(barricades, v)
+        end
+    end
+
+    print("Hero has ",#barricades,"barricades")
+    hero.barricades = barricades
+
+    return hero.barricades
+end
+
 
 function GetPlayerShop( playerID )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
@@ -430,3 +441,5 @@ function GetRace( unit )
 
     return GameRules.HeroKV[hero_name]["Race"]
 end
+
+--------------------------------------------

@@ -54,8 +54,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1600"			// Range of vision during day light.
-		"VisionNighttimeRange"		"600"			// Range of vision at night time.
+		"VisionDaytimeRange"		"100"			// Range of vision during day light.
+		"VisionNighttimeRange"		"100"			// Range of vision at night time.
 	
 		// Team
 		//----------------------------------------------------------------
@@ -340,6 +340,7 @@
 	    //----------------------------------------------------------------
 	    "BountyGoldMin"             "5.0"
 	    "BountyGoldMax"             "5.0"
+	    "BountyLumber"              "5.0"
 	    
 	    // Gold and Lumber
 	    //----------------------------------------------------------------
@@ -431,6 +432,7 @@
 	    //----------------------------------------------------------------
 	    "BountyGoldMin"             "10.0"
 	    "BountyGoldMax"             "10.0"
+	    "BountyLumber"              "10.0"
 	    
 	    // Gold and Lumber
 	    //----------------------------------------------------------------
@@ -497,7 +499,7 @@
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
-	    "Ability1"                  ""   //Reference: A02G
+	    "Ability1"                  "barrage_attack"
 	    "Ability2"                  ""   //Reference: A02F
 	    
 	    // Armor
@@ -508,11 +510,11 @@
 	    // Attack
 	    //----------------------------------------------------------------
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-	    "AttackDamageMin"           "501.0"
-	    "AttackDamageMax"           "510.0"
+	    "AttackDamageMin"           "500.0"
+	    "AttackDamageMax"           "500.0"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackRate"                "0.00"
-	    "AttackAnimationPoint"      "0.53"
+	    "AttackRate"                "1"
+	    "AttackAnimationPoint"      "0.4"
 	    "AttackAcquisitionRange"    "600"
 	    "AttackRange"               "800"
 	    "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
@@ -520,8 +522,9 @@
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
-	    "BountyGoldMin"             "32.0"
-	    "BountyGoldMax"             "46.0"
+	    "BountyGoldMin"             "50.0"
+	    "BountyGoldMax"             "50.0"
+	    "BountyLumber"              "50.0"
 	    
 	    // Gold and Lumber
 	    //----------------------------------------------------------------
@@ -580,10 +583,10 @@
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/dire_barracks_ranged001.vmdl"
-	    "ModelScale"                "1"
+	    "ModelScale"                "0.8"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
-	    "RingRadius"                "220"
+	    "RingRadius"                "180"
 	    "HealthBarOffset"           "280"
 	    "ConsideredHero"            "1"
 	
@@ -643,8 +646,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "800"
-	    "VisionNighttimeRange"      "800"
+	    "VisionDaytimeRange"        "1800"
+	    "VisionNighttimeRange"      "1600"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -666,10 +669,10 @@
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/heroes/axe/axe.vmdl"
-	    "ModelScale"                "1.3"
+	    "ModelScale"                "1"
 	    "Level"                     "10"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
-	    "RingRadius"                "140"
+	    "RingRadius"                "100"
 	    "HealthBarOffset"           "280"
 	
 	    "MinimapIcon"               "minimap_racks90"
@@ -680,7 +683,7 @@
 	    "AbilityLayout"             "5"
 	    "Ability1"                  "upgrade_weapon1" //Upgrade Weapon - 30 Levels
 	    "Ability2"                  "upgrade_helm1" //Upgrade Helm - 15 Levels
-	    "Ability3"                  "upgrade_armor1" //Upgrade Armor - 11 Levels
+	    "Ability3"                  "upgrade_shield1" //Upgrade Shield - 11 Levels
 	    "Ability4"                  "upgrade_wings1" //Upgrade Wings - 8 Levels
 	    "Ability5"                  "upgrade_health"
 	    "Ability10"                 "ability_building"
@@ -769,7 +772,7 @@
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
-	    "Ability1"                  "ability_tower"   //Bounty 80g 20g
+	    "Ability1"                  "ability_tower"
 	    "Ability10"                 "ability_building"
 	    
 	    // Armor
@@ -783,8 +786,9 @@
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
-	    "BountyGoldMin"             "0.0"
-	    "BountyGoldMax"             "0.0"
+	    "BountyGoldMin"             "80.0"
+	    "BountyGoldMax"             "80.0"
+	    "BountyLumber"              "20.0"
 	    
 	    // Gold and Lumber
 	    //----------------------------------------------------------------
@@ -802,7 +806,7 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "1600"
+	    "VisionDaytimeRange"        "800"
 	    "VisionNighttimeRange"      "800"
 	    
 	    // Team
@@ -814,5 +818,76 @@
 	    
 	    // Creature Data
 	    //----------------------------------------------------------------
+	}
+	
+	"peon_ghost"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/heroes/axe/axe.vmdl"
+	    "ModelScale"                "1"
+	    "Level"                     "1"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
+	    "HealthBarOffset"           "140"
+	    "SoundSet"                  "Hero_Axe"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "ghost_peon"
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageMin"           "0.0"
+	    "AttackDamageMax"           "0.0"
+	        
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "75"
+	    "LumberCost"                "75"
+	    "FoodCost"                  "1"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+	    "MovementSpeed"             "420"
+	    "MovementTurnRate"          "1"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "1"
+	    "StatusHealthRegen"         "0.50"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "600"
+	    "VisionNighttimeRange"      "600"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	    "Creature"
+	    {
+	        "DisableClumpingBehavior"   "1"
+	        "AttachWearables"
+	        {
+	            "Wearable1"     {   "ItemDef"       "2"     } //axe_weapon.vmdl
+	            "Wearable2"     {   "ItemDef"       "3"     } //axe_armor.vmdl
+	            "Wearable3"     {   "ItemDef"       "4"     } //axe_ponytail.vmdl
+	            "Wearable4"     {   "ItemDef"       "5"     } //axe_belt.vmdl
+	        }
+	    }
 	}
 }

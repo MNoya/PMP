@@ -46,9 +46,8 @@
         
     // Movement
     //----------------------------------------------------------------
-    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"             "0"
-    "MovementTurnRate"          "0"
     
     // Status
     //----------------------------------------------------------------

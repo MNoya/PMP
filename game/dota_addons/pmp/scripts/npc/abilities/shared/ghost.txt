@@ -1,0 +1,33 @@
+"ghost_peon"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "ghost_peon"
+    "MaxLevel"                      "1"
+
+    "precache"
+    {
+        "particle"  "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
+    }
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "Modifiers"
+    {
+        "modifier_ghost_peon"
+        {
+            "StatusEffectName"      "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"        
+            "StatusEffectPriority"  "10"
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "Attributes"        "MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"    
+            "States"
+            {
+                "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_FLYING"         "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_INVISIBLE"      "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }       
+}

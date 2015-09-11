@@ -77,26 +77,33 @@
 	
 	            "OnAttackLanded"
 	            {
-	                "RunScript"
+	
+	                "CleaveAttack"
 	                {
-	                    "ScriptFile"    "abilities/peon/cleave.lua"
-	                    "Function"      "Cleave"
-	                    "Target"
-	                    {
-	                        "Center"    "CASTER"
-	                        "Radius"    "%cleave_radius"
-	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	                        "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	                    }
-	                    "Damage"        "%attack_damage"
-	                }
-	                "FireEffect"
-	                {
-	                    "EffectName"        "particles/custom/cleave.vpcf"
-	                    "EffectAttachType"  "follow_origin"
-	                    "Target"            "CASTER"
+	                    "CleavePercent"         "%cleave_percent"
+	                    "CleaveRadius"          "%cleave_radius"
+	                    "CleaveEffect"          "particles/items_fx/battlefury_cleave.vpcf"
 	                }
 	            }
+	            //    "RunScript"
+	            //    {
+	            //        "ScriptFile"    "abilities/peon/cleave.lua"
+	            //        "Function"      "Cleave"
+	            //        "Target"
+	            //        {
+	            //            "Center"    "CASTER"
+	            //            "Radius"    "%cleave_radius"
+	            //            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	            //            "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            //        }
+	            //        "Damage"        "%attack_damage"
+	            //    }
+	            //    "FireEffect"
+	            //    {
+	            //        "EffectName"        "particles/custom/cleave.vpcf"
+	            //        "EffectAttachType"  "follow_origin"
+	            //        "Target"            "CASTER"
+	            //    }
 	        }
 	    }
 	}
@@ -442,7 +449,7 @@
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityTextureName"            "summon_super_peon"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "3"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	
@@ -470,6 +477,37 @@
 	            "Duration"      "%duration"
 	        }
 	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_super_spawn"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SuperPeonCharges"
+	                }
+	            }
+	        }
+	
+	        "modifier_super_unit_charges"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"summon_super_peon_empty"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_peon"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 	"ability_building"
 	{
@@ -531,6 +569,53 @@
 				}
 			}
 		}		
+	}
+	"barrage_attack"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit"    "1"
+	        "Damage"
+	        {
+	            "Target"        "TARGET"
+	            "Type"          "DAMAGE_TYPE_PHYSICAL"
+	            "Damage"        "500"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_barrage_attack"
+	        {
+	            "Passive"       "1"
+	            "IsHidden"      "0"
+	            
+	            "OnAttack"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/barrage.lua"
+	                    "Function"      "BarrageAttack"
+	                    "Target"
+	                    {
+	                        "Center"    "CASTER"
+	                        "Radius"    "600"
+	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	                        "Types"     "DOTA_UNIT_TARGET_BASIC"
+	                    }
+	                }
+	            }
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "500"
+	            }
+	        }
+	    }
 	}
 	"dummy_passive"
 	{
@@ -735,6 +820,7 @@
 	            {
 	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
 	                "MODIFIER_STATE_LOW_ATTACK_PRIORITY" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
 	            }
 	    
 	            "OnTakeDamage"
@@ -780,6 +866,39 @@
 	            "Function"      "RepairBuildings"
 	        }
 	    }
+	}
+	"ghost_peon"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "ghost_peon"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
+	    }
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "Modifiers"
+	    {
+	        "modifier_ghost_peon"
+	        {
+	            "StatusEffectName"      "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"        
+	            "StatusEffectPriority"  "10"
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "Attributes"        "MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"    
+	            "States"
+	            {
+	                "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_FLYING"         "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_INVISIBLE"      "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	    }       
 	}
 	"hide_hero"
 	{
@@ -925,7 +1044,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "55"
 	        }
 	    }
 	
@@ -954,7 +1073,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "70"
 	        }
 	    }
 	
@@ -983,7 +1102,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "85"
 	        }
 	    }
 	
@@ -1012,7 +1131,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "100"
 	        }
 	    }
 	
@@ -1041,7 +1160,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "115"
 	        }
 	    }
 	
@@ -1070,7 +1189,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "130"
 	        }
 	    }
 	
@@ -1099,7 +1218,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "145"
 	        }
 	    }
 	
@@ -1128,7 +1247,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "160"
 	        }
 	    }
 	
@@ -1157,7 +1276,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "175"
 	        }
 	    }
 	
@@ -1186,7 +1305,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "190"
 	        }
 	    }
 	
@@ -1215,7 +1334,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "205"
 	        }
 	    }
 	
@@ -1244,7 +1363,36 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "220"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "weapon"
+	            "Level"         "15"
+	        }
+	    }
+	}
+	
+	"upgrade_weapon16"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "upgrade_weapon16"
+	    "MaxLevel"                      "16"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "lumber_cost"           "235"
 	        }
 	    }
 	
@@ -1273,7 +1421,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "250"
 	        }
 	    }
 	
@@ -1302,7 +1450,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "265"
 	        }
 	    }
 	
@@ -1331,7 +1479,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "280"
 	        }
 	    }
 	
@@ -1360,7 +1508,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "295"
 	        }
 	    }
 	
@@ -1389,7 +1537,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "310"
 	        }
 	    }
 	
@@ -1418,7 +1566,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "325"
 	        }
 	    }
 	
@@ -1447,7 +1595,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "340"
 	        }
 	    }
 	
@@ -1476,7 +1624,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "355"
 	        }
 	    }
 	
@@ -1505,7 +1653,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "370"
 	        }
 	    }
 	
@@ -1534,7 +1682,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "385"
 	        }
 	    }
 	
@@ -1563,7 +1711,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "400"
 	        }
 	    }
 	
@@ -1592,7 +1740,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "415"
 	        }
 	    }
 	
@@ -1621,7 +1769,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "430"
 	        }
 	    }
 	
@@ -1650,7 +1798,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "10"
+	            "lumber_cost"           "445"
 	        }
 	    }
 	
@@ -1669,7 +1817,7 @@
 	"upgrade_weapon_final"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_weapon_final"
+	    "AbilityTextureName"            "upgrade_weapon30"
 	    "MaxLevel"                      "30"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1780,7 +1928,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "70"
 	        }
 	    }
 	
@@ -1809,7 +1957,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "90"
 	        }
 	    }
 	
@@ -1838,7 +1986,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "110"
 	        }
 	    }
 	
@@ -1867,7 +2015,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "130"
 	        }
 	    }
 	
@@ -1896,7 +2044,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "150"
 	        }
 	    }
 	
@@ -1925,7 +2073,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "170"
 	        }
 	    }
 	
@@ -1954,7 +2102,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "190"
 	        }
 	    }
 	
@@ -1983,7 +2131,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "210"
 	        }
 	    }
 	
@@ -2012,7 +2160,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "230"
 	        }
 	    }
 	
@@ -2041,7 +2189,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "250"
 	        }
 	    }
 	
@@ -2070,7 +2218,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "270"
 	        }
 	    }
 	
@@ -2099,7 +2247,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "50"
+	            "lumber_cost"           "290"
 	        }
 	    }
 	
@@ -2118,7 +2266,7 @@
 	"upgrade_helm_final"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_helm_final"
+	    "AbilityTextureName"            "upgrade_helm15"
 	    "MaxLevel"                      "15"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2129,10 +2277,10 @@
 	//     ARMOR    //
 	//////////////////
 	
-	"upgrade_armor1"
+	"upgrade_shield1"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor1"
+	    "AbilityTextureName"            "upgrade_shield1"
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2152,16 +2300,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "1"
 	        }
 	    }
 	}
 	
-	"upgrade_armor2"
+	"upgrade_shield2"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor2"
+	    "AbilityTextureName"            "upgrade_shield2"
 	    "MaxLevel"                      "2"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2181,16 +2329,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "2"
 	        }
 	    }
 	}
 	
-	"upgrade_armor3"
+	"upgrade_shield3"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor3"
+	    "AbilityTextureName"            "upgrade_shield3"
 	    "MaxLevel"                      "3"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2210,16 +2358,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "3"
 	        }
 	    }
 	}
 	
-	"upgrade_armor4"
+	"upgrade_shield4"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor4"
+	    "AbilityTextureName"            "upgrade_shield4"
 	    "MaxLevel"                      "4"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2229,7 +2377,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "60"
+	            "lumber_cost"           "80"
 	        }
 	    }
 	
@@ -2239,16 +2387,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "4"
 	        }
 	    }
 	}
 	
-	"upgrade_armor5"
+	"upgrade_shield5"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor5"
+	    "AbilityTextureName"            "upgrade_shield5"
 	    "MaxLevel"                      "5"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2258,7 +2406,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "60"
+	            "lumber_cost"           "100"
 	        }
 	    }
 	
@@ -2268,16 +2416,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "5"
 	        }
 	    }
 	}
 	
-	"upgrade_armor6"
+	"upgrade_shield6"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor6"
+	    "AbilityTextureName"            "upgrade_shield6"
 	    "MaxLevel"                      "6"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2287,7 +2435,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "60"
+	            "lumber_cost"           "120"
 	        }
 	    }
 	
@@ -2297,16 +2445,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "6"
 	        }
 	    }
 	}
 	
-	"upgrade_armor7"
+	"upgrade_shield7"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor7"
+	    "AbilityTextureName"            "upgrade_shield7"
 	    "MaxLevel"                      "7"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2316,7 +2464,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "60"
+	            "lumber_cost"           "140"
 	        }
 	    }
 	
@@ -2326,16 +2474,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "7"
 	        }
 	    }
 	}
 	
-	"upgrade_armor8"
+	"upgrade_shield8"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor8"
+	    "AbilityTextureName"            "upgrade_shield8"
 	    "MaxLevel"                      "8"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2345,7 +2493,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "60"
+	            "lumber_cost"           "160"
 	        }
 	    }
 	
@@ -2355,16 +2503,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "8"
 	        }
 	    }
 	}
 	
-	"upgrade_armor9"
+	"upgrade_shield9"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor9"
+	    "AbilityTextureName"            "upgrade_shield9"
 	    "MaxLevel"                      "9"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2374,7 +2522,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "60"
+	            "lumber_cost"           "180"
 	        }
 	    }
 	
@@ -2384,16 +2532,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "9"
 	        }
 	    }
 	}
 	
-	"upgrade_armor10"
+	"upgrade_shield10"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor10"
+	    "AbilityTextureName"            "upgrade_shield10"
 	    "MaxLevel"                      "10"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2403,7 +2551,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "60"
+	            "lumber_cost"           "200"
 	        }
 	    }
 	
@@ -2413,16 +2561,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "10"
 	        }
 	    }
 	}
 	
-	"upgrade_armor11"
+	"upgrade_shield11"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor11"
+	    "AbilityTextureName"            "upgrade_shield11"
 	    "MaxLevel"                      "11"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -2432,7 +2580,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "60"
+	            "lumber_cost"           "220"
 	        }
 	    }
 	
@@ -2442,16 +2590,16 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "armor"
+	            "Name"          "shield"
 	            "Level"         "11"
 	        }
 	    }
 	}
 	
-	"upgrade_armor_final"
+	"upgrade_shield_final"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_armor_final"
+	    "AbilityTextureName"            "upgrade_shield11"
 	    "MaxLevel"                      "11"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2562,7 +2710,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "325"
+	            "lumber_cost"           "775"
 	        }
 	    }
 	
@@ -2591,7 +2739,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "325"
+	            "lumber_cost"           "1000"
 	        }
 	    }
 	
@@ -2620,7 +2768,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "325"
+	            "lumber_cost"           "1225"
 	        }
 	    }
 	
@@ -2649,7 +2797,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "325"
+	            "lumber_cost"           "1450"
 	        }
 	    }
 	
@@ -2678,7 +2826,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lumber_cost"           "325"
+	            "lumber_cost"           "1675"
 	        }
 	    }
 	
@@ -2697,7 +2845,7 @@
 	"upgrade_wings_final"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "upgrade_weapon_final"
+	    "AbilityTextureName"            "upgrade_wings8"
 	    "MaxLevel"                      "8"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3234,8 +3382,30 @@
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityTextureName"            "pimp_damage"
 	    "MaxLevel"                      "20"
+	    "LevelsBetweenUpgrades"         "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	    "OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "PimpUpgrade"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_pimp_damage"
+	        {
+	            "IsHidden"           "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "1"
+	            }
+	        }
+	    }        
 	}
 	
 	"pimp_armor"
@@ -3243,17 +3413,62 @@
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityTextureName"            "pimp_armor"
 	    "MaxLevel"                      "20"
+	    "LevelsBetweenUpgrades"         "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	    "OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "PimpUpgrade"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_pimp_armor"
+	        {
+	            "IsHidden"           "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "1"
+	            }
+	        }
+	    }
 	}
 	
-	"pimp_speeds"
+	"pimp_speed"
 	{
 	    "BaseClass"                     "ability_datadriven"
-	    "AbilityTextureName"            "pimp_speeds"
+	    "AbilityTextureName"            "pimp_speed"
 	    "MaxLevel"                      "20"
+	    "LevelsBetweenUpgrades"         "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	    "OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "PimpUpgrade"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_pimp_speed"
+	        {
+	            "IsHidden"           "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "5"
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "5" 
+	            }
+	        }
+	    }
 	}
 	
 	"pimp_regen"
@@ -3261,7 +3476,29 @@
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityTextureName"            "pimp_regen"
 	    "MaxLevel"                      "20"
+	    "LevelsBetweenUpgrades"         "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	    "OnUpgrade"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "PimpUpgrade"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_pimp_regen"
+	        {
+	            "IsHidden"           "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "0.5"
+	            }
+	        }
+	    }
 	}
 }

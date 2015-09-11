@@ -60,6 +60,34 @@ function UpgradeFinished( event )
 	PMP:SetUpgrade(pID, upgrade_name, upgrade_level)
 end
 
+-- Hero global upgrades
+function PimpUpgrade( event )
+	local hero = event.caster
+	local playerID = hero:GetPlayerID()
+	local ability = event.ability
+	local level = ability:GetLevel()
+	local ability_name = ability:GetAbilityName()
+
+	hero.Upgrades[ability_name] = level
+
+	-- Go through units and update stacks
+	local Units = GetPlayerUnits(playerID)
+	for _,unit in pairs(Units) do
+		PMP:ApplyModifierUpgradeStacks(unit, ability_name, level)
+	end
+
+	local Towers = GetPlayerTowers(playerID)
+	for _,tower in pairs(Towers) do
+		PMP:ApplyModifierUpgradeStacks(tower, ability_name, level)
+	end
+
+	-- Add garage damage
+	local garage = hero.garage
+	if IsValidAlive(garage) then
+		PMP:ApplyModifierUpgradeStacks(garage, ability_name, level)
+	end
+end
+
 function PMP:SetUpgrade( playerID, name, level )
 	local upgrades = PMP:GetUpgradeList(playerID)
 
@@ -103,24 +131,28 @@ function PMP:ApplyUpgrade(unit, name, level)
 				unit.prop_wearables = {}
 			end
 
-			HATS = LoadKeyValues("scripts/kv/wearables.kv") --Reload for tests
-			local race = GetRace(unit)
-		    local race_type_table = HATS[race][name]
+            local unit_wearables = GetWearablesForUnit(unit)
+            if not unit_wearables then
+                return
+            end
+
+		    local race_type_table = unit_wearables[name]
 		    if race_type_table then
 		        local level_table = race_type_table[tostring(level)]
 		        if level_table then
-		            local model = level_table["Model"]
+
+		            local modelName = level_table["Model"]
 		            local model_type = level_table["Type"]
 
 		            if model_type == "Change" then
 
 		                -- Get original wearable and change its model
-		                local item_wearable = PMP:GetOriginalWearableInSlot(unit, name)
+		                local item_wearable = GetOriginalWearableInSlot(unit, name)
 		                if not item_wearable then
 		                	return
 		                end
 
-		               	item_wearable:SetModel(model)
+		               	item_wearable:SetModel(modelName)
 		               	item_wearable:RemoveEffects(EF_NODRAW)
 		               	--print("Visible",item_wearable:GetModelName(),name)
 
@@ -129,16 +161,19 @@ function PMP:ApplyUpgrade(unit, name, level)
 
 		            elseif model_type == "Attach" then
 
+                        --ACT_RESET
+                        unit:StartGesture(0)
+
 		            	-- Clear any prop wearable the unit might have in this slot
 		               	ClearPropWearableSlot(unit, name)
 
 		                -- Get original wearable and hide it
-		                local item_wearable = PMP:GetOriginalWearableInSlot(unit, name)
+		                local item_wearable = GetOriginalWearableInSlot(unit, name)
 		                if not item_wearable then
 		                	return
 		                end
 		                item_wearable:AddEffects(EF_NODRAW)
-		                --print("Hidden",item_wearable:GetModelName(),name)
+		                item_wearable:SetModel(modelName) --Just to update portrait
 
 		                -- Frankestein the attachment   
 		                local point = level_table["Point"]
@@ -146,7 +181,7 @@ function PMP:ApplyUpgrade(unit, name, level)
 		                
 		                local new_prop = Entities:CreateByClassname("prop_dynamic")
 		                
-		                new_prop:SetModel(model)
+		                new_prop:SetModel(modelName)
 		                local scale = tonumber(level_table["Scale"]) or unit:GetModelScale()
 		                new_prop:SetModelScale(scale)		                
 		                
@@ -161,12 +196,13 @@ function PMP:ApplyUpgrade(unit, name, level)
 
 		                new_prop:SetAngles(angles.x,angles.y,angles.z)       
 
-		                -- Position	                
+		                -- Position
+		                local attach_pos = unit:GetAttachmentOrigin(attach)
+
 		                local frontOffset = tonumber(level_table["Front"])
 		                local rightOffset = tonumber(level_table["Right"])
-		                local upOffset    = tonumber(level_table["Up"])
-		          
-		                local attach_pos = unit:GetAttachmentOrigin(attach)
+		                local upOffset    = tonumber(level_table["Up"])  
+		                
 		                local forward = frontOffset * --[[RotatePosition(Vector(0,0,0), QAngle(0,angles.y,0), Vector(1,0,0))]] (unit:GetForwardVector())
 		                local right = rightOffset * --[[RotatePosition(Vector(0,0,0), QAngle(0,-90,0), forward)]] (unit:GetRightVector())
 
@@ -186,8 +222,19 @@ function PMP:ApplyUpgrade(unit, name, level)
 			                end
 			            end
 
+			            -- Anim
+			            --[[local animation = level_table["Animation"]
+			            if animation then
+			            	local propHandle = new_prop:GetEntityHandle()
+			            	Timers:CreateTimer(function()
+				            	
+				            	FireEntityIOInputString(propHandle,"SetAnimation",animation)
+				            	return 1
+			            	end)
+			            end]]
+
 			            -- Attach and store it
-		                new_prop:SetParent(unit, point)
+                        new_prop:SetParent(unit, point)
 
 		                unit.prop_wearables[name] = new_prop
 		            end
@@ -212,18 +259,52 @@ function PMP:ApplyModifierUpgrade(unit, name, level)
 	GameRules.UPGRADER:ApplyDataDrivenModifier(unit, unit, targetModifierName..level, {})
 end
 
+function PMP:ApplyModifierUpgradeStacks( unit, name, level )
+	local hero = unit:GetOwner()
+	local ability = hero:FindAbilityByName(name)
+	local modifierName = "modifier_"..name
+
+	if unit:HasModifier(modifierName) then
+		unit:SetModifierStackCount(modifierName, hero, level)
+	else
+		ability:ApplyDataDrivenModifier(hero, unit, modifierName, {})
+		unit:SetModifierStackCount(modifierName, hero, 1)
+	end
+end
 
 -- Go through all the ugprades of the player and add them to a unit
 function PMP:ApplyAllUpgrades(playerID, unit)
 	local upgrades = PMP:GetUpgradeList(playerID)
 
 	for name,level in pairs(upgrades) do
-		if level ~= 0 then
+		if heroUpgrades[name] then
+			if level ~= 0 then
+				PMP:ApplyModifierUpgradeStacks(unit, name, level)
+			end
+		elseif level ~= 0 then
 			PMP:ApplyUpgrade(unit, name, level)
 		end
 	end
 end
 
+heroUpgrades = {["pimp_damage"]={},["pimp_armor"]={},["pimp_speed"]={},["pimp_regen"]={}}
+slots = {"weapon","helm","shield","wings"}
+
+function PMP:ResetAllUpgrades(playerID)
+	local Units = GetPlayerUnits(playerID)
+	for _,unit in pairs(Units) do
+        for k,slot_name in pairs(slots) do
+            ClearPropWearableSlot(unit, slot_name)
+
+            local item_wearable = GetOriginalWearableInSlot(unit, slot_name)
+            local default_wearable_name = GetDefaultWearableNameForSlot(unit, slot_name)
+            if item_wearable and default_wearable_name then
+                item_wearable:SetModel(default_wearable_name)
+                item_wearable:RemoveEffects(EF_NODRAW)
+            end
+        end     
+	end
+end
 
 function PMP:PrintUpgrades( playerID )
 	local upgrades = PMP:GetUpgradeList(playerID)

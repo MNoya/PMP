@@ -85,7 +85,7 @@ function PopupHPRemovalDamage(target, amount)
 end
 
 function PopupLumber(target, amount)
-    PopupNumbers(target, "damage", Vector(10, 200, 90), 3.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
+    PopupNumbers(target, "gold", Vector(10, 200, 90), 3.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
 end
 
 -- Customizable version.

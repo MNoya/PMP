@@ -211,6 +211,7 @@ function PMP:OnBuildingRallyOrder( event )
 
         -- Extra X
         local Xparticle = ParticleManager:CreateParticleForTeam("particles/custom/x_marker.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
+        ParticleManager:SetParticleControl(Xparticle, 0, position) --Orientation
         ParticleManager:SetParticleControl(Xparticle, 15, Vector(color[1], color[2], color[3])) --Color   
     end
 end

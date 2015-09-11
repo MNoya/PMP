@@ -58,6 +58,7 @@ function ShowWearable( unit, target_model )
 end
 
 function ClearPropWearableSlot( unit, slot )
+    if not unit.prop_wearables then return end
     if unit.prop_wearables[slot] then 
         if unit.prop_wearables[slot].fx then
             ParticleManager:DestroyParticle(unit.prop_wearables[slot].fx, true)
@@ -67,6 +68,7 @@ function ClearPropWearableSlot( unit, slot )
 end
 
 function ClearPropWearables( unit )
+    if not unit.prop_wearables then return end
     for k,v in pairs(unit.prop_wearables) do
         ClearPropWearableSlot(unit, k)
     end
@@ -89,19 +91,15 @@ end
 
 -------------------------------------------
 
-function PMP:GetOriginalWearableInSlot(unit, name)
+function GetOriginalWearableInSlot(unit, name)
     -- If it was already stored, return the reference directly
     if not unit.item_wearables then unit.item_wearables = {} end
     if unit.item_wearables[name] then
         return unit.item_wearables[name]
 
-    else
-        local race = GetRace(unit)
-        local wearables = GetWearablesForRace(race)
-
-        local table_slot = wearables[name]
-        local defaut_wearable_name = table_slot["Default"]
-        local target_wearable = GetWearable(unit, defaut_wearable_name)
+    else       
+        local default_wearable_name = GetDefaultWearableNameForSlot(unit, name)
+        local target_wearable = GetWearable(unit, default_wearable_name)
 
         -- Keep a reference
         unit.item_wearables[name] = target_wearable
@@ -110,8 +108,22 @@ function PMP:GetOriginalWearableInSlot(unit, name)
     end
 end
 
-function GetWearablesForRace(race)
-    return HATS[race]
+function GetDefaultWearableNameForSlot(unit, name)
+    local wearables = GetWearablesForUnit(unit)
+    if not wearables then
+        print("No wearables for ",unit:GetUnitName()," in slot ",name)
+        return
+    end
+
+    local table_slot = wearables[name]
+    local default_wearable_name = table_slot["Default"]
+
+    return default_wearable_name
+end
+
+function GetWearablesForUnit(unit)
+    HATS = LoadKeyValues("scripts/kv/wearables.kv") --Reload for tests
+    return HATS[unit:GetUnitName()]
 end
 
 

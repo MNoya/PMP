@@ -5,7 +5,7 @@
 {
     "BaseClass"                     "ability_datadriven"
     "AbilityTextureName"            "summon_super_peon"
-    "MaxLevel"                      "1"
+    "MaxLevel"                      "3"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
@@ -33,4 +33,35 @@
             "Duration"      "%duration"
         }
     }
+
+    "Modifiers"
+    {
+        "modifier_super_spawn"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SuperPeonCharges"
+                }
+            }
+        }
+
+        "modifier_super_unit_charges"
+        {
+            "IsHidden"  "0"
+        }
+    }
+}
+
+"summon_super_peon_empty"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "summon_super_peon"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 }

@@ -13,12 +13,9 @@
 			<Label id="LumberText" text="" html="true" class="TitleFont" />
 			<Image hittest="false" id="LumberIcon" src="file://{images}/custom_game/lumber_icon.png" />
 		</Panel>
-		<Panel class='FoodPanel Green'>
+		<Panel class='FoodPanel'>
 			<Label id="FoodText" text= "" html="true" class="TitleFont" />
 			<Image hittest="false" id="FoodIcon" src="file://{images}/custom_game/food_icon.png" />
-		</Panel>
-		<Panel hittest="false" class='UpkeepPanel'>
-			<Label hittest="false" id="UpkeepText" text="" html="true" class="TitleFont"/>
 		</Panel>
 	</Panel>
 </root>

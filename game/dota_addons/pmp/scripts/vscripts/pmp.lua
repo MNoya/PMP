@@ -1,7 +1,7 @@
  print ('[PMP] pmp.lua' )
 
 DISABLE_FOG_OF_WAR_ENTIRELY = false
-CAMERA_DISTANCE_OVERRIDE = 1700
+CAMERA_DISTANCE_OVERRIDE = 1500
 GOLD_PER_TICK = 5
 GOLD_TICK_TIME = 7 --Same as the peon spawn time
 UNSEEN_FOG_ENABLED = false
@@ -11,6 +11,7 @@ INITIAL_PEONS = 6
 INITIAL_GOLD = 50
 INITIAL_LUMBER = 50
 INITIAL_FOOD_LIMIT = 10
+XP_PER_PEON = 10
 
 TEAM_COLORS = {}
 TEAM_COLORS[DOTA_TEAM_GOODGUYS] = { 52, 85, 255 }   --  Blue
@@ -272,7 +273,11 @@ function PMP:OnPlayerPickHero(keys)
     hero.garage:SetControllableByPlayer(playerID, true)
     hero.garage.rally_point = center_position
 
-    Timers:CreateTimer(1/30, function() NewSelection(hero.garage) end)
+    Timers:CreateTimer(1/30, function() 
+        NewSelection(hero.garage)
+        PlayerResource:SetCameraTarget(playerID, hero.garage)
+        Timers:CreateTimer(2/30, function() PlayerResource:SetCameraTarget(playerID, nil) end)
+    end)
 
     -- Apply 4 layers of invulnerability from towers
     ApplyModifier(hero.garage, "modifier_invulnerability_layer")
@@ -305,6 +310,7 @@ function PMP:OnPlayerPickHero(keys)
 	-- Barricades - 3 on each side
     print("[PMP] Setting Up Barricades")
     hero.barricade_positions = {}
+    hero.barricades = {}
     local Barricades = GameRules.Barricades
     local randomN = Barricades["Random"]
 
@@ -321,6 +327,7 @@ function PMP:OnPlayerPickHero(keys)
             barricade:SetAngles(0, RandomInt(0,360), 0)
             barricade:SetAbsOrigin(GetGroundPosition(posX, barricade))
             barricade:SetOwner(hero)
+            table.insert(hero.barricades, barricade)
         end
 
         table.insert(hero.barricade_positions, pos)
@@ -338,6 +345,7 @@ function PMP:OnPlayerPickHero(keys)
             barricade:SetModelScale(Barricades[nBarricade]["Scale"])
             barricade:SetAngles(0, RandomInt(0,360), 0)
             barricade:SetAbsOrigin(GetGroundPosition(posY, barricade))
+            table.insert(hero.barricades, barricade)
         end
 
         table.insert(hero.barricade_positions, pos)
@@ -362,6 +370,11 @@ function PMP:OnPlayerPickHero(keys)
     hero.Upgrades["pulverize"] = 0
     hero.Upgrades["dodge"] = 0
     hero.Upgrades["spiked_armor"] = 0
+
+    hero.Upgrades["pimp_damage"] = 0
+    hero.Upgrades["pimp_armor"] = 0
+    hero.Upgrades["pimp_speed"] = 0
+    hero.Upgrades["pimp_regen"] = 0
 
     PMP:PrintUpgrades(playerID)
 
@@ -426,7 +439,7 @@ function PMP:OnHeroInGame(hero)
     -- Global upgrade abilities
     hero:AddAbility("pimp_damage")
     hero:AddAbility("pimp_armor")
-    hero:AddAbility("pimp_speeds")
+    hero:AddAbility("pimp_speed")
     hero:AddAbility("pimp_regen")
 
     hero:AddNoDraw()
@@ -482,40 +495,90 @@ function PMP:OnEntityKilled( event )
 
 	-- Owner handles of the unit
 	local player = killedUnit:GetPlayerOwner()
-    if not player then return end
+   
+    local playerID = 0
+    local hero
+    if player then
+        playerID = player:GetPlayerID()
+        hero = player:GetAssignedHero()
 
-    local playerID = player:GetPlayerID()
-    local hero = player:GetAssignedHero()
-
-	-- Hero Killed
-
-	-- Substract the Food Used
-    local food = GetFoodCost(killedUnit:GetUnitName())
-    ModifyFoodUsed(playerID, -food)
-
-	-- Table cleanup
-    local unit_table = GetPlayerUnits(playerID)
-    local unit_index = getIndexTable(unit_table, killedUnit)
-    if unit_index then
-        table.remove(unit_table, unit_index)
-    end
-
-	-- Remove prop wearable of a unit
-    if killedUnit:IsCreature() then
-        Timers:CreateTimer(4, function()
-            ClearPropWearables(killedUnit)
-        end)
-    end
-	
-	-- Give Experience to heroes based on the level of the killed creature
-
-    if IsCustomTower(killedUnit) then
+        -- Table cleanup
+        local unit_table = GetPlayerUnits(playerID)
         local unit_index = getIndexTable(unit_table, killedUnit)
+        if unit_index then
+            table.remove(unit_table, unit_index)
 
-        --GiveBountyToTeam(killerEntity:GetTeamNumber(), killedUnit)
-        ReduceInvulnerabilityCount(hero)
+            -- Substract the Food Used
+            local food = GetFoodCost(killedUnit:GetUnitName())
+            ModifyFoodUsed(playerID, -food)
+        end
     end
 
+    if killedUnit:IsCreature() then
+        
+        -- Tower killed
+        if IsCustomTower(killedUnit) then
+            local tower_table = GetPlayerTowers(playerID)
+            local unit_index = getIndexTable(tower_table, killedUnit)
+            
+            if unit_index then
+                table.remove(tower_table, unit_index)
+            end
+
+            ReduceInvulnerabilityCount(hero)
+        
+        -- Garage killed
+        elseif IsCityCenter(killedUnit) then
+            print("Garage Down for player",playerID)
+            local playerUnits = GetPlayerUnits(playerID)
+            local playerShop = GetPlayerShop(playerID)
+            local playerBarricades = GetPlayerBarricades(playerID)
+           
+            -- Clear player units
+            for k,unit in pairs(playerUnits) do
+                Timers:CreateTimer(1/30 * k, function()
+                    unit:ForceKill(false)
+                end)
+            end
+
+            -- Clear barricades
+            for k,barricade in pairs(playerBarricades) do
+                UTIL_Remove(barricade)
+            end 
+
+            -- Clear player shop
+            if IsValidAlive(playerShop) then
+                playerShop:ForceKill(false)
+            end
+
+            -- Give a ghost peon unit to scout
+            local origin = killedUnit:GetAbsOrigin()
+            if hero then
+                hero.ghost = CreateUnitByName("peon_ghost", origin, false, hero, hero, killedUnit:GetTeamNumber())
+                hero.ghost:SetOwner(hero)
+                hero.ghost:SetControllableByPlayer(playerID, true)
+            end
+
+        -- Peon Creature killed
+        else
+            -- Remove prop wearables
+            Timers:CreateTimer(4, function()
+                ClearPropWearables(killedUnit)
+            end)
+
+            -- Give experience globally to the main hero
+            if hero then
+                hero:AddExperience(XP_PER_PEON, true, true)
+            end
+
+            -- If not denied, give lumber    
+            if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() then
+                local lumber_bounty = GetLumberBounty(killedUnit)
+                ModifyLumber(playerID, lumber_bounty)
+                PopupLumber(killerEntity, lumber_bounty)
+            end
+        end
+    end
 end
 
 -- Player changed selection

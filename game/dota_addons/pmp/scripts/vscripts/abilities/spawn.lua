@@ -30,11 +30,7 @@ function SpawnUnit( event )
         unit:SetControllableByPlayer(playerID, true)
         FindClearSpaceForUnit(unit, position, true)
 
-        if duration then
-            unit:AddNewModifier(caster, nil, "modifier_kill", {duration=duration})
-        else
-            table.insert(hero.units, unit)
-        end
+        table.insert(hero.units, unit)
 
         -- Add all current upgrades
         PMP:ApplyAllUpgrades(playerID, unit)
@@ -60,12 +56,31 @@ function SpawnSuperUnit( event )
     local position = caster:GetAbsOrigin()
     local teamID = caster:GetTeam()
 
+    local charges = caster:GetModifierStackCount("modifier_super_unit_charges", caster)
+    if charges and charges > 0 then
+        local unit = CreateUnitByName(unit_name, position, true, owner, owner, caster:GetTeamNumber())
+        unit:SetOwner(hero)
+        unit:SetControllableByPlayer(playerID, true)
+        FindClearSpaceForUnit(unit, position, true)
 
-    local unit = CreateUnitByName(unit_name, position, true, owner, owner, caster:GetTeamNumber())
-    unit:SetOwner(hero)
-    unit:SetControllableByPlayer(playerID, true)
-    FindClearSpaceForUnit(unit, position, true)
+        unit:AddNewModifier(caster, nil, "modifier_kill", {duration=duration})
+        
+        charges = charges - 1
+        caster:SetModifierStackCount("modifier_super_unit_charges", caster, charges)
+        ability:SetLevel(charges)
+        if charges == 0 then
+            caster:RemoveModifierByName("modifier_super_unit_charges")
+            local endAbility = TeachAbility(caster, "summon_super_peon_empty")
+            caster:SwapAbilities("summon_super_peon", "summon_super_peon_empty", false, true)
+        end
+    end
+end
 
-    unit:AddNewModifier(caster, nil, "modifier_kill", {duration=duration})
-    table.insert(hero.units, unit)
+function SuperPeonCharges( event )
+    Timers:CreateTimer(0.1, function()
+        local ability = event.ability
+        local caster = event.caster
+        ability:ApplyDataDrivenModifier(caster, caster, "modifier_super_unit_charges", {})
+        caster:SetModifierStackCount("modifier_super_unit_charges", caster, 3)
+    end)
 end

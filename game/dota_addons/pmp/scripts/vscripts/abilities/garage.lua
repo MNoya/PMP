@@ -49,6 +49,7 @@ function BuildBarricades( event )
         barricade:SetAngles(0, RandomInt(0,360), 0)
         barricade:SetAbsOrigin(GetGroundPosition(randPos, barricade))
         barricade:SetOwner(hero)
+        table.insert(hero.barricades, barricade)
     end
 end
 
