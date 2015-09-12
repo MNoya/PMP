@@ -42,6 +42,7 @@ function UpgradeFinished( event )
 
 			print("New Rank: "..new_ability_name)
 			new_ability:SetLevel(new_ability:GetMaxLevel())
+			--new_ability:StartCooldown(1)
 			FireGameEvent( 'ability_values_force_check', { player_ID = pID })
 		else
 			print("Max Rank of "..upgrade_name.." reached!")
@@ -124,9 +125,8 @@ function PMP:ApplyUpgrade(unit, name, level)
 	else
 		local ability = TeachAbility(unit, name, level)
 		if not ability then
-
 			PMP:ApplyModifierUpgrade(unit, name, level)
-
+			
 			if not unit.prop_wearables then
 				unit.prop_wearables = {}
 			end
@@ -136,112 +136,25 @@ function PMP:ApplyUpgrade(unit, name, level)
                 return
             end
 
-		    local race_type_table = unit_wearables[name]
-		    if race_type_table then
-		        local level_table = race_type_table[tostring(level)]
-		        if level_table then
+            local slot_type_table = unit_wearables[name]
+			if slot_type_table then
+            	local level_table = slot_type_table[tostring(level)]	    
 
-		            local modelName = level_table["Model"]
-		            local model_type = level_table["Type"]
+            	if level_table then
 
-		            if model_type == "Change" then
+	        		local model_type = level_table["Type"]
+		        	if model_type == "Change" then
 
-		                -- Get original wearable and change its model
-		                local item_wearable = GetOriginalWearableInSlot(unit, name)
-		                if not item_wearable then
-		                	return
-		                end
+		            	SwapWearableInSlot(unit, level_table, name)
 
-		               	item_wearable:SetModel(modelName)
-		               	item_wearable:RemoveEffects(EF_NODRAW)
-		               	--print("Visible",item_wearable:GetModelName(),name)
+		        	elseif model_type == "Attach" then	
 
-		               	-- Clear any prop wearable the unit might have in this slot
-		               	ClearPropWearableSlot(unit, name)
-
-		            elseif model_type == "Attach" then
-
-                        --ACT_RESET
-                        unit:StartGesture(0)
-
-		            	-- Clear any prop wearable the unit might have in this slot
-		               	ClearPropWearableSlot(unit, name)
-
-		                -- Get original wearable and hide it
-		                local item_wearable = GetOriginalWearableInSlot(unit, name)
-		                if not item_wearable then
-		                	return
-		                end
-		                item_wearable:AddEffects(EF_NODRAW)
-		                item_wearable:SetModel(modelName) --Just to update portrait
-
-		                -- Frankestein the attachment   
-		                local point = level_table["Point"]
-		                local attach = unit:ScriptLookupAttachment(point)
-		                
-		                local new_prop = Entities:CreateByClassname("prop_dynamic")
-		                
-		                new_prop:SetModel(modelName)
-		                local scale = tonumber(level_table["Scale"]) or unit:GetModelScale()
-		                new_prop:SetModelScale(scale)		                
-		                
-		                -- Angles
-		                local pitch = tonumber(level_table["Pitch"])
-		                local yaw   = tonumber(level_table["Yaw"])
-		                local roll  = tonumber(level_table["Roll"])
-
-		                local angles = unit:GetAttachmentAngles(attach)
-
-		                angles = angles + Vector(pitch, yaw, roll)
-
-		                new_prop:SetAngles(angles.x,angles.y,angles.z)       
-
-		                -- Position
-		                local attach_pos = unit:GetAttachmentOrigin(attach)
-
-		                local frontOffset = tonumber(level_table["Front"])
-		                local rightOffset = tonumber(level_table["Right"])
-		                local upOffset    = tonumber(level_table["Up"])  
-		                
-		                local forward = frontOffset * --[[RotatePosition(Vector(0,0,0), QAngle(0,angles.y,0), Vector(1,0,0))]] (unit:GetForwardVector())
-		                local right = rightOffset * --[[RotatePosition(Vector(0,0,0), QAngle(0,-90,0), forward)]] (unit:GetRightVector())
-
-		                attach_pos = attach_pos + forward - right
-		                attach_pos.z = unit:GetAbsOrigin().z + upOffset
-
-		                new_prop:SetAbsOrigin(attach_pos)
-
-		                -- Particle
-		                local particleName = level_table["Particle"]
-		                if particleName then
-		                	local attach_fx = level_table["Attach_FX"]
-		                	new_prop.fx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, unit)
-		                	if attach_fx then
-			                	ParticleManager:SetParticleControlEnt(new_prop.fx, 0, new_prop, PATTACH_POINT_FOLLOW, attach_fx, new_prop:GetAbsOrigin(), true)
-			                	ParticleManager:SetParticleControlEnt(new_prop.fx, 1, new_prop, PATTACH_POINT_FOLLOW, attach_fx, new_prop:GetAbsOrigin(), true)
-			                end
-			            end
-
-			            -- Anim
-			            --[[local animation = level_table["Animation"]
-			            if animation then
-			            	local propHandle = new_prop:GetEntityHandle()
-			            	Timers:CreateTimer(function()
-				            	
-				            	FireEntityIOInputString(propHandle,"SetAnimation",animation)
-				            	return 1
-			            	end)
-			            end]]
-
-			            -- Attach and store it
-                        new_prop:SetParent(unit, point)
-
-		                unit.prop_wearables[name] = new_prop
-		            end
+		        		AttachWearableInSlot(unit, level_table, name, 0.8)
+		        	end
 		        end
 		    end
-		end
-	end
+	    end
+    end
 
 	AdjustAbilityLayout(unit)
 end

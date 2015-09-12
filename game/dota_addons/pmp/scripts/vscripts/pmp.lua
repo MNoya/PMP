@@ -566,16 +566,18 @@ function PMP:OnEntityKilled( event )
                 ClearPropWearables(killedUnit)
             end)
 
-            -- Give experience globally to the main hero
-            if hero then
-                hero:AddExperience(XP_PER_PEON, true, true)
-            end
-
-            -- If not denied, give lumber    
             if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() then
-                local lumber_bounty = GetLumberBounty(killedUnit)
-                ModifyLumber(playerID, lumber_bounty)
-                PopupLumber(killerEntity, lumber_bounty)
+                -- Give experience globally to the main hero
+                if hero then
+                    hero:AddExperience(XP_PER_PEON, true, true)
+                end
+
+                -- If not denied, give lumber    
+                if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() then
+                    local lumber_bounty = GetLumberBounty(killedUnit)
+                    ModifyLumber(playerID, lumber_bounty)
+                    PopupLumber(killerEntity, lumber_bounty)
+                end
             end
         end
     end
