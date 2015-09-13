@@ -76,6 +76,12 @@ end
 -- Create a new prop_dynamic wearable in this slot name
 function AttachWearableInSlot( unit, model_table, slot, delay )
 
+    -- Model of choice
+    local point = model_table["Point"]
+    local modelName = model_table["Model"]
+    local modelScale = tonumber(model_table["Scale"]) or unit:GetModelScale()
+    local animation = model_table["Animation"] or ""
+
     -- Clear any prop wearable the unit might have in this slot
     ClearPropWearableSlot(unit, slot)
 
@@ -83,50 +89,39 @@ function AttachWearableInSlot( unit, model_table, slot, delay )
     local item_wearable = GetOriginalWearableInSlot(unit, slot)
     if not item_wearable then
         return
+    else
+        item_wearable:AddEffects(EF_NODRAW)
+        item_wearable:SetModel(modelName)
     end
     
-    local modelName = model_table["Model"]
-    item_wearable:AddEffects(EF_NODRAW)
-    item_wearable:SetModel(modelName) --Just to update portrait
-
-    -- Frankestein the attachment   
-    local point = model_table["Point"]
-    local attach = unit:ScriptLookupAttachment(point)
-    
-    local new_prop = Entities:CreateByClassname("prop_dynamic")
-    
-    new_prop:SetModel(modelName)
-    local scale = tonumber(model_table["Scale"]) or unit:GetModelScale()
-    new_prop:SetModelScale(scale)                       
-    
-    -- Angles
+    -- Model offsets
     local pitch = tonumber(model_table["Pitch"])
     local yaw   = tonumber(model_table["Yaw"])
     local roll  = tonumber(model_table["Roll"])
 
-    local angles = unit:GetAttachmentAngles(attach) + Vector(pitch, yaw, roll)
+    local right = tonumber(model_table["Right"])
+    local front = tonumber(model_table["Front"])
+    local up    = tonumber(model_table["Up"])
 
-    new_prop:SetAngles(angles.x,angles.y,angles.z)       
+     -- "Euler Angle Version of Quaternion" - BMD Magic
+    local QX    = tonumber(model_table["QX"])
+    local QY    = tonumber(model_table["QY"])
+    local QZ    = tonumber(model_table["QZ"])
+    local angleSpace = QAngle(QX, QY, QZ)
 
-    -- Position
-    local attach_pos = unit:GetAttachmentOrigin(attach)
+    local offset = RotatePosition(Vector(0,0,0), RotationDelta(angleSpace, QAngle(0,0,0)), Vector(right,front,up))
 
-    local frontOffset = tonumber(model_table["Front"])
-    local rightOffset = tonumber(model_table["Right"])
-    local upOffset    = tonumber(model_table["Up"])  
-    
-    --[[ Old method:
-    local forward = frontOffset *  (unit:GetForwardVector())
-    local right = rightOffset * (unit:GetRightVector())
+    -- Frankestein the attachment
+    local new_prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = modelName, scale = modelScale, DefaultAnim = animation })
+    local attach = unit:ScriptLookupAttachment(point)
+    local angles = unit:GetAttachmentAngles(attach) + Vector(pitch, yaw, roll)  
+    local attach_pos = unit:GetAttachmentOrigin(attach) + RotatePosition(Vector(0,0,0), QAngle(angles.x,angles.y,angles.z), offset)
 
-    attach_pos = attach_pos + forward - right
-    attach_pos.z = unit:GetAbsOrigin().z + upOffset]]
-
-    local offset = Vector(frontOffset, rightOffset, upOffset)
-    local delta = RotationDelta(QAngle(0,0,0), QAngle(angles.x,angles.y,angles.z))
-    attach_pos = attach_pos + RotatePosition(Vector(0,0,0), delta, offset)
+    print('angleSpace = QAngle(' .. angles.x .. ', ' .. angles.y .. ', ' .. angles.z .. ')')
 
     new_prop:SetAbsOrigin(attach_pos)
+    new_prop:SetAngles(angles.x,angles.y,angles.z)
+    new_prop:SetParent(unit, point)
 
     -- Particle
     local particleName = model_table["Particle"]
@@ -142,10 +137,10 @@ function AttachWearableInSlot( unit, model_table, slot, delay )
         end
     end
 
-    -- Attach and store it
-    new_prop:SetParent(unit, point)
-
+     -- Store it
     unit.prop_wearables[slot] = new_prop
+    --return .3
+--end)
 end
 
 function ClearPropWearableSlot( unit, slot )

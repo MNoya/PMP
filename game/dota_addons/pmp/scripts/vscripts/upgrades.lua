@@ -11,6 +11,8 @@ function UpgradeFinished( event )
 		ModifyLumber(pID, -lumberCost)
 	end
 
+	caster:StartGesture(ACT_DOTA_SPAWN)
+
 	local upgrade_level = tonumber(event.Level)
 	local upgrade_name = event.Name
 

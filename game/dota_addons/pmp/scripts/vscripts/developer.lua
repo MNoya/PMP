@@ -4,7 +4,8 @@ CHEAT_CODES = {
     ["music"]       = function(...) PMP:Music(...) end,
     ["stopmusic"]   = function(...) PMP:StopMusic(...) end,
     ["pimp"]        = function(...) PMP:SetUpgrade(...) end,    -- upgrade [weapon/helm/armor/wings/health/critical_strike/stun_hit/poisoned_weapons/pulverize/dodge/spiked_armor] [level]
-    ["reset"]       = function(...) PMP:ResetAllUpgrades(...) end
+    ["reset"]       = function(...) PMP:ResetAllUpgrades(...) end,
+    ["freeze"]      = function(...) PMP:Freeze(...) end
     --bot race
     --set type model x y z
 }
@@ -23,7 +24,7 @@ function PMP:OnPlayerChat(keys)
     local input = split(text)
     local command = input[1]
     if CHEAT_CODES[command] then
-        print('Command:',command, "Player:",playerID, "Parameters",input[2], input[3], input[4])
+        --print('Command:',command, "Player:",playerID, "Parameters",input[2], input[3], input[4])
         CHEAT_CODES[command](playerID, input[2], input[3], input[4])
     end        
 end
@@ -119,4 +120,20 @@ end
 
 function PMP:StopMusic()
     SendToConsole("stopsound")
+end
+
+function PMP:Freeze()
+    GameRules.freeze = not GameRules.freeze
+
+    local units = GetPlayerUnits(0)
+    if GameRules.freeze then
+        for k,unit in pairs(units) do
+            unit:AddNewModifier(unit, nil, "modifier_faceless_void_chronosphere_freeze", {})
+            unit:SetForwardVector(Vector(0,-1,0))
+        end
+    else
+        for k,unit in pairs(units) do
+            unit:RemoveModifierByName("modifier_faceless_void_chronosphere_freeze")
+        end
+    end
 end

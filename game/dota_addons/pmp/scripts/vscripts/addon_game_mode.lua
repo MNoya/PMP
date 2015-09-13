@@ -7,6 +7,7 @@ end
 require('libraries/timers')
 require('libraries/popups')
 require('libraries/notifications')
+require('libraries/animations')
 require('pmp')
 require('orders')
 require('mechanics')
