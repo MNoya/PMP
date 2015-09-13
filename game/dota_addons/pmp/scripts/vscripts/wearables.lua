@@ -90,8 +90,9 @@ function AttachWearableInSlot( unit, model_table, slot, delay )
     if not item_wearable then
         return
     else
+        local defaultModelName = GetDefaultWearableNameForSlot(unit, slot)
         item_wearable:AddEffects(EF_NODRAW)
-        item_wearable:SetModel(modelName)
+        item_wearable:SetModel(defaultModelName)
     end
     
     -- Model offsets

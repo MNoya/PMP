@@ -17,6 +17,7 @@
 		"peon_pimpery"                                                                    "Peon Pimpery"
 		"peon_tower"                                                                      "Peon Tower"
 		"barricade"                                                                       "Barricade"
+		"peon_ghost"                                                                      "Ghost"
 
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_peon_cleave"                                               "Axe's Axe"
@@ -34,11 +35,14 @@
 		"DOTA_Tooltip_modifier_poisoned_weapons_debuff"                                   "Poisoned"
 		"DOTA_Tooltip_modifier_poisoned_weapons_debuff_Description"                       ""
 
+		"DOTA_Tooltip_modifier_super_unit_charges"                                        "Super Unit Charges"
+		"DOTA_Tooltip_modifier_super_unit_charges_Description"                            ""
 
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
 		"DOTA_Tooltip_modifier_invulnerability_layer_Description"                         "Towers left standing"
 
+		// Weapons
 		"DOTA_Tooltip_modifier_weapon1"                                                   "Weapon 1"
 		"DOTA_Tooltip_modifier_weapon1_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
@@ -129,6 +133,7 @@
 		"DOTA_Tooltip_modifier_weapon30"                                                  "Weapon30"
 		"DOTA_Tooltip_modifier_weapon30_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
+		// Helm
 		"DOTA_Tooltip_modifier_helm1"                                                     "Helm 1"
 		"DOTA_Tooltip_modifier_helm1_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
@@ -174,7 +179,7 @@
 		"DOTA_Tooltip_modifier_helm15"                                                    "Helm15"
 		"DOTA_Tooltip_modifier_helm15_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-
+		// Shield
 		"DOTA_Tooltip_modifier_shield1"                                                   "Shield1"
 		"DOTA_Tooltip_modifier_shield1_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
@@ -208,6 +213,7 @@
 		"DOTA_Tooltip_modifier_shield11"                                                  "Shield11"
 		"DOTA_Tooltip_modifier_shield11_Description"                                      "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
+		// Wings
 		"DOTA_Tooltip_modifier_wings1"                                                    "Wings 1"
 		"DOTA_Tooltip_modifier_wings1_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
@@ -272,6 +278,16 @@
 		"DOTA_Tooltip_ability_summon_super_peon_Description"                              ""
 		"DOTA_Tooltip_ability_summon_super_peon_duration"                                 "DURATION:"
 
+		"DOTA_Tooltip_ability_summon_super_peon_empty"                                    "Summon Super Peon Empty"
+		"DOTA_Tooltip_ability_summon_super_peon_empty_Description"                        ""
+		
+		"DOTA_Tooltip_ability_barrage_attack"                                             "Barrage Attack"
+		"DOTA_Tooltip_ability_barrage_attack_Description"                                 ""
+
+		"DOTA_Tooltip_ability_ghost_peon"                                                 "Ghost Peon"
+		"DOTA_Tooltip_ability_ghost_peon_Description"                                     ""
+
+
 		"DOTA_Tooltip_ability_upgrade_food_limit"                                         "Upgrade Food Limit"
 		"DOTA_Tooltip_ability_upgrade_food_limit_Description"                             ""
 
@@ -291,6 +307,7 @@
 		"DOTA_Tooltip_ability_hide_hero"                                                  "Hide Hero"
 		"DOTA_Tooltip_ability_hide_hero_Description"                                      ""
 
+		// Weapons
 		"DOTA_Tooltip_ability_upgrade_weapon1"                                            "Upgrade Weapon1"
 		"DOTA_Tooltip_ability_upgrade_weapon1_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_weapon1_lumber_cost"                                "LUMBER COST:"
@@ -303,6 +320,118 @@
 		"DOTA_Tooltip_ability_upgrade_weapon3_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_weapon3_lumber_cost"                                "LUMBER COST:"
 
+		"DOTA_Tooltip_ability_upgrade_weapon4"                                            "Upgrade Weapon4"
+		"DOTA_Tooltip_ability_upgrade_weapon4_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon4_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon5"                                            "Upgrade Weapon5"
+		"DOTA_Tooltip_ability_upgrade_weapon5_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon5_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon6"                                            "Upgrade Weapon6"
+		"DOTA_Tooltip_ability_upgrade_weapon6_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon6_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon7"                                            "Upgrade Weapon7"
+		"DOTA_Tooltip_ability_upgrade_weapon7_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon7_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon8"                                            "Upgrade Weapon8"
+		"DOTA_Tooltip_ability_upgrade_weapon8_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon8_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon9"                                            "Upgrade Weapon9"
+		"DOTA_Tooltip_ability_upgrade_weapon9_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon9_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon10"                                           "Upgrade Weapon10"
+		"DOTA_Tooltip_ability_upgrade_weapon10_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon10_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon11"                                           "Upgrade Weapon11"
+		"DOTA_Tooltip_ability_upgrade_weapon11_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon11_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon12"                                           "Upgrade Weapon12"
+		"DOTA_Tooltip_ability_upgrade_weapon12_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon12_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon13"                                           "Upgrade Weapon13"
+		"DOTA_Tooltip_ability_upgrade_weapon13_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon13_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon14"                                           "Upgrade Weapon14"
+		"DOTA_Tooltip_ability_upgrade_weapon14_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon14_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon15"                                           "Upgrade Weapon15"
+		"DOTA_Tooltip_ability_upgrade_weapon15_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon15_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon16"                                           "Upgrade Weapon16"
+		"DOTA_Tooltip_ability_upgrade_weapon16_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon16_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon17"                                           "Upgrade Weapon17"
+		"DOTA_Tooltip_ability_upgrade_weapon17_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon17_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon18"                                           "Upgrade Weapon18"
+		"DOTA_Tooltip_ability_upgrade_weapon18_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon18_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon19"                                           "Upgrade Weapon19"
+		"DOTA_Tooltip_ability_upgrade_weapon19_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon19_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon20"                                           "Upgrade Weapon20"
+		"DOTA_Tooltip_ability_upgrade_weapon20_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon20_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon21"                                           "Upgrade Weapon21"
+		"DOTA_Tooltip_ability_upgrade_weapon21_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon21_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon22"                                           "Upgrade Weapon22"
+		"DOTA_Tooltip_ability_upgrade_weapon22_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon22_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon23"                                           "Upgrade Weapon23"
+		"DOTA_Tooltip_ability_upgrade_weapon23_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon23_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon24"                                           "Upgrade Weapon24"
+		"DOTA_Tooltip_ability_upgrade_weapon24_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon24_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon25"                                           "Upgrade Weapon25"
+		"DOTA_Tooltip_ability_upgrade_weapon25_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon25_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon26"                                           "Upgrade Weapon26"
+		"DOTA_Tooltip_ability_upgrade_weapon26_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon26_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon27"                                           "Upgrade Weapon27"
+		"DOTA_Tooltip_ability_upgrade_weapon27_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon27_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon28"                                           "Upgrade Weapon28"
+		"DOTA_Tooltip_ability_upgrade_weapon28_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon28_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon29"                                           "Upgrade Weapon29"
+		"DOTA_Tooltip_ability_upgrade_weapon29_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon29_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon30"                                           "Upgrade Weapon30"
+		"DOTA_Tooltip_ability_upgrade_weapon30_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon30_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon_final"                                       "Upgrade Weapon Final"
+		"DOTA_Tooltip_ability_upgrade_weapon_final_Description"                           ""
+
+		// Helms
 		"DOTA_Tooltip_ability_upgrade_helm1"                                              "Upgrade Helm1"
 		"DOTA_Tooltip_ability_upgrade_helm1_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm1_lumber_cost"                                  "LUMBER COST:"
@@ -315,18 +444,108 @@
 		"DOTA_Tooltip_ability_upgrade_helm3_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm3_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_armor1"                                             "Upgrade Armor1"
-		"DOTA_Tooltip_ability_upgrade_armor1_Description"                                 ""
-		"DOTA_Tooltip_ability_upgrade_armor1_lumber_cost"                                 "LUMBER COST:"
+		
 
-		"DOTA_Tooltip_ability_upgrade_armor2"                                             "Upgrade Armor2"
-		"DOTA_Tooltip_ability_upgrade_armor2_Description"                                 ""
-		"DOTA_Tooltip_ability_upgrade_armor2_lumber_cost"                                 "LUMBER COST:"
+		"DOTA_Tooltip_ability_upgrade_helm4"                                              "Upgrade Helm4"
+		"DOTA_Tooltip_ability_upgrade_helm4_Description"                                  ""
+		"DOTA_Tooltip_ability_upgrade_helm4_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_armor3"                                             "Upgrade Armor3"
-		"DOTA_Tooltip_ability_upgrade_armor3_Description"                                 ""
-		"DOTA_Tooltip_ability_upgrade_armor3_lumber_cost"                                 "LUMBER COST:"
+		"DOTA_Tooltip_ability_upgrade_helm5"                                              "Upgrade Helm5"
+		"DOTA_Tooltip_ability_upgrade_helm5_Description"                                  ""
+		"DOTA_Tooltip_ability_upgrade_helm5_lumber_cost"                                  "LUMBER COST:"
 
+		"DOTA_Tooltip_ability_upgrade_helm6"                                              "Upgrade Helm6"
+		"DOTA_Tooltip_ability_upgrade_helm6_Description"                                  ""
+		"DOTA_Tooltip_ability_upgrade_helm6_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm7"                                              "Upgrade Helm7"
+		"DOTA_Tooltip_ability_upgrade_helm7_Description"                                  ""
+		"DOTA_Tooltip_ability_upgrade_helm7_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm8"                                              "Upgrade Helm8"
+		"DOTA_Tooltip_ability_upgrade_helm8_Description"                                  ""
+		"DOTA_Tooltip_ability_upgrade_helm8_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm9"                                              "Upgrade Helm9"
+		"DOTA_Tooltip_ability_upgrade_helm9_Description"                                  ""
+		"DOTA_Tooltip_ability_upgrade_helm9_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm10"                                             "Upgrade Helm10"
+		"DOTA_Tooltip_ability_upgrade_helm10_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_helm10_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm11"                                             "Upgrade Helm11"
+		"DOTA_Tooltip_ability_upgrade_helm11_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_helm11_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm12"                                             "Upgrade Helm12"
+		"DOTA_Tooltip_ability_upgrade_helm12_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_helm12_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm13"                                             "Upgrade Helm13"
+		"DOTA_Tooltip_ability_upgrade_helm13_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_helm13_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm14"                                             "Upgrade Helm14"
+		"DOTA_Tooltip_ability_upgrade_helm14_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_helm14_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm15"                                             "Upgrade Helm15"
+		"DOTA_Tooltip_ability_upgrade_helm15_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_helm15_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_helm_final"                                         "Upgrade Helm Final"
+		"DOTA_Tooltip_ability_upgrade_helm_final_Description"                             ""
+
+		// Shields
+		"DOTA_Tooltip_ability_upgrade_shield1"                                            "Upgrade Shield1"
+		"DOTA_Tooltip_ability_upgrade_shield1_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield1_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield2"                                            "Upgrade Shield2"
+		"DOTA_Tooltip_ability_upgrade_shield2_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield2_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield3"                                            "Upgrade Shield3"
+		"DOTA_Tooltip_ability_upgrade_shield3_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield3_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield4"                                            "Upgrade Shield4"
+		"DOTA_Tooltip_ability_upgrade_shield4_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield4_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield5"                                            "Upgrade Shield5"
+		"DOTA_Tooltip_ability_upgrade_shield5_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield5_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield6"                                            "Upgrade Shield6"
+		"DOTA_Tooltip_ability_upgrade_shield6_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield6_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield7"                                            "Upgrade Shield7"
+		"DOTA_Tooltip_ability_upgrade_shield7_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield7_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield8"                                            "Upgrade Shield8"
+		"DOTA_Tooltip_ability_upgrade_shield8_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield8_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield9"                                            "Upgrade Shield9"
+		"DOTA_Tooltip_ability_upgrade_shield9_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_shield9_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield10"                                           "Upgrade Shield10"
+		"DOTA_Tooltip_ability_upgrade_shield10_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_shield10_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield11"                                           "Upgrade Shield11"
+		"DOTA_Tooltip_ability_upgrade_shield11_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_shield11_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_shield_final"                                       "Upgrade Shield Final"
+		"DOTA_Tooltip_ability_upgrade_shield_final_Description"                           ""
+
+		// Wings
 		"DOTA_Tooltip_ability_upgrade_wings1"                                             "Upgrade Wings1"
 		"DOTA_Tooltip_ability_upgrade_wings1_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings1_lumber_cost"                                 "LUMBER COST:"
@@ -339,6 +558,30 @@
 		"DOTA_Tooltip_ability_upgrade_wings3_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings3_lumber_cost"                                 "LUMBER COST:"
 
+		"DOTA_Tooltip_ability_upgrade_wings4"                                             "Upgrade Wings4"
+		"DOTA_Tooltip_ability_upgrade_wings4_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_wings4_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_wings5"                                             "Upgrade Wings5"
+		"DOTA_Tooltip_ability_upgrade_wings5_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_wings5_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_wings6"                                             "Upgrade Wings6"
+		"DOTA_Tooltip_ability_upgrade_wings6_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_wings6_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_wings7"                                             "Upgrade Wings7"
+		"DOTA_Tooltip_ability_upgrade_wings7_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_wings7_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_wings8"                                             "Upgrade Wings8"
+		"DOTA_Tooltip_ability_upgrade_wings8_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_wings8_lumber_cost"                                 "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_wings_final"                                        "Upgrade Wings Final"
+		"DOTA_Tooltip_ability_upgrade_wings_final_Description"                            ""
+
+		//-----
 		"DOTA_Tooltip_ability_upgrade_health"                                             "Upgrade Health"
 		"DOTA_Tooltip_ability_upgrade_health_Description"                                 ""
 
@@ -381,8 +624,8 @@
 		"DOTA_Tooltip_ability_pimp_armor"                                                 "Pimp Armor"
 		"DOTA_Tooltip_ability_pimp_armor_Description"                                     "Increases the armor of your units and buildings by 1."
 
-		"DOTA_Tooltip_ability_pimp_speeds"                                                "Pimp Speeds"
-		"DOTA_Tooltip_ability_pimp_speeds_Description"                                    "Increases the movement and attack speeds of your units and buildings by 5%."
+		"DOTA_Tooltip_ability_pimp_speed"                                                 "Pimp Speed"
+		"DOTA_Tooltip_ability_pimp_speed_Description"                                     "Increases the movement and attack speeds of your units and buildings by 5%."
 
 		"DOTA_Tooltip_ability_pimp_regen"                                                 "Pimp Regen"
 		"DOTA_Tooltip_ability_pimp_regen_Description"                                     "Increases the regeneration rate of your units and buildings."

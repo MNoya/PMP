@@ -21,7 +21,7 @@
         "modifier_barrage_attack"
         {
             "Passive"       "1"
-            "IsHidden"      "0"
+            "IsHidden"      "1"
             
             "OnAttack"
             {

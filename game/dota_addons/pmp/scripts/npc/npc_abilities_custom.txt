@@ -593,7 +593,7 @@
 	        "modifier_barrage_attack"
 	        {
 	            "Passive"       "1"
-	            "IsHidden"      "0"
+	            "IsHidden"      "1"
 	            
 	            "OnAttack"
 	            {
@@ -626,6 +626,7 @@
 			"dummy_modifier"
 			{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
@@ -653,6 +654,7 @@
 			"dummy_modifier"
 			{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
@@ -678,6 +680,7 @@
 			"dummy_modifier"
 			{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
@@ -706,6 +709,7 @@
 			"dummy_modifier"
 			{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
@@ -733,6 +737,7 @@
 			"dummy_modifier"
 			{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
