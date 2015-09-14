@@ -42,7 +42,7 @@ function BuildBarricades( event )
     local randomN = Barricades["Random"]
     for k,position in pairs(hero.barricade_positions) do
         local nBarricade = tostring(RandomInt(1, randomN))
-        local randPos = position+RandomVector(RandomInt(-80,80))
+        local randPos = position+RandomVector(RandomInt(-70,70))
         local barricade = CreateUnitByName("barricade", randPos, false, hero, hero, teamNumber)
         barricade:SetModel(Barricades[nBarricade]["Model"])
         barricade:SetModelScale(Barricades[nBarricade]["Scale"])

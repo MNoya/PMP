@@ -15,6 +15,8 @@
 		</Panel>
 		<Panel class='FoodPanel'>
 			<Label id="FoodText" text= "" html="true" class="TitleFont" />
+		</Panel>
+		<Panel class='FoodUsedLimit'>
 			<Image hittest="false" id="FoodIcon" src="file://{images}/custom_game/food_icon.png" />
 		</Panel>
 	</Panel>

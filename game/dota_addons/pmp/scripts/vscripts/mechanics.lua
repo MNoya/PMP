@@ -60,17 +60,19 @@ end
 function SetFoodUsed( pID, value )
     local player = PlayerResource:GetPlayer(pID)
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
-    
+    local race = GetRace(hero)
+
     hero.food_used = value
-    CustomGameEventManager:Send_ServerToPlayer(player, 'player_food_changed', { food_used = hero.food_used, food_limit = hero.food_limit }) 
+    CustomGameEventManager:Send_ServerToPlayer(player, 'player_food_changed', { food_used = hero.food_used, food_limit = hero.food_limit, race = race}) 
 end
 
 function SetFoodLimit( pID, value )
     local player = PlayerResource:GetPlayer(pID)
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
+    local race = GetRace(hero)
     
     hero.food_limit = value
-    CustomGameEventManager:Send_ServerToPlayer(player, 'player_food_changed', { food_used = hero.food_used, food_limit = hero.food_limit }) 
+    CustomGameEventManager:Send_ServerToPlayer(player, 'player_food_changed', { food_used = hero.food_used, food_limit = hero.food_limit, race = race }) 
 end
 
 -- Spawn rate starts at 1 and can be upgraded up to 10 per time
@@ -174,6 +176,12 @@ end
 
 function IsValidAlive( unit )
     return unit and IsValidEntity(unit) and unit:IsAlive()
+end
+
+-- Leaders have "_leader" in their name
+function IsLeaderUnit( unit )
+    local unit_name = unit:GetUnitName()
+    return (string.match(unit_name,"_leader"))
 end
 
 -- Super Peon have "super_" in their name

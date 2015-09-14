@@ -397,7 +397,7 @@
 	    "Model"                     "models/heroes/witchdoctor/witchdoctor.vmdl"
 	    "ModelScale"                "0.8"
 	    "Level"                     "2"
-	    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
 	    "HealthBarOffset"           "140"
 	    "SoundSet"                  "Hero_WitchDoctor"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
@@ -417,9 +417,9 @@
 	    
 	    // Attack
 	    //----------------------------------------------------------------
-	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-	    "AttackDamageMin"           "16.0"
-	    "AttackDamageMax"           "20.0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageMin"           "0.0"
+	    "AttackDamageMax"           "0.0"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
 	    "AttackRate"                "1.75"
 	    "AttackAnimationPoint"      "0.43"
@@ -475,6 +475,7 @@
 	            "Wearable1"     {   "ItemDef"       "5176"        } //"Tribal Megadon Mask"
 	            "Wearable2"     {   "ItemDef"       "6577"        } //"Witch Staff"
 	            "Wearable3"     {   "ItemDef"       "4096"        } //"Belt o' Wicked Badness"
+	            "Wearable4"     {   "ItemDef"       "96"          } //Default belt to replace
 	        }
 	    }
 	}
@@ -592,7 +593,7 @@
 	
 	    "UnitLabel"                 "city_center"
 	
-	    "MinimapIcon"               "minimap_ancient"
+	    "MinimapIcon"               "minimap_racks90"
 	    "HealthBarOffset"           "250"
 	    
 	    // Abilities
@@ -866,8 +867,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "600"
-	    "VisionNighttimeRange"      "600"
+	    "VisionDaytimeRange"        "1600"
+	    "VisionNighttimeRange"      "1600"
 	    
 	    // Team
 	    //----------------------------------------------------------------

@@ -8,7 +8,7 @@
     "BaseClass"                     "ability_lua"
     "ScriptFile"                    "abilities/upgrade_food_limit.lua"
     "AbilityTextureName"            "upgrade_food_limit"
-    "MaxLevel"                      "100"
+    "MaxLevel"                      "90"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "AbilityGoldCost"               "20"

@@ -101,7 +101,14 @@ function PMP:SetUpgrade( playerID, name, level )
 
 	-- Apply the upgrade to all units
 	for _,unit in pairs(Units) do
-		PMP:ApplyUpgrade(unit, name, level)
+		-- Speed upgrades are applied to all units
+		if name == "wings" then
+			PMP:ApplyUpgrade(unit, name, level)
+		else
+			if not IsLeaderUnit(unit) then
+				PMP:ApplyUpgrade(unit, name, level)
+			end
+		end
 	end
 
 	-- Health also applies to buildings
@@ -183,7 +190,7 @@ function PMP:ApplyModifierUpgradeStacks( unit, name, level )
 		unit:SetModifierStackCount(modifierName, hero, level)
 	else
 		ability:ApplyDataDrivenModifier(hero, unit, modifierName, {})
-		unit:SetModifierStackCount(modifierName, hero, 1)
+		unit:SetModifierStackCount(modifierName, hero, level)
 	end
 end
 
@@ -197,7 +204,14 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 				PMP:ApplyModifierUpgradeStacks(unit, name, level)
 			end
 		elseif level ~= 0 then
-			PMP:ApplyUpgrade(unit, name, level)
+			-- Speed upgrades are applied to all units
+			if name == "wings" then
+				PMP:ApplyUpgrade(unit, name, level)
+			else
+				if not IsLeaderUnit(unit) then
+					PMP:ApplyUpgrade(unit, name, level)
+				end
+			end
 		end
 	end
 end

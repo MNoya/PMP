@@ -32,9 +32,10 @@
 "ability_tower"
 {
 	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"tower_bounty"
 	"MaxLevel" 						"1"
 
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 	"Modifiers"
 	{

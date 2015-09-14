@@ -272,27 +272,27 @@
 		"DOTA_Tooltip_ability_spawn_peon_Description"                                     ""
 
 		"DOTA_Tooltip_ability_spawn_peon_leader"                                          "Spawn Peon Leader"
-		"DOTA_Tooltip_ability_spawn_peon_leader_Description"                              ""
+		"DOTA_Tooltip_ability_spawn_peon_leader_Description"                              "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn."
 
 		"DOTA_Tooltip_ability_summon_super_peon"                                          "Summon Super Peon"
-		"DOTA_Tooltip_ability_summon_super_peon_Description"                              ""
+		"DOTA_Tooltip_ability_summon_super_peon_Description"                              "Spawn a Super Unit that will defend your base for 20 seconds.\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n"
 		"DOTA_Tooltip_ability_summon_super_peon_duration"                                 "DURATION:"
+		"DOTA_Tooltip_ability_summon_super_peon_Note0"									  "Use it wisely!"
 
-		"DOTA_Tooltip_ability_summon_super_peon_empty"                                    "Summon Super Peon Empty"
-		"DOTA_Tooltip_ability_summon_super_peon_empty_Description"                        ""
+		"DOTA_Tooltip_ability_summon_super_peon_empty"                                    "Summon Super Peon"
+		"DOTA_Tooltip_ability_summon_super_peon_empty_Description"                        "You've used all your super units."
 		
 		"DOTA_Tooltip_ability_barrage_attack"                                             "Barrage Attack"
 		"DOTA_Tooltip_ability_barrage_attack_Description"                                 ""
 
 		"DOTA_Tooltip_ability_ghost_peon"                                                 "Ghost Peon"
-		"DOTA_Tooltip_ability_ghost_peon_Description"                                     ""
-
+		"DOTA_Tooltip_ability_ghost_peon_Description"                                     "You have been defeated"
 
 		"DOTA_Tooltip_ability_upgrade_food_limit"                                         "Upgrade Food Limit"
-		"DOTA_Tooltip_ability_upgrade_food_limit_Description"                             ""
+		"DOTA_Tooltip_ability_upgrade_food_limit_Description"                             "Increase your food capacity by 1"
 
 		"DOTA_Tooltip_ability_upgrade_spawn_rate"                                         "Upgrade Spawn Rate"
-		"DOTA_Tooltip_ability_upgrade_spawn_rate_Description"                             ""
+		"DOTA_Tooltip_ability_upgrade_spawn_rate_Description"                             "Increase the amount of peons spawned by 1"
 
 		"DOTA_Tooltip_ability_build_barricades"                                           "Build Barricades"
 		"DOTA_Tooltip_ability_build_barricades_Description"                               "Spawns additional barricades around your base"
@@ -301,321 +301,322 @@
 		"DOTA_Tooltip_ability_barricade_hit_Description"                                  "Takes 2 hits to destroy"
 
 		"DOTA_Tooltip_ability_repair_buildings"                                           "Repair Buildings"
-		"DOTA_Tooltip_ability_repair_buildings_Description"                               "Repairs 20% of your buildings HP"
+		"DOTA_Tooltip_ability_repair_buildings_Description"                               "Repairs 20%% of your buildings HP"
 		"DOTA_Tooltip_ability_repair_buildings_repair_percent"                            "REPAIR PERCENT:"
 
 		"DOTA_Tooltip_ability_hide_hero"                                                  "Hide Hero"
 		"DOTA_Tooltip_ability_hide_hero_Description"                                      ""
 
+		"DOTA_Tooltip_ability_ability_tower"                                              "Gold and Lumber Reserve"
+		"DOTA_Tooltip_ability_ability_tower_Description"                                  "80 gold and 20 lumber for killing this unit!"
+
 		// Weapons
-		"DOTA_Tooltip_ability_upgrade_weapon1"                                            "Upgrade Weapon1"
-		"DOTA_Tooltip_ability_upgrade_weapon1_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon1"                                            "Upgrade Weapon (1)"
+		"DOTA_Tooltip_ability_upgrade_weapon1_Description"                                "Pimp your units with Skullsplitter Axe!\n+2 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon1_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon2"                                            "Upgrade Weapon2"
-		"DOTA_Tooltip_ability_upgrade_weapon2_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon2"                                            "Upgrade Weapon (2)"
+		"DOTA_Tooltip_ability_upgrade_weapon2_Description"                                "Pimp your units with Wyvernguard Edge!\n+4 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon2_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon3"                                            "Upgrade Weapon3"
-		"DOTA_Tooltip_ability_upgrade_weapon3_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon3"                                            "Upgrade Weapon (3)"
+		"DOTA_Tooltip_ability_upgrade_weapon3_Description"                                "Pimp your units with Mountain Splitter!\n+6 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon3_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon4"                                            "Upgrade Weapon4"
-		"DOTA_Tooltip_ability_upgrade_weapon4_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon4"                                            "Upgrade Weapon (4)"
+		"DOTA_Tooltip_ability_upgrade_weapon4_Description"                                "Pimp your units with Ram's Head Blade!\n+8 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon4_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon5"                                            "Upgrade Weapon5"
-		"DOTA_Tooltip_ability_upgrade_weapon5_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon5"                                            "Upgrade Weapon (5)"
+		"DOTA_Tooltip_ability_upgrade_weapon5_Description"                                "Pimp your units with Trident!\n+12 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon5_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon6"                                            "Upgrade Weapon6"
-		"DOTA_Tooltip_ability_upgrade_weapon6_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon6"                                            "Upgrade Weapon (6)"
+		"DOTA_Tooltip_ability_upgrade_weapon6_Description"                                "Pimp your units with Lance of the Wurmblood!\n+16 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon6_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon7"                                            "Upgrade Weapon7"
-		"DOTA_Tooltip_ability_upgrade_weapon7_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon7"                                            "Upgrade Weapon (7)"
+		"DOTA_Tooltip_ability_upgrade_weapon7_Description"                                "Pimp your units with Tormented Staff!\n+20 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon7_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon8"                                            "Upgrade Weapon8"
-		"DOTA_Tooltip_ability_upgrade_weapon8_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon8"                                            "Upgrade Weapon (8)"
+		"DOTA_Tooltip_ability_upgrade_weapon8_Description"                                "Pimp your units with Rat Staff!\n+24 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon8_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon9"                                            "Upgrade Weapon9"
-		"DOTA_Tooltip_ability_upgrade_weapon9_Description"                                ""
+		"DOTA_Tooltip_ability_upgrade_weapon9"                                            "Upgrade Weapon (9)"
+		"DOTA_Tooltip_ability_upgrade_weapon9_Description"                                "Pimp your units with Dazolator!\n+30 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon9_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon10"                                           "Upgrade Weapon10"
-		"DOTA_Tooltip_ability_upgrade_weapon10_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon10"                                           "Upgrade Weapon (10)"
+		"DOTA_Tooltip_ability_upgrade_weapon10_Description"                               "Pimp your units with Relic Sword!\n+36 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon10_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon11"                                           "Upgrade Weapon11"
-		"DOTA_Tooltip_ability_upgrade_weapon11_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon11"                                           "Upgrade Weapon (11)"
+		"DOTA_Tooltip_ability_upgrade_weapon11_Description"                               "Pimp your units with Winterblight!\n+42 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon11_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon12"                                           "Upgrade Weapon12"
-		"DOTA_Tooltip_ability_upgrade_weapon12_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon12"                                           "Upgrade Weapon (12)"
+		"DOTA_Tooltip_ability_upgrade_weapon12_Description"                               "Pimp your units with Shadow Blade!\n+48 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon12_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon13"                                           "Upgrade Weapon13"
-		"DOTA_Tooltip_ability_upgrade_weapon13_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon13"                                           "Upgrade Weapon (13)"
+		"DOTA_Tooltip_ability_upgrade_weapon13_Description"                               "Pimp your units with Relentless!\n+56 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon13_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon14"                                           "Upgrade Weapon14"
-		"DOTA_Tooltip_ability_upgrade_weapon14_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon14"                                           "Upgrade Weapon (14)"
+		"DOTA_Tooltip_ability_upgrade_weapon14_Description"                               "Pimp your units with Staff of the Infinite Waves!\n+64 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon14_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon15"                                           "Upgrade Weapon15"
-		"DOTA_Tooltip_ability_upgrade_weapon15_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon15"                                           "Upgrade Weapon (15)"
+		"DOTA_Tooltip_ability_upgrade_weapon15_Description"                               "Pimp your units with Voidhammer!\n+72 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon15_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon16"                                           "Upgrade Weapon16"
-		"DOTA_Tooltip_ability_upgrade_weapon16_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon16"                                           "Upgrade Weapon (16)"
+		"DOTA_Tooltip_ability_upgrade_weapon16_Description"                               "Pimp your units with Shock of the Anvil!\n+80 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon16_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon17"                                           "Upgrade Weapon17"
-		"DOTA_Tooltip_ability_upgrade_weapon17_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon17"                                           "Upgrade Weapon (17)"
+		"DOTA_Tooltip_ability_upgrade_weapon17_Description"                               "Pimp your units with Words of the Drunken Warlord!\n+90 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon17_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon18"                                           "Upgrade Weapon18"
-		"DOTA_Tooltip_ability_upgrade_weapon18_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon18"                                           "Upgrade Weapon (18)"
+		"DOTA_Tooltip_ability_upgrade_weapon18_Description"                               "Pimp your units with Shards of Exile!\n+100 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon18_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon19"                                           "Upgrade Weapon19"
-		"DOTA_Tooltip_ability_upgrade_weapon19_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon19"                                           "Upgrade Weapon (19)"
+		"DOTA_Tooltip_ability_upgrade_weapon19_Description"                               "Pimp your units with Grasping Bludgeon!\n+110 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon19_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon20"                                           "Upgrade Weapon20"
-		"DOTA_Tooltip_ability_upgrade_weapon20_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon20"                                           "Upgrade Weapon (20)"
+		"DOTA_Tooltip_ability_upgrade_weapon20_Description"                               "Pimp your units with Scythe of Twin Deaths!\n+121 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon20_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon21"                                           "Upgrade Weapon21"
-		"DOTA_Tooltip_ability_upgrade_weapon21_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon21"                                           "Upgrade Weapon (21)"
+		"DOTA_Tooltip_ability_upgrade_weapon21_Description"                               "Pimp your units with Eye of Omoz!\n+133 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon21_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon22"                                           "Upgrade Weapon22"
-		"DOTA_Tooltip_ability_upgrade_weapon22_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon22"                                           "Upgrade Weapon (22)"
+		"DOTA_Tooltip_ability_upgrade_weapon22_Description"                               "Pimp your units with Basher!\n+146 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon22_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon23"                                           "Upgrade Weapon23"
-		"DOTA_Tooltip_ability_upgrade_weapon23_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon23"                                           "Upgrade Weapon (23)"
+		"DOTA_Tooltip_ability_upgrade_weapon23_Description"                               "Pimp your units with Righteous Thunderbolt!\n+150 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon23_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon24"                                           "Upgrade Weapon24"
-		"DOTA_Tooltip_ability_upgrade_weapon24_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon24"                                           "Upgrade Weapon (24)"
+		"DOTA_Tooltip_ability_upgrade_weapon24_Description"                               "Pimp your units with Crystal Dryad!\n+165 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon24_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon25"                                           "Upgrade Weapon25"
-		"DOTA_Tooltip_ability_upgrade_weapon25_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon25"                                           "Upgrade Weapon (25)"
+		"DOTA_Tooltip_ability_upgrade_weapon25_Description"                               "Pimp your units with Dragonclaw Hook!\n+181 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon25_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon26"                                           "Upgrade Weapon26"
-		"DOTA_Tooltip_ability_upgrade_weapon26_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon26"                                           "Upgrade Weapon (26)"
+		"DOTA_Tooltip_ability_upgrade_weapon26_Description"                               "Pimp your units with Scythe of Vyse!\n+197 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon26_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon27"                                           "Upgrade Weapon27"
-		"DOTA_Tooltip_ability_upgrade_weapon27_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon27"                                           "Upgrade Weapon (27)"
+		"DOTA_Tooltip_ability_upgrade_weapon27_Description"                               "Pimp your units with Battlefury!\n+216 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon27_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon28"                                           "Upgrade Weapon28"
-		"DOTA_Tooltip_ability_upgrade_weapon28_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon28"                                           "Upgrade Weapon (28)"
+		"DOTA_Tooltip_ability_upgrade_weapon28_Description"                               "Pimp your units with Arcs of Manta!\n+232 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon28_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon29"                                           "Upgrade Weapon29"
-		"DOTA_Tooltip_ability_upgrade_weapon29_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon29"                                           "Upgrade Weapon (29)"
+		"DOTA_Tooltip_ability_upgrade_weapon29_Description"                               "Pimp your units with Eternal Radiance Blade!\n+252 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon29_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon30"                                           "Upgrade Weapon30"
-		"DOTA_Tooltip_ability_upgrade_weapon30_Description"                               ""
+		"DOTA_Tooltip_ability_upgrade_weapon30"                                           "Upgrade Weapon (30)"
+		"DOTA_Tooltip_ability_upgrade_weapon30_Description"                               "Pimp your units with Rapier of the Burning God!\n+280 damage"
 		"DOTA_Tooltip_ability_upgrade_weapon30_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_weapon_final"                                       "Upgrade Weapon Final"
+		"DOTA_Tooltip_ability_upgrade_weapon_final"                                       "Weapons Fully Upgraded!"
 		"DOTA_Tooltip_ability_upgrade_weapon_final_Description"                           ""
 
 		// Helms
-		"DOTA_Tooltip_ability_upgrade_helm1"                                              "Upgrade Helm1"
+		"DOTA_Tooltip_ability_upgrade_helm1"                                              "Upgrade Helm (1)"
 		"DOTA_Tooltip_ability_upgrade_helm1_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm1_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm2"                                              "Upgrade Helm2"
+		"DOTA_Tooltip_ability_upgrade_helm2"                                              "Upgrade Helm (2)"
 		"DOTA_Tooltip_ability_upgrade_helm2_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm2_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm3"                                              "Upgrade Helm3"
+		"DOTA_Tooltip_ability_upgrade_helm3"                                              "Upgrade Helm (3)"
 		"DOTA_Tooltip_ability_upgrade_helm3_Description"                                  ""
-		"DOTA_Tooltip_ability_upgrade_helm3_lumber_cost"                                  "LUMBER COST:"
+		"DOTA_Tooltip_ability_upgrade_helm3_lumber_cost"                                  "LUMBER COST:"	
 
-		
-
-		"DOTA_Tooltip_ability_upgrade_helm4"                                              "Upgrade Helm4"
+		"DOTA_Tooltip_ability_upgrade_helm4"                                              "Upgrade Helm (4)"
 		"DOTA_Tooltip_ability_upgrade_helm4_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm4_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm5"                                              "Upgrade Helm5"
+		"DOTA_Tooltip_ability_upgrade_helm5"                                              "Upgrade Helm (5)"
 		"DOTA_Tooltip_ability_upgrade_helm5_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm5_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm6"                                              "Upgrade Helm6"
+		"DOTA_Tooltip_ability_upgrade_helm6"                                              "Upgrade Helm (6)"
 		"DOTA_Tooltip_ability_upgrade_helm6_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm6_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm7"                                              "Upgrade Helm7"
+		"DOTA_Tooltip_ability_upgrade_helm7"                                              "Upgrade Helm (7)"
 		"DOTA_Tooltip_ability_upgrade_helm7_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm7_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm8"                                              "Upgrade Helm8"
+		"DOTA_Tooltip_ability_upgrade_helm8"                                              "Upgrade Helm (8)"
 		"DOTA_Tooltip_ability_upgrade_helm8_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm8_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm9"                                              "Upgrade Helm9"
+		"DOTA_Tooltip_ability_upgrade_helm9"                                              "Upgrade Helm (9)"
 		"DOTA_Tooltip_ability_upgrade_helm9_Description"                                  ""
 		"DOTA_Tooltip_ability_upgrade_helm9_lumber_cost"                                  "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm10"                                             "Upgrade Helm10"
+		"DOTA_Tooltip_ability_upgrade_helm10"                                             "Upgrade Helm (10)"
 		"DOTA_Tooltip_ability_upgrade_helm10_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_helm10_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm11"                                             "Upgrade Helm11"
+		"DOTA_Tooltip_ability_upgrade_helm11"                                             "Upgrade Helm (11)"
 		"DOTA_Tooltip_ability_upgrade_helm11_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_helm11_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm12"                                             "Upgrade Helm12"
+		"DOTA_Tooltip_ability_upgrade_helm12"                                             "Upgrade Helm (12)"
 		"DOTA_Tooltip_ability_upgrade_helm12_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_helm12_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm13"                                             "Upgrade Helm13"
+		"DOTA_Tooltip_ability_upgrade_helm13"                                             "Upgrade Helm (13)"
 		"DOTA_Tooltip_ability_upgrade_helm13_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_helm13_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm14"                                             "Upgrade Helm14"
+		"DOTA_Tooltip_ability_upgrade_helm14"                                             "Upgrade Helm (14)"
 		"DOTA_Tooltip_ability_upgrade_helm14_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_helm14_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm15"                                             "Upgrade Helm15"
+		"DOTA_Tooltip_ability_upgrade_helm15"                                             "Upgrade Helm (15)"
 		"DOTA_Tooltip_ability_upgrade_helm15_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_helm15_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_helm_final"                                         "Upgrade Helm Final"
+		"DOTA_Tooltip_ability_upgrade_helm_final"                                         "Helms Fully Upgraded!"
 		"DOTA_Tooltip_ability_upgrade_helm_final_Description"                             ""
 
 		// Shields
-		"DOTA_Tooltip_ability_upgrade_shield1"                                            "Upgrade Shield1"
+		"DOTA_Tooltip_ability_upgrade_shield1"                                            "Upgrade Shield (1)"
 		"DOTA_Tooltip_ability_upgrade_shield1_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield1_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield2"                                            "Upgrade Shield2"
+		"DOTA_Tooltip_ability_upgrade_shield2"                                            "Upgrade Shield (2)"
 		"DOTA_Tooltip_ability_upgrade_shield2_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield2_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield3"                                            "Upgrade Shield3"
+		"DOTA_Tooltip_ability_upgrade_shield3"                                            "Upgrade Shield (3)"
 		"DOTA_Tooltip_ability_upgrade_shield3_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield3_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield4"                                            "Upgrade Shield4"
+		"DOTA_Tooltip_ability_upgrade_shield4"                                            "Upgrade Shield (4)"
 		"DOTA_Tooltip_ability_upgrade_shield4_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield4_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield5"                                            "Upgrade Shield5"
+		"DOTA_Tooltip_ability_upgrade_shield5"                                            "Upgrade Shield (5)"
 		"DOTA_Tooltip_ability_upgrade_shield5_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield5_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield6"                                            "Upgrade Shield6"
+		"DOTA_Tooltip_ability_upgrade_shield6"                                            "Upgrade Shield (6)"
 		"DOTA_Tooltip_ability_upgrade_shield6_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield6_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield7"                                            "Upgrade Shield7"
+		"DOTA_Tooltip_ability_upgrade_shield7"                                            "Upgrade Shield (7)"
 		"DOTA_Tooltip_ability_upgrade_shield7_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield7_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield8"                                            "Upgrade Shield8"
+		"DOTA_Tooltip_ability_upgrade_shield8"                                            "Upgrade Shield (8)"
 		"DOTA_Tooltip_ability_upgrade_shield8_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield8_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield9"                                            "Upgrade Shield9"
+		"DOTA_Tooltip_ability_upgrade_shield9"                                            "Upgrade Shield (9)"
 		"DOTA_Tooltip_ability_upgrade_shield9_Description"                                ""
 		"DOTA_Tooltip_ability_upgrade_shield9_lumber_cost"                                "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield10"                                           "Upgrade Shield10"
+		"DOTA_Tooltip_ability_upgrade_shield10"                                           "Upgrade Shield (10)"
 		"DOTA_Tooltip_ability_upgrade_shield10_Description"                               ""
 		"DOTA_Tooltip_ability_upgrade_shield10_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield11"                                           "Upgrade Shield11"
+		"DOTA_Tooltip_ability_upgrade_shield11"                                           "Upgrade Shield (11)"
 		"DOTA_Tooltip_ability_upgrade_shield11_Description"                               ""
 		"DOTA_Tooltip_ability_upgrade_shield11_lumber_cost"                               "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_shield_final"                                       "Upgrade Shield Final"
+		"DOTA_Tooltip_ability_upgrade_shield_final"                                       "Shields Fully Upgraded!"
 		"DOTA_Tooltip_ability_upgrade_shield_final_Description"                           ""
 
 		// Wings
-		"DOTA_Tooltip_ability_upgrade_wings1"                                             "Upgrade Wings1"
+		"DOTA_Tooltip_ability_upgrade_wings1"                                             "Upgrade Wings (1)"
 		"DOTA_Tooltip_ability_upgrade_wings1_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings1_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_wings2"                                             "Upgrade Wings2"
+		"DOTA_Tooltip_ability_upgrade_wings2"                                             "Upgrade Wings (2)"
 		"DOTA_Tooltip_ability_upgrade_wings2_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings2_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_wings3"                                             "Upgrade Wings3"
+		"DOTA_Tooltip_ability_upgrade_wings3"                                             "Upgrade Wings (3)"
 		"DOTA_Tooltip_ability_upgrade_wings3_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings3_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_wings4"                                             "Upgrade Wings4"
+		"DOTA_Tooltip_ability_upgrade_wings4"                                             "Upgrade Wings (4)"
 		"DOTA_Tooltip_ability_upgrade_wings4_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings4_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_wings5"                                             "Upgrade Wings5"
+		"DOTA_Tooltip_ability_upgrade_wings5"                                             "Upgrade Wings (5)"
 		"DOTA_Tooltip_ability_upgrade_wings5_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings5_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_wings6"                                             "Upgrade Wings6"
+		"DOTA_Tooltip_ability_upgrade_wings6"                                             "Upgrade Wings (6)"
 		"DOTA_Tooltip_ability_upgrade_wings6_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings6_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_wings7"                                             "Upgrade Wings7"
+		"DOTA_Tooltip_ability_upgrade_wings7"                                             "Upgrade Wings (7)"
 		"DOTA_Tooltip_ability_upgrade_wings7_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings7_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_wings8"                                             "Upgrade Wings8"
+		"DOTA_Tooltip_ability_upgrade_wings8"                                             "Upgrade Wings (8)"
 		"DOTA_Tooltip_ability_upgrade_wings8_Description"                                 ""
 		"DOTA_Tooltip_ability_upgrade_wings8_lumber_cost"                                 "LUMBER COST:"
 
-		"DOTA_Tooltip_ability_upgrade_wings_final"                                        "Upgrade Wings Final"
+		"DOTA_Tooltip_ability_upgrade_wings_final"                                        "Wings Fully Upgraded"
 		"DOTA_Tooltip_ability_upgrade_wings_final_Description"                            ""
 
 		//-----
 		"DOTA_Tooltip_ability_upgrade_health"                                             "Upgrade Health"
-		"DOTA_Tooltip_ability_upgrade_health_Description"                                 ""
+		"DOTA_Tooltip_ability_upgrade_health_Description"                                 "Increase Peon life by 5.\nOther units and buildings health is also increased by 10%%"
 
 		"DOTA_Tooltip_ability_health"                                                     "Health"
 		"DOTA_Tooltip_ability_health_Description"                                         ""
 
 		"DOTA_Tooltip_ability_critical_strike"                                            "Critical Strike"
-		"DOTA_Tooltip_ability_critical_strike_Description"                                ""
+		"DOTA_Tooltip_ability_critical_strike_Description"                                "Gives a chance to crit on attack."
 		"DOTA_Tooltip_ability_critical_strike_crit_mult"                                  "CRIT MULT:"
 		"DOTA_Tooltip_ability_critical_strike_crit_chance"                                "CRIT CHANCE:"
 
 		"DOTA_Tooltip_ability_stun_hit"                                                   "Stun Hit"
-		"DOTA_Tooltip_ability_stun_hit_Description"                                       ""
+		"DOTA_Tooltip_ability_stun_hit_Description"                                       "Gives a chance that an attack will do bonus damage and stun an opponent for a duration."
 		"DOTA_Tooltip_ability_stun_hit_duration"                                          "DURATION:"
 		"DOTA_Tooltip_ability_stun_hit_stun_chance"                                       "STUN CHANCE:"
 		"DOTA_Tooltip_ability_stun_hit_bonus_damage"                                      "BONUS DAMAGE:"
 
 		"DOTA_Tooltip_ability_poisoned_weapons"                                           "Poisoned Weapons"
-		"DOTA_Tooltip_ability_poisoned_weapons_Description"                               ""
+		"DOTA_Tooltip_ability_poisoned_weapons_Description"                               "Deals damage over time for a duration."
 		"DOTA_Tooltip_ability_poisoned_weapons_damage_per_second"                         "DAMAGE PER SECOND:"
 		"DOTA_Tooltip_ability_poisoned_weapons_duration"                                  "DURATION:"
 
 		"DOTA_Tooltip_ability_pulverize"                                                  "Pulverize"
-		"DOTA_Tooltip_ability_pulverize_Description"                                      ""
+		"DOTA_Tooltip_ability_pulverize_Description"                                      "Gives a chance to do extra damage in 250 AoE."
 		"DOTA_Tooltip_ability_pulverize_chance"                                           "CHANCE:"
 		"DOTA_Tooltip_ability_pulverize_extra_damage"                                     "EXTRA DAMAGE:"
 		"DOTA_Tooltip_ability_pulverize_radius"                                           "RADIUS:"
 
 		"DOTA_Tooltip_ability_dodge"                                                      "Dodge"
-		"DOTA_Tooltip_ability_dodge_Description"                                          ""
+		"DOTA_Tooltip_ability_dodge_Description"                                          "Gives a chance to avoid an enemy attack."
 		"DOTA_Tooltip_ability_dodge_dodge_chance"                                         "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_spiked_armor"                                               "Spiked Armor"
-		"DOTA_Tooltip_ability_spiked_armor_Description"                                   ""
+		"DOTA_Tooltip_ability_spiked_armor_Description"                                   "Razor-sharp spikes on Armor deal a percentage of an enemy unit's melee attack damage back to it."
 		"DOTA_Tooltip_ability_spiked_armor_melee_damage_return"                           "MELEE DAMAGE RETURN:"
 
 		"DOTA_Tooltip_ability_pimp_damage"                                                "Pimp Damage"
@@ -625,7 +626,7 @@
 		"DOTA_Tooltip_ability_pimp_armor_Description"                                     "Increases the armor of your units and buildings by 1."
 
 		"DOTA_Tooltip_ability_pimp_speed"                                                 "Pimp Speed"
-		"DOTA_Tooltip_ability_pimp_speed_Description"                                     "Increases the movement and attack speeds of your units and buildings by 5%."
+		"DOTA_Tooltip_ability_pimp_speed_Description"                                     "Increases the movement and attack speeds of your units and buildings by 5%%."
 
 		"DOTA_Tooltip_ability_pimp_regen"                                                 "Pimp Regen"
 		"DOTA_Tooltip_ability_pimp_regen_Description"                                     "Increases the regeneration rate of your units and buildings."
@@ -636,97 +637,94 @@
 		"DOTA_Tooltip_ability_item_apply_modifiers_Description"                           ""
 
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike1"                              "Upgrade Critical Strike1"
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike1_Description"                  ""
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike1_Description"                  "Gives a 20%% chance to do 2 times normal attack on an attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit1"                                     "Upgrade Stun Hit1"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         ""
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "Gives a 20%% chance that an attack will do 10 bonus damage and stun an opponent for 1 second."
 
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1"                             "Upgrade Poisoned Weapons1"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_Description"                 ""
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_Description"                 "Deals 3 bonus damage per second.\nLasts 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_pulverize1"                                    "Upgrade Pulverize1"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize1_Description"                        ""
+		"DOTA_Tooltip_ability_item_upgrade_pulverize1_Description"                        "Gives a 20%% chance to do 20 damage in 250 AoE."
 
 		"DOTA_Tooltip_ability_item_upgrade_dodge1"                                        "Upgrade Dodge1"
-		"DOTA_Tooltip_ability_item_upgrade_dodge1_Description"                            ""
+		"DOTA_Tooltip_ability_item_upgrade_dodge1_Description"                            "Gives a 20%% to avoid an enemy attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1"                                 "Upgrade Spiked Armor1"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_Description"                     ""
-
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike1"                              "Upgrade Critical Strike1"
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike1_Description"                  ""
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_Description"                     "Razor-sharp spikes on Armor deal 20%% of an enemy unit's melee attack damage back to it."
 
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike2"                              "Upgrade Critical Strike2"
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike2_Description"                  ""
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike2_Description"                  "Gives a 21%% chance to do 2.2 times normal attack on an attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit2"                                     "Upgrade Stun Hit2"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         ""
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "Gives a 21%% chance that an attack will do 15 bonus damage and stun an opponent for 2 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2"                             "Upgrade Poisoned Weapons2"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_Description"                 ""
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_Description"                 "Deals 4 bonus damage per second.\nLasts 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_pulverize2"                                    "Upgrade Pulverize2"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize2_Description"                        ""
+		"DOTA_Tooltip_ability_item_upgrade_pulverize2_Description"                        "Gives a 21%% chance to do 25 damage in 250 AoE."
 
 		"DOTA_Tooltip_ability_item_upgrade_dodge2"                                        "Upgrade Dodge2"
-		"DOTA_Tooltip_ability_item_upgrade_dodge2_Description"                            ""
+		"DOTA_Tooltip_ability_item_upgrade_dodge2_Description"                            "Gives a 21%% to avoid an enemy attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2"                                 "Upgrade Spiked Armor2"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_Description"                     ""
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_Description"                     "Razor-sharp spikes on Armor deal 30%% of an enemy unit's melee attack damage back to it."
 
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike3"                              "Upgrade Critical Strike3"
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike3_Description"                  ""
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike3_Description"                  "Gives a 22%% chance to do 2.4 times normal attack on an attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit3"                                     "Upgrade Stun Hit3"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         ""
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "Gives a 22%% chance that an attack will do 20 bonus damage and stun an opponent for 3 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3"                             "Upgrade Poisoned Weapons3"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_Description"                 ""
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_Description"                 "Deals 6 bonus damage per second.\nLasts 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_pulverize3"                                    "Upgrade Pulverize3"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize3_Description"                        ""
+		"DOTA_Tooltip_ability_item_upgrade_pulverize3_Description"                        "Gives a 22%% chance to do 30 damage in 250 AoE."
 
 		"DOTA_Tooltip_ability_item_upgrade_dodge3"                                        "Upgrade Dodge3"
-		"DOTA_Tooltip_ability_item_upgrade_dodge3_Description"                            ""
+		"DOTA_Tooltip_ability_item_upgrade_dodge3_Description"                            "Gives a 22%% to avoid an enemy attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3"                                 "Upgrade Spiked Armor3"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_Description"                     ""
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_Description"                     "Razor-sharp spikes on Armor deal 40%% of an enemy unit's melee attack damage back to it."
 
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike4"                              "Upgrade Critical Strike4"
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike4_Description"                  ""
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike4_Description"                  "Gives a 23%% chance to do 2.6 times normal attack on an attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit4"                                     "Upgrade Stun Hit4"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         ""
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "Gives a 23%% chance that an attack will do 25 bonus damage and stun an opponent for 4 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4"                             "Upgrade Poisoned Weapons4"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_Description"                 ""
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_Description"                 "Deals 9 bonus damage per second.\nLasts 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_pulverize4"                                    "Upgrade Pulverize4"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize4_Description"                        ""
+		"DOTA_Tooltip_ability_item_upgrade_pulverize4_Description"                        "Gives a 23%% chance to do 35 damage in 250 AoE."
 
 		"DOTA_Tooltip_ability_item_upgrade_dodge4"                                        "Upgrade Dodge4"
-		"DOTA_Tooltip_ability_item_upgrade_dodge4_Description"                            ""
+		"DOTA_Tooltip_ability_item_upgrade_dodge4_Description"                            "Gives a 23%% to avoid an enemy attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4"                                 "Upgrade Spiked Armor4"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_Description"                     ""
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_Description"                     "Razor-sharp spikes on Armor deal 50%% of an enemy unit's melee attack damage back to it."
 
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike5"                              "Upgrade Critical Strike5"
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike5_Description"                  ""
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike5_Description"                  "Gives a 25%% chance to do 2.8 times normal attack on an attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit5"                                     "Upgrade Stun Hit5"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         ""
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         "Gives a 25%% chance that an attack will do 30 bonus damage and stun an opponent for 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5"                             "Upgrade Poisoned Weapons5"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_Description"                 ""
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_Description"                 "Deals 12 bonus damage per second.\nLasts 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_pulverize5"                                    "Upgrade Pulverize5"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize5_Description"                        ""
+		"DOTA_Tooltip_ability_item_upgrade_pulverize5_Description"                        "Gives a 25%% chance to do 40 damage in 250 AoE."
 
 		"DOTA_Tooltip_ability_item_upgrade_dodge5"                                        "Upgrade Dodge5"
-		"DOTA_Tooltip_ability_item_upgrade_dodge5_Description"                            ""
+		"DOTA_Tooltip_ability_item_upgrade_dodge5_Description"                            "Gives a 25%% to avoid an enemy attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5"                                 "Upgrade Spiked Armor5"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_Description"                     ""
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_Description"                     "Razor-sharp spikes on Armor deal 65%% of an enemy unit's melee attack damage back to it."
 
 		"DOTA_Tooltip_ability_item_upgrade_modifiers"                                     "Upgrade Modifiers"
 		"DOTA_Tooltip_ability_item_upgrade_modifiers_Description"                         ""

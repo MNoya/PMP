@@ -118,7 +118,9 @@ function AttachWearableInSlot( unit, model_table, slot, delay )
     local angles = unit:GetAttachmentAngles(attach) + Vector(pitch, yaw, roll)  
     local attach_pos = unit:GetAttachmentOrigin(attach) + RotatePosition(Vector(0,0,0), QAngle(angles.x,angles.y,angles.z), offset)
 
-    print('angleSpace = QAngle(' .. angles.x .. ', ' .. angles.y .. ', ' .. angles.z .. ')')
+    if unit == GetMainSelectedEntity(0) then
+        print('angleSpace = QAngle(' .. angles.x .. ', ' .. angles.y .. ', ' .. angles.z .. ')')
+    end
 
     new_prop:SetAbsOrigin(attach_pos)
     new_prop:SetAngles(angles.x,angles.y,angles.z)
