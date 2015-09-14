@@ -37,7 +37,7 @@ function SpawnUnit( event )
 
         -- Move to rally point
         Timers:CreateTimer(0.05, function() 
-            unit:MoveToPosition(caster.rally_point)
+            unit:MoveToPositionAggressive(caster.rally_point)
         end)
     end
 

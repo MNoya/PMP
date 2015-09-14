@@ -15,7 +15,7 @@
         {
             "Passive"           "1"
             "IsHidden"          "1"
-            "ThinkInterval"     "1.0" //7.0
+            "ThinkInterval"     "7.0"
             "OnIntervalThink"
             {
                 "RunScript"

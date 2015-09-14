@@ -44,8 +44,7 @@ function UpgradeFinished( event )
 
 			print("New Rank: "..new_ability_name)
 			new_ability:SetLevel(new_ability:GetMaxLevel())
-			--new_ability:StartCooldown(1)
-			FireGameEvent( 'ability_values_force_check', { player_ID = pID })
+			--new_ability:StartCooldown(1)		
 		else
 			print("Max Rank of "..upgrade_name.." reached!")
 
@@ -55,11 +54,10 @@ function UpgradeFinished( event )
 			caster:SwapAbilities(filler_name, old_ability_name, true, false)			
 			
 			ability:SetLevel(0)
-
-			FireGameEvent( 'ability_values_force_check', { player_ID = pID })
 		end
 	end
 
+	FireGameEvent( 'ability_values_force_check', { player_ID = pID })
 	PMP:SetUpgrade(pID, upgrade_name, upgrade_level)
 end
 
@@ -102,12 +100,17 @@ function PMP:SetUpgrade( playerID, name, level )
 	-- Apply the upgrade to all units
 	for _,unit in pairs(Units) do
 		-- Speed upgrades are applied to all units
-		if name == "wings" then
+		if name == "wings" or name == "health" then
 			PMP:ApplyUpgrade(unit, name, level)
 		else
 			if not IsLeaderUnit(unit) then
 				PMP:ApplyUpgrade(unit, name, level)
 			end
+		end
+
+		-- Health increases unit model scale by 0.01
+		if name == "health" then
+			unit:SetModelScale(GetOriginalModelScale(unit)+0.01*level)
 		end
 	end
 
@@ -124,6 +127,12 @@ function PMP:GetUpgradeList( playerID )
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	return hero.Upgrades
 end
+
+function PMP:GetUpgradeLevel( playerID, name )
+	local upgrades = PMP:GetUpgradeList(playerID)
+	return upgrades[name] or 0
+end
+
 
 -- OnEntitySpawned, check its name and apply upgrades for the player that owns it
 function PMP:ApplyUpgrade(unit, name, level)
@@ -204,13 +213,18 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 				PMP:ApplyModifierUpgradeStacks(unit, name, level)
 			end
 		elseif level ~= 0 then
-			-- Speed upgrades are applied to all units
-			if name == "wings" then
+			-- Speed and Health upgrades are applied to all units
+			if name == "wings" or name == "health" then
 				PMP:ApplyUpgrade(unit, name, level)
 			else
 				if not IsLeaderUnit(unit) then
 					PMP:ApplyUpgrade(unit, name, level)
 				end
+			end
+
+			-- Health increases unit model scale by 0.01
+			if name == "health" then
+				unit:SetModelScale(GetOriginalModelScale(unit)+0.01*level)
 			end
 		end
 	end

@@ -181,22 +181,24 @@ function PMP:InitGameMode()
 
                     -- If there's an item in this slot, define the number to show
                     if item then
-                        local lumberCost = item:GetSpecialValueFor("lumber_cost")
-                        if lumberCost then
-                            table.insert(itemValues,lumberCost)
+                        local cost = item:GetGoldCost(1)
+                        if cost then
+                            table.insert(itemValues,cost)
                         else
                             table.insert(itemValues,0)
                         end
+                    else
+                        table.insert(itemValues,0)
                     end
                 end
 
                 FireGameEvent( 'ability_values_send_items', { player_ID = pID, 
-                                                    hue_1 = 0, val_1 = itemValues[1], 
-                                                    hue_2 = 0, val_2 = itemValues[2], 
-                                                    hue_3 = 0, val_3 = itemValues[3], 
-                                                    hue_4 = 0, val_4 = itemValues[4], 
-                                                    hue_5 = 0, val_5 = itemValues[5],
-                                                    hue_6 = 0, val_6 = itemValues[6] } )
+                                                    hue_1 = -60, bri_1 = -50, val_1 = itemValues[1], 
+                                                    hue_2 = -60, bri_2 = -50, val_2 = itemValues[2], 
+                                                    hue_3 = -60, bri_3 = -50, val_3 = itemValues[3], 
+                                                    hue_4 = -60, bri_4 = -50, val_4 = itemValues[4], 
+                                                    hue_5 = -60, bri_5 = -50, val_5 = itemValues[5],
+                                                    hue_6 = -60, bri_6 = -50, val_6 = itemValues[6] } )
                 
             else
                 -- Hide all the values if the unit is not supposed to show any.

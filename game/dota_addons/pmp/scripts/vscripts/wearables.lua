@@ -79,8 +79,12 @@ function AttachWearableInSlot( unit, model_table, slot, delay )
     -- Model of choice
     local point = model_table["Point"]
     local modelName = model_table["Model"]
-    local modelScale = tonumber(model_table["Scale"]) or unit:GetModelScale()
+    local modelScale = tonumber(model_table["Scale"]) or GetOriginalModelScale(unit)
     local animation = model_table["Animation"] or ""
+
+    -- Adjust the modelScale
+    local unitModelScale = unit:GetModelScale() 
+    unit:SetModelScale(GetOriginalModelScale(unit))
 
     -- Clear any prop wearable the unit might have in this slot
     ClearPropWearableSlot(unit, slot)
@@ -142,8 +146,11 @@ function AttachWearableInSlot( unit, model_table, slot, delay )
 
      -- Store it
     unit.prop_wearables[slot] = new_prop
-    --return .3
---end)
+    
+
+    --
+    unit:SetModelScale(unitModelScale)
+
 end
 
 function ClearPropWearableSlot( unit, slot )

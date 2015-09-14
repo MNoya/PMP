@@ -123,13 +123,13 @@ function PlayerHasEnoughGold( pID, gold_cost )
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
     local gold = hero:GetGold()
 
-    return (not gold_cost or gold > gold_cost) or (SendErrorMessage(pID, "#error_not_enough_gold") and false)
+    return (not gold_cost or gold >= gold_cost) or (SendErrorMessage(pID, "#error_not_enough_gold") and false)
 end
 
 function PlayerHasEnoughLumber( pID, lumber_cost )
     local lumber = GetLumber(pID)
 
-    return (not lumber_cost or lumber > lumber_cost) or (SendErrorMessage(pID, "#error_not_enough_lumber") and false)
+    return (not lumber_cost or lumber >= lumber_cost) or (SendErrorMessage(pID, "#error_not_enough_lumber") and false)
 end
 
 function PlayerHasEnoughFood( pID, food_cost )

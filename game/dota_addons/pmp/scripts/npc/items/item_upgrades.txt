@@ -11,6 +11,14 @@
     "ItemSellable"                  "0"
 
     "AbilityGoldCost"               "50"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "50"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "1"
@@ -39,7 +47,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "100"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "100"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "1"
@@ -68,7 +84,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "70"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "70"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "1"
@@ -97,7 +121,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "120"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "120"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "1"
@@ -126,7 +158,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "55"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "55"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "1"
@@ -155,7 +195,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "110"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "110"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "1"
@@ -168,35 +216,6 @@
             "ScriptFile"    "upgrades.lua"
             "Function"      "UpgradeFinished"
             "Name"          "spiked_armor"
-            "Level"         "1"
-        }
-    }
-}
-
-"item_upgrade_critical_strike1"
-{
-    "BaseClass"                     "item_datadriven"
-    "AbilityTextureName"            "item_upgrade_critical_strike"
-
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-
-    "ItemDroppable"                 "0"
-    "ItemPurchasable"               "0"
-    "ItemSellable"                  "0"
-
-    "AbilityGoldCost"               "50"
-
-    "MaxUpgradeLevel"               "5"
-    "ItemBaseLevel"                 "1"
-
-    "OnSpellStart"
-    {
-        // Add Upgrade and Swap the item for the next upgrade
-        "RunScript"
-        {
-            "ScriptFile"    "upgrades.lua"
-            "Function"      "UpgradeFinished"
-            "Name"          "critical_strike"
             "Level"         "1"
         }
     }
@@ -216,7 +235,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "130"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "130"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "2"
@@ -246,7 +273,16 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "200"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "200"
+        }
+    }
+    "ItemCost"                      "100"
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "2"
@@ -275,7 +311,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "210"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "210"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "2"
@@ -304,7 +348,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "245"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "245"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "2"
@@ -333,7 +385,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "125"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "125"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "2"
@@ -362,7 +422,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "200"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "200"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "2"
@@ -394,7 +462,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "210"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "210"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "3"
@@ -424,7 +500,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "300"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "300"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "3"
@@ -453,7 +537,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "350"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "350"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "3"
@@ -482,7 +574,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "370"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "370"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "3"
@@ -511,7 +611,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "195"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "195"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "3"
@@ -540,7 +648,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "290"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "290"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "3"
@@ -573,7 +689,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "290"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "290"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "4"
@@ -602,7 +726,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "400"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "400"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "4"
@@ -631,7 +763,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "490"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "490"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "4"
@@ -660,7 +800,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "495"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "495"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "4"
@@ -689,7 +837,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "265"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "265"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "4"
@@ -718,7 +874,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "380"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "380"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "4"
@@ -751,7 +915,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "370"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "370"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "5"
@@ -781,7 +953,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "500"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "500"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "5"
@@ -810,7 +990,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "630"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "630"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "5"
@@ -839,7 +1027,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "620"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "620"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "5"
@@ -868,7 +1064,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "335"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "335"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "5"
@@ -897,7 +1101,15 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
+    "AbilityGoldCost"               "470"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "470"
+        }
+    }
 
     "MaxUpgradeLevel"               "5"
     "ItemBaseLevel"                 "5"

@@ -54,16 +54,32 @@ function BloodlustDelete(event)
 end
 
 -- Handles the autocast logic
-function BloodlustAutocast( event )
+function BloodlustAutocast_Attack( event )
     local caster = event.caster
-    local target = event.target -- victim of the attack
+    local attacker = event.attacker
     local ability = event.ability
 
     -- Name of the modifier to avoid casting the spell on targets that were already buffed
     local modifier = "modifier_bloodlust"
 
     -- Get if the ability is on autocast mode and cast the ability on the attacked target if it doesn't have the modifier
-    if ability:GetAutoCastState() then
+    if ability:GetAutoCastState() and ability:IsFullyCastable() then
+        if not attacker:HasModifier(modifier) then
+            caster:CastAbilityOnTarget(attacker, ability, caster:GetPlayerOwnerID())
+        end 
+    end 
+end
+
+function BloodlustAutocast_Attacked( event )
+    local caster = event.caster
+    local target = event.target
+    local ability = event.ability
+
+    -- Name of the modifier to avoid casting the spell on targets that were already buffed
+    local modifier = "modifier_bloodlust"
+
+    -- Get if the ability is on autocast mode and cast the ability on the attacked target if it doesn't have the modifier
+    if ability:GetAutoCastState() and ability:IsFullyCastable() then
         if not target:HasModifier(modifier) then
             caster:CastAbilityOnTarget(target, ability, caster:GetPlayerOwnerID())
         end 
