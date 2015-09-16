@@ -53,14 +53,14 @@ function PMP:CreateUnits(pID, unitName, numUnits, bEnemy)
 
     PrecacheUnitByNameAsync(unitName, function()
         for i=1,numUnits do
-            local unit = CreateUnitByName(unitName, gridPoints[i], true, hero, hero, hero:GetTeamNumber())
-            unit:SetOwner(hero)
+            local unit = CreateUnitByName(unitName, gridPoints[i], true, hero, hero, hero:GetTeamNumber())            
             unit:SetControllableByPlayer(pID, true)
             unit:SetMana(unit:GetMaxMana())
 
             if bEnemy then 
                 unit:SetTeam(DOTA_TEAM_NEUTRALS)
             else
+                unit:SetOwner(hero)
                 table.insert(hero.units, unit)
             end
 

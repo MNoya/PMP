@@ -5,9 +5,22 @@
 	{	
 		"addon_game_name"	"Pimp My Peon"
 	
-		"high_upkeep"		"High Upkeep"
-		"low_upkeep"		"Low Upkeep"
-		"no_upkeep"			"No Upkeep"
+
+		"Unassigned"      								"Unassigned Team"
+		"Spectator"       								"Spectator Team"
+		"Neutrals"        								"Neutral Team"
+		"NoTeam"          								"No Team"
+
+		"DOTA_GoodGuys"   								"Blue Team"
+		"DOTA_BadGuys"    								"Red Team"
+		"DOTA_Custom1"    								"Teal Team"
+		"DOTA_Custom2"    								"Purple Team"
+		"DOTA_Custom3"    								"Yellow Team"
+		"DOTA_Custom4"    								"Orange Team"
+		"DOTA_Custom5"    								"Green Team"
+		"DOTA_Custom6"    								"Pink Team"
+		"DOTA_Custom7"    								"Brown Team"
+		"DOTA_Custom8"    								"Olive Team"
 
 		// Error Messages
 		"error_not_enough_gold"					"Not Enough Gold"

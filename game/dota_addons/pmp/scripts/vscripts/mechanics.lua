@@ -170,6 +170,10 @@ function IsCustomBuilding( unit )
     end
 end
 
+function IsPimpUnit( unit )
+    return unit.pmp
+end
+
 function IsCustomTower( unit )
     return unit:HasAbility("ability_tower")
 end

@@ -47,8 +47,12 @@ function PopupDamageBlock(target, amount)
 end
 
 -- e.g. when last-hitting a creep
-function PopupGoldGain(target, amount)
-    PopupNumbers(target, "gold", Vector(255, 200, 33), 2.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
+function PopupGoldGain(target, amount, teamNumber)
+    PopupNumbers(target, "gold", Vector(255, 200, 33), 2.0, amount, POPUP_SYMBOL_PRE_PLUS, nil, teamNumber)
+end
+
+function PopupLumber(target, amount, teamNumber)
+    PopupNumbers(target, "gold", Vector(10, 200, 90), 3.0, amount, POPUP_SYMBOL_PRE_PLUS, nil, teamNumber)
 end
 
 -- e.g. when missing uphill
@@ -84,17 +88,19 @@ function PopupHPRemovalDamage(target, amount)
     PopupNumbers(target, "crit", Vector(154, 46, 254), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end
 
-function PopupLumber(target, amount)
-    PopupNumbers(target, "gold", Vector(10, 200, 90), 3.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
-end
-
 -- Customizable version.
-function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbol)
+function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbol, teamNumber)
     local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)
-    local pidx
+
+    -- msg_gold is dumb and will show '+0' as '++' instead.
     if not number or number == 0 then return end
-    if pfx == "gold" or pfx == "lumber" then
-        pidx = ParticleManager:CreateParticleForTeam(pfxPath, PATTACH_ABSORIGIN_FOLLOW, target, target:GetTeamNumber())
+
+    -- bounty particles only show to one team, generally on top of the unit that was just killed
+    local pidx
+    if pfx == "gold" then
+        if not teamNumber then teamNumber = target:GetTeamNumber() end -- Use the targets team if no teamNumber parameter was specified
+        pidx = ParticleManager:CreateParticleForTeam(pfxPath, PATTACH_CUSTOMORIGIN, target, teamNumber)
+        ParticleManager:SetParticleControl(pidx, 0, target:GetAbsOrigin())
     else
         pidx = ParticleManager:CreateParticle(pfxPath, PATTACH_ABSORIGIN_FOLLOW, target)
     end

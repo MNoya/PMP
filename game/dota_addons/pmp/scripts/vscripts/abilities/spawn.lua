@@ -32,6 +32,9 @@ function SpawnUnit( event )
 
         table.insert(hero.units, unit)
 
+        -- Mark the unit as 'core'
+        unit.pmp = true
+
         -- Add all current upgrades
         PMP:ApplyAllUpgrades(playerID, unit)
 

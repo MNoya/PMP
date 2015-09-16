@@ -56,7 +56,7 @@ end
 -- Barricades take 2 hits to destroy
 function BarricadeHit( event )
     local caster = event.caster
-    
+
     if not caster.hit then
         caster.hit = 1
         caster:SetHealth(1)

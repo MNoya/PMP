@@ -83,7 +83,7 @@ function PMP:InitGameMode()
 
 	-- Team Colors
 	for team,color in pairs(TEAM_COLORS) do
-      SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
+        SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
     end
 
 	-- DebugPrint
@@ -148,7 +148,6 @@ function PMP:InitGameMode()
             end
             
             if unit then
-                --and (unit:GetUnitName() == "human_peasant"
                 local abilityValues = {}
                 local itemValues = {}
 
@@ -214,6 +213,7 @@ function PMP:InitGameMode()
   	-- Starting positions
   	GameRules.StartingPositions = {}
 	local targets = Entities:FindAllByName( "*starting_position" ) --Inside player_start.vmap prefab
+    targets = ShuffledList(targets) --Should only be done on the FFA mode
 	for k,v in pairs(targets) do
 		local pos_table = {}
 		pos_table.position = v:GetOrigin()
@@ -265,10 +265,15 @@ function PMP:OnPlayerPickHero(keys)
 	print ('[PMP] OnPlayerPickHero')
     local heroName = keys.hero
     local hero = EntIndexToHScript(keys.heroindex)
-    local race = GetRace(hero)
     local player = EntIndexToHScript(keys.player)
     local playerID = player:GetPlayerID()
     local teamNumber = hero:GetTeamNumber()
+    local race = GetRace(hero)
+
+    -- Color
+    local color = PMP:ColorForTeam( teamNumber )
+    print(color[1])
+    PlayerResource:SetCustomPlayerColor( playerID, color[1], color[2], color[3] )
 
     -- Main building
     local center_position = GameRules.StartingPositions[playerID].position
@@ -490,105 +495,119 @@ end
 
 -- An entity died
 function PMP:OnEntityKilled( event )
-	--print( '[PMP] OnEntityKilled Called' )
+	--print( '[PMP] OnEntityKilled' )
 
-	-- The Unit that was Killed
-	local killedUnit = EntIndexToHScript(event.entindex_killed)
-	-- The Killing entity
-	local killerEntity
+	local killed = EntIndexToHScript(event.entindex_killed)
+	local attacker
 	if event.entindex_attacker then
-		killerEntity = EntIndexToHScript(event.entindex_attacker)
+		attacker = EntIndexToHScript(event.entindex_attacker)
 	end
 
-	-- Owner handles of the unit
-	local player = killedUnit:GetPlayerOwner()
-   
-    local playerID = 0
-    local hero
-    if player then
-        playerID = player:GetPlayerID()
-        hero = player:GetAssignedHero()
+    -- Everything that can die is a creature (no heroes die in this gamemode)
+    if killed:IsHero() then
+        print("Hero Died. This shouldn't happen")
+        return
+    end
+
+    -- Killed credentials
+    local killed_player = killed:GetPlayerOwner()
+    local killed_playerID = killed:GetPlayerOwnerID()
+    local killed_teamNumber = killed:GetTeamNumber()
+    local killed_hero = killed_player:GetAssignedHero()
+
+    -- Attacker credentials
+    local attacker_player = attacker and attacker:GetPlayerOwner()
+    local attacker_playerID = attacker and attacker:GetPlayerOwnerID()
+    local attacker_teamNumber = attacker and attacker:GetTeamNumber()
+    local attacker_hero = attacker and attacker_player:GetAssignedHero()
+
+    -- Give lumber bounty to the attacker (unless denied)
+    if killed_teamNumber ~= attacker_teamNumber then
+        local lumber_bounty = GetLumberBounty(killed)
+        ModifyLumber(attacker_playerID, lumber_bounty)
+        PopupLumber(killed, lumber_bounty, attacker_teamNumber)
+    end
+
+    -- Garage killed
+    if IsCityCenter(killed) then
+        print("Garage Down for player",killed_playerID)
+        local playerUnits = GetPlayerUnits(killed_playerID)
+        local playerShop = GetPlayerShop(killed_playerID)
+        local playerBarricades = GetPlayerBarricades(killed_playerID)
+
+        -- Clear player units
+        for k,unit in pairs(playerUnits) do
+            Timers:CreateTimer(1/30 * k, function()
+                if IsValidAlive(unit) then
+                    unit:ForceKill(false)
+                end
+            end)
+        end
+
+        -- Clear barricades
+        for k,barricade in pairs(playerBarricades) do
+            UTIL_Remove(barricade)
+        end 
+
+        -- Clear player shop
+        if IsValidAlive(playerShop) then
+            playerShop:ForceKill(false)
+        end
+
+        -- Give a ghost peon unit to scout
+        local origin = killed:GetAbsOrigin()
+        if killed_hero then
+            killed_hero.ghost = CreateUnitByName("peon_ghost", origin, false, killed_hero, killed_hero, killed:GetTeamNumber())
+            killed_hero.ghost:SetOwner(killed_hero)
+            killed_hero.ghost:SetControllableByPlayer(killed_playerID, true)
+            killed_hero.lost = true
+        end
+
+        PMP:CheckWinCondition()
+
+    -- Tower killed
+    elseif IsCustomTower(killed) then
 
         -- Table cleanup
-        local unit_table = GetPlayerUnits(playerID)
-        local unit_index = getIndexTable(unit_table, killedUnit)
+        local tower_table = GetPlayerTowers(killed_playerID)
+        local unit_index = getIndexTable(tower_table, killed)
+        if unit_index then
+            table.remove(tower_table, unit_index)
+        end
+
+        ReduceInvulnerabilityCount(killed_hero)     
+
+    -- Pimp Creature killed
+    elseif IsPimpUnit(killed) then
+       
+        -- Remove prop wearables
+        Timers:CreateTimer(4, function()
+            ClearPropWearables(killed)
+        end)
+
+        -- Table cleanup
+        local unit_table = GetPlayerUnits(killed_playerID)
+        local unit_index = getIndexTable(unit_table, killed)
         if unit_index then
             table.remove(unit_table, unit_index)
 
             -- Substract the Food Used
-            local food = GetFoodCost(killedUnit:GetUnitName())
-            ModifyFoodUsed(playerID, -food)
+            local food = GetFoodCost(killed:GetUnitName())
+            ModifyFoodUsed(killed_playerID, -food)
         end
-    end
 
-    if killedUnit:IsCreature() then
-        
-        -- Tower killed
-        if IsCustomTower(killedUnit) then
-            local tower_table = GetPlayerTowers(playerID)
-            local unit_index = getIndexTable(tower_table, killedUnit)
+        -- If not denied
+        if killed_teamNumber ~= attacker_teamNumber then
             
-            if unit_index then
-                table.remove(tower_table, unit_index)
+            -- Give experience globally to the attacker hero
+            if attacker_hero then
+                attacker_hero:AddExperience(XP_PER_PEON, true, true)
+                attacker_hero:IncrementKills(1) 
             end
 
-            ReduceInvulnerabilityCount(hero)
-        
-        -- Garage killed
-        elseif IsCityCenter(killedUnit) then
-            print("Garage Down for player",playerID)
-            local playerUnits = GetPlayerUnits(playerID)
-            local playerShop = GetPlayerShop(playerID)
-            local playerBarricades = GetPlayerBarricades(playerID)
-           
-            -- Clear player units
-            for k,unit in pairs(playerUnits) do
-                Timers:CreateTimer(1/30 * k, function()
-                    unit:ForceKill(false)
-                end)
-            end
-
-            -- Clear barricades
-            for k,barricade in pairs(playerBarricades) do
-                UTIL_Remove(barricade)
-            end 
-
-            -- Clear player shop
-            if IsValidAlive(playerShop) then
-                playerShop:ForceKill(false)
-            end
-
-            -- Give a ghost peon unit to scout
-            local origin = killedUnit:GetAbsOrigin()
-            if hero then
-                hero.ghost = CreateUnitByName("peon_ghost", origin, false, hero, hero, killedUnit:GetTeamNumber())
-                hero.ghost:SetOwner(hero)
-                hero.ghost:SetControllableByPlayer(playerID, true)
-                hero.lost = true
-            end
-
-            PMP:CheckWinCondition()
-
-        -- Peon Creature killed
-        else
-            -- Remove prop wearables
-            Timers:CreateTimer(4, function()
-                ClearPropWearables(killedUnit)
-            end)
-
-            if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() then
-                -- Give experience globally to the main hero
-                if hero then
-                    hero:AddExperience(XP_PER_PEON, true, true)
-                end
-
-                -- If not denied, give lumber    
-                if killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() then
-                    local lumber_bounty = GetLumberBounty(killedUnit)
-                    ModifyLumber(playerID, lumber_bounty)
-                    PopupLumber(killerEntity, lumber_bounty)
-                end
-            end
+            killed_hero:IncrementDeaths(1)
+            
+            --Add Score
         end
     end
 end
@@ -637,6 +656,8 @@ function PMP:OnPlayerSelectedEntities( event )
 	local pID = event.pID
 
 	GameRules.SELECTED_UNITS[pID] = event.selected_entities
+
+    FireGameEvent( 'ability_values_force_check', { player_ID = pID })
 end
 
 function PMP:RepositionPlayerCamera( event )
@@ -701,4 +722,12 @@ function PMP:PrintWinMessageForTeam( teamID )
 			end
 		end
 	end
+end
+
+function PMP:ColorForTeam( teamID )
+    local color = TEAM_COLORS[teamID]
+    if color == nil then
+        color = { 255, 255, 255 } -- default to white
+    end
+    return color
 end
