@@ -88,7 +88,9 @@ function ModifyLumber( pID, lumber_value )
 
     if lumber_value == 0 then return end
     if lumber_value > 0 then
-        SetLumber(pID, current_lumber + lumber_value)        
+        local value = current_lumber + lumber_value
+        if value > 99999 then value = 99999 end
+        SetLumber(pID, value)        
     else
         if PlayerHasEnoughLumber( pID, math.abs(lumber_value) ) then
             SetLumber(pID, current_lumber + lumber_value)

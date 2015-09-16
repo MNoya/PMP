@@ -272,7 +272,6 @@ function PMP:OnPlayerPickHero(keys)
 
     -- Color
     local color = PMP:ColorForTeam( teamNumber )
-    print(color[1])
     PlayerResource:SetCustomPlayerColor( playerID, color[1], color[2], color[3] )
 
     -- Main building
@@ -403,6 +402,7 @@ function PMP:OnPlayerPickHero(keys)
             FindClearSpaceForUnit(unit, center_position, true)
             ModifyFoodUsed(playerID, 1)
             table.insert(hero.units, unit)
+            unit.pmp = true
         end
     end)
 end
@@ -495,7 +495,7 @@ end
 
 -- An entity died
 function PMP:OnEntityKilled( event )
-	--print( '[PMP] OnEntityKilled' )
+	print( '[PMP] OnEntityKilled' )
 
 	local killed = EntIndexToHScript(event.entindex_killed)
 	local attacker
@@ -513,16 +513,16 @@ function PMP:OnEntityKilled( event )
     local killed_player = killed:GetPlayerOwner()
     local killed_playerID = killed:GetPlayerOwnerID()
     local killed_teamNumber = killed:GetTeamNumber()
-    local killed_hero = killed_player:GetAssignedHero()
+    local killed_hero = killed_player and killed_player:GetAssignedHero()
 
     -- Attacker credentials
     local attacker_player = attacker and attacker:GetPlayerOwner()
     local attacker_playerID = attacker and attacker:GetPlayerOwnerID()
     local attacker_teamNumber = attacker and attacker:GetTeamNumber()
-    local attacker_hero = attacker and attacker_player:GetAssignedHero()
+    local attacker_hero = attacker_player and attacker_player:GetAssignedHero()
 
     -- Give lumber bounty to the attacker (unless denied)
-    if killed_teamNumber ~= attacker_teamNumber then
+    if attacker_playerID ~= -1 and killed_teamNumber ~= attacker_teamNumber then
         local lumber_bounty = GetLumberBounty(killed)
         ModifyLumber(attacker_playerID, lumber_bounty)
         PopupLumber(killed, lumber_bounty, attacker_teamNumber)

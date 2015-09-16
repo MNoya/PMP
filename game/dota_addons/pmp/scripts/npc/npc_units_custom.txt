@@ -64,6 +64,84 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	}
+	//=================================================================================
+	// Description: "Heavy melee amphibious unit with Devour and Spiked Shell. Can cast Crushing Wave."
+	//=================================================================================
+	"nian_boss"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/creeps/nian/nian_creep.vmdl"
+	    "ModelScale"                "1"
+	    "Level"                     "10"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	    "SoundSet"                  "cny_beast"
+	    "MinimapIcon"               "minimap_nian"
+	    "MinimapIconSize"           "500"
+	    "RingRadius"                "200"
+	    "HealthBarOffset"           "140"
+	
+	    "UseNeutralCreepBehavior"   "1"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  ""   //Reference: ACc2
+	    "Ability2"                  ""   //Reference: ACdv
+	    "Ability3"                  ""   //Reference: Advc
+	    "Ability4"                  ""   //Reference: ANt2
+	    
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "4"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	    "AttackDamageMin"           "65.0"
+	    "AttackDamageMax"           "83.0"
+	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackRate"                "1.35"
+	    "AttackAnimationPoint"      "0.3"
+	    "AttackAcquisitionRange"    "1000"
+	    "AttackRange"               "150"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "200.0"
+	    "BountyGoldMax"             "200.0"
+	    "BountyLumber"              "200.0"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"             "270"
+	    "MovementTurnRate"          "0.6"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "2000"
+	    "StatusHealthRegen"         "0.5"
+	    "StatusMana"                "600"
+	    "StatusManaRegen"           "1.5"
+	    "StatusStartingMana"        "600"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "1400"
+	    "VisionNighttimeRange"      "800"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	}
 	"dummy_unit"
 	{
 		"BaseClass"					"npc_dota_creature"
