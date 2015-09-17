@@ -89,16 +89,25 @@ function PMP:InitGameMode()
 	-- DebugPrint
 	Convars:RegisterConvar('debug_spew', tostring(DEBUG_SPEW), 'Set to 1 to start spewing debug info. Set to 0 to disable.', 0)
 
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
+    if GetMapName() == "free_for_all" then
+        -- 10 teams of 1 player
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
+    else
+        -- Teams Blue, Red, Yellow and Green
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 6 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 6 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 6 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 6 )
+    end
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
@@ -213,7 +222,17 @@ function PMP:InitGameMode()
   	-- Starting positions
   	GameRules.StartingPositions = {}
 	local targets = Entities:FindAllByName( "*starting_position" ) --Inside player_start.vmap prefab
-    targets = ShuffledList(targets) --Should only be done on the FFA mode
+
+    -- Randomize positions on the FFA map
+    if GetMapName() == "free_for_all" then
+        targets = ShuffledList(targets)
+    end
+
+    -- Positions for the possible team combinations should be:
+    -- Half map for each team if 6v6
+    -- Vertical Line of 3 if 4v4v4
+    -- Horizontal Line of 4 if 3v3v3v3
+
 	for k,v in pairs(targets) do
 		local pos_table = {}
 		pos_table.position = v:GetOrigin()
@@ -221,7 +240,7 @@ function PMP:InitGameMode()
 		GameRules.StartingPositions[k-1] = pos_table
 	end
 
-	print('[PMP] Done loading gamemode!\n\n')
+	print('[PMP] Done loading gamemode!')
 end
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
@@ -540,6 +559,9 @@ function PMP:OnEntityKilled( event )
             playerShop:ForceKill(false)
         end
 
+        -- Fx
+        local explosion1 = ParticleManager:CreateParticle("particles/radiant_fx2/frostivus_wking_altar_smokering.vpcf", PATTACH_ABSORIGIN_FOLLOW, killed)
+
         -- Give a ghost peon unit to scout
         local origin = killed:GetAbsOrigin()
         if killed_hero then
@@ -547,6 +569,10 @@ function PMP:OnEntityKilled( event )
             killed_hero.ghost:SetOwner(killed_hero)
             killed_hero.ghost:SetControllableByPlayer(killed_playerID, true)
             killed_hero.lost = true
+
+            local playerName = PlayerResource:GetPlayerName(killed_playerID)
+            if playerName == "" then playerName = "Player "..killed_playerID end
+            GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
         end
 
         PMP:CheckWinCondition()
@@ -560,6 +586,9 @@ function PMP:OnEntityKilled( event )
         if unit_index then
             table.remove(tower_table, unit_index)
         end
+
+        ParticleManager:CreateParticle("particles/newplayer_fx/npx_wood_break.vpcf", PATTACH_ABSORIGIN, killed)
+        killed:AddNoDraw()
 
         ReduceInvulnerabilityCount(killed_hero)     
 
@@ -633,6 +662,8 @@ function PMP:CheckWinCondition()
     end
     if winnerTeamID and not winConditionFailed then
         print(winnerTeamID.." is the Winner")
+
+        PMP:PrintWinMessageForTeam(winnerTeamID)
         GameRules:SetGameWinner(winnerTeamID)
     end
 end
@@ -704,7 +735,7 @@ function PMP:PrintWinMessageForTeam( teamID )
 			if player:GetTeamNumber() == teamID then
 				local playerName = PlayerResource:GetPlayerName(playerID)
 				if playerName == "" then playerName = "Player "..playerID end
-				GameRules:SendCustomMessage(playerName.." was victorious", 0, 0)
+				GameRules:SendCustomMessage(playerName.." was victorious!", 0, 0)
 			end
 		end
 	end

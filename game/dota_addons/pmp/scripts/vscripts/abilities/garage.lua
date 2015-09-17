@@ -62,6 +62,7 @@ function BarricadeHit( event )
         caster:SetHealth(1)
     else
         caster:ForceKill(true)
+        ParticleManager:CreateParticle("particles/newplayer_fx/npx_tree_break.vpcf", PATTACH_ABSORIGIN, caster)
     end
 end
 

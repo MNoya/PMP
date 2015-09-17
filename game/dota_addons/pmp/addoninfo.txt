@@ -1,9 +1,9 @@
 "AddonInfo"
 {
-    "maps"          "classic"
+    "maps"          "free_for_all classic"
     "IsPlayable"    "1"
     "classic"
     {
-        "MaxPlayers"     "12"
+        "MaxPlayers"     "10 12"
     }
 }
