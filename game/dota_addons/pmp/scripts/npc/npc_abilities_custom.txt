@@ -3883,4 +3883,62 @@
 	        }
 	    }
 	}
+	"trader_passive"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "Modifiers"
+	    {
+	        "trader_modifier"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/trader.lua"
+	                    "Function"      "StartThink"
+	                }
+	            }
+	            "States"
+	            {
+	                
+	                "MODIFIER_STATE_NO_TEAM_MOVE_TO"    "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_TEAM_SELECT" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_ATTACK_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_HEALTH_BAR"         "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	    }
+	}
+	
+	"trade_gold"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityTextureName"        "trade_gold"
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "MaxLevel"                  "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "lumber_cost"           "100"
+	        }
+	    }
+	}
+	
+	"trade_lumber"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityTextureName"        "trade_lumber"
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "MaxLevel"                  "1"
+	
+	    "AbilityGoldCost"           "100"
+	}
 }

@@ -792,7 +792,7 @@
 	    
 	    // Status
 	    //----------------------------------------------------------------
-	    "StatusHealth"              "10000"
+	    "StatusHealth"              "100000"
 	    "StatusHealthRegen"         "1.00"
 	    
 	    // Vision
@@ -968,5 +968,71 @@
 	            "Wearable4"     {   "ItemDef"       "5"     } //axe_belt.vmdl
 	        }
 	    }
+	}
+	//=================================================================================
+	"trader"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/courier/skippy_parrot/skippy_parrot_flying_rowboat.vmdl"
+	    "ModelScale"                "2.5"
+	    "Level"                     "100"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
+	    "HealthBarOffset"           "140"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "trader_passive"
+	    "Ability2"                  "trade_gold"
+	    "Ability3"                  "trade_lumber"
+	    
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackRate"                "0"
+	    "AttackAcquisitionRange"    "500"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "0.0"
+	    "BountyGoldMax"             "0.0"
+	    
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "50"
+	    "LumberCost"                "50"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"             "320"
+	    "MovementTurnRate"          "0.40"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "150000"
+	    "StatusHealthRegen"         "0"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "300"
+	    "VisionNighttimeRange"      "300"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
 	}
 }

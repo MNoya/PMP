@@ -33,7 +33,6 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
     var CONTINUE_PROCESSING_EVENT = false;
     var LEFT_CLICK = (arg === 0)
     var RIGHT_CLICK = (arg === 1)
-
     if ( GameUI.GetClickBehaviors() !== CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE )
         return CONTINUE_PROCESSING_EVENT;
 

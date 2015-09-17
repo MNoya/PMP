@@ -143,7 +143,11 @@ function RemoveFromSelection ( args ) {
 
 function OnUpdateQueryUnit( event )
 {
-	$.Msg( "OnUpdateQueryUnit" );
+	var iPlayerID = Players.GetLocalPlayer();
+	var mainSelected = Players.GetLocalPlayerPortraitUnit();
+	if (Entities.GetUnitName(mainSelected) == "trader"){
+		$.Msg( "Player "+iPlayerID+" selected Trader" );
+	}
 }
 
 (function () {

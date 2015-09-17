@@ -420,7 +420,7 @@
     
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"              "10000"
+    "StatusHealth"              "100000"
     "StatusHealthRegen"         "1.00"
     
     // Vision

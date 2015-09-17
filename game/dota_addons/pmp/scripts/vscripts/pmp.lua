@@ -472,22 +472,8 @@ function PMP:OnGameRulesStateChange(keys)
 	elseif newState == DOTA_GAMERULES_STATE_INIT then
 		Timers:RemoveTimer("alljointimer")
 	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-		local et = 6
-		if self.bSeenWaitForPlayers then
-			et = .01
-		end
-		Timers:CreateTimer("alljointimer", {
-			useGameTime = true,
-			endTime = et,
-			callback = function()
-			if PlayerResource:HaveAllPlayersJoined() then
-				PMP:PostLoadPrecache()
-				PMP:OnAllPlayersLoaded()
-				return 
-			end
-			return 1
-		end
-		})
+        PMP:PostLoadPrecache()
+        PMP:OnAllPlayersLoaded()
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		PMP:OnGameInProgress()
 	end
@@ -495,7 +481,7 @@ end
 
 -- An entity died
 function PMP:OnEntityKilled( event )
-	print( '[PMP] OnEntityKilled' )
+	--print( '[PMP] OnEntityKilled' )
 
 	local killed = EntIndexToHScript(event.entindex_killed)
 	local attacker
