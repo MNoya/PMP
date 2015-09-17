@@ -239,6 +239,14 @@
 		"DOTA_Tooltip_modifier_wings8_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
 		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_trade_gold"                                                 "Purchase 50 gold"
+		"DOTA_Tooltip_ability_trade_gold_Description"                                     "Exchange <font color='#006411'>100 lumber</font> for <font color='#fea500'>50 gold</font>"
+		"DOTA_Tooltip_ability_trade_gold_Note0"                                     	  "Requires nearby patron" 
+
+		"DOTA_Tooltip_ability_trade_lumber"                                               "Purchase 50 lumber"
+		"DOTA_Tooltip_ability_trade_lumber_Description"                                   "Exchange <font color='#fea500'>100 gold</font> for <font color='#006411'>50 lumber</font>"
+		"DOTA_Tooltip_ability_trade_lumber_Note0"                                     	  "Requires nearby patron"
+
 		"DOTA_Tooltip_ability_goblin_greed"                                               "Goblin Greed"
 		"DOTA_Tooltip_ability_goblin_greed_Description"                                   ""
 		"DOTA_Tooltip_ability_goblin_greed_extra_bounty"                                  "EXTRA BOUNTY:"
@@ -272,10 +280,10 @@
 		"DOTA_Tooltip_ability_spawn_peon_Description"                                     ""
 
 		"DOTA_Tooltip_ability_spawn_peon_leader"                                          "Spawn Peon Leader"
-		"DOTA_Tooltip_ability_spawn_peon_leader_Description"                              "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn."
+		"DOTA_Tooltip_ability_spawn_peon_leader_Description"                              "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_peon"                                          "Summon Super Peon"
-		"DOTA_Tooltip_ability_summon_super_peon_Description"                              "Spawn a Super Unit that will defend your base for 20 seconds.\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n"
+		"DOTA_Tooltip_ability_summon_super_peon_Description"                              "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
 		"DOTA_Tooltip_ability_summon_super_peon_duration"                                 "DURATION:"
 		"DOTA_Tooltip_ability_summon_super_peon_Note0"									  "Use it wisely!"
 

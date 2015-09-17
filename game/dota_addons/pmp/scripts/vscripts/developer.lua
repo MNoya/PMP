@@ -16,6 +16,10 @@ function PMP:OnPlayerChat(keys)
     local userID = keys.userid
     local playerID = self.vUserIds[userID]:GetPlayerID()
 
+    if not Convars:GetBool('developer') then
+        return
+    end
+
     -- Handle '-command'
     if StringStartsWith(text, "-") then
         text = string.sub(text, 2, string.len(text))

@@ -34,24 +34,13 @@
 {
     "BaseClass"                 "ability_datadriven"
     "AbilityTextureName"        "trade_gold"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
     "MaxLevel"                  "1"
-
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "lumber_cost"           "100"
-        }
-    }
 }
 
 "trade_lumber"
 {
     "BaseClass"                 "ability_datadriven"
     "AbilityTextureName"        "trade_lumber"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
     "MaxLevel"                  "1"
 
     "AbilityGoldCost"           "100"

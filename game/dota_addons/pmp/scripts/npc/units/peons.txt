@@ -309,9 +309,9 @@
     "Ability2"                  "upgrade_spawn_rate"  //Increase spawned peons by 1
     "Ability3"                  "build_barricades"  //Build Barricades
     "Ability4"                  "repair_buildings"  //Repair
-    "Ability5"                  "summon_super_peon"
-    "Ability6"                  "spawn_peon" //Hidden
-    "Ability7"                  "spawn_peon_leader" //Visible to show the 3 min cd
+    "Ability5"                  "spawn_peon" //Hidden
+    "Ability6"                  "spawn_peon_leader"
+    "Ability7"                  "summon_super_peon" //Visible to show the 3 min cd
     "Ability10"                 "ability_building"
     
     // Armor
@@ -420,7 +420,7 @@
     
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"              "100000"
+    "StatusHealth"              "10000"
     "StatusHealthRegen"         "1.00"
     
     // Vision

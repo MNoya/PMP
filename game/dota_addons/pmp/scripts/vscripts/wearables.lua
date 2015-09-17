@@ -1,10 +1,5 @@
--- Each player should store its current cosmetics to apply on peons
--- hero.Wearables = {}
--- hero.Wearables["weapon"] = "some_model_path"
-function SwapWearable( cmd, target_model, new_model )
-    local unit = GetMainSelectedEntity(0)
-    print(unit,target_model, new_model)
-
+-- Swaps a target model for another
+function SwapWearable( unit, target_model, new_model )
     local wearable = unit:FirstMoveChild()
     while wearable ~= nil do
         if wearable:GetClassname() == "dota_item_wearable" then
