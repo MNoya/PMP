@@ -5,11 +5,12 @@ function OnKillEvent( event )
 	var curTimeDS = Game.GetGameTime() * 10;
 	var teamPanel = $.GetContextPanel();
 	var teamId = $.GetContextPanel().GetAttributeInt( "team_id", -1 );
-//	$.Msg( "OnKillEvent:", event, " ? ", teamId );
-	if ( teamId !== event.team_id )
-		return;
-
-//	$.Msg( event );
+	$.Msg( "OnKillEvent:", event, " ? ", teamId );
+	if ( teamId !== event.team_id ){
+        return;
+    }
+        
+	$.Msg( "Eventerino ",event );
 
 	var recentScore = teamPanel.GetAttributeInt( "recent_score_count", 0 );
 	recentScore++;
@@ -72,7 +73,7 @@ function UpdateRecentScore()
 	else
 	{
 		recentScorePanel.SetDialogVariableInt( "score", recentScore );
-		recentScorePanel.text = $.Localize( "#RecentScore", recentScorePanel );
+		recentScorePanel.text = "K"//$.Localize( "#RecentScore", recentScorePanel );
 		recentScorePanel.SetHasClass( "recent_score", true );
 		recentScorePanel.SetHasClass( "no_recent_score", false );
 	}

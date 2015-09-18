@@ -280,10 +280,10 @@
 		"DOTA_Tooltip_ability_spawn_peon_Description"                                     ""
 
 		"DOTA_Tooltip_ability_spawn_peon_leader"                                          "Spawn Peon Leader"
-		"DOTA_Tooltip_ability_spawn_peon_leader_Description"                              "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_peon_leader_Description"                              "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nPeon's Leader has the following abilities:\n-Chain Lightning\n-Bloodlus\n-Far Sight\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_peon"                                          "Summon Super Peon"
-		"DOTA_Tooltip_ability_summon_super_peon_Description"                              "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
+		"DOTA_Tooltip_ability_summon_super_peon_Description"                              "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
 		"DOTA_Tooltip_ability_summon_super_peon_duration"                                 "DURATION:"
 		"DOTA_Tooltip_ability_summon_super_peon_Note0"									  "Use it wisely!"
 

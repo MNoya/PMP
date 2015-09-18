@@ -67,8 +67,8 @@ function PMP:InitGameMode()
 	GameMode = GameRules:GetGameModeEntity()        
 	GameMode:SetRecommendedItemsDisabled( true )
 	GameMode:SetBuybackEnabled( false )
-	GameMode:SetTopBarTeamValuesOverride ( true )
-	GameMode:SetTopBarTeamValuesVisible( true )
+	GameMode:SetTopBarTeamValuesOverride( true )
+    GameMode:SetTopBarTeamValuesVisible( false )
 	GameMode:SetUseCustomHeroLevels ( true )
 	GameMode:SetUnseenFogOfWarEnabled( UNSEEN_FOG_ENABLED )	
 	GameMode:SetTowerBackdoorProtectionEnabled( false )
@@ -135,6 +135,7 @@ function PMP:InitGameMode()
 
 	self.bSeenWaitForPlayers = false
     self.vUserIds = {}
+    self.vPlayerUserIds = {}
 
 	-- KV Files
 	GameRules.AbilityKV = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
@@ -264,6 +265,7 @@ function PMP:OnConnectFull(keys)
 
     -- Update the user ID table with this user
     self.vUserIds[keys.userid] = ply
+    self.vPlayerUserIds[playerID] = keys.userid
 
 end
 
