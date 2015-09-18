@@ -231,9 +231,6 @@ function PMP:InitGameMode()
 		pos_table.position = v:GetAbsOrigin()
 		pos_table.playerID = -1
 		GameRules.StartingPositions[k-1] = pos_table
-
-        DebugDrawCircle(v:GetAbsOrigin(), Vector(255,0,0), 255, 100, true, 600)
-        DebugDrawText(pos_table.position, tostring(k), true, 600)
 	end
 
 	print('[PMP] Done loading gamemode!')

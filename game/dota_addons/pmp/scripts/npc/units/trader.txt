@@ -13,8 +13,8 @@
     // Abilities
     //----------------------------------------------------------------
     "Ability1"                  "trader_passive"
-    "Ability2"                  "trade_gold"
-    "Ability3"                  "trade_lumber"
+    "Ability2"                  ""//"trade_gold"
+    "Ability3"                  ""//"trade_lumber"
     
     // Armor
     //----------------------------------------------------------------
