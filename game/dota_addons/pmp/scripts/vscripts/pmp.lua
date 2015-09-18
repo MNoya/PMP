@@ -224,21 +224,16 @@ function PMP:InitGameMode()
   	GameRules.StartingPositions = {}
 	local targets = Entities:FindAllByName( "*starting_position" ) --Inside player_start.vmap prefab
 
-    -- Randomize positions on the FFA map
-    if GetMapName() == "free_for_all" then
-        targets = ShuffledList(targets)
-    end
-
-    -- Positions for the possible team combinations should be:
-    -- Half map for each team if 6v6
-    -- Vertical Line of 3 if 4v4v4
-    -- Horizontal Line of 4 if 3v3v3v3
+    targets = ShuffledList(targets)
 
 	for k,v in pairs(targets) do
 		local pos_table = {}
-		pos_table.position = v:GetOrigin()
+		pos_table.position = v:GetAbsOrigin()
 		pos_table.playerID = -1
 		GameRules.StartingPositions[k-1] = pos_table
+
+        DebugDrawCircle(v:GetAbsOrigin(), Vector(255,0,0), 255, 100, true, 600)
+        DebugDrawText(pos_table.position, tostring(k), true, 600)
 	end
 
 	print('[PMP] Done loading gamemode!')
