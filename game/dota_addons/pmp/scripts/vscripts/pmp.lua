@@ -465,6 +465,7 @@ function PMP:OnHeroInGame(hero)
     hero:AddAbility("pimp_regen")
 
     hero:AddNoDraw()
+
 end
 
 function PMP:OnGameInProgress()
@@ -516,13 +517,6 @@ function PMP:OnEntityKilled( event )
     local attacker_playerID = attacker and attacker:GetPlayerOwnerID()
     local attacker_teamNumber = attacker and attacker:GetTeamNumber()
     local attacker_hero = attacker_player and attacker_player:GetAssignedHero()
-
-    -- Give lumber bounty to the attacker (unless denied)
-    if attacker_playerID ~= -1 and killed_teamNumber ~= attacker_teamNumber then
-        local lumber_bounty = GetLumberBounty(killed)
-        ModifyLumber(attacker_playerID, lumber_bounty)
-        PopupLumber(killed, lumber_bounty, attacker_teamNumber)
-    end
 
     -- Garage killed
     if IsCityCenter(killed) then
@@ -578,6 +572,13 @@ function PMP:OnEntityKilled( event )
             
             --Add Score
         end
+    end
+
+    -- Give lumber bounty to the attacker (unless denied)
+    if attacker_playerID and attacker_playerID ~= -1 and killed_teamNumber ~= attacker_teamNumber then
+        local lumber_bounty = GetLumberBounty(killed)
+        ModifyLumber(attacker_playerID, lumber_bounty)
+        PopupLumber(killed, lumber_bounty, attacker_teamNumber)
     end
 end
 
@@ -637,11 +638,11 @@ function PMP:OnDisconnect(keys)
     local reason = keys.reason
     local userid = keys.userid
 
-    if self.vUserIds[userid] then
+    --[[if self.vUserIds[userid] then
         local playerID = self.vUserIds[userid]:GetPlayerID()
 
         PMP:MakePlayerLose( playerID )
-    end
+    end]]
 end
 
 -- Check for win condition

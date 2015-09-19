@@ -269,6 +269,7 @@
 
         "modifier_far_sight_vision"
         {
+            "IsHidden"          "1"
             "States"
             {
                 "MODIFIER_STATE_INVISIBLE"      "MODIFIER_STATE_VALUE_DISABLED"

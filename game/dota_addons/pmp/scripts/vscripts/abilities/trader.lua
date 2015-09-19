@@ -17,7 +17,7 @@ function StartThink( event )
 
     Timers:CreateTimer(1, function()
         for i=0,DOTA_TEAM_COUNT do
-            AddFOWViewer ( DOTA_TEAM_GOODGUYS, trader:GetAbsOrigin(), 1000, 1.1, false)
+            AddFOWViewer ( i, trader:GetAbsOrigin(), 1000, 1.1, false)
         end
         return 1
     end)

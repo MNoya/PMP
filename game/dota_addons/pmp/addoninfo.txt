@@ -2,8 +2,12 @@
 {
     "maps"          "free_for_all classic"
     "IsPlayable"    "1"
+    "free_for_all"
+    {
+        "MaxPlayers"     "10"
+    }
     "classic"
     {
-        "MaxPlayers"     "10 12"
-    }
+        "MaxPlayers"     "12"
+    } 
 }
