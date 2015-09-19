@@ -288,6 +288,10 @@ function PMP:OnPlayerPickHero(keys)
     PlayerResource:SetCustomPlayerColor( playerID, color[1], color[2], color[3] )
 
     -- Main building
+    if not GameRules.StartingPositions[playerID] then 
+        print("Not enough slots!")
+        return
+    end
     local center_position = GameRules.StartingPositions[playerID].position
     hero.garage = CreateUnitByName(race.."_garage", center_position, false, hero, hero, teamNumber)
     hero.garage:SetOwner(hero)
@@ -306,8 +310,9 @@ function PMP:OnPlayerPickHero(keys)
     hero.invulnCount = 4
 
     -- The main hero is an invulnerable fake just used to get global upgrades
-    --hero:SetAbsOrigin(center_position)
-    FindClearSpaceForUnit(hero, center_position, true)
+    center_position.z = 0
+    hero:SetAbsOrigin(center_position)
+    hero:AddNoDraw()
 
     -- Upgrade Shop
     local shopEnt = Entities:FindByNameWithin(nil, "*shop_position", center_position, 1000)
@@ -406,6 +411,13 @@ function PMP:OnPlayerPickHero(keys)
         SetFoodUsed(playerID, 0)
         SetFoodLimit(playerID, INITIAL_FOOD_LIMIT)
 
+        if Convars:GetBool('developer') then 
+            SetGold(playerID, 99999)
+            SetLumber(playerID, 99999)
+            SetFoodUsed(playerID, 0)
+            SetFoodLimit(playerID, 100)
+        end
+
         -- Set initial units
         hero.units = {}
         for i=1,INITIAL_PEONS do
@@ -464,8 +476,9 @@ function PMP:OnHeroInGame(hero)
     hero:AddAbility("pimp_speed")
     hero:AddAbility("pimp_regen")
 
-    hero:AddNoDraw()
-
+    Timers:CreateTimer(1, function()
+        hero:AddNoDraw()
+    end)
 end
 
 function PMP:OnGameInProgress()
@@ -510,16 +523,17 @@ function PMP:OnEntityKilled( event )
     local killed_player = killed:GetPlayerOwner()
     local killed_playerID = killed:GetPlayerOwnerID()
     local killed_teamNumber = killed:GetTeamNumber()
-    local killed_hero = killed_player and killed_player:GetAssignedHero()
+    local killed_hero = PlayerResource:GetSelectedHeroEntity(killed_playerID)
 
     -- Attacker credentials
     local attacker_player = attacker and attacker:GetPlayerOwner()
     local attacker_playerID = attacker and attacker:GetPlayerOwnerID()
     local attacker_teamNumber = attacker and attacker:GetTeamNumber()
-    local attacker_hero = attacker_player and attacker_player:GetAssignedHero()
+    local attacker_hero = attacker_playerID and PlayerResource:GetSelectedHeroEntity(attacker_playerID)
 
     -- Garage killed
     if IsCityCenter(killed) then
+        killed:AddNoDraw()
         print("Garage Down for player",killed_playerID)
         PMP:MakePlayerLose(killed_playerID)
 
@@ -528,17 +542,22 @@ function PMP:OnEntityKilled( event )
     -- Tower killed
     elseif IsCustomTower(killed) then
 
+        print("Tower Killed for playerID ",killed_playerID)
+
         -- Table cleanup
         local tower_table = GetPlayerTowers(killed_playerID)
         local unit_index = getIndexTable(tower_table, killed)
         if unit_index then
+            print("Tower Removed from Table")
             table.remove(tower_table, unit_index)
         end
 
         ParticleManager:CreateParticle("particles/newplayer_fx/npx_wood_break.vpcf", PATTACH_ABSORIGIN, killed)
         killed:AddNoDraw()
 
-        ReduceInvulnerabilityCount(killed_hero)     
+        ReduceInvulnerabilityCount(killed_hero)
+
+        print("Reduced Invulnerability count of playerID ",killed_playerID)    
 
     -- Pimp Creature killed
     elseif IsPimpUnit(killed) then
@@ -616,7 +635,8 @@ function PMP:MakePlayerLose( playerID )
     if hero then
         -- Fx
         local explosion1 = ParticleManager:CreateParticle("particles/radiant_fx2/frostivus_wking_altar_smokering.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-        
+        local explosion2 = ParticleManager:CreateParticle("particles/dire_fx/bad_barracks001_ranged_destroy.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+
         local origin = hero:GetAbsOrigin()
         hero.ghost = CreateUnitByName("peon_ghost", origin, false, hero, hero, hero:GetTeamNumber())
         hero.ghost:SetOwner(hero)
@@ -647,7 +667,7 @@ end
 
 -- Check for win condition
 function PMP:CheckWinCondition()
-
+    print("Checking Win Condition") 
     local allHeroes = HeroList:GetAllHeroes()
 
     -- If there are still heroes alive and they belong to different teams, it means there are at least 2 teams "alive"

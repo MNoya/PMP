@@ -74,6 +74,7 @@ function BloodlustAutocast_Attacked( event )
     local caster = event.caster
     local target = event.target
     local ability = event.ability
+    if not ability then return end
 
     -- Name of the modifier to avoid casting the spell on targets that were already buffed
     local modifier = "modifier_bloodlust"

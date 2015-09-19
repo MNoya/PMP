@@ -16,10 +16,6 @@ function PMP:OnPlayerChat(keys)
     local userID = keys.userid
     local playerID = self.vUserIds[userID]:GetPlayerID()
 
-    if not Convars:GetBool('developer') then
-        return
-    end
-
     -- Handle '-command'
     if StringStartsWith(text, "-") then
         text = string.sub(text, 2, string.len(text))
@@ -34,6 +30,8 @@ function PMP:OnPlayerChat(keys)
 end
 
 function PMP:GreedIsGood(pID, value)
+    if not Convars:GetBool('developer') then return end
+
     if not value then value = 500 end
     
     ModifyGold(pID, tonumber(value))
@@ -43,6 +41,7 @@ function PMP:GreedIsGood(pID, value)
 end
 
 function PMP:CreateUnits(pID, unitName, numUnits, bEnemy)
+    if not Convars:GetBool('developer') then return end
     local pos = GetMainSelectedEntity(pID):GetAbsOrigin()
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
 
@@ -127,6 +126,7 @@ function PMP:StopMusic()
 end
 
 function PMP:Freeze()
+    if not Convars:GetBool('developer') then return end
     GameRules.freeze = not GameRules.freeze
 
     local units = GetPlayerUnits(0)

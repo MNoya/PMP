@@ -53,7 +53,6 @@ function ShowWearable( unit, target_model )
 end
 
 function SwapWearableInSlot( unit, model_table, slot )
-
     -- Get original wearable and change its model
     local item_wearable = GetOriginalWearableInSlot(unit, slot)
     if not item_wearable then
@@ -62,7 +61,11 @@ function SwapWearableInSlot( unit, model_table, slot )
 
     local modelName = model_table["Model"]
     item_wearable:SetModel(modelName)
-    item_wearable:RemoveEffects(EF_NODRAW)
+
+    if item_wearable.hidden then
+        item_wearable:RemoveEffects(EF_NODRAW)
+        item_wearable.hidden = false
+    end
 
     -- Clear any prop wearable the unit might have in this slot
     ClearPropWearableSlot(unit, slot)
@@ -92,6 +95,7 @@ function AttachWearableInSlot( unit, model_table, slot, delay )
         local defaultModelName = GetDefaultWearableNameForSlot(unit, slot)
         item_wearable:AddEffects(EF_NODRAW)
         item_wearable:SetModel(defaultModelName)
+        item_wearable.hidden = true
     end
     
     -- Model offsets
@@ -150,10 +154,11 @@ end
 
 function ClearPropWearableSlot( unit, slot )
     if not unit.prop_wearables then return end
-    if unit.prop_wearables[slot] then 
+    if unit.prop_wearables[slot] and IsValidEntity(unit.prop_wearables[slot]) then 
         if unit.prop_wearables[slot].fx then
             ParticleManager:DestroyParticle(unit.prop_wearables[slot].fx, true)
         end
+        --print("Clearing",unit.prop_wearables[slot],unit.prop_wearables[slot]:GetModelName())
         UTIL_Remove(unit.prop_wearables[slot])
     end
 end

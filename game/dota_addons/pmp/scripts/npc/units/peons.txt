@@ -223,7 +223,7 @@
     "AttackRate"                "1"
     "AttackAnimationPoint"      "0.4"
     "AttackAcquisitionRange"    "600"
-    "AttackRange"               "800"
+    "AttackRange"               "900"
     "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
     "ProjectileSpeed"           "900"
     
@@ -573,8 +573,8 @@
     
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "1600"
-    "VisionNighttimeRange"      "1600"
+    "VisionDaytimeRange"        "20000"
+    "VisionNighttimeRange"      "20000"
     
     // Team
     //----------------------------------------------------------------

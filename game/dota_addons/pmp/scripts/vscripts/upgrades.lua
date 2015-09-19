@@ -90,6 +90,7 @@ function PimpUpgrade( event )
 end
 
 function PMP:SetUpgrade( playerID, name, level )
+	if not Convars:GetBool('developer') then return end
 	local upgrades = PMP:GetUpgradeList(playerID)
 
 	upgrades[name] = level
@@ -108,9 +109,9 @@ function PMP:SetUpgrade( playerID, name, level )
 			end
 		end
 
-		-- Health increases unit model scale by 0.01
+		-- Health increases unit model scale by 0.015
 		if name == "health" then
-			unit:SetModelScale(GetOriginalModelScale(unit)+0.01*level)
+			unit:SetModelScale(GetOriginalModelScale(unit)+0.015*level)
 		end
 	end
 
@@ -156,13 +157,12 @@ function PMP:ApplyUpgrade(unit, name, level)
 
             local slot_type_table = unit_wearables[name]
 			if slot_type_table then
-            	local level_table = slot_type_table[tostring(level)]	    
+            	local level_table = slot_type_table[tostring(level)]
 
             	if level_table then
 
 	        		local model_type = level_table["Type"]
 		        	if model_type == "Change" then
-
 		            	SwapWearableInSlot(unit, level_table, name)
 
 		        	elseif model_type == "Attach" then	
@@ -234,6 +234,7 @@ heroUpgrades = {["pimp_damage"]={},["pimp_armor"]={},["pimp_speed"]={},["pimp_re
 slots = {"weapon","helm","shield","wings"}
 
 function PMP:ResetAllUpgrades(playerID)
+	if not Convars:GetBool('developer') then return end
 	local Units = GetPlayerUnits(playerID)
 	for _,unit in pairs(Units) do
         for k,slot_name in pairs(slots) do

@@ -331,6 +331,7 @@ end
 function ReduceInvulnerabilityCount( hero )
     hero.invulnCount = hero.invulnCount - 1
     hero.garage:SetModifierStackCount("modifier_invulnerability_layer", GameRules.APPLIER, hero.invulnCount)
+    print("Reduced Invulnerability Count to ",hero.invulnCount)
 
     if hero.invulnCount == 0 then
         hero.garage:RemoveModifierByName("modifier_invulnerability_layer")
