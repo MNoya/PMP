@@ -3,7 +3,7 @@
 // Handle Right Button events
 function OnRightButtonPressed()
 {
-	$.Msg("OnRightButtonPressed")
+	//$.Msg("OnRightButtonPressed")
 
 	var iPlayerID = Players.GetLocalPlayer();
 	var mainSelected = Players.GetLocalPlayerPortraitUnit(); 
@@ -17,7 +17,7 @@ function OnRightButtonPressed()
 	// Building Right Click
 	if (IsCustomBuilding(mainSelected))
 	{
-		$.Msg("Building Right Click")
+		//$.Msg("Building Right Click")
 
 		var GamePos = Game.ScreenXYToWorld(cursor[0], cursor[1]);
 		GameEvents.SendCustomGameEventToServer( "building_rally_order", { pID: iPlayerID, mainSelected: mainSelected, position: GamePos})

@@ -1,7 +1,7 @@
 function Spawn( trigger )
     local activator = trigger.activator
 
-    if activator and not activator:GetUnitName() == "trader" and not GameRules.Boss then
+    if activator and activator:GetUnitName() ~= "trader" and not GameRules.Boss then
         local spawnEnt = Entities:FindByName(nil, "boss_spawn_point")
         local position = spawnEnt:GetAbsOrigin()
         local boss = CreateUnitByName("nian_boss", position, true, nil, nil, DOTA_TEAM_NEUTRALS)

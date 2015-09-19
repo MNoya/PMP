@@ -1,6 +1,5 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = 0.1
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -116,6 +115,7 @@ function PMP:InitGameMode()
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(PMP, 'OnGameRulesStateChange'), self)
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(PMP, 'OnConnectFull'), self)
 	ListenToGameEvent('player_connect', Dynamic_Wrap(PMP, 'PlayerConnect'), self)
+    ListenToGameEvent('player_disconnect', Dynamic_Wrap(PMP, 'OnDisconnect'), self)
     ListenToGameEvent('player_chat', Dynamic_Wrap(PMP, 'OnPlayerChat'), self)
 
 	-- Filters
@@ -448,7 +448,7 @@ function PMP:OnNPCSpawned(keys)
 		PMP:OnHeroInGame(npc)
 	end
 
-    ApplyModifier(npc, "modifier_attackable")
+    --ApplyModifier(npc, "modifier_attackable")
 end
 
 function PMP:OnHeroInGame(hero)
@@ -471,7 +471,6 @@ function PMP:OnGameInProgress()
 	print("[PMP] The game has officially begun")
 
     GameRules:SendCustomMessage("Welcome to <font color='#FF0000'>Pimp My Peon</font>!", 0, 0)
-    GameRules:SendCustomMessage("Version: " .. PMPVERSION, 0, 0)
 end
 
 -- The overall game state has changed
@@ -502,9 +501,7 @@ function PMP:OnEntityKilled( event )
 		attacker = EntIndexToHScript(event.entindex_attacker)
 	end
 
-    -- Everything that can die is a creature (no heroes die in this gamemode)
     if killed:IsHero() then
-        print("Hero Died. This shouldn't happen")
         return
     end
 
@@ -530,44 +527,7 @@ function PMP:OnEntityKilled( event )
     -- Garage killed
     if IsCityCenter(killed) then
         print("Garage Down for player",killed_playerID)
-        local playerUnits = GetPlayerUnits(killed_playerID)
-        local playerShop = GetPlayerShop(killed_playerID)
-        local playerBarricades = GetPlayerBarricades(killed_playerID)
-
-        -- Clear player units
-        for k,unit in pairs(playerUnits) do
-            Timers:CreateTimer(1/30 * k, function()
-                if IsValidAlive(unit) then
-                    unit:ForceKill(false)
-                end
-            end)
-        end
-
-        -- Clear barricades
-        for k,barricade in pairs(playerBarricades) do
-            UTIL_Remove(barricade)
-        end 
-
-        -- Clear player shop
-        if IsValidAlive(playerShop) then
-            playerShop:ForceKill(false)
-        end
-
-        -- Fx
-        local explosion1 = ParticleManager:CreateParticle("particles/radiant_fx2/frostivus_wking_altar_smokering.vpcf", PATTACH_ABSORIGIN_FOLLOW, killed)
-
-        -- Give a ghost peon unit to scout
-        local origin = killed:GetAbsOrigin()
-        if killed_hero then
-            killed_hero.ghost = CreateUnitByName("peon_ghost", origin, false, killed_hero, killed_hero, killed:GetTeamNumber())
-            killed_hero.ghost:SetOwner(killed_hero)
-            killed_hero.ghost:SetControllableByPlayer(killed_playerID, true)
-            killed_hero.lost = true
-
-            local playerName = PlayerResource:GetPlayerName(killed_playerID)
-            if playerName == "" then playerName = "Player "..killed_playerID end
-            GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
-        end
+        PMP:MakePlayerLose(killed_playerID)
 
         PMP:CheckWinCondition()
 
@@ -618,6 +578,69 @@ function PMP:OnEntityKilled( event )
             
             --Add Score
         end
+    end
+end
+
+function PMP:MakePlayerLose( playerID )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local playerGarage = GetPlayerCityCenter(playerID)
+    local playerUnits = GetPlayerUnits(playerID)
+    local playerShop = GetPlayerShop(playerID)
+    local playerBarricades = GetPlayerBarricades(playerID)
+
+    -- Clear player units
+    for k,unit in pairs(playerUnits) do
+        Timers:CreateTimer(1/30 * k, function()
+            if IsValidAlive(unit) then
+                unit:ForceKill(false)
+            end
+        end)
+    end
+
+    -- Clear barricades
+    for k,barricade in pairs(playerBarricades) do
+        UTIL_Remove(barricade)
+    end 
+
+    -- Clear player shop and garage
+    if IsValidAlive(playerShop) then
+        UTIL_Remove(playerShop)
+    end
+
+    if IsValidAlive(playerGarage) then
+        UTIL_Remove(playerGarage)
+    end
+
+    -- Give a ghost peon unit to scout
+    if hero then
+        -- Fx
+        local explosion1 = ParticleManager:CreateParticle("particles/radiant_fx2/frostivus_wking_altar_smokering.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+        
+        local origin = hero:GetAbsOrigin()
+        hero.ghost = CreateUnitByName("peon_ghost", origin, false, hero, hero, hero:GetTeamNumber())
+        hero.ghost:SetOwner(hero)
+        hero.ghost:SetControllableByPlayer(playerID, true)
+        hero.lost = true
+        hero:ForceKill(true)
+        hero:SetRespawnsDisabled(true)
+
+        local playerName = PlayerResource:GetPlayerName(playerID)
+        if playerName == "" then playerName = "Player "..playerID end
+        GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
+    end
+end
+
+-- Cleanup a player when they leave
+function PMP:OnDisconnect(keys)
+    local name = keys.name
+    local networkid = keys.networkid
+    local reason = keys.reason
+    local userid = keys.userid
+
+    if self.vUserIds[userid] then
+        local playerID = self.vUserIds[userid]:GetPlayerID()
+
+        PMP:MakePlayerLose( playerID )
     end
 end
 

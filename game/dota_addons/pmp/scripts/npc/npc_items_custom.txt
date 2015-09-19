@@ -71,6 +71,11 @@
 	                "MODIFIER_PROPERTY_ABILITY_LAYOUT" "6"
 	            }
 	        }
+	
+	        "modifier_lost"
+	        {
+	            "IsHidden" "1"
+	        }
 		}
 	}
 	// Level 1
