@@ -1,4 +1,4 @@
-.OverthrowGameInfo
+.GameInfo
 {
     width:100%;
     flow-children: down;
@@ -65,19 +65,19 @@ Label
 #ThroneText
 {
     margin-top: 60px;
-	text-align: right;
+	text-align: left;
 }
 
 #ThroneImage
 {
     margin-top: -20px;
     width: 240px;
-    height: 352px;
+    height: 280px;
 }
 
 #CoinsRow
 {
-    margin-top: -120px;
+    margin-top: -60px;
 }
 
 #CoinsImage
@@ -88,7 +88,8 @@ Label
 
 #CoinsText
 {
-    margin-top: 160px;
+    margin-top: 100px;
+    margin-left: 20px;
 }
 
 #ItemsRow
@@ -110,7 +111,7 @@ Label
 
 #TipsHeader
 {
-	margin-top: -18px;
+	margin-top: 30px;
 }
 
 #TipsRow
@@ -133,11 +134,16 @@ Label
 }
 
 
-Label .midas_throne,
-Label .overboss,
-Label .treasure
+Label .bold,
 {
     color: #cccccc;
+    font-weight: bold;
+}
+
+
+Label .lumber
+{
+    color: #008000;
     font-weight: bold;
 }
 
@@ -145,6 +151,6 @@ Label .items,
 Label .gold,
 Label .xp
 {
-    color: #fcaf3d;
+    color: #fea500;
     font-weight: bold;
 }

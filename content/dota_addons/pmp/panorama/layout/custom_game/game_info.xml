@@ -1,0 +1,31 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/custom_game/game_info.css" />
+	</styles>
+	<Panel class="GameInfo">
+		<Panel id="Title">
+			<Label id="TitleName" text="#addonname" />
+		</Panel>
+		<Label id="ObjectiveHeader" class="Header" html="true" text="#game_info_header_objective" />
+		<Label id="BriefDescription" text="#brief_description" />
+		<Label id="HowToPlayHeader" class="Header" html="true" text="#game_info_header_how_to_play" />
+		<Panel id="ThroneRow" class="InfoRow">
+			<Label id="ThroneText" html="true" text="#game_info_throne" />
+			<Image id="ThroneImage" src="file://{images}/custom_game/game_info/axe.psd" />
+		</Panel>
+		<Panel id="CoinsRow" class="InfoRow">
+			<Image id="CoinsImage" src="file://{images}/custom_game/game_info/weapons.psd" />
+			<Label id="CoinsText" html="true" text="#game_info_coins" />
+		</Panel>
+		<Label id="TipsHeader" class="Header" html="true" text="#game_info_tips_header" />
+		<Panel id="TipsRow" class="InfoRow">
+			<Label id="TipText01" class="TipText" html="true" text="#game_info_tip01" />
+			<Label id="TipText02" class="TipText" html="true" text="#game_info_tip02" />
+			<Label id="TipText03" class="TipText" html="true" text="#game_info_tip03" />
+			<Label id="TipText04" class="TipText" html="true" text="#game_info_tip04" />
+			<Label id="TipText05" class="TipText" html="true" text="#game_info_tip05" />
+		</Panel>
+	</Panel>
+</root>
+
