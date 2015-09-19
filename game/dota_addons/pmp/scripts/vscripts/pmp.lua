@@ -25,6 +25,20 @@ TEAM_COLORS[DOTA_TEAM_CUSTOM_6] = { 197, 77, 168 }  --  Pink
 TEAM_COLORS[DOTA_TEAM_CUSTOM_7] = { 129, 83, 54 }   --  Brown
 TEAM_COLORS[DOTA_TEAM_CUSTOM_8] = { 199, 228, 13 }  --  Olive
 
+PLAYER_COLORS = {}
+PLAYER_COLORS[0] = { 52, 85, 255 }   --  Blue
+PLAYER_COLORS[1]  = { 255, 52, 85 }   --  Red
+PLAYER_COLORS[2] = { 61, 210, 150 }  --  Teal
+PLAYER_COLORS[3] = { 140, 42, 244 }  --  Purple
+PLAYER_COLORS[4] = { 243, 201, 9 }   --  Yellow
+PLAYER_COLORS[5] = { 255, 108, 0 }   --  Orange
+PLAYER_COLORS[6] = { 101, 212, 19 }  --  Green
+PLAYER_COLORS[7] = { 197, 77, 168 }  --  Pink
+PLAYER_COLORS[8] = { 129, 83, 54 }   --  Brown
+PLAYER_COLORS[9] = { 199, 228, 13 }  --  Olive
+PLAYER_COLORS[10] = { 105, 105, 255 }  --  Light Blue
+PLAYER_COLORS[11] = { 128, 128, 128 }  --  Gray
+
 XP_PER_LEVEL_TABLE = {
     0, 200, 500, 900, 1400, 2000, 2700, 3500, 4400, 5400, 
     6000, 6600, 7200, 7800, 8400, 9000, 9600, 10200, 10800, 11400,
@@ -282,6 +296,8 @@ function PMP:OnPlayerPickHero(keys)
     local playerID = player:GetPlayerID()
     local teamNumber = hero:GetTeamNumber()
     local race = GetRace(hero)
+    local playerName = PlayerResource:GetPlayerName(playerID)
+    if playerName == "" then playerName = "Player "..playerID end
 
     -- Color
     local color = PMP:ColorForTeam( teamNumber )
@@ -297,6 +313,10 @@ function PMP:OnPlayerPickHero(keys)
     hero.garage:SetOwner(hero)
     hero.garage:SetControllableByPlayer(playerID, true)
     hero.garage.rally_point = center_position
+    Timers:CreateTimer(0.1, function() 
+        ApplyModifier(hero.garage, "modifier_show_health_bar")
+        hero.garage:SetCustomHealthLabel( playerName, color[1], color[2], color[3])  -- Add a label on the base
+    end)
 
     Timers:CreateTimer(1/30, function() 
         NewSelection(hero.garage)
@@ -781,6 +801,14 @@ end
 
 function PMP:ColorForTeam( teamID )
     local color = TEAM_COLORS[teamID]
+    if color == nil then
+        color = { 255, 255, 255 } -- default to white
+    end
+    return color
+end
+
+function PMP:ColorForPlayerID( pID )
+    local color = PLAYER_COLORS[pID]
     if color == nil then
         color = { 255, 255, 255 } -- default to white
     end

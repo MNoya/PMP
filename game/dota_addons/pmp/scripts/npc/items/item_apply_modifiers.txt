@@ -74,5 +74,16 @@
         {
             "IsHidden" "1"
         }
+
+        "modifier_show_health_bar"
+        {
+            "IsHidden"          "1"
+            "Priority"          "MODIFIER_PRIORITY_ULTRA"
+            "Attributes"        "MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+            "States"
+            {
+                "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_DISABLED"
+            }
+        }
 	}
 }

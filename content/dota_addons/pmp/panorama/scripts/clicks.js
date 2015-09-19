@@ -15,7 +15,7 @@ function OnRightButtonPressed()
 	var pressedShift = GameUI.IsShiftDown();
 
 	// Building Right Click
-	if (IsCustomBuilding(mainSelected))
+	if (IsCustomBuilding(mainSelected) && Entities.IsControllableByPlayer( mainSelected, iPlayerID ))
 	{
 		//$.Msg("Building Right Click")
 
