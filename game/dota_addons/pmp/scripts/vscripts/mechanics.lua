@@ -99,7 +99,7 @@ function ModifyLumber( pID, lumber_value )
 end
 
 function ModifyGold( pID, gold_value )
-    PlayerResource:ModifyGold(pID, gold_value, true, 0)
+    PlayerResource:ModifyGold(pID, gold_value, false, 0)
 end
 
 function ModifyFoodUsed( pID, food_used_value )

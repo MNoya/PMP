@@ -17,6 +17,17 @@
                     "Function"      "StartThink"
                 }
             }
+
+            "ThinkInterval"  "0.1"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/trader.lua"
+                    "Function"      "CheckUnitsInRadius"
+                }
+            }
+
             "States"
             {
                 
@@ -35,6 +46,7 @@
     "BaseClass"                 "ability_datadriven"
     "AbilityTextureName"        "trade_gold"
     "MaxLevel"                  "1"
+    "AbilityCastRange"          "900"
 }
 
 "trade_lumber"
@@ -42,6 +54,7 @@
     "BaseClass"                 "ability_datadriven"
     "AbilityTextureName"        "trade_lumber"
     "MaxLevel"                  "1"
+    "AbilityCastRange"          "900"
 
     "AbilityGoldCost"           "100"
 }

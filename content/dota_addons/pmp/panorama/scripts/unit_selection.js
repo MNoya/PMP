@@ -141,19 +141,9 @@ function RemoveFromSelection ( args ) {
 	OnUpdateSelectedUnit( args )
 }
 
-function OnUpdateQueryUnit( event )
-{
-	var iPlayerID = Players.GetLocalPlayer();
-	var mainSelected = Players.GetLocalPlayerPortraitUnit();
-	if (Entities.GetUnitName(mainSelected) == "trader"){
-		$.Msg( "Player "+iPlayerID+" selected Trader" );
-	}
-}
-
 (function () {
 	GameEvents.Subscribe( "add_to_selection", AddToSelection );
 	GameEvents.Subscribe( "remove_from_selection", RemoveFromSelection);
 	GameEvents.Subscribe( "new_selection", NewSelection);
 	GameEvents.Subscribe( "dota_player_update_selected_unit", OnUpdateSelectedUnit );
-	GameEvents.Subscribe( "dota_player_update_query_unit", OnUpdateQueryUnit );
 })();

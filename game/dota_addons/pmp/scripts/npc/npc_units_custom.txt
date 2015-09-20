@@ -716,7 +716,7 @@
 	    
 	    // Movement
 	    //----------------------------------------------------------------
-	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
 	    
 	    // Status
 	    //----------------------------------------------------------------
@@ -984,8 +984,8 @@
 	    // Abilities
 	    //----------------------------------------------------------------
 	    "Ability1"                  "trader_passive"
-	    "Ability2"                  ""//"trade_gold"
-	    "Ability3"                  ""//"trade_lumber"
+	    "Ability2"                  "trade_gold"
+	    "Ability3"                  "trade_lumber"
 	    
 	    // Armor
 	    //----------------------------------------------------------------

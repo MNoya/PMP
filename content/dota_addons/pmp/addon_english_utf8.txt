@@ -240,11 +240,10 @@
 
 		// ******************** ABILITIES ********************
 		"DOTA_Tooltip_ability_trade_gold"                                                 "Purchase 50 gold"
-		"DOTA_Tooltip_ability_trade_gold_Description"                                     "Exchange <font color='#006411'>100 lumber</font> for <font color='#fea500'>50 gold</font>"
-		"DOTA_Tooltip_ability_trade_gold_Note0"                                     	  "Requires nearby patron" 
+		"DOTA_Tooltip_ability_trade_gold_Description"                                     "Exchange <font color='#006411'>100 lumber</font> for <font color='#fea500'>50 gold</font>\n\n<font color='#64cf65'>Requires nearby patron</font>."
 
 		"DOTA_Tooltip_ability_trade_lumber"                                               "Purchase 50 lumber"
-		"DOTA_Tooltip_ability_trade_lumber_Description"                                   "Exchange <font color='#fea500'>100 gold</font> for <font color='#006411'>50 lumber</font>"
+		"DOTA_Tooltip_ability_trade_lumber_Description"                                   "Exchange <font color='#fea500'>100 gold</font> for <font color='#006411'>50 lumber</font>\n\n<font color='#64cf65'>Requires nearby patron</font>."
 		"DOTA_Tooltip_ability_trade_lumber_Note0"                                     	  "Requires nearby patron"
 
 		"DOTA_Tooltip_ability_goblin_greed"                                               "Goblin Greed"
@@ -316,7 +315,7 @@
 		"DOTA_Tooltip_ability_hide_hero_Description"                                      ""
 
 		"DOTA_Tooltip_ability_ability_tower"                                              "Gold and Lumber Reserve"
-		"DOTA_Tooltip_ability_ability_tower_Description"                                  "80 gold and 20 lumber for killing this unit!"
+		"DOTA_Tooltip_ability_ability_tower_Description"                                  "<font color='#fea500'>80 gold</font> and <font color='#006411'>20 lumber</font> for killing this unit!"
 
 		// Weapons
 		"DOTA_Tooltip_ability_upgrade_weapon1"                                            "Upgrade Weapon (1)"

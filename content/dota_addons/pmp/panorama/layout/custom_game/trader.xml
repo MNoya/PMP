@@ -1,0 +1,25 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/trader.css" />
+    </styles>
+    <scripts>
+
+        <include src="file://{resources}/scripts/trader.js" />
+    </scripts>
+    <script>
+        $.Msg( "Compiled Trader!" );
+    </script>
+    <Panel hittest="true" class="TraderPanel" >
+        <Button id="GoldButton" 
+            onactivate="TradeGold()"
+            oncontextmenu="TradeGold()">
+        </Button>
+
+        <Button id="LumberButton" 
+            onactivate="TradeLumber()"
+            oncontextmenu="TradeLumber()">
+        </Button>
+    </Panel>
+</root>
+
+

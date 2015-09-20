@@ -5,6 +5,7 @@ GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_COUR
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, false );
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, false );
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, false );
+GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD, false );
 
 function OnPlayerLumberChanged ( args ) {
 	var iPlayerID = Players.GetLocalPlayer()
@@ -12,6 +13,14 @@ function OnPlayerLumberChanged ( args ) {
 	//$.Msg("Player "+iPlayerID+" Lumber: "+lumber)
 	$('#LumberText').text = lumber
 	CheckHudFlipped();
+}
+
+function UpdateGold()
+{
+	var iPlayerID = Players.GetLocalPlayer()
+	var gold = Players.GetGold( iPlayerID )
+	$('#GoldText').text = gold
+	$.Schedule( 0.1, UpdateGold );
 }
 
 function OnPlayerFoodChanged ( args ) {
@@ -31,7 +40,7 @@ function CheckHudFlipped() {
 
 	if (Game.IsHUDFlipped())
 	{
-		$.Msg('LoL Player detected, Flipping Panels... ')
+		//$.Msg('LoL Player detected, Flipping Panels... ')
 		lumberPanel.RemoveClass( "Right" );
 		foodPanel.RemoveClass( "Right" );
 		lumberPanel.AddClass( "Flipped" );
@@ -47,6 +56,8 @@ function CheckHudFlipped() {
 }
 
 (function () {
+	UpdateGold();
+	CheckHudFlipped();
 	GameEvents.Subscribe( "player_lumber_changed", OnPlayerLumberChanged );
 	GameEvents.Subscribe( "player_food_changed", OnPlayerFoodChanged );
 })();

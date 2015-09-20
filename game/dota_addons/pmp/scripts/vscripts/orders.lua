@@ -133,48 +133,20 @@ function PMP:FilterExecuteOrder( filterTable )
             ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = order_type, Position = pos, Queue = queue})
         end
         return false
+    
+
+    -- Move Flag
+    elseif (order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION) then
+        if unit and IsCityCenter(unit) then
+
+            local event = { pID = issuer, mainSelected = unit:GetEntityIndex(), pos_x = x, pos_y = y, pos_z = z }
+            PMP:OnBuildingRallyOrder( event )
+
+            return false
+        end
     end
 
     return true
-end
-
-function CreateRallyFlagForBuilding( building )
-    local flag_type = building.flag.type
-    local teamNumber = building:GetTeamNumber()
-    local color = TEAM_COLORS[teamNumber]
-    local particleName = "particles/custom/rally_flag.vpcf"
-    local particle
-    if flag_type == "tree" then
-        local tree_pos = building.flag:GetAbsOrigin()
-        particle = ParticleManager:CreateParticleForTeam(particleName, PATTACH_CUSTOMORIGIN, building, teamNumber)
-        ParticleManager:SetParticleControl(particle, 0, Vector(tree_pos.x, tree_pos.y, tree_pos.z+250)) -- Position
-        ParticleManager:SetParticleControl(particle, 1, building:GetAbsOrigin()) --Orientation
-    elseif flag_type == "position" then
-        local position = building.flag:GetAbsOrigin()
-        particle = ParticleManager:CreateParticleForTeam(particleName, PATTACH_ABSORIGIN_FOLLOW, building.flag, teamNumber)
-        ParticleManager:SetParticleControl(particle, 0, position) -- Position
-        ParticleManager:SetParticleControl(particle, 1, building:GetAbsOrigin()) --Orientation
-    elseif flag_type == "target" or flag_type == "mine" then
-        local target = building.flag
-        if target and IsValidEntity(target) then
-            local origin = target:GetAbsOrigin()
-                        
-            if flag_type == "mine" then
-                particle = ParticleManager:CreateParticleForTeam(particleName, PATTACH_CUSTOMORIGIN, target, teamNumber)
-                ParticleManager:SetParticleControl(particle, 0, Vector(origin.x, origin.y, origin.z+350))
-            else
-                particle = ParticleManager:CreateParticleForTeam(particleName, PATTACH_OVERHEAD_FOLLOW, target, teamNumber)
-                ParticleManager:SetParticleControl(particle, 0, origin)
-            end
-
-            ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin() * target:GetForwardVector()) --Orientation
-        end
-    end
-    ParticleManager:SetParticleControl(particle, 15, Vector(color[1], color[2], color[3])) --Color
-
-    -- Stores the particle on the player handle to remove it when the selection changes
-    local player = building:GetPlayerOwner()
-    player.flagParticle = particle
 end
 
 function PMP:OnBuildingRallyOrder( event )
@@ -182,10 +154,11 @@ function PMP:OnBuildingRallyOrder( event )
     local pID = event.pID
     local mainSelected = event.mainSelected
     local rally_type = event.rally_type
-    local targetIndex = event.targetIndex -- Only on "mine" or "target" rally type
-    local position = event.position -- Only on "position" rally type
+    local position = event.position
     if position then
         position = Vector(position["0"], position["1"], position["2"])
+    else
+        position = Vector(event.pos_x, event.pos_y, event.pos_z)
     end
 
     local building = EntIndexToHScript(mainSelected)
