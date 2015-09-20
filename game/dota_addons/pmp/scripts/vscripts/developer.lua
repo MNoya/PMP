@@ -1,13 +1,14 @@
 CHEAT_CODES = {
     ["greedisgood"] = function(...) PMP:GreedIsGood(...) end,  -- Gives X gold and lumber
     ["createunits"] = function(...) PMP:CreateUnits(...) end,  -- Creates 'name' units around the currently selected unit, with optional num and neutral team
-    ["music"]       = function(...) PMP:Music(...) end,
-    ["stopmusic"]   = function(...) PMP:StopMusic(...) end,
     ["pimp"]        = function(...) PMP:SetUpgrade(...) end,    -- upgrade [weapon/helm/armor/wings/health/critical_strike/stun_hit/poisoned_weapons/pulverize/dodge/spiked_armor] [level]
     ["reset"]       = function(...) PMP:ResetAllUpgrades(...) end,
     ["freeze"]      = function(...) PMP:Freeze(...) end
-    --bot race
-    --set type model x y z
+}
+
+PLAYER_COMMANDS = {
+    ["music"]       = function(...) PMP:Music(...) end,
+    ["stopmusic"]   = function(...) PMP:StopMusic(...) end
 }
 
 -- A player has typed something into the chat
@@ -23,15 +24,16 @@ function PMP:OnPlayerChat(keys)
 
     local input = split(text)
     local command = input[1]
-    if CHEAT_CODES[command] then
+    if CHEAT_CODES[command] and Convars:GetBool('developer') then
         --print('Command:',command, "Player:",playerID, "Parameters",input[2], input[3], input[4])
         CHEAT_CODES[command](playerID, input[2], input[3], input[4])
-    end        
+    
+    elseif PLAYER_COMMANDS[command] then
+        PLAYER_COMMANDS[command](playerID)
+    end
 end
 
 function PMP:GreedIsGood(pID, value)
-    if not Convars:GetBool('developer') then return end
-
     if not value then value = 500 end
     
     ModifyGold(pID, tonumber(value))
@@ -41,7 +43,6 @@ function PMP:GreedIsGood(pID, value)
 end
 
 function PMP:CreateUnits(pID, unitName, numUnits, bEnemy)
-    if not Convars:GetBool('developer') then return end
     local pos = GetMainSelectedEntity(pID):GetAbsOrigin()
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
 
@@ -112,21 +113,35 @@ function GetGridAroundPoint( numUnits, point )
     return navPoints
 end
 
-function PMP:Music()
-    print("Play Music")
-    SendToConsole("stopsound")
-
-    Timers:CreateTimer(1,function()
-        EmitGlobalSound("PMP.PowerOfTheHorde")
-    end)
+function PMP:Music(pID)
+    local player = PlayerResource:GetPlayer(pID)
+    
+    if player and not GameRules.PlayingMusic[pID] then
+        GameRules.PlayingMusic[pID] = true
+        EmitSoundOnClient("PMP.PowerOfTheHorde", player)
+        
+        Timers:CreateTimer(281, function() 
+            local player = PlayerResource:GetPlayer(pID)
+            if player and GameRules.PlayingMusic[pID] then
+                EmitSoundOnClient("PMP.PowerOfTheHorde", player)
+                return 281
+            else
+                return
+            end
+        end)
+    end
 end
 
-function PMP:StopMusic()
-    SendToConsole("stopsound")
+function PMP:StopMusic(pID)
+    local player = PlayerResource:GetPlayer(pID)
+    
+    if player and GameRules.PlayingMusic[pID] then
+        GameRules.PlayingMusic[pID] = false
+        StopSoundOn("PMP.PowerOfTheHorde", player)
+    end
 end
 
 function PMP:Freeze()
-    if not Convars:GetBool('developer') then return end
     GameRules.freeze = not GameRules.freeze
 
     local units = GetPlayerUnits(0)

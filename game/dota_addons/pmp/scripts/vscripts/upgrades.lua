@@ -90,7 +90,6 @@ function PimpUpgrade( event )
 end
 
 function PMP:SetUpgrade( playerID, name, level )
-	if not Convars:GetBool('developer') then return end
 	local upgrades = PMP:GetUpgradeList(playerID)
 
 	upgrades[name] = level
@@ -234,7 +233,6 @@ heroUpgrades = {["pimp_damage"]={},["pimp_armor"]={},["pimp_speed"]={},["pimp_re
 slots = {"weapon","helm","shield","wings"}
 
 function PMP:ResetAllUpgrades(playerID)
-	if not Convars:GetBool('developer') then return end
 	local Units = GetPlayerUnits(playerID)
 	for _,unit in pairs(Units) do
         for k,slot_name in pairs(slots) do

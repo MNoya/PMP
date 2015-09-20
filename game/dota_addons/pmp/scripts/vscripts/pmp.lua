@@ -151,6 +151,12 @@ function PMP:InitGameMode()
     self.vUserIds = {}
     self.vPlayerUserIds = {}
 
+    -- Win Condition
+    GameRules.StillInGame = {}
+
+    -- Music play
+    GameRules.PlayingMusic = {}
+
 	-- KV Files
 	GameRules.AbilityKV = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
   	GameRules.UnitKV = LoadKeyValues("scripts/npc/npc_units_custom.txt")
@@ -308,6 +314,10 @@ function PMP:OnPlayerPickHero(keys)
         print("Not enough slots!")
         return
     end
+
+    -- Add to playing list
+    table.insert(GameRules.StillInGame, hero)
+
     local center_position = GameRules.StartingPositions[playerID].position
     hero.garage = CreateUnitByName(race.."_garage", center_position, false, hero, hero, teamNumber)
     hero.garage:SetOwner(hero)
@@ -505,6 +515,11 @@ function PMP:OnGameInProgress()
 	print("[PMP] The game has officially begun")
 
     GameRules:SendCustomMessage("Welcome to <font color='#FF0000'>Pimp My Peon</font>!", 0, 0)
+
+    Timers:CreateTimer(1, function() 
+        PMP:CheckWinCondition()
+        return 1
+    end)
 end
 
 -- The overall game state has changed
@@ -556,8 +571,6 @@ function PMP:OnEntityKilled( event )
         killed:AddNoDraw()
         print("Garage Down for player",killed_playerID)
         PMP:MakePlayerLose(killed_playerID)
-
-        PMP:CheckWinCondition()
 
     -- Tower killed
     elseif IsCustomTower(killed) then
@@ -628,6 +641,13 @@ function PMP:MakePlayerLose( playerID )
     local playerShop = GetPlayerShop(playerID)
     local playerBarricades = GetPlayerBarricades(playerID)
 
+    -- Clear the Still In Game table
+    local unit_index = getIndexTable(GameRules.StillInGame, hero)
+    if unit_index then
+        print("MakePlayerLose",playerID)
+        table.remove(GameRules.StillInGame, unit_index)
+    end
+
     -- Clear player units
     for k,unit in pairs(playerUnits) do
         Timers:CreateTimer(1/30 * k, function()
@@ -687,42 +707,28 @@ end
 
 -- Check for win condition
 function PMP:CheckWinCondition()
-    print("Checking Win Condition") 
-    local allHeroes = HeroList:GetAllHeroes()
-
-    -- If there are still heroes alive and they belong to different teams, it means there are at least 2 teams "alive"
     local winnerTeamID = nil
-    local winConditionFailed = nil
-    for _,h in pairs(allHeroes) do
-        print("Checking ",h:GetPlayerOwnerID())
-        if not h.lost then
-            if not winConditionFailed then
-                print(h:GetPlayerOwnerID()," is still playing, checking others")
-                winnerTeamID = h:GetTeamNumber() -- Possible winning team
-                for _,otherHero in pairs(allHeroes) do
-                    -- If it's a different hero, from a different team, both alive and playing, break
-                    if (otherHero ~= h) and (otherHero:GetTeamNumber() ~= h:GetTeamNumber()) and (not otherHero.lost) then
-                        print(otherHero:GetPlayerOwnerID()," is still in play and has a different team than ",h:GetPlayerOwnerID())
-                        winConditionFailed = true
-                        winnerTeamID = nil
-                        break                    
-                    elseif otherHero.lost then
-                        print(otherHero:GetPlayerOwnerID()," lost")
-                    end
-                end
-            else
-                print("Win Condition Check Failed - Keep playing")
-                break
-            end
-        else
-            print("   This hero lost")
-        end
+
+    -- Don't end single player lobbies
+    if PlayerResource:GetPlayerCount() == 1 then
+        return
     end
-    if winnerTeamID and not winConditionFailed then
+
+    -- Check if all the heroes still in game belong to the same team
+    for k,hero in pairs(GameRules.StillInGame) do
+        local teamNumber = hero:GetTeamNumber()
+        if not winnerTeamID then
+            winnerTeamID = teamNumber
+        elseif winnerTeamID ~= teamNumber then
+            return
+        end
+    end    
+
+    if winnerTeamID then
         print(winnerTeamID.." is the Winner")
 
-        PMP:PrintWinMessageForTeam(winnerTeamID)
         GameRules:SetGameWinner(winnerTeamID)
+        PMP:PrintWinMessageForTeam(winnerTeamID)
     end
 end
 
@@ -790,7 +796,7 @@ function PMP:PrintWinMessageForTeam( teamID )
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
 		if PlayerResource:IsValidPlayerID(playerID) then
 			local player = PlayerResource:GetPlayer(playerID)
-			if player:GetTeamNumber() == teamID then
+			if player and player:GetTeamNumber() == teamID then
 				local playerName = PlayerResource:GetPlayerName(playerID)
 				if playerName == "" then playerName = "Player "..playerID end
 				GameRules:SendCustomMessage(playerName.." was victorious!", 0, 0)
