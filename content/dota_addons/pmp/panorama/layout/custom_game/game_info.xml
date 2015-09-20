@@ -26,6 +26,7 @@
 			<Label id="TipText04" class="TipText" html="true" text="#game_info_tip04" />
 			<Label id="TipText05" class="TipText" html="true" text="#game_info_tip05" />
 			<Label id="TipText06" class="TipText" html="true" text="#game_info_tip06" />
+			<Label id="TipText07" class="TipText" html="true" text="#game_info_tip07" />
 		</Panel>
 	</Panel>
 </root>
