@@ -18,6 +18,8 @@
 		"peon_tower"                                                                      "Peon Tower"
 		"barricade"                                                                       "Barricade"
 		"peon_ghost"                                                                      "Ghost"
+		"nian_boss"                                                                       "Boss"
+		"trader"                                                                          "Trader"
 
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_peon_cleave"                                               "Axe's Axe"
@@ -52,85 +54,85 @@
 		"DOTA_Tooltip_modifier_weapon3"                                                   "Weapon 3"
 		"DOTA_Tooltip_modifier_weapon3_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon4"                                                   "Weapon4"
+		"DOTA_Tooltip_modifier_weapon4"                                                   "Weapon 4"
 		"DOTA_Tooltip_modifier_weapon4_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon5"                                                   "Weapon5"
+		"DOTA_Tooltip_modifier_weapon5"                                                   "Weapon 5"
 		"DOTA_Tooltip_modifier_weapon5_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_weapon6"                                                   "Weapon6"
 		"DOTA_Tooltip_modifier_weapon6_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon7"                                                   "Weapon7"
+		"DOTA_Tooltip_modifier_weapon7"                                                   "Weapon 7"
 		"DOTA_Tooltip_modifier_weapon7_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon8"                                                   "Weapon8"
+		"DOTA_Tooltip_modifier_weapon8"                                                   "Weapon 8"
 		"DOTA_Tooltip_modifier_weapon8_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon9"                                                   "Weapon9"
+		"DOTA_Tooltip_modifier_weapon9"                                                   "Weapon 9"
 		"DOTA_Tooltip_modifier_weapon9_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon10"                                                  "Weapon10"
+		"DOTA_Tooltip_modifier_weapon10"                                                  "Weapon 10"
 		"DOTA_Tooltip_modifier_weapon10_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon11"                                                  "Weapon11"
+		"DOTA_Tooltip_modifier_weapon11"                                                  "Weapon 11"
 		"DOTA_Tooltip_modifier_weapon11_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon12"                                                  "Weapon12"
+		"DOTA_Tooltip_modifier_weapon12"                                                  "Weapon 12"
 		"DOTA_Tooltip_modifier_weapon12_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon13"                                                  "Weapon13"
+		"DOTA_Tooltip_modifier_weapon13"                                                  "Weapon 13"
 		"DOTA_Tooltip_modifier_weapon13_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon14"                                                  "Weapon14"
+		"DOTA_Tooltip_modifier_weapon14"                                                  "Weapon 14"
 		"DOTA_Tooltip_modifier_weapon14_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon15"                                                  "Weapon15"
+		"DOTA_Tooltip_modifier_weapon15"                                                  "Weapon 15"
 		"DOTA_Tooltip_modifier_weapon15_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon16"                                                  "Weapon16"
+		"DOTA_Tooltip_modifier_weapon16"                                                  "Weapon 16"
 		"DOTA_Tooltip_modifier_weapon16_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon17"                                                  "Weapon17"
+		"DOTA_Tooltip_modifier_weapon17"                                                  "Weapon 17"
 		"DOTA_Tooltip_modifier_weapon17_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon18"                                                  "Weapon18"
+		"DOTA_Tooltip_modifier_weapon18"                                                  "Weapon 18"
 		"DOTA_Tooltip_modifier_weapon18_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon19"                                                  "Weapon19"
+		"DOTA_Tooltip_modifier_weapon19"                                                  "Weapon 19"
 		"DOTA_Tooltip_modifier_weapon19_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon20"                                                  "Weapon20"
+		"DOTA_Tooltip_modifier_weapon20"                                                  "Weapon 20"
 		"DOTA_Tooltip_modifier_weapon20_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon21"                                                  "Weapon21"
+		"DOTA_Tooltip_modifier_weapon21"                                                  "Weapon 21"
 		"DOTA_Tooltip_modifier_weapon21_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon22"                                                  "Weapon22"
+		"DOTA_Tooltip_modifier_weapon22"                                                  "Weapon 22"
 		"DOTA_Tooltip_modifier_weapon22_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon23"                                                  "Weapon23"
+		"DOTA_Tooltip_modifier_weapon23"                                                  "Weapon 23"
 		"DOTA_Tooltip_modifier_weapon23_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon24"                                                  "Weapon24"
+		"DOTA_Tooltip_modifier_weapon24"                                                  "Weapon 24"
 		"DOTA_Tooltip_modifier_weapon24_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon25"                                                  "Weapon25"
+		"DOTA_Tooltip_modifier_weapon25"                                                  "Weapon 25"
 		"DOTA_Tooltip_modifier_weapon25_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon26"                                                  "Weapon26"
+		"DOTA_Tooltip_modifier_weapon26"                                                  "Weapon 26"
 		"DOTA_Tooltip_modifier_weapon26_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon27"                                                  "Weapon27"
+		"DOTA_Tooltip_modifier_weapon27"                                                  "Weapon 27"
 		"DOTA_Tooltip_modifier_weapon27_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon28"                                                  "Weapon28"
+		"DOTA_Tooltip_modifier_weapon28"                                                  "Weapon 28"
 		"DOTA_Tooltip_modifier_weapon28_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon29"                                                  "Weapon29"
+		"DOTA_Tooltip_modifier_weapon29"                                                  "Weapon 29"
 		"DOTA_Tooltip_modifier_weapon29_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon30"                                                  "Weapon30"
+		"DOTA_Tooltip_modifier_weapon30"                                                  "Weapon 30"
 		"DOTA_Tooltip_modifier_weapon30_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
 		// Helm
@@ -143,74 +145,74 @@
 		"DOTA_Tooltip_modifier_helm3"                                                     "Helm 3"
 		"DOTA_Tooltip_modifier_helm3_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm4"                                                     "Helm4"
+		"DOTA_Tooltip_modifier_helm4"                                                     "Helm 4"
 		"DOTA_Tooltip_modifier_helm4_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm5"                                                     "Helm5"
+		"DOTA_Tooltip_modifier_helm5"                                                     "Helm 5"
 		"DOTA_Tooltip_modifier_helm5_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm6"                                                     "Helm6"
+		"DOTA_Tooltip_modifier_helm6"                                                     "Helm 6"
 		"DOTA_Tooltip_modifier_helm6_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm7"                                                     "Helm7"
+		"DOTA_Tooltip_modifier_helm7"                                                     "Helm 7"
 		"DOTA_Tooltip_modifier_helm7_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm8"                                                     "Helm8"
+		"DOTA_Tooltip_modifier_helm8"                                                     "Helm 8"
 		"DOTA_Tooltip_modifier_helm8_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm9"                                                     "Helm9"
+		"DOTA_Tooltip_modifier_helm9"                                                     "Helm 9"
 		"DOTA_Tooltip_modifier_helm9_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm10"                                                    "Helm10"
+		"DOTA_Tooltip_modifier_helm10"                                                    "Helm 10"
 		"DOTA_Tooltip_modifier_helm10_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm11"                                                    "Helm11"
+		"DOTA_Tooltip_modifier_helm11"                                                    "Helm 11"
 		"DOTA_Tooltip_modifier_helm11_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm12"                                                    "Helm12"
+		"DOTA_Tooltip_modifier_helm12"                                                    "Helm 12"
 		"DOTA_Tooltip_modifier_helm12_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm13"                                                    "Helm13"
+		"DOTA_Tooltip_modifier_helm13"                                                    "Helm 13"
 		"DOTA_Tooltip_modifier_helm13_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm14"                                                    "Helm14"
+		"DOTA_Tooltip_modifier_helm14"                                                    "Helm 14"
 		"DOTA_Tooltip_modifier_helm14_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
 		"DOTA_Tooltip_modifier_helm15"                                                    "Helm15"
 		"DOTA_Tooltip_modifier_helm15_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
 		// Shield
-		"DOTA_Tooltip_modifier_shield1"                                                   "Shield1"
+		"DOTA_Tooltip_modifier_shield1"                                                   "Shield 1"
 		"DOTA_Tooltip_modifier_shield1_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield2"                                                   "Shield2"
+		"DOTA_Tooltip_modifier_shield2"                                                   "Shield 2"
 		"DOTA_Tooltip_modifier_shield2_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield3"                                                   "Shield3"
+		"DOTA_Tooltip_modifier_shield3"                                                   "Shield 3"
 		"DOTA_Tooltip_modifier_shield3_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield4"                                                   "Shield4"
+		"DOTA_Tooltip_modifier_shield4"                                                   "Shield 4"
 		"DOTA_Tooltip_modifier_shield4_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield5"                                                   "Shield5"
+		"DOTA_Tooltip_modifier_shield5"                                                   "Shield 5"
 		"DOTA_Tooltip_modifier_shield5_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield6"                                                   "Shield6"
+		"DOTA_Tooltip_modifier_shield6"                                                   "Shield 6"
 		"DOTA_Tooltip_modifier_shield6_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield7"                                                   "Shield7"
+		"DOTA_Tooltip_modifier_shield7"                                                   "Shield 7"
 		"DOTA_Tooltip_modifier_shield7_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield8"                                                   "Shield8"
+		"DOTA_Tooltip_modifier_shield8"                                                   "Shield 8"
 		"DOTA_Tooltip_modifier_shield8_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield9"                                                   "Shield9"
+		"DOTA_Tooltip_modifier_shield9"                                                   "Shield 9"
 		"DOTA_Tooltip_modifier_shield9_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield10"                                                  "Shield10"
+		"DOTA_Tooltip_modifier_shield10"                                                  "Shield 10"
 		"DOTA_Tooltip_modifier_shield10_Description"                                      "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_shield11"                                                  "Shield11"
+		"DOTA_Tooltip_modifier_shield11"                                                  "Shield 11"
 		"DOTA_Tooltip_modifier_shield11_Description"                                      "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
 		// Wings
@@ -223,19 +225,19 @@
 		"DOTA_Tooltip_modifier_wings3"                                                    "Wings 3"
 		"DOTA_Tooltip_modifier_wings3_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
-		"DOTA_Tooltip_modifier_wings4"                                                    "Wings4"
+		"DOTA_Tooltip_modifier_wings4"                                                    "Wings 4"
 		"DOTA_Tooltip_modifier_wings4_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
-		"DOTA_Tooltip_modifier_wings5"                                                    "Wings5"
+		"DOTA_Tooltip_modifier_wings5"                                                    "Wings 5"
 		"DOTA_Tooltip_modifier_wings5_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
-		"DOTA_Tooltip_modifier_wings6"                                                    "Wings6"
+		"DOTA_Tooltip_modifier_wings6"                                                    "Wings 6"
 		"DOTA_Tooltip_modifier_wings6_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
-		"DOTA_Tooltip_modifier_wings7"                                                    "Wings7"
+		"DOTA_Tooltip_modifier_wings7"                                                    "Wings 7"
 		"DOTA_Tooltip_modifier_wings7_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
-		"DOTA_Tooltip_modifier_wings8"                                                    "Wings8"
+		"DOTA_Tooltip_modifier_wings8"                                                    "Wings 8"
 		"DOTA_Tooltip_modifier_wings8_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
 		// ******************** ABILITIES ********************
