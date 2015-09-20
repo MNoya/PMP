@@ -18,6 +18,7 @@
 		"game_info_tip04"						"• Set a <span class='bold'>Rally Point</span> by right clicking with your Garage."
 		"game_info_tip05"						"• Try the <span class='bold'>Free For All</span> and <span class='bold'>Classic</span> map for team games!"
 		"game_info_tip05"						"• If you are defeated, you can stay in game spectating as a <span class='bold'>Ghost</span>."
+		"game_info_tip05"						"• Go nearby the <span class='bold'>Trader</span> to exchange resources."
 	
 		"Unassigned"      								"Unassigned Team"
 		"Spectator"       								"Spectator Team"

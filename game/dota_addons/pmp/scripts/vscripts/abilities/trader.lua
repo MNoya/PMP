@@ -62,6 +62,7 @@ function PMP:OnTradeOrder( event )
             if PlayerHasEnoughGold(pID, resource_needed) then
                 --print("Exchanging Gold -> Lumber")
 
+                EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
                 ModifyGold( pID, -resource_needed )
                 ModifyLumber( pID, resource_gain )
                 PopupLumber(unitNearby, resource_gain, unitNearby:GetTeamNumber())
@@ -71,6 +72,7 @@ function PMP:OnTradeOrder( event )
             if PlayerHasEnoughLumber(pID, resource_needed) then
                 --print("Exchanging Lumber -> Gold")
 
+                EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
                 ModifyLumber( pID, -resource_needed )
                 ModifyGold( pID, resource_gain )
                 PopupGoldGain(unitNearby, resource_gain, unitNearby:GetTeamNumber())

@@ -442,12 +442,12 @@ function PMP:OnPlayerPickHero(keys)
         SetFoodUsed(playerID, 0)
         SetFoodLimit(playerID, INITIAL_FOOD_LIMIT)
 
-        --[[if Convars:GetBool('developer') then 
+        if Convars:GetBool('developer') then 
             SetGold(playerID, 99999)
             SetLumber(playerID, 99999)
             SetFoodUsed(playerID, 0)
             SetFoodLimit(playerID, 100)
-        end]]
+        end
 
         -- Set initial units
         hero.units = {}
