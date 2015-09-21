@@ -16,6 +16,12 @@
 {
     visibility: visible;
 }
+
+.Hidden 
+{ 
+    visibility: collapse;
+    opacity: 0;
+}
  
 .SettingsHeader
 {

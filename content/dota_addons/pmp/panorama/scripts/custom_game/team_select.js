@@ -405,13 +405,25 @@ function ConstructTeamPanels () {
 //--------------------------------------------------------------------------------------------------
 (function()
 {	
-	// Set default on the host panel
-    //SetSetting(settings[0], 2);
+	var Map_Info = Game.GetMapInfo()
+	var Map_Name = Map_Info.map_display_name
+	if (Map_Name == "teams")
+	{
+		$('#Settings').RemoveClass('Hidden')
+
+		// Set default on the host panel
+    	SetSetting(settings[0], 2);
+    }
+    else{
+    	$.Msg(Map_Name)
+    	$('#Settings').AddClass('Hidden')
+
+    	// Construct the panels for each team
+		ConstructTeamPanels();
+    }
+  	
 
 	$( "#TeamSelectContainer" ).SetAcceptsFocus( true ); // Prevents the chat window from taking focus by default
-
-	// Construct the panels for each team
-	ConstructTeamPanels();
 
 	// Register a listener for the event which is brodcast when the team assignment of a player is actually assigned
 	$.RegisterForUnhandledEvent( "DOTAGame_TeamPlayerListChanged", OnTeamPlayerListChanged );

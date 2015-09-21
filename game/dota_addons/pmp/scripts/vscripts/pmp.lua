@@ -75,7 +75,6 @@ function PMP:InitGameMode()
   	GameRules:SetHideKillMessageHeaders( true )
     GameRules:SetGoldPerTick(GOLD_PER_TICK)
     GameRules:SetGoldTickTime(GOLD_TICK_TIME)
-    GameRules:EnableCustomGameSetupAutoLaunch(false)
 
   	-- Set game mode rules
 	GameMode = GameRules:GetGameModeEntity()        

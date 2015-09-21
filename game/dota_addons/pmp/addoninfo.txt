@@ -1,12 +1,12 @@
 "AddonInfo"
 {
-    "maps"          "free_for_all classic"
+    "maps"          "free_for_all teams"
     "IsPlayable"    "1"
     "free_for_all"
     {
         "MaxPlayers"     "10"
     }
-    "classic"
+    "teams"
     {
         "MaxPlayers"     "12"
     } 
