@@ -17,8 +17,6 @@ function SendDefeatedMessage( pID_attacker, pID_killed )
     if playerName_attacker == "" then playerName_attacker = "Player "..pID_attacker end
     if playerName_killed == "" then playerName_killed = "Player "..pID_killed end
 
-    playerName_attacker = "Noya"
-
     local team_attacker_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_attacker)) )
     local team_killed_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_killed)) )
 
