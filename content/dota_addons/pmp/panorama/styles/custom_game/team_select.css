@@ -1,3 +1,100 @@
+#Settings
+{
+    width: 300px;
+    height: fit-children;
+    horizontal-align: left;
+    vertical-align: top;
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
+    margin-left: 20px;
+    margin-top: 20px;
+    box-shadow: black -4px -4px 8px 8px;
+    flow-children: down;
+    visibility: collapse;
+}
+
+.player_has_host_privileges #Settings
+{
+    visibility: visible;
+}
+ 
+.SettingsHeader
+{
+    margin-top: 3px;
+    margin-left: -9px;
+    horizontal-align: center;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+    font-size: 40px;
+    color: #ffffff;
+}
+ 
+.SettingHeader
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+    font-size: 25px;
+    horizontal-align: center;
+    color: #a9aaaa;
+    margin-left: 20px;
+    margin-top: 3px;
+}
+ 
+.SettingsRow
+{
+    flow-children: right;
+    margin-left: 18px;
+}
+ 
+.SettingBox
+{
+    margin-right: 5px;
+    width: 60px;
+    height: 60px;
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
+}
+ 
+.SettingBox:hover
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #949494 ), to( #EBEBEB ) );
+        border-top: 1px solid #707070;
+        border-right: 1px solid #FAFAFA;
+        border-left: 1px solid #A6A6A6;
+        border-bottom: 1px solid #474747;
+        box-shadow: fill #59595988 -4px -4px 8px 9px;  
+}
+ 
+.SettingOptionText
+{
+    margin-top: 10px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+    font-size: 25px;
+    color: white;
+    horizontal-align: center;
+    margin-left: 0px;
+}
+.SettingBoxSelected
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #225927 ), to( #65CF6E ) );
+    border-top: 1px solid #225927;
+    border-right: 1px solid #65CF6E;
+    border-left: 1px solid #4363CC;
+    border-bottom: 1px solid #2e1f21;
+    box-shadow: fill #46AB4E66 -4px -4px 8px 9px;  
+}
+ 
+.SettingNote
+{
+    horizontal-align: center;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+    font-size: 14px;
+    color: white;
+    margin-left: 0px;
+    color: #969696;
+}
+
+
+/*------------------------------------------------*/
+
 .TeamSelect
 {
     width: 100%;

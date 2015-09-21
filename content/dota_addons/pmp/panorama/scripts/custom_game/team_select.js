@@ -1,5 +1,44 @@
 "use strict";
 
+//--------------------------------------------------------------------------------------------------
+// CUSTOM HOST PANEL
+//--------------------------------------------------------------------------------------------------
+var IsHost = false;
+var panels = [$("#TeamRow")];
+var settings = ["TeamRow"];
+
+function SetSetting(setting, choice)
+{
+	$.Msg("SetSetting ", setting," ", choice)
+    GameEvents.SendCustomGameEventToServer( "set_setting", {setting: setting, value: choice});   
+
+    // Set player unassigned
+	//Game.PlayerJoinTeam( 5 );
+
+	RemoveTeamPanels()
+
+    $.Schedule(1/30, function(){ConstructTeamPanels()});
+
+    ChangeSetting($("#" + setting), choice);
+}
+ 
+ //Updates the display
+function ChangeSetting(panel, choice)
+{
+    //Game.EmitSound("");
+    for (var i = 1; i <= panel.GetChildCount(); i++)
+    {
+        var child = panel.GetChild(i - 1);
+        if(i == choice)
+            child.AddClass("SettingBoxSelected");
+        else if(child.BHasClass("SettingBoxSelected"))
+            child.RemoveClass("SettingBoxSelected");
+    };
+}
+
+//--------------------------------------------------------------------------------------------------
+
+
 // Global list of panels representing each of the teams
 var g_TeamPanels = [];		
 
@@ -250,7 +289,8 @@ function CheckForHostPrivileges()
 
 	// Set the "player_has_host_privileges" class on the panel, this can be used 
 	// to have some sub-panels on display or be enabled for the host player.
-	$.GetContextPanel().SetHasClass( "player_has_host_privileges", playerInfo.player_has_host_privileges );
+	IsHost = playerInfo.player_has_host_privileges;
+	$.GetContextPanel().SetHasClass( "player_has_host_privileges", IsHost );
 }
 
 
@@ -290,15 +330,30 @@ function UpdateTimer()
 	$.Schedule( 0.1, UpdateTimer );
 }
 
+//--------------------------------------------------------------------------------------------------
+// Remove all of the team panels to construct them again properly
+//--------------------------------------------------------------------------------------------------
+function RemoveTeamPanels() {
+	
+	$.Msg("Removing "+g_TeamPanels.length+" team panels")
+
+	for ( var i = 0; i < g_TeamPanels.length; ++i )
+	{
+		g_TeamPanels[i].DeleteAsync(0)
+	}
+	g_TeamPanels = [];
+	g_PlayerPanels = [];
+}
 
 //--------------------------------------------------------------------------------------------------
-// Entry point called when the team select panel is created
 //--------------------------------------------------------------------------------------------------
-(function()
-{
+function ConstructTeamPanels () {
 	var bShowSpectatorTeam = false;
 	var bAutoAssignTeams = true;
+	var teamsListRootNode = $( "#TeamsListRoot" );
 
+	$.Msg("Constructing Team Panels")
+	
 	// get any custom config
 	if ( GameUI.CustomUIConfig().team_select )
 	{
@@ -313,10 +368,12 @@ function UpdateTimer()
 		}
 	}
 
-	$( "#TeamSelectContainer" ).SetAcceptsFocus( true ); // Prevents the chat window from taking focus by default
-	var teamsListRootNode = $( "#TeamsListRoot" );
+	// Automatically assign players to teams.
+	if ( bAutoAssignTeams )
+	{
+		Game.AutoAssignPlayersToTeams();
+	}
 
-	// Construct the panels for each team
 	var allTeamIDs = Game.GetAllTeamIDs();
 	
 	if ( bShowSpectatorTeam )
@@ -326,7 +383,7 @@ function UpdateTimer()
 	
 	for ( var teamId of allTeamIDs )
 	{
-		var teamNode = $.CreatePanel( "Panel", teamsListRootNode, "" );
+		var teamNode = $.CreatePanel( "Panel", teamsListRootNode, "team_" + teamId );
 		teamNode.AddClass( "team_" + teamId ); // team_1, etc.
 		teamNode.SetAttributeInt( "team_id", teamId );
 		teamNode.BLoadLayout( "file://{resources}/layout/custom_game/team_select_team.xml", false, false );
@@ -335,17 +392,26 @@ function UpdateTimer()
 		g_TeamPanels.push( teamNode );
 	}
 
-	// Automatically assign players to teams.
-	if ( bAutoAssignTeams )
-	{
-		Game.AutoAssignPlayersToTeams();
-	}
-
 	// Do an initial update of the player team assignment
 	OnTeamPlayerListChanged();
 
 	// Start updating the timer, this function will schedule itself to be called periodically
 	UpdateTimer();
+}
+
+
+//--------------------------------------------------------------------------------------------------
+// Entry point called when the team select panel is created
+//--------------------------------------------------------------------------------------------------
+(function()
+{	
+	// Set default on the host panel
+    //SetSetting(settings[0], 2);
+
+	$( "#TeamSelectContainer" ).SetAcceptsFocus( true ); // Prevents the chat window from taking focus by default
+
+	// Construct the panels for each team
+	ConstructTeamPanels();
 
 	// Register a listener for the event which is brodcast when the team assignment of a player is actually assigned
 	$.RegisterForUnhandledEvent( "DOTAGame_TeamPlayerListChanged", OnTeamPlayerListChanged );

@@ -115,6 +115,12 @@ function PMP:InitGameMode()
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
+    else
+        -- Default to 3v3v3v3
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 3 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 3 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 3 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 3 )
     end
 
 	-- Event Hooks
@@ -135,6 +141,7 @@ function PMP:InitGameMode()
     CustomGameEventManager:RegisterListener( "update_selected_entities", Dynamic_Wrap(PMP, 'OnPlayerSelectedEntities'))
     CustomGameEventManager:RegisterListener( "building_rally_order", Dynamic_Wrap(PMP, "OnBuildingRallyOrder")) --Right click through panorama
     CustomGameEventManager:RegisterListener( "trade_order", Dynamic_Wrap(PMP, "OnTradeOrder")) --Trader
+    CustomGameEventManager:RegisterListener( "set_setting", Dynamic_Wrap(PMP, "SetSetting")) --Team Options
 	
 	-- Allow cosmetic swapping
 	SendToServerConsole( "dota_combine_models 0" )
@@ -537,27 +544,7 @@ function PMP:OnGameRulesStateChange(keys)
 
 	print("[PMP] GameRules State Changed: ",gamestates[newState])
 			
-	if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
-        -- Teams Blue, Red, Purple, Orange, Yellow and Green
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, RandomInt(1,6) )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, RandomInt(1,6) )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, RandomInt(1,6) )       
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, RandomInt(1,6) )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 0 )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 0 )
-
-
-	elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
-        -- Teams Blue, Red, Purple, Orange, Yellow and Green
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, RandomInt(0,6) )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, RandomInt(0,6) )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, RandomInt(0,6) )       
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, RandomInt(0,6) )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, RandomInt(0,6) )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, RandomInt(0,6) )
-
-
-	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+	if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
         PMP:PostLoadPrecache()
         PMP:OnAllPlayersLoaded()
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -767,6 +754,34 @@ function PMP:OnPlayerSelectedEntities( event )
 	GameRules.SELECTED_UNITS[pID] = event.selected_entities
 
     FireGameEvent( 'ability_values_force_check', { player_ID = pID })
+end
+
+-- Teams Blue, Red, Purple, Orange, Yellow and Green
+MULTI_TEAM_MAP_TEAMS = {
+    DOTA_TEAM_GOODGUYS,
+    DOTA_TEAM_BADGUYS,
+    DOTA_TEAM_CUSTOM_2,
+    DOTA_TEAM_CUSTOM_3,
+    DOTA_TEAM_CUSTOM_4,
+    DOTA_TEAM_CUSTOM_5
+}
+
+TEAM_OPTIONS = { [1] = 2, [2] = 3, [3] = 4, [4] = 6, }
+
+function PMP:SetSetting( event )
+    local setting = event.setting
+    local value = tonumber(event.value)
+
+    if setting == "TeamRow" then
+        local playersPerTeam = TEAM_OPTIONS[value]
+        local teamCount = 12 / playersPerTeam
+        for i=1,teamCount do
+            GameRules:SetCustomGameTeamMaxPlayers( MULTI_TEAM_MAP_TEAMS[i], playersPerTeam )
+        end
+        for i=teamCount+1,6 do
+           GameRules:SetCustomGameTeamMaxPlayers( MULTI_TEAM_MAP_TEAMS[i], 0 )
+        end 
+    end
 end
 
 function PMP:RepositionPlayerCamera( event )
