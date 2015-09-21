@@ -425,11 +425,11 @@
 		"DOTA_Tooltip_ability_upgrade_weapon26_lumber_cost"                               "LUMBER COST:"
 
 		"DOTA_Tooltip_ability_upgrade_weapon27"                                           "Upgrade Weapon (27)"
-		"DOTA_Tooltip_ability_upgrade_weapon27_Description"                               "Pimp your units with Battlefury!"
+		"DOTA_Tooltip_ability_upgrade_weapon27_Description"                               "Pimp your units with Arcs of Manta!"
 		"DOTA_Tooltip_ability_upgrade_weapon27_lumber_cost"                               "LUMBER COST:"
 
 		"DOTA_Tooltip_ability_upgrade_weapon28"                                           "Upgrade Weapon (28)"
-		"DOTA_Tooltip_ability_upgrade_weapon28_Description"                               "Pimp your units with Arcs of Manta!"
+		"DOTA_Tooltip_ability_upgrade_weapon28_Description"                               "Pimp your units with Battlefury!"
 		"DOTA_Tooltip_ability_upgrade_weapon28_lumber_cost"                               "LUMBER COST:"
 
 		"DOTA_Tooltip_ability_upgrade_weapon29"                                           "Upgrade Weapon (29)"

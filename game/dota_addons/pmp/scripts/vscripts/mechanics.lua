@@ -10,6 +10,33 @@ function SendErrorMessage( pID, string )
     EmitSoundOnClient("General.Cancel", PlayerResource:GetPlayer(pID))
 end
 
+function SendDefeatedMessage( pID_attacker, pID_killed )
+    local playerName_attacker = PlayerResource:GetPlayerName(pID_attacker)
+    local playerName_killed = PlayerResource:GetPlayerName(pID_killed)
+
+    if playerName_attacker == "" then playerName_attacker = "Player "..pID_attacker end
+    if playerName_killed == "" then playerName_killed = "Player "..pID_killed end
+
+    playerName_attacker = "Noya"
+
+    local team_attacker_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_attacker)) )
+    local team_killed_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_killed)) )
+
+    print(team_attacker_color, team_killed_color)
+
+    local race = GetRace(PlayerResource:GetSelectedHeroEntity(pID_attacker))
+    local string1 = playerName_attacker.." "
+    local string2 = "eliminated "
+    local string3 = playerName_killed.." "
+    local string4 = "from the game!"
+    Notifications:TopToAll({image="file://{images}/custom_game/food_"..race..".png", duration=10})
+    Notifications:TopToAll({text=string1, style={color=team_attacker_color}, continue=true, duration=10})
+    Notifications:TopToAll({text=string2, continue=true, duration=10})
+    Notifications:TopToAll({text=string3, style={color=team_killed_color}, continue=true, duration=10})
+    Notifications:TopToAll({text=string4, continue=true, duration=10})
+
+end
+
 ------------------------------------------------
 --             Resource functions            --
 ------------------------------------------------

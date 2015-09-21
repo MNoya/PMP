@@ -38,6 +38,7 @@
     margin-top: 64px;
     visibility: visible;
     border: 0px solid blue;
+    font-weight: bold;
 }
 
 #BottomNotifications

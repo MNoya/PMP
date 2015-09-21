@@ -75,6 +75,7 @@ function PMP:InitGameMode()
   	GameRules:SetHideKillMessageHeaders( true )
     GameRules:SetGoldPerTick(GOLD_PER_TICK)
     GameRules:SetGoldTickTime(GOLD_TICK_TIME)
+    GameRules:EnableCustomGameSetupAutoLaunch(false)
 
   	-- Set game mode rules
 	GameMode = GameRules:GetGameModeEntity()        
@@ -114,12 +115,6 @@ function PMP:InitGameMode()
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
-    else
-        -- Teams Blue, Red, Yellow and Green
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 6 )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 6 )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 6 )
-        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 6 )
     end
 
 	-- Event Hooks
@@ -148,7 +143,6 @@ function PMP:InitGameMode()
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
 	math.randomseed(tonumber(timeTxt))
 
-	self.bSeenWaitForPlayers = false
     self.vUserIds = {}
     self.vPlayerUserIds = {}
 
@@ -523,16 +517,46 @@ function PMP:OnGameInProgress()
     end)
 end
 
+gamestates =
+{
+    [0] = "DOTA_GAMERULES_STATE_INIT",
+    [1] = "DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD",
+    [2] = "DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP",
+    [3] = "DOTA_GAMERULES_STATE_HERO_SELECTION",
+    [4] = "DOTA_GAMERULES_STATE_STRATEGY_TIME",
+    [5] = "DOTA_GAMERULES_STATE_TEAM_SHOWCASE",
+    [6] = "DOTA_GAMERULES_STATE_PRE_GAME",
+    [7] = "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
+    [8] = "DOTA_GAMERULES_STATE_POST_GAME",
+    [9] = "DOTA_GAMERULES_STATE_DISCONNECT"
+}
+
 -- The overall game state has changed
 function PMP:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
 
-	print("[PMP] GameRules State Changed: ",newState)
+	print("[PMP] GameRules State Changed: ",gamestates[newState])
 			
 	if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
-		self.bSeenWaitForPlayers = true
-	elseif newState == DOTA_GAMERULES_STATE_INIT then
-		Timers:RemoveTimer("alljointimer")
+        -- Teams Blue, Red, Purple, Orange, Yellow and Green
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, RandomInt(1,6) )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, RandomInt(1,6) )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, RandomInt(1,6) )       
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, RandomInt(1,6) )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 0 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 0 )
+
+
+	elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+        -- Teams Blue, Red, Purple, Orange, Yellow and Green
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, RandomInt(0,6) )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, RandomInt(0,6) )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, RandomInt(0,6) )       
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, RandomInt(0,6) )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, RandomInt(0,6) )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, RandomInt(0,6) )
+
+
 	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
         PMP:PostLoadPrecache()
         PMP:OnAllPlayersLoaded()
@@ -571,6 +595,9 @@ function PMP:OnEntityKilled( event )
     if IsCityCenter(killed) then
         killed:AddNoDraw()
         print("Garage Down for player",killed_playerID)
+
+        SendDefeatedMessage(attacker_playerID,killed_playerID)
+
         PMP:MakePlayerLose(killed_playerID)
 
     -- Tower killed

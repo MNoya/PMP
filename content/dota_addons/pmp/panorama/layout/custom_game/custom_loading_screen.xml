@@ -2,11 +2,26 @@
 	<styles>
 		<include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
 	</styles>
+	<scripts>
+        <include src="file://{resources}/scripts/loading_screen.js" />
+    </scripts>
   	<Panel class="AddonLoadingRoot">
 		<Panel id="CustomBg" >
 	 		<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/loading_screen/gamemode.png" />
+	 		<Image id="gamemode" src="file://{images}/custom_game/kill.png">
 		</Panel>
 		<Panel id="TitlePanel">
+			 <Panel id="Settings">
+		        <Label class='SettingsHeader' text="GAME SETTINGS" style="" />
+		        <Label class='SettingHeader' text="Players Per Team" style="" />
+		        <Panel id="TeamRow" class="SettingsRow">
+		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 1)"> <Label class="SettingOptionText" text="2"/> </Panel>
+		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 2)"> <Label class="SettingOptionText" text="3"/> </Panel>
+		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 3)"> <Label class="SettingOptionText" text="4"/> </Panel>
+		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 4)"> <Label class="SettingOptionText" text="6"/> </Panel>
+		        </Panel>	               
+		        <Label class='SettingNote' text="HOST PANEL" style="" />
+		    </Panel>
 	  		<Label id="AddonTitle" text="#addon_game_name" style="" />
 		</Panel>
 	</Panel>

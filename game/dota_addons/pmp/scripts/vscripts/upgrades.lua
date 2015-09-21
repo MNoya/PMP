@@ -108,9 +108,11 @@ function PMP:SetUpgrade( playerID, name, level )
 			end
 		end
 
-		-- Health increases unit model scale by 0.015
+		-- Health increases unit model scale
 		if name == "health" then
-			unit:SetModelScale(GetOriginalModelScale(unit)+0.015*level)
+			local original_scale = GetOriginalModelScale(unit)
+			local increase = 0.1*math.log(tonumber(level+1),2)+level*0.002
+			unit:SetModelScale(original_scale+increase)
 		end
 	end
 
@@ -221,7 +223,7 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 				end
 			end
 
-			-- Health increases unit model scale by 0.01
+			-- Health increases unit model scale
 			if name == "health" then
 				unit:SetModelScale(GetOriginalModelScale(unit)+0.01*level)
 			end

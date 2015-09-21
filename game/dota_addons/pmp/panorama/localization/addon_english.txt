@@ -20,6 +20,8 @@
 		"game_info_tip06"						"• If you are defeated, you can stay in game spectating as a <span class='bold'>Ghost</span>."
 		"game_info_tip07"						"• Go nearby the <span class='bold'>Trader</span> to exchange resources."
 	
+		"custom_end_screen_victory_message"		"{s:winning_team_name} Wins!"
+
 		"Unassigned"      								"Unassigned Team"
 		"Spectator"       								"Spectator Team"
 		"Neutrals"        								"Neutral Team"

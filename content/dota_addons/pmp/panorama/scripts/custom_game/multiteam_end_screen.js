@@ -33,7 +33,18 @@
 	var endScreenVictory = $( "#EndScreenVictory" );
 	if ( endScreenVictory )
 	{
-		endScreenVictory.SetDialogVariable( "winning_team_name", $.Localize( winningTeamDetails.team_name ) );
+		var winString = $.Localize( winningTeamDetails.team_name );
+
+		// Adjust the endscreen to the player name if its a single player team
+		var playersOnWinningTeam = Game.GetPlayerIDsOnTeam( winningTeamId )
+		$.Msg(playersOnWinningTeam)
+		if (playersOnWinningTeam.length == 1)
+		{
+			var playerID = playersOnWinningTeam[0]
+			winString = Players.GetPlayerName( playerID )
+		}
+		
+		endScreenVictory.SetDialogVariable( "winning_team_name", winString );
 
 		if ( GameUI.CustomUIConfig().team_colors )
 		{
