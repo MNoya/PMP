@@ -9,15 +9,18 @@ var settings = ["TeamRow"];
 
 function SetSetting(setting, choice)
 {
-	$.Msg("SetSetting ", setting," ", choice)
-    GameEvents.SendCustomGameEventToServer( "set_setting", {setting: setting, value: choice});
+	if (IsHost)
+	{
+		$.Msg("SetSetting ", setting," ", choice)
+    	GameEvents.SendCustomGameEventToServer( "set_setting", {setting: setting, value: choice});
 
-    RemoveTeamPanels();
+    	RemoveTeamPanels();
 
-    // Set player unassigned
-	//Game.PlayerJoinTeam( 5 );
+    	// Set player unassigned
+		//Game.PlayerJoinTeam( 5 );
 
-    $.Schedule(1/30, function(){ConstructTeamPanels()});
+    	$.Schedule(1/30, function(){ConstructTeamPanels()});
+    }
 }
 
 function OnSettingChanged(event)
@@ -49,8 +52,10 @@ function ChangeSetting(panel, choice)
     for (var i = 1; i <= panel.GetChildCount(); i++)
     {
         var child = panel.GetChild(i - 1);
-        if(i == choice)
+        if(i == choice){
+        	Game.EmitSound( "ui_team_select_pick_team" );
         	child.AddClass("SettingBoxSelected");
+        }
         else if(child.BHasClass("SettingBoxSelected"))
             child.RemoveClass("SettingBoxSelected");
     };
@@ -442,7 +447,9 @@ function ConstructTeamPanels () {
 		$('#Settings').RemoveClass('Hidden')
 
 		// Set default on the host panel
-    	SetSetting(settings[0], 2);
+    	GameEvents.SendCustomGameEventToServer( "set_setting", {setting: settings[0], value: 2});
+
+    	ConstructTeamPanels();
     }
     else{
     	$.Msg(Map_Name)
