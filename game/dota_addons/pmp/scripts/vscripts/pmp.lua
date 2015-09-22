@@ -811,6 +811,9 @@ function PMP:SetSetting( event )
 
         statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
     end
+
+    -- Update UI on the clients
+    CustomGameEventManager:Send_ServerToAllClients("setting_changed", { setting = setting, value = value})
 end
 
 function PMP:RepositionPlayerCamera( event )

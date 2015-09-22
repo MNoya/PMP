@@ -10,27 +10,47 @@ var settings = ["TeamRow"];
 function SetSetting(setting, choice)
 {
 	$.Msg("SetSetting ", setting," ", choice)
-    GameEvents.SendCustomGameEventToServer( "set_setting", {setting: setting, value: choice});   
+    GameEvents.SendCustomGameEventToServer( "set_setting", {setting: setting, value: choice});
+
+    RemoveTeamPanels();
 
     // Set player unassigned
 	//Game.PlayerJoinTeam( 5 );
 
-	RemoveTeamPanels()
-
     $.Schedule(1/30, function(){ConstructTeamPanels()});
+}
 
-    ChangeSetting($("#" + setting), choice);
+function OnSettingChanged(event)
+{
+	var setting = event.setting
+	var choice = event.value
+	$.Msg("Setting Changed: ",event);
+
+	ChangeSetting($("#" + setting), choice);
+}
+
+function MouseOver (setting, choice) {
+	if (!IsHost){ return }
+	
+	$("#" + setting).GetChild(choice-1).AddClass("SettingBoxHovering");
+}
+
+function MouseOut (setting, choice) {
+	if (!IsHost){ return }
+
+	$("#" + setting).GetChild(choice-1).RemoveClass("SettingBoxHovering");
 }
  
  //Updates the display
 function ChangeSetting(panel, choice)
 {
+	$.Msg("Changing Setterino")
     //Game.EmitSound("");
     for (var i = 1; i <= panel.GetChildCount(); i++)
     {
         var child = panel.GetChild(i - 1);
         if(i == choice)
-            child.AddClass("SettingBoxSelected");
+        	child.AddClass("SettingBoxSelected");
         else if(child.BHasClass("SettingBoxSelected"))
             child.RemoveClass("SettingBoxSelected");
     };
@@ -291,6 +311,16 @@ function CheckForHostPrivileges()
 	// to have some sub-panels on display or be enabled for the host player.
 	IsHost = playerInfo.player_has_host_privileges;
 	$.GetContextPanel().SetHasClass( "player_has_host_privileges", IsHost );
+
+	// Update the Host name
+    var playerIDs = Game.GetAllPlayerIDs()
+	for (var i = 0; i < playerIDs.length; i++) {
+		var pInfo = Game.GetLocalPlayerInfo();
+		if ( pInfo && pInfo.player_has_host_privileges){
+			var HostName = Players.GetPlayerName( Players.GetLocalPlayer() )
+    		$('#Host').text = "HOST: "+HostName
+		}
+	}
 }
 
 
@@ -430,5 +460,8 @@ function ConstructTeamPanels () {
 
 	// Register a listener for the event which is broadcast whenever a player attempts to pick a team
 	$.RegisterForUnhandledEvent( "DOTAGame_PlayerSelectedCustomTeam", OnPlayerSelectedTeam );
+
+	// Custom event for clients to know which options are choosen
+	GameEvents.Subscribe( "setting_changed", OnSettingChanged );
 
 })();

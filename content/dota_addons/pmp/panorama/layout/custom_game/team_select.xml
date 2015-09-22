@@ -17,12 +17,16 @@
 		        <Label class='SettingsHeader' text="GAME SETTINGS" style="" />
 		        <Label class='SettingHeader' text="Players Per Team" style="" />
 		        <Panel id="TeamRow" class="SettingsRow">
-		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 1)"> <Label class="SettingOptionText" text="2"/> </Panel>
-		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 2)"> <Label class="SettingOptionText" text="3"/> </Panel>
-		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 3)"> <Label class="SettingOptionText" text="4"/> </Panel>
-		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 4)"> <Label class="SettingOptionText" text="6"/> </Panel>
-		        </Panel>	               
-		        <Label class='SettingNote' text="HOST PANEL" style="" />
+		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 1)" onmouseover="MouseOver('TeamRow',1)" onmouseout="MouseOut('TeamRow', 1)"> 
+		            	<Label class="SettingOptionText" text="2"/> </Panel>
+		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 2)" onmouseover="MouseOver('TeamRow',2)" onmouseout="MouseOut('TeamRow', 2)">
+		            	<Label class="SettingOptionText" text="3"/> </Panel>
+		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 3)" onmouseover="MouseOver('TeamRow',3)" onmouseout="MouseOut('TeamRow', 3)">
+		            	<Label class="SettingOptionText" text="4"/> </Panel>
+		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 4)" onmouseover="MouseOver('TeamRow',4)" onmouseout="MouseOut('TeamRow', 4)">
+		            	<Label class="SettingOptionText" text="6"/> </Panel>
+		        </Panel>
+		        <Label id="Host" text="HOST: " style="" />
 		    </Panel>
 
 			<!--Teams List, left hand panel-->
