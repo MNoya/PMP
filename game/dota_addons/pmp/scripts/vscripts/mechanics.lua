@@ -45,25 +45,25 @@ end
 function GetLumber( pID )
     local hero = PlayerResource:GetSelectedHeroEntity(pID) -- Values are stored in the hero handle
     
-    return hero.lumber
+    return hero and hero.lumber or 0
 end
 
 function GetFoodUsed( pID )
     local hero = PlayerResource:GetSelectedHeroEntity(pID) -- Values are stored in the hero handle
     
-    return hero.food_used
+    return hero and hero.food_used or 0
 end
 
 function GetFoodLimit( pID )
     local hero = PlayerResource:GetSelectedHeroEntity(pID) -- Values are stored in the hero handle
     
-    return hero.food_limit
+    return hero and hero.food_limit or 0
 end
 
 function GetSpawnRate( pID )
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
 
-    return hero.spawn_rate
+    return hero and hero.spawn_rate or 0
 end
 
 -- Sets
@@ -486,22 +486,27 @@ end
 
 function GetSuperPeonsUsed( pID )
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
-    return hero.super_peons_used
+    return hero and hero.super_peons_used or 0
 end
 
 function GetBarricadesUsed( pID )
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
-    return hero.barricades_used
+    return hero and hero.barricades_used or 0
 end
 
 function GetRepairsUsed( pID )
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
-    return hero.repairs_used
+    return hero and hero.repairs_used or 0
 end
 
 function GetBossKilled()
     local bKilled = GameRules.Boss and IsValidAlive(GameRules.Boss)
     return bKilled and 1 or 0
+end
+
+function GetHeroLevel( pID )
+    local hero = PlayerResource:GetSelectedHeroEntity(pID)
+    return hero and hero:GetLevel() or 0
 end
 
 function GetTimesTraded()
@@ -510,6 +515,55 @@ end
 
 function GetPlayersPerTeam()
     return GameRules.PlayersPerTeam
+end
+
+function GetTotalEarnedGold( pID )
+    return PlayerResource:GetTotalEarnedGold(pID)
+end
+
+function GetTotalEarnedXP( pID )
+    return PlayerResource:GetTotalEarnedXP(pID)
+end 
+
+function GetTotalEarnedLumber( pID )
+    local hero = PlayerResource:GetSelectedHeroEntity(pID)
+    return hero and hero.lumber_earned or 0
+end
+
+function GetTeamWithHighestKillScore()
+    local max_kills = 0
+    local max_kills_teamID = 2
+    for teamID=DOTA_TEAM_FIRST,DOTA_TEAM_CUSTOM_MAX do
+        local team_kills = GetKillsForTeam(teamID)
+        if team_kills > max_kills then
+            max_kills = team_kills
+            max_kills_teamID = teamID
+        end
+    end
+
+    return max_kills_teamID
+end
+
+function GetKillsForTeam ( teamID )
+    local playersOnTeam = GetPlayerIDsOnTeam( teamID )
+    local killsForTeam = 0
+
+    for k,pID in pairs(playersOnTeam) do
+        killsForTeam = killsForTeam + PlayerResource:GetKills(pID)
+    end
+
+    return killsForTeam
+end
+
+function GetPlayerIDsOnTeam( teamID )
+    local player_table = {}
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetTeam(playerID) == teamID then
+            table.insert(player_table, playerID)
+        end
+    end
+
+    return player_table
 end
 
 --------------------------------------------

@@ -17,7 +17,7 @@ function StartThink( event )
         wpNum = wpNum+1
         if wpNum == 11 then wpNum = 1 end
         local nextWP = waypoints[wpNum]:GetAbsOrigin()
-        print("Trader moving to next WP:",wpNum,VectorString(nextWP))
+        --print("Trader moving to next WP:",wpNum,VectorString(nextWP))
         trader:MoveToPosition(nextWP)
 
         return TRADER_THINK_TIME

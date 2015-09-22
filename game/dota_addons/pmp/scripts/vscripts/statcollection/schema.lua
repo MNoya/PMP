@@ -16,9 +16,9 @@ function customSchema:init(options)
     
     -- Set settings
     self.SCHEMA_KEY = statInfo.schemaID
-    self.HAS_ROUNDS = tobool(statInfo.HasRounds)
-    self.GAME_WINNER = tobool(statInfo.GameWinner)
-    self.ANCIENT_EXPLOSION = tobool(statInfo.AncientExplosion)
+    self.HAS_ROUNDS = true
+    self.GAME_WINNER = true
+    self.ANCIENT_EXPLOSION = false
     self.statCollection = options.statCollection
 
     -- Listen for changes in the current state
@@ -29,62 +29,98 @@ function customSchema:init(options)
         if state == DOTA_GAMERULES_STATE_POST_GAME then
     
             -- Build game array
-            local game = {}
-            table.insert(game, {
-                boss_killed = GetBossKilled(),
-                times_traded = GetTimesTraded()
-            })
-    
+            local game = BuildGameArray()
+
             -- Build players array
-            local players = {}
-            for playerID = 0, DOTA_MAX_PLAYERS do
-                if PlayerResource:IsValidPlayerID(playerID) then
-                    if not PlayerResource:IsBroadcaster(playerID) then
-                        local player_upgrades = PMP:GetUpgradeList(playerID)
-                        table.insert(players, {
-                            --steamID32 required in here
-                            steamID32 = PlayerResource:GetSteamAccountID(playerID),
-                            player_hero_id = PlayerResource:GetSelectedHeroID(playerID),
-                            player_kills = PlayerResource:GetKills(playerID),
-                            player_deaths = PlayerResource:GetDeaths(playerID),
-                            player_level = PlayerResource:GetSelectedHeroEntity(playerID):GetLevel(),
-                            
-                            -- Resources
-                            --player_gold = GetGold(playerID),
-                            --player_lumber = GetLumber(playerID),
-                            player_food = GetFoodLimit(playerID),
-                            player_spawn_rate = GetSpawnRate(playerID),
-
-                            -- Upgrades
-                            upgrade_weapon = player_upgrades["weapon"],
-                            upgrade_helm = player_upgrades["helm"],
-                            upgrade_armor = player_upgrades["armor"],
-                            upgrade_wings = player_upgrades["wings"],
-                            upgrade_health = player_upgrades["health"],
-
-                            -- Passive ability upgrades
-                            ability_critical_strike = player_upgrades["critical_strike"],
-                            ability_stun_hit = player_upgrades["stun_hit"],
-                            ability_poisoned_weapons = player_upgrades["poisoned_weapons"],
-                            ability_pulverize = player_upgrades["pulverize"],
-                            ability_dodge = player_upgrades["dodge"],
-                            ability_spiked_armor = player_upgrades["spiked_armor"],
-                            
-                            -- Hero global upgrades
-                            pimp_damage = player_upgrades["pimp_damage"],
-                            pimp_armor = player_upgrades["pimp_armor"],
-                            pimp_speed = player_upgrades["pimp_speed"],
-                            pimp_regen = player_upgrades["pimp_regen"],
-                        })
-                    end
-                end
-            end
+            local players = BuildPlayersArray()            
     
             -- Send custom stats
             self.statCollection:sendCustom({game=game, players=players})
         end
     end, nil)
 end
+
 function customSchema:submitRound(args)
+    winners = BuildRoundWinnerArray()
+    game = BuildGameArray()
+    players = BuildPlayersArray()
+
+    self.statCollection:sendCustom({game=game, players=players})
+    
+    return {winners = winners, lastRound = false}
 end
+
+-------------------------------------
+
+function BuildRoundWinnerArray()
+    local winners = {}
+    local current_winner_team = GetTeamWithHighestKillScore()
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            if not PlayerResource:IsBroadcaster(playerID) then
+                winners[PlayerResource:GetSteamAccountID(playerID)] = (PlayerResource:GetTeam(playerID) == current_winner_team) and 1 or 0
+            end
+        end
+    end
+    return winners
+end
+
+function BuildGameArray()
+    local game = {}
+    game.boss_killed = GetBossKilled()
+    game.times_traded = GetTimesTraded()
+    return game
+end
+
+function BuildPlayersArray()
+    players = {}
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            if not PlayerResource:IsBroadcaster(playerID) then
+                local player_upgrades = PMP:GetUpgradeList(playerID)
+                table.insert(players, {
+                    --steamID32 required in here
+                    steamID32 = PlayerResource:GetSteamAccountID(playerID),
+                    player_hero_id = PlayerResource:GetSelectedHeroID(playerID),
+                    player_kills = PlayerResource:GetKills(playerID),
+                    player_deaths = PlayerResource:GetDeaths(playerID),
+                    player_level = GetHeroLevel(playerID),
+                    
+                    -- Resources
+                    total_gold_earned = GetTotalEarnedGold(playerID),
+                    total_lumber_earned = GetTotalEarnedLumber(playerID),
+                    total_xp_earned = GetTotalEarnedXP(playerID),
+                    player_food = GetFoodLimit(playerID),
+                    player_spawn_rate = GetSpawnRate(playerID),
+
+                    -- Upgrades
+                    upgrade_weapon = player_upgrades["weapon"] or 0,
+                    upgrade_helm = player_upgrades["helm"] or 0,
+                    upgrade_armor = player_upgrades["armor"] or 0,
+                    upgrade_wings = player_upgrades["wings"] or 0,
+                    upgrade_health = player_upgrades["health"] or 0,
+
+                    -- Passive ability upgrades
+                    ability_critical_strike = player_upgrades["critical_strike"] or 0,
+                    ability_stun_hit = player_upgrades["stun_hit"] or 0,
+                    ability_poisoned_weapons = player_upgrades["poisoned_weapons"] or 0,
+                    ability_pulverize = player_upgrades["pulverize"] or 0,
+                    ability_dodge = player_upgrades["dodge"] or 0,
+                    ability_spiked_armor = player_upgrades["spiked_armor"] or 0,
+                    
+                    -- Hero global upgrades
+                    pimp_damage = player_upgrades["pimp_damage"] or 0,
+                    pimp_armor = player_upgrades["pimp_armor"] or 0,
+                    pimp_speed = player_upgrades["pimp_speed"] or 0,
+                    pimp_regen = player_upgrades["pimp_regen"] or 0,
+                })
+            end
+        end
+    end
+
+    return players
+end
+
+-------------------------------------
+
 return customSchema

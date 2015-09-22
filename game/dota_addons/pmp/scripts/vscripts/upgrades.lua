@@ -127,7 +127,7 @@ end
 
 function PMP:GetUpgradeList( playerID )
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-	return hero.Upgrades
+	return (hero and hero.Upgrades) or {}
 end
 
 function PMP:GetUpgradeLevel( playerID, name )

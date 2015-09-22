@@ -425,6 +425,9 @@ function PMP:OnPlayerPickHero(keys)
     hero.barricades_used = 0
     hero.repairs_used = 0
 
+    hero.gold_earned = 0
+    hero.lumber_earned = 0
+
     hero.Upgrades = {}
     hero.Upgrades["weapon"] = 0
     hero.Upgrades["helm"] = 0
@@ -444,7 +447,7 @@ function PMP:OnPlayerPickHero(keys)
     hero.Upgrades["pimp_speed"] = 0
     hero.Upgrades["pimp_regen"] = 0
 
-    PMP:PrintUpgrades(playerID)
+    --PMP:PrintUpgrades(playerID)
 
     -- Set Resources
     Timers:CreateTimer(function()
@@ -531,6 +534,13 @@ function PMP:OnGameInProgress()
     Timers:CreateTimer(1, function() 
         PMP:CheckWinCondition()
         return 1
+    end)
+
+    -- Send rounds every some minutes
+    local STAT_COLLECT_THINK = 300
+    Timers:CreateTimer(60,function()
+        statCollection:submitRound({})
+        return STAT_COLLECT_THINK
     end)
 end
 
@@ -656,6 +666,8 @@ function PMP:OnEntityKilled( event )
         local lumber_bounty = GetLumberBounty(killed)
         ModifyLumber(attacker_playerID, lumber_bounty)
         PopupLumber(killed, lumber_bounty, attacker_teamNumber)
+
+        attacker_hero.lumber_earned = attacker_hero.lumber_earned + lumber_bounty
     end
 end
 
@@ -713,6 +725,9 @@ function PMP:MakePlayerLose( playerID )
         local playerName = PlayerResource:GetPlayerName(playerID)
         if playerName == "" then playerName = "Player "..playerID end
         GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
+
+        -- Send stats
+        statCollection:submitRound({})
     end
 end
 
