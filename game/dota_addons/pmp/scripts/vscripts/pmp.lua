@@ -114,13 +114,20 @@ function PMP:InitGameMode()
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
+
+        GameRules.PlayersPerTeam = 1
+        
     else
         -- Default to 3v3v3v3
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 3 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 3 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 3 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 3 )
+
+        GameRules.PlayersPerTeam = 3
     end
+
+    statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
@@ -413,6 +420,10 @@ function PMP:OnPlayerPickHero(keys)
     hero.food_used = 0
     hero.food_limit = 0
     hero.spawn_rate = 1
+
+    hero.super_peons_used = 0
+    hero.barricades_used = 0
+    hero.repairs_used = 0
 
     hero.Upgrades = {}
     hero.Upgrades["weapon"] = 0
@@ -779,7 +790,11 @@ function PMP:SetSetting( event )
         end
         for i=teamCount+1,6 do
            GameRules:SetCustomGameTeamMaxPlayers( MULTI_TEAM_MAP_TEAMS[i], 0 )
-        end 
+        end
+
+        GameRules.PlayersPerTeam = TEAM_OPTIONS[value]
+
+        statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
     end
 end
 

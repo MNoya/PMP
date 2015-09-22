@@ -6,6 +6,8 @@ function RepairBuildings( event )
 
     local hero = caster:GetOwner()
     if hero then
+        hero.repairs_used = hero.repairs_used + 1
+
         local towers = hero.towers
         for k,tower in pairs(towers) do
             if IsValidAlive(tower) then
@@ -38,6 +40,10 @@ function BuildBarricades( event )
     local caster = event.caster
     local hero = caster:GetOwner()
     local teamNumber = caster:GetTeamNumber()
+
+    if hero then
+        hero.barricades_used = hero.barricades_used + 1
+    end
 
     local randomN = Barricades["Random"]
     for k,position in pairs(hero.barricade_positions) do

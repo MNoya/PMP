@@ -4,6 +4,7 @@ function StartThink( event )
 
     -- Keep reference
     GameRules.Trader = trader
+    GameRules.TimesTraded = 0
 
     -- Keep track of nearby patrons
     trader.current_unit = {}
@@ -61,7 +62,7 @@ function PMP:OnTradeOrder( event )
         if resource_type == "lumber" then
             if PlayerHasEnoughGold(pID, resource_needed) then
                 --print("Exchanging Gold -> Lumber")
-
+                GameRules.TimesTraded = GameRules.TimesTraded + 1
                 EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
                 ModifyGold( pID, -resource_needed )
                 ModifyLumber( pID, resource_gain )
@@ -71,7 +72,7 @@ function PMP:OnTradeOrder( event )
         elseif resource_type == "gold" then
             if PlayerHasEnoughLumber(pID, resource_needed) then
                 --print("Exchanging Lumber -> Gold")
-
+                GameRules.TimesTraded = GameRules.TimesTraded + 1
                 EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
                 ModifyLumber( pID, -resource_needed )
                 ModifyGold( pID, resource_gain )

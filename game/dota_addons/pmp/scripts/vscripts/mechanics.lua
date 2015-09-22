@@ -481,3 +481,35 @@ function GetRace( unit )
 end
 
 --------------------------------------------
+
+-- Stat Collection Functions
+
+function GetSuperPeonsUsed( pID )
+    local hero = PlayerResource:GetSelectedHeroEntity(pID)
+    return hero.super_peons_used
+end
+
+function GetBarricadesUsed( pID )
+    local hero = PlayerResource:GetSelectedHeroEntity(pID)
+    return hero.barricades_used
+end
+
+function GetRepairsUsed( pID )
+    local hero = PlayerResource:GetSelectedHeroEntity(pID)
+    return hero.repairs_used
+end
+
+function GetBossKilled()
+    local bKilled = GameRules.Boss and IsValidAlive(GameRules.Boss)
+    return bKilled and 1 or 0
+end
+
+function GetTimesTraded()
+    return GameRules.TimesTraded
+end
+
+function GetPlayersPerTeam()
+    return GameRules.PlayersPerTeam
+end
+
+--------------------------------------------
