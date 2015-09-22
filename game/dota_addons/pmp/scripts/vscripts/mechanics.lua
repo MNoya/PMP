@@ -20,8 +20,6 @@ function SendDefeatedMessage( pID_attacker, pID_killed )
     local team_attacker_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_attacker)) )
     local team_killed_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_killed)) )
 
-    print(team_attacker_color, team_killed_color)
-
     local race = GetRace(PlayerResource:GetSelectedHeroEntity(pID_attacker))
     local string1 = playerName_attacker.." "
     local string2 = "eliminated "

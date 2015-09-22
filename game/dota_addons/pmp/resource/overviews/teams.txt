@@ -1,0 +1,8 @@
+teams
+{
+	material materials/overviews/teams.vmat
+	pos_x -7000
+	pos_y 7000
+	scale 13.672
+}
+
