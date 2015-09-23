@@ -436,14 +436,6 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     if propModel.GetModelName then propModel = propModel:GetModelName() end
 
     if not properties then
-
-      -- Find if we can do a direct SetModel of the default item_wearable handle
-      if db[unitModel] and db[unitModel][propModel] then
-        print("Perform direct SetModel")
-        Attachments:SwapWearable(unit, attachPoint, model)
-        return
-      end
-
       if not db[unitModel] or not db[unitModel][attachPoint] or not db[unitModel][attachPoint][propModel] then
         print("[Attachments.lua] No attach found in attachment database for '" .. unitModel .. "', '" .. attachPoint .. "', '" .. propModel .. "'")
         return
@@ -518,66 +510,6 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     end)
 
     return prop
-end
-
-function Attachments:SwapWearable(unit, attachPoint, model)
-    local db = Attachments.attachDB
-
-    -- Get original wearable handle defined as "Default" on the attachPoint table
-    local item_wearable = Attachments:GetWearableHandle(unit, attachPoint)
-    if not item_wearable then
-        return
-    end
-
-    item_wearable:SetModel(model)
-    if item_wearable.hidden then
-        item_wearable:RemoveEffects(EF_NODRAW)
-        item_wearable.hidden = false
-    end
-
-    -- Clear any prop wearable the unit might have in this slot
-    --ClearPropWearableSlot(unit, slot)
-end
-
--- Retrieves the handle of the wearable defined in the model's "Default" key on the attachments.txt
-function Attachments:GetWearableHandle(unit, attachPoint)
-    
-    -- If it was already stored, return the reference directly
-    if not unit.item_wearables then unit.item_wearables = {} end
-
-    if unit.item_wearables[attachPoint] then
-        return unit.item_wearables[attachPoint]
-    else
-        local default_wearable_name = Attachments:GetDefaultWearableNameForSlot(unit, attachPoint)
-        local target_wearable = Attachments:GetWearable(unit, default_wearable_name)
-
-        -- Keep a reference
-        unit.item_wearables[attachPoint] = target_wearable
-
-        return target_wearable
-    end
-end
-
-function Attachments:GetDefaultWearableNameForSlot( unit, attachPoint )
-  local db = Attachments.attachDB
-  local unitModel = unit:GetModelName()
-  local default_name = db[unitModel] and db[unitModel][attachPoint] and db[unitModel][attachPoint]['Default']
-
-  return default_name
-end
-
--- Returns a wearable handle if its the passed target_model
-function Attachments:GetWearable( unit, target_model )
-    local wearable = unit:FirstMoveChild()
-    while wearable ~= nil do
-        if wearable:GetClassname() == "dota_item_wearable" then
-            if wearable:GetModelName() == target_model then
-                return wearable
-            end
-        end
-        wearable = wearable:NextMovePeer()
-    end
-    return false
 end
 
 if not Attachments.attachDB then Attachments:start() end

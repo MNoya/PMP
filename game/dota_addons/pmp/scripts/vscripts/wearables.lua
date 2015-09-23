@@ -1,15 +1,118 @@
--- Swaps a target model for another
-function SwapWearable( unit, target_model, new_model )
+function ChangeWearableInSlot( unit, slotName, modelName )
+    
+    local db = Attachments:GetAttachmentDatabase()
+    local wearables = GetWearablesForSlot(slotName)
+    local unitModel = unit:GetModelName()
+    local attachPoint = wearables["attach_points"][unitModel]
+
+    -- Find if we can do a direct SetModel of the default item_wearable handle
+    if db[unitModel] and db[unitModel][modelName] then
+        print("Perform direct SetModel",unit:GetModelName(),modelName,slotName)
+        
+        ClearPropWearableSlot(unit, slotName)
+        SwapWearableInSlot(unit, modelName, slotName)
+        return
+    -- Create an Attachment
+    else
+        print("Create Attachment",unit:GetModelName(),attachPoint,modelName,slotName)
+        
+        ClearPropWearableSlot(unit, slotName)
+        HideWearableInSlot(unit, slotName)
+
+        unit.prop_wearables[slotName] = Attachments:AttachProp(unit, attachPoint, modelName)
+    end
+end
+
+---------------------------------
+
+function SwapWearableInSlot( unit, modelName, slotName )
+    -- Get original wearable and change its model
+    local item_wearable = GetOriginalWearableInSlot(unit, slotName)
+    if not item_wearable then
+        return
+    end
+
+    item_wearable:SetModel(modelName)
+
+    if item_wearable.hidden then
+        item_wearable:RemoveEffects(EF_NODRAW)
+        item_wearable.hidden = false
+    end
+
+    -- Clear any prop wearable the unit might have in this slot
+    ClearPropWearableSlot(unit, slot)
+end
+
+function HideWearableInSlot( unit, slotName )
+    local item_wearable = GetOriginalWearableInSlot(unit, slotName)
+    if item_wearable then
+        item_wearable:AddEffects(EF_NODRAW)
+        item_wearable.hidden = true
+    end
+end
+
+function ClearPropWearableSlot( unit, slot )
+    if not unit.prop_wearables then 
+        unit.prop_wearables = {}
+        return 
+    end
+
+    if unit.prop_wearables[slot] and IsValidEntity(unit.prop_wearables[slot]) then 
+        if unit.prop_wearables[slot].fx then
+            ParticleManager:DestroyParticle(unit.prop_wearables[slot].fx, true)
+        end
+        --print("Clearing",unit.prop_wearables[slot],unit.prop_wearables[slot]:GetModelName())
+        UTIL_Remove(unit.prop_wearables[slot])
+    end
+end
+
+function ClearPropWearables( unit )
+    if not unit.prop_wearables then return end
+    for k,v in pairs(unit.prop_wearables) do
+        ClearPropWearableSlot(unit, k)
+    end
+end
+
+function PrintWearables( unit )
+    print("---------------------")
+    print("Wearable List of "..unit:GetUnitName())
+    print("Main Model: "..unit:GetModelName())
     local wearable = unit:FirstMoveChild()
     while wearable ~= nil do
         if wearable:GetClassname() == "dota_item_wearable" then
-            if wearable:GetModelName() == target_model then
-                wearable:SetModel( new_model )
-                return
-            end
+            local model_name = wearable:GetModelName()
+            if model_name ~= "" then print(model_name) end
         end
         wearable = wearable:NextMovePeer()
     end
+end
+
+
+-------------------------------------------
+
+function GetOriginalWearableInSlot(unit, slotName)
+    -- If it was already stored, return the reference directly
+    if not unit.item_wearables then unit.item_wearables = {} end
+    if unit.item_wearables[slotName] then
+        return unit.item_wearables[slotName]
+
+    else       
+        local default_wearable_name = GetDefaultWearableNameForSlot(unit, slotName)
+        local target_wearable = GetWearable(unit, default_wearable_name)
+
+        -- Keep a reference
+        unit.item_wearables[slotName] = target_wearable
+
+        return target_wearable
+    end
+end
+
+function GetDefaultWearableNameForSlot(unit, slotName)
+    local wearables = GetWearablesForSlot(slotName)
+    local table_slot = wearables['defaults']
+    local default_wearable_name = table_slot[unit:GetModelName()]
+
+    return default_wearable_name
 end
 
 -- Returns a wearable handle if its the passed target_model
@@ -26,53 +129,14 @@ function GetWearable( unit, target_model )
     return false
 end
 
-function HideWearable( unit, target_model )
-    local wearable = unit:FirstMoveChild()
-    while wearable ~= nil do
-        if wearable:GetClassname() == "dota_item_wearable" then
-            if wearable:GetModelName() == target_model then
-                wearable:AddEffects(EF_NODRAW)
-                return
-            end
-        end
-        wearable = wearable:NextMovePeer()
-    end
+function GetWearablesForSlot(slotName)
+    return HATS[slotName]
 end
 
-function ShowWearable( unit, target_model )
-    local wearable = unit:FirstMoveChild()
-    while wearable ~= nil do
-        if wearable:GetClassname() == "dota_item_wearable" then
-            if wearable:GetModelName() == target_model then
-                wearable:RemoveEffects(EF_NODRAW)
-                return
-            end
-        end
-        wearable = wearable:NextMovePeer()
-    end
-end
-
-function SwapWearableInSlot( unit, model_table, slot )
-    -- Get original wearable and change its model
-    local item_wearable = GetOriginalWearableInSlot(unit, slot)
-    if not item_wearable then
-        return
-    end
-
-    local modelName = model_table["Model"]
-    item_wearable:SetModel(modelName)
-
-    if item_wearable.hidden then
-        item_wearable:RemoveEffects(EF_NODRAW)
-        item_wearable.hidden = false
-    end
-
-    -- Clear any prop wearable the unit might have in this slot
-    ClearPropWearableSlot(unit, slot)
-end
-
+----------------------------------------------
+-- DEPRECATED
 -- Create a new prop_dynamic wearable in this slot name
-function AttachWearableInSlot( unit, model_table, slot, delay )
+function AttachWearableInSlot( unit, model_table, slot )
 
     -- Model of choice
     local point = model_table["Point"]
@@ -152,71 +216,42 @@ function AttachWearableInSlot( unit, model_table, slot, delay )
 
 end
 
-function ClearPropWearableSlot( unit, slot )
-    if not unit.prop_wearables then return end
-    if unit.prop_wearables[slot] and IsValidEntity(unit.prop_wearables[slot]) then 
-        if unit.prop_wearables[slot].fx then
-            ParticleManager:DestroyParticle(unit.prop_wearables[slot].fx, true)
-        end
-        --print("Clearing",unit.prop_wearables[slot],unit.prop_wearables[slot]:GetModelName())
-        UTIL_Remove(unit.prop_wearables[slot])
-    end
-end
-
-function ClearPropWearables( unit )
-    if not unit.prop_wearables then return end
-    for k,v in pairs(unit.prop_wearables) do
-        ClearPropWearableSlot(unit, k)
-    end
-end
-
-function PrintWearables( unit )
-    print("---------------------")
-    print("Wearable List of "..unit:GetUnitName())
-    print("Main Model: "..unit:GetModelName())
+-- Swaps a target model for another
+function SwapWearable( unit, target_model, new_model )
     local wearable = unit:FirstMoveChild()
     while wearable ~= nil do
         if wearable:GetClassname() == "dota_item_wearable" then
-            local model_name = wearable:GetModelName()
-            if model_name ~= "" then print(model_name) end
+            if wearable:GetModelName() == target_model then
+                wearable:SetModel( new_model )
+                return
+            end
         end
         wearable = wearable:NextMovePeer()
     end
 end
 
-
--------------------------------------------
-
-function GetOriginalWearableInSlot(unit, name)
-    -- If it was already stored, return the reference directly
-    if not unit.item_wearables then unit.item_wearables = {} end
-    if unit.item_wearables[name] then
-        return unit.item_wearables[name]
-
-    else       
-        local default_wearable_name = GetDefaultWearableNameForSlot(unit, name)
-        local target_wearable = GetWearable(unit, default_wearable_name)
-
-        -- Keep a reference
-        unit.item_wearables[name] = target_wearable
-
-        return target_wearable
+function HideWearable( unit, target_model )
+    local wearable = unit:FirstMoveChild()
+    while wearable ~= nil do
+        if wearable:GetClassname() == "dota_item_wearable" then
+            if wearable:GetModelName() == target_model then
+                wearable:AddEffects(EF_NODRAW)
+                return
+            end
+        end
+        wearable = wearable:NextMovePeer()
     end
 end
 
-function GetDefaultWearableNameForSlot(unit, name)
-    local wearables = GetWearablesForUnit(unit)
-    if not wearables then
-        print("No wearables for ",unit:GetUnitName()," in slot ",name)
-        return
+function ShowWearable( unit, target_model )
+    local wearable = unit:FirstMoveChild()
+    while wearable ~= nil do
+        if wearable:GetClassname() == "dota_item_wearable" then
+            if wearable:GetModelName() == target_model then
+                wearable:RemoveEffects(EF_NODRAW)
+                return
+            end
+        end
+        wearable = wearable:NextMovePeer()
     end
-
-    local table_slot = wearables[name]
-    local default_wearable_name = table_slot["Default"]
-
-    return default_wearable_name
-end
-
-function GetWearablesForSlot(slotName)
-    return HATS[slotName]
 end

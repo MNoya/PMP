@@ -156,11 +156,9 @@ function PMP:ApplyUpgrade(unit, name, level)
                 return
             end
 
-            local unitModel = unit:GetModelName()
+            -- Handle Wearable changes
             local modelName = slot_table[tostring(level)]
-            local attach_point = slot_table["attach_points"][unitModel]
-
-		    Attachments:AttachProp(unit, attach_point, modelName)
+            ChangeWearableInSlot(unit, name, modelName)
 		end
     end
 
