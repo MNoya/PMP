@@ -127,7 +127,7 @@ end
 
 function PMP:GetUpgradeList( playerID )
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-	return (hero and hero.Upgrades) or {}
+	return hero.Upgrades
 end
 
 function PMP:GetUpgradeLevel( playerID, name )
@@ -151,28 +151,17 @@ function PMP:ApplyUpgrade(unit, name, level)
 				unit.prop_wearables = {}
 			end
 
-            local unit_wearables = GetWearablesForUnit(unit)
-            if not unit_wearables then
+            local slot_table = GetWearablesForSlot(name)
+            if not slot_table then
                 return
             end
 
-            local slot_type_table = unit_wearables[name]
-			if slot_type_table then
-            	local level_table = slot_type_table[tostring(level)]
+            local unitModel = unit:GetModelName()
+            local modelName = slot_table[tostring(level)]
+            local attach_point = slot_table["attach_points"][unitModel]
 
-            	if level_table then
-
-	        		local model_type = level_table["Type"]
-		        	if model_type == "Change" then
-		            	SwapWearableInSlot(unit, level_table, name)
-
-		        	elseif model_type == "Attach" then	
-
-		        		AttachWearableInSlot(unit, level_table, name, 0.8)
-		        	end
-		        end
-		    end
-	    end
+		    Attachments:AttachProp(unit, attach_point, modelName)
+		end
     end
 
 	AdjustAbilityLayout(unit)

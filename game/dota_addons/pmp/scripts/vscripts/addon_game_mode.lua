@@ -8,6 +8,7 @@ require('libraries/timers')
 require('libraries/popups')
 require('libraries/notifications')
 require('libraries/animations')
+require('libraries/attachments')
 require('statcollection/init')
 require('pmp')
 require('orders')
@@ -57,18 +58,14 @@ function Precache( context )
 	end
 	
 	-- Wearables
-	_G.HATS = LoadKeyValues("scripts/kv/wearables.kv")
-	for race,v1 in pairs(HATS) do
-		for slot,v2 in pairs(v1) do
-			for k,v in pairs(v2) do
-				local model = v["Model"]
-				if model and model ~= "" then
-					PrecacheModel(model, context)
-				end
-
-				local particle = v["Particle"]
-				if particle and particle ~= "" then
-					PrecacheResource("particle", particle, context)
+	_G.HATS = LoadKeyValues("scripts/kv/upgrades.kv")
+	for k,slot_table in pairs(HATS) do
+		for key,value in pairs(slot_table) do
+			if type(value) ~= "table" then
+				if string.match(value, "vmdl") then
+					PrecacheModel(value, context)
+				elseif string.match(value, "vpcf") then
+					PrecacheResource("particle", value, context)
 				end
 			end
 		end

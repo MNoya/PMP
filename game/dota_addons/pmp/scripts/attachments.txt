@@ -1,0 +1,161 @@
+"Attachments"
+{
+	"models/heroes/axe/axe.vmdl"
+	{
+		// Direct Model Changes
+		"models/items/axe/skullsplitter/skullsplitter.vmdl" "Change"
+		"models/items/axe/axe_dragonaxe.vmdl" "Change"
+		"models/items/axe/axe_antler.vmdl" "Change"
+ 		"models/items/axe/searing_annihilator_weapon/searing_annihilator_weapon.vmdl" "Change"
+		"models/items/slardar/trident_of_the_deep_one/trident_of_the_deep_one.vmdl" "Change"
+		"models/items/axe/generic_reaver.vmdl" "Change"
+		"models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl" "Change"
+		"models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl" "Change"
+		"models/items/sniper/sniper_tallyho_head2/sniper_tallyho_head2.vmdl" "Change"
+		"models/items/axe/shout_mask/shout_mask.vmdl" "Change"
+		"models/items/clinkz/redbull_clinkz_head/redbull_clinkz_head.vmdl" "Change"
+		"models/items/axe/demon_blood_helm.vmdl" "Change"
+		"models/items/earthshaker/helm_of_impasse/helm_of_impasse.vmdl" "Change"
+		"models/items/pudge/bogatyr_pudge_head/bogatyr_pudge_head.vmdl" "Change"
+		"models/items/axe/vanguard_armor/vanguard_armor.vmdl" "Change"
+
+ 		// Attachments
+		"attach_weapon"
+		{
+            "Default"       "models/heroes/axe/axe_weapon.vmdl"
+
+			"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
+			{
+				"scale"		"3"
+				"pitch"		"40"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"-1"
+				"yaw"		"-25"
+				"XPos"		"-3"
+			}
+			"models/items/faceless_void/battlefury/battlefury.vmdl"
+			{
+				"scale"		"2"
+				"pitch"		"-50"
+				"roll"		"28"
+				"ZPos"		"-63"
+				"YPos"		"111"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_hitloc"
+		{
+			"models/props_gameplay/red_box.vmdl"
+			{
+				"scale"		"1.2999999523163"
+				"pitch"		"-70"
+				"roll"		"0"
+				"yaw"		"-135"
+				"YPos"		"0"
+				"ZPos"		"0"
+				"XPos"		"-13"
+			}
+		}
+		"attach_origin"
+		{
+			"models/props_gameplay/red_box.vmdl"
+			{
+				"scale"		"2"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/heroes/undying/undying.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/huskar/searing_dominator/searing_dominator.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"yaw"		"0"
+				"XPos"		"-16"
+				"YPos"		"1"
+				"ZPos"		"-150"
+				"roll"		"0"
+			}
+			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"yaw"		"-10"
+				"XPos"		"50"
+				"YPos"		"0"
+				"ZPos"		"-115"
+				"roll"		"0"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
+			{
+				"scale"		"2.5"
+				"pitch"		"45"
+				"yaw"		"-69"
+				"XPos"		"0"
+				"YPos"		"0"
+				"ZPos"		"6"
+				"roll"		"-90"
+			}
+			"models/items/sven/arms_of_the_rogue/arms_rogue_shield_fx.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"-10"
+				"yaw"		"-249"
+				"XPos"		"0"
+				"YPos"		"0"
+				"ZPos"		"6"
+				"roll"		"-115"
+			}
+		}
+		"attach_head"
+		{
+			"models/items/huskar/searing_dominator/searing_dominator.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"yaw"		"0"
+				"XPos"		"-16"
+				"YPos"		"1"
+				"ZPos"		"-150"
+				"roll"		"0"
+			}
+			"models/items/sven/arms_of_the_rogue/arms_rogue_shield_fx.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"-10"
+				"yaw"		"-249"
+				"XPos"		"0"
+				"YPos"		"0"
+				"ZPos"		"6"
+				"roll"		"-115"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
+			{
+				"scale"		"2.5"
+				"pitch"		"45"
+				"yaw"		"-69"
+				"XPos"		"0"
+				"YPos"		"0"
+				"ZPos"		"6"
+				"roll"		"-90"
+			}
+		}
+	}
+	"ExtraKeys"		"Can Be Added Wherever"
+}

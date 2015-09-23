@@ -217,7 +217,6 @@ function GetDefaultWearableNameForSlot(unit, name)
     return default_wearable_name
 end
 
-function GetWearablesForUnit(unit)
-    --HATS = LoadKeyValues("scripts/kv/wearables.kv") --Reload for tests
-    return HATS[unit:GetUnitName()]
+function GetWearablesForSlot(slotName)
+    return HATS[slotName]
 end
