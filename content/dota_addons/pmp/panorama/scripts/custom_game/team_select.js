@@ -453,7 +453,7 @@ function ConstructTeamPanels () {
     }
     else{
     	$.Msg(Map_Name)
-    	$('#Settings').AddClass('Hidden')
+    	$('#Settings').DeleteAsync(0)
 
     	// Construct the panels for each team
 		ConstructTeamPanels();
