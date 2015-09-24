@@ -134,6 +134,10 @@ function GetWearablesForSlot(slotName)
     return HATS[slotName]
 end
 
+function GetParticlesForWearableModel( modelName )
+    return 
+end
+
 ----------------------------------------------
 -- DEPRECATED
 -- Create a new prop_dynamic wearable in this slot name

@@ -73,13 +73,19 @@ function Precache( context )
 			if type(value) ~= "table" then
 				if string.match(value, "vmdl") then
 					PrecacheModel(value, context)
-				elseif string.match(value, "vpcf") then
-					PrecacheResource("particle", value, context)
 				end
 			end
 		end
 	end
 
+	local AttachmentDatabase = LoadKeyValues("scripts/attachments.txt")
+	local Particles = AttachmentDatabase['Particles']
+	for k,modelName in pairs(Particles) do
+		local effectName = modelName['EffectName']
+		if effectName then
+			PrecacheResource("particle", effectName, context)
+		end
+	end
 end
 
 -- Create our game mode and initialize it
