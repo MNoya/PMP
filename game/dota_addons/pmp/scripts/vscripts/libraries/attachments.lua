@@ -446,6 +446,7 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     local scale = scale or db[unitModel][attachPoint][propModel]['scale'] or 1.0
 
     properties = properties or db[unitModel][attachPoint][propModel]
+    local animation = properties.Animation or properties['Animation'] or ""
     local pitch = tonumber(properties.pitch)
     local yaw = tonumber(properties.yaw)
     local roll = tonumber(properties.roll)
@@ -459,7 +460,7 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     if model.GetName and IsValidEntity(model) then
       prop = model
     else
-      prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = propModel})
+      prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = propModel, DefaultAnim = animation})
       prop:SetModelScale(scale * unit:GetModelScale())
     end
 
