@@ -83,3 +83,10 @@ function LeaveBase( trigger )
         activator:AddNoDraw()
     end
 end
+
+function Rotate( event )
+    local garage = event.caster
+    local value = event.Value
+
+    garage:SetAngles(0,-value,0)
+end

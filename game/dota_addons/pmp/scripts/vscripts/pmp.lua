@@ -459,8 +459,7 @@ function PMP:OnPlayerPickHero(keys)
         if Convars:GetBool('developer') then 
             SetGold(playerID, 99999)
             SetLumber(playerID, 99999)
-            SetFoodUsed(playerID, 0)
-            SetFoodLimit(playerID, 100)
+            --SetFoodLimit(playerID, 100)
         end
 
         -- Set initial units
@@ -537,11 +536,13 @@ function PMP:OnGameInProgress()
     end)
 
     -- Send rounds every some minutes
-    local STAT_COLLECT_THINK = 300
-    Timers:CreateTimer(60,function()
-        statCollection:submitRound({})
-        return STAT_COLLECT_THINK
-    end)
+    if COLLECT_STATS then
+        local STAT_COLLECT_THINK = 300
+        Timers:CreateTimer(60,function()
+            statCollection:submitRound({})
+            return STAT_COLLECT_THINK
+        end)
+    end
 end
 
 gamestates =

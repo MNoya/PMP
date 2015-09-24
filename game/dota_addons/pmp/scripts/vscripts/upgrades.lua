@@ -1,3 +1,8 @@
+animations = {
+	["undead_pimpery"]	= ACT_DOTA_SPAWN,
+	["peon_pimpery"] 	= ACT_DOTA_SPAWN,
+}
+
 -- This is called after a unit upgrade is purchased
 function UpgradeFinished( event )
 	local caster = event.caster
@@ -11,7 +16,9 @@ function UpgradeFinished( event )
 		ModifyLumber(pID, -lumberCost)
 	end
 
-	caster:StartGesture(ACT_DOTA_SPAWN)
+	-- Different animations for pimperies
+	local anim = animations[caster:GetUnitName()]
+	caster:StartGesture(anim)
 
 	local upgrade_level = tonumber(event.Level)
 	local upgrade_name = event.Name
@@ -152,13 +159,12 @@ function PMP:ApplyUpgrade(unit, name, level)
 			end
 
             local slot_table = GetWearablesForSlot(name)
-            if not slot_table then
-                return
-            end
+            if slot_table then
 
-            -- Handle Wearable changes
-            local modelName = slot_table[tostring(level)]
-            ChangeWearableInSlot(unit, name, modelName)
+                -- Handle Wearable changes
+	            local modelName = slot_table[tostring(level)]
+	            ChangeWearableInSlot(unit, name, modelName)
+            end
 		end
     end
 
@@ -167,9 +173,8 @@ end
 
 function PMP:ApplyModifierUpgrade(unit, name, level)
 	local targetModifierName = "modifier_"..name
-	--unit:RemoveModifierByName(targetModifierName..(level-1))
 	local modifiers = unit:FindAllModifiers()
-	for i=1,#modifiers do
+	for i=0,#modifiers do
 		local modifierName = unit:GetModifierNameByIndex(i)
 		if StringStartsWith(modifierName, targetModifierName) then
 			unit:RemoveModifierByName(modifierName)
@@ -212,7 +217,7 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 
 			-- Health increases unit model scale
 			if name == "health" then
-				unit:SetModelScale(GetOriginalModelScale(unit)+0.01*level)
+				local increase = 0.1*math.log(tonumber(level+1),2)+level*0.002
 			end
 		end
 	end

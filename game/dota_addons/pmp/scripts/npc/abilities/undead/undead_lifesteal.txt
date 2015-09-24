@@ -1,0 +1,35 @@
+"undead_lifesteal"
+{
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "undead_lifesteal"
+    "MaxLevel"              "1"
+            
+    "AbilitySpecial"
+    {        
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "lifesteal_percent" "7"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_undead_lifesteal"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+    
+            "OnAttackLanded"
+            // "%attack_damage" is set to the damage value before mitigation
+            {
+                "Lifesteal"
+                {
+                    "Target"            "ATTACKER"
+                    "LifestealPercent"  "%lifesteal_percent"
+                }
+            }
+        }
+    }
+}

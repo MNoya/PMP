@@ -838,6 +838,7 @@
 	                "MODIFIER_STATE_LOW_ATTACK_PRIORITY" "MODIFIER_STATE_VALUE_ENABLED"
 	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
 	                "MODIFIER_STATE_MAGIC_IMMUNE"   "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
 	            }
 	
 	            "Properties"
@@ -3941,5 +3942,475 @@
 	    "AbilityCastRange"          "900"
 	
 	    "AbilityGoldCost"           "100"
+	}
+	// Spawn rate: 7 seconds
+	// Spawn 1 at a time and increases with upgrade
+	"spawn_undead"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityCooldown"               "7"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_undead"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/garage.lua"
+	                    "Function"      "Rotate"
+	                    "Value"         "45"
+	                }
+	            }
+	
+	            "ThinkInterval"     "7.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "undead"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+	"spawn_undead_leader"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_undead_leader"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityCooldown"               "180"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_undead_caster"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/shared.lua"
+	                    "Function"      "StartCooldown"
+	                }
+	            }
+	            "ThinkInterval"     "180.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "undead_leader"
+	                }
+	            }
+	        }
+	    }
+	}
+	// This ability has 3 charges (displayed as modifier stacks) and refreshes every X seconds
+	// The unit lasts 20 seconds & 15 minute cooldown (rofl)
+	// It will be instantly killed if it goes outside the base
+	"summon_super_undead"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_undead"
+	    "MaxLevel"                      "3"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "duration"            "20.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/spawn.lua"
+	            "Function"      "SpawnSuperUnit"
+	            "UnitName"      "super_undead"
+	            "Duration"      "%duration"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_super_spawn"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SuperPeonCharges"
+	                }
+	            }
+	        }
+	
+	        "modifier_super_unit_charges"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"summon_super_undead_empty"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_undead"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"undead_sleep"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "undead_sleep"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+	
+	    "AbilityCastRange"              "700"
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCooldown"               "8.0" // CHECK DATA
+	
+	    "AbilityManaCost"               "10"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/newplayer_fx/npx_sleeping.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+	    }
+	        
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "duration"          "20"
+	        }
+	    }
+	        
+	    "OnSpellStart"
+	    {
+	        "FireSound"             
+	        {
+	            "EffectName"    "Hero_Bane.Nightmare" 
+	            "Target"        "TARGET"
+	        }
+	
+	        "ApplyModifier"
+	        {
+	            "ModifierName"    "modifier_sleep"
+	            "Target"          "TARGET"
+	            "Duration"      "%duration"
+	        }
+	    }
+	    
+	    "Modifiers"
+	    {
+	        "modifier_sleep"
+	        {
+	            "IsDebuff"  "1"
+	            "TextureName"      "undead_sleep"
+	            "EffectName"       "particles/newplayer_fx/npx_sleeping.vpcf"
+	            "EffectAttachType" "follow_overhead"
+	
+	            "States"
+	            {
+	                "MODIFIER_STATE_STUNNED"                "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NIGHTMARED"             "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_LOW_ATTACK_PRIORITY"    "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	
+	            "OverrideAnimation"     "ACT_DOTA_DISABLED"
+	
+	            "OnTakeDamage"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "Target"        "UNIT"
+	                    "ModifierName"  "modifier_sleep"
+	                }                   
+	            }           
+	        }
+	    }       
+	}
+	
+	"undead_curse"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityTextureName"        "undead_curse"
+	    "MaxLevel"                  "1"
+	        
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+	        
+	    "AbilityCastRange"          "700"
+	    "AbilityCastPoint"          "0"
+	    "AbilityCooldown"           "1"
+	    "AbilityManaCost"           "10"
+	    
+	        
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"      "FIELD_INTEGER"
+	            "duration"      "120"
+	        }
+	        "03"
+	        {
+	            "var_type"      "FIELD_INTEGER"
+	            "miss_chance"   "33"
+	        }
+	    }
+	    
+	    "precache"
+	    {   
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+	        // target particle
+	        "particle"  "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead_smoke.vpcf"
+	    }
+	    
+	    "OnSpellStart"
+	    {    
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_Bane.Enfeeble.Cast"
+	            "Target"        "TARGET"
+	        }      
+	        "ApplyModifier"
+	        {
+	            "ModifierName"    "modifier_undead_curse"
+	            "Target"          "TARGET"
+	            "Duration"        "%duration"
+	        }         
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_undead_curse"
+	        {           
+	            "EffectName"        "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead_smoke.vpcf"
+	            "EffectAttachType"  "follow_overhead"
+	
+	            "IsPurgable"        "1"
+	            "IsDebuff"          "1"
+	            "TextureName"       "undead_curse"
+	            
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_chance"      
+	            }   
+	        }
+	
+	        "modifier_undead_curse_autocast"
+	        {
+	            "Passive"       "1"
+	            "IsHidden"      "1"
+	            
+	            "ThinkInterval"  "0.5"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/undead/curse.lua"
+	                    "Function"      "BansheeCurseAuto_Cast"
+	                }
+	            }
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/undead/curse.lua"
+	                    "Function"      "ToggleOnAutocast"
+	                }
+	            }           
+	        }       
+	    }
+	}
+	
+	// Stuns a target unit and the Banshee for seconds, during which the Banshee takes extra damage from attacks. 
+	// She then displaces the soul of the enemy, giving you permanent control of it, but destroying the caster's body. 
+	// Possession cannot be used on flying units, Heroes, or creeps above level 5
+	"undead_possession"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityTextureName"        "undead_possession"
+	    "MaxLevel"                  "1"
+	        
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC"
+	    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
+	    
+	    "AbilityChannelTime"        "4"
+	    "AbilityCastRange"          "350"
+	    "AbilityCastPoint"          "0.3"
+	    "AbilityCooldown"           "0"
+	    "AbilityManaCost"           "10"
+	    
+	    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
+	    "AnimationPlaybackRate"     "0.1"
+	        
+	    "precache"
+	    {
+	        // caster particle
+	        "particle"  "particles/units/heroes/hero_death_prophet/death_prophet_spirit_model.vpcf"
+	        
+	        // target impact particle
+	        "particle"  "particles/units/heroes/hero_death_prophet/death_prophet_excorcism_attack_impact_death.vpcf"    
+	        
+	        // target particle
+	        "particle"  "particles/units/heroes/hero_bane/bane_fiends_grip.vpcf"
+	    }
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "damage_increase_while_channeling"      "66"
+	        }
+	        "02"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "channel_range"     "350"
+	        }
+	        "03"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "channel_duration"  "4"
+	        }
+	    }
+	
+	    "OnAbilityPhaseStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"            "abilities/undead/possession.lua"
+	            "Function"              "PossessionCheck"
+	        }
+	    }
+	    
+	    "OnChannelInterrupted"
+	    {
+	        "RemoveModifier"
+	        {
+	            "ModifierName"  "modifier_possession_target"
+	            "Target"         "TARGET"
+	        }
+	                
+	        "RemoveModifier"
+	        {
+	            "ModifierName"  "modifier_possession_caster"
+	            "Target"         "CASTER"
+	        }
+	    }
+	    
+	    "OnChannelSucceeded"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"            "abilities/undead/possession.lua"
+	            "Function"              "Possession"
+	        }
+	    }
+	    
+	    "Modifiers"
+	    {
+	        "modifier_possession_target"
+	        {           
+	            "EffectName"        "particles/units/heroes/hero_bane/bane_fiends_grip.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	            "OverrideAnimation" "ACT_DOTA_DISABLED"
+	            "IsDebuff"           "1"
+	                
+	            "States"
+	            {
+	                "MODIFIER_STATE_STUNNED"            "MODIFIER_STATE_VALUE_ENABLED"
+	            }   
+	        }
+	        
+	        "modifier_possession_caster"
+	        {           
+	            "EffectName"        "particles/units/heroes/hero_pugna/pugna_ward_orientedrunes.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	            
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage_increase_while_channeling"
+	            }
+	        }   
+	    }
+	}
+	"undead_lifesteal"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"    "undead_lifesteal"
+	    "MaxLevel"              "1"
+	            
+	    "AbilitySpecial"
+	    {        
+	        "01"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "lifesteal_percent" "7"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_undead_lifesteal"
+	        {
+	            "Passive"            "1"
+	            "IsHidden"           "1"
+	    
+	            "OnAttackLanded"
+	            // "%attack_damage" is set to the damage value before mitigation
+	            {
+	                "Lifesteal"
+	                {
+	                    "Target"            "ATTACKER"
+	                    "LifestealPercent"  "%lifesteal_percent"
+	                }
+	            }
+	        }
+	    }
 	}
 }

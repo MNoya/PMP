@@ -19,7 +19,8 @@ function ChangeWearableInSlot( unit, slotName, modelName )
         ClearPropWearableSlot(unit, slotName)
         HideWearableInSlot(unit, slotName)
 
-        unit.prop_wearables[slotName] = Attachments:AttachProp(unit, attachPoint, modelName)
+        local new_prop = Attachments:AttachProp(unit, attachPoint, modelName)
+        unit.prop_wearables[slotName] = new_prop or unit.prop_wearables[slotName]
     end
 end
 

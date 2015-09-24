@@ -1244,6 +1244,15 @@
 	            }
 	        }
 	
+	        "modifier_weapon3"
+	        {
+	            "TextureName"   "upgrade_weapon3"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "6"
+	            }
+	        }
+	
 	        "modifier_weapon4"
 	        {
 	            "TextureName"   "upgrade_weapon4"

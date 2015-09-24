@@ -6,10 +6,15 @@
 "CustomHeroList"
 {
 	"npc_dota_hero_axe" "-1" //Peon
-	"npc_dota_hero_alchemist" "0" //Goblin
-	"npc_dota_hero_meepo" "0" //Peasant
-	"npc_dota_hero_windrunner" "0" //Night Elf
+	"npc_dota_hero_undying" "-1" //Undead
+	"npc_dota_hero_skeleton_king" "0" //Skeletons
+	"npc_dota_hero_meepo" "0"	//Goblin
+	"npc_dota_hero_dragon_knight" "0" //Peasant
+	"npc_dota_hero_drow_ranger" "0" //Night Elf
+	"npc_dota_hero_silencer" "0" //Blood Elf
+	"npc_dota_hero_treant" "0" // Treant
 
+	"npc_dota_hero_alchemist" "0"
 	"npc_dota_hero_ancient_apparition" "0"
 	"npc_dota_hero_antimage" "0"
 	"npc_dota_hero_bane" "0"
@@ -19,7 +24,6 @@
 	"npc_dota_hero_crystal_maiden" "0"
 	"npc_dota_hero_dark_seer" "0"
 	"npc_dota_hero_dazzle"	"0"
-	"npc_dota_hero_dragon_knight" "0"
 	"npc_dota_hero_doom_bringer" "0"
 	"npc_dota_hero_drow_ranger" "0"
 	"npc_dota_hero_earthshaker" "0"
@@ -63,16 +67,15 @@
 	"npc_dota_hero_witch_doctor" "0"
 	"npc_dota_hero_zuus" "0"
 	"npc_dota_hero_broodmother" "0"
-	"npc_dota_hero_skeleton_king" "0"
 	"npc_dota_hero_queenofpain" "0"
 	"npc_dota_hero_huskar" "0"
 	"npc_dota_hero_jakiro" "0"
 	"npc_dota_hero_batrider" "0"
 	"npc_dota_hero_warlock" "0"
+	"npc_dota_hero_windrunner" "0"
 	"npc_dota_hero_death_prophet" "0"
 	"npc_dota_hero_ursa" "0"
 	"npc_dota_hero_bounty_hunter" "0"
-	"npc_dota_hero_silencer" "0"
 	"npc_dota_hero_spirit_breaker" "0"
 	"npc_dota_hero_invoker" "0"
 	"npc_dota_hero_clinkz" "0"
@@ -82,7 +85,6 @@
 	"npc_dota_hero_lone_druid" "0"
 	"npc_dota_hero_brewmaster" "0"
 	"npc_dota_hero_phantom_lancer" "0"
-	"npc_dota_hero_treant" "0"
 	"npc_dota_hero_ogre_magi" "0"
 	"npc_dota_hero_chaos_knight" "0"
 	"npc_dota_hero_phantom_assassin" "0"
@@ -91,7 +93,6 @@
 	"npc_dota_hero_luna" "0"
 	"npc_dota_hero_wisp" "0"
 	"npc_dota_hero_disruptor" "0"
-	"npc_dota_hero_undying" "0"
 	"npc_dota_hero_templar_assassin" "0"
 	"npc_dota_hero_naga_siren" "0"
 	"npc_dota_hero_nyx_assassin" "0"

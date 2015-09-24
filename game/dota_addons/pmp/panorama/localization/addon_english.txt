@@ -42,5 +42,6 @@
 		"error_not_enough_gold"					"Not Enough Gold"
 		"error_not_enough_lumber"				"Not Enough Lumber"	
 		"error_no_buyers_found"					"No buyers in range"
+		"error_cant_target_level6"				"Can't target creeps over level 5"
 	}
 }

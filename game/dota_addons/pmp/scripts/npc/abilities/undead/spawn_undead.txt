@@ -1,0 +1,78 @@
+// Spawn rate: 7 seconds
+// Spawn 1 at a time and increases with upgrade
+"spawn_undead"
+{
+    "BaseClass"                     "ability_datadriven"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityCooldown"               "7"
+
+    "Modifiers"
+    {
+        "modifier_spawn_undead"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/garage.lua"
+                    "Function"      "Rotate"
+                    "Value"         "45"
+                }
+            }
+
+            "ThinkInterval"     "7.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "undead"
+                }
+            }
+        }
+    }
+}
+
+// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+"spawn_undead_leader"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_undead_leader"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityCooldown"               "180"
+
+    "Modifiers"
+    {
+        "modifier_spawn_undead_caster"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/shared.lua"
+                    "Function"      "StartCooldown"
+                }
+            }
+            "ThinkInterval"     "180.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "undead_leader"
+                }
+            }
+        }
+    }
+}

@@ -1035,4 +1035,593 @@
 	    // Creature Data
 	    //----------------------------------------------------------------
 	}
+	//=================================================================================
+	// Main unit: Undead
+	//=================================================================================
+	"undead"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/heroes/undying/undying.vmdl"
+	    "ModelScale"                "0.7"
+	    "Level"                     "1"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
+	    "HealthBarOffset"           "140"
+	    "SoundSet"                  "Hero_Undying"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+	
+	    "PathfindingSearchDepthScale" "0.5"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "undead_lifesteal"
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	    "AttackDamageMin"           "4.0"
+	    "AttackDamageMax"           "8.0"
+	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackRate"                "2.00"
+	    "AttackAnimationPoint"      "0.5"
+	    "AttackAcquisitionRange"    "500"
+	    "AttackRange"               "90"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "5.0"
+	    "BountyGoldMax"             "5.0"
+	    "BountyLumber"              "5.0"
+	    
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "75"
+	    "LumberCost"                "75"
+	    "FoodCost"                  "1"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"             "150"
+	    "MovementTurnRate"          "0.6"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "50"
+	    "StatusHealthRegen"         "0.50"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "500"
+	    "VisionNighttimeRange"      "500"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	    "Creature"
+	    {
+	        "DisableClumpingBehavior"   "1"
+	        "AttachWearables"
+	        {
+	            "Wearable1"     {   "ItemDef"       "392"     } //models/heroes/undying/undying_helmet.vmdl
+	            "Wearable2"     {   "ItemDef"       "393"     } //models/heroes/undying/undying_armor.vmdl
+	        }
+	    }
+	}
+	
+	//=================================================================================
+	// Leader unit: Deadly Commanding Warlock
+	//=================================================================================
+	"undead_leader"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/heroes/death_prophet/death_prophet.vmdl"
+	    "ModelScale"                "0.8"
+	    "Level"                     "2"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
+	    "HealthBarOffset"           "140"
+	    "SoundSet"                  "Hero_DeathProphet"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+	
+	    "PathfindingSearchDepthScale" "0.5"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "undead_sleep" //5 mana sleep for 20 seconds
+	    "Ability2"                  "undead_curse" //Autocast on, 10mana 33% miss for 120 seconds
+	    "Ability3"                  "undead_possession" //10 mana possession
+	    
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageMin"           "0.0"
+	    "AttackDamageMax"           "0.0"
+	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackRate"                "1.75"
+	    "AttackAnimationPoint"      "0.43"
+	    "AttackAcquisitionRange"    "600"
+	    "AttackRange"               "600"
+	    "ProjectileModel"           "particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf"
+	    "ProjectileSpeed"           "1100"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "10.0"
+	    "BountyGoldMax"             "10.0"
+	    "BountyLumber"              "10.0"
+	    
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "0"
+	    "LumberCost"                "0"
+	    "FoodCost"                  "0"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"             "150"
+	    "MovementTurnRate"          "0.6"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "100"
+	    "StatusHealthRegen"         "2.00"
+	    "StatusMana"                "100"
+	    "StatusManaRegen"           "1.00"
+	    "StatusStartingMana"        "100"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "1400"
+	    "VisionNighttimeRange"      "800"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	    "Creature"
+	    {
+	        "DisableClumpingBehavior"   "1"
+	        "AttachWearables"
+	        {
+	            "Wearable1"     {   "ItemDef"       "168"       }
+	            "Wearable2"     {   "ItemDef"       "169"       }
+	            "Wearable3"     {   "ItemDef"       "170"       }
+	            "Wearable4"     {   "ItemDef"       "171"       }
+	        }
+	    }
+	}
+	
+	//=================================================================================
+	// Super Unit
+	//=================================================================================
+	"super_undead"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/heroes/warlock/warlock.vmdl"
+	    "ModelScale"                "1"
+	    "Level"                     "6"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
+	    "HealthBarOffset"           "140"
+	    "SoundSet"                  "Hero_Warlock"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	
+	    "PathfindingSearchDepthScale" "0.5"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "barrage_attack"
+	    "Ability2"                  ""   //Reference: A02F
+	    
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "2"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageMin"           "500.0"
+	    "AttackDamageMax"           "500.0"
+	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackRate"                "1"
+	    "AttackAnimationPoint"      "0.4"
+	    "AttackAcquisitionRange"    "600"
+	    "AttackRange"               "900"
+	    "ProjectileModel"           "particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
+	    "ProjectileSpeed"           "900"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "50.0"
+	    "BountyGoldMax"             "50.0"
+	    "BountyLumber"              "50.0"
+	    
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "0"
+	    "LumberCost"                "0"
+	    "FoodCost"                  "0"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"             "450"
+	    "MovementTurnRate"          "1.00"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "10000"
+	    "StatusHealthRegen"         "100.00"
+	    "StatusMana"                "350"
+	    "StatusManaRegen"           "0.875"
+	    "StatusStartingMana"        "350"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "1400"
+	    "VisionNighttimeRange"      "900"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	    "Creature"
+	    {
+	        "DisableClumpingBehavior"   "1"
+	        "AttachWearables"
+	        {
+	            "Wearable1" { "ItemDef" "5594" } 
+	            "Wearable2" { "ItemDef" "5725" } 
+	            "Wearable3" { "ItemDef" "5730" }
+	            "Wearable4" { "ItemDef" "5726" } //demonomicon
+	            "Wearable5" { "ItemDef" "5727" }
+	            "Wearable6" { "ItemDef" "5729" }
+	            
+	        }
+	    }
+	}
+	
+	//=================================================================================
+	// City Center: Pimp Garage
+	//=================================================================================
+	"undead_garage"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/items/undying/idol_of_ruination/idol_tower.vmdl"
+	    "ModelScale"                "1.2"
+	    "Level"                     "1"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	    "RingRadius"                "180"
+	    "HealthBarOffset"           "280"
+	    "ConsideredHero"            "1"
+	
+	    "UnitLabel"                 "city_center"
+	
+	    "MinimapIcon"               "minimap_racks90"
+	    "HealthBarOffset"           "250"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "AbilityLayout"             "6"
+	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
+	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
+	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability4"                  "repair_buildings"  //Repair
+	    "Ability5"                  "spawn_undead" //Hidden
+	    "Ability6"                  "spawn_undead_leader"
+	    "Ability7"                  "summon_super_undead" //Visible to show the 3 min cd
+	    "Ability10"                 "ability_building"
+	    
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageMin"           "29.0"
+	    "AttackDamageMax"           "31.0"
+	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackRate"                "5.00"
+	    "AttackAnimationPoint"      "0.3"
+	    "AttackAcquisitionRange"    "700"
+	    "AttackRange"               "700"
+	    "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+	    "ProjectileSpeed"           "1200"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "0.0"
+	    "BountyGoldMax"             "0.0"
+	    
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "160"
+	    "LumberCost"                "160"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "5000"
+	    "StatusHealthRegen"         "1.00"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "1800"
+	    "VisionNighttimeRange"      "1600"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BARRACKS"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	}
+	
+	//=================================================================================
+	// Research Center: Undead Pimpery
+	//=================================================================================
+	"undead_pimpery"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/heroes/undying/undying.vmdl"
+	    "ModelScale"                "1.2"
+	    "Level"                     "10"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
+	    "RingRadius"                "100"
+	    "HealthBarOffset"           "280"
+	
+	    "MinimapIcon"               "minimap_racks90"
+	    "HealthBarOffset"           "250"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "AbilityLayout"             "5"
+	    "Ability1"                  "upgrade_weapon1" //Upgrade Weapon - 30 Levels
+	    "Ability2"                  "upgrade_helm1" //Upgrade Helm - 15 Levels
+	    "Ability3"                  "upgrade_shield1" //Upgrade Shield - 11 Levels
+	    "Ability4"                  "upgrade_wings1" //Upgrade Wings - 8 Levels
+	    "Ability5"                  "upgrade_health"
+	    "Ability10"                 "ability_building"
+	
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "0.0"
+	    "BountyGoldMax"             "0.0"
+	    
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "0"
+	    "LumberCost"                "0"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "10000"
+	    "StatusHealthRegen"         "1.00"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	    "Creature"
+	    {     
+	        "AttachWearables"
+	        {
+	            "Wearable1"     {   "ItemDef"       "392"     } //models/heroes/undying/undying_helmet.vmdl
+	            "Wearable2"     {   "ItemDef"       "393"     } //models/heroes/undying/undying_armor.vmdl
+	        }
+	
+	        "EquippedItems"
+	        {
+	            "Item1"  { "Item" "item_critical_hit1" }
+	            "Item2"  { "Item" "item_stun_hit1" }
+	            "Item3"  { "Item" "item_poisoned_weapons1" }
+	            "Item4"  { "Item" "item_pulverize1" }
+	            "Item5"  { "Item" "item_dodge1" }
+	            "Item6"  { "Item" "item_spiked_armor1" }
+	        }
+	    }
+	}
+	
+	//=================================================================================
+	// Tower: Watch Tower
+	//=================================================================================
+	"undead_tower"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/props_structures/tower_bad.vmdl"
+	    "ModelScale"                "0.6"
+	    "Level"                     "1"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
+	    "RingRadius"                "140"
+	    "HealthBarOffset"           "280"
+	
+	    "MinimapIcon"               "minimap_tower90"
+	    "MinimapIconSize"           "320"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "ability_tower"
+	    "Ability10"                 "ability_building"
+	    
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "80.0"
+	    "BountyGoldMax"             "80.0"
+	    "BountyLumber"              "20.0"
+	    
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "110"
+	    "LumberCost"                "110"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "1000"
+	    "StatusHealthRegen"         "1.00"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "800"
+	    "VisionNighttimeRange"      "800"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	}
+	
+	"undead_ghost"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/heroes/undying/undying.vmdl"
+	    "ModelScale"                "1"
+	    "Level"                     "1"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
+	    "HealthBarOffset"           "140"
+	    "SoundSet"                  "Hero_Undying"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "ghost_peon"
+	
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageMin"           "0.0"
+	    "AttackDamageMax"           "0.0"
+	        
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "75"
+	    "LumberCost"                "75"
+	    "FoodCost"                  "1"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+	    "MovementSpeed"             "420"
+	    "MovementTurnRate"          "1"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "1"
+	    "StatusHealthRegen"         "0.50"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "20000"
+	    "VisionNighttimeRange"      "20000"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	    "Creature"
+	    {
+	        "DisableClumpingBehavior"   "1"
+	        "AttachWearables"
+	        {
+	            "Wearable1"     {   "ItemDef"       "392"     } //models/heroes/undying/undying_helmet.vmdl
+	            "Wearable2"     {   "ItemDef"       "393"     } //models/heroes/undying/undying_armor.vmdl
+	        }
+	    }
+	}
 }
