@@ -15,7 +15,7 @@
 			<!-- Custom Host Settings Panel-->
 			 <Panel id="Settings">
 		        <Label class='SettingsHeader' text="GAME SETTINGS" style="" />
-		        <Label class='SettingHeader' text="Players Per Team" style="" />
+		        <Label id="PlayersPerTeam" class='SettingHeader' text="Players Per Team" style="" />
 		        <Panel id="TeamRow" class="SettingsRow">
 		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 1)" onmouseover="MouseOver('TeamRow',1)" onmouseout="MouseOut('TeamRow', 1)"> 
 		            	<Label class="SettingOptionText" text="2"/> </Panel>

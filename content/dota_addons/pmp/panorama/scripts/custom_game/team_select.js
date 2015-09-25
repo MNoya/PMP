@@ -13,13 +13,6 @@ function SetSetting(setting, choice)
 	{
 		$.Msg("SetSetting ", setting," ", choice)
     	GameEvents.SendCustomGameEventToServer( "set_setting", {setting: setting, value: choice});
-
-    	RemoveTeamPanels();
-
-    	// Set player unassigned
-		//Game.PlayerJoinTeam( 5 );
-
-    	$.Schedule(1/30, function(){ConstructTeamPanels()});
     }
 }
 
@@ -28,6 +21,15 @@ function OnSettingChanged(event)
 	var setting = event.setting
 	var choice = event.value
 	$.Msg("Setting Changed: ",event);
+
+	RemoveTeamPanels();
+
+	$.Schedule(1/30, function(){
+		ConstructTeamPanels()
+	
+		// Automatically assign players to teams.
+	    Game.AutoAssignPlayersToTeams();
+    });
 
 	ChangeSetting($("#" + setting), choice);
 }
@@ -47,8 +49,6 @@ function MouseOut (setting, choice) {
  //Updates the display
 function ChangeSetting(panel, choice)
 {
-	$.Msg("Changing Setterino")
-    //Game.EmitSound("");
     for (var i = 1; i <= panel.GetChildCount(); i++)
     {
         var child = panel.GetChild(i - 1);
@@ -318,9 +318,9 @@ function CheckForHostPrivileges()
 	$.GetContextPanel().SetHasClass( "player_has_host_privileges", IsHost );
 
 	// Update the Host name
-    var playerIDs = Game.GetAllPlayerIDs()
+	var playerIDs = Game.GetAllPlayerIDs()
 	for (var i = 0; i < playerIDs.length; i++) {
-		var pInfo = Game.GetLocalPlayerInfo();
+		var pInfo = Game.GetPlayerInfo( i );
 		if ( pInfo && pInfo.player_has_host_privileges){
 			var HostName = Players.GetPlayerName( Players.GetLocalPlayer() )
     		$('#Host').text = "HOST: "+HostName
@@ -377,6 +377,11 @@ function RemoveTeamPanels() {
 		g_TeamPanels[i].DeleteAsync(0)
 	}
 	g_TeamPanels = [];
+
+	for ( var i = 0; i < g_PlayerPanels.length; ++i )
+	{
+		g_PlayerPanels[i].DeleteAsync(0)
+	}
 	g_PlayerPanels = [];
 }
 
@@ -401,12 +406,6 @@ function ConstructTeamPanels () {
 		{
 			bAutoAssignTeams = cfg.bAutoAssignTeams;
 		}
-	}
-
-	// Automatically assign players to teams.
-	if ( bAutoAssignTeams )
-	{
-		Game.AutoAssignPlayersToTeams();
 	}
 
 	var allTeamIDs = Game.GetAllTeamIDs();
@@ -448,17 +447,14 @@ function ConstructTeamPanels () {
 
 		// Set default on the host panel
     	GameEvents.SendCustomGameEventToServer( "set_setting", {setting: settings[0], value: 2});
-
-    	ConstructTeamPanels();
     }
     else{
-    	$.Msg(Map_Name)
-    	$('#Settings').DeleteAsync(0)
+    	$('#PlayersPerTeam').DeleteAsync(0)
+    	$('#TeamRow').DeleteAsync(0)
 
     	// Construct the panels for each team
 		ConstructTeamPanels();
     }
-  	
 
 	$( "#TeamSelectContainer" ).SetAcceptsFocus( true ); // Prevents the chat window from taking focus by default
 

@@ -123,7 +123,7 @@ function PMP:InitGameMode()
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 3 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 3 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 3 )
-
+        GameRules:EnableCustomGameSetupAutoLaunch(false)
         GameRules.PlayersPerTeam = 3
     end
 
