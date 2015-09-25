@@ -41,6 +41,9 @@ function SpawnUnit( event )
         -- Move to rally point
         Timers:CreateTimer(0.05, function() 
             unit:MoveToPositionAggressive(caster.rally_point)
+            if IsLeaderUnit(unit) then
+                ApplyModifier(unit, "modifier_disable_autoattack")
+            end
         end)
     end
 

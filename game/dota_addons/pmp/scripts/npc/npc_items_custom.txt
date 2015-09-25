@@ -87,6 +87,15 @@
 	                "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_DISABLED"
 	            }
 	        }
+	
+	        "modifier_disable_autoattack"
+	        {
+	            "IsHidden"          "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK" "1"
+	            }      
+	        }
 		}
 	}
 	// Level 1

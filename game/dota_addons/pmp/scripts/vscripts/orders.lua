@@ -129,8 +129,13 @@ function PMP:FilterExecuteOrder( filterTable )
             local pos = navPoints[tonumber(n)+1]
             --print("Unit Number "..n.." moving to ", pos)
             n = n+1
-            
-            ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = order_type, Position = pos, Queue = queue})
+
+            -- Don't move aggresive with the Leader units
+            if IsLeaderUnit(unit) then
+                ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = pos, Queue = queue})
+            else
+                ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = order_type, Position = pos, Queue = queue})
+            end
         end
         return false
     
@@ -144,6 +149,9 @@ function PMP:FilterExecuteOrder( filterTable )
 
             return false
         end
+
+    elseif (unit and order_type == DOTA_UNIT_ORDER_ATTACK_TARGET and IsLeaderUnit(unit)) then
+        return false
     end
 
     return true

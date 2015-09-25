@@ -32,6 +32,7 @@ end
 function BloodlustDelete(event) 
     local target = event.target
     local ability = event.ability
+    if not ability then return end
     local scaling_factor = ability:GetSpecialValueFor('scaling_factor')
     local final_model_scale = GetOriginalModelScale(target) or 1
     local model_size_interval = scaling_factor/50
@@ -59,6 +60,8 @@ function BloodlustAutocast_Attack( event )
     local attacker = event.attacker
     local ability = event.ability
 
+    if IsLeaderUnit(attacker) then return end
+
     -- Name of the modifier to avoid casting the spell on targets that were already buffed
     local modifier = "modifier_bloodlust"
 
@@ -75,6 +78,8 @@ function BloodlustAutocast_Attacked( event )
     local target = event.target
     local ability = event.ability
     if not ability then return end
+
+    if IsLeaderUnit(target) then return end
 
     -- Name of the modifier to avoid casting the spell on targets that were already buffed
     local modifier = "modifier_bloodlust"

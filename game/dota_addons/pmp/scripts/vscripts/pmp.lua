@@ -359,9 +359,11 @@ function PMP:OnPlayerPickHero(keys)
     hero.invulnCount = 4
 
     -- The main hero is an invulnerable fake just used to get global upgrades
-    center_position.z = 0
-    hero:SetAbsOrigin(center_position)
-    hero:AddNoDraw()
+    center_position.z = -128
+    Timers:CreateTimer(1, function()
+        hero:SetAbsOrigin(center_position)
+        hero:AddNoDraw()
+    end)
 
     -- Upgrade Shop
     local shopEnt = Entities:FindByNameWithin(nil, "*shop_position", center_position, 1000)
@@ -369,6 +371,7 @@ function PMP:OnPlayerPickHero(keys)
     hero.pimpery:SetOwner(hero)
     hero.pimpery:SetControllableByPlayer(playerID, true)
     hero.pimpery:SetAngles(0, -90, 0)
+    hero.pimpery:AddNewModifier(unit, nil, "modifier_invulnerable", {})
 
     PMP:GiveItemUpgrades(hero.pimpery)
 
@@ -466,6 +469,14 @@ function PMP:OnPlayerPickHero(keys)
         SetLumber(playerID, INITIAL_LUMBER)
         SetFoodUsed(playerID, 0)
         SetFoodLimit(playerID, INITIAL_FOOD_LIMIT)
+
+        -- Update the UI in case it hasn't been built yet
+        Timers:CreateTimer(1, function()
+            SetGold(playerID, GetGold(playerID))
+            SetLumber(playerID, GetLumber(playerID))
+            SetFoodUsed(playerID, GetFoodUsed(playerID))
+            SetFoodLimit(playerID, GetFoodLimit(playerID))
+        end)
 
         if Convars:GetBool('developer') then 
             SetGold(playerID, 99999)
@@ -729,9 +740,6 @@ function PMP:MakePlayerLose( playerID )
         local playerName = PlayerResource:GetPlayerName(playerID)
         if playerName == "" then playerName = "Player "..playerID end
         GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
-
-        -- Send stats
-        statCollection:submitRound({})
     end
 end
 
