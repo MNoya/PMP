@@ -464,6 +464,7 @@
 	    "MaxLevel"                      "3"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityCooldown"               "1"
 	
 	    "AbilitySpecial"
 	    {
@@ -4031,6 +4032,7 @@
 	    "MaxLevel"                      "3"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityCooldown"               "1"
 	
 	    "AbilitySpecial"
 	    {

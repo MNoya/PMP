@@ -534,15 +534,6 @@ function PMP:OnGameInProgress()
         PMP:CheckWinCondition()
         return 1
     end)
-
-    -- Send rounds every some minutes
-    if COLLECT_STATS then
-        local STAT_COLLECT_THINK = 300
-        Timers:CreateTimer(60,function()
-            statCollection:submitRound({})
-            return STAT_COLLECT_THINK
-        end)
-    end
 end
 
 gamestates =

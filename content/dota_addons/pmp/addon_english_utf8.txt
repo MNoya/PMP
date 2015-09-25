@@ -50,6 +50,18 @@
 		"DOTA_Tooltip_modifier_super_unit_charges"                                        "Super Unit Charges"
 		"DOTA_Tooltip_modifier_super_unit_charges_Description"                            ""
 
+		"DOTA_Tooltip_modifier_sleep"                                                     "Sleeping"
+		"DOTA_Tooltip_modifier_sleep_Description"                                         ""
+
+		"DOTA_Tooltip_modifier_undead_curse"                                              "Cursed"
+		"DOTA_Tooltip_modifier_undead_curse_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_possession_target"                                         "Being Possessed"
+		"DOTA_Tooltip_modifier_possession_target_Description"                             ""
+
+		"DOTA_Tooltip_modifier_possession_caster"                                         "Possessing"
+		"DOTA_Tooltip_modifier_possession_caster_Description"                             ""
+
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
 		"DOTA_Tooltip_modifier_invulnerability_layer_Description"                         "Towers left standing"
@@ -286,6 +298,29 @@
 		"DOTA_Tooltip_ability_peon_far_sight_Description"                                 "Reveals the area of the map that is cast upon. Also reveals invisible units."
 		"DOTA_Tooltip_ability_peon_far_sight_reveal_radius"                               "REVEAL RADIUS:"
 		"DOTA_Tooltip_ability_peon_far_sight_duration"                                    "DURATION:"
+
+		"DOTA_Tooltip_ability_spawn_undead"                                               "Spawn Undead"
+		"DOTA_Tooltip_ability_spawn_undead_Description"                                   ""
+
+		"DOTA_Tooltip_ability_undead_sleep"                                               "Sleep"
+		"DOTA_Tooltip_ability_undead_sleep_Description"                                   "Puts a target enemy unit to sleep. A sleeping unit can be awoken by attacking it."
+		"DOTA_Tooltip_ability_undead_sleep_duration"                                      "DURATION:"
+
+		"DOTA_Tooltip_ability_undead_curse"                                               "Curse"
+		"DOTA_Tooltip_ability_undead_curse_Description"                                   "Curses a target enemy unit, causing it to have a %miss_chance%% chance to miss on an attack.\nLasts %duration%% seconds."
+		"DOTA_Tooltip_ability_undead_curse_duration"                                      "DURATION:"
+		"DOTA_Tooltip_ability_undead_curse_miss_chance"                                   "MISS CHANCE:"
+
+		"DOTA_Tooltip_ability_undead_possession"                                          "Possession"
+		"DOTA_Tooltip_ability_undead_possession_Description"                              "Displaces the soul of an enemy, giving you permanent control of it, but destroying the caster's body.\nPossession cannot be used on Heroes, or creeps above level 5."
+		"DOTA_Tooltip_ability_undead_possession_damage_increase_while_channeling"         "DAMAGE INCREASE WHILE CHANNELING:"
+		"DOTA_Tooltip_ability_undead_possession_channel_range"                            "CHANNEL RANGE:"
+		"DOTA_Tooltip_ability_undead_possession_channel_duration"                         "CHANNEL DURATION:"
+		"DOTA_Tooltip_ability_undead_possession_max_level"                                "MAX LEVEL:"
+
+		"DOTA_Tooltip_ability_undead_lifesteal"                                           "Undead Lifesteal"
+		"DOTA_Tooltip_ability_undead_lifesteal_Description"                               ""
+		"DOTA_Tooltip_ability_undead_lifesteal_lifesteal_percent"                         "LIFESTEAL PERCENT:"
 
 		"DOTA_Tooltip_ability_spawn_peon"                                                 "Spawn Peon"
 		"DOTA_Tooltip_ability_spawn_peon_Description"                                     ""

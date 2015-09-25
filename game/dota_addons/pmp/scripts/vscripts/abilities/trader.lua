@@ -23,12 +23,12 @@ function StartThink( event )
         return TRADER_THINK_TIME
     end)
 
-    --[[Timers:CreateTimer(1, function()
+    Timers:CreateTimer(1, function()
         for i=0,DOTA_TEAM_COUNT do
             AddFOWViewer ( i, trader:GetAbsOrigin(), 1000, 1.1, false)
         end
         return 1
-    end)]]
+    end)
 end
 
 function CollectWayPoints()

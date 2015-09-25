@@ -226,7 +226,9 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 
 			-- Health increases unit model scale
 			if name == "health" then
+				local original_scale = GetOriginalModelScale(unit)
 				local increase = 0.1*math.log(tonumber(level+1),2)+level*0.002
+				unit:SetModelScale(original_scale+increase)
 			end
 		end
 	end
