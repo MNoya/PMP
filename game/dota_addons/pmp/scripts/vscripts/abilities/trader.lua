@@ -108,6 +108,7 @@ function CheckUnitsInRadius( event )
     for playerID=0,DOTA_MAX_TEAM_PLAYERS do
         if PlayerResource:IsValidPlayerID(playerID) then
             local player = PlayerResource:GetPlayer(playerID)
+            local teamNumber = PlayerResource:GetTeam(playerID)
             local current_unit = trader.current_unit[playerID]
 
             -- If there is a unit acquired, check if its still valid
@@ -126,10 +127,17 @@ function CheckUnitsInRadius( event )
                 -- Find nearby units in radius
                 local units = FindUnitsInRadius(DOTA_TEAM_NEUTRALS, trader:GetAbsOrigin(), nil, 900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false)
 
+                -- Filter by units that only belong to that players team
+                local target
+                for _,unit in pairs(units) do
+                    if IsValidAlive(unit) and unit:GetTeamNumber() == teamNumber then
+                        target = unit
+                    end
+                end
+
                 -- If a unit is found, set that unit as valid for trade
-                if #units > 0 then
-                    local unit = units[1]
-                    SetCurrentTradingUnitForPlayer(playerID, trader, unit)
+                if target then
+                    SetCurrentTradingUnitForPlayer(playerID, trader, target)
                 end
             end
         end
