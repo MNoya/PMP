@@ -263,9 +263,6 @@ function Attachments:Attachment_UpdateAttach(args)
   if not Attachments.currentAttach[args.index] then Attachments.currentAttach[args.index] = {} end
   local prop = Attachments.currentAttach[args.index][attach]
   if prop and IsValidEntity(prop) then
-    if prop.fx then
-      ParticleManager:DestroyParticle(prop.fx, true)
-    end
     prop:RemoveSelf()
   end
 
@@ -449,7 +446,8 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     local scale = scale or db[unitModel][attachPoint][propModel]['scale'] or 1.0
 
     properties = properties or db[unitModel][attachPoint][propModel]
-    local animation = properties.Animation or properties['Animation'] or ""
+    local animation = properties.Animation or db['Animations'][propModel] or ""
+
     local pitch = tonumber(properties.pitch)
     local yaw = tonumber(properties.yaw)
     local roll = tonumber(properties.roll)
@@ -502,13 +500,11 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     local particle_data = db['Particles'][propModel]
     if particle_data then
       local particleName = particle_data['EffectName']
-      print("Found particle",particleName)
-      prop.fx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, unit)
+      prop.fx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, prop)
 
       -- Loop through the Control Point Entities
       local control_points = particle_data['ControlPointEntities']
       for k,ent_point in pairs(control_points) do
-        print("Making Particle",particleName,prop.fx,k,prop,ent_point)
         ParticleManager:SetParticleControlEnt(prop.fx, tonumber(k), prop, PATTACH_POINT_FOLLOW, ent_point, prop:GetAbsOrigin(), true)
       end
     end

@@ -18,6 +18,7 @@ function ChangeWearableInSlot( unit, slotName, modelName )
         
         ClearPropWearableSlot(unit, slotName)
         HideWearableInSlot(unit, slotName)
+        SetDefaultWearableInSlot(unit, slotName)
 
         local new_prop = Attachments:AttachProp(unit, attachPoint, modelName)
         unit.prop_wearables[slotName] = new_prop or unit.prop_wearables[slotName]
@@ -49,6 +50,15 @@ function HideWearableInSlot( unit, slotName )
     if item_wearable then
         item_wearable:AddEffects(EF_NODRAW)
         item_wearable.hidden = true
+    end
+end
+
+function SetDefaultWearableInSlot( unit, slotName )
+    local default_wearable_name = GetDefaultWearableNameForSlot(unit, slotName)
+    local item_wearable = GetOriginalWearableInSlot(unit, slotName)
+
+    if item_wearable and default_wearable_name then
+        item_wearable:SetModel(default_wearable_name)
     end
 end
 
@@ -132,10 +142,6 @@ end
 
 function GetWearablesForSlot(slotName)
     return HATS[slotName]
-end
-
-function GetParticlesForWearableModel( modelName )
-    return 
 end
 
 ----------------------------------------------

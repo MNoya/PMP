@@ -129,7 +129,13 @@ function PMP:SetUpgrade( playerID, name, level )
 		for _,unit in pairs(Buildings) do
 			PMP:ApplyUpgrade(unit, name, level)
 		end
-	end		
+	end	
+
+	-- Wearable cosmetic upgrades apply to the pimpery too
+	local Pimpery = GetPlayerShop(playerID)
+	if IsValidAlive(Pimpery) and slotUpgrades[name] then
+		PMP:UpdateWearablesOnSlot(Pimpery, name, level)
+	end
 end
 
 function PMP:GetUpgradeList( playerID )
@@ -152,23 +158,26 @@ function PMP:ApplyUpgrade(unit, name, level)
 	else
 		local ability = TeachAbility(unit, name, level)
 		if not ability then
-			PMP:ApplyModifierUpgrade(unit, name, level)
-			
-			if not unit.prop_wearables then
-				unit.prop_wearables = {}
-			end
-
-            local slot_table = GetWearablesForSlot(name)
-            if slot_table then
-
-                -- Handle Wearable changes
-	            local modelName = slot_table[tostring(level)]
-	            ChangeWearableInSlot(unit, name, modelName)
-            end
+			PMP:ApplyModifierUpgrade(unit, name, level)		
+			PMP:UpdateWearablesOnSlot(unit, name, level)
 		end
     end
 
 	AdjustAbilityLayout(unit)
+end
+
+function PMP:UpdateWearablesOnSlot( unit, name, level )
+	if not unit.prop_wearables then
+		unit.prop_wearables = {}
+	end
+
+    local slot_table = GetWearablesForSlot(name)
+    if slot_table then
+
+        -- Handle Wearable changes
+        local modelName = slot_table[tostring(level)]
+        ChangeWearableInSlot(unit, name, modelName)
+    end
 end
 
 function PMP:ApplyModifierUpgrade(unit, name, level)
@@ -224,6 +233,7 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 end
 
 heroUpgrades = {["pimp_damage"]={},["pimp_armor"]={},["pimp_speed"]={},["pimp_regen"]={}}
+slotUpgrades = {["weapon"]={},["helm"]={},["shield"]={},["wings"]={}}
 slots = {"weapon","helm","shield","wings"}
 
 function PMP:ResetAllUpgrades(playerID)

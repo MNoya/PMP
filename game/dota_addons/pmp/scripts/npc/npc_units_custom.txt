@@ -553,7 +553,6 @@
 	            "Wearable1"     {   "ItemDef"       "5176"        } //"Tribal Megadon Mask"
 	            "Wearable2"     {   "ItemDef"       "6577"        } //"Witch Staff"
 	            "Wearable3"     {   "ItemDef"       "4096"        } //"Belt o' Wicked Badness"
-	            "Wearable4"     {   "ItemDef"       "96"          } //Default belt to replace
 	        }
 	    }
 	}
