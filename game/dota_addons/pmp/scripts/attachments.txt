@@ -73,6 +73,76 @@
 		}
 		"attach_attack1"
 		{
+			"models/items/axe/searing_annihilator_weapon/searing_annihilator_weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-60"
+				"YPos"		"130"
+				"yaw"		"-120"
+				"XPos"		"0"
+			}
+			"models/items/dragon_knight/wurmblood_weapon/wurmblood_weapon.vmdl"
+			{
+				"scale"		"1.3999999761581"
+				"pitch"		"0"
+				"roll"		"170"
+				"yaw"		"-20"
+				"YPos"		"90"
+				"ZPos"		"-160"
+				"XPos"		"-20"
+			}
+			"models/items/faceless_void/voidhammer/voidhammer.vmdl"
+			{
+				"scale"		"1.7999999523163"
+				"pitch"		"0"
+				"yaw"		"-60"
+				"XPos"		"-10"
+				"YPos"		"123"
+				"ZPos"		"-60"
+				"roll"		"0"
+			}
+			"models/items/furion/scythe_of_vyse.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"-115"
+				"ZPos"		"-65"
+				"XPos"		"-25"
+			}
+			"models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"-20"
+				"roll"		"25"
+				"yaw"		"0"
+				"YPos"		"20"
+				"ZPos"		"-45"
+				"XPos"		"-25"
+			}
+			"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"0"
+				"yaw"		"80"
+				"XPos"		"5"
+				"YPos"		"108"
+				"ZPos"		"-10"
+				"roll"		"-10"
+			}
+			"models/items/axe/skullsplitter/skullsplitter.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-60"
+				"YPos"		"90"
+				"yaw"		"50"
+				"XPos"		"0"
+			}
 			"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
 			{
 				"scale"		"2.5"
@@ -82,6 +152,226 @@
 				"YPos"		"0"
 				"ZPos"		"6"
 				"XPos"		"0"
+			}
+			"models/props_items/basher.vmdl"
+			{
+				"scale"		"2.2999999523163"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-30"
+				"YPos"		"-5"
+				"yaw"		"50"
+				"XPos"		"0"
+			}
+			"models/items/slardar/trident_of_the_deep_one/trident_of_the_deep_one.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-20"
+				"roll"		"-70"
+				"yaw"		"0"
+				"YPos"		"40"
+				"ZPos"		"-60"
+				"XPos"		"-60"
+			}
+			"models/items/obsidian_destroyer/immortal_weapon_1/immortal_weapon_1.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"100"
+				"roll"		"20"
+				"yaw"		"0"
+				"YPos"		"-10"
+				"ZPos"		"20"
+				"XPos"		"60"
+			}
+			"models/items/pudge/pudge_skeleton_hook.vmdl"
+			{
+				"scale"		"2.2999999523163"
+				"pitch"		"100"
+				"roll"		"-5"
+				"yaw"		"0"
+				"YPos"		"-5"
+				"ZPos"		"10"
+				"XPos"		"0"
+			}
+			"models/items/juggernaut/immortal_warlord_sword/immortal_warlord_sword.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"205"
+				"roll"		"100"
+				"ZPos"		"0"
+				"YPos"		"46"
+				"yaw"		"-75"
+				"XPos"		"72"
+			}
+			"models/items/axe/axe_antler.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"-120"
+				"YPos"		"130"
+				"ZPos"		"-60"
+				"XPos"		"0"
+			}
+			"models/items/zeus/lightning_weapon/zuus_lightning_weapon.vmdl"
+			{
+				"scale"		"2.2999999523163"
+				"pitch"		"-75"
+				"roll"		"-100"
+				"ZPos"		"-80"
+				"YPos"		"45"
+				"yaw"		"105"
+				"XPos"		"-10"
+			}
+			"models/items/faceless_void/battlefury/battlefury.vmdl"
+			{
+				"scale"		"2"
+				"pitch"		"0"
+				"roll"		"20"
+				"ZPos"		"-55"
+				"YPos"		"105"
+				"yaw"		"90"
+				"XPos"		"5"
+			}
+			"models/items/brewmaster/wep_brewmaster_cleaver_01/wep_brewmaster_cleaver_01.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"100"
+				"roll"		"20"
+				"yaw"		"0"
+				"YPos"		"-10"
+				"ZPos"		"20"
+				"XPos"		"-60"
+			}
+			"models/items/alchemist/twin_blades_aurelian/twin_blades_aurelian.vmdl"
+			{
+				"scale"		"1.8999999761581"
+				"pitch"		"50"
+				"roll"		"-80"
+				"yaw"		"-90"
+				"YPos"		"0"
+				"ZPos"		"10"
+				"XPos"		"50"
+			}
+			"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
+			{
+				"scale"		"2"
+				"pitch"		"-50"
+				"roll"		"75"
+				"ZPos"		"-100"
+				"YPos"		"75"
+				"yaw"		"100"
+				"XPos"		"10"
+			}
+			"models/items/furion/dark_staff/dark_staff.vmdl"
+			{
+				"scale"		"1.2999999523163"
+				"pitch"		"0"
+				"roll"		"-20"
+				"ZPos"		"-95"
+				"YPos"		"-75"
+				"yaw"		"0"
+				"XPos"		"-15"
+			}
+			"models/items/leshrac/tormented_staff/tormented_staff.vmdl"
+			{
+				"scale"		"1.2999999523163"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"-110"
+				"ZPos"		"-85"
+				"XPos"		"-15"
+			}
+			"models/items/wraith_king/relicsword_weapon/relicsword_weapon.vmdl"
+			{
+				"scale"		"1.7999999523163"
+				"pitch"		"100"
+				"roll"		"0"
+				"ZPos"		"10"
+				"YPos"		"-5"
+				"yaw"		"-20"
+				"XPos"		"75"
+			}
+			"models/items/tiny_01/tiny_haunted_tree.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-50"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-20"
+			}
+			"models/items/axe/generic_reaver.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-60"
+				"YPos"		"130"
+				"yaw"		"-120"
+				"XPos"		"0"
+			}
+			"models/items/dazzle/shadowflame_weapon/shadowflame_weapon.vmdl"
+			{
+				"scale"		"1.3999999761581"
+				"pitch"		"0"
+				"roll"		"-20"
+				"ZPos"		"-45"
+				"YPos"		"85"
+				"yaw"		"0"
+				"XPos"		"-15"
+			}
+			"models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"5"
+				"roll"		"105"
+				"yaw"		"100"
+				"YPos"		"35"
+				"ZPos"		"-110"
+				"XPos"		"-20"
+			}
+			"models/items/axe/axe_dragonaxe.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"-130"
+				"YPos"		"130"
+				"ZPos"		"-60"
+				"XPos"		"0"
+			}
+			"models/items/phantom_lancer/infinite_waves_serpent_weapon/infinite_waves_serpent_weapon.vmdl"
+			{
+				"scale"		"1.2999999523163"
+				"pitch"		"0"
+				"roll"		"-10"
+				"yaw"		"80"
+				"YPos"		"56"
+				"ZPos"		"-70"
+				"XPos"		"1"
+			}
+			"models/items/kunkka/kunkka_shadow_blade/kunkka_shadow_blade.vmdl"
+			{
+				"scale"		"1.7000000476837"
+				"pitch"		"275"
+				"roll"		"105"
+				"ZPos"		"-95"
+				"YPos"		"60"
+				"yaw"		"125"
+				"XPos"		"-15"
+			}
+			"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
+			{
+				"scale"		"1.3999999761581"
+				"pitch"		"100"
+				"roll"		"0"
+				"yaw"		"-20"
+				"YPos"		"-5"
+				"ZPos"		"10"
+				"XPos"		"75"
 			}
 		}
 	}
@@ -221,15 +511,15 @@
 				"yaw"		"10"
 				"XPos"		"-10"
 			}
-			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
+			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
 			{
-				"scale"		"1"
-				"pitch"		"-30"
+				"scale"		"1.7999999523163"
+				"pitch"		"-25"
 				"roll"		"0"
-				"yaw"		"15"
-				"YPos"		"-10"
-				"ZPos"		"-190"
-				"XPos"		"-5"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-120"
+				"XPos"		"-10"
 			}
 			"models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
 			{
@@ -271,21 +561,21 @@
 				"yaw"		"10"
 				"XPos"		"-5"
 			}
-			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
+			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
 			{
-				"scale"		"1.7999999523163"
-				"pitch"		"-25"
+				"scale"		"1"
+				"pitch"		"-30"
 				"roll"		"0"
-				"yaw"		"0"
-				"YPos"		"0"
-				"ZPos"		"-120"
-				"XPos"		"-10"
+				"yaw"		"15"
+				"YPos"		"-10"
+				"ZPos"		"-190"
+				"XPos"		"-5"
 			}
 		}
 	}
 	"models/heroes/axe/axe.vmdl"
 	{
-		"models/items/axe/searing_annihilator_weapon/searing_annihilator_weapon.vmdl"		"Change"
+		"models/items/earthshaker/helm_of_impasse/helm_of_impasse.vmdl"		"Change"
 		"models/items/axe/axe_antler.vmdl"		"Change"
 		"attach_hitloc"
 		{
@@ -349,15 +639,15 @@
 				"ZPos"		"30"
 				"XPos"		"-30"
 			}
-			"models/items/luna/selemenes_eclipse_shield/selemenes_eclipse_shield.vmdl"
+			"models/items/silencer/shield_of_the_silent_guardian/shield_of_the_silent_guardian.vmdl"
 			{
-				"scale"		"2.2000000476837"
-				"pitch"		"60"
-				"roll"		"20"
-				"ZPos"		"5"
-				"YPos"		"25"
-				"yaw"		"0"
-				"XPos"		"-10"
+				"scale"		"1.3999999761581"
+				"pitch"		"-70"
+				"roll"		"-40"
+				"ZPos"		"-10"
+				"YPos"		"-15"
+				"yaw"		"-80"
+				"XPos"		"20"
 			}
 			"models/items/sven/arms_of_the_rogue/arms_rogue_shield_fx.vmdl"
 			{
@@ -389,15 +679,15 @@
 				"ZPos"		"0"
 				"XPos"		"-13"
 			}
-			"models/items/silencer/shield_of_the_silent_guardian/shield_of_the_silent_guardian.vmdl"
+			"models/items/luna/selemenes_eclipse_shield/selemenes_eclipse_shield.vmdl"
 			{
-				"scale"		"1.3999999761581"
-				"pitch"		"-70"
-				"roll"		"-40"
-				"ZPos"		"-10"
-				"YPos"		"-15"
-				"yaw"		"-80"
-				"XPos"		"20"
+				"scale"		"2.2000000476837"
+				"pitch"		"60"
+				"roll"		"20"
+				"ZPos"		"5"
+				"YPos"		"25"
+				"yaw"		"0"
+				"XPos"		"-10"
 			}
 		}
 		"models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"		"Change"
@@ -406,7 +696,7 @@
 		"models/items/sniper/sniper_tallyho_head2/sniper_tallyho_head2.vmdl"		"Change"
 		"models/items/axe/vanguard_armor/vanguard_armor.vmdl"		"Change"
 		"models/items/axe/generic_reaver.vmdl"		"Change"
-		"models/items/earthshaker/helm_of_impasse/helm_of_impasse.vmdl"		"Change"
+		"models/items/axe/searing_annihilator_weapon/searing_annihilator_weapon.vmdl"		"Change"
 		"models/items/clinkz/redbull_clinkz_head/redbull_clinkz_head.vmdl"		"Change"
 		"models/items/axe/demon_blood_helm.vmdl"		"Change"
 		"models/items/axe/axe_dragonaxe.vmdl"		"Change"
@@ -462,6 +752,16 @@
 				"ZPos"		"-40"
 				"XPos"		"0"
 			}
+			"models/items/juggernaut/immortal_warlord_sword/immortal_warlord_sword.vmdl"
+			{
+				"scale"		"1.6499999761581"
+				"pitch"		"320"
+				"roll"		"210"
+				"yaw"		"-150"
+				"YPos"		"55"
+				"ZPos"		"-5"
+				"XPos"		"58"
+			}
 			"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
 			{
 				"scale"		"3.2200000286102"
@@ -471,16 +771,6 @@
 				"YPos"		"-1"
 				"yaw"		"-25"
 				"XPos"		"-3"
-			}
-			"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-40"
-				"roll"		"22"
-				"ZPos"		"-17"
-				"YPos"		"128"
-				"yaw"		"0"
-				"XPos"		"1"
 			}
 			"models/items/zeus/lightning_weapon/zuus_lightning_weapon.vmdl"
 			{
@@ -512,15 +802,15 @@
 				"ZPos"		"0"
 				"XPos"		"-65"
 			}
-			"models/items/juggernaut/immortal_warlord_sword/immortal_warlord_sword.vmdl"
+			"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
 			{
-				"scale"		"1.6499999761581"
-				"pitch"		"320"
-				"roll"		"210"
-				"yaw"		"-150"
-				"YPos"		"55"
-				"ZPos"		"-5"
-				"XPos"		"58"
+				"scale"		"2.5999999046326"
+				"pitch"		"135"
+				"roll"		"215"
+				"yaw"		"190"
+				"YPos"		"75"
+				"ZPos"		"-90"
+				"XPos"		"0"
 			}
 			"models/items/alchemist/twin_blades_aurelian/twin_blades_aurelian.vmdl"
 			{
@@ -572,16 +862,6 @@
 				"ZPos"		"0"
 				"XPos"		"35"
 			}
-			"models/items/dazzle/shadowflame_weapon/shadowflame_weapon.vmdl"
-			{
-				"scale"		"1.6000000238419"
-				"pitch"		"-45"
-				"roll"		"25"
-				"ZPos"		"-65"
-				"YPos"		"90"
-				"yaw"		"-45"
-				"XPos"		"0"
-			}
 			"models/items/faceless_void/voidhammer/voidhammer.vmdl"
 			{
 				"scale"		"1.6499999761581"
@@ -591,6 +871,16 @@
 				"YPos"		"119"
 				"yaw"		"-60"
 				"XPos"		"-3"
+			}
+			"models/items/dazzle/shadowflame_weapon/shadowflame_weapon.vmdl"
+			{
+				"scale"		"1.6000000238419"
+				"pitch"		"-45"
+				"roll"		"25"
+				"ZPos"		"-65"
+				"YPos"		"90"
+				"yaw"		"-45"
+				"XPos"		"0"
 			}
 			"models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
 			{
@@ -622,15 +912,15 @@
 				"yaw"		"-110"
 				"XPos"		"0"
 			}
-			"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
+			"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
 			{
-				"scale"		"2.5999999046326"
-				"pitch"		"135"
-				"roll"		"215"
-				"yaw"		"190"
-				"YPos"		"75"
-				"ZPos"		"-90"
-				"XPos"		"0"
+				"scale"		"1.1000000238419"
+				"pitch"		"-40"
+				"roll"		"22"
+				"ZPos"		"-17"
+				"YPos"		"128"
+				"yaw"		"0"
+				"XPos"		"1"
 			}
 			"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
 			{
@@ -769,11 +1059,11 @@
 			{
 				"scale"		"1.1000000238419"
 				"pitch"		"0"
+				"roll"		"0"
 				"yaw"		"10"
-				"XPos"		"15"
 				"YPos"		"5"
 				"ZPos"		"-150"
-				"roll"		"0"
+				"XPos"		"15"
 			}
 			"models/items/axe/shout_mask/shout_mask.vmdl"
 			{

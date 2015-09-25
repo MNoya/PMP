@@ -149,6 +149,9 @@ function PMP:InitGameMode()
     CustomGameEventManager:RegisterListener( "trade_order", Dynamic_Wrap(PMP, "OnTradeOrder")) --Trader
     CustomGameEventManager:RegisterListener( "set_setting", Dynamic_Wrap(PMP, "SetSetting")) --Team Options
 	
+    -- Lua Modifiers
+    LinkLuaModifier("modifier_movespeed_cap", "libraries/modifiers/modifier_movespeed_cap", LUA_MODIFIER_MOTION_NONE)
+
 	-- Allow cosmetic swapping
 	SendToServerConsole( "dota_combine_models 0" )
 
@@ -247,6 +250,9 @@ function PMP:InitGameMode()
 
   	-- Store and update selected units of each pID
 	GameRules.SELECTED_UNITS = {}
+
+    -- Keeps the blighted gridnav positions
+    GameRules.Blight = {}
   	
   	-- Starting positions
   	GameRules.StartingPositions = {}
@@ -335,6 +341,11 @@ function PMP:OnPlayerPickHero(keys)
         ApplyModifier(hero.garage, "modifier_show_health_bar")
         hero.garage:SetCustomHealthLabel( playerName, color[1], color[2], color[3])  -- Add a label on the base
     end)
+
+    -- Undead effects
+    if race == "undead" then
+        CreateBlight(center_position)
+    end
 
     Timers:CreateTimer(1/30, function() 
         NewSelection(hero.garage)
@@ -468,6 +479,7 @@ function PMP:OnPlayerPickHero(keys)
             local unit = CreateUnitByName(race, center_position, true, hero, hero, hero:GetTeamNumber())
             unit:SetOwner(hero)
             unit:SetControllableByPlayer(playerID, true)
+            unit:AddNewModifier(unit, nil, "modifier_movespeed_cap", {})
             FindClearSpaceForUnit(unit, center_position, true)
             ModifyFoodUsed(playerID, 1)
             table.insert(hero.units, unit)
@@ -481,7 +493,7 @@ ITEM_UPGRADE_LIST =
     "item_upgrade_critical_strike1",
     "item_upgrade_stun_hit1",
     "item_upgrade_poisoned_weapons1",
-    "item_upgrade_pulverize1",
+    --"item_upgrade_pulverize1",
     "item_upgrade_dodge1",
     "item_upgrade_spiked_armor1"
 }

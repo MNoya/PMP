@@ -6,7 +6,7 @@
 "CustomHeroList"
 {
 	"npc_dota_hero_axe" "-1" //Peon
-	"npc_dota_hero_undying" "0" //Undead
+	"npc_dota_hero_undying" "-1" //Undead
 	"npc_dota_hero_skeleton_king" "0" //Skeletons
 	"npc_dota_hero_meepo" "0"	//Goblin
 	"npc_dota_hero_dragon_knight" "0" //Peasant

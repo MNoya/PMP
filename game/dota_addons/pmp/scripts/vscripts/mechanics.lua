@@ -567,3 +567,45 @@ function GetPlayerIDsOnTeam( teamID )
 end
 
 --------------------------------------------
+
+-- Undead Ground
+function CreateBlight(location)
+
+    -- Radius should be an odd number for precision
+    local radius = 256
+    local particle_spread = 256
+    local count = 0
+    
+    -- Mark every grid square as blighted
+    for x = location.x - radius, location.x + radius, 64 do
+        for y = location.y - radius, location.y + radius, 64 do
+            local position = Vector(x, y, location.z)
+            if not HasBlight(position) then
+
+                -- Make particle effects every particle_spread
+                if (x-location.x) % particle_spread == 0 and (y-location.y) % particle_spread == 0 then
+                    local particle = ParticleManager:CreateParticle("particles/custom/undead/blight_aura.vpcf", PATTACH_CUSTOMORIGIN, nil)
+                    ParticleManager:SetParticleControl(particle, 0, position)
+                    GameRules.Blight[GridNav:WorldToGridPosX(position.x)..","..GridNav:WorldToGridPosY(position.y)] = particle
+                    count = count+1
+                else
+                    GameRules.Blight[GridNav:WorldToGridPosX(position.x)..","..GridNav:WorldToGridPosY(position.y)] = false
+                end
+            end
+        end
+    end
+
+    print("Made "..count.." new blight particles")
+end
+
+-- Takes a Vector and checks if there is marked as blight in the grid
+function HasBlight( position )
+    return GameRules.Blight[GridNav:WorldToGridPosX(position.x)..","..GridNav:WorldToGridPosY(position.y)] ~= nil
+end
+
+-- Not every gridnav square needs a blight particle
+function HasBlightParticle( position )
+    return GameRules.Blight[GridNav:WorldToGridPosX(position.x)..","..GridNav:WorldToGridPosY(position.y)]
+end
+
+-------------------------------
