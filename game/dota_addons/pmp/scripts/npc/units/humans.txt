@@ -1,24 +1,24 @@
 //=================================================================================
-// Main unit: Undead
+// Main unit: Human
 //=================================================================================
-"undead"
+"human"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/undying/undying.vmdl"
+    "Model"                     "models/heroes/dragon_knight/dragon_knight.vmdl"
     "ModelScale"                "0.7"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
     "HealthBarOffset"           "140"
-    "SoundSet"                  "Hero_Undying"
-    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+    "SoundSet"					"Hero_DragonKnight"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
 
     "PathfindingSearchDepthScale" "0.5"
     
     // Abilities
     //----------------------------------------------------------------
-    "Ability1"                  "undead_lifesteal"
+    "Ability1"                  "human_mortal_strike"
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"             "0"
@@ -76,36 +76,38 @@
     {
         "DisableClumpingBehavior"   "1"
         "AttachWearables"
-        {
-            "Wearable1"     {   "ItemDef"       "392"     } //models/heroes/undying/undying_helmet.vmdl
-            "Wearable2"     {   "ItemDef"       "393"     } //models/heroes/undying/undying_armor.vmdl
-        }
+		{
+			"Wearable1"		{	"ItemDef"		"63"		}
+			"Wearable2"		{	"ItemDef"		"64"		}
+			"Wearable3" 	{	"ItemDef"		"65"		}
+			"Wearable4"		{	"ItemDef"		"66"		}
+			"Wearable5"		{	"ItemDef"		"67"		}
+			"Wearable6"		{	"ItemDef"		"68"		}
+		}
     }
 }
 
 //=================================================================================
-// Leader unit: Deadly Commanding Warlock
+// Leader unit: Leading Mage
 //=================================================================================
-"undead_leader"
+"human_leader"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/death_prophet/death_prophet.vmdl"
+    "Model"                     "models/heroes/lina/lina.vmdl"
     "ModelScale"                "0.8"
     "Level"                     "2"
     "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
     "HealthBarOffset"           "140"
-    "SoundSet"                  "Hero_DeathProphet"
-    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+    "SoundSet"					"Hero_Lina"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
 
     "PathfindingSearchDepthScale" "0.5"
     
     // Abilities
     //----------------------------------------------------------------
-    "Ability1"                  "undead_sleep" //5 mana sleep for 20 seconds
-    "Ability2"                  "undead_curse" //Autocast on, 10mana 33% miss for 120 seconds
-    "Ability3"                  "undead_possession" //10 mana possession
+    "Ability1"					"lina_arcana"	 //Reference: Aivs
     
     // Armor
     //----------------------------------------------------------------
@@ -168,13 +170,12 @@
     {
         "DisableClumpingBehavior"   "1"
         "AttachWearables"
-        {
-            "Wearable1"     {   "ItemDef"       "6694"      } //dress
-            "Wearable2"     {   "ItemDef"       "5959"      } //head
-            "Wearable3"     {   "ItemDef"       "170"       }
-            "Wearable4"     {   "ItemDef"       "171"       }
-			"Wearable5"		{   "ItemDef"       "505"       } //ambient
-        }
+		{
+			"Wearable1"		{	"ItemDef"		"4794"		} //"Fiery Soul of the Slayer"
+			"Wearable2"		{	"ItemDef"		"6339"		} //"Fire Lotus Belt"
+			"Wearable3" 	{	"ItemDef"		"5941"		} //"Wings of the Ember Crane"
+			"Wearable4"		{	"ItemDef"		"4756"		} //"Arc of the Solar Divine"
+		}
     }
 }
 
@@ -186,13 +187,13 @@
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/warlock/warlock.vmdl"
+    "Model"                     "models/heroes/sniper/sniper.vmdl"
     "ModelScale"                "1"
     "Level"                     "6"
     "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
     "HealthBarOffset"           "140"
-    "SoundSet"                  "Hero_Warlock"
-    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+    "SoundSet"					"Hero_Sniper"
+	"GameSoundsFile" 			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
 
     "PathfindingSearchDepthScale" "0.5"
     
@@ -263,15 +264,13 @@
     {
         "DisableClumpingBehavior"   "1"
         "AttachWearables"
-        {
-            "Wearable1" { "ItemDef" "5594" } 
-            "Wearable2" { "ItemDef" "5725" } 
-            "Wearable3" { "ItemDef" "5730" }
-            "Wearable4" { "ItemDef" "5726" } //demonomicon
-            "Wearable5" { "ItemDef" "5727" }
-            "Wearable6" { "ItemDef" "5729" }
-			"Wearable7" { "ItemDef" "6473" } //"Hellborn Grasp"
-        }
+		{
+			"Wearable1"		{	"ItemDef"		"281"		}
+			"Wearable2"		{	"ItemDef"		"282"		}
+			"Wearable3" 	{	"ItemDef"		"283"		}
+			"Wearable4"		{	"ItemDef"		"284"		}
+			"Wearable5"		{	"ItemDef"		"285"		}
+		}
     }
 }
 

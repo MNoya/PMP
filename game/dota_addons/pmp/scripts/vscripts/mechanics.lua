@@ -39,7 +39,7 @@ end
 
 -- Gets
 function GetGold( pID )
-    PlayerResource:GetGold(pID)
+    return PlayerResource:GetGold(pID)
 end
 
 function GetLumber( pID )
