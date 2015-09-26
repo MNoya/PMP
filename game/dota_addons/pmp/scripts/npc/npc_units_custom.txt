@@ -371,7 +371,7 @@
 		"TeamName"					"DOTA_TEAM_NEUTRALS"
 	}
 	//=================================================================================
-	// Main unit: Human
+	// Main unit
 	//=================================================================================
 	"human"
 	{
@@ -460,7 +460,7 @@
 	}
 	
 	//=================================================================================
-	// Leader unit: Leading Mage
+	// Leader unit
 	//=================================================================================
 	"human_leader"
 	{
@@ -479,7 +479,9 @@
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
-	    "Ability1"					"lina_arcana"	 //Reference: Aivs
+	    "Ability1"					"human_slow"
+	    "Ability2"                  "human_polymorph"
+	    "Ability3"                  "human_mass_teleport"
 	    
 	    // Armor
 	    //----------------------------------------------------------------
@@ -496,7 +498,7 @@
 	    "AttackAnimationPoint"      "0.43"
 	    "AttackAcquisitionRange"    "600"
 	    "AttackRange"               "600"
-	    "ProjectileModel"           "particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf"
+	    "ProjectileModel"           "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 	    "ProjectileSpeed"           "1100"
 	    
 	    // Bounty
@@ -554,18 +556,19 @@
 	//=================================================================================
 	// Super Unit
 	//=================================================================================
-	"super_undead"
+	"super_human"
 	{
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/heroes/sniper/sniper.vmdl"
+	    "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
 	    "ModelScale"                "1"
 	    "Level"                     "6"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
 	    "HealthBarOffset"           "140"
-	    "SoundSet"					"Hero_Sniper"
-		"GameSoundsFile" 			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+	    "SoundSet"                  "Hero_KeeperOfTheLight"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 	
 	    "PathfindingSearchDepthScale" "0.5"
 	    
@@ -589,7 +592,7 @@
 	    "AttackAnimationPoint"      "0.4"
 	    "AttackAcquisitionRange"    "600"
 	    "AttackRange"               "900"
-	    "ProjectileModel"           "particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
+	    "ProjectileModel"           "particles/econ/items/keeper_of_the_light/kotl_weapon_arcane_staff/keeper_base_attack_arcane_staff.vpcf"
 	    "ProjectileSpeed"           "900"
 	    
 	    // Bounty
@@ -636,26 +639,26 @@
 	    {
 	        "DisableClumpingBehavior"   "1"
 	        "AttachWearables"
-			{
-				"Wearable1"		{	"ItemDef"		"281"		}
-				"Wearable2"		{	"ItemDef"		"282"		}
-				"Wearable3" 	{	"ItemDef"		"283"		}
-				"Wearable4"		{	"ItemDef"		"284"		}
-				"Wearable5"		{	"ItemDef"		"285"		}
-			}
+	        {
+	            "Wearable1" { "ItemDef" "7676" } //Tendrillar
+	            "Wearable2" { "ItemDef" "4803" } //Legendary staff
+	            "Wearable3" { "ItemDef" "5320" } //Robes
+	            "Wearable4" { "ItemDef" "5316" } //Gandalf Hat
+	            "Wearable5" { "ItemDef" "7675" } //Horns
+	        }
 	    }
 	}
 	
 	//=================================================================================
-	// City Center: Pimp Garage
+	// City Center
 	//=================================================================================
-	"undead_garage"
+	"human_garage"
 	{
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/items/undying/idol_of_ruination/idol_tower.vmdl"
-	    "ModelScale"                "1.2"
+	    "Model"                     "models/props_structures/good_barracks_melee001.vmdl"
+	    "ModelScale"                "0.8"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
 	    "RingRadius"                "180"
@@ -674,9 +677,9 @@
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
 	    "Ability3"                  "build_barricades"  //Build Barricades
 	    "Ability4"                  "repair_buildings"  //Repair
-	    "Ability5"                  "spawn_undead" //Hidden
-	    "Ability6"                  "spawn_undead_leader"
-	    "Ability7"                  "summon_super_undead" //Visible to show the 3 min cd
+	    "Ability5"                  "spawn_human" //Hidden
+	    "Ability6"                  "spawn_human_leader"
+	    "Ability7"                  "summon_super_human" //Visible to show the 3 min cd
 	    "Ability10"                 "ability_building"
 	    
 	    // Armor
@@ -692,8 +695,8 @@
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
 	    "AttackRate"                "5.00"
 	    "AttackAnimationPoint"      "0.3"
-	    "AttackAcquisitionRange"    "700"
-	    "AttackRange"               "700"
+	    "AttackAcquisitionRange"    "500"
+	    "AttackRange"               "500"
 	    "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
 	    "ProjectileSpeed"           "1200"
 	    
@@ -733,14 +736,14 @@
 	}
 	
 	//=================================================================================
-	// Research Center: Undead Pimpery
+	// Research Center
 	//=================================================================================
-	"undead_pimpery"
+	"human_pimpery"
 	{
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/heroes/undying/undying.vmdl"
+	    "Model"                     "models/heroes/dragon_knight/dragon_knight.vmdl"
 	    "ModelScale"                "1.2"
 	    "Level"                     "10"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
@@ -806,32 +809,26 @@
 	    {     
 	        "AttachWearables"
 	        {
-	            "Wearable1"     {   "ItemDef"       "392"     } //models/heroes/undying/undying_helmet.vmdl
-	            "Wearable2"     {   "ItemDef"       "393"     } //models/heroes/undying/undying_armor.vmdl
-	        }
-	
-	        "EquippedItems"
-	        {
-	            "Item1"  { "Item" "item_critical_hit1" }
-	            "Item2"  { "Item" "item_stun_hit1" }
-	            "Item3"  { "Item" "item_poisoned_weapons1" }
-	            "Item4"  { "Item" "item_pulverize1" }
-	            "Item5"  { "Item" "item_dodge1" }
-	            "Item6"  { "Item" "item_spiked_armor1" }
+	            "Wearable1"     {   "ItemDef"       "63"        }
+	            "Wearable2"     {   "ItemDef"       "64"        }
+	            "Wearable3"     {   "ItemDef"       "65"        }
+	            "Wearable4"     {   "ItemDef"       "66"        }
+	            "Wearable5"     {   "ItemDef"       "67"        }
+	            "Wearable6"     {   "ItemDef"       "68"        }
 	        }
 	    }
 	}
 	
 	//=================================================================================
-	// Tower: Watch Tower
+	// Tower
 	//=================================================================================
-	"undead_tower"
+	"human_tower"
 	{
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/props_structures/tower_bad.vmdl"
-	    "ModelScale"                "0.6"
+	    "Model"                     "models/props_structures/tower_good.vmdl"
+	    "ModelScale"                "0.8"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
 	    "RingRadius"                "140"
@@ -890,18 +887,18 @@
 	    //----------------------------------------------------------------
 	}
 	
-	"undead_ghost"
+	"human_ghost"
 	{
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/heroes/undying/undying.vmdl"
+	    "Model"                     "models/heroes/dragon_knight/dragon_knight.vmdl"
 	    "ModelScale"                "1"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
 	    "HealthBarOffset"           "140"
 	    "SoundSet"                  "Hero_Undying"
-	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -954,8 +951,12 @@
 	        "DisableClumpingBehavior"   "1"
 	        "AttachWearables"
 	        {
-	            "Wearable1"     {   "ItemDef"       "392"     } //models/heroes/undying/undying_helmet.vmdl
-	            "Wearable2"     {   "ItemDef"       "393"     } //models/heroes/undying/undying_armor.vmdl
+	            "Wearable1"     {   "ItemDef"       "63"        }
+	            "Wearable2"     {   "ItemDef"       "64"        }
+	            "Wearable3"     {   "ItemDef"       "65"        }
+	            "Wearable4"     {   "ItemDef"       "66"        }
+	            "Wearable5"     {   "ItemDef"       "67"        }
+	            "Wearable6"     {   "ItemDef"       "68"        }
 	        }
 	    }
 	}
@@ -1287,8 +1288,8 @@
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
 	    "AttackRate"                "5.00"
 	    "AttackAnimationPoint"      "0.3"
-	    "AttackAcquisitionRange"    "700"
-	    "AttackRange"               "700"
+	    "AttackAcquisitionRange"    "500"
+	    "AttackRange"               "500"
 	    "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
 	    "ProjectileSpeed"           "1200"
 	    
@@ -1406,16 +1407,6 @@
 	            "Wearable3"     {   "ItemDef"       "4"     }
 	            "Wearable4"     {   "ItemDef"       "5"     }
 	        }
-	
-	        "EquippedItems"
-	        {
-	            "Item1"  { "Item" "item_critical_hit1" }
-	            "Item2"  { "Item" "item_stun_hit1" }
-	            "Item3"  { "Item" "item_poisoned_weapons1" }
-	            "Item4"  { "Item" "item_pulverize1" }
-	            "Item5"  { "Item" "item_dodge1" }
-	            "Item6"  { "Item" "item_spiked_armor1" }
-	        }
 	    }
 	}
 	
@@ -1431,7 +1422,7 @@
 	    "ModelScale"                "0.6"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
-	    "RingRadius"                "140"
+	    "RingRadius"                "100"
 	    "HealthBarOffset"           "280"
 	
 	    "MinimapIcon"               "minimap_tower90"
@@ -1895,7 +1886,7 @@
 	            "Wearable4" { "ItemDef" "5726" } //demonomicon
 	            "Wearable5" { "ItemDef" "5727" }
 	            "Wearable6" { "ItemDef" "5729" }
-				"Wearable7" { "ItemDef" "6473" } //"Hellborn Grasp"
+				"Wearable7" { "ItemDef" "6589" } //"Breath of Death"
 	        }
 	    }
 	}
@@ -1946,8 +1937,8 @@
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
 	    "AttackRate"                "5.00"
 	    "AttackAnimationPoint"      "0.3"
-	    "AttackAcquisitionRange"    "700"
-	    "AttackRange"               "700"
+	    "AttackAcquisitionRange"    "500"
+	    "AttackRange"               "500"
 	    "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
 	    "ProjectileSpeed"           "1200"
 	    
@@ -2063,16 +2054,6 @@
 	            "Wearable1"     {   "ItemDef"       "392"     } //models/heroes/undying/undying_helmet.vmdl
 	            "Wearable2"     {   "ItemDef"       "393"     } //models/heroes/undying/undying_armor.vmdl
 	        }
-	
-	        "EquippedItems"
-	        {
-	            "Item1"  { "Item" "item_critical_hit1" }
-	            "Item2"  { "Item" "item_stun_hit1" }
-	            "Item3"  { "Item" "item_poisoned_weapons1" }
-	            "Item4"  { "Item" "item_pulverize1" }
-	            "Item5"  { "Item" "item_dodge1" }
-	            "Item6"  { "Item" "item_spiked_armor1" }
-	        }
 	    }
 	}
 	
@@ -2085,10 +2066,10 @@
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/tower_bad.vmdl"
-	    "ModelScale"                "0.6"
+	    "ModelScale"                "0.8"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
-	    "RingRadius"                "140"
+	    "RingRadius"                "100"
 	    "HealthBarOffset"           "280"
 	
 	    "MinimapIcon"               "minimap_tower90"

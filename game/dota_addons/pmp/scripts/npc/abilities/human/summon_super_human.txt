@@ -1,0 +1,68 @@
+// This ability has 3 charges (displayed as modifier stacks) and refreshes every X seconds
+// The unit lasts 20 seconds & 15 minute cooldown (rofl)
+// It will be instantly killed if it goes outside the base
+"summon_super_human"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "summon_super_human"
+    "MaxLevel"                      "3"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityCooldown"               "1"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_FLOAT"
+            "duration"            "20.0"
+        }
+    }
+
+    "precache"
+    {
+        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/spawn.lua"
+            "Function"      "SpawnSuperUnit"
+            "UnitName"      "super_human"
+            "Duration"      "%duration"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_super_spawn"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SuperPeonCharges"
+                }
+            }
+        }
+
+        "modifier_super_unit_charges"
+        {
+            "IsHidden"  "0"
+        }
+    }
+}
+
+"summon_super_human_empty"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "summon_super_human"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}

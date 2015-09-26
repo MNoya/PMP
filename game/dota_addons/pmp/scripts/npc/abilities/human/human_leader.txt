@@ -1,0 +1,304 @@
+//Slow on, 5 mana 60% ms slow and 25% attack for 60 seconds
+//10 mana polymorph for 60 seconds
+//70 mana mass teleport
+"human_slow"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "human_slow"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+
+    "AbilityCastRange"              "600"
+    "AbilityCastPoint"              "0.3"
+    "AbilityCooldown"               "1"
+    "AbilityManaCost"               "5"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "duration"      "10"
+        }
+
+        "02"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "attack_speed"  "-25"
+        }
+
+        "03"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "move_speed"    "-20"
+        }
+
+        "04"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "autocast_radius"   "500"
+        }
+    }
+
+    "precache"
+    {
+        "particle"  "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+    }
+
+    "OnSpellStart"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"  "modifier_human_slow"
+            "Target"        "TARGET"
+        }
+
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_human_slow"
+            "Target"        "TARGET"
+        }
+
+        "FireSound"
+        {
+            "EffectName"    "DOTA_Item.RodOfAtos.Activate"
+            "Target"        "TARGET"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_human_slow"
+        {
+            "IsDebuff"      "1"
+            "IsPurgable"    "1"
+            "EffectName"    "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
+            "EffectAttachType"  "attach_hitloc"
+            "Duration"  "%duration"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%move_speed"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%attack_speed"
+            }
+        }
+
+        "modifier_slow_autocast"
+        {
+            "Passive"       "1"
+            "IsHidden"      "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/shared.lua"
+                    "Function"      "ToggleOnAutocast"
+                }
+            }
+
+            "ThinkInterval" "1.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/human/slow.lua"
+                    "Function"      "SlowAutocast"
+                }
+            }
+        }
+    }
+}
+
+"human_polymorph"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "human_polymorph"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC" //Level 5 or below
+    "AbilityCastPoint"              "0.1"
+
+    "AbilityCooldown"               "3"
+    "AbilityManaCost"               "10"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "60"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "movespeed"             "100"
+        }
+    }
+
+    "precache"
+    {
+        "particle"  "particles/units/heroes/hero_shadowshaman/shadowshaman_voodoo.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+        "model" "models/items/hex/sheep_hex/sheep_hex.vmdl"
+    }
+
+    "OnAbilityPhaseStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/human/polymorph.lua"
+            "Function"      "PolymorphLevelCheck"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "FireSound"
+        {
+            "EffectName"    "Hero_ShadowShaman.SheepHex.Target"
+            "Target"        "TARGET"
+        }
+
+        "FireEffect"
+        {
+            "EffectName"        "particles/units/heroes/hero_shadowshaman/shadowshaman_voodoo.vpcf"
+            "EffectAttachType"  "follow_origin"
+            "Target"            "TARGET"
+        }
+        
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_hex" //lua modifier
+            "Target"        "TARGET"
+            "Duration"      "%duration"
+        }
+    }
+}
+"human_mass_teleport"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "human_mass_teleport"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+    "AbilityCastPoint"              "0.3"
+    "AbilityCooldown"               "20.0"
+
+    "AbilityManaCost"               "100"
+    "AbilityChannelTime"            "3.0"
+
+    "precache"
+    {
+        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+        "particle"          "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_recall_cast.vpcf"
+        "particle"          "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_recall.vpcf"
+    }
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "max_units_teleported"  "24"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "700"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "channel_time"          "3.0"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/human/mass_teleport.lua"
+            "Function"      "MassTeleportStart"
+            "Target"        "POINT"
+        }
+
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_channeling_animation"
+            "Target"        "CASTER"
+            "Duration"      "%channel_time"
+        }
+
+        "FireEffect"
+        {
+            "EffectName"    "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_recall_cast.vpcf"
+            "EffectAttachType"  "start_at_custom_origin"
+            
+            "ControlPointEntities"
+            {
+                "CASTER"    "attach_origin"
+                "CASTER"    "attach_origin"
+            }
+        }
+
+        "FireSound"
+        {
+            "EffectName"    "Hero_KeeperOfTheLight.Recall.Cast"
+            "Target"        "CASTER"
+        }
+        
+    }
+
+    "OnChannelInterrupted"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/human/mass_teleport.lua"
+            "Function"      "MassTeleportStop"
+        }
+
+        "FireSound"
+        {
+            "EffectName"    "Hero_KeeperOfTheLight.Recall.Fail"
+            "Target"        "CASTER"
+        }   
+
+        "RemoveModifier"
+        {
+            "ModifierName"  "modifier_channeling_animation"
+            "Target"        "CASTER"
+        }
+    }   
+
+    "OnChannelSucceeded"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/human/mass_teleport.lua"
+            "Function"      "MassTeleport"
+            "Target"        "POINT"
+        }
+
+        "RemoveModifier"
+        {
+            "ModifierName"  "modifier_channeling_animation"
+            "Target"        "CASTER"
+        }
+
+        "FireSound"
+        {
+            "EffectName"    "Hero_KeeperOfTheLight.Recall.End"
+            "Target"        "TARGET"
+        }                                       
+    }
+}

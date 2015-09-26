@@ -151,6 +151,7 @@ function PMP:InitGameMode()
 	
     -- Lua Modifiers
     LinkLuaModifier("modifier_movespeed_cap", "libraries/modifiers/modifier_movespeed_cap", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_hex", "libraries/modifiers/modifier_hex", LUA_MODIFIER_MOTION_NONE)
 
 	-- Allow cosmetic swapping
 	SendToServerConsole( "dota_combine_models 0" )
@@ -542,10 +543,7 @@ function PMP:OnHeroInGame(hero)
     hero:AddAbility("pimp_armor")
     hero:AddAbility("pimp_speed")
     hero:AddAbility("pimp_regen")
-
-    Timers:CreateTimer(1, function()
-        hero:AddNoDraw()
-    end)
+    hero:AddNoDraw()
 end
 
 function PMP:OnGameInProgress()

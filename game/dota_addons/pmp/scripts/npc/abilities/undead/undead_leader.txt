@@ -12,9 +12,9 @@
 
     "AbilityCastRange"              "700"
     "AbilityCastPoint"              "0.3"
-    "AbilityCooldown"               "8.0" // CHECK DATA
+    "AbilityCooldown"               "5.0"
 
-    "AbilityManaCost"               "10"
+    "AbilityManaCost"               "5"
 
     "precache"
     {
@@ -166,10 +166,10 @@
             {
                 "RunScript"
                 {
-                    "ScriptFile"    "abilities/undead/curse.lua"
+                    "ScriptFile"    "abilities/shared.lua"
                     "Function"      "ToggleOnAutocast"
                 }
-            }           
+            }
         }       
     }
 }

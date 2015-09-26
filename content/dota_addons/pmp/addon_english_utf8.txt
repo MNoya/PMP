@@ -9,6 +9,12 @@
 		// ******************** HEROES ********************
 		"npc_dota_hero_axe"                                                               "Peon"
 		"npc_dota_hero_undying"                                                           "Undead"
+		"npc_dota_hero_silencer"                                                          "Blood Elf"
+		"npc_dota_hero_meepo"                                                             "Goblin"
+		"npc_dota_hero_dragon_knight"                                                     "Human"
+		"npc_dota_hero_drow_ranger"                                                       "Night Elf"
+		"npc_dota_hero_skeleton_king"                                                     "Skeleton"
+		"npc_dota_hero_treant"                                                            "Treant"
 
 		// ******************** UNITS ********************
 		"peon"                                                                            "Peon"
@@ -26,6 +32,14 @@
 		"undead_pimpery"                                                                  "Undead Pimpery"
 		"undead_tower"                                                                    "Undead Tower"
 		"undead_ghost"                                                                    "Undead Ghost"
+
+		"human"                                                                           "Human"
+		"human_leader"                                                                    "Human Leader"
+		"super_human"                                                                     "Super Human"
+		"human_garage"                                                                    "Human Garage"
+		"human_pimpery"                                                                   "Human Pimpery"
+		"human_tower"                                                                     "Human Tower"
+		"human_ghost"                                                                     "Human Ghost"
 
 		"barricade"                                                                       "Barricade"
 		"nian_boss"                                                                       "Boss"
@@ -61,6 +75,9 @@
 
 		"DOTA_Tooltip_modifier_possession_caster"                                         "Possessing"
 		"DOTA_Tooltip_modifier_possession_caster_Description"                             ""
+
+		"DOTA_Tooltip_modifier_human_slow"                                                "Slowed"
+		"DOTA_Tooltip_modifier_human_slow_Description"                                    ""
 
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
@@ -339,13 +356,50 @@
 		"DOTA_Tooltip_ability_spawn_undead_leader"                                        "Spawn Undead Leader"
 		"DOTA_Tooltip_ability_spawn_undead_leader_Description"                            "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nPeon's Leader has the following abilities:\n-Curse\n-Sleep\n-Possession\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
-		"DOTA_Tooltip_ability_summon_super_undead"                                          "Summon Super Undead"
+		"DOTA_Tooltip_ability_summon_super_undead"                                        "Summon Super Undead"
 		"DOTA_Tooltip_ability_summon_super_undead_Description"                            "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
 		"DOTA_Tooltip_ability_summon_super_undead_duration"                               "DURATION:"
 		"DOTA_Tooltip_ability_summon_super_undead_Note0"								  "Use it wisely!"
 
 		"DOTA_Tooltip_ability_summon_super_undead_empty"                                  "Summon Super Undead"
 		"DOTA_Tooltip_ability_summon_super_undead_empty_Description"                      "You've used all your super units."
+
+		"DOTA_Tooltip_ability_human_slow"                                                 "Slow"
+		"DOTA_Tooltip_ability_human_slow_Description"                                     ""
+		"DOTA_Tooltip_ability_human_slow_duration"                                        "DURATION:"
+		"DOTA_Tooltip_ability_human_slow_attack_speed"                                    "ATTACK SPEED:"
+		"DOTA_Tooltip_ability_human_slow_move_speed"                                      "MOVE SPEED:"
+		"DOTA_Tooltip_ability_human_slow_autocast_radius"                                 "AUTOCAST RADIUS:"
+
+		"DOTA_Tooltip_ability_human_polymorph"                                            "Polymorph"
+		"DOTA_Tooltip_ability_human_polymorph_Description"                                ""
+		"DOTA_Tooltip_ability_human_polymorph_duration"                                   "DURATION:"
+		"DOTA_Tooltip_ability_human_polymorph_movespeed"                                  "MOVESPEED:"
+
+		"DOTA_Tooltip_ability_human_mass_teleport"                                        "Mass Teleport"
+		"DOTA_Tooltip_ability_human_mass_teleport_Description"                            ""
+		"DOTA_Tooltip_ability_human_mass_teleport_max_units_teleported"                   "MAX UNITS TELEPORTED:"
+		"DOTA_Tooltip_ability_human_mass_teleport_radius"                                 "RADIUS:"
+		"DOTA_Tooltip_ability_human_mass_teleport_channel_time"                           "CHANNEL TIME:"
+
+		"DOTA_Tooltip_ability_human_mortal_strike"                                        "Mortal Strike"
+		"DOTA_Tooltip_ability_human_mortal_strike_Description"                            ""
+		"DOTA_Tooltip_ability_human_mortal_strike_instakill_chance"                       "INSTAKILL CHANCE:"
+
+		"DOTA_Tooltip_ability_spawn_human"                                                "Spawn Human"
+		"DOTA_Tooltip_ability_spawn_human_Description"                                    ""
+
+		"DOTA_Tooltip_ability_spawn_human_leader"                                         "Spawn Human Leader"
+		"DOTA_Tooltip_ability_spawn_human_leader_Description"                             "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\Human's Leader has the following abilities:\n-Slow\n-Polymorph\n-Mass Teleport\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+
+		"DOTA_Tooltip_ability_summon_super_human"                                         "Summon Super Human"
+		"DOTA_Tooltip_ability_summon_super_human_Description"                             "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
+		"DOTA_Tooltip_ability_summon_super_human_duration"                                "DURATION:"
+		"DOTA_Tooltip_ability_summon_super_human_Note0"								      "Use it wisely!"
+
+		"DOTA_Tooltip_ability_summon_super_human_empty"                                   "Summon Super Human"
+		"DOTA_Tooltip_ability_summon_super_human_empty_Description"                       "You've used all your super units."
+
 		
 		"DOTA_Tooltip_ability_barrage_attack"                                             "Barrage Attack"
 		"DOTA_Tooltip_ability_barrage_attack_Description"                                 ""

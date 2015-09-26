@@ -322,7 +322,7 @@ function CheckForHostPrivileges()
 	for (var i = 0; i < playerIDs.length; i++) {
 		var pInfo = Game.GetPlayerInfo( i );
 		if ( pInfo && pInfo.player_has_host_privileges){
-			var HostName = Players.GetPlayerName( Players.GetLocalPlayer() )
+			var HostName = Players.GetPlayerName( i )
     		$('#Host').text = "HOST: "+HostName
 		}
 	}

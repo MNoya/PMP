@@ -1,6 +1,12 @@
 animations = {
 	["undead_pimpery"]	= ACT_DOTA_SPAWN,
 	["peon_pimpery"] 	= ACT_DOTA_SPAWN,
+	["human_pimpery"]	= ACT_DOTA_ATTACK,
+	["skeleton_pimpery"]	= ACT_DOTA_CAST_ABILITY_1,
+	["night_elf_pimpery"]	= ACT_DOTA_CAST_ABILITY_2,
+	["blood_elf_pimpery"]	= ACT_DOTA_CAST_ABILITY_1,
+	["goblin_pimpery"]	= ACT_DOTA_CAST_ABILITY_1,
+	["treant_pimpery"]	= ACT_DOTA_CAST_ABILITY_5,
 }
 
 -- This is called after a unit upgrade is purchased

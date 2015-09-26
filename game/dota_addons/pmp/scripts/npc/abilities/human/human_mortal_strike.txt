@@ -1,0 +1,40 @@
+"human_mortal_strike"
+{
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "human_mortal_strike"
+    "MaxLevel"              "1"
+            
+    "AbilitySpecial"
+    {        
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "instakill_chance"  "5"
+        }
+    }
+
+    "precache"
+    {
+        "particle"  "particles/econ/items/dragon_knight/dk_immortal_dragon/dragon_knight_dragon_tail_dragonform_iron_dragon.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_human_mortal_strike"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+    
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/human/mortal_strike.lua"
+                    "Function"      "MortalStrike"
+                    "Chance"        "%instakill_chance"
+                }
+            }
+        }
+    }
+}

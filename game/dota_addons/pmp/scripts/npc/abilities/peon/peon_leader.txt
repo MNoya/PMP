@@ -175,7 +175,7 @@
             {
                 "RunScript"
                 {
-                    "ScriptFile"    "abilities/peon/bloodlust.lua"
+                    "ScriptFile"    "abilities/shared.lua"
                     "Function"      "ToggleOnAutocast"
                 }
             }

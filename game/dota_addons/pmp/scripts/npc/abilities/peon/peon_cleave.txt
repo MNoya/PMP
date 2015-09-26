@@ -24,16 +24,7 @@
         "modifier_peon_cleave"
         {
             "Passive"   "1"
-            "IsHidden"  "0"
-
-            "OnCreated"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "abilities/shared.lua"
-                    "Function"      "HideAbility" //Make space for the upgradeable abilities
-                }
-            }
+            "IsHidden"  "1"
 
             "OnAttackLanded"
             {
@@ -45,25 +36,6 @@
                     "CleaveEffect"          "particles/items_fx/battlefury_cleave.vpcf"
                 }
             }
-            //    "RunScript"
-            //    {
-            //        "ScriptFile"    "abilities/peon/cleave.lua"
-            //        "Function"      "Cleave"
-            //        "Target"
-            //        {
-            //            "Center"    "CASTER"
-            //            "Radius"    "%cleave_radius"
-            //            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-            //            "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-            //        }
-            //        "Damage"        "%attack_damage"
-            //    }
-            //    "FireEffect"
-            //    {
-            //        "EffectName"        "particles/custom/cleave.vpcf"
-            //        "EffectAttachType"  "follow_origin"
-            //        "Target"            "CASTER"
-            //    }
         }
     }
 }

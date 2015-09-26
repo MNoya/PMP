@@ -91,11 +91,3 @@ function BloodlustAutocast_Attacked( event )
         end 
     end 
 end
-
--- Automatically toggled on
-function ToggleOnAutocast( event )
-    local caster = event.caster
-    local ability = event.ability
-
-    ability:ToggleAutoCast()
-end

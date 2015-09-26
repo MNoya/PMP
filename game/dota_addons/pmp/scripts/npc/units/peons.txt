@@ -326,8 +326,8 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "5.00"
     "AttackAnimationPoint"      "0.3"
-    "AttackAcquisitionRange"    "700"
-    "AttackRange"               "700"
+    "AttackAcquisitionRange"    "500"
+    "AttackRange"               "500"
     "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
     "ProjectileSpeed"           "1200"
     
@@ -445,16 +445,6 @@
             "Wearable3"     {   "ItemDef"       "4"     }
             "Wearable4"     {   "ItemDef"       "5"     }
         }
-
-        "EquippedItems"
-        {
-            "Item1"  { "Item" "item_critical_hit1" }
-            "Item2"  { "Item" "item_stun_hit1" }
-            "Item3"  { "Item" "item_poisoned_weapons1" }
-            "Item4"  { "Item" "item_pulverize1" }
-            "Item5"  { "Item" "item_dodge1" }
-            "Item6"  { "Item" "item_spiked_armor1" }
-        }
     }
 }
 
@@ -470,7 +460,7 @@
     "ModelScale"                "0.6"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
-    "RingRadius"                "140"
+    "RingRadius"                "100"
     "HealthBarOffset"           "280"
 
     "MinimapIcon"               "minimap_tower90"

@@ -203,6 +203,10 @@ function IsCustomTower( unit )
     return unit:HasAbility("ability_tower")
 end
 
+function IsBarricade( unit )
+    return unit:HasAbility("barricade_hit")
+end
+
 function IsValidAlive( unit )
     return unit and IsValidEntity(unit) and unit:IsAlive()
 end
@@ -609,3 +613,25 @@ function HasBlightParticle( position )
 end
 
 -------------------------------
+
+-- Auxiliar function that goes through every ability and item, checking for any ability being channelled
+function IsChanneling ( unit )
+    
+    for abilitySlot=0,15 do
+        local ability = unit:GetAbilityByIndex(abilitySlot)
+        if ability ~= nil and ability:IsChanneling() then 
+            return true
+        end
+    end
+
+    for itemSlot=0,5 do
+        local item = unit:GetItemInSlot(itemSlot)
+        if item ~= nil and item:IsChanneling() then
+            return true
+        end
+    end
+
+    return false
+end
+
+-------------------------

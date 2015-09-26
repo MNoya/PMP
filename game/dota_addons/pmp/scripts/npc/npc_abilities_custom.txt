@@ -38,6 +38,486 @@
 	        }
 	    }
 	}
+	//Slow on, 5 mana 60% ms slow and 25% attack for 60 seconds
+	//10 mana polymorph for 60 seconds
+	//70 mana mass teleport
+	"human_slow"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "human_slow"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	
+	    "AbilityCastRange"              "600"
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCooldown"               "1"
+	    "AbilityManaCost"               "5"
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"      "FIELD_INTEGER"
+	            "duration"      "10"
+	        }
+	
+	        "02"
+	        {
+	            "var_type"      "FIELD_INTEGER"
+	            "attack_speed"  "-25"
+	        }
+	
+	        "03"
+	        {
+	            "var_type"      "FIELD_INTEGER"
+	            "move_speed"    "-20"
+	        }
+	
+	        "04"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "autocast_radius"   "500"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RemoveModifier"
+	        {
+	            "ModifierName"  "modifier_human_slow"
+	            "Target"        "TARGET"
+	        }
+	
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_human_slow"
+	            "Target"        "TARGET"
+	        }
+	
+	        "FireSound"
+	        {
+	            "EffectName"    "DOTA_Item.RodOfAtos.Activate"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_human_slow"
+	        {
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            "EffectName"    "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
+	            "EffectAttachType"  "attach_hitloc"
+	            "Duration"  "%duration"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%move_speed"
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%attack_speed"
+	            }
+	        }
+	
+	        "modifier_slow_autocast"
+	        {
+	            "Passive"       "1"
+	            "IsHidden"      "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/shared.lua"
+	                    "Function"      "ToggleOnAutocast"
+	                }
+	            }
+	
+	            "ThinkInterval" "1.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/human/slow.lua"
+	                    "Function"      "SlowAutocast"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"human_polymorph"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "human_polymorph"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC" //Level 5 or below
+	    "AbilityCastPoint"              "0.1"
+	
+	    "AbilityCooldown"               "3"
+	    "AbilityManaCost"               "10"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "60"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "movespeed"             "100"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_shadowshaman/shadowshaman_voodoo.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+	        "model" "models/items/hex/sheep_hex/sheep_hex.vmdl"
+	    }
+	
+	    "OnAbilityPhaseStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/human/polymorph.lua"
+	            "Function"      "PolymorphLevelCheck"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_ShadowShaman.SheepHex.Target"
+	            "Target"        "TARGET"
+	        }
+	
+	        "FireEffect"
+	        {
+	            "EffectName"        "particles/units/heroes/hero_shadowshaman/shadowshaman_voodoo.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	            "Target"            "TARGET"
+	        }
+	        
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_hex" //lua modifier
+	            "Target"        "TARGET"
+	            "Duration"      "%duration"
+	        }
+	    }
+	}
+	"human_mass_teleport"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "human_mass_teleport"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+	
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCooldown"               "20.0"
+	
+	    "AbilityManaCost"               "100"
+	    "AbilityChannelTime"            "3.0"
+	
+	    "precache"
+	    {
+	        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+	        "particle"          "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_recall_cast.vpcf"
+	        "particle"          "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_recall.vpcf"
+	    }
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "max_units_teleported"  "24"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "radius"                "700"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "channel_time"          "3.0"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/human/mass_teleport.lua"
+	            "Function"      "MassTeleportStart"
+	            "Target"        "POINT"
+	        }
+	
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_channeling_animation"
+	            "Target"        "CASTER"
+	            "Duration"      "%channel_time"
+	        }
+	
+	        "FireEffect"
+	        {
+	            "EffectName"    "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_recall_cast.vpcf"
+	            "EffectAttachType"  "start_at_custom_origin"
+	            
+	            "ControlPointEntities"
+	            {
+	                "CASTER"    "attach_origin"
+	                "CASTER"    "attach_origin"
+	            }
+	        }
+	
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_KeeperOfTheLight.Recall.Cast"
+	            "Target"        "CASTER"
+	        }
+	        
+	    }
+	
+	    "OnChannelInterrupted"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/human/mass_teleport.lua"
+	            "Function"      "MassTeleportStop"
+	        }
+	
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_KeeperOfTheLight.Recall.Fail"
+	            "Target"        "CASTER"
+	        }   
+	
+	        "RemoveModifier"
+	        {
+	            "ModifierName"  "modifier_channeling_animation"
+	            "Target"        "CASTER"
+	        }
+	    }   
+	
+	    "OnChannelSucceeded"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/human/mass_teleport.lua"
+	            "Function"      "MassTeleport"
+	            "Target"        "POINT"
+	        }
+	
+	        "RemoveModifier"
+	        {
+	            "ModifierName"  "modifier_channeling_animation"
+	            "Target"        "CASTER"
+	        }
+	
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_KeeperOfTheLight.Recall.End"
+	            "Target"        "TARGET"
+	        }                                       
+	    }
+	}
+	"human_mortal_strike"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"    "human_mortal_strike"
+	    "MaxLevel"              "1"
+	            
+	    "AbilitySpecial"
+	    {        
+	        "01"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "instakill_chance"  "5"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/items/dragon_knight/dk_immortal_dragon/dragon_knight_dragon_tail_dragonform_iron_dragon.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_human_mortal_strike"
+	        {
+	            "Passive"            "1"
+	            "IsHidden"           "1"
+	    
+	            "OnAttackLanded"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/human/mortal_strike.lua"
+	                    "Function"      "MortalStrike"
+	                    "Chance"        "%instakill_chance"
+	                }
+	            }
+	        }
+	    }
+	}
+	// Spawn rate: 7 seconds
+	// Spawn 1 at a time and increases with upgrade
+	"spawn_human"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityCooldown"               "7"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_human"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	
+	            "ThinkInterval"     "7.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "human"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+	"spawn_human_leader"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_human_leader"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityCooldown"               "180"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_human_caster"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/shared.lua"
+	                    "Function"      "StartCooldown"
+	                }
+	            }
+	            "ThinkInterval"     "180.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "human_leader"
+	                }
+	            }
+	        }
+	    }
+	}
+	// This ability has 3 charges (displayed as modifier stacks) and refreshes every X seconds
+	// The unit lasts 20 seconds & 15 minute cooldown (rofl)
+	// It will be instantly killed if it goes outside the base
+	"summon_super_human"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_human"
+	    "MaxLevel"                      "3"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityCooldown"               "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "duration"            "20.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/spawn.lua"
+	            "Function"      "SpawnSuperUnit"
+	            "UnitName"      "super_human"
+	            "Duration"      "%duration"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_super_spawn"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SuperPeonCharges"
+	                }
+	            }
+	        }
+	
+	        "modifier_super_unit_charges"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"summon_super_human_empty"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_human"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
 	"peon_cleave"
 	{
 	    "BaseClass"             "ability_datadriven"
@@ -64,16 +544,7 @@
 	        "modifier_peon_cleave"
 	        {
 	            "Passive"   "1"
-	            "IsHidden"  "0"
-	
-	            "OnCreated"
-	            {
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "abilities/shared.lua"
-	                    "Function"      "HideAbility" //Make space for the upgradeable abilities
-	                }
-	            }
+	            "IsHidden"  "1"
 	
 	            "OnAttackLanded"
 	            {
@@ -85,25 +556,6 @@
 	                    "CleaveEffect"          "particles/items_fx/battlefury_cleave.vpcf"
 	                }
 	            }
-	            //    "RunScript"
-	            //    {
-	            //        "ScriptFile"    "abilities/peon/cleave.lua"
-	            //        "Function"      "Cleave"
-	            //        "Target"
-	            //        {
-	            //            "Center"    "CASTER"
-	            //            "Radius"    "%cleave_radius"
-	            //            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	            //            "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	            //        }
-	            //        "Damage"        "%attack_damage"
-	            //    }
-	            //    "FireEffect"
-	            //    {
-	            //        "EffectName"        "particles/custom/cleave.vpcf"
-	            //        "EffectAttachType"  "follow_origin"
-	            //        "Target"            "CASTER"
-	            //    }
 	        }
 	    }
 	}
@@ -284,7 +736,7 @@
 	            {
 	                "RunScript"
 	                {
-	                    "ScriptFile"    "abilities/peon/bloodlust.lua"
+	                    "ScriptFile"    "abilities/shared.lua"
 	                    "Function"      "ToggleOnAutocast"
 	                }
 	            }
@@ -4104,9 +4556,9 @@
 	
 	    "AbilityCastRange"              "700"
 	    "AbilityCastPoint"              "0.3"
-	    "AbilityCooldown"               "8.0" // CHECK DATA
+	    "AbilityCooldown"               "5.0"
 	
-	    "AbilityManaCost"               "10"
+	    "AbilityManaCost"               "5"
 	
 	    "precache"
 	    {
@@ -4258,10 +4710,10 @@
 	            {
 	                "RunScript"
 	                {
-	                    "ScriptFile"    "abilities/undead/curse.lua"
+	                    "ScriptFile"    "abilities/shared.lua"
 	                    "Function"      "ToggleOnAutocast"
 	                }
-	            }           
+	            }
 	        }       
 	    }
 	}
@@ -4392,7 +4844,7 @@
 	        "01"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "lifesteal_percent" "7"
+	            "lifesteal_percent" "15"
 	        }
 	    }
 	

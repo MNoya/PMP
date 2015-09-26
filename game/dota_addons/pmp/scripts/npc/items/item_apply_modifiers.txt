@@ -75,6 +75,16 @@
             "IsHidden" "1"
         }
 
+        "modifier_no_health_bar"
+        {
+            "IsHidden"          "1"
+            
+            "States"
+            {
+                "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_DISABLED"
+            }
+        }
+
         "modifier_show_health_bar"
         {
             "IsHidden"          "1"

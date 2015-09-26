@@ -41,6 +41,14 @@ function Precache( context )
 	PrecacheUnitByNameSync("undead_tower", context)
 	PrecacheUnitByNameSync("undead_ghost", context)
 
+	PrecacheUnitByNameSync("human", context)
+	PrecacheUnitByNameSync("human_leader", context)
+	PrecacheUnitByNameSync("super_human", context)
+	PrecacheUnitByNameSync("human_garage", context)
+	PrecacheUnitByNameSync("human_pimpery", context)	
+	PrecacheUnitByNameSync("human_tower", context)
+	PrecacheUnitByNameSync("human_ghost", context)
+
 	PrecacheUnitByNameSync("nian_boss", context)
 
 	PrecacheUnitByNameSync("npc_dota_hero_axe", context)

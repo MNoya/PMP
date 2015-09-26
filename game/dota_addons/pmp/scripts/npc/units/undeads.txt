@@ -270,7 +270,7 @@
             "Wearable4" { "ItemDef" "5726" } //demonomicon
             "Wearable5" { "ItemDef" "5727" }
             "Wearable6" { "ItemDef" "5729" }
-			"Wearable7" { "ItemDef" "6473" } //"Hellborn Grasp"
+			"Wearable7" { "ItemDef" "6589" } //"Breath of Death"
         }
     }
 }
@@ -321,8 +321,8 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "5.00"
     "AttackAnimationPoint"      "0.3"
-    "AttackAcquisitionRange"    "700"
-    "AttackRange"               "700"
+    "AttackAcquisitionRange"    "500"
+    "AttackRange"               "500"
     "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
     "ProjectileSpeed"           "1200"
     
@@ -438,16 +438,6 @@
             "Wearable1"     {   "ItemDef"       "392"     } //models/heroes/undying/undying_helmet.vmdl
             "Wearable2"     {   "ItemDef"       "393"     } //models/heroes/undying/undying_armor.vmdl
         }
-
-        "EquippedItems"
-        {
-            "Item1"  { "Item" "item_critical_hit1" }
-            "Item2"  { "Item" "item_stun_hit1" }
-            "Item3"  { "Item" "item_poisoned_weapons1" }
-            "Item4"  { "Item" "item_pulverize1" }
-            "Item5"  { "Item" "item_dodge1" }
-            "Item6"  { "Item" "item_spiked_armor1" }
-        }
     }
 }
 
@@ -460,10 +450,10 @@
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
     "Model"                     "models/props_structures/tower_bad.vmdl"
-    "ModelScale"                "0.6"
+    "ModelScale"                "0.8"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
-    "RingRadius"                "140"
+    "RingRadius"                "100"
     "HealthBarOffset"           "280"
 
     "MinimapIcon"               "minimap_tower90"
