@@ -21,13 +21,25 @@
             "Passive"            "1"
             "IsHidden"           "1"
     
-            "OnAttackLanded"
-            // "%attack_damage" is set to the damage value before mitigation
+            "OnAttackLanded"        
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/undead/lifesteal.lua"
+                    "Function"      "LifestealApply"
+                }
+            }
+        }
+
+        "modifier_undead_lifesteal_hit"
+        {
+            "IsHidden"      "1"
+            "OnDealDamage"
             {
                 "Lifesteal"
                 {
-                    "Target"            "ATTACKER"
-                    "LifestealPercent"  "%lifesteal_percent"
+                    "Target"                "ATTACKER"
+                    "LifestealPercent"      "%lifesteal_percent"
                 }
             }
         }

@@ -112,20 +112,22 @@ function PMP:SetUpgrade( playerID, name, level )
 
 	-- Apply the upgrade to all units
 	for _,unit in pairs(Units) do
-		-- Speed upgrades are applied to all units
-		if name == "wings" or name == "health" then
-			PMP:ApplyUpgrade(unit, name, level)
-		else
-			if not IsLeaderUnit(unit) then
+		if IsValidAlive(unit) then
+			-- Speed upgrades are applied to all units
+			if name == "wings" or name == "health" then
 				PMP:ApplyUpgrade(unit, name, level)
+			else
+				if not IsLeaderUnit(unit) then
+					PMP:ApplyUpgrade(unit, name, level)
+				end
 			end
-		end
 
-		-- Health increases unit model scale
-		if name == "health" then
-			local original_scale = GetOriginalModelScale(unit)
-			local increase = 0.1*math.log(tonumber(level+1),2)+level*0.002
-			unit:SetModelScale(original_scale+increase)
+			-- Health increases unit model scale
+			if name == "health" then
+				local original_scale = GetOriginalModelScale(unit)
+				local increase = 0.1*math.log(tonumber(level+1),2)+level*0.002
+				unit:SetModelScale(original_scale+increase)
+			end
 		end
 	end
 
@@ -157,6 +159,7 @@ end
 
 -- OnEntitySpawned, check its name and apply upgrades for the player that owns it
 function PMP:ApplyUpgrade(unit, name, level)
+	if not IsValidAlive(unit) then return end
 	local ability = unit:FindAbilityByName(name)
 
 	if ability then

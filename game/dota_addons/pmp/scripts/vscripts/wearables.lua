@@ -7,14 +7,14 @@ function ChangeWearableInSlot( unit, slotName, modelName )
 
     -- Find if we can do a direct SetModel of the default item_wearable handle
     if db[unitModel] and db[unitModel][modelName] then
-        print("Perform direct SetModel",unit:GetModelName(),modelName,slotName)
+        --print("Perform direct SetModel",unit:GetModelName(),modelName,slotName)
         
         ClearPropWearableSlot(unit, slotName)
         SwapWearableInSlot(unit, modelName, slotName)
         return
     -- Create an Attachment
     else
-        print("Create Attachment",unit:GetModelName(),attachPoint,modelName,slotName)
+        --print("Create Attachment",unit:GetModelName(),attachPoint,modelName,slotName)
         
         ClearPropWearableSlot(unit, slotName)
         HideWearableInSlot(unit, slotName)

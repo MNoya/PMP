@@ -383,6 +383,7 @@
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
 	    "HealthBarOffset"           "140"
+	    "SelectionGroup"            "Humans"
 	    "SoundSet"					"Hero_DragonKnight"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
 	
@@ -831,7 +832,7 @@
 	    "ModelScale"                "0.8"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
-	    "RingRadius"                "140"
+	    "RingRadius"                "100"
 	    "HealthBarOffset"           "280"
 	
 	    "MinimapIcon"               "minimap_tower90"
@@ -980,6 +981,7 @@
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
 	    "HealthBarOffset"           "140"
+	    "SelectionGroup"            "Peons"
 	    "SoundSet"                  "Hero_Axe"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 	
@@ -1627,6 +1629,7 @@
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
 	    "HealthBarOffset"           "140"
+	    "SelectionGroup"            "Undeads"
 	    "SoundSet"                  "Hero_Undying"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
 	

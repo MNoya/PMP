@@ -18,6 +18,7 @@
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
     "HealthBarOffset"           "140"
+    "SelectionGroup"            "Peons"
     "SoundSet"                  "Hero_Axe"
     "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 

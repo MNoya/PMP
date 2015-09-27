@@ -17,7 +17,15 @@ function PossessionCheck ( event )
         Timers:CreateTimer(function() caster:SetMana(mana) return end)
     else
         caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
-        ability:ApplyDataDrivenModifier(caster, target, "modifier_possession_target", {duration=channel_duration})
+
+        StartAnimation(caster, {duration=1.5, activity=ACT_DOTA_CAST_ABILITY_4, rate=0.9})
+        Timers:CreateTimer(1.5, function() 
+            if IsValidAlive(caster) and ability:IsChanneling() then
+                StartAnimation(caster, {duration=1.5, activity=ACT_DOTA_CAST_ABILITY_4, rate=0.9})
+            end
+        end)
+
+        ability:ApplyDataDrivenModifier(caster, target, "modifier_possession_target", {duration=channel_duration+1})
         ability:ApplyDataDrivenModifier(caster, caster, "modifier_possession_caster", {duration=channel_duration})
         caster:EmitSound("Hero_DeathProphet.Exorcism.Cast")
     end
@@ -28,6 +36,7 @@ function Possession( event )
     local caster = event.caster
     local ability = event.ability
 
+    caster:StartGesture(ACT_DOTA_CAST_ABILITY_2)
     Timers:CreateTimer(function()
     
         -- incase the unit has finished channelling but dies mid-possession(highly unlikely but possible)
@@ -41,11 +50,22 @@ function Possession( event )
         caster:EmitSound("Hero_DeathProphet.Exorcism.Damage")
 
         if (casterposition-targetposition):Length2D() < 10 then
-            caster:StartGesture(ACT_DOTA_CAST_ABILITY_1)
 
             -- particle management
             ParticleManager:CreateParticle("particles/units/heroes/hero_death_prophet/death_prophet_excorcism_attack_impact_death.vpcf", 1, target)
-                        
+
+            -- Remove the unit from the enemy player unit list
+            local oldOwnerID = target:GetPlayerOwnerID()
+            if oldOwnerID then
+                local targetPlayerUnits = GetPlayerUnits(oldOwnerID)
+                if targetPlayerUnits then
+                    local unit_index = getIndexTable(targetPlayerUnits, target)
+                    if unit_index then
+                        table.remove(targetPlayerUnits, unit_index)
+                    end
+                end
+            end
+
             -- convert target unit information to match caster
             local newOwner = caster:GetOwner()
             local newOwnerID = caster:GetPlayerOwnerID()
@@ -54,6 +74,8 @@ function Possession( event )
             target:SetControllableByPlayer(newOwnerID, true)
             target:SetTeam(newTeam)
             target:EmitSound("Hero_DeathProphet.Death")
+
+
 
             -- kill and set selection
             AddUnitToSelection(target)

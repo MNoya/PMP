@@ -83,13 +83,13 @@
     "AbilityTextureName"        "undead_curse"
     "MaxLevel"                  "1"
         
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
     "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
     "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
         
-    "AbilityCastRange"          "700"
-    "AbilityCastPoint"          "0"
+    "AbilityCastRange"          "500"
+    "AbilityCastPoint"          "0.1"
     "AbilityCooldown"           "1"
     "AbilityManaCost"           "10"
     
@@ -188,7 +188,7 @@
     "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC"
     "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
     
-    "AbilityChannelTime"        "4"
+    "AbilityChannelTime"        "3"
     "AbilityCastRange"          "350"
     "AbilityCastPoint"          "0.3"
     "AbilityCooldown"           "0"
@@ -219,12 +219,12 @@
         "02"
         {
             "var_type"          "FIELD_INTEGER"
-            "channel_range"     "350"
+            "channel_range"     "400"
         }
         "03"
         {
             "var_type"          "FIELD_INTEGER"
-            "channel_duration"  "4"
+            "channel_duration"  "3"
         }
     }
 

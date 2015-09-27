@@ -4,7 +4,7 @@ function BansheeCurseAuto_Cast(event)
     local AUTOCAST_RANGE = ability:GetCastRange()
     local MODIFIER_NAME = "modifier_undead_curse"
     
-    if ability:GetAutoCastState() and ability:IsFullyCastable() then
+    if ability:GetAutoCastState() and ability:IsFullyCastable() and not caster:IsSilenced() and not IsChanneling(caster) then
 
         -- find enemy units within range
         local units = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), 
