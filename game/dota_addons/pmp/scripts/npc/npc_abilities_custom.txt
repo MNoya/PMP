@@ -39,7 +39,7 @@
 	    }
 	}
 	//Slow on, 5 mana 60% ms slow and 25% attack for 60 seconds
-	//10 mana polymorph for 60 seconds
+	//10 mana polymorph for 5 seconds
 	//70 mana mass teleport
 	"human_slow"
 	{
@@ -61,7 +61,7 @@
 	        "01"
 	        {
 	            "var_type"      "FIELD_INTEGER"
-	            "duration"      "10"
+	            "duration"      "60"
 	        }
 	
 	        "02"
@@ -163,7 +163,8 @@
 	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC" //Level 5 or below
 	    "AbilityCastPoint"              "0.1"
 	
-	    "AbilityCooldown"               "3"
+	    "AbilityCastRange"              "600"
+	    "AbilityCooldown"               "2"
 	    "AbilityManaCost"               "10"
 	
 	    "AbilitySpecial"
@@ -171,7 +172,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "duration"              "60"
+	            "duration"              "5"
 	        }
 	        "02"
 	        {
@@ -342,19 +343,19 @@
 	        }                                       
 	    }
 	}
-	"human_mortal_strike"
+	"human_racial"
 	{
 	    "BaseClass"             "ability_datadriven"
 	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"    "human_mortal_strike"
-	    "MaxLevel"              "1"
+	    "MaxLevel"              "6"
 	            
 	    "AbilitySpecial"
 	    {        
 	        "01"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "instakill_chance"  "5"
+	            "instakill_chance"  "5 6 8 10 12 15"
 	        }
 	    }
 	
@@ -517,47 +518,6 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	}
-	"peon_cleave"
-	{
-	    "BaseClass"             "ability_datadriven"
-	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityTextureName"    "peon_cleave"
-	            
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"          "FIELD_INTEGER"
-	            "cleave_radius"     "200.0"
-	        }
-	        
-	        "02"
-	        {
-	            "var_type"          "FIELD_INTEGER"
-	            "cleave_percent"    "8"
-	        }
-	    }
-	
-	    "Modifiers"
-	    {
-	        "modifier_peon_cleave"
-	        {
-	            "Passive"   "1"
-	            "IsHidden"  "1"
-	
-	            "OnAttackLanded"
-	            {
-	
-	                "CleaveAttack"
-	                {
-	                    "CleavePercent"         "%cleave_percent"
-	                    "CleaveRadius"          "%cleave_radius"
-	                    "CleaveEffect"          "particles/items_fx/battlefury_cleave.vpcf"
-	                }
-	            }
-	        }
-	    }
 	}
 	// Calls forth a bolt of lightning that bounces up to 3 times, dealing 30 damage on the primary target. Each Jump deals 5% less damage.
 	"peon_chain_lightning"
@@ -834,6 +794,48 @@
 	            "States"
 	            {
 	                "MODIFIER_STATE_INVISIBLE"      "MODIFIER_STATE_VALUE_DISABLED"
+	            }
+	        }
+	    }
+	}
+	"peon_racial"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"    "peon_cleave"
+	    "MaxLevel"              "6"
+	            
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "cleave_radius"     "200.0"
+	        }
+	        
+	        "02"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "cleave_percent"    "8 12 16 20 24 30"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_peon_cleave"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnAttackLanded"
+	            {
+	
+	                "CleaveAttack"
+	                {
+	                    "CleavePercent"         "%cleave_percent"
+	                    "CleaveRadius"          "%cleave_radius"
+	                    "CleaveEffect"          "particles/items_fx/battlefury_cleave.vpcf"
+	                }
 	            }
 	        }
 	    }
@@ -4331,7 +4333,16 @@
 	            "IsHidden"           "1"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "0.5"
+	                "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "1.0"
+	            }
+	        }
+	
+	        "modifier_pimp_regen_building"
+	        {
+	            "IsHidden"           "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "0.25"
 	            }
 	        }
 	    }
@@ -4732,8 +4743,8 @@
 	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC"
 	    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
 	    
-	    "AbilityChannelTime"        "3"
-	    "AbilityCastRange"          "350"
+	    "AbilityChannelTime"        "1.5"
+	    "AbilityCastRange"          "500"
 	    "AbilityCastPoint"          "0.3"
 	    "AbilityCooldown"           "0"
 	    "AbilityManaCost"           "10"
@@ -4832,19 +4843,19 @@
 	        }   
 	    }
 	}
-	"undead_lifesteal"
+	"undead_racial"
 	{
 	    "BaseClass"             "ability_datadriven"
 	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"    "undead_lifesteal"
-	    "MaxLevel"              "1"
+	    "MaxLevel"              "6"
 	            
 	    "AbilitySpecial"
 	    {        
 	        "01"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "lifesteal_percent" "15"
+	            "lifesteal_percent" "30 40 50 60 80 100"
 	        }
 	    }
 	

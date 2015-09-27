@@ -10,10 +10,10 @@ function MassTeleportStart( event )
     if not target then
         ability:RefundManaCost()
         ability:EndCooldown()
+        ability:OnChannelFinish(true)
         return
-        caster:Interrupt()
     end
-    
+
     ability.teleport_target = target
 
     StartAnimation(caster, {duration=1.5, activity=ACT_DOTA_CAST_ABILITY_1, rate=0.75})

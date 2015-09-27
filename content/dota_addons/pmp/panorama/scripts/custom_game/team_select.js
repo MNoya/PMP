@@ -22,13 +22,19 @@ function OnSettingChanged(event)
 	var choice = event.value
 	$.Msg("Setting Changed: ",event);
 
+	// Set Everyone unassigned except for the host (to prevent game ending)
+    if (!IsHost)
+    	OnLeaveTeamPressed()
+    else
+    	Game.PlayerJoinTeam( 2 );
+
 	RemoveTeamPanels();
 
 	$.Schedule(1/30, function(){
 		ConstructTeamPanels()
 	
 		// Automatically assign players to teams.
-	    Game.AutoAssignPlayersToTeams();
+	    // Game.AutoAssignPlayersToTeams();
     });
 
 	ChangeSetting($("#" + setting), choice);

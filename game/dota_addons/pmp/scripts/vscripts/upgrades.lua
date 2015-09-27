@@ -28,6 +28,10 @@ function UpgradeFinished( event )
 
 	local upgrade_level = tonumber(event.Level)
 	local upgrade_name = event.Name
+	if upgrade_name == "racial" then
+		local race = GetRace(caster)
+		upgrade_name = race.."_racial"
+	end
 
 	-- Replace with the next level
 	if ability:IsItem() then
@@ -105,7 +109,12 @@ end
 function PMP:SetUpgrade( playerID, name, level )
 	local upgrades = PMP:GetUpgradeList(playerID)
 
+	if string.match(name,"racial") then
+		level = level + 1
+		name = "racial"
+	end
 	upgrades[name] = level
+
 	print("SetUpgrade: "..name.." Level "..level)
 
 	local Units = GetPlayerUnits(playerID)
@@ -160,6 +169,10 @@ end
 -- OnEntitySpawned, check its name and apply upgrades for the player that owns it
 function PMP:ApplyUpgrade(unit, name, level)
 	if not IsValidAlive(unit) then return end
+	if name == "racial" then
+		local race = GetRace(unit)
+		name = race.."_"..name
+	end
 	local ability = unit:FindAbilityByName(name)
 
 	if ability then
@@ -204,6 +217,12 @@ end
 function PMP:ApplyModifierUpgradeStacks( unit, name, level )
 	local hero = unit:GetOwner()
 	local ability = hero:FindAbilityByName(name)
+
+	-- Adjust regen for buildings
+	if IsCustomBuilding(unit) and name == "pimp_regen" then
+		name = "pimp_regen_building"
+	end
+
 	local modifierName = "modifier_"..name
 
 	if unit:HasModifier(modifierName) then

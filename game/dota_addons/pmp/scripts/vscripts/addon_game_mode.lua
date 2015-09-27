@@ -5,6 +5,7 @@ end
 ---------------------------------------------------------------------------
 
 require('libraries/timers')
+require('libraries/physics')
 require('libraries/popups')
 require('libraries/notifications')
 require('libraries/animations')

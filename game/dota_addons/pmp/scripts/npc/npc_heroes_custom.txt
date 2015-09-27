@@ -159,7 +159,7 @@
 	    // Abilities
 	    //----------------------------------------------------------------
 	    "AbilityLayout"             "4"
-	    "Ability1"                  "human_mortal_strike"
+	    "Ability1"                  "human_racial"
 	    "Ability2"                  ""
 	    "Ability3"                  ""
 	    "Ability4"                  ""
@@ -308,7 +308,7 @@
 	    // Abilities
 	    //----------------------------------------------------------------
 	    "AbilityLayout"             "4"
-	    "Ability1"                  "peon_cleave"
+	    "Ability1"                  "peon_racial"
 	    "Ability2"                  ""
 	    "Ability3"                  ""
 	    "Ability4"                  ""
@@ -530,7 +530,7 @@
 	    // Abilities
 	    //----------------------------------------------------------------
 	    "AbilityLayout"             "4"
-	    "Ability1"                  "undead_lifesteal"
+	    "Ability1"                  "undead_racial"
 	    "Ability2"                  ""
 	    "Ability3"                  ""
 	    "Ability4"                  ""

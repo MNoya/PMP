@@ -1,8 +1,9 @@
-"peon_cleave"
+"peon_racial"
 {
     "BaseClass"             "ability_datadriven"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"    "peon_cleave"
+    "MaxLevel"              "6"
             
     "AbilitySpecial"
     {
@@ -15,7 +16,7 @@
         "02"
         {
             "var_type"          "FIELD_INTEGER"
-            "cleave_percent"    "8"
+            "cleave_percent"    "8 12 16 20 24 30"
         }
     }
 

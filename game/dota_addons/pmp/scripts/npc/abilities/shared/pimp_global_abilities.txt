@@ -116,7 +116,16 @@
             "IsHidden"           "1"
             "Properties"
             {
-                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "0.5"
+                "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "1.0"
+            }
+        }
+
+        "modifier_pimp_regen_building"
+        {
+            "IsHidden"           "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "0.25"
             }
         }
     }

@@ -78,7 +78,6 @@ function SpawnSuperUnit( event )
         hero.super_peons_used = hero.super_peons_used + 1
 
         if charges == 0 then
-            caster:RemoveModifierByName("modifier_super_unit_charges")
             local endAbility = TeachAbility(caster, "summon_super_peon_empty")
             caster:SwapAbilities("summon_super_peon", "summon_super_peon_empty", false, true)
         end

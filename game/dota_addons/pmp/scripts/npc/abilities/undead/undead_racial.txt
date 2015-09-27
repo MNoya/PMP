@@ -1,16 +1,16 @@
-"undead_lifesteal"
+"undead_racial"
 {
     "BaseClass"             "ability_datadriven"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"    "undead_lifesteal"
-    "MaxLevel"              "1"
+    "MaxLevel"              "6"
             
     "AbilitySpecial"
     {        
         "01"
         {
             "var_type"          "FIELD_INTEGER"
-            "lifesteal_percent" "15"
+            "lifesteal_percent" "30 40 50 60 80 100"
         }
     }
 

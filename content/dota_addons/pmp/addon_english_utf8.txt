@@ -34,7 +34,7 @@
 		"undead_ghost"                                                                    "Undead Ghost"
 
 		"human"                                                                           "Human"
-		"human_leader"                                                                    "Human Leader"
+		"human_leader"                                                                    "Leading Mage"
 		"super_human"                                                                     "Super Human"
 		"human_garage"                                                                    "Human Garage"
 		"human_pimpery"                                                                   "Human Pimpery"
@@ -46,9 +46,6 @@
 		"trader"                                                                          "Trader"
 
 		// ******************** ABILITY MODIFIERS ********************
-		"DOTA_Tooltip_modifier_peon_cleave"                                               "Axe's Axe"
-		"DOTA_Tooltip_modifier_peon_cleave_Description"                                   "Racial\nAttacks deals damage to enemies in radius"
-
 		"DOTA_Tooltip_modifier_bloodlust"                                                 "Bloodlust"
 		"DOTA_Tooltip_modifier_bloodlust_Description"                                     "This unit has Bloodlust; its attack rate and movement speed are increased"
 
@@ -291,10 +288,10 @@
 		"DOTA_Tooltip_ability_goblin_greed_Description"                                   ""
 		"DOTA_Tooltip_ability_goblin_greed_extra_bounty"                                  "EXTRA BOUNTY:"
 
-		"DOTA_Tooltip_ability_peon_cleave"                                                "Axe's Axe"
-		"DOTA_Tooltip_ability_peon_cleave_Description"                                    "Racial\nAttacks deals damage to enemies in radius"
-		"DOTA_Tooltip_ability_peon_cleave_cleave_radius"                                  "RADIUS:"
-		"DOTA_Tooltip_ability_peon_cleave_cleave_percent"                                 "PERCENT:"
+		"DOTA_Tooltip_ability_peon_racial"                                                "Axe's Axe"
+		"DOTA_Tooltip_ability_peon_racial_Description"                                    "<font color='#00ff00'>Racial</font>\nAttacks deals damage to enemies in radius"
+		"DOTA_Tooltip_ability_peon_racial_cleave_radius"                                  "RADIUS:"
+		"DOTA_Tooltip_ability_peon_racial_cleave_percent"                                 "PERCENT:"
 
 		"DOTA_Tooltip_ability_peon_chain_lightning"                                       "Chain Lightning"
 		"DOTA_Tooltip_ability_peon_chain_lightning_Description"                           "Hurls a bolt of damaging lightning at a target enemy that jumps to nearby enemies. Each jump deals less damage."
@@ -335,9 +332,9 @@
 		"DOTA_Tooltip_ability_undead_possession_channel_duration"                         "CHANNEL DURATION:"
 		"DOTA_Tooltip_ability_undead_possession_max_level"                                "MAX LEVEL:"
 
-		"DOTA_Tooltip_ability_undead_lifesteal"                                           "Undead Lifesteal"
-		"DOTA_Tooltip_ability_undead_lifesteal_Description"                               ""
-		"DOTA_Tooltip_ability_undead_lifesteal_lifesteal_percent"                         "LIFESTEAL PERCENT:"
+		"DOTA_Tooltip_ability_undead_racial"                                           "Undying's Will"
+		"DOTA_Tooltip_ability_undead_racial_Description"                               "<font color='#00ff00'>Racial</font>\nGains health with each attack."
+		"DOTA_Tooltip_ability_undead_racial_lifesteal_percent"                         "LIFESTEAL PERCENT:"
 
 		"DOTA_Tooltip_ability_spawn_peon"                                                 "Spawn Peon"
 		"DOTA_Tooltip_ability_spawn_peon_Description"                                     ""
@@ -365,26 +362,26 @@
 		"DOTA_Tooltip_ability_summon_super_undead_empty_Description"                      "You've used all your super units."
 
 		"DOTA_Tooltip_ability_human_slow"                                                 "Slow"
-		"DOTA_Tooltip_ability_human_slow_Description"                                     ""
+		"DOTA_Tooltip_ability_human_slow_Description"                                     "Slows a target enemy unit's attack rate by %attack_speed%% and movement speed by %move_speed%%."
 		"DOTA_Tooltip_ability_human_slow_duration"                                        "DURATION:"
 		"DOTA_Tooltip_ability_human_slow_attack_speed"                                    "ATTACK SPEED:"
 		"DOTA_Tooltip_ability_human_slow_move_speed"                                      "MOVE SPEED:"
 		"DOTA_Tooltip_ability_human_slow_autocast_radius"                                 "AUTOCAST RADIUS:"
 
 		"DOTA_Tooltip_ability_human_polymorph"                                            "Polymorph"
-		"DOTA_Tooltip_ability_human_polymorph_Description"                                ""
+		"DOTA_Tooltip_ability_human_polymorph_Description"                                "Turns a target enemy unit into a sheep."
 		"DOTA_Tooltip_ability_human_polymorph_duration"                                   "DURATION:"
 		"DOTA_Tooltip_ability_human_polymorph_movespeed"                                  "MOVESPEED:"
 
 		"DOTA_Tooltip_ability_human_mass_teleport"                                        "Mass Teleport"
-		"DOTA_Tooltip_ability_human_mass_teleport_Description"                            ""
+		"DOTA_Tooltip_ability_human_mass_teleport_Description"                            "Teleports the player's nearby units to a friendly unit or structure."
 		"DOTA_Tooltip_ability_human_mass_teleport_max_units_teleported"                   "MAX UNITS TELEPORTED:"
 		"DOTA_Tooltip_ability_human_mass_teleport_radius"                                 "RADIUS:"
 		"DOTA_Tooltip_ability_human_mass_teleport_channel_time"                           "CHANNEL TIME:"
 
-		"DOTA_Tooltip_ability_human_mortal_strike"                                        "Mortal Strike"
-		"DOTA_Tooltip_ability_human_mortal_strike_Description"                            ""
-		"DOTA_Tooltip_ability_human_mortal_strike_instakill_chance"                       "INSTAKILL CHANCE:"
+		"DOTA_Tooltip_ability_human_racial"                                        "Dragon's Force"
+		"DOTA_Tooltip_ability_human_racial_Description"                            "<font color='#00ff00'>Racial</font>\nGives a chance to instantly kill the attacked unit"
+		"DOTA_Tooltip_ability_human_racial_instakill_chance"                       "INSTAKILL CHANCE:"
 
 		"DOTA_Tooltip_ability_spawn_human"                                                "Spawn Human"
 		"DOTA_Tooltip_ability_spawn_human_Description"                                    ""
@@ -951,6 +948,84 @@
 
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5"                                 "Upgrade Spiked Armor5"
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_Description"                     "Razor-sharp spikes on Armor deal 65%% of an enemy unit's melee attack damage back to it."
+
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial1"                                  "Upgrade Peon Racial (1)"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_Description"                      "Increase the level of Peon's Cleave to splash "
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_gold_cost"                        "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial2"                                  "Upgrade Peon Racial  (2)"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial2_Description"                      "Increase the level of Peon's Cleave"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial2_gold_cost"                        "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial3"                                  "Upgrade Peon Racial (3)"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial3_Description"                      "Increase the level of Peon's Cleave"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial3_gold_cost"                        "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial4"                                  "Upgrade Peon Racial (4)"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial4_Description"                      "Increase the level of Peon's Cleave"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial4_gold_cost"                        "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial5"                                  "Upgrade Peon Racial (5)"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial5_Description"                      "Increase the level of Peon's Cleave"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial5_gold_cost"                        "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_cleave_percent"                   "CLEAVE PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial2_cleave_percent"                   "CLEAVE PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial3_cleave_percent"                   "CLEAVE PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial4_cleave_percent"                   "CLEAVE PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial5_cleave_percent"                   "CLEAVE PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial1_instakill_chance"                "INSTAKILL CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial2_instakill_chance"                "INSTAKILL CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial3_instakill_chance"                "INSTAKILL CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial4_instakill_chance"                "INSTAKILL CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial5_instakill_chance"                "INSTAKILL CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial1_lifesteal_percent"              "LIFESTEAL PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial2_lifesteal_percent"              "LIFESTEAL PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_lifesteal_percent"              "LIFESTEAL PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_lifesteal_percent"              "LIFESTEAL PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_lifesteal_percent"              "LIFESTEAL PERCENT:"
+
+		"DOTA_Tooltip_ability_item_upgrade_human_racial1"                                 "Upgrade Human Racial (1)"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial1_Description"                     "Increase the level of Human's Strike"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial1_gold_cost"                       "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_human_racial2"                                 "Upgrade Human Racial (2)"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial2_Description"                     "Increase the level of Human's Strike"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial2_gold_cost"                       "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_human_racial3"                                 "Upgrade Human Racial (3)"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial3_Description"                     "Increase the level of Human's Strike"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial3_gold_cost"                       "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_human_racial4"                                 "Upgrade Human Racial (4)"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial4_Description"                     "Increase the level of Human's Strike"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial4_gold_cost"                       "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_human_racial5"                                 "Upgrade Human Racial (5)"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial5_Description"                     "Increase the level of Human's Strike"
+		"DOTA_Tooltip_ability_item_upgrade_human_racial5_gold_cost"                       "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial1"                                "Upgrade Undead Racial (1)"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial1_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial1_gold_cost"                      "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial2"                                "Upgrade Undead Racial (2)"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial2_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial2_gold_cost"                      "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial3"                                "Upgrade Undead Racial (3)"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_gold_cost"                      "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial4"                                "Upgrade Undead Racial (4)"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_gold_cost"                      "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial5"                                "Upgrade Undead Racial (5)"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_gold_cost"                      "GOLD COST:"
+
+
 
 		"DOTA_Tooltip_ability_item_upgrade_modifiers"                                     "Upgrade Modifiers"
 		"DOTA_Tooltip_ability_item_upgrade_modifiers_Description"                         ""

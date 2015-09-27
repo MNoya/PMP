@@ -1,5 +1,5 @@
 //Slow on, 5 mana 60% ms slow and 25% attack for 60 seconds
-//10 mana polymorph for 60 seconds
+//10 mana polymorph for 5 seconds
 //70 mana mass teleport
 "human_slow"
 {
@@ -21,7 +21,7 @@
         "01"
         {
             "var_type"      "FIELD_INTEGER"
-            "duration"      "10"
+            "duration"      "60"
         }
 
         "02"
@@ -123,7 +123,8 @@
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC" //Level 5 or below
     "AbilityCastPoint"              "0.1"
 
-    "AbilityCooldown"               "3"
+    "AbilityCastRange"              "600"
+    "AbilityCooldown"               "2"
     "AbilityManaCost"               "10"
 
     "AbilitySpecial"
@@ -131,7 +132,7 @@
         "01"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "60"
+            "duration"              "5"
         }
         "02"
         {

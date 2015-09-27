@@ -188,8 +188,8 @@
     "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC"
     "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
     
-    "AbilityChannelTime"        "3"
-    "AbilityCastRange"          "350"
+    "AbilityChannelTime"        "1.5"
+    "AbilityCastRange"          "500"
     "AbilityCastPoint"          "0.3"
     "AbilityCooldown"           "0"
     "AbilityManaCost"           "10"

@@ -1,16 +1,16 @@
-"human_mortal_strike"
+"human_racial"
 {
     "BaseClass"             "ability_datadriven"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"    "human_mortal_strike"
-    "MaxLevel"              "1"
+    "MaxLevel"              "6"
             
     "AbilitySpecial"
     {        
         "01"
         {
             "var_type"          "FIELD_INTEGER"
-            "instakill_chance"  "5"
+            "instakill_chance"  "5 6 8 10 12 15"
         }
     }
 

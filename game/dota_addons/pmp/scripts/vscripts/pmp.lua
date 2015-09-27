@@ -1,13 +1,16 @@
 print ('[PMP] pmp.lua' )
 
+PMPVERSION = "0.26"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
+LUMBER_PER_TICK = 5
 GOLD_TICK_TIME = 7 --Same as the peon spawn time
+LUMBER_TICK_TIME = 7
 UNSEEN_FOG_ENABLED = false
 DEBUG_SPEW = 1
 UNIT_FORMATION_DISTANCE = 120
-INITIAL_PEONS = 6
+INITIAL_PEONS = 8
 INITIAL_GOLD = 50
 INITIAL_LUMBER = 50
 INITIAL_FOOD_LIMIT = 10
@@ -66,7 +69,6 @@ function PMP:InitGameMode()
 	GameRules:SetPostGameTime( 30 )
 	GameRules:SetTreeRegrowTime( 10000.0 )
 	GameRules:SetUseCustomHeroXPValues ( true )
-	GameRules:SetGoldPerTick(0)
 	GameRules:SetUseBaseGoldBountyOnHeroes( false ) -- Need to check legacy values
 	GameRules:SetHeroMinimapIconScale( 1 )
 	GameRules:SetCreepMinimapIconScale( 1 )
@@ -374,7 +376,7 @@ function PMP:OnPlayerPickHero(keys)
     hero.pimpery:SetAngles(0, -90, 0)
     hero.pimpery:AddNewModifier(unit, nil, "modifier_invulnerable", {})
 
-    PMP:GiveItemUpgrades(hero.pimpery)
+    PMP:GiveItemUpgrades(hero.pimpery, race)
 
 	-- Towers - 1 on each corner
     hero.towers = {}
@@ -434,7 +436,7 @@ function PMP:OnPlayerPickHero(keys)
     hero.lumber = 0
     hero.food_used = 0
     hero.food_limit = 0
-    hero.spawn_rate = 1
+    hero.spawn_rate = 2
 
     hero.super_peons_used = 0
     hero.barricades_used = 0
@@ -453,9 +455,9 @@ function PMP:OnPlayerPickHero(keys)
     hero.Upgrades["critical_strike"] = 0
     hero.Upgrades["stun_hit"] = 0
     hero.Upgrades["poisoned_weapons"] = 0
-    hero.Upgrades["pulverize"] = 0
     hero.Upgrades["dodge"] = 0
     hero.Upgrades["spiked_armor"] = 0
+    hero.Upgrades["racial"] = 1
 
     hero.Upgrades["pimp_damage"] = 0
     hero.Upgrades["pimp_armor"] = 0
@@ -479,9 +481,9 @@ function PMP:OnPlayerPickHero(keys)
             SetFoodLimit(playerID, GetFoodLimit(playerID))
         end)
 
-        if Convars:GetBool('developer') then 
-            SetGold(playerID, 99999)
-            SetLumber(playerID, 99999)
+        if Convars:GetBool('developer') then
+            SetGold(playerID, 50000)
+            SetLumber(playerID, 50000)
             --SetFoodLimit(playerID, 100)
         end
 
@@ -505,16 +507,16 @@ ITEM_UPGRADE_LIST =
     "item_upgrade_critical_strike1",
     "item_upgrade_stun_hit1",
     "item_upgrade_poisoned_weapons1",
-    --"item_upgrade_pulverize1",
     "item_upgrade_dodge1",
     "item_upgrade_spiked_armor1"
 }
 
-function PMP:GiveItemUpgrades( unit )
-    for i=1,6 do
-        print("Adding",ITEM_UPGRADE_LIST[i])
+function PMP:GiveItemUpgrades( unit , race)
+    for i=1,5 do
         unit:AddItem(CreateItem(ITEM_UPGRADE_LIST[i], unit, unit))
     end
+
+    unit:AddItem(CreateItem("item_upgrade_"..race.."_racial1", unit, unit))
 end
 
 -- An NPC has spawned somewhere in game. This includes heroes
@@ -550,6 +552,20 @@ function PMP:OnGameInProgress()
 	print("[PMP] The game has officially begun")
 
     GameRules:SendCustomMessage("Welcome to <font color='#FF0000'>Pimp My Peon</font>!", 0, 0)
+    GameRules:SendCustomMessage("Version: <font color='#FF0000'>"..PMPVERSION.."</font>", 0, 0)
+
+    -- Lumber Tick for players
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
+        Timers:CreateTimer(function()
+            if PlayerResource:IsValidPlayerID(playerID) then
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                if hero and not hero.lost then
+                    ModifyLumber(playerID, LUMBER_PER_TICK)
+                end
+                return LUMBER_TICK_TIME
+            end
+        end)
+    end    
 
     Timers:CreateTimer(1, function() 
         PMP:CheckWinCondition()
@@ -615,6 +631,13 @@ function PMP:OnEntityKilled( event )
     if IsCityCenter(killed) then
         killed:AddNoDraw()
         print("Garage Down for player",killed_playerID)
+
+        local attacker_garage = GetPlayerCityCenter(attacker_playerID)
+        print(attacker_garage)
+        if attacker_garage then
+            local charges = attacker_garage:GetModifierStackCount("modifier_super_unit_charges", attacker_garage) + 1
+            attacker_garage:SetModifierStackCount("modifier_super_unit_charges", attacker_garage, charges)
+        end
 
         SendDefeatedMessage(attacker_playerID,killed_playerID)
 
