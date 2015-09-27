@@ -4743,7 +4743,7 @@
 	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC"
 	    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
 	    
-	    "AbilityChannelTime"        "1.5"
+	    "AbilityChannelTime"        "1"
 	    "AbilityCastRange"          "500"
 	    "AbilityCastPoint"          "0.3"
 	    "AbilityCooldown"           "0"
@@ -4779,7 +4779,7 @@
 	        "03"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "channel_duration"  "3"
+	            "channel_duration"  "1"
 	        }
 	    }
 	

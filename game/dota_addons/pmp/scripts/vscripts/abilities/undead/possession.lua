@@ -18,13 +18,6 @@ function PossessionCheck ( event )
     else
         caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
 
-        StartAnimation(caster, {duration=1.5, activity=ACT_DOTA_CAST_ABILITY_4, rate=0.9})
-        Timers:CreateTimer(1.5, function() 
-            if IsValidAlive(caster) and ability:IsChanneling() then
-                StartAnimation(caster, {duration=1.5, activity=ACT_DOTA_CAST_ABILITY_4, rate=0.9})
-            end
-        end)
-
         ability:ApplyDataDrivenModifier(caster, target, "modifier_possession_target", {duration=channel_duration+1})
         ability:ApplyDataDrivenModifier(caster, caster, "modifier_possession_caster", {duration=channel_duration})
         caster:EmitSound("Hero_DeathProphet.Exorcism.Cast")
