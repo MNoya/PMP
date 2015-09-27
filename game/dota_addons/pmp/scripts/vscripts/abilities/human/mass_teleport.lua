@@ -7,7 +7,13 @@ function MassTeleportStart( event )
     if not target then
         target = FindClosestUnitToTeleport(caster, event.target_points[1] )
     end
-    if not target then caster:Interrupt() end
+    if not target then
+        ability:RefundManaCost()
+        ability:EndCooldown()
+        return
+        caster:Interrupt()
+    end
+    
     ability.teleport_target = target
 
     StartAnimation(caster, {duration=1.5, activity=ACT_DOTA_CAST_ABILITY_1, rate=0.75})
@@ -53,6 +59,8 @@ function MassTeleportStop( event )
     local targets = ability.teleport_units
 
     caster:StopSound("Hero_KeeperOfTheLight.Recall.Cast")
+    if not targets then return end
+
     for _,unit in pairs(targets) do
         if IsValidAlive(unit) then
             unit:Stop()
@@ -91,12 +99,11 @@ function MassTeleport( event )
 end
 
 function FindClosestUnitToTeleport( caster, position )
-    local units = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, 2000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_CLOSEST, false)
-    local target
+    local units = FindUnitsInRadius(caster:GetTeamNumber(), position, nil, 2000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_CLOSEST, false)
     for _,unit in pairs(units) do
         if IsValidAlive(unit) and not IsBarricade(unit) then
-            target = unit
+            return unit
         end
     end
-    return target
+    return nil
 end
