@@ -155,6 +155,8 @@ function PMP:FilterExecuteOrder( filterTable )
         end
 
     elseif (unit and order_type == DOTA_UNIT_ORDER_ATTACK_TARGET) then
+        local target = EntIndexToHScript(targetIndex)
+        local pos = target:GetAbsOrigin()
         for _,unit_index in pairs(units) do
             local unit = EntIndexToHScript(unit_index)
 
