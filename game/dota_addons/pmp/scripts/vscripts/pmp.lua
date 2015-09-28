@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.29"
+PMPVERSION = "0.30"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -633,10 +633,11 @@ function PMP:OnEntityKilled( event )
         print("Garage Down for player",killed_playerID)
 
         local attacker_garage = GetPlayerCityCenter(attacker_playerID)
-        print(attacker_garage)
         if attacker_garage then
             local charges = attacker_garage:GetModifierStackCount("modifier_super_unit_charges", attacker_garage) + 1
             attacker_garage:SetModifierStackCount("modifier_super_unit_charges", attacker_garage, charges)
+
+            -- Find super peon ability and skill it back to 1
         end
 
         SendDefeatedMessage(attacker_playerID,killed_playerID)

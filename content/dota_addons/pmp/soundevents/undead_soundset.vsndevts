@@ -17,7 +17,7 @@
                             "value0"        "sounds/undead/spawn/undying.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "8.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -49,7 +49,7 @@
                             "value0"        "sounds/undead/spawn/ready_to_work.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -85,7 +85,7 @@
                             "value4"        "sounds/undead/attack/let_life_cease.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "8.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -118,7 +118,7 @@
                             "value1"        "sounds/undead/attack/we_already_died_once.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "8.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -160,7 +160,7 @@
                             "value10"       "sounds/undead/attack/grunts/grunt11.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "8.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -234,7 +234,7 @@
                             "value4"        "sounds/undead/move/work_work.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "8.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -273,7 +273,7 @@
                             "value7"        "sounds/undead/select/yes_master.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "8.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -286,7 +286,7 @@
     }
 }
 
-"undead.Select.Rare"
+"undead.Pissed"
 {
     "operator_stacks"
     {
@@ -304,10 +304,10 @@
                         {                          
                             "value0"        "sounds/undead/select/death_shall_cleanse_world.vsnd"
                             "value1"        "sounds/undead/select/killing_me_here.vsnd"
-                            "value2"        "sounds/undead/select/let_blood_drown_the_weak.vsnd"                                                  
+                            "value2"        "sounds/undead/select/let_blood_drown_the_weak.vsnd"                                               
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "8.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -320,7 +320,7 @@
     }
 }
 
-"undead.Select.RareLong"
+"undead.Pissed.Rare"
 {
     "operator_stacks"
     {
@@ -339,7 +339,7 @@
                             "value0"        "sounds/undead/select/secret_to_happiness.vsnd"                                                
                         }
                     }
-                    "volume"            {   "value"     "10.00000"  }
+                    "volume"            {   "value"     "8.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

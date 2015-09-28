@@ -41,21 +41,25 @@ function Sounds:PlaySoundSet( playerID, unit, order )
     -- We got a line for the specific order
     if order_line then
         
+        -- Find the table associated with this order on our sounds keyvalue table
+        local sound_table = Sounds:GetRandomLineForOrder(order_line)
+        local sound_string = sound_table['String']   
+        local duration = sound_table['Duration'] + RandomInt(2,5)   
+        local sound_type = sound_table['Type'] --Area sounds      
+
         if order == "DIE" then
-            local sound_table = Sounds:GetRandomLineForOrder(order_line)
-            local sound_string = sound_table['String']
-            unit:EmitSound(sound_string)
+            EmitSoundOn(sound_string, unit)
         end
 
-        -- Prevents overlapping     
-        if not Sounds:IsStillPlaying(playerID) then
-            -- Find the table associated with this order on our sounds keyvalue table
-            local sound_table = Sounds:GetRandomLineForOrder(order_line)
-            
-            local sound_string = sound_table['String']            
-            local duration = sound_table['Duration']
+        -- Prevents overlapping
+        if not Sounds:IsStillPlaying(playerID) then  
 
-            EmitSoundOnClient(sound_string, player)
+            if order == "SPAWN" then
+                EmitSoundOnLocationForAllies(unit:GetAbsOrigin(), sound_string, unit)
+            else
+                EmitSoundOnClient(sound_string, player)
+            end
+
             Sounds:SetNextValidTime(playerID, gameTime + duration)
         end
     end
