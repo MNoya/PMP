@@ -662,7 +662,7 @@
 	            "IsBuff"            "1"
 	            "IsPurgable"        "1"
 	            "Duration"          "%duration"
-	            "TextureName"       "modifier_bloodlust"
+	            "TextureName"       "peon_bloodlust"
 	            "EffectName"            "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_buff.vpcf"
 	            "EffectAttachType"      "follow_origin"
 	

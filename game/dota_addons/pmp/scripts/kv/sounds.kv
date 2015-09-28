@@ -2,44 +2,94 @@
 {
     "undead"
     {
+        "pick"
+        {
+            "Default"
+            {
+                "String"    "undead.Pick"
+                "Duration"  "2"            
+            }
+        }
+
         "spawn"
-        {
-            "1" "Undead.Ready"
-        }
-
-        "select"
-        {
-            "1" "Undead.Ready"
-        }
-
-        "select_rare"
-        {
-            "1" "Undead.Ready"
-        }
-
-        "move"
-        {
-            "1" "Undead.Ready"
-        }
-
-        "move_rare"
-        {
-            "1" "Undead.Ready"
+        {   
+            "Default"
+            {
+                "String"    "undead.Spawn"
+                "Duration"  "2"
+            }           
         }
 
         "attack"
         {
-            "1" "Undead.Ready"
+            "Chance"
+            {
+                "Warcry"    "20"
+                "Grunts"    "20"
+            }
+
+            "Default"
+            {
+                "String"    "undead.Attack"   
+                "Duration"  "2"
+            }
+
+            "Warcry"
+            {
+                "String"    "undead.Attack.Warcry"
+                "Duration"  "2"
+            }
+
+            "Grunts"
+            {
+                "String"    "undead.Attack.Grunt"
+                "Duration"  "1"
+            }
         }
 
-        "attack_rare"
+        "die"
         {
-            "1" "Undead.Ready"
+            "Default"
+            {
+                "String"    "undead.Death"
+                "Duration"  "2"
+            }
         }
 
-        "death"
+        "move"
         {
-            "1" "Undead.Die1"
+            "Default"
+            {
+                "String"    "undead.Move"  
+                "Duration"  "2"
+            }
         }
+
+        "select"
+        {
+            "Chance"
+            {
+                "Rare"        "20"
+                "RareLong"    "5"
+            }
+
+            "Default"
+            {
+                "String"    "undead.Select"  
+                "Duration"  "2"
+            }
+
+            "Rare"
+            {
+                "String"    "undead.Select.Rare"
+                "Duration"  "2"
+            }
+                
+            "RareLong"
+            {
+                "String"    "undead.Select.RareLong"
+                "Duration"  "4"
+            }
+        }        
     }
 }

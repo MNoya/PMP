@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.27"
+PMPVERSION = "0.28"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -695,6 +695,8 @@ function PMP:OnEntityKilled( event )
             
             --Add Score
         end
+
+        Sounds:PlaySoundSet( killed_playerID, killed, "DIE" )
     end
 
     -- Give lumber bounty to the attacker (unless denied)
@@ -810,6 +812,8 @@ function PMP:OnPlayerSelectedEntities( event )
 	local pID = event.pID
 
 	GameRules.SELECTED_UNITS[pID] = event.selected_entities
+
+    Sounds:PlaySoundSet( pID, GetMainSelectedEntity(pID), "SELECT" )
 
     FireGameEvent( 'ability_values_force_check', { player_ID = pID })
 end

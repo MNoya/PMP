@@ -33,6 +33,10 @@ function PMP:FilterExecuteOrder( filterTable )
         if DEBUG then print("Execute this order") end
     end
 
+    if unit then
+        Sounds:PlaySoundSet(issuer, unit, order_type)
+    end
+
     local numUnits = 0
     local numBuildings = 0
     if units then
@@ -150,7 +154,20 @@ function PMP:FilterExecuteOrder( filterTable )
             return false
         end
 
-    elseif (unit and order_type == DOTA_UNIT_ORDER_ATTACK_TARGET and IsLeaderUnit(unit)) then
+    elseif (unit and order_type == DOTA_UNIT_ORDER_ATTACK_TARGET) then
+        for _,unit_index in pairs(units) do
+            local unit = EntIndexToHScript(unit_index)
+
+            unit.skip = true
+
+            -- Don't move aggresive with the Leader units
+            if IsLeaderUnit(unit) then
+                ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = pos, Queue = queue})
+            else
+                ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET, TargetIndex = targetIndex, Queue = queue})
+            end
+        end
+
         return false
     end
 

@@ -38,6 +38,11 @@ function SpawnUnit( event )
         -- Add all current upgrades
         PMP:ApplyAllUpgrades(playerID, unit)
 
+        -- Play Spawn sound
+        if i == 1 then
+            Sounds:PlaySoundSet( playerID, unit, "SPAWN" )
+        end
+
         -- Move to rally point
         Timers:CreateTimer(0.05, function() 
             unit:MoveToPositionAggressive(caster.rally_point)

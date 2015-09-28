@@ -18,6 +18,7 @@ require('developer')
 require('upgrades')
 require('utilities')
 require('wearables')
+require('sounds')
 
 ---------------------------------------------------------------------------
 
@@ -25,6 +26,7 @@ function Precache( context )
 	print("[PMP] Performing pre-load precache")
 
 	PrecacheResource("soundfile", "soundevents/pmp_custom_sounds.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/undead_soundset.vsndevts", context)
 
 	PrecacheUnitByNameSync("peon", context)
 	PrecacheUnitByNameSync("peon_leader", context)
