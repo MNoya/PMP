@@ -7,7 +7,7 @@
 
 
 		// ******************** HEROES ********************
-		"npc_dota_hero_axe"                                                               "Peon"
+		"npc_dota_hero_axe"                                                               "Orc"
 		"npc_dota_hero_undying"                                                           "Undead"
 		"npc_dota_hero_silencer"                                                          "Blood Elf"
 		"npc_dota_hero_meepo"                                                             "Goblin"
@@ -75,6 +75,9 @@
 
 		"DOTA_Tooltip_modifier_human_slow"                                                "Slowed"
 		"DOTA_Tooltip_modifier_human_slow_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_peon_frenzy_stacks"                                        "Frenzy"
+		"DOTA_Tooltip_modifier_peon_frenzy_stacks_Description"                            "Extra %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack and movement speed"
 
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
@@ -288,10 +291,11 @@
 		"DOTA_Tooltip_ability_goblin_greed_Description"                                   ""
 		"DOTA_Tooltip_ability_goblin_greed_extra_bounty"                                  "EXTRA BOUNTY:"
 
-		"DOTA_Tooltip_ability_peon_racial"                                                "Axe's Axe"
-		"DOTA_Tooltip_ability_peon_racial_Description"                                    "<font color='#00ff00'>Racial</font>\nAttacks deals damage to enemies in radius"
-		"DOTA_Tooltip_ability_peon_racial_cleave_radius"                                  "RADIUS:"
-		"DOTA_Tooltip_ability_peon_racial_cleave_percent"                                 "PERCENT:"
+		"DOTA_Tooltip_ability_peon_racial"                                                "Axe's Frenzy"
+		"DOTA_Tooltip_ability_peon_racial_Description"                                    "<font color='#00ff00'>Racial</font>\nIncreases attack and movement speed after each hit"
+		"DOTA_Tooltip_ability_peon_racial_speed_per_hit"                                  "SPEED PER HIT:"
+		"DOTA_Tooltip_ability_peon_racial_max_stacks"                                     "MAX STACKS:"
+		"DOTA_Tooltip_ability_peon_racial_duration"                                       "DURATION:"
 
 		"DOTA_Tooltip_ability_peon_chain_lightning"                                       "Chain Lightning"
 		"DOTA_Tooltip_ability_peon_chain_lightning_Description"                           "Hurls a bolt of damaging lightning at a target enemy that jumps to nearby enemies. Each jump deals less damage."
@@ -824,8 +828,10 @@
 		"DOTA_Tooltip_ability_stun_hit_bonus_damage"                                      "BONUS DAMAGE:"
 
 		"DOTA_Tooltip_ability_poisoned_weapons"                                           "Poisoned Weapons"
-		"DOTA_Tooltip_ability_poisoned_weapons_Description"                               "Deals damage over time for a duration."
+		"DOTA_Tooltip_ability_poisoned_weapons_Description"                               "Deals damage over time and reduces attack and movement speed for a duration."
 		"DOTA_Tooltip_ability_poisoned_weapons_damage_per_second"                         "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_poisoned_weapons_reduced_attack_speed"                      "ATTACKSPEED SLOW:"
+		"DOTA_Tooltip_ability_poisoned_weapons_reduced_movement_speed"                    "MOVESPEED SLOW:"
 		"DOTA_Tooltip_ability_poisoned_weapons_duration"                                  "DURATION:"
 
 		"DOTA_Tooltip_ability_pulverize"                                                  "Pulverize"
@@ -861,119 +867,141 @@
 
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike1"                              "Upgrade Critical Strike1"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike1_Description"                  "Gives a 20%% chance to do 2 times normal attack on an attack."
-
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit1"                                     "Upgrade Stun Hit1"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "Gives a 20%% chance that an attack will do 10 bonus damage and stun an opponent for 1 second."
-
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1"                             "Upgrade Poisoned Weapons1"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_Description"                 "Deals 3 bonus damage per second.\nLasts 5 seconds."
-
-		"DOTA_Tooltip_ability_item_upgrade_pulverize1"                                    "Upgrade Pulverize1"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize1_Description"                        "Gives a 20%% chance to do 20 damage in 250 AoE."
-
-		"DOTA_Tooltip_ability_item_upgrade_dodge1"                                        "Upgrade Dodge1"
-		"DOTA_Tooltip_ability_item_upgrade_dodge1_Description"                            "Gives a 20%% to avoid an enemy attack."
-
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1"                                 "Upgrade Spiked Armor1"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_Description"                     "Razor-sharp spikes on Armor deal 20%% of an enemy unit's melee attack damage back to it."
-
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike2"                              "Upgrade Critical Strike2"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike2_Description"                  "Gives a 21%% chance to do 2.2 times normal attack on an attack."
-
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit2"                                     "Upgrade Stun Hit2"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "Gives a 21%% chance that an attack will do 15 bonus damage and stun an opponent for 2 seconds."
-
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2"                             "Upgrade Poisoned Weapons2"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_Description"                 "Deals 4 bonus damage per second.\nLasts 5 seconds."
-
-		"DOTA_Tooltip_ability_item_upgrade_pulverize2"                                    "Upgrade Pulverize2"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize2_Description"                        "Gives a 21%% chance to do 25 damage in 250 AoE."
-
-		"DOTA_Tooltip_ability_item_upgrade_dodge2"                                        "Upgrade Dodge2"
-		"DOTA_Tooltip_ability_item_upgrade_dodge2_Description"                            "Gives a 21%% to avoid an enemy attack."
-
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2"                                 "Upgrade Spiked Armor2"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_Description"                     "Razor-sharp spikes on Armor deal 30%% of an enemy unit's melee attack damage back to it."
-
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike3"                              "Upgrade Critical Strike3"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike3_Description"                  "Gives a 22%% chance to do 2.4 times normal attack on an attack."
-
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit3"                                     "Upgrade Stun Hit3"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "Gives a 22%% chance that an attack will do 20 bonus damage and stun an opponent for 3 seconds."
-
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3"                             "Upgrade Poisoned Weapons3"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_Description"                 "Deals 6 bonus damage per second.\nLasts 5 seconds."
-
-		"DOTA_Tooltip_ability_item_upgrade_pulverize3"                                    "Upgrade Pulverize3"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize3_Description"                        "Gives a 22%% chance to do 30 damage in 250 AoE."
-
-		"DOTA_Tooltip_ability_item_upgrade_dodge3"                                        "Upgrade Dodge3"
-		"DOTA_Tooltip_ability_item_upgrade_dodge3_Description"                            "Gives a 22%% to avoid an enemy attack."
-
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3"                                 "Upgrade Spiked Armor3"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_Description"                     "Razor-sharp spikes on Armor deal 40%% of an enemy unit's melee attack damage back to it."
-
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike4"                              "Upgrade Critical Strike4"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike4_Description"                  "Gives a 23%% chance to do 2.6 times normal attack on an attack."
-
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit4"                                     "Upgrade Stun Hit4"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "Gives a 23%% chance that an attack will do 25 bonus damage and stun an opponent for 4 seconds."
-
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4"                             "Upgrade Poisoned Weapons4"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_Description"                 "Deals 9 bonus damage per second.\nLasts 5 seconds."
-
-		"DOTA_Tooltip_ability_item_upgrade_pulverize4"                                    "Upgrade Pulverize4"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize4_Description"                        "Gives a 23%% chance to do 35 damage in 250 AoE."
-
-		"DOTA_Tooltip_ability_item_upgrade_dodge4"                                        "Upgrade Dodge4"
-		"DOTA_Tooltip_ability_item_upgrade_dodge4_Description"                            "Gives a 23%% to avoid an enemy attack."
-
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4"                                 "Upgrade Spiked Armor4"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_Description"                     "Razor-sharp spikes on Armor deal 50%% of an enemy unit's melee attack damage back to it."
-
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike5"                              "Upgrade Critical Strike5"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike5_Description"                  "Gives a 25%% chance to do 2.8 times normal attack on an attack."
 
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike1_crit_mult"                    "CRIT MULT:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike1_crit_chance"                  "CRIT CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike2_crit_mult"                    "CRIT MULT:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike2_crit_chance"                  "CRIT CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike3_crit_mult"                    "CRIT MULT:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike3_crit_chance"                  "CRIT CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike4_crit_mult"                    "CRIT MULT:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike4_crit_chance"                  "CRIT CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike5_crit_mult"                    "CRIT MULT:"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike5_crit_chance"                  "CRIT CHANCE:"
+		
+
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit1"                                     "Upgrade Stun Hit1"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "Gives a 20%% chance that an attack will do 10 bonus damage and stun an opponent for 1 second."
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit2"                                     "Upgrade Stun Hit2"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "Gives a 21%% chance that an attack will do 15 bonus damage and stun an opponent for 2 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit3"                                     "Upgrade Stun Hit3"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "Gives a 22%% chance that an attack will do 20 bonus damage and stun an opponent for 3 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit4"                                     "Upgrade Stun Hit4"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "Gives a 23%% chance that an attack will do 25 bonus damage and stun an opponent for 4 seconds."
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit5"                                     "Upgrade Stun Hit5"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         "Gives a 25%% chance that an attack will do 30 bonus damage and stun an opponent for 5 seconds."
 
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_duration"                            "DURATION:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_stun_chance"                         "STUN CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_bonus_damage"                        "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_duration"                            "DURATION:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_stun_chance"                         "STUN CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_bonus_damage"                        "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_duration"                            "DURATION:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_stun_chance"                         "STUN CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_bonus_damage"                        "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_duration"                            "DURATION:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_stun_chance"                         "STUN CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_bonus_damage"                        "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_duration"                            "DURATION:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_stun_chance"                         "STUN CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_bonus_damage"                        "BONUS DAMAGE:"
+		
+
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1"                             "Upgrade Poisoned Weapons1"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2"                             "Upgrade Poisoned Weapons2"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3"                             "Upgrade Poisoned Weapons3"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4"                             "Upgrade Poisoned Weapons4"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5"                             "Upgrade Poisoned Weapons5"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_Description"                 "Deals 12 bonus damage per second.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
 
-		"DOTA_Tooltip_ability_item_upgrade_pulverize5"                                    "Upgrade Pulverize5"
-		"DOTA_Tooltip_ability_item_upgrade_pulverize5_Description"                        "Gives a 25%% chance to do 40 damage in 250 AoE."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_damage_per_second"           "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_damage_per_second"           "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_damage_per_second"           "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_damage_per_second"           "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_damage_per_second"           "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_reduced_attack_speed"        "ATTACKSPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_reduced_movement_speed"      "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_reduced_attack_speed"        "ATTACKSPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_reduced_movement_speed"      "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_reduced_attack_speed"        "ATTACKSPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_reduced_movement_speed"      "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_reduced_attack_speed"        "ATTACKSPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_reduced_movement_speed"      "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_reduced_attack_speed"        "ATTACKSPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_reduced_movement_speed"      "MOVESPEED SLOW:"	
 
+		"DOTA_Tooltip_ability_item_upgrade_dodge1"                                        "Upgrade Dodge1"
+		"DOTA_Tooltip_ability_item_upgrade_dodge1_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge2"                                        "Upgrade Dodge2"
+		"DOTA_Tooltip_ability_item_upgrade_dodge2_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge3"                                        "Upgrade Dodge3"
+		"DOTA_Tooltip_ability_item_upgrade_dodge3_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge4"                                        "Upgrade Dodge4"
+		"DOTA_Tooltip_ability_item_upgrade_dodge4_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
 		"DOTA_Tooltip_ability_item_upgrade_dodge5"                                        "Upgrade Dodge5"
-		"DOTA_Tooltip_ability_item_upgrade_dodge5_Description"                            "Gives a 25%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge5_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
 
+		"DOTA_Tooltip_ability_item_upgrade_dodge1_dodge_chance"                           "DODGE CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_dodge2_dodge_chance"                           "DODGE CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_dodge3_dodge_chance"                           "DODGE CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_dodge4_dodge_chance"                           "DODGE CHANCE:"
+		"DOTA_Tooltip_ability_item_upgrade_dodge5_dodge_chance"                           "DODGE CHANCE:"
+		
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1"                                 "Upgrade Spiked Armor1"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2"                                 "Upgrade Spiked Armor2"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3"                                 "Upgrade Spiked Armor3"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4"                                 "Upgrade Spiked Armor4"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5"                                 "Upgrade Spiked Armor5"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_Description"                     "Razor-sharp spikes on Armor deal 65%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_melee_damage_return"             "MELEE DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_melee_damage_return"             "MELEE DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_melee_damage_return"             "MELEE DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_melee_damage_return"             "MELEE DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_melee_damage_return"             "MELEE DAMAGE RETURN:"
 
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial1"                                  "Upgrade Peon Racial (1)"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_Description"                      "Increase the level of Peon's Cleave to splash "
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_Description"                      "Increase the level of Axe's Frenzy"
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_gold_cost"                        "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial2"                                  "Upgrade Peon Racial  (2)"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial2_Description"                      "Increase the level of Peon's Cleave"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial2_Description"                      "Increase the level of Axe's Frenzy"
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial2_gold_cost"                        "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial3"                                  "Upgrade Peon Racial (3)"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial3_Description"                      "Increase the level of Peon's Cleave"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial3_Description"                      "Increase the level of Axe's Frenzy"
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial3_gold_cost"                        "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial4"                                  "Upgrade Peon Racial (4)"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial4_Description"                      "Increase the level of Peon's Cleave"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial4_Description"                      "Increase the level of Axe's Frenzy"
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial4_gold_cost"                        "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial5"                                  "Upgrade Peon Racial (5)"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial5_Description"                      "Increase the level of Peon's Cleave"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial5_Description"                      "Increase the level of Axe's Frenzy"
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial5_gold_cost"                        "GOLD COST:"
 
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_cleave_percent"                   "CLEAVE PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial2_cleave_percent"                   "CLEAVE PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial3_cleave_percent"                   "CLEAVE PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial4_cleave_percent"                   "CLEAVE PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_peon_racial5_cleave_percent"                   "CLEAVE PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_speed_per_hit"                    "SPEED PER HIT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial2_speed_per_hit"                    "SPEED PER HIT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial3_speed_per_hit"                    "SPEED PER HIT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial4_speed_per_hit"                    "SPEED PER HIT:"
+		"DOTA_Tooltip_ability_item_upgrade_peon_racial5_speed_per_hit"                    "SPEED PER HIT:"
 		"DOTA_Tooltip_ability_item_upgrade_human_racial1_instakill_chance"                "INSTAKILL CHANCE:"
 		"DOTA_Tooltip_ability_item_upgrade_human_racial2_instakill_chance"                "INSTAKILL CHANCE:"
 		"DOTA_Tooltip_ability_item_upgrade_human_racial3_instakill_chance"                "INSTAKILL CHANCE:"

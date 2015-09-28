@@ -22,6 +22,8 @@ function OnSettingChanged(event)
 	var choice = event.value
 	$.Msg("Setting Changed: ",event);
 
+	CheckForHostPrivileges();
+
 	// Set Everyone unassigned except for the host (to prevent game ending)
     if (!IsHost)
     	OnLeaveTeamPressed()

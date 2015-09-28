@@ -118,6 +118,7 @@
 	            "IsPurgable"    "1"
 	            "EffectName"    "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
 	            "EffectAttachType"  "attach_hitloc"
+	            "TextureName"   "human_slow"
 	            "Duration"  "%duration"
 	            "Properties"
 	            {
@@ -661,7 +662,7 @@
 	            "IsBuff"            "1"
 	            "IsPurgable"        "1"
 	            "Duration"          "%duration"
-	
+	            "TextureName"       "modifier_bloodlust"
 	            "EffectName"            "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_buff.vpcf"
 	            "EffectAttachType"      "follow_origin"
 	
@@ -802,40 +803,57 @@
 	{
 	    "BaseClass"             "ability_datadriven"
 	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityTextureName"    "peon_cleave"
+	    "AbilityTextureName"    "peon_frenzy"
 	    "MaxLevel"              "6"
 	            
 	    "AbilitySpecial"
 	    {
+	        // On Max Stacks: 25 35 45 60 75 100 AS and MS
 	        "01"
 	        {
-	            "var_type"          "FIELD_INTEGER"
-	            "cleave_radius"     "200.0"
+	            "var_type"              "FIELD_INTEGER"
+	            "speed_per_hit"         "5 7 9 12 15 20"
 	        }
-	        
+	
 	        "02"
 	        {
-	            "var_type"          "FIELD_INTEGER"
-	            "cleave_percent"    "8 12 16 20 24 30"
+	            "var_type"              "FIELD_INTEGER"
+	            "max_stacks"            "5"
 	        }
+	
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "duration"              "5"
+	        }            
 	    }
 	
 	    "Modifiers"
 	    {
-	        "modifier_peon_cleave"
+	        "modifier_peon_frenzy"
 	        {
 	            "Passive"   "1"
 	            "IsHidden"  "1"
 	
 	            "OnAttackLanded"
 	            {
-	
-	                "CleaveAttack"
+	                "RunScript"
 	                {
-	                    "CleavePercent"         "%cleave_percent"
-	                    "CleaveRadius"          "%cleave_radius"
-	                    "CleaveEffect"          "particles/items_fx/battlefury_cleave.vpcf"
+	                    "ScriptFile"    "abilities/peon/frenzy.lua"
+	                    "Function"      "FrenzyAttack"
 	                }
+	            }
+	        }
+	
+	        "modifier_peon_frenzy_stacks"
+	        {
+	            "EffectName"    "particles/items2_fx/mask_of_madness.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	            "TextureName"   "peon_frenzy"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%speed_per_hit"
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%speed_per_hit" 
 	            }
 	        }
 	    }
@@ -3960,6 +3978,16 @@
 	        "02"
 	        {
 	            "var_type"              "FIELD_INTEGER"
+	            "reduced_attack_speed"  "-15 -25 -35 -45 -65"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_movement_speed" "-15 -25 -35 -45 -65"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
 	            "duration"              "5"
 	        }
 	    }
@@ -4002,6 +4030,12 @@
 	                    "Type"          "DAMAGE_TYPE_MAGICAL"
 	                    "Damage"        "%damage_per_second"
 	                }
+	            }
+	
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%reduced_attack_speed"
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%reduced_movement_speed" 
 	            }
 	        }
 	    }
@@ -4691,7 +4725,7 @@
 	        {           
 	            "EffectName"        "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead_smoke.vpcf"
 	            "EffectAttachType"  "follow_overhead"
-	
+	            
 	            "IsPurgable"        "1"
 	            "IsDebuff"          "1"
 	            "TextureName"       "undead_curse"
@@ -4823,6 +4857,7 @@
 	            "EffectName"        "particles/units/heroes/hero_bane/bane_fiends_grip.vpcf"
 	            "EffectAttachType"  "follow_origin"
 	            "OverrideAnimation" "ACT_DOTA_DISABLED"
+	            "TextureName"       "undead_possession"
 	            "IsDebuff"           "1"
 	                
 	            "States"
@@ -4835,7 +4870,7 @@
 	        {           
 	            "EffectName"        "particles/units/heroes/hero_pugna/pugna_ward_orientedrunes.vpcf"
 	            "EffectAttachType"  "follow_origin"
-	            
+	            "TextureName"       "undead_possession"
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage_increase_while_channeling"

@@ -136,7 +136,7 @@
         {           
             "EffectName"        "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead_smoke.vpcf"
             "EffectAttachType"  "follow_overhead"
-
+            
             "IsPurgable"        "1"
             "IsDebuff"          "1"
             "TextureName"       "undead_curse"
@@ -268,6 +268,7 @@
             "EffectName"        "particles/units/heroes/hero_bane/bane_fiends_grip.vpcf"
             "EffectAttachType"  "follow_origin"
             "OverrideAnimation" "ACT_DOTA_DISABLED"
+            "TextureName"       "undead_possession"
             "IsDebuff"           "1"
                 
             "States"
@@ -280,7 +281,7 @@
         {           
             "EffectName"        "particles/units/heroes/hero_pugna/pugna_ward_orientedrunes.vpcf"
             "EffectAttachType"  "follow_origin"
-            
+            "TextureName"       "undead_possession"
             "Properties"
             {
                 "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage_increase_while_channeling"

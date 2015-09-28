@@ -989,7 +989,7 @@
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
-	    "Ability1"                  "peon_racial"   //Thralls Axe
+	    "Ability1"                  "peon_racial"
 	    // Armor
 	    //----------------------------------------------------------------
 	    "ArmorPhysical"             "0"
@@ -1632,6 +1632,7 @@
 	    "SelectionGroup"            "Undeads"
 	    "SoundSet"                  "Hero_Undying"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_undying.vsndevts"
 	
 	    "PathfindingSearchDepthScale" "0.5"
 	    

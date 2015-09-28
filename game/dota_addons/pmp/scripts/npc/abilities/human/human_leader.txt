@@ -78,6 +78,7 @@
             "IsPurgable"    "1"
             "EffectName"    "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
             "EffectAttachType"  "attach_hitloc"
+            "TextureName"   "human_slow"
             "Duration"  "%duration"
             "Properties"
             {

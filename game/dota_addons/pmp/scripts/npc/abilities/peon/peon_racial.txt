@@ -2,40 +2,57 @@
 {
     "BaseClass"             "ability_datadriven"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "AbilityTextureName"    "peon_cleave"
+    "AbilityTextureName"    "peon_frenzy"
     "MaxLevel"              "6"
             
     "AbilitySpecial"
     {
+        // On Max Stacks: 25 35 45 60 75 100 AS and MS
         "01"
         {
-            "var_type"          "FIELD_INTEGER"
-            "cleave_radius"     "200.0"
+            "var_type"              "FIELD_INTEGER"
+            "speed_per_hit"         "5 7 9 12 15 20"
         }
-        
+
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "cleave_percent"    "8 12 16 20 24 30"
+            "var_type"              "FIELD_INTEGER"
+            "max_stacks"            "5"
         }
+
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "5"
+        }            
     }
 
     "Modifiers"
     {
-        "modifier_peon_cleave"
+        "modifier_peon_frenzy"
         {
             "Passive"   "1"
             "IsHidden"  "1"
 
             "OnAttackLanded"
             {
-
-                "CleaveAttack"
+                "RunScript"
                 {
-                    "CleavePercent"         "%cleave_percent"
-                    "CleaveRadius"          "%cleave_radius"
-                    "CleaveEffect"          "particles/items_fx/battlefury_cleave.vpcf"
+                    "ScriptFile"    "abilities/peon/frenzy.lua"
+                    "Function"      "FrenzyAttack"
                 }
+            }
+        }
+
+        "modifier_peon_frenzy_stacks"
+        {
+            "EffectName"    "particles/items2_fx/mask_of_madness.vpcf"
+            "EffectAttachType"  "follow_origin"
+            "TextureName"   "peon_frenzy"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%speed_per_hit"
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%speed_per_hit" 
             }
         }
     }

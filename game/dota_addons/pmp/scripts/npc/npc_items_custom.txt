@@ -108,7 +108,9 @@
 	        }
 		}
 	}
-	// Level 1
+	/////////////////////////////
+	// CRIT
+	////////////////////////////
 	"item_upgrade_critical_strike1"
 	{
 	    "BaseClass"                     "item_datadriven"
@@ -128,6 +130,16 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "50"
 	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_mult"                 "200 220 240 260 280"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_chance"               "20 21 22 23 25"
+	        }
 	    }
 	
 	    "MaxUpgradeLevel"               "5"
@@ -145,6 +157,195 @@
 	        }
 	    }
 	}
+	
+	"item_upgrade_critical_strike2"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_critical_strike"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "130"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "130"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_mult"                 "200 220 240 260 280"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_chance"               "20 21 22 23 25"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "2"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "critical_strike"
+	            "Level"         "2"
+	        }
+	    }
+	}
+	"item_upgrade_critical_strike3"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_critical_strike"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "210"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "210"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_mult"                 "200 220 240 260 280"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_chance"               "20 21 22 23 25"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "3"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "critical_strike"
+	            "Level"         "3"
+	        }
+	    }
+	}
+	"item_upgrade_critical_strike4"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_critical_strike"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "290"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "290"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_mult"                 "200 220 240 260 280"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_chance"               "20 21 22 23 25"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "4"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "critical_strike"
+	            "Level"         "4"
+	        }
+	    }
+	}
+	"item_upgrade_critical_strike5"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_critical_strike"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "370"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "370"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_mult"                 "200 220 240 260 280"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "crit_chance"               "20 21 22 23 25"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "5"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "critical_strike"
+	            "Level"         "5"
+	        }
+	    }
+	}
+	
+	/////////////////////////////
+	// STUN
+	////////////////////////////
 	
 	"item_upgrade_stun_hit1"
 	{
@@ -165,6 +366,21 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "100"
 	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "1.0 2.0 3.0 4.0 5.0"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "stun_chance"           "20 21 22 23 25"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "bonus_damage"          "10 15 20 25 30"
+	        }
 	    }
 	
 	    "MaxUpgradeLevel"               "5"
@@ -182,195 +398,6 @@
 	        }
 	    }
 	}
-	
-	"item_upgrade_poisoned_weapons1"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_poisoned_weapons"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "70"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "70"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "1"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "poisoned_weapons"
-	            "Level"         "1"
-	        }
-	    }
-	}
-	
-	"item_upgrade_pulverize1"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_pulverize"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "120"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "120"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "1"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "pulverize"
-	            "Level"         "1"
-	        }
-	    }
-	}
-	
-	"item_upgrade_dodge1"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_dodge"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "55"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "55"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "1"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "dodge"
-	            "Level"         "1"
-	        }
-	    }
-	}
-	
-	"item_upgrade_spiked_armor1"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_spiked_armor"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "110"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "110"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "1"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "spiked_armor"
-	            "Level"         "1"
-	        }
-	    }
-	}
-	
-	/////////////////////////////
-	// Level 2
-	////////////////////////////
-	"item_upgrade_critical_strike2"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_critical_strike"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "130"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "130"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "2"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "critical_strike"
-	            "Level"         "2"
-	        }
-	    }
-	}
-	
 	
 	"item_upgrade_stun_hit2"
 	{
@@ -391,6 +418,21 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "200"
 	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "1.0 2.0 3.0 4.0 5.0"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "stun_chance"           "20 21 22 23 25"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "bonus_damage"          "10 15 20 25 30"
+	        }
 	    }
 	    "ItemCost"                      "100"
 	
@@ -406,6 +448,214 @@
 	            "Function"      "UpgradeFinished"
 	            "Name"          "stun_hit"
 	            "Level"         "2"
+	        }
+	    }
+	}
+	"item_upgrade_stun_hit3"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_stun_hit"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "300"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "300"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "1.0 2.0 3.0 4.0 5.0"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "stun_chance"           "20 21 22 23 25"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "bonus_damage"          "10 15 20 25 30"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "3"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "stun_hit"
+	            "Level"         "3"
+	        }
+	    }
+	}
+	"item_upgrade_stun_hit4"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_stun_hit"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "400"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "400"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "1.0 2.0 3.0 4.0 5.0"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "stun_chance"           "20 21 22 23 25"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "bonus_damage"          "10 15 20 25 30"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "4"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "stun_hit"
+	            "Level"         "4"
+	        }
+	    }
+	}
+	"item_upgrade_stun_hit5"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_stun_hit"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "500"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "500"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "1.0 2.0 3.0 4.0 5.0"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "stun_chance"           "20 21 22 23 25"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "bonus_damage"          "10 15 20 25 30"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "5"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "stun_hit"
+	            "Level"         "5"
+	        }
+	    }
+	}
+	
+	/////////////////////////////
+	// SLOW
+	////////////////////////////
+	"item_upgrade_poisoned_weapons1"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_poisoned_weapons"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "70"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "70"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage_per_second"     "3 4 6 9 12"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_attack_speed"   "-15 -25 -35 -45 -65"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_movement_speed"  "-15 -25 -35 -45 -65"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "1"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "poisoned_weapons"
+	            "Level"         "1"
 	        }
 	    }
 	}
@@ -429,6 +679,21 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "210"
 	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage_per_second"     "3 4 6 9 12"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_attack_speed"   "-15 -25 -35 -45 -65"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_movement_speed"  "-15 -25 -35 -45 -65"
+	        }
 	    }
 	
 	    "MaxUpgradeLevel"               "5"
@@ -443,195 +708,6 @@
 	            "Function"      "UpgradeFinished"
 	            "Name"          "poisoned_weapons"
 	            "Level"         "2"
-	        }
-	    }
-	}
-	
-	"item_upgrade_pulverize2"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_pulverize"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "245"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "245"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "2"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "pulverize"
-	            "Level"         "2"
-	        }
-	    }
-	}
-	
-	"item_upgrade_dodge2"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_dodge"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "125"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "125"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "2"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "dodge"
-	            "Level"         "2"
-	        }
-	    }
-	}
-	
-	"item_upgrade_spiked_armor2"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_spiked_armor"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "200"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "200"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "2"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "spiked_armor"
-	            "Level"         "2"
-	        }
-	    }
-	}
-	
-	/////////////////////////////
-	// Level 3
-	////////////////////////////
-	"item_upgrade_critical_strike3"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_critical_strike"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "210"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "210"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "3"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "critical_strike"
-	            "Level"         "3"
-	        }
-	    }
-	}
-	
-	
-	"item_upgrade_stun_hit3"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_stun_hit"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "300"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "300"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "3"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "stun_hit"
-	            "Level"         "3"
 	        }
 	    }
 	}
@@ -655,6 +731,21 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "350"
 	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage_per_second"     "3 4 6 9 12"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_attack_speed"   "-15 -25 -35 -45 -65"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_movement_speed"  "-15 -25 -35 -45 -65"
+	        }
 	    }
 	
 	    "MaxUpgradeLevel"               "5"
@@ -669,195 +760,6 @@
 	            "Function"      "UpgradeFinished"
 	            "Name"          "poisoned_weapons"
 	            "Level"         "3"
-	        }
-	    }
-	}
-	
-	"item_upgrade_pulverize3"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_pulverize"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "370"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "370"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "3"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "pulverize"
-	            "Level"         "3"
-	        }
-	    }
-	}
-	
-	"item_upgrade_dodge3"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_dodge"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "195"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "195"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "3"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "dodge"
-	            "Level"         "3"
-	        }
-	    }
-	}
-	
-	"item_upgrade_spiked_armor3"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_spiked_armor"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "290"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "290"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "3"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "spiked_armor"
-	            "Level"         "3"
-	        }
-	    }
-	}
-	
-	
-	/////////////////////////////
-	// Level 4
-	////////////////////////////
-	"item_upgrade_critical_strike4"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_critical_strike"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "290"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "290"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "4"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "critical_strike"
-	            "Level"         "4"
-	        }
-	    }
-	}
-	
-	"item_upgrade_stun_hit4"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_stun_hit"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "400"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "400"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "4"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "stun_hit"
-	            "Level"         "4"
 	        }
 	    }
 	}
@@ -881,6 +783,21 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "490"
 	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage_per_second"     "3 4 6 9 12"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_attack_speed"   "-15 -25 -35 -45 -65"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_movement_speed"  "-15 -25 -35 -45 -65"
+	        }
 	    }
 	
 	    "MaxUpgradeLevel"               "5"
@@ -895,196 +812,6 @@
 	            "Function"      "UpgradeFinished"
 	            "Name"          "poisoned_weapons"
 	            "Level"         "4"
-	        }
-	    }
-	}
-	
-	"item_upgrade_pulverize4"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_pulverize"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "495"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "495"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "4"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "pulverize"
-	            "Level"         "4"
-	        }
-	    }
-	}
-	
-	"item_upgrade_dodge4"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_dodge"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "265"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "265"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "4"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "dodge"
-	            "Level"         "4"
-	        }
-	    }
-	}
-	
-	"item_upgrade_spiked_armor4"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_spiked_armor"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "380"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "380"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "4"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "spiked_armor"
-	            "Level"         "4"
-	        }
-	    }
-	}
-	
-	
-	/////////////////////////////
-	// Level 5
-	////////////////////////////
-	"item_upgrade_critical_strike5"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_critical_strike"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "370"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "370"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "5"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "critical_strike"
-	            "Level"         "5"
-	        }
-	    }
-	}
-	
-	
-	"item_upgrade_stun_hit5"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_stun_hit"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	
-	    "ItemDroppable"                 "0"
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	
-	    "AbilityGoldCost"               "500"
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "500"
-	        }
-	    }
-	
-	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "5"
-	
-	    "OnSpellStart"
-	    {
-	        // Add Upgrade and Swap the item for the next upgrade
-	        "RunScript"
-	        {
-	            "ScriptFile"    "upgrades.lua"
-	            "Function"      "UpgradeFinished"
-	            "Name"          "stun_hit"
-	            "Level"         "5"
 	        }
 	    }
 	}
@@ -1108,6 +835,21 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "630"
 	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage_per_second"     "3 4 6 9 12"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_attack_speed"   "-15 -25 -35 -45 -65"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "reduced_movement_speed"  "-15 -25 -35 -45 -65"
+	        }
 	    }
 	
 	    "MaxUpgradeLevel"               "5"
@@ -1126,10 +868,15 @@
 	    }
 	}
 	
-	"item_upgrade_pulverize5"
+	
+	/////////////////////////////
+	// DODGE
+	////////////////////////////
+	
+	"item_upgrade_dodge1"
 	{
 	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_pulverize"
+	    "AbilityTextureName"            "item_upgrade_dodge"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	
@@ -1137,18 +884,23 @@
 	    "ItemPurchasable"               "0"
 	    "ItemSellable"                  "0"
 	
-	    "AbilityGoldCost"               "620"
+	    "AbilityGoldCost"               "55"
 	    "AbilitySpecial"
 	    {
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "gold_cost"           "620"
+	            "gold_cost"           "55"
+	        }
+	        "02"
+	        {
+	            "var_type"         "FIELD_INTEGER"
+	            "dodge_chance"     "20 21 22 23 25"
 	        }
 	    }
 	
 	    "MaxUpgradeLevel"               "5"
-	    "ItemBaseLevel"                 "5"
+	    "ItemBaseLevel"                 "1"
 	
 	    "OnSpellStart"
 	    {
@@ -1157,12 +909,135 @@
 	        {
 	            "ScriptFile"    "upgrades.lua"
 	            "Function"      "UpgradeFinished"
-	            "Name"          "pulverize"
-	            "Level"         "5"
+	            "Name"          "dodge"
+	            "Level"         "1"
 	        }
 	    }
 	}
 	
+	"item_upgrade_dodge2"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_dodge"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "125"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "125"
+	        }
+	        "02"
+	        {
+	            "var_type"         "FIELD_INTEGER"
+	            "dodge_chance"     "20 21 22 23 25"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "2"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "dodge"
+	            "Level"         "2"
+	        }
+	    }
+	}
+	"item_upgrade_dodge3"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_dodge"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "195"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "195"
+	        }
+	        "02"
+	        {
+	            "var_type"         "FIELD_INTEGER"
+	            "dodge_chance"     "20 21 22 23 25"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "3"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "dodge"
+	            "Level"         "3"
+	        }
+	    }
+	}
+	"item_upgrade_dodge4"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_dodge"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "265"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "265"
+	        }
+	        "02"
+	        {
+	            "var_type"         "FIELD_INTEGER"
+	            "dodge_chance"     "20 21 22 23 25"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "4"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "dodge"
+	            "Level"         "4"
+	        }
+	    }
+	}
 	"item_upgrade_dodge5"
 	{
 	    "BaseClass"                     "item_datadriven"
@@ -1182,6 +1057,11 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "335"
 	        }
+	        "02"
+	        {
+	            "var_type"         "FIELD_INTEGER"
+	            "dodge_chance"     "20 21 22 23 25"
+	        }
 	    }
 	
 	    "MaxUpgradeLevel"               "5"
@@ -1196,6 +1076,178 @@
 	            "Function"      "UpgradeFinished"
 	            "Name"          "dodge"
 	            "Level"         "5"
+	        }
+	    }
+	}
+	
+	/////////////////////////////
+	// RETURN
+	////////////////////////////
+	
+	"item_upgrade_spiked_armor1"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_spiked_armor"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "110"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "110"
+	        }
+	        "02"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "melee_damage_return" "20 30 40 50 65"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "1"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "spiked_armor"
+	            "Level"         "1"
+	        }
+	    }
+	}
+	
+	"item_upgrade_spiked_armor2"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_spiked_armor"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "200"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "200"
+	        }
+	        "02"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "melee_damage_return" "20 30 40 50 65"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "2"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "spiked_armor"
+	            "Level"         "2"
+	        }
+	    }
+	}
+	
+	"item_upgrade_spiked_armor3"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_spiked_armor"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "290"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "290"
+	        }
+	        "02"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "melee_damage_return" "20 30 40 50 65"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "3"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "spiked_armor"
+	            "Level"         "3"
+	        }
+	    }
+	}
+	
+	"item_upgrade_spiked_armor4"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_spiked_armor"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilityGoldCost"               "380"
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "380"
+	        }
+	        "02"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "melee_damage_return" "20 30 40 50 65"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "4"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "spiked_armor"
+	            "Level"         "4"
 	        }
 	    }
 	}
@@ -1218,6 +1270,11 @@
 	        {
 	            "var_type"            "FIELD_INTEGER"
 	            "gold_cost"           "470"
+	        }
+	        "02"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "melee_damage_return" "20 30 40 50 65"
 	        }
 	    }
 	
@@ -1260,7 +1317,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "cleave_percent"    "12 16 20 24 30"
+	            "speed_per_hit"     "7 9 12 15 20"
 	        }
 	    }
 	
@@ -1302,7 +1359,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "cleave_percent"    "12 16 20 24 30"
+	            "speed_per_hit"     "7 9 12 15 20"
 	        }
 	    }
 	
@@ -1344,7 +1401,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "cleave_percent"    "12 16 20 24 30"
+	            "speed_per_hit"     "7 9 12 15 20"
 	        }
 	    }
 	
@@ -1386,7 +1443,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "cleave_percent"    "12 16 20 24 30"
+	            "speed_per_hit"     "7 9 12 15 20"
 	        }
 	    }
 	
@@ -1428,7 +1485,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "cleave_percent"    "12 16 20 24 30"
+	            "speed_per_hit"     "7 9 12 15 20"
 	        }
 	    }
 	
