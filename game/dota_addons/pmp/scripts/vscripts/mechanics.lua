@@ -456,6 +456,17 @@ function TeachAbility( unit, ability_name, level )
     end
 end
 
+function GetSuperUnitAbility( unit )
+    local name = "summon_super_"
+    for i=0,15 do
+        local ability = unit:GetAbilityByIndex(i)
+        if ability and string.match(ability:GetAbilityName(), name) then
+            return ability
+        end
+    end
+    return nil
+end
+
 function PrintAbilities( unit )
     print("List of Abilities in "..unit:GetUnitName())
     for i=0,15 do

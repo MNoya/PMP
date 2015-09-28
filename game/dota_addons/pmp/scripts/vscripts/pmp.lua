@@ -638,6 +638,10 @@ function PMP:OnEntityKilled( event )
             attacker_garage:SetModifierStackCount("modifier_super_unit_charges", attacker_garage, charges)
 
             -- Find super peon ability and skill it back to 1
+            local super_unit_ability = GetSuperUnitAbility(attacker_garage)
+            if super_unit_ability then
+                super_unit_ability:SetLevel(1)
+            end
         end
 
         SendDefeatedMessage(attacker_playerID,killed_playerID)
