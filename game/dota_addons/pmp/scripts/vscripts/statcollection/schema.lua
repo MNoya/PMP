@@ -104,7 +104,7 @@ function BuildPlayersArray()
                     ability_critical_strike = player_upgrades["critical_strike"] or 0,
                     ability_stun_hit = player_upgrades["stun_hit"] or 0,
                     ability_poisoned_weapons = player_upgrades["poisoned_weapons"] or 0,
-                    ability_pulverize = player_upgrades["pulverize"] or 0,
+                    ability_racial = player_upgrades["racial"] or 0,
                     ability_dodge = player_upgrades["dodge"] or 0,
                     ability_spiked_armor = player_upgrades["spiked_armor"] or 0,
                     
