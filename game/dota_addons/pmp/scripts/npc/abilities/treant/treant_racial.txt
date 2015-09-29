@@ -1,0 +1,17 @@
+// This skill is awfully bad.
+"treant_racial"
+{
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "treant_thorns"
+    "MaxLevel"              "6"
+            
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "damage_return"     "5 10 15 20 25 30"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+"skeleton_racial"
+{ 
+    //1/6 to resurrect
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "skeleton_reincarnation"
+    "MaxLevel"              "6"
+}

@@ -1,0 +1,3 @@
+//skeleton_carrion_swarm
+//skeleton_sacrifice
+//skeleton_resurrection_aura --Doubles the change to resurrect

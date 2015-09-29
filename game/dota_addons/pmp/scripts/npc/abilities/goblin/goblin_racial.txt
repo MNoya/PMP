@@ -1,15 +1,16 @@
-"goblin_greed"
+"goblin_racial"
 {
     "BaseClass"             "ability_datadriven"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"    "goblin_greed"
+    "MaxLevel"              "6"
             
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"          "FIELD_INTEGER"
-            "extra_bounty"      "2.0"
+            "extra_bounty"      "2.0 2.5 3.0 3.5 4.0 5.0"
         }
     }
 
@@ -20,11 +21,10 @@
         "particle"  "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
     }
 
-    // Option: instead of changing the popup text globally, we add an extra one
     "modifier_goblins_greed"
     {
         "Passive"   "1"
-        "IsHidden"  "0"
+        "IsHidden"  "1"
 
         "OnKill"
         {

@@ -1,0 +1,65 @@
+"spawn_blood_elf"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_blood_elf"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityCooldown"               "7"
+
+    "Modifiers"
+    {
+        "modifier_spawn_blood_elf"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "ThinkInterval"     "7.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "blood_elf"
+                }
+            }
+        }
+    }
+}
+
+"spawn_blood_elf_leader"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_blood_elf_leader"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityCooldown"               "180"
+
+    "Modifiers"
+    {
+        "modifier_spawn_blood_elf_caster"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/shared.lua"
+                    "Function"      "StartCooldown"
+                }
+            }
+            "ThinkInterval"     "180.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "blood_elf_leader"
+                }
+            }
+        }
+    }
+}

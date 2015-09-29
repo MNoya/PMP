@@ -1,0 +1,3 @@
+//goblin_healing_spray
+//goblin_attack
+//goblin_transmute

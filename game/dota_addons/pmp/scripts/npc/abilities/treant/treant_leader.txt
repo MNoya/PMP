@@ -1,0 +1,3 @@
+//treant_treants //Set tree regrow time to 30ish
+//treant_detonate
+//treant_living_armor

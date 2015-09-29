@@ -325,7 +325,7 @@
     "AttackAnimationPoint"      "0.3"
     "AttackAcquisitionRange"    "500"
     "AttackRange"               "500"
-    "ProjectileModel"           "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+    "ProjectileModel"           "particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
     "ProjectileSpeed"           "1200"
     
     // Bounty
@@ -451,7 +451,7 @@
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/props_structures/tower_bad.vmdl"
+    "Model"                     "models/items/wards/deadwatch_ward/deadwatch_ward.vmdl"
     "ModelScale"                "0.8"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"

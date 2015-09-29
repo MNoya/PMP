@@ -1,0 +1,65 @@
+"spawn_treant"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_treant"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityCooldown"               "7"
+
+    "Modifiers"
+    {
+        "modifier_spawn_treant"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "ThinkInterval"     "7.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "treant"
+                }
+            }
+        }
+    }
+}
+
+"spawn_treant_leader"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_treant_leader"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityCooldown"               "180"
+
+    "Modifiers"
+    {
+        "modifier_spawn_treant_caster"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/shared.lua"
+                    "Function"      "StartCooldown"
+                }
+            }
+            "ThinkInterval"     "180.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "treant_leader"
+                }
+            }
+        }
+    }
+}

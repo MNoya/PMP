@@ -1,0 +1,9 @@
+"night_elf_racial"
+{ 
+    //500 Range, +600 Nightvision
+    // Deal 50% damage to melee units, buildings, 100% damage to ranged untis; take 140% from melee, 100% from ranged)
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "night_elf_range_attack"
+    "MaxLevel"              "6"
+}

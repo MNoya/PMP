@@ -1,25 +1,27 @@
 //=================================================================================
 // Main unit
 //=================================================================================
-"human"
+"treant"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/dragon_knight/dragon_knight.vmdl"
+    "Model"                     "models/heroes/treant_protector/treant_protector.vmdl"
     "ModelScale"                "0.7"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
     "HealthBarOffset"           "140"
-    "SelectionGroup"            "Humans"
-    "SoundSet"					"Hero_DragonKnight"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+    "SelectionGroup"            "Treants"
+    "SoundSet"                  "Hero_Treant"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_treant.vsndevts"
 
     "PathfindingSearchDepthScale" "0.5"
     
     // Abilities
     //----------------------------------------------------------------
-    "Ability1"                  "human_racial"
+    "Ability1"                  "treant_racial"
+
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"             "0"
@@ -77,40 +79,36 @@
     {
         "DisableClumpingBehavior"   "1"
         "AttachWearables"
-		{
-			"Wearable1"		{	"ItemDef"		"63"		}
-			"Wearable2"		{	"ItemDef"		"64"		}
-			"Wearable3" 	{	"ItemDef"		"65"		}
-			"Wearable4"		{	"ItemDef"		"66"		}
-			"Wearable5"		{	"ItemDef"		"67"		}
-			"Wearable6"		{	"ItemDef"		"68"		}
-		}
+        {
+            "Wearable1"     {   "ItemDef"       "227"       } //models/heroes/treant_protector/head.vmdl
+            "Wearable2"     {   "ItemDef"       "228"       } //models/heroes/treant_protector/foliage.vmdl
+            "Wearable3"     {   "ItemDef"       "229"       } //models/heroes/treant_protector/hands.vmdl
+            "Wearable4"     {   "ItemDef"       "230"       } //models/heroes/treant_protector/legs.vmdl
+        }
     }
 }
 
 //=================================================================================
 // Leader unit
 //=================================================================================
-"human_leader"
+"treant_leader"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/lina/lina.vmdl"
-    "ModelScale"                "0.8"
+    "Model"                     "models/items/furion/treant_flower_1.vmdl"
+    "ModelScale"                "1.5"
     "Level"                     "2"
     "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
     "HealthBarOffset"           "140"
-    "SoundSet"					"Hero_Lina"
-    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
 
     "PathfindingSearchDepthScale" "0.5"
     
     // Abilities
     //----------------------------------------------------------------
-    "Ability1"					"human_slow"
-    "Ability2"                  "human_polymorph"
-    "Ability3"                  "human_mass_teleport"
+    "Ability1"                  "treant_treants"
+    "Ability2"                  "treant_detonate"
+    "Ability3"                  "treant_living_armor"
     
     // Armor
     //----------------------------------------------------------------
@@ -127,7 +125,7 @@
     "AttackAnimationPoint"      "0.43"
     "AttackAcquisitionRange"    "600"
     "AttackRange"               "600"
-    "ProjectileModel"           "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+    "ProjectileModel"           "particles/units/heroes/hero_furion/furion_base_attack.vpcf"
     "ProjectileSpeed"           "1100"
     
     // Bounty
@@ -172,32 +170,24 @@
     "Creature"
     {
         "DisableClumpingBehavior"   "1"
-        "AttachWearables"
-		{
-			"Wearable1"		{	"ItemDef"		"4794"		} //"Fiery Soul of the Slayer"
-			"Wearable2"		{	"ItemDef"		"6339"		} //"Fire Lotus Belt"
-			"Wearable3" 	{	"ItemDef"		"5941"		} //"Wings of the Ember Crane"
-			"Wearable4"		{	"ItemDef"		"4756"		} //"Arc of the Solar Divine"
-		}
     }
 }
 
 //=================================================================================
 // Super Unit
 //=================================================================================
-"super_human"
+"super_treant"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+    "Model"                     "models/heroes/leshrac/leshrac.vmdl"
     "ModelScale"                "1"
     "Level"                     "6"
     "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
     "HealthBarOffset"           "140"
-    "SoundSet"                  "Hero_KeeperOfTheLight"
-    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
+    "SoundSet"                  "Hero_Leshrac"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
 
     "PathfindingSearchDepthScale" "0.5"
     
@@ -221,7 +211,7 @@
     "AttackAnimationPoint"      "0.4"
     "AttackAcquisitionRange"    "600"
     "AttackRange"               "900"
-    "ProjectileModel"           "particles/econ/items/keeper_of_the_light/kotl_weapon_arcane_staff/keeper_base_attack_arcane_staff.vpcf"
+    "ProjectileModel"           "particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_base_attack_tormented.vpcf"
     "ProjectileSpeed"           "900"
     
     // Bounty
@@ -269,11 +259,11 @@
         "DisableClumpingBehavior"   "1"
         "AttachWearables"
         {
-            "Wearable1" { "ItemDef" "7676" } //Tendrillar
-            "Wearable2" { "ItemDef" "4803" } //Legendary staff
-            "Wearable3" { "ItemDef" "5320" } //Robes
-            "Wearable4" { "ItemDef" "5316" } //Gandalf Hat
-            "Wearable5" { "ItemDef" "7675" } //Horns
+            "Wearable1"     {   "ItemDef"       "345"      } //"Leshrac's Armor"
+            "Wearable2"     {   "ItemDef"       "346"      } //"Leshrac's Head"
+            "Wearable3"     {   "ItemDef"       "347"      } //"Leshrac's Tail"
+            "Wearable4"     {   "ItemDef"       "529"      } //"Leshrac's Ambient Effects"
+            "Wearable5"     {   "ItemDef"       "8612"     } //"Tormented Staff"
         }
     }
 }
@@ -281,13 +271,13 @@
 //=================================================================================
 // City Center
 //=================================================================================
-"human_garage"
+"treant_garage"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/props_structures/good_barracks_melee001.vmdl"
-    "ModelScale"                "0.8"
+    "Model"                     "models/heroes/treant_protector/treant_protector.vmdl"
+    "ModelScale"                "2"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
     "RingRadius"                "180"
@@ -306,9 +296,9 @@
     "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
     "Ability3"                  "build_barricades"  //Build Barricades
     "Ability4"                  "repair_buildings"  //Repair
-    "Ability5"                  "spawn_human" //Hidden
-    "Ability6"                  "spawn_human_leader"
-    "Ability7"                  "summon_super_human" //Visible to show the 3 min cd
+    "Ability5"                  "spawn_treant" //Hidden
+    "Ability6"                  "spawn_treant_leader"
+    "Ability7"                  "summon_super_treant" //Visible to show the 3 min cd
     "Ability10"                 "ability_building"
     
     // Armor
@@ -326,7 +316,7 @@
     "AttackAnimationPoint"      "0.3"
     "AttackAcquisitionRange"    "500"
     "AttackRange"               "500"
-    "ProjectileModel"           "particles/econ/items/keeper_of_the_light/kotl_weapon_arcane_staff/keeper_base_attack_arcane_staff.vpcf"
+    "ProjectileModel"           "particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_base_attack_tormented.vpcf"
     "ProjectileSpeed"           "1200"
     
     // Bounty
@@ -362,17 +352,27 @@
     
     // Creature Data
     //----------------------------------------------------------------
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"     {   "ItemDef"       "7059"      } //"Embrace of the Agaric Flourish"
+            "Wearable2"     {   "ItemDef"       "7060"      } //"Countenance of the Agaric Flourish"
+            "Wearable3"     {   "ItemDef"       "7061"      } //"Stride of the Agaric Flourish"
+            "Wearable4"     {   "ItemDef"       "7062"      } //"Canopy of the Agaric Flourish"
+        }
+    }
 }
 
 //=================================================================================
 // Research Center
 //=================================================================================
-"human_pimpery"
+"treant_pimpery"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/dragon_knight/dragon_knight.vmdl"
+    "Model"                     "models/heroes/treant_protector/treant_protector.vmdl"
     "ModelScale"                "1.2"
     "Level"                     "10"
     "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
@@ -438,12 +438,10 @@
     {     
         "AttachWearables"
         {
-            "Wearable1"     {   "ItemDef"       "63"        }
-            "Wearable2"     {   "ItemDef"       "64"        }
-            "Wearable3"     {   "ItemDef"       "65"        }
-            "Wearable4"     {   "ItemDef"       "66"        }
-            "Wearable5"     {   "ItemDef"       "67"        }
-            "Wearable6"     {   "ItemDef"       "68"        }
+            "Wearable1"     {   "ItemDef"       "227"       } //models/heroes/treant_protector/head.vmdl
+            "Wearable2"     {   "ItemDef"       "228"       } //models/heroes/treant_protector/foliage.vmdl
+            "Wearable3"     {   "ItemDef"       "229"       } //models/heroes/treant_protector/hands.vmdl
+            "Wearable4"     {   "ItemDef"       "230"       } //models/heroes/treant_protector/legs.vmdl
         }
     }
 }
@@ -451,13 +449,13 @@
 //=================================================================================
 // Tower
 //=================================================================================
-"human_tower"
+"treant_tower"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/props_structures/tower_good.vmdl"
-    "ModelScale"                "0.8"
+    "Model"                     "models/heroes/techies/fx_techiesfx_stasis.vmdl"
+    "ModelScale"                "2"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
     "RingRadius"                "100"
@@ -516,18 +514,18 @@
     //----------------------------------------------------------------
 }
 
-"human_ghost"
+"treant_ghost"
 {
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/dragon_knight/dragon_knight.vmdl"
+    "Model"                     "models/heroes/treant_protector/treant_protector.vmdl"
     "ModelScale"                "1"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
     "HealthBarOffset"           "140"
-    "SoundSet"                  "Hero_Undying"
-    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+    "SoundSet"                  "Hero_Treant"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
     
     // Abilities
     //----------------------------------------------------------------
@@ -580,12 +578,10 @@
         "DisableClumpingBehavior"   "1"
         "AttachWearables"
         {
-            "Wearable1"     {   "ItemDef"       "63"        }
-            "Wearable2"     {   "ItemDef"       "64"        }
-            "Wearable3"     {   "ItemDef"       "65"        }
-            "Wearable4"     {   "ItemDef"       "66"        }
-            "Wearable5"     {   "ItemDef"       "67"        }
-            "Wearable6"     {   "ItemDef"       "68"        }
+            "Wearable1"     {   "ItemDef"       "227"       } //models/heroes/treant_protector/head.vmdl
+            "Wearable2"     {   "ItemDef"       "228"       } //models/heroes/treant_protector/foliage.vmdl
+            "Wearable3"     {   "ItemDef"       "229"       } //models/heroes/treant_protector/hands.vmdl
+            "Wearable4"     {   "ItemDef"       "230"       } //models/heroes/treant_protector/legs.vmdl
         }
     }
 }

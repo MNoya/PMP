@@ -1,0 +1,65 @@
+"summon_super_blood_elf"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "summon_super_blood_elf"
+    "MaxLevel"                      "3"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityCooldown"               "1"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_FLOAT"
+            "duration"            "20.0"
+        }
+    }
+
+    "precache"
+    {
+        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/spawn.lua"
+            "Function"      "SpawnSuperUnit"
+            "UnitName"      "super_blood_elf"
+            "Duration"      "%duration"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_super_spawn"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SuperPeonCharges"
+                }
+            }
+        }
+
+        "modifier_super_unit_charges"
+        {
+            "IsHidden"  "0"
+        }
+    }
+}
+
+"summon_super_blood_elf_empty"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "summon_super_blood_elf"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}
