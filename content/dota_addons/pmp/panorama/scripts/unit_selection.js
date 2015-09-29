@@ -2,6 +2,10 @@
 
 var skip = false
 
+var lastClickedEntity = 0;
+var clickedCounter = 0;
+var pissedThreshold = 1;
+
 function OnUpdateSelectedUnit( event )
 {
 	if (skip == true){
@@ -13,24 +17,59 @@ function OnUpdateSelectedUnit( event )
 	var selectedEntities = Players.GetSelectedEntities( iPlayerID );
 	var mainSelected = Players.GetLocalPlayerPortraitUnit();
 
-	/*if (mainSelected == Players.GetPlayerHeroEntityIndex( iPlayerID )) {
-		//$.Msg("Changing selection to base building")
-		var entities = Entities.GetAllEntities()
-		for (var i = 0; i < entities.length; i++) {
-			if ( (Entities.GetUnitName( entities[i] ) != "") && Entities.IsControllableByPlayer( entities[i], iPlayerID )) {
-				if (IsCityCenter(entities[i])){
-					GameUI.SelectUnit(entities[i], false);
-				}				
-			}
-		};
-	}*/
-
 	if (selectedEntities.length > 1 && IsMixedBuildingSelectionGroup(selectedEntities) ){
 		//$.Msg( "IsMixedBuildingSelectionGroup, proceeding to deselect the buildings and get only the units ")
 		$.Schedule(1/60, DeselectBuildings)	
 	}
 
 	$.Schedule(0.03, SendSelectedEntities);
+
+	// Selected sound
+    var cursor = GameUI.GetCursorPosition();
+    var mouseEntities = GameUI.FindScreenEntities( cursor );
+
+    if (mouseEntities.length > 0)
+    {
+        for ( var e of mouseEntities )
+        {
+            if ( !e.accurateCollision )
+                continue;
+                
+            if (Entities.IsControllableByPlayer( e.entityIndex, iPlayerID ))
+            {
+            	if (e.entityIndex == lastClickedEntity)
+            	{
+            		clickedCounter++;
+	                //$.Msg("Clicked ",clickedCounter," consecutive times on unit ",lastClickedEntity)
+	                if (clickedCounter >= pissedThreshold)
+	                {
+	                    //$.Msg("Send Pissed unit ",e.entityIndex)
+	                    GameEvents.SendCustomGameEventToServer( "play_selected_sound", { pID: iPlayerID, unit_index: e.entityIndex, pissed: true})
+	                    return false;
+	                }
+	                else
+	                	GameEvents.SendCustomGameEventToServer( "play_selected_sound", { pID: iPlayerID, unit_index: e.entityIndex, pissed: false})
+            	}
+            	else
+            	{
+            		lastClickedEntity = e.entityIndex
+            		GameEvents.SendCustomGameEventToServer( "play_selected_sound", { pID: iPlayerID, unit_index: e.entityIndex, pissed: false})
+            		ResetPissed(e.entityIndex)
+            	}
+            		    
+            }
+            else
+           		ResetPissed(0)     
+        }
+    }
+    else
+    	ResetPissed(0)
+}
+
+function ResetPissed(entityIndex) {
+	//$.Msg("Set pissed counter")
+    lastClickedEntity = entityIndex;
+    clickedCounter = 0;
 }
 
 function DeselectBuildings() {

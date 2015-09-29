@@ -10,11 +10,13 @@ Events
 
 if not Sounds then
   Sounds = class({})
+  CustomGameEventManager:RegisterListener( "play_selected_sound", Dynamic_Wrap(Sounds, "PlaySelectedSound"))
 end
 
 function Sounds:Start()
     Sounds.Sets = LoadKeyValues("scripts/kv/sounds.kv")
     Sounds.LastSoundDuration = {}
+    Sounds.PissedUnits = {}
 
     Sounds.OrdersToStrings = {
         [DOTA_UNIT_ORDER_MOVE_TO_POSITION]="move",
@@ -24,6 +26,7 @@ function Sounds:Start()
         ["SELECT"] = "select",
         ["SPAWN"] = "spawn",
         ["DIE"] = "die",
+        ["PISSED"] = "pissed",
     }
 
     print("[sounds.lua] Start")
@@ -43,9 +46,16 @@ function Sounds:PlaySoundSet( playerID, unit, order )
         
         -- Find the table associated with this order on our sounds keyvalue table
         local sound_table = Sounds:GetRandomLineForOrder(order_line)
+        if not sound_table then return end
         local sound_string = sound_table['String']   
-        local duration = sound_table['Duration'] + RandomInt(2,5)   
+        local randomThresholdTime = RandomInt(1,4)
+        local duration = sound_table['Duration'] + randomThresholdTime
         local sound_type = sound_table['Type'] --Area sounds      
+
+        -- Pissed orders can be send more frequently if we're spamming click on units
+        if order == "PISSED" then
+            duration = sound_table['Duration']
+        end
 
         if order == "DIE" then
             EmitSoundOn(sound_string, unit)
@@ -60,8 +70,22 @@ function Sounds:PlaySoundSet( playerID, unit, order )
                 EmitSoundOnClient(sound_string, player)
             end
 
+            --print("Playing",sound_string,"for",duration,"seconds")
             Sounds:SetNextValidTime(playerID, gameTime + duration)
         end
+    end
+end
+
+function Sounds:PlaySelectedSound( event )
+    local playerID = event.pID
+    local entityIndex = event.unit_index
+    local unit = EntIndexToHScript(entityIndex)
+    local bIsPissed = tobool(event.pissed)
+
+    if bIsPissed then
+        Sounds:PlaySoundSet( playerID, unit, "PISSED" )
+    else
+        Sounds:PlaySoundSet( playerID, unit, "SELECT" )
     end
 end
 

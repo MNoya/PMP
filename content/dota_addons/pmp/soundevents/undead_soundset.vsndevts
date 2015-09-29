@@ -304,39 +304,8 @@
                         {                          
                             "value0"        "sounds/undead/select/death_shall_cleanse_world.vsnd"
                             "value1"        "sounds/undead/select/killing_me_here.vsnd"
-                            "value2"        "sounds/undead/select/let_blood_drown_the_weak.vsnd"                                               
-                        }
-                    }
-                    "volume"            {   "value"     "8.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
-                    "pitch"             {   "value"     "1.000000"  }
-                    "soundlevel"        {   "value"     "100.00000" }
-                    "distance_max"      {   "value"     "1600.000"  }
-                    "event_type"        {   "value"     "1.000000"  }
-                }
-            }
-        }
-    }
-}
-
-"undead.Pissed.Rare"
-{
-    "operator_stacks"
-    {
-        "update_stack"
-        {
-            "reference_operator"
-            {
-                "operator"              "sos_reference_stack"
-                "reference_stack"       "dota_src1_3d"
-                "operator_variables"
-                {
-                    "vsnd_files"
-                    {
-                        "value"
-                        {                          
-                            "value0"        "sounds/undead/select/secret_to_happiness.vsnd"                                                
+                            "value2"        "sounds/undead/select/let_blood_drown_the_weak.vsnd"
+                            "value3"        "sounds/undead/select/secret_to_happiness.vsnd"                                           
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }

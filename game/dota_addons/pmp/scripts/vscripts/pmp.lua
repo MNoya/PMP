@@ -818,8 +818,6 @@ function PMP:OnPlayerSelectedEntities( event )
 
 	GameRules.SELECTED_UNITS[pID] = event.selected_entities
 
-    Sounds:PlaySoundSet( pID, GetMainSelectedEntity(pID), "SELECT" )
-
     FireGameEvent( 'ability_values_force_check', { player_ID = pID })
 end
 
