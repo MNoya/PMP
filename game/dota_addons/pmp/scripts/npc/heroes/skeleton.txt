@@ -9,7 +9,7 @@
     // Abilities
     //----------------------------------------------------------------
     "AbilityLayout"             "4"
-    "Ability1"                  "skeleton_reincarnate"
+    "Ability1"                  "skeleton_racial"
     "Ability2"                  ""
     "Ability3"                  ""
     "Ability4"                  ""

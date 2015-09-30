@@ -7,10 +7,25 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
     "AbilityCooldown"               "7"
 
+    "precache"
+    {
+        "particle"  "particles/radiant_fx2/good_ancient001_ambient.vpcf"
+    }
+
     "Modifiers"
     {
         "modifier_spawn_blood_elf"
         {
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/radiant_fx2/good_ancient001_ambient.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+            }
+            
             "Passive"           "1"
             "IsHidden"          "1"
             "ThinkInterval"     "7.0"

@@ -41,6 +41,46 @@
 		"human_tower"                                                                     "Human Tower"
 		"human_ghost"                                                                     "Human Ghost"
 
+		"blood_elf"                                                                       "Blood Elf"
+		"blood_elf_leader"                                                                "Blood Elf Leader"
+		"super_blood_elf"                                                                 "Super Blood Elf"
+		"blood_elf_garage"                                                                "Blood Elf Garage"
+		"blood_elf_pimpery"                                                               "Blood Elf Pimpery"
+		"blood_elf_tower"                                                                 "Blood Elf Tower"
+		"blood_elf_ghost"                                                                 "Blood Elf Ghost"
+
+		"goblin"                                                                          "Goblin"
+		"goblin_leader"                                                                   "Goblin Leader"
+		"super_goblin"                                                                    "Super Goblin"
+		"goblin_garage"                                                                   "Goblin Garage"
+		"goblin_pimpery"                                                                  "Goblin Pimpery"
+		"goblin_tower"                                                                    "Goblin Tower"
+		"goblin_ghost"                                                                    "Goblin Ghost"
+
+		"night_elf"                                                                       "Night Elf"
+		"night_elf_leader"                                                                "Night Elf Leader"
+		"super_night_elf"                                                                 "Super Night Elf"
+		"night_elf_garage"                                                                "Night Elf Garage"
+		"night_elf_pimpery"                                                               "Night Elf Pimpery"
+		"night_elf_tower"                                                                 "Night Elf Tower"
+		"night_elf_ghost"                                                                 "Night Elf Ghost"
+
+		"skeleton"                                                                        "Skeleton"
+		"skeleton_leader"                                                                 "Skeleton Leader"
+		"super_skeleton"                                                                  "Super Skeleton"
+		"skeleton_garage"                                                                 "Skeleton Garage"
+		"skeleton_pimpery"                                                                "Skeleton Pimpery"
+		"skeleton_tower"                                                                  "Skeleton Tower"
+		"skeleton_ghost"                                                                  "Skeleton Ghost"
+
+		"treant"                                                                          "Treant"
+		"treant_leader"                                                                   "Treant Leader"
+		"super_treant"                                                                    "Super Treant"
+		"treant_garage"                                                                   "Treant Garage"
+		"treant_pimpery"                                                                  "Treant Pimpery"
+		"treant_tower"                                                                    "Treant Tower"
+		"treant_ghost"                                                                    "Treant Ghost"
+
 		"barricade"                                                                       "Barricade"
 		"nian_boss"                                                                       "Boss"
 		"trader"                                                                          "Trader"
@@ -287,9 +327,9 @@
 		"DOTA_Tooltip_ability_trade_lumber_Description"                                   "Exchange <font color='#fea500'>100 gold</font> for <font color='#006411'>50 lumber</font>\n\n<font color='#64cf65'>Requires nearby patron</font>."
 		"DOTA_Tooltip_ability_trade_lumber_Note0"                                     	  "Requires nearby patron"
 
-		"DOTA_Tooltip_ability_goblin_greed"                                               "Goblin Greed"
-		"DOTA_Tooltip_ability_goblin_greed_Description"                                   ""
-		"DOTA_Tooltip_ability_goblin_greed_extra_bounty"                                  "EXTRA BOUNTY:"
+		"DOTA_Tooltip_ability_goblin_racial"                                               "Goblin Greed"
+		"DOTA_Tooltip_ability_goblin_racial_Description"                                   ""
+		"DOTA_Tooltip_ability_goblin_racial_extra_bounty"                                  "EXTRA BOUNTY:"
 
 		"DOTA_Tooltip_ability_peon_racial"                                                "Axe's Frenzy"
 		"DOTA_Tooltip_ability_peon_racial_Description"                                    "<font color='#00ff00'>Racial</font>\nIncreases attack and movement speed after each hit"
@@ -400,6 +440,93 @@
 
 		"DOTA_Tooltip_ability_summon_super_human_empty"                                   "Summon Super Human"
 		"DOTA_Tooltip_ability_summon_super_human_empty_Description"                       "You've used all your super units."
+
+		"DOTA_Tooltip_ability_blood_elf_heal"                                             "Heal"
+		"DOTA_Tooltip_ability_blood_elf_heal_Description"                                 "Heals a target friendly wounded unit for %heal% hit points."
+		"DOTA_Tooltip_ability_blood_elf_heal_heal"                                        "HEAL:"
+		"DOTA_Tooltip_ability_blood_elf_heal_autocast_radius"                             "AUTOCAST RADIUS:"
+
+		"DOTA_Tooltip_ability_blood_elf_inner_fire"                                       "Inner Fire"
+		"DOTA_Tooltip_ability_blood_elf_inner_fire_Description"                           "Increases a target friendly unit's damage by %damage_bonus_pct%% and armor by %darmor_bonus%."
+		"DOTA_Tooltip_ability_blood_elf_inner_fire_duration"                              "DURATION:"
+		"DOTA_Tooltip_ability_blood_elf_inner_fire_armor_bonus"                           "ARMOR BONUS:"
+		"DOTA_Tooltip_ability_blood_elf_inner_fire_damage_bonus_pct"                      "DAMAGE BONUS PCT:"
+		"DOTA_Tooltip_ability_blood_elf_inner_fire_autocast_radius"                       "AUTOCAST RADIUS:"
+
+		"DOTA_Tooltip_ability_blood_elf_flame_strike"                                     "Flame Strike"
+		"DOTA_Tooltip_ability_blood_elf_flame_strike_Description"                         "Conjures a pillar of fire which damages ground units in a target area over time."
+		"DOTA_Tooltip_ability_blood_elf_flame_strike_radius"                              "RADIUS:"
+		"DOTA_Tooltip_ability_blood_elf_flame_strike_first_strike_dps"                    "FIRST STRIKE DPS:"
+		"DOTA_Tooltip_ability_blood_elf_flame_strike_first_strike_duration"               "FIRST STRIKE DURATION:"
+		"DOTA_Tooltip_ability_blood_elf_flame_strike_burn_dps"                            "BURN DPS:"
+		"DOTA_Tooltip_ability_blood_elf_flame_strike_burn_duration"                       "BURN DURATION:"
+		"DOTA_Tooltip_ability_blood_elf_flame_strike_delay"                               "DELAY:"
+
+		"DOTA_Tooltip_ability_blood_elf_racial"                                           "Blood Elf Quickness"
+		"DOTA_Tooltip_ability_blood_elf_racial_Description"                               ""
+		"DOTA_Tooltip_ability_blood_elf_racial_dodge_chance"                              "DODGE CHANCE:"
+
+		"DOTA_Tooltip_ability_spawn_blood_elf"                                            "Spawn Blood Elf"
+		"DOTA_Tooltip_ability_spawn_blood_elf_Description"                                ""
+
+		"DOTA_Tooltip_ability_spawn_blood_elf_leader"                                     "Spawn Blood Elf Leader"
+		"DOTA_Tooltip_ability_spawn_blood_elf_leader_Description"                         ""
+
+		"DOTA_Tooltip_ability_summon_super_blood_elf"                                     "Summon Super Blood Elf"
+		"DOTA_Tooltip_ability_summon_super_blood_elf_Description"                         ""
+		"DOTA_Tooltip_ability_summon_super_blood_elf_duration"                            "DURATION:"
+
+		"DOTA_Tooltip_ability_summon_super_blood_elf_empty"                               "Summon Super Blood Elf"
+		"DOTA_Tooltip_ability_summon_super_blood_elf_empty_Description"                   ""
+
+		"DOTA_Tooltip_ability_goblin_healing_spray"                                       "Healing Spray"
+		"DOTA_Tooltip_ability_goblin_healing_spray_Description"                           "Sprays waves of healing mist that heals units in a target area."
+		"DOTA_Tooltip_ability_goblin_healing_spray_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_goblin_healing_spray_wave_duration"                         "WAVE DURATION:"
+		"DOTA_Tooltip_ability_goblin_healing_spray_wave_count"                            "WAVE COUNT:"
+		"DOTA_Tooltip_ability_goblin_healing_spray_wave_heal"                             "WAVE HEAL:"
+		"DOTA_Tooltip_ability_goblin_healing_spray_wave_interval"                         "WAVE INTERVAL:"
+
+		"DOTA_Tooltip_ability_goblin_attack"                                              "Ogre Attack"
+		"DOTA_Tooltip_ability_goblin_attack_Description"                                  "The Goblin Leader can attack, unlike other races"
+
+		"DOTA_Tooltip_ability_goblin_transmute"                                           "Goblin Transmute"
+		"DOTA_Tooltip_ability_goblin_transmute_Description"                               "Kills a target unit instantly, transforming it into gold which is added to your available gold."
+		"DOTA_Tooltip_ability_goblin_transmute_gold_bounty_multiplier"                    "GOLD BOUNTY MULTIPLIER:"
+		"DOTA_Tooltip_ability_goblin_transmute_Note0"									  "Transmute cannot be used on Heroes, or creeps above level 5."
+
+		"DOTA_Tooltip_ability_goblin_racial"                                              "Goblin's Greed"
+		"DOTA_Tooltip_ability_goblin_racial_Description"                                  ""
+		"DOTA_Tooltip_ability_goblin_racial_extra_bounty"                                 "EXTRA BOUNTY:"
+
+		"DOTA_Tooltip_ability_spawn_goblin"                                               "Spawn Goblin"
+		"DOTA_Tooltip_ability_spawn_goblin_Description"                                   ""
+
+		"DOTA_Tooltip_ability_spawn_goblin_leader"                                        "Spawn Goblin Leader"
+		"DOTA_Tooltip_ability_spawn_goblin_leader_Description"                            ""
+
+		"DOTA_Tooltip_ability_summon_super_goblin"                                        "Summon Super Goblin"
+		"DOTA_Tooltip_ability_summon_super_goblin_Description"                            ""
+		"DOTA_Tooltip_ability_summon_super_goblin_duration"                               "DURATION:"
+
+		"DOTA_Tooltip_ability_summon_super_goblin_empty"                                  "Summon Super Goblin"
+		"DOTA_Tooltip_ability_summon_super_goblin_empty_Description"                      ""
+
+		"DOTA_Tooltip_ability_night_elf_racial"                                           "Night Elf Racial"
+		"DOTA_Tooltip_ability_night_elf_racial_Description"                               ""
+
+		"DOTA_Tooltip_ability_spawn_night_elf"                                            "Spawn Night Elf"
+		"DOTA_Tooltip_ability_spawn_night_elf_Description"                                ""
+
+		"DOTA_Tooltip_ability_spawn_night_elf_leader"                                     "Spawn Night Elf Leader"
+		"DOTA_Tooltip_ability_spawn_night_elf_leader_Description"                         ""
+
+		"DOTA_Tooltip_ability_summon_super_night_elf"                                     "Summon Super Night Elf"
+		"DOTA_Tooltip_ability_summon_super_night_elf_Description"                         ""
+		"DOTA_Tooltip_ability_summon_super_night_elf_duration"                            "DURATION:"
+
+		"DOTA_Tooltip_ability_summon_super_night_elf_empty"                               "Summon Super Night Elf"
+		"DOTA_Tooltip_ability_summon_super_night_elf_empty_Description"                   ""
 
 		
 		"DOTA_Tooltip_ability_barrage_attack"                                             "Barrage Attack"
@@ -917,15 +1044,15 @@
 		
 
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1"                             "Upgrade Poisoned Weapons1"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_Description"                 "Deals 3 bonus damage per second. Reduces attack and movement speed by 15.\nLasts 5 seconds."
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2"                             "Upgrade Poisoned Weapons2"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_Description"                 "Deals 4 bonus damage per second. Reduces attack and movement speed by 25.\nLasts 5 seconds."
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3"                             "Upgrade Poisoned Weapons3"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_Description"                 "Deals 6 bonus damage per second and reduces attack and movement speed 35.\nLasts 5 seconds."
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4"                             "Upgrade Poisoned Weapons4"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_Description"                 "Deals 9 bonus damage per second. Reduces attack and movement speed by 45.\nLasts 5 seconds."
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5"                             "Upgrade Poisoned Weapons5"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_Description"                 "Deals %ddamage_per_second% bonus damage per second. Reduces attack and movement speed by %dreduced_attack_speed%%.\nLasts 5 seconds."
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_Description"                 "Deals 12 bonus damage per second. Reduces attack and movement speed by 60.\nLasts 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_damage_per_second"           "DAMAGE PER SECOND:"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_damage_per_second"           "DAMAGE PER SECOND:"
@@ -944,15 +1071,15 @@
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_reduced_movement_speed"      "MOVESPEED SLOW:"	
 
 		"DOTA_Tooltip_ability_item_upgrade_dodge1"                                        "Upgrade Dodge1"
-		"DOTA_Tooltip_ability_item_upgrade_dodge1_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge1_Description"                            "Gives a 20 to avoid an enemy attack."
 		"DOTA_Tooltip_ability_item_upgrade_dodge2"                                        "Upgrade Dodge2"
-		"DOTA_Tooltip_ability_item_upgrade_dodge2_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge2_Description"                            "Gives a 21 to avoid an enemy attack."
 		"DOTA_Tooltip_ability_item_upgrade_dodge3"                                        "Upgrade Dodge3"
-		"DOTA_Tooltip_ability_item_upgrade_dodge3_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge3_Description"                            "Gives a 22 to avoid an enemy attack."
 		"DOTA_Tooltip_ability_item_upgrade_dodge4"                                        "Upgrade Dodge4"
-		"DOTA_Tooltip_ability_item_upgrade_dodge4_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge4_Description"                            "Gives a 23 to avoid an enemy attack."
 		"DOTA_Tooltip_ability_item_upgrade_dodge5"                                        "Upgrade Dodge5"
-		"DOTA_Tooltip_ability_item_upgrade_dodge5_Description"                            "Gives a %ddodge_chance%% to avoid an enemy attack."
+		"DOTA_Tooltip_ability_item_upgrade_dodge5_Description"                            "Gives a 25 to avoid an enemy attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_dodge1_dodge_chance"                           "DODGE CHANCE:"
 		"DOTA_Tooltip_ability_item_upgrade_dodge2_dodge_chance"                           "DODGE CHANCE:"
@@ -961,21 +1088,21 @@
 		"DOTA_Tooltip_ability_item_upgrade_dodge5_dodge_chance"                           "DODGE CHANCE:"
 		
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1"                                 "Upgrade Spiked Armor1"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_Description"                     "Razor-sharp spikes on Armor deal 20%% of an enemy unit's melee attack damage back to it."
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2"                                 "Upgrade Spiked Armor2"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_Description"                     "Razor-sharp spikes on Armor deal 30%% of an enemy unit's melee attack damage back to it."
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3"                                 "Upgrade Spiked Armor3"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_Description"                     "Razor-sharp spikes on Armor deal 40%% of an enemy unit's melee attack damage back to it."
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4"                                 "Upgrade Spiked Armor4"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_Description"                     "Razor-sharp spikes on Armor deal 50%% of an enemy unit's melee attack damage back to it."
 		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5"                                 "Upgrade Spiked Armor5"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_Description"                     "Razor-sharp spikes on Armor deal %dmelee_damage_return%%% of an enemy unit's melee attack damage back to it."
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_Description"                     "Razor-sharp spikes on Armor deal 65%% of an enemy unit's melee attack damage back to it."
 
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_melee_damage_return"             "MELEE DAMAGE RETURN:"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_melee_damage_return"             "MELEE DAMAGE RETURN:"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_melee_damage_return"             "MELEE DAMAGE RETURN:"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_melee_damage_return"             "MELEE DAMAGE RETURN:"
-		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_melee_damage_return"             "MELEE DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor1_melee_damage_return"             "DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor2_melee_damage_return"             "DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor3_melee_damage_return"             "DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor4_melee_damage_return"             "DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_item_upgrade_spiked_armor5_melee_damage_return"             "DAMAGE RETURN:"
 
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial1"                                  "Upgrade Peon Racial (1)"
 		"DOTA_Tooltip_ability_item_upgrade_peon_racial1_Description"                      "Increase the level of Axe's Frenzy"
@@ -1034,25 +1161,74 @@
 		"DOTA_Tooltip_ability_item_upgrade_human_racial5_gold_cost"                       "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial1"                                "Upgrade Undead Racial (1)"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial1_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial1_Description"                    "Increase the level of Undead's Lifesteal"
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial1_gold_cost"                      "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial2"                                "Upgrade Undead Racial (2)"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial2_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial2_Description"                    "Increase the level of Undead's Lifesteal"
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial2_gold_cost"                      "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial3"                                "Upgrade Undead Racial (3)"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_Description"                    "Increase the level of Undead's Lifesteal"
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_gold_cost"                      "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial4"                                "Upgrade Undead Racial (4)"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_Description"                    "Increase the level of Undead's Lifesteal"
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_gold_cost"                      "GOLD COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial5"                                "Upgrade Undead Racial (5)"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_Description"                    "Increase the level of Undeads's Lifesteal"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_Description"                    "Increase the level of Undead's Lifesteal"
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_gold_cost"                      "GOLD COST:"
 
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial1"                                "Upgrade Goblin Racial (1)"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial1_Description"                    "Increase the level of Goblin's Greed"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial1_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial1_extra_bounty"                   "EXTRA BOUNTY:"
+
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial2"                                "Upgrade Goblin Racial (2)"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial2_Description"                    "Increase the level of Goblins's Greed"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial2_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial2_extra_bounty"                   "EXTRA BOUNTY:"
+
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial3"                                "Upgrade Goblin Racial (3)"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial3_Description"                    "Increase the level of Goblin's Greed"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial3_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial3_extra_bounty"                   "EXTRA BOUNTY:"
+
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial4"                                "Upgrade Goblin Racial (4)"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial4_Description"                    "Increase the level of Goblin's Greed"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial4_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial4_extra_bounty"                   "EXTRA BOUNTY:"
+
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5"                                "Upgrade Goblin Racial (5)"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5_Description"                    "Increase the level of Goblin's Greed"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5_extra_bounty"                   "EXTRA BOUNTY:"
+
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1"                             "Upgrade Blood Elf Racial (1)"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_dodge_chance"                "DODGE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2"                             "Upgrade Blood Elf Racial (2)"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_dodge_chance"                "DODGE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3"                             "Upgrade Blood Elf Racial (3)"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_dodge_chance"                "DODGE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4"                             "Upgrade Blood Elf Racial (4)"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_dodge_chance"                "DODGE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5"                             "Upgrade Blood Elf Racial (5)"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_dodge_chance"                "DODGE CHANCE:"
 
 
 		"DOTA_Tooltip_ability_item_upgrade_modifiers"                                     "Upgrade Modifiers"

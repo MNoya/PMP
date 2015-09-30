@@ -3,6 +3,7 @@ function InnerFireAutocast_Attack( event )
     local caster = event.caster
     local attacker = event.attacker
     local ability = event.ability
+    if not ability then return end
     local modifier = "modifier_inner_fire"
 
     if not attacker:IsMagicImmune() and ability:GetAutoCastState() and ability:IsFullyCastable() and not caster:IsSilenced() then

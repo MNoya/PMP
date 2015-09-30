@@ -9,7 +9,7 @@
     // Abilities
     //----------------------------------------------------------------
     "AbilityLayout"             "4"
-    "Ability1"                  "nightelf_range" //?
+    "Ability1"                  "nightelf_racial"
     "Ability2"                  ""
     "Ability3"                  ""
     "Ability4"                  ""

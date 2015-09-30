@@ -8,10 +8,10 @@
 	"npc_dota_hero_axe" "-1" //Peon
 	"npc_dota_hero_undying" "-1" //Undead
 	"npc_dota_hero_skeleton_king" "0" //Skeletons
-	"npc_dota_hero_meepo" "0"	//Goblin
+	"npc_dota_hero_meepo" "-1"	//Goblin
 	"npc_dota_hero_dragon_knight" "-1" //Human
 	"npc_dota_hero_drow_ranger" "0" //Night Elf
-	"npc_dota_hero_silencer" "0" //Blood Elf
+	"npc_dota_hero_silencer" "-1" //Blood Elf
 	"npc_dota_hero_treant" "0" // Treant
 
 	"npc_dota_hero_alchemist" "0"

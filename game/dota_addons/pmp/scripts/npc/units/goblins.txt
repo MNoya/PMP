@@ -196,10 +196,11 @@
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
     "Model"                     "models/heroes/techies/techies.vmdl"
-    "ModelScale"                "1"
+    "ModelScale"                "0.7"
     "Level"                     "6"
     "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
     "HealthBarOffset"           "140"
+    "RingRadius"                "100"
     "SoundSet"                  "Hero_Techies"
     "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
 
@@ -291,7 +292,7 @@
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
     "Model"                     "models/heroes/techies/fx_techiesfx_mine.vmdl"
-    "ModelScale"                "2"
+    "ModelScale"                "2.5"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
     "RingRadius"                "180"

@@ -1,17 +1,848 @@
 "DOTAAbilities"
 {
-	"goblin_greed"
+	"blood_elf_heal"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "blood_elf_heal"
+	    "MaxLevel"                      "1"
+	    
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+	    
+	    "AbilityCastPoint"              "0.0"
+	    "AbilityCastRange"              "350"
+	    "AbilityCooldown"               "1"
+	    "AbilityManacost"               "10"
+	    
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "heal"              "25"
+	        }
+	
+	        "02"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "autocast_radius"   "500"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "Heal"
+	        {
+	            "HealAmount"    "%heal"
+	            "Target"        "TARGET"
+	        }
+	
+	        "FireEffect"
+	        {
+	            "Target"            "TARGET"
+	            "EffectName"        "particles/units/heroes/hero_omniknight/omniknight_purification_d_glow.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	        }
+	
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_Omniknight.Purification"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_heal_autocast"
+	        {
+	            "Passive"       "1"
+	            "IsHidden"      "1"
+	
+	            "ThinkInterval" "1.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/blood_elf/heal.lua"
+	                    "Function"      "HealAutocast"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"blood_elf_inner_fire"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityTextureName"        "blood_elf_inner_fire"
+	    "MaxLevel"                  "1"
+	
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    
+	    "AbilityCastPoint"          "0.0"
+	    "AbilityCastRange"          "500"
+	    "AbilityCooldown"           "1"
+	    "AbilityManaCost"           "30"
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "duration"          "60"
+	        }
+	        "02"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "armor_bonus"       "20"
+	        }
+	        "03"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "damage_bonus_pct"  "10"
+	        }
+	
+	        "04"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "autocast_radius"   "500"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "ApplyModifier"
+	        {
+	            "Target"        "TARGET"
+	            "ModifierName"  "modifier_inner_fire"
+	        }
+	
+	        "FireSound"
+	        {
+	            "EffectName"    "DOTA_Item.Buckler.Activate"
+	            "Target"        "TARGET"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_inner_fire"
+	        {
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/items_fx/buckler.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	            }
+	
+	            "IsPurgable"    "1"
+	            "Duration"      "%duration"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"            "%armor_bonus"
+	                "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"   "%damage_bonus_pct"
+	            }
+	        }
+	
+	        "modifier_inner_fire_autocast_aura"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "Aura"              "modifier_inner_fire_autocast_attackstart"
+	            "Aura_Radius"       "%autocast_radius"
+	            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	            "Aura_Types"        "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	            "Aura_Flags"        "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+	        }
+	
+	        "modifier_inner_fire_autocast_attackstart"
+	        {
+	            "IsHidden"  "1"
+	            "OnAttack"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/blood_elf/inner_fire.lua"
+	                    "Function"      "InnerFireAutocast_Attack"
+	                }
+	            }
+	
+	            "OnAttacked"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/blood_elf/inner_fire.lua"
+	                    "Function"      "InnerFireAutocast_Attacked"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	// Conjures a pillar of fire which damages ground units in a target area over time.
+	"blood_elf_flame_strike"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "blood_elf_flame_strike"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_CHAOS_METEOR"
+	
+	    "AbilityCastRange"              "800"
+	    "AbilityCastPoint"              "0.5"
+	    "AbilityCooldown"               "20.0"
+	
+	    "AbilityManaCost"               "25"
+	
+	    "AoERadius"                     "%radius"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+	        "particle"  "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+	        "particle"  "particles/custom/blood_elf/phoenix_fire_spirit_ground.vpcf"
+	        "particle"  "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_requiemofsouls_line_ground.vpcf"
+	        "particle"  "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+	    }
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "radius"                "200"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "first_strike_dps"      "20"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "first_strike_duration" "3"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "burn_dps"              "5"
+	        }
+	        "05"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "burn_duration"         "6"
+	        }
+	        "06"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "delay"                 "1.6"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_Invoker.SunStrike.Charge"
+	            "Target"        "CASTER"
+	        }
+	
+	        "FireEffect"
+	        {
+	            "EffectName"        "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_requiemofsouls_line_ground.vpcf"
+	            "EffectAttachType"  "world_origin"
+	            "TargetPoint"       "POINT"
+	        }
+	
+	        "DelayedAction"
+	        {
+	            "Delay"     "%delay"
+	            "Action"    
+	            {
+	                "CreateThinker"
+	                {
+	                    "ModifierName"  "modifier_flame_strike_thinker1"
+	                    "Target"        "POINT"
+	                }
+	            }
+	        }
+	        
+	        "DestroyTrees"
+	        {
+	            "Target"        "POINT"
+	            "Radius"        "%radius"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_flame_strike_thinker1"
+	        {
+	            "IsHidden"      "1"
+	            "Duration"      "%first_strike_duration + 0.1"
+	
+	            "Aura"              "modifier_flame_strike_first_burn"
+	            "Aura_Radius"       "%radius"
+	            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_BOTH"
+	            "Aura_Types"        "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	
+	            "OnCreated"
+	            {
+	                "Damage"
+	                {
+	                    "Type"      "DAMAGE_TYPE_MAGICAL"
+	                    "Damage"    "%first_strike_dps"
+	                    "Target"
+	                    {
+	                        "Center"    "TARGET"
+	                        "Radius"    "%radius"
+	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+	                        "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	                    }
+	                }
+	
+	                "FireSound"
+	                {
+	                    "EffectName"    "Ability.LightStrikeArray"
+	                    "Target"        "TARGET"
+	                }
+	
+	                "AttachEffect"
+	                {
+	                    "Target"            "TARGET"
+	                    "EffectName"        "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "EffectRadius"      "%radius"
+	                }
+	                "AttachEffect"
+	                {
+	                    "Target"            "TARGET"
+	                    "EffectName"        "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "EffectRadius"      "%radius"
+	                }
+	            }
+	
+	            "ThinkInterval"     "1"
+	            "OnIntervalThink"
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"            "TARGET"
+	                    "EffectName"        "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "EffectRadius"      "%radius"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "CreateThinker"
+	                {
+	                    "ModifierName"  "modifier_flame_strike_thinker2"
+	                    "Target"        "TARGET"
+	                }
+	            }
+	        }
+	
+	        "modifier_flame_strike_thinker2"
+	        {
+	            "IsHidden"      "1"
+	            "Duration"      "%burn_duration + 0.1"
+	
+	            "Aura"              "modifier_flame_strike_second_burn"
+	            "Aura_Radius"       "%radius"
+	            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_BOTH"
+	            "Aura_Types"        "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	
+	            "OnCreated"
+	            {
+	                "Damage"
+	                {
+	                    "Type"      "DAMAGE_TYPE_MAGICAL"
+	                    "Damage"    "%burn_duration"
+	                    "Target"
+	                    {
+	                        "Center"    "TARGET"
+	                        "Radius"    "%radius"
+	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+	                        "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	                    }
+	                }
+	
+	                "AttachEffect"
+	                {
+	                    "Target"            "TARGET"
+	                    "EffectName"        "particles/custom/blood_elf/phoenix_fire_spirit_ground.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                }
+	            }
+	
+	            "ThinkInterval"     "1"
+	            "OnIntervalThink"
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"            "TARGET"
+	                    "EffectName"        "particles/custom/blood_elf/phoenix_fire_spirit_ground.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "EffectRadius"      "%radius"
+	                }
+	            }
+	        }
+	
+	        "modifier_flame_strike_first_burn"
+	        {
+	            "IsDebuff"  "1"
+	
+	            "ThinkInterval" "1"
+	            "OnIntervalThink"
+	            {
+	                "Damage"
+	                {
+	                    "Type"      "DAMAGE_TYPE_MAGICAL"
+	                    "Damage"    "%first_strike_dps"
+	                    "Target"    "TARGET"
+	                }
+	            }
+	        }
+	
+	        "modifier_flame_strike_second_burn"
+	        {
+	            "IsDebuff"  "1"
+	
+	            "ThinkInterval" "1"
+	            "OnIntervalThink"
+	            {
+	                "Damage"
+	                {
+	                    "Type"      "DAMAGE_TYPE_MAGICAL"
+	                    "Damage"    "%burn_dps"
+	                    "Target"    "TARGET"
+	                }
+	            }
+	        }
+	    }
+	}
+	"blood_elf_racial"
 	{
 	    "BaseClass"             "ability_datadriven"
 	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityTextureName"    "goblin_greed"
+	    "AbilityTextureName"    "blood_elf_quickness"
+	    "MaxLevel"              "6"
 	            
 	    "AbilitySpecial"
 	    {
 	        "01"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "extra_bounty"      "2.0"
+	            "dodge_chance"      "8 12 16 20 24 30"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
+	    }
+	
+	    // Linked to the damage filter
+	    "modifier_blood_elf_quickness"
+	    {
+	        "Passive"   "1"
+	        "IsHidden"  "1"
+	    }
+	}
+	"spawn_blood_elf"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_blood_elf"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityCooldown"               "7"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/radiant_fx2/good_ancient001_ambient.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_blood_elf"
+	        {
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/radiant_fx2/good_ancient001_ambient.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	            }
+	            
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "ThinkInterval"     "7.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "blood_elf"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"spawn_blood_elf_leader"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_blood_elf_leader"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityCooldown"               "180"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_blood_elf_caster"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/shared.lua"
+	                    "Function"      "StartCooldown"
+	                }
+	            }
+	            "ThinkInterval"     "180.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "blood_elf_leader"
+	                }
+	            }
+	        }
+	    }
+	}
+	"summon_super_blood_elf"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_blood_elf"
+	    "MaxLevel"                      "3"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityCooldown"               "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "duration"            "20.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/spawn.lua"
+	            "Function"      "SpawnSuperUnit"
+	            "UnitName"      "super_blood_elf"
+	            "Duration"      "%duration"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_super_spawn"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SuperPeonCharges"
+	                }
+	            }
+	        }
+	
+	        "modifier_super_unit_charges"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"summon_super_blood_elf_empty"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_blood_elf"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	//Sprays waves of healing mist that heals units in a target area.
+	"goblin_healing_spray"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "goblin_healing_spray"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityCastAnimation"          "ACT_DOTA_ALCHEMIST_CONCOCTION"
+	
+	    "AbilityCastRange"              "800"
+	    "AbilityCastPoint"              "0.1"
+	    "AbilityCooldown"               "0.0"
+	
+	    "AbilityManaCost"               "60"
+	    
+	    "AOERadius"                     "%radius"
+	    "AbilityChannelTime"            "4.0"
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "radius"                "250"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "wave_duration"         "4.0"
+	        }       
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "wave_count"            "3"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "wave_heal"             "10"
+	        }
+	        "05"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "wave_interval"         "1.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/goblin/healing_spray.lua"
+	            "Function"      "HealingSprayStart"
+	            "Target"        "POINT"
+	        }
+	
+	        "ApplyModifier"
+	        {
+	            "ModifierName"  "modifier_healing_spray_channelling"
+	            "Target"        "CASTER"
+	        }
+	
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_Alchemist.UnstableConcoction.Throw"
+	            "Target"        "CASTER"
+	        }
+	    }
+	
+	    "OnChannelFinish"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/goblin/healing_spray.lua"
+	            "Function"      "HealingSprayEnd"
+	        } 
+	
+	        "RemoveModifier"
+	        {
+	            "ModifierName"  "modifier_healing_spray_channelling"
+	            "Target"        "CASTER"
+	        }       
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_healing_spray_channelling"
+	        {
+	            "IsHidden"          "0"
+	            "ThinkInterval"     "1.0"
+	            "OnIntervalThink"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName"  "modifier_channeling"
+	                    "Target"        "CASTER"
+	                    "Duration"      "0.9"
+	                }
+	            }
+	        }
+	
+	        "modifier_channeling"
+	        {
+	            "IsHidden"              "1"
+	            "OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_1"
+	        }
+	
+	        "modifier_healing_spray_thinker"
+	        {
+	            "ThinkInterval"  "%wave_interval"
+	            "OnIntervalThink"
+	            {              
+	                "Heal"
+	                {
+	                    "Target"
+	                    {
+	                        "Center"    "TARGET"
+	                        "Radius"    "%radius"
+	                        "Teams"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+	                        "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	                        "Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+	                    }
+	                    "HealAmount"    "%wave_heal"
+	                }                   
+	
+	                "FireSound"
+	                {
+	                    "EffectName"    "Hero_Alchemist.UnstableConcoction.Throw"
+	                    "Target"        "CASTER"
+	                }                                    
+	                
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/goblin/healing_spray.lua"
+	                    "Function"      "HealingSprayWave"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	// This gives the Ogre an attack.
+	"goblin_attack"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "goblin_attack"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	
+	// Kills a target unit instantly, transforming it into gold which is added to your available gold! Transmute cannot be used on Heroes, or creeps above level 5.
+	"goblin_transmute"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "goblin_transmute"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+	
+	    "AbilityCastRange"              "650"
+	    "AbilityCooldown"               "45.0"
+	
+	    "AbilityManaCost"               "100"
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                  "FIELD_FLOAT"
+	            "gold_bounty_multiplier"    "5" //Placeholder
+	        }
+	    }
+	    
+	    "OnSpellStart"
+	    {
+	        "FireSound"
+	        {
+	            "EffectName"    "DOTA_Item.Hand_Of_Midas"
+	            "Target"        "TARGET"
+	        }
+	
+	        "FireEffect"
+	        {
+	            "EffectName"        "particles/items2_fx/hand_of_midas.vpcf"
+	            "EffectAttachType"  "follow_origiin"
+	            "Target"            "TARGET"
+	            "ControlPointEntities"
+	            {
+	                "TARGET"    "attach_hitloc"
+	                "CASTER"    "attach_hitloc"
+	            }
+	        }
+	
+	        "RunScript"
+	        {
+	            "ScriptFile"            "abilities/goblin/transmute.lua"
+	            "Function"              "Transmute"
+	        }   
+	    }
+	}
+	"goblin_racial"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"    "goblin_greed"
+	    "MaxLevel"              "6"
+	            
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "extra_bounty"      "2 3 4 5 6 7"
 	        }
 	    }
 	
@@ -22,11 +853,10 @@
 	        "particle"  "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
 	    }
 	
-	    // Option: instead of changing the popup text globally, we add an extra one
 	    "modifier_goblins_greed"
 	    {
 	        "Passive"   "1"
-	        "IsHidden"  "0"
+	        "IsHidden"  "1"
 	
 	        "OnKill"
 	        {
@@ -37,6 +867,139 @@
 	            }
 	        }
 	    }
+	}
+	// Spawn rate: 7 seconds
+	// Spawn 1 at a time and increases with upgrade
+	"spawn_goblin"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_goblin"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityCooldown"               "7"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_goblin"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "ThinkInterval"     "7.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "goblin"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+	"spawn_goblin_leader"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_goblin_leader"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityCooldown"               "180"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_goblin_caster"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/shared.lua"
+	                    "Function"      "StartCooldown"
+	                }
+	            }
+	            "ThinkInterval"     "180.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "goblin_leader"
+	                }
+	            }
+	        }
+	    }
+	}
+	"summon_super_goblin"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_goblin"
+	    "MaxLevel"                      "3"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityCooldown"               "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "duration"            "20.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/spawn.lua"
+	            "Function"      "SpawnSuperUnit"
+	            "UnitName"      "super_goblin"
+	            "Duration"      "%duration"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_super_spawn"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SuperPeonCharges"
+	                }
+	            }
+	        }
+	
+	        "modifier_super_unit_charges"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"summon_super_goblin_empty"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_goblin"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 	//Slow on, 5 mana 60% ms slow and 25% attack for 60 seconds
 	//10 mana polymorph for 5 seconds
@@ -516,6 +1479,148 @@
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityTextureName"            "summon_super_human"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	//night_elf_owl_scout
+	//night_elf_mass_windwalk
+	//night_elf_trueshoot_aura
+	"night_elf_racial"
+	{ 
+	    //500 Range, +600 Nightvision
+	    // Deal 50% damage to melee units, buildings, 100% damage to ranged untis; take 140% from melee, 100% from ranged)
+	    "BaseClass"             "ability_datadriven"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"    "night_elf_range_attack"
+	    "MaxLevel"              "6"
+	}
+	"spawn_night_elf"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_night_elf"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityCooldown"               "7"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_night_elf"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "ThinkInterval"     "7.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "night_elf"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"spawn_night_elf_leader"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_night_elf_leader"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityCooldown"               "180"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_night_elf_caster"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/shared.lua"
+	                    "Function"      "StartCooldown"
+	                }
+	            }
+	            "ThinkInterval"     "180.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "night_elf_leader"
+	                }
+	            }
+	        }
+	    }
+	}
+	"summon_super_night_elf"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_night_elf"
+	    "MaxLevel"                      "3"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityCooldown"               "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "duration"            "20.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/spawn.lua"
+	            "Function"      "SpawnSuperUnit"
+	            "UnitName"      "super_night_elf"
+	            "Duration"      "%duration"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_super_spawn"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SuperPeonCharges"
+	                }
+	            }
+	        }
+	
+	        "modifier_super_unit_charges"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"summon_super_night_elf_empty"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_night_elf"
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4440,6 +5545,297 @@
 	    "AbilityCastRange"          "900"
 	
 	    "AbilityGoldCost"           "100"
+	}
+	//skeleton_carrion_swarm
+	//skeleton_sacrifice
+	//skeleton_resurrection_aura --Doubles the change to resurrect
+	"skeleton_racial"
+	{ 
+	    //1/6 to resurrect
+	    "BaseClass"             "ability_datadriven"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"    "skeleton_reincarnation"
+	    "MaxLevel"              "6"
+	}
+	"spawn_skeleton"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_skeleton"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityCooldown"               "7"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_skeleton"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "ThinkInterval"     "7.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "skeleton"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"spawn_skeleton_leader"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_skeleton_leader"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityCooldown"               "180"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_skeleton_caster"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/shared.lua"
+	                    "Function"      "StartCooldown"
+	                }
+	            }
+	            "ThinkInterval"     "180.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "skeleton_leader"
+	                }
+	            }
+	        }
+	    }
+	}
+	"summon_super_skeleton"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_skeleton"
+	    "MaxLevel"                      "3"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityCooldown"               "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "duration"            "20.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/spawn.lua"
+	            "Function"      "SpawnSuperUnit"
+	            "UnitName"      "super_skeleton"
+	            "Duration"      "%duration"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_super_spawn"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SuperPeonCharges"
+	                }
+	            }
+	        }
+	
+	        "modifier_super_unit_charges"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"summon_super_skeleton_empty"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_skeleton"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"spawn_treant"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_treant"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityCooldown"               "7"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_treant"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "ThinkInterval"     "7.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "treant"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"spawn_treant_leader"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "spawn_treant_leader"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityCooldown"               "180"
+	
+	    "Modifiers"
+	    {
+	        "modifier_spawn_treant_caster"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/shared.lua"
+	                    "Function"      "StartCooldown"
+	                }
+	            }
+	            "ThinkInterval"     "180.0"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SpawnUnit"
+	                    "UnitName"      "treant_leader"
+	                }
+	            }
+	        }
+	    }
+	}
+	"summon_super_treant"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_treant"
+	    "MaxLevel"                      "3"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityCooldown"               "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "duration"            "20.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf"
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/spawn.lua"
+	            "Function"      "SpawnSuperUnit"
+	            "UnitName"      "super_treant"
+	            "Duration"      "%duration"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_super_spawn"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/spawn.lua"
+	                    "Function"      "SuperPeonCharges"
+	                }
+	            }
+	        }
+	
+	        "modifier_super_unit_charges"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"summon_super_treant_empty"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "summon_super_treant"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	//treant_treants //Set tree regrow time to 30ish
+	//treant_detonate
+	//treant_living_armor
+	// This skill is awfully bad.
+	"treant_racial"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"    "treant_thorns"
+	    "MaxLevel"              "6"
+	            
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "damage_return"     "5 10 15 20 25 30"
+	        }
+	    }
 	}
 	// Spawn rate: 7 seconds
 	// Spawn 1 at a time and increases with upgrade

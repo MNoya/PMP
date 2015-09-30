@@ -217,8 +217,9 @@
     {
         "particle"  "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
         "particle"  "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
-        "particle"  "particles/custom/phoenix_fire_spirit_ground.vpcf"
+        "particle"  "particles/custom/blood_elf/phoenix_fire_spirit_ground.vpcf"
         "particle"  "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_requiemofsouls_line_ground.vpcf"
+        "particle"  "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
     }
@@ -233,7 +234,7 @@
         "02"
         {
             "var_type"              "FIELD_INTEGER"
-            "first_strike_dps"      "30"
+            "first_strike_dps"      "20"
         }
         "03"
         {
@@ -391,7 +392,7 @@
                 "AttachEffect"
                 {
                     "Target"            "TARGET"
-                    "EffectName"        "particles/custom/phoenix_fire_spirit_ground.vpcf"
+                    "EffectName"        "particles/custom/blood_elf/phoenix_fire_spirit_ground.vpcf"
                     "EffectAttachType"  "follow_origin"
                 }
             }
@@ -402,7 +403,7 @@
                 "AttachEffect"
                 {
                     "Target"            "TARGET"
-                    "EffectName"        "particles/custom/phoenix_fire_spirit_ground.vpcf"
+                    "EffectName"        "particles/custom/blood_elf/phoenix_fire_spirit_ground.vpcf"
                     "EffectAttachType"  "follow_origin"
                     "EffectRadius"      "%radius"
                 }

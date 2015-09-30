@@ -9,7 +9,7 @@
     // Abilities
     //----------------------------------------------------------------
     "AbilityLayout"             "4"
-    "Ability1"                  "blood_elf_dodge"
+    "Ability1"                  "blood_elf_racial"
     "Ability2"                  ""
     "Ability3"                  ""
     "Ability4"                  ""

@@ -49,7 +49,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 	[
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/custom/alchemist_acid_spray_cast_b.vpcf"
+			string m_ChildRef = "particles/custom/goblin/alchemist_acid_spray_cast_b.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false
@@ -57,7 +57,7 @@ CParticleSystemDefinition CParticleSystemDefinition_0
 		},
 		ParticleChildrenInfo_t
 		{
-			string m_ChildRef = "particles/custom/alchemist_acid_spray_cast_rope.vpcf"
+			string m_ChildRef = "particles/custom/goblin/alchemist_acid_spray_cast_rope.vpcf"
 			bool m_bPreventNameBasedLookup = false
 			float m_flDelay = 0.000000
 			bool m_bEndCap = false

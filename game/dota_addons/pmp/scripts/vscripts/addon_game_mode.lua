@@ -52,6 +52,22 @@ function Precache( context )
 	PrecacheUnitByNameSync("human_tower", context)
 	PrecacheUnitByNameSync("human_ghost", context)
 
+	PrecacheUnitByNameSync("goblin", context)
+	PrecacheUnitByNameSync("goblin_leader", context)
+	PrecacheUnitByNameSync("super_goblin", context)
+	PrecacheUnitByNameSync("goblin_garage", context)
+	PrecacheUnitByNameSync("goblin_pimpery", context)	
+	PrecacheUnitByNameSync("goblin_tower", context)
+	PrecacheUnitByNameSync("goblin_ghost", context)
+
+	PrecacheUnitByNameSync("blood_elf", context)
+	PrecacheUnitByNameSync("blood_elf_leader", context)
+	PrecacheUnitByNameSync("super_blood_elf", context)
+	PrecacheUnitByNameSync("blood_elf_garage", context)
+	PrecacheUnitByNameSync("blood_elf_pimpery", context)	
+	PrecacheUnitByNameSync("blood_elf_tower", context)
+	PrecacheUnitByNameSync("blood_elf_ghost", context)
+
 	PrecacheUnitByNameSync("nian_boss", context)
 
 	PrecacheUnitByNameSync("npc_dota_hero_axe", context)

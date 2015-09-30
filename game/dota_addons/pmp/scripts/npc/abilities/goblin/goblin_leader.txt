@@ -2,7 +2,7 @@
 "goblin_healing_spray"
 {
     "BaseClass"                     "ability_datadriven"
-    "AbilityTextureName"            "alchemist_healing_spray"
+    "AbilityTextureName"            "goblin_healing_spray"
     "MaxLevel"                      "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -14,7 +14,7 @@
     "AbilityCastPoint"              "0.1"
     "AbilityCooldown"               "0.0"
 
-    "AbilityManaCost"               "75"
+    "AbilityManaCost"               "60"
     
     "AOERadius"                     "%radius"
     "AbilityChannelTime"            "4.0"

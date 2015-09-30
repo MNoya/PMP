@@ -59,6 +59,7 @@ function BloodlustAutocast_Attack( event )
     local caster = event.caster
     local attacker = event.attacker
     local ability = event.ability
+    if not ability then return end
 
     if IsLeaderUnit(attacker) then return end
 

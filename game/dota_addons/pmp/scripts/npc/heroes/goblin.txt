@@ -9,7 +9,7 @@
     // Abilities
     //----------------------------------------------------------------
     "AbilityLayout"             "4"
-    "Ability1"                  "goblin_greed"
+    "Ability1"                  "goblin_racial"
     "Ability2"                  ""
     "Ability3"                  ""
     "Ability4"                  ""
