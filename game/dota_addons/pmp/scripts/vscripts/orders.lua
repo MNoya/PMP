@@ -135,7 +135,7 @@ function PMP:FilterExecuteOrder( filterTable )
             n = n+1
 
             -- Don't move aggresive with the Leader units
-            if IsLeaderUnit(unit) then
+            if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
                 ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = pos, Queue = queue})
             else
                 ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = order_type, Position = pos, Queue = queue})
@@ -163,7 +163,7 @@ function PMP:FilterExecuteOrder( filterTable )
             unit.skip = true
 
             -- Don't move aggresive with the Leader units
-            if IsLeaderUnit(unit) then
+            if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
                 ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = pos, Queue = queue})
             else
                 ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET, TargetIndex = targetIndex, Queue = queue})

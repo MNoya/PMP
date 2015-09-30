@@ -1,3 +1,212 @@
-//goblin_healing_spray
-//goblin_attack
-//goblin_transmute
+//Sprays waves of healing mist that heals units in a target area.
+"goblin_healing_spray"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "alchemist_healing_spray"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityCastAnimation"          "ACT_DOTA_ALCHEMIST_CONCOCTION"
+
+    "AbilityCastRange"              "800"
+    "AbilityCastPoint"              "0.1"
+    "AbilityCooldown"               "0.0"
+
+    "AbilityManaCost"               "75"
+    
+    "AOERadius"                     "%radius"
+    "AbilityChannelTime"            "4.0"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "250"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "wave_duration"         "4.0"
+        }       
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "wave_count"            "3"
+        }
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "wave_heal"             "10"
+        }
+        "05"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "wave_interval"         "1.0"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/goblin/healing_spray.lua"
+            "Function"      "HealingSprayStart"
+            "Target"        "POINT"
+        }
+
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_healing_spray_channelling"
+            "Target"        "CASTER"
+        }
+
+        "FireSound"
+        {
+            "EffectName"    "Hero_Alchemist.UnstableConcoction.Throw"
+            "Target"        "CASTER"
+        }
+    }
+
+    "OnChannelFinish"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/goblin/healing_spray.lua"
+            "Function"      "HealingSprayEnd"
+        } 
+
+        "RemoveModifier"
+        {
+            "ModifierName"  "modifier_healing_spray_channelling"
+            "Target"        "CASTER"
+        }       
+    }
+
+    "Modifiers"
+    {
+        "modifier_healing_spray_channelling"
+        {
+            "IsHidden"          "0"
+            "ThinkInterval"     "1.0"
+            "OnIntervalThink"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName"  "modifier_channeling"
+                    "Target"        "CASTER"
+                    "Duration"      "0.9"
+                }
+            }
+        }
+
+        "modifier_channeling"
+        {
+            "IsHidden"              "1"
+            "OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_1"
+        }
+
+        "modifier_healing_spray_thinker"
+        {
+            "ThinkInterval"  "%wave_interval"
+            "OnIntervalThink"
+            {              
+                "Heal"
+                {
+                    "Target"
+                    {
+                        "Center"    "TARGET"
+                        "Radius"    "%radius"
+                        "Teams"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+                        "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                        "Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+                    }
+                    "HealAmount"    "%wave_heal"
+                }                   
+
+                "FireSound"
+                {
+                    "EffectName"    "Hero_Alchemist.UnstableConcoction.Throw"
+                    "Target"        "CASTER"
+                }                                    
+                
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/goblin/healing_spray.lua"
+                    "Function"      "HealingSprayWave"
+                }
+            }
+        }
+    }
+}
+
+// This gives the Ogre an attack.
+"goblin_attack"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "goblin_attack"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}
+
+// Kills a target unit instantly, transforming it into gold which is added to your available gold! Transmute cannot be used on Heroes, or creeps above level 5.
+"goblin_transmute"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "goblin_transmute"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+
+    "AbilityCastRange"              "650"
+    "AbilityCooldown"               "45.0"
+
+    "AbilityManaCost"               "100"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "gold_bounty_multiplier"    "5" //Placeholder
+        }
+    }
+    
+    "OnSpellStart"
+    {
+        "FireSound"
+        {
+            "EffectName"    "DOTA_Item.Hand_Of_Midas"
+            "Target"        "TARGET"
+        }
+
+        "FireEffect"
+        {
+            "EffectName"        "particles/items2_fx/hand_of_midas.vpcf"
+            "EffectAttachType"  "follow_origiin"
+            "Target"            "TARGET"
+            "ControlPointEntities"
+            {
+                "TARGET"    "attach_hitloc"
+                "CASTER"    "attach_hitloc"
+            }
+        }
+
+        "RunScript"
+        {
+            "ScriptFile"            "abilities/goblin/transmute.lua"
+            "Function"              "Transmute"
+        }   
+    }
+}

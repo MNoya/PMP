@@ -111,7 +111,7 @@
     // Abilities
     //----------------------------------------------------------------
     "Ability1"                  "blood_elf_heal"
-    "Ability2"                  "blood_elf_holy_fire"
+    "Ability2"                  "blood_elf_inner_fire"
     "Ability3"                  "blood_elf_flame_strike"
     
     // Armor
