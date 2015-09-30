@@ -69,6 +69,7 @@ function BuildGameArray()
     local game = {}
     game.boss_killed = GetBossKilled()
     game.times_traded = GetTimesTraded()
+    game.version = GetVersion()
     return game
 end
 

@@ -935,3 +935,7 @@ function PMP:ColorForPlayerID( pID )
     end
     return color
 end
+
+function GetVersion()
+    return PMPVERSION
+end
