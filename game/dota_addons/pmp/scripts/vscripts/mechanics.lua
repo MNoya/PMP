@@ -176,6 +176,12 @@ function GetLumberBounty( unit )
     return unit_table and unit_table["BountyLumber"] or 0
 end
 
+function GetGoldBounty( unit )
+    local unit_name = unit:GetUnitName()
+    local unit_table = GameRules.UnitKV[unit_name]
+    return unit_table and unit_table["BountyGoldMax"] or 0
+end
+
 
 ------------------------------------------------
 --               Boolean checks               --

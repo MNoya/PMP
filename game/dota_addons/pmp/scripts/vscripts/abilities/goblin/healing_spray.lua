@@ -1,3 +1,13 @@
+function HealingSprayAnimation( event )
+	local caster = event.caster
+
+	caster:EmitSound("Hero_Alchemist.ChemicalRage.Cast")
+	StartAnimation(caster, {duration=0.5, activity=ACT_DOTA_ALCHEMIST_CONCOCTION, rate=1})
+
+	caster:RemoveModifierByName("modifier_animation_translate")
+end
+
+
 function HealingSprayStart( event )
 	local caster = event.caster
 	local point = event.target_points[1]
@@ -19,15 +29,25 @@ function HealingSprayWave( event )
 	ParticleManager:SetParticleControl(particle, 15, Vector(255,255,0))
 	ParticleManager:SetParticleControl(particle, 16, Vector(255,255,0))
 
+	local target = caster.healing_spray_dummy
+
 	local particleName2 = "particles/custom/goblin/alchemist_acid_spray.vpcf"
-	local particle2 = ParticleManager:CreateParticle(particleName2, PATTACH_ABSORIGIN, caster)
+	local particle2 = ParticleManager:CreateParticle(particleName2, PATTACH_CUSTOMORIGIN, caster)
+	ParticleManager:SetParticleControl(particle2, 0, target:GetAbsOrigin())
 	ParticleManager:SetParticleControl(particle2, 1, Vector(radius, 1, radius))
-	ParticleManager:SetParticleControl(particle, 15, Vector(255,255,0))
-	ParticleManager:SetParticleControl(particle, 16, Vector(255,255,0))
+	ParticleManager:SetParticleControl(particle2, 15, Vector(255,255,0))
+	ParticleManager:SetParticleControl(particle2, 16, Vector(255,255,0))
+
+	Timers:CreateTimer(1, function() ParticleManager:DestroyParticle(particle2, true) end)
+
+	StartAnimation(caster, {duration=0.5, activity=ACT_DOTA_CAST_ABILITY_1, rate=1})
 end
 
 function HealingSprayEnd( event )
 	local caster = event.caster
 
-	caster.healing_spray_dummy:RemoveSelf()
+	UTIL_Remove(caster.healing_spray_dummy)
+
+	caster:AddNewModifier(caster, nil, "modifier_animation_translate", {translate="chemical_rage"})
+    caster:SetModifierStackCount("modifier_animation_translate", caster, 2)
 end

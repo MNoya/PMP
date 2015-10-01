@@ -531,6 +531,10 @@ function PMP:OnNPCSpawned(keys)
 	end
 
     --ApplyModifier(npc, "modifier_attackable")
+
+    -- Ignore default gold bounty
+    npc:SetMaximumGoldBounty(0)
+    npc:SetMinimumGoldBounty(0)
 end
 
 function PMP:OnHeroInGame(hero)
@@ -704,11 +708,26 @@ function PMP:OnEntityKilled( event )
         Sounds:PlaySoundSet( killed_playerID, killed, "DIE" )
     end
 
-    -- Give lumber bounty to the attacker (unless denied)
+    -- Give bounty to the attacker (unless denied)
     if attacker_playerID and attacker_playerID ~= -1 and killed_teamNumber ~= attacker_teamNumber then
         local lumber_bounty = GetLumberBounty(killed)
+        local gold_bounty = GetGoldBounty(killed)
+
+        -- Goblin Racial
+        if attacker and attacker:HasAbility("goblin_racial") then
+            local gg = attacker:FindAbilityByName("goblin_racial")
+            local bonus = gg:GetLevelSpecialValueFor("extra_bounty", gg:GetLevel()-1)
+            lumber_bounty = lumber_bounty + bonus
+            gold_bounty = gold_bounty + bonus
+        end
+
+        ModifyGold(attacker_playerID, gold_bounty)
+        PopupGoldGain(killed, gold_bounty, attacker_teamNumber)
+
         ModifyLumber(attacker_playerID, lumber_bounty)
         PopupLumber(killed, lumber_bounty, attacker_teamNumber)
+
+        EmitSoundOnClient("General.Coins", PlayerResource:GetPlayer(attacker_playerID))
 
         attacker_hero.lumber_earned = attacker_hero.lumber_earned + lumber_bounty
     end
@@ -758,7 +777,8 @@ function PMP:MakePlayerLose( playerID )
         local explosion2 = ParticleManager:CreateParticle("particles/dire_fx/bad_barracks001_ranged_destroy.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 
         local origin = hero:GetAbsOrigin()
-        hero.ghost = CreateUnitByName("peon_ghost", origin, false, hero, hero, hero:GetTeamNumber())
+        local race = GetRace(hero)
+        hero.ghost = CreateUnitByName(race.."_ghost", origin, false, hero, hero, hero:GetTeamNumber())
         hero.ghost:SetOwner(hero)
         hero.ghost:SetControllableByPlayer(playerID, true)
         hero.lost = true

@@ -11,13 +11,13 @@
     "AbilityCastAnimation"          "ACT_DOTA_ALCHEMIST_CONCOCTION"
 
     "AbilityCastRange"              "800"
-    "AbilityCastPoint"              "0.1"
+    "AbilityCastPoint"              "0.0"
     "AbilityCooldown"               "0.0"
 
     "AbilityManaCost"               "60"
     
     "AOERadius"                     "%radius"
-    "AbilityChannelTime"            "4.0"
+    "AbilityChannelTime"            "3.5"
     
     "AbilitySpecial"
     {
@@ -25,32 +25,31 @@
         {
             "var_type"              "FIELD_INTEGER"
             "radius"                "250"
-        }
-        "02"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "wave_duration"         "4.0"
         }       
-        "03"
+        "02"
         {
             "var_type"              "FIELD_INTEGER"
             "wave_count"            "3"
         }
-        "04"
+        "03"
         {
             "var_type"              "FIELD_INTEGER"
             "wave_heal"             "10"
-        }
-        "05"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "wave_interval"         "1.0"
         }
     }
 
     "precache"
     {
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+    }
+
+    "OnAbilityPhaseStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/goblin/healing_spray.lua"
+            "Function"      "HealingSprayAnimation"
+        }
     }
 
     "OnSpellStart"
@@ -61,18 +60,6 @@
             "Function"      "HealingSprayStart"
             "Target"        "POINT"
         }
-
-        "ApplyModifier"
-        {
-            "ModifierName"  "modifier_healing_spray_channelling"
-            "Target"        "CASTER"
-        }
-
-        "FireSound"
-        {
-            "EffectName"    "Hero_Alchemist.UnstableConcoction.Throw"
-            "Target"        "CASTER"
-        }
     }
 
     "OnChannelFinish"
@@ -81,41 +68,14 @@
         {
             "ScriptFile"    "abilities/goblin/healing_spray.lua"
             "Function"      "HealingSprayEnd"
-        } 
-
-        "RemoveModifier"
-        {
-            "ModifierName"  "modifier_healing_spray_channelling"
-            "Target"        "CASTER"
-        }       
+        }      
     }
 
     "Modifiers"
     {
-        "modifier_healing_spray_channelling"
-        {
-            "IsHidden"          "0"
-            "ThinkInterval"     "1.0"
-            "OnIntervalThink"
-            {
-                "ApplyModifier"
-                {
-                    "ModifierName"  "modifier_channeling"
-                    "Target"        "CASTER"
-                    "Duration"      "0.9"
-                }
-            }
-        }
-
-        "modifier_channeling"
-        {
-            "IsHidden"              "1"
-            "OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_1"
-        }
-
         "modifier_healing_spray_thinker"
         {
-            "ThinkInterval"  "%wave_interval"
+            "ThinkInterval"  "1.0"
             "OnIntervalThink"
             {              
                 "Heal"
@@ -155,6 +115,35 @@
     "MaxLevel"                      "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "precache"
+    {
+        "particle"  "particles/status_fx/status_effect_chemical_rage.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_goblin_attack"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+    
+            "StatusEffectName"         "particles/status_fx/status_effect_chemical_rage.vpcf"        
+            "StatusEffectPriority"     "100"
+
+            "EffectName"        "particles/units/heroes/hero_alchemist/alchemist_chemical_rage_hero_effect.vpcf"
+            "EffectAttachType"  "follow_origiin"
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/goblin/attack.lua"
+                    "Function"      "AttackStance"
+                }
+            }
+        }
+    }
 }
 
 // Kills a target unit instantly, transforming it into gold which is added to your available gold! Transmute cannot be used on Heroes, or creeps above level 5.
@@ -174,35 +163,22 @@
 
     "AbilityManaCost"               "100"
     
+    "precache"
+    {
+        "particle"  "particles/econ/items/alchemist/alchemist_midas_knuckles/alch_hand_of_midas_radial.vpcf"
+    }
+
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"                  "FIELD_FLOAT"
-            "gold_bounty_multiplier"    "5" //Placeholder
+            "gold_bounty_multiplier"    "5"
         }
     }
     
     "OnSpellStart"
     {
-        "FireSound"
-        {
-            "EffectName"    "DOTA_Item.Hand_Of_Midas"
-            "Target"        "TARGET"
-        }
-
-        "FireEffect"
-        {
-            "EffectName"        "particles/items2_fx/hand_of_midas.vpcf"
-            "EffectAttachType"  "follow_origiin"
-            "Target"            "TARGET"
-            "ControlPointEntities"
-            {
-                "TARGET"    "attach_hitloc"
-                "CASTER"    "attach_hitloc"
-            }
-        }
-
         "RunScript"
         {
             "ScriptFile"            "abilities/goblin/transmute.lua"
