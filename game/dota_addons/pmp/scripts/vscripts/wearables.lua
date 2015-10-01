@@ -21,6 +21,11 @@ function ChangeWearableInSlot( unit, slotName, modelName )
         SetDefaultWearableInSlot(unit, slotName)
 
         local new_prop = Attachments:AttachProp(unit, attachPoint, modelName)
+
+        -- If no attachment can be found on the database, try to set model
+        if not new_prop then
+            SwapWearableInSlot(unit, modelName, slotName)
+        end
         unit.prop_wearables[slotName] = new_prop or unit.prop_wearables[slotName]
     end
 end

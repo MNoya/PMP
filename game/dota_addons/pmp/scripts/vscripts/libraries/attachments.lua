@@ -438,7 +438,7 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     if not properties then
       if not db[unitModel] or not db[unitModel][attachPoint] or not db[unitModel][attachPoint][propModel] then
         print("[Attachments.lua] No attach found in attachment database for '" .. unitModel .. "', '" .. attachPoint .. "', '" .. propModel .. "'")
-        return
+        return false
       end
     end
 
