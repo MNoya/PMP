@@ -94,6 +94,11 @@ function BuildPlayersArray()
                     player_food = GetFoodLimit(playerID),
                     player_spawn_rate = GetSpawnRate(playerID),
 
+                    -- Defensive abilities
+                    super_peons_used = GetSuperPeonsUsed(playerID),
+                    barricades_used = GetBarricadesUsed(playerID),
+                    repairs_used = GetRepairsUsed(playerID)
+
                     -- Upgrades
                     upgrade_weapon = player_upgrades["weapon"] or 0,
                     upgrade_helm = player_upgrades["helm"] or 0,
