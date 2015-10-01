@@ -106,7 +106,7 @@ function BuildPlayersArray()
                     uh = player_upgrades["helm"] or 0, --upgrade_helm
                     ua = player_upgrades["armor"] or 0, --upgrade_armor
                     uw = player_upgrades["wings"] or 0, --upgrade_wings
-                    uh = player_upgrades["health"] or 0, --upgrade_health
+                    uhp = player_upgrades["health"] or 0, --upgrade_health
 
                     -- Passive ability upgrades
                     acs = player_upgrades["critical_strike"] or 0, --ability_critical_strike
