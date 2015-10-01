@@ -81,6 +81,7 @@ function Precache( context )
 	PrecacheItemByNameSync("upgrade_spiked_armor", context)
 
 	PrecacheResource("particle_folder", "particles/custom", context)
+	PrecacheResource("particle_folder", "particles/units/heroes/hero_techies", context)
 
 	--Barricade models
 	GameRules.Barricades = LoadKeyValues("scripts/kv/barricades.kv")

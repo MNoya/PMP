@@ -97,7 +97,7 @@ function BuildPlayersArray()
                     -- Defensive abilities
                     super_peons_used = GetSuperPeonsUsed(playerID),
                     barricades_used = GetBarricadesUsed(playerID),
-                    repairs_used = GetRepairsUsed(playerID)
+                    repairs_used = GetRepairsUsed(playerID),
 
                     -- Upgrades
                     upgrade_weapon = player_upgrades["weapon"] or 0,
