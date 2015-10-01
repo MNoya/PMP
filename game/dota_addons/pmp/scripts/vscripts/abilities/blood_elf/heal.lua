@@ -1,3 +1,9 @@
+function Animation( event )
+    local caster = event.caster
+
+    caster:StartGesture(ACT_DOTA_ATTACK2)
+end
+
 -- Handles AutoCast Logic
 function HealAutocast( event )
     local caster = event.caster

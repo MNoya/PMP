@@ -1,3 +1,9 @@
+function Animation( event )
+    local caster = event.caster
+
+    caster:StartGesture(ACT_DOTA_ATTACK)
+end
+
 -- Handles the autocast logic
 function InnerFireAutocast_Attack( event )
     local caster = event.caster

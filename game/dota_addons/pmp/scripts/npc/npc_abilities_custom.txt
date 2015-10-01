@@ -40,6 +40,12 @@
 	
 	    "OnSpellStart"
 	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/blood_elf/heal.lua"
+	            "Function"      "Animation"
+	        }
+	
 	        "Heal"
 	        {
 	            "HealAmount"    "%heal"
@@ -120,8 +126,19 @@
 	        }
 	    }
 	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_lycan/lycan_howl_buff.vpcf"
+	    }
+	
 	    "OnSpellStart"
 	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/blood_elf/inner_fire.lua"
+	            "Function"      "Animation"
+	        }
+	
 	        "ApplyModifier"
 	        {
 	            "Target"        "TARGET"
@@ -143,7 +160,7 @@
 	            {
 	                "AttachEffect"
 	                {
-	                    "EffectName"        "particles/items_fx/buckler.vpcf"
+	                    "EffectName"        "particles/units/heroes/hero_lycan/lycan_howl_buff.vpcf"
 	                    "EffectAttachType"  "follow_origin"
 	                    "Target"            "TARGET"
 	                }
@@ -205,7 +222,7 @@
 	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
-	    "AbilityCastAnimation"          "ACT_DOTA_CAST_CHAOS_METEOR"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_TORNADO"
 	
 	    "AbilityCastRange"              "800"
 	    "AbilityCastPoint"              "0.5"
@@ -260,8 +277,24 @@
 	        }
 	    }
 	
+	    "OnAbilityPhaseStart"
+	    {
+	        "FireEffect"
+	        {
+	            "EffectName"        "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf"
+	            "EffectAttachType"  "world_origin"
+	            "TargetPoint"       "POINT"
+	        }
+	    }
+	
 	    "OnSpellStart"
 	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/blood_elf/flame_strike.lua"
+	            "Function"      "FlameStrikeAnimation1"
+	        }
+	
 	        "FireSound"
 	        {
 	            "EffectName"    "Hero_Invoker.SunStrike.Charge"
@@ -284,6 +317,12 @@
 	                {
 	                    "ModifierName"  "modifier_flame_strike_thinker1"
 	                    "Target"        "POINT"
+	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/blood_elf/flame_strike.lua"
+	                    "Function"      "FlameStrikeAnimation2"
 	                }
 	            }
 	        }
@@ -793,7 +832,7 @@
 	        "01"
 	        {
 	            "var_type"                  "FIELD_FLOAT"
-	            "gold_bounty_multiplier"    "5" //Placeholder
+	            "gold_bounty_multiplier"    "5"
 	        }
 	    }
 	    
