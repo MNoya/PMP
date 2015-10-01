@@ -462,6 +462,8 @@ function ConstructTeamPanels () {
 
     	// Construct the panels for each team
 		ConstructTeamPanels();
+
+		Game.AutoAssignPlayersToTeams();
     }
 
 	$( "#TeamSelectContainer" ).SetAcceptsFocus( true ); // Prevents the chat window from taking focus by default
