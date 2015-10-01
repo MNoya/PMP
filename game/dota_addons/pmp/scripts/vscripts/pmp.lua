@@ -129,7 +129,7 @@ function PMP:InitGameMode()
         GameRules.PlayersPerTeam = 3
     end
 
-    statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
+    statCollection:setFlags({team_setting = GameRules.PlayersPerTeam, version = GetVersion()})
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
@@ -849,7 +849,7 @@ function PMP:SetSetting( event )
 
         GameRules.PlayersPerTeam = TEAM_OPTIONS[value]
 
-        statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
+        statCollection:setFlags({team_setting = GameRules.PlayersPerTeam, version = GetVersion()})
     end
 
     -- Update UI on the clients

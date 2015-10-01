@@ -70,7 +70,9 @@ ListenToGameEvent('player_connect', function(keys)
 end, nil)
 
 -- Create the stat collection class
-local statCollection = class({})
+if not statCollection then
+    statCollection = class({})
+end
 
 -- Function that will setup stat collection
 function statCollection:init(options)
@@ -505,6 +507,3 @@ function statCollection:sendStage(stageName, payload, callback)
         callback(err, obj)
     end)
 end
-
--- Return our export
-return statCollection

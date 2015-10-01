@@ -1,4 +1,4 @@
-statCollection = require('statcollection/lib/statcollection')
+require('statcollection/lib/statcollection')
 statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 COLLECT_STATS = not Convars:GetBool('developer')
 

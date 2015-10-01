@@ -21,6 +21,9 @@ function customSchema:init(options)
     self.ANCIENT_EXPLOSION = false
     self.statCollection = options.statCollection
 
+    -- Version flag
+    statCollection:setFlags({team_setting = GameRules.PlayersPerTeam, version = GetVersion()})
+
     -- Listen for changes in the current state
     ListenToGameEvent('game_rules_state_change', function(keys)
         -- Grab the current state
@@ -32,8 +35,8 @@ function customSchema:init(options)
             local game = BuildGameArray()
 
             -- Build players array
-            local players = BuildPlayersArray()            
-    
+            local players = BuildPlayersArray()
+
             -- Send custom stats
             self.statCollection:sendCustom({game=game, players=players})
         end
@@ -67,9 +70,8 @@ end
 
 function BuildGameArray()
     local game = {}
-    game.boss_killed = GetBossKilled()
-    game.times_traded = GetTimesTraded()
-    game.version = GetVersion()
+    game.bk = GetBossKilled() --boss_killed
+    game.tt = GetTimesTraded() --times_traded
     return game
 end
 
@@ -82,43 +84,43 @@ function BuildPlayersArray()
                 table.insert(players, {
                     --steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
-                    player_hero_id = PlayerResource:GetSelectedHeroID(playerID),
-                    player_kills = PlayerResource:GetKills(playerID),
-                    player_deaths = PlayerResource:GetDeaths(playerID),
-                    player_level = GetHeroLevel(playerID),
+                    phi = PlayerResource:GetSelectedHeroID(playerID), --player_hero_id
+                    pk = PlayerResource:GetKills(playerID), --player_kills
+                    pd = PlayerResource:GetDeaths(playerID), --player_deaths
+                    pl = GetHeroLevel(playerID), --player_level
                     
                     -- Resources
-                    total_gold_earned = GetTotalEarnedGold(playerID),
-                    total_lumber_earned = GetTotalEarnedLumber(playerID),
-                    total_xp_earned = GetTotalEarnedXP(playerID),
-                    player_food = GetFoodLimit(playerID),
-                    player_spawn_rate = GetSpawnRate(playerID),
+                    tge = GetTotalEarnedGold(playerID), --total_gold_earned
+                    tle = GetTotalEarnedLumber(playerID), --total_lumber_earned
+                    txe = GetTotalEarnedXP(playerID), --total_xp_earned
+                    pf = GetFoodLimit(playerID), --player_food
+                    psr = GetSpawnRate(playerID), --player_spawn_rate
 
                     -- Defensive abilities
-                    super_peons_used = GetSuperPeonsUsed(playerID),
-                    barricades_used = GetBarricadesUsed(playerID),
-                    repairs_used = GetRepairsUsed(playerID),
+                    spu = GetSuperPeonsUsed(playerID), --super_peons_used
+                    bu = GetBarricadesUsed(playerID), --barricades_used
+                    ru = GetRepairsUsed(playerID), --repairs_used
 
                     -- Upgrades
-                    upgrade_weapon = player_upgrades["weapon"] or 0,
-                    upgrade_helm = player_upgrades["helm"] or 0,
-                    upgrade_armor = player_upgrades["armor"] or 0,
-                    upgrade_wings = player_upgrades["wings"] or 0,
-                    upgrade_health = player_upgrades["health"] or 0,
+                    uw = player_upgrades["weapon"] or 0, --upgrade_weapon
+                    uh = player_upgrades["helm"] or 0, --upgrade_helm
+                    ua = player_upgrades["armor"] or 0, --upgrade_armor
+                    uw = player_upgrades["wings"] or 0, --upgrade_wings
+                    uh = player_upgrades["health"] or 0, --upgrade_health
 
                     -- Passive ability upgrades
-                    ability_critical_strike = player_upgrades["critical_strike"] or 0,
-                    ability_stun_hit = player_upgrades["stun_hit"] or 0,
-                    ability_poisoned_weapons = player_upgrades["poisoned_weapons"] or 0,
-                    ability_racial = player_upgrades["racial"] or 0,
-                    ability_dodge = player_upgrades["dodge"] or 0,
-                    ability_spiked_armor = player_upgrades["spiked_armor"] or 0,
+                    acs = player_upgrades["critical_strike"] or 0, --ability_critical_strike
+                    ash = player_upgrades["stun_hit"] or 0, --ability_stun_hit
+                    apw = player_upgrades["poisoned_weapons"] or 0, --ability_poisoned_weapons
+                    ar = player_upgrades["racial"] or 0, --ability_racial
+                    ad = player_upgrades["dodge"] or 0, --ability_dodge
+                    asa = player_upgrades["spiked_armor"] or 0, --ability_spiked_armor
                     
                     -- Hero global upgrades
-                    pimp_damage = player_upgrades["pimp_damage"] or 0,
-                    pimp_armor = player_upgrades["pimp_armor"] or 0,
-                    pimp_speed = player_upgrades["pimp_speed"] or 0,
-                    pimp_regen = player_upgrades["pimp_regen"] or 0,
+                    pdmg = player_upgrades["pimp_damage"] or 0, --pimp_damage
+                    parm = player_upgrades["pimp_armor"] or 0, --pimp_armor
+                    pspd = player_upgrades["pimp_speed"] or 0, --pimp_speed
+                    preg = player_upgrades["pimp_regen"] or 0, --pimp_regen
                 })
             end
         end
