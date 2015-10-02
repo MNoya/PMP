@@ -1,6 +1,6 @@
 "blood_elf_racial"
 {
-    "BaseClass"             "ability_datadriven"
+    "BaseClass"             "faceless_void_backtrack"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"    "blood_elf_quickness"
     "MaxLevel"              "6"
@@ -9,20 +9,8 @@
     {
         "01"
         {
-            "var_type"          "FIELD_INTEGER"
-            "dodge_chance"      "8 12 16 20 24 30"
+            "var_type"              "FIELD_INTEGER"
+            "dodge_chance_pct"      "8 12 16 20 24 30"
         }
-    }
-
-    "precache"
-    {
-        "particle"  "particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
-    }
-
-    // Linked to the damage filter
-    "modifier_blood_elf_quickness"
-    {
-        "Passive"   "1"
-        "IsHidden"  "1"
     }
 }

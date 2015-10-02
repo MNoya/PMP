@@ -75,6 +75,7 @@
     {
         "modifier_healing_spray_thinker"
         {
+            "IsHidden"       "1"
             "ThinkInterval"  "1.0"
             "OnIntervalThink"
             {              

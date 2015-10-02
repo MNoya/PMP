@@ -48,7 +48,7 @@ function Sounds:PlaySoundSet( playerID, unit, order )
         local sound_table = Sounds:GetRandomLineForOrder(order_line)
         if not sound_table then return end
         local sound_string = sound_table['String']   
-        local randomThresholdTime = RandomInt(1,4)
+        local randomThresholdTime = RandomInt(1,2)
         local duration = sound_table['Duration'] + randomThresholdTime
         local sound_type = sound_table['Type'] --Area sounds      
 

@@ -13,26 +13,4 @@
             "extra_bounty"      "2 3 4 5 6 7"
         }
     }
-
-    "precache"
-    {
-        "soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
-        "particle"  "particles/units/heroes/hero_alchemist/alchemist_lasthit_coins.vpcf"
-        "particle"  "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
-    }
-
-    "modifier_goblins_greed"
-    {
-        "Passive"   "1"
-        "IsHidden"  "1"
-
-        "OnKill"
-        {
-            "RunScript"
-            {
-                "ScriptFile"    "goblins_greed.lua"
-                "Function"      "GoblinsGreed"
-            }
-        }
-    }
 }

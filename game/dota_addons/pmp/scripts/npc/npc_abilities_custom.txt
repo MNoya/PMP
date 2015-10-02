@@ -486,7 +486,7 @@
 	}
 	"blood_elf_racial"
 	{
-	    "BaseClass"             "ability_datadriven"
+	    "BaseClass"             "faceless_void_backtrack"
 	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"    "blood_elf_quickness"
 	    "MaxLevel"              "6"
@@ -495,21 +495,9 @@
 	    {
 	        "01"
 	        {
-	            "var_type"          "FIELD_INTEGER"
-	            "dodge_chance"      "8 12 16 20 24 30"
+	            "var_type"              "FIELD_INTEGER"
+	            "dodge_chance_pct"      "8 12 16 20 24 30"
 	        }
-	    }
-	
-	    "precache"
-	    {
-	        "particle"  "particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
-	    }
-	
-	    // Linked to the damage filter
-	    "modifier_blood_elf_quickness"
-	    {
-	        "Passive"   "1"
-	        "IsHidden"  "1"
 	    }
 	}
 	"spawn_blood_elf"
@@ -734,6 +722,7 @@
 	    {
 	        "modifier_healing_spray_thinker"
 	        {
+	            "IsHidden"       "1"
 	            "ThinkInterval"  "1.0"
 	            "OnIntervalThink"
 	            {              
@@ -858,28 +847,6 @@
 	        {
 	            "var_type"          "FIELD_INTEGER"
 	            "extra_bounty"      "2 3 4 5 6 7"
-	        }
-	    }
-	
-	    "precache"
-	    {
-	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
-	        "particle"  "particles/units/heroes/hero_alchemist/alchemist_lasthit_coins.vpcf"
-	        "particle"  "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
-	    }
-	
-	    "modifier_goblins_greed"
-	    {
-	        "Passive"   "1"
-	        "IsHidden"  "1"
-	
-	        "OnKill"
-	        {
-	            "RunScript"
-	            {
-	                "ScriptFile"    "goblins_greed.lua"
-	                "Function"      "GoblinsGreed"
-	            }
 	        }
 	    }
 	}

@@ -119,6 +119,15 @@
 		"DOTA_Tooltip_modifier_peon_frenzy_stacks"                                        "Frenzy"
 		"DOTA_Tooltip_modifier_peon_frenzy_stacks_Description"                            "Extra %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack and movement speed"
 
+		"DOTA_Tooltip_modifier_inner_fire"                                                "Inner Fire"
+		"DOTA_Tooltip_modifier_inner_fire_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_flame_strike_first_burn"                                   "Burning"
+		"DOTA_Tooltip_modifier_flame_strike_first_burn_Description"                       ""
+
+		"DOTA_Tooltip_modifier_flame_strike_second_burn"                                  "Burning"
+		"DOTA_Tooltip_modifier_flame_strike_second_burn_Description"                      ""
+
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
 		"DOTA_Tooltip_modifier_invulnerability_layer_Description"                         "Towers left standing"
@@ -328,7 +337,7 @@
 		"DOTA_Tooltip_ability_trade_lumber_Note0"                                     	  "Requires nearby patron"
 
 		"DOTA_Tooltip_ability_goblin_racial"                                               "Goblin Greed"
-		"DOTA_Tooltip_ability_goblin_racial_Description"                                   ""
+		"DOTA_Tooltip_ability_goblin_racial_Description"                                   "Gets extra gold and lumber on each kill"
 		"DOTA_Tooltip_ability_goblin_racial_extra_bounty"                                  "EXTRA BOUNTY:"
 
 		"DOTA_Tooltip_ability_peon_racial"                                                "Axe's Frenzy"
@@ -463,21 +472,21 @@
 		"DOTA_Tooltip_ability_blood_elf_flame_strike_delay"                               "DELAY:"
 
 		"DOTA_Tooltip_ability_blood_elf_racial"                                           "Blood Elf Quickness"
-		"DOTA_Tooltip_ability_blood_elf_racial_Description"                               ""
-		"DOTA_Tooltip_ability_blood_elf_racial_dodge_chance"                              "DODGE CHANCE:"
+		"DOTA_Tooltip_ability_blood_elf_racial_Description"                               "Gives a chance to avoid all damage"
+		"DOTA_Tooltip_ability_blood_elf_racial_dodge_chance_pct"                          "%DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_spawn_blood_elf"                                            "Spawn Blood Elf"
 		"DOTA_Tooltip_ability_spawn_blood_elf_Description"                                ""
 
 		"DOTA_Tooltip_ability_spawn_blood_elf_leader"                                     "Spawn Blood Elf Leader"
-		"DOTA_Tooltip_ability_spawn_blood_elf_leader_Description"                         ""
+		"DOTA_Tooltip_ability_spawn_blood_elf_leader_Description"                         "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nBlood Elves' Leader has the following abilities:\n-Heal\n-Inner Fire\n-Flame Strike\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_blood_elf"                                     "Summon Super Blood Elf"
-		"DOTA_Tooltip_ability_summon_super_blood_elf_Description"                         ""
+		"DOTA_Tooltip_ability_summon_super_blood_elf_Description"                         "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
 		"DOTA_Tooltip_ability_summon_super_blood_elf_duration"                            "DURATION:"
 
 		"DOTA_Tooltip_ability_summon_super_blood_elf_empty"                               "Summon Super Blood Elf"
-		"DOTA_Tooltip_ability_summon_super_blood_elf_empty_Description"                   ""
+		"DOTA_Tooltip_ability_summon_super_blood_elf_empty_Description"                   "You've used all your super units."
 
 		"DOTA_Tooltip_ability_goblin_healing_spray"                                       "Healing Spray"
 		"DOTA_Tooltip_ability_goblin_healing_spray_Description"                           "Sprays waves of healing mist that heals units in a target area."
@@ -495,22 +504,18 @@
 		"DOTA_Tooltip_ability_goblin_transmute_gold_bounty_multiplier"                    "GOLD BOUNTY MULTIPLIER:"
 		"DOTA_Tooltip_ability_goblin_transmute_Note0"									  "Transmute cannot be used on Heroes, or creeps above level 5."
 
-		"DOTA_Tooltip_ability_goblin_racial"                                              "Goblin's Greed"
-		"DOTA_Tooltip_ability_goblin_racial_Description"                                  ""
-		"DOTA_Tooltip_ability_goblin_racial_extra_bounty"                                 "EXTRA BOUNTY:"
-
 		"DOTA_Tooltip_ability_spawn_goblin"                                               "Spawn Goblin"
 		"DOTA_Tooltip_ability_spawn_goblin_Description"                                   ""
 
 		"DOTA_Tooltip_ability_spawn_goblin_leader"                                        "Spawn Goblin Leader"
-		"DOTA_Tooltip_ability_spawn_goblin_leader_Description"                            ""
+		"DOTA_Tooltip_ability_spawn_goblin_leader_Description"                            "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nGoblin's Leader has the following abilities:\n-Healing Spray\n-Ogre Attack\n-Transmute\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_goblin"                                        "Summon Super Goblin"
-		"DOTA_Tooltip_ability_summon_super_goblin_Description"                            ""
+		"DOTA_Tooltip_ability_summon_super_goblin_Description"                            "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
 		"DOTA_Tooltip_ability_summon_super_goblin_duration"                               "DURATION:"
 
 		"DOTA_Tooltip_ability_summon_super_goblin_empty"                                  "Summon Super Goblin"
-		"DOTA_Tooltip_ability_summon_super_goblin_empty_Description"                      ""
+		"DOTA_Tooltip_ability_summon_super_goblin_empty_Description"                      "You've used all your super units."
 
 		"DOTA_Tooltip_ability_night_elf_racial"                                           "Night Elf Racial"
 		"DOTA_Tooltip_ability_night_elf_racial_Description"                               ""
@@ -522,11 +527,11 @@
 		"DOTA_Tooltip_ability_spawn_night_elf_leader_Description"                         ""
 
 		"DOTA_Tooltip_ability_summon_super_night_elf"                                     "Summon Super Night Elf"
-		"DOTA_Tooltip_ability_summon_super_night_elf_Description"                         ""
+		"DOTA_Tooltip_ability_summon_super_night_elf_Description"                         "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
 		"DOTA_Tooltip_ability_summon_super_night_elf_duration"                            "DURATION:"
 
 		"DOTA_Tooltip_ability_summon_super_night_elf_empty"                               "Summon Super Night Elf"
-		"DOTA_Tooltip_ability_summon_super_night_elf_empty_Description"                   ""
+		"DOTA_Tooltip_ability_summon_super_night_elf_empty_Description"                   "You've used all your super units."
 
 		
 		"DOTA_Tooltip_ability_barrage_attack"                                             "Barrage Attack"

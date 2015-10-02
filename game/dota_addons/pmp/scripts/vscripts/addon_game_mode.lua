@@ -72,6 +72,7 @@ function Precache( context )
 
 	PrecacheUnitByNameSync("npc_dota_hero_axe", context)
 	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
+	PrecacheUnitByNameSync("npc_dota_hero_faceless_void", context)
 
 	PrecacheItemByNameSync("upgrade_critical_strike", context)
 	PrecacheItemByNameSync("upgrade_stun_hit", context)
