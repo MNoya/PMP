@@ -210,7 +210,7 @@
             "TextureName"   "upgrade_weapon23"
             "Properties"
             {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "150"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "160"
             }
         }
 
@@ -219,7 +219,7 @@
             "TextureName"   "upgrade_weapon24"
             "Properties"
             {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "165"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "175"
             }
         }
 
@@ -228,7 +228,7 @@
             "TextureName"   "upgrade_weapon25"
             "Properties"
             {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "180"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "191"
             }
         }
 
@@ -237,7 +237,7 @@
             "TextureName"   "upgrade_weapon26"
             "Properties"
             {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "195"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "208"
             }
         }
 
@@ -246,7 +246,7 @@
             "TextureName"   "upgrade_weapon27"
             "Properties"
             {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "210"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "226"
             }
         }
 
@@ -255,7 +255,7 @@
             "TextureName"   "upgrade_weapon28"
             "Properties"
             {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "230"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "250"
             }
         }
 
@@ -264,7 +264,7 @@
             "TextureName"   "upgrade_weapon29"
             "Properties"
             {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "250"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "275"
             }
         }
 
@@ -273,7 +273,7 @@
             "TextureName"   "upgrade_weapon30"
             "Properties"
             {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "280"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "300"
             }
         }
 
