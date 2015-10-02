@@ -2060,8 +2060,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "dodge_chance"      "12 16 20 24 30"
+            "var_type"          "FIELD_FLOAT"
+            "heal_regen_pct"    "15 22.5 30 37.5 50"
         }
     }
 
@@ -2102,8 +2102,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "dodge_chance"      "12 16 20 24 30"
+            "var_type"          "FIELD_FLOAT"
+            "heal_regen_pct"    "15 22.5 30 37.5 50"
         }
     }
 
@@ -2144,8 +2144,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "dodge_chance"      "12 16 20 24 30"
+            "var_type"          "FIELD_FLOAT"
+            "heal_regen_pct"    "15 22.5 30 37.5 50"
         }
     }
 
@@ -2186,8 +2186,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "dodge_chance"      "12 16 20 24 30"
+            "var_type"          "FIELD_FLOAT"
+            "heal_regen_pct"    "15 22.5 30 37.5 50"
         }
     }
 
@@ -2228,8 +2228,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "dodge_chance"      "12 16 20 24 30"
+            "var_type"          "FIELD_FLOAT"
+            "heal_regen_pct"    "15 22.5 30 37.5 50"
         }
     }
 

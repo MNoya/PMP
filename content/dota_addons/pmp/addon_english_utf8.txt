@@ -128,6 +128,9 @@
 		"DOTA_Tooltip_modifier_flame_strike_second_burn"                                  "Burning"
 		"DOTA_Tooltip_modifier_flame_strike_second_burn_Description"                      ""
 
+		"DOTA_Tooltip_modifier_blood_pool_regen"                                          "Blood Pool Regen"
+		"DOTA_Tooltip_modifier_blood_pool_regen_Description"                              "Standing over a blood pool\nRegenerating %fMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% health per second"
+
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
 		"DOTA_Tooltip_modifier_invulnerability_layer_Description"                         "Towers left standing"
@@ -337,7 +340,7 @@
 		"DOTA_Tooltip_ability_trade_lumber_Note0"                                     	  "Requires nearby patron"
 
 		"DOTA_Tooltip_ability_goblin_racial"                                               "Goblin Greed"
-		"DOTA_Tooltip_ability_goblin_racial_Description"                                   "Gets extra gold and lumber on each kill"
+		"DOTA_Tooltip_ability_goblin_racial_Description"                                   "<font color='#00ff00'>Racial</font>\nGets extra gold and lumber on each kill"
 		"DOTA_Tooltip_ability_goblin_racial_extra_bounty"                                  "EXTRA BOUNTY:"
 
 		"DOTA_Tooltip_ability_peon_racial"                                                "Axe's Frenzy"
@@ -374,7 +377,7 @@
 		"DOTA_Tooltip_ability_undead_sleep_duration"                                      "DURATION:"
 
 		"DOTA_Tooltip_ability_undead_curse"                                               "Curse"
-		"DOTA_Tooltip_ability_undead_curse_Description"                                   "Curses a target enemy unit, causing it to have a %miss_chance%% chance to miss on an attack.\nLasts %duration%% seconds."
+		"DOTA_Tooltip_ability_undead_curse_Description"                                   "Curses a target enemy unit, causing it to have a 33%% chance to miss on an attack.\nLasts 5 seconds."
 		"DOTA_Tooltip_ability_undead_curse_duration"                                      "DURATION:"
 		"DOTA_Tooltip_ability_undead_curse_miss_chance"                                   "MISS CHANCE:"
 
@@ -415,7 +418,7 @@
 		"DOTA_Tooltip_ability_summon_super_undead_empty_Description"                      "You've used all your super units."
 
 		"DOTA_Tooltip_ability_human_slow"                                                 "Slow"
-		"DOTA_Tooltip_ability_human_slow_Description"                                     "Slows a target enemy unit's attack rate by %attack_speed%% and movement speed by %move_speed%%."
+		"DOTA_Tooltip_ability_human_slow_Description"                                     "Slows a target enemy unit's attack and movement speed rate."
 		"DOTA_Tooltip_ability_human_slow_duration"                                        "DURATION:"
 		"DOTA_Tooltip_ability_human_slow_attack_speed"                                    "ATTACK SPEED:"
 		"DOTA_Tooltip_ability_human_slow_move_speed"                                      "MOVE SPEED:"
@@ -471,9 +474,11 @@
 		"DOTA_Tooltip_ability_blood_elf_flame_strike_burn_duration"                       "BURN DURATION:"
 		"DOTA_Tooltip_ability_blood_elf_flame_strike_delay"                               "DELAY:"
 
-		"DOTA_Tooltip_ability_blood_elf_racial"                                           "Blood Elf Quickness"
-		"DOTA_Tooltip_ability_blood_elf_racial_Description"                               "Gives a chance to avoid all damage"
-		"DOTA_Tooltip_ability_blood_elf_racial_dodge_chance_pct"                          "%DODGE CHANCE:"
+		"DOTA_Tooltip_ability_blood_elf_racial"                                           "Blood Pool"
+		"DOTA_Tooltip_ability_blood_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nWhenever a Blood Elf dies they leave a pool of blood behind. Any of your units fighting on top of this pool of blood will gain a huge health regeneration bonus."
+		"DOTA_Tooltip_ability_blood_elf_racial_heal_regen_pct"                            "%HEALTH REGEN:"
+		"DOTA_Tooltip_ability_blood_elf_racial_radius"                                    "RADIUS:"
+		"DOTA_Tooltip_ability_blood_elf_racial_duration"                                  "DURATION:"
 
 		"DOTA_Tooltip_ability_spawn_blood_elf"                                            "Spawn Blood Elf"
 		"DOTA_Tooltip_ability_spawn_blood_elf_Description"                                ""
@@ -1211,27 +1216,27 @@
 		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5_extra_bounty"                   "EXTRA BOUNTY:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1"                             "Upgrade Blood Elf Racial (1)"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_dodge_chance"                "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2"                             "Upgrade Blood Elf Racial (2)"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_dodge_chance"                "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3"                             "Upgrade Blood Elf Racial (3)"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_dodge_chance"                "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4"                             "Upgrade Blood Elf Racial (4)"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_dodge_chance"                "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5"                             "Upgrade Blood Elf Racial (5)"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_Description"                 "Increase the level of Blood Elves Quickness"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_dodge_chance"                "DODGE CHANCE:"
 

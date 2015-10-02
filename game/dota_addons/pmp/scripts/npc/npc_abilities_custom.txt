@@ -95,6 +95,7 @@
 	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"    "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 	    
 	    "AbilityCastPoint"          "0.0"
 	    "AbilityCastRange"          "500"
@@ -484,19 +485,89 @@
 	        }
 	    }
 	}
+	//"Whenever a Blood Elf dies they leave a pool of blood behind. Any of your units fighting on top of this pool of blood will gain a huge health regeneration bonus."
 	"blood_elf_racial"
 	{
-	    "BaseClass"             "faceless_void_backtrack"
+	    "BaseClass"             "ability_datadriven"
 	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityTextureName"    "blood_elf_quickness"
+	    "AbilityTextureName"    "blood_elf_blood_pool"
 	    "MaxLevel"              "6"
+	
+	    "AbilityCastRange"      "%radius"
 	            
 	    "AbilitySpecial"
 	    {
 	        "01"
 	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "heal_regen_pct"        "7.5 15 22.5 30 37.5 50"
+	        }
+	        "02"
+	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "dodge_chance_pct"      "8 12 16 20 24 30"
+	            "radius"                "150"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "duration"              "10"
+	        }
+	    }
+	
+	    "OnOwnerDied"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/blood_elf/blood_pool.lua"
+	            "Function"      "CreatePool"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_blood_pool"
+	        {
+	            "IsHidden"          "1"
+	            "Aura"              "modifier_blood_pool_regen_check"
+	            "Aura_Radius"       "%radius"
+	            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	            "Aura_Types"        "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            "Aura_Flags"        "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+	            "Aura_ApplyToCaster" "0"
+	        }
+	
+	        "modifier_blood_pool_regen_check"
+	        {
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/blood_elf/blood_pool.lua"
+	                    "Function"      "CheckTarget"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"    "modifier_blood_pool_regen"
+	                    "Target"          "TARGET"
+	                }
+	            }
+	        }
+	
+	        "modifier_blood_pool_regen"
+	        {
+	            "TextureName"       "blood_elf_blood_pool"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "%heal_regen_pct"
+	            }
+	
+	            "EffectName"        "particles/custom/blood_elf/blood_pool_buff.vpcf"
+	            "EffectAttachType"  "follow_origin"
 	        }
 	    }
 	}
