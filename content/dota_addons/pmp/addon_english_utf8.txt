@@ -1218,28 +1218,28 @@
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1"                             "Upgrade Blood Elf Racial (1)"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_gold_cost"                   "GOLD COST:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_dodge_chance"                "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2"                             "Upgrade Blood Elf Racial (2)"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_gold_cost"                   "GOLD COST:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_dodge_chance"                "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3"                             "Upgrade Blood Elf Racial (3)"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_gold_cost"                   "GOLD COST:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_dodge_chance"                "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4"                             "Upgrade Blood Elf Racial (4)"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_gold_cost"                   "GOLD COST:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_dodge_chance"                "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5"                             "Upgrade Blood Elf Racial (5)"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_gold_cost"                   "GOLD COST:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_dodge_chance"                "DODGE CHANCE:"
-
+		
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_heal_regen_pct"              "HEAL REGEN PCT:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_heal_regen_pct"              "HEAL REGEN PCT:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_heal_regen_pct"              "HEAL REGEN PCT:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_heal_regen_pct"              "HEAL REGEN PCT:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_heal_regen_pct"              "HEAL REGEN PCT:"
 
 		"DOTA_Tooltip_ability_item_upgrade_modifiers"                                     "Upgrade Modifiers"
 		"DOTA_Tooltip_ability_item_upgrade_modifiers_Description"                         ""

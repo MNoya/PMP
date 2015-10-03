@@ -2171,7 +2171,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "15 22.5 30 37.5 50"
+	            "heal_regen_pct"    "10 12.5 15 17.5 20"
 	        }
 	    }
 	
@@ -2213,7 +2213,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "15 22.5 30 37.5 50"
+	            "heal_regen_pct"    "10 12.5 15 17.5 20"
 	        }
 	    }
 	
@@ -2255,7 +2255,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "15 22.5 30 37.5 50"
+	            "heal_regen_pct"    "10 12.5 15 17.5 20"
 	        }
 	    }
 	
@@ -2297,7 +2297,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "15 22.5 30 37.5 50"
+	            "heal_regen_pct"    "10 12.5 15 17.5 20"
 	        }
 	    }
 	
@@ -2339,7 +2339,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "15 22.5 30 37.5 50"
+	            "heal_regen_pct"    "10 12.5 15 17.5 20"
 	        }
 	    }
 	
