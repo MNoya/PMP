@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.31c"
+PMPVERSION = "0.31d"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -840,7 +840,7 @@ function PMP:CheckWinCondition()
 
     if winnerTeamID then
         print(winnerTeamID.." is the Winner")
-
+        GameRules.Winner = winnerTeamID
         GameRules:SetGameWinner(winnerTeamID)
         PMP:PrintWinMessageForTeam(winnerTeamID)
     end

@@ -1958,7 +1958,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "2.5 3 3.5 4 5"
+	            "extra_bounty"      "1.5 2 3 4 5"
 	        }
 	    }
 	
@@ -2000,7 +2000,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "2.5 3 3.5 4 5"
+	            "extra_bounty"      "1.5 2 3 4 5"
 	        }
 	    }
 	
@@ -2042,7 +2042,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "2.5 3 3.5 4 5"
+	            "extra_bounty"      "1.5 2 3 4 5"
 	        }
 	    }
 	
@@ -2084,7 +2084,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "2.5 3 3.5 4 5"
+	            "extra_bounty"      "1.5 2 3 4 5"
 	        }
 	    }
 	
@@ -2126,7 +2126,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "2.5 3 3.5 4 5"
+	            "extra_bounty"      "1.5 2 3 4 5"
 	        }
 	    }
 	
@@ -2171,7 +2171,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "10 12.5 15 17.5 20"
+	            "heal_regen_pct"    "10 12.5 15 20 25"
 	        }
 	    }
 	
@@ -2213,7 +2213,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "10 12.5 15 17.5 20"
+	            "heal_regen_pct"    "10 12.5 15 20 25"
 	        }
 	    }
 	
@@ -2255,7 +2255,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "10 12.5 15 17.5 20"
+	            "heal_regen_pct"    "10 12.5 15 20 25"
 	        }
 	    }
 	
@@ -2297,7 +2297,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "10 12.5 15 17.5 20"
+	            "heal_regen_pct"    "10 12.5 15 20 25"
 	        }
 	    }
 	
@@ -2339,7 +2339,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "heal_regen_pct"    "10 12.5 15 17.5 20"
+	            "heal_regen_pct"    "10 12.5 15 20 25"
 	        }
 	    }
 	
