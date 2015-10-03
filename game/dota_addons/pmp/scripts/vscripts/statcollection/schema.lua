@@ -57,7 +57,7 @@ end
 
 function BuildRoundWinnerArray()
     local winners = {}
-    local current_winner_team = GetTeamWithHighestKillScore()
+    local current_winner_team = GameRules.Winner or 0
     for playerID = 0, DOTA_MAX_PLAYERS do
         if PlayerResource:IsValidPlayerID(playerID) then
             if not PlayerResource:IsBroadcaster(playerID) then

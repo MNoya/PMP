@@ -130,14 +130,21 @@ function statCollection:init(options)
     -- Send stage1 stuff
     self:sendStage1()
 end
---Utility function to prevent code repitition
+
+--Build the winners array
 function statCollection:calcWinnersByTeam()
     output = {}
-    for i = 1, (PlayerResource:GetPlayerCount() or 1) do
-        output[PlayerResource:GetSteamAccountID(i - 1)] = (function() if PlayerResource:GetTeam(i - i) == self.winner then return '1' else return '0' end end)()
+    local winningTeam = self.winner
+
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            output[PlayerResource:GetSteamAccountID(playerID)] = PlayerResource:GetTeam(playerID) == winningTeam and '1' or '0'
+        end
     end
+
     return output
 end
+
 -- Hooks functions to make things actually work
 function statCollection:hookFunctions()
     local this = self
@@ -146,8 +153,6 @@ function statCollection:hookFunctions()
     if self.custom.GAME_WINNER then
         local oldSetGameWinner = GameRules.SetGameWinner
         GameRules.SetGameWinner = function(gameRules, team)
-
-            print("Set Game Winnerino")
 
             -- Store the stats
             this.winner = team
