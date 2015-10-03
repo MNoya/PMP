@@ -469,21 +469,21 @@ function PMP:OnPlayerPickHero(keys)
     -- Set Resources
     Timers:CreateTimer(function()
         SetGold(playerID, INITIAL_GOLD)
-        --SetLumber(playerID, INITIAL_LUMBER)
-        --SetFoodUsed(playerID, 0)
-        --SetFoodLimit(playerID, INITIAL_FOOD_LIMIT)
+        SetLumber(playerID, INITIAL_LUMBER)
+        SetFoodUsed(playerID, 0)
+        SetFoodLimit(playerID, INITIAL_FOOD_LIMIT)
 
         -- Update the UI in case it hasn't been built yet
         Timers:CreateTimer(1, function()
             SetGold(playerID, GetGold(playerID))
-            --SetLumber(playerID, GetLumber(playerID))
-            --SetFoodUsed(playerID, GetFoodUsed(playerID))
-            --SetFoodLimit(playerID, GetFoodLimit(playerID))
+            SetLumber(playerID, GetLumber(playerID))
+            SetFoodUsed(playerID, GetFoodUsed(playerID))
+            SetFoodLimit(playerID, GetFoodLimit(playerID))
         end)
 
         if Convars:GetBool('developer') then
-            --SetGold(playerID, 50000)
-            --SetLumber(playerID, 50000)
+            SetGold(playerID, 50000)
+            SetLumber(playerID, 50000)
             --SetFoodLimit(playerID, 100)
         end
 
