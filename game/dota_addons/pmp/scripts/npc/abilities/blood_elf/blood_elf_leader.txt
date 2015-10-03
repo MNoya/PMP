@@ -322,6 +322,7 @@
                 {
                     "ScriptFile"    "abilities/blood_elf/flame_strike.lua"
                     "Function"      "FlameStrikeAnimation2"
+                    "Target"        "POINT"
                 }
             }
         }
