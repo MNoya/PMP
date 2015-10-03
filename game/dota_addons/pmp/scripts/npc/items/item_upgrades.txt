@@ -1847,8 +1847,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "extra_bounty"      "3 4 5 6 7"
+            "var_type"          "FIELD_FLOAT"
+            "extra_bounty"      "2.5 3 3.5 4 5"
         }
     }
 
@@ -1889,8 +1889,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "extra_bounty"      "3 4 5 6 7"
+            "var_type"          "FIELD_FLOAT"
+            "extra_bounty"      "2.5 3 3.5 4 5"
         }
     }
 
@@ -1931,8 +1931,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "extra_bounty"      "3 4 5 6 7"
+            "var_type"          "FIELD_FLOAT"
+            "extra_bounty"      "2.5 3 3.5 4 5"
         }
     }
 
@@ -1973,8 +1973,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "extra_bounty"      "3 4 5 6 7"
+            "var_type"          "FIELD_FLOAT"
+            "extra_bounty"      "2.5 3 3.5 4 5"
         }
     }
 
@@ -2015,8 +2015,8 @@
         }
         "02"
         {
-            "var_type"          "FIELD_INTEGER"
-            "extra_bounty"      "3 4 5 6 7"
+            "var_type"          "FIELD_FLOAT"
+            "extra_bounty"      "2.5 3 3.5 4 5"
         }
     }
 

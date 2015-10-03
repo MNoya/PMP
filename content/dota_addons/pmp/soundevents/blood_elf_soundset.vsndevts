@@ -17,7 +17,7 @@
                             "value0"        "sounds/blood_elf/spawn/ready_to_work.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "8.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -85,7 +85,7 @@
                             "value4"        "sounds/blood_elf/attack/they_shall_burn.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "8.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -117,7 +117,7 @@
                             "value0"        "sounds/blood_elf/attack/blood_of_the_highborne.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "8.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -154,7 +154,7 @@
                             "value5"        "sounds/blood_elf/attack/hmm2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "8.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -228,7 +228,7 @@
                             "value7"        "sounds/blood_elf/move/yes.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "8.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -265,7 +265,7 @@
                             "value5"        "sounds/blood_elf/select/prattle_bores_me.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "8.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -300,7 +300,7 @@
                             "value3"        "sounds/blood_elf/pissed/silence.vsnd"                                           
                         }
                     }
-                    "volume"            {   "value"     "8.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -332,7 +332,7 @@
                             "value0"        "sounds/blood_elf/pissed/blood_blood_blood.vsnd"                                        
                         }
                     }
-                    "volume"            {   "value"     "8.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }

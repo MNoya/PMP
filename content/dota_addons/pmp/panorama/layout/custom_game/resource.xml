@@ -14,7 +14,7 @@
 			<Image hittest="false" id="LumberIcon" src="file://{images}/custom_game/lumber_icon.png" />
 		</Panel>
 		<Panel hittest="false" id='FoodPanel'>
-			<Label hittest="false" id="FoodText" text="0/0" html="true" class="TitleFont" />
+			<Label hittest="false" id="FoodText" text="10/10" html="true" class="TitleFont" />
 			<Image hittest="false" id="FoodIcon" />
 		</Panel>
 		<Panel hittest="false" id='GoldPanel'>

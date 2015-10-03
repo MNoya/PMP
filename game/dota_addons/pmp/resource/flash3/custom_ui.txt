@@ -5,6 +5,11 @@
         "File"      "AbilityValues"
         "Depth"     "18"
     }
+    "2"
+    {
+        "File"      "killcam_nuke"
+        "Depth"     "1"
+    }    
 }
 
 // =============================================

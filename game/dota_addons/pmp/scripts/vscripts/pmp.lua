@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.31"
+PMPVERSION = "0.31c"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -544,6 +544,12 @@ function PMP:OnHeroInGame(hero)
     ClearAbilities(hero)
     TeachAbility(hero, "hide_hero", 1)
 
+    Timers:CreateTimer(1, function()
+        if hero:HasModifier("modifier_silencer_int_steal") then
+            hero:RemoveModifierByName("modifier_silencer_int_steal")
+        end
+    end) 
+
     -- Global upgrade abilities
     hero:AddAbility("pimp_damage")
     hero:AddAbility("pimp_armor")
@@ -717,6 +723,14 @@ function PMP:OnEntityKilled( event )
         if attacker and attacker:HasAbility("goblin_racial") then
             local gg = attacker:FindAbilityByName("goblin_racial")
             local bonus = gg:GetLevelSpecialValueFor("extra_bounty", gg:GetLevel()-1)
+            
+            -- +1/-1
+            if RollPercentage(50) then
+                bonus = math.ceil(bonus)
+            else
+                bonus = math.floor(bonus)
+            end
+
             lumber_bounty = lumber_bounty + bonus
             gold_bounty = gold_bounty + bonus
         end
