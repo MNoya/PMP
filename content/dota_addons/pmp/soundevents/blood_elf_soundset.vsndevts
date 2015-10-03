@@ -150,6 +150,8 @@
                             "value1"        "sounds/blood_elf/attack/grunts/grunt2.vsnd"
                             "value2"        "sounds/blood_elf/attack/grunts/grunt3.vsnd"
                             "value3"        "sounds/blood_elf/attack/grunts/grunt4.vsnd"
+                            "value4"        "sounds/blood_elf/attack/hmm.vsnd"
+                            "value5"        "sounds/blood_elf/attack/hmm2.vsnd"
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }
@@ -165,7 +167,7 @@
     }
 }
 
-"blood_elf.Death"
+"blood_elf.Laugh"
 {
     "operator_stacks"
     {
@@ -181,14 +183,13 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/blood_elf/death/hmm.vsnd"
-                            "value1"        "sounds/blood_elf/death/hmm2.vsnd"
-                            "value2"        "sounds/blood_elf/death/laugh1.vsnd"
-                            "value3"        "sounds/blood_elf/death/laugh2.vsnd"
-                            "value4"        "sounds/blood_elf/death/laugh3.vsnd"
+                           
+                            "value2"        "sounds/blood_elf/attack/laugh1.vsnd"
+                            "value3"        "sounds/blood_elf/attack/laugh2.vsnd"
+                            "value4"        "sounds/blood_elf/attack/laugh3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "5.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }

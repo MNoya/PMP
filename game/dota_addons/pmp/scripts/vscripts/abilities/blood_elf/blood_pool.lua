@@ -1,7 +1,5 @@
 function CreatePool( event )
     local caster = event.caster
-    if caster:GetUnitName() == "dummy_unit" then return end
-
     local ability = event.ability
     local owner = caster:GetOwner()
     local origin = caster:GetAbsOrigin()
