@@ -1,4 +1,4 @@
-"undead.Pick"
+"blood_elf.Pick"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/undead/spawn/undying.vsnd"
+                            "value0"        "sounds/blood_elf/spawn/ready_to_work.vsnd"
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }
@@ -30,7 +30,7 @@
     }
 }
 
-"undead.Spawn"
+"blood_elf.Spawn"
 {
     "operator_stacks"
     {
@@ -46,7 +46,7 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/undead/spawn/ready_to_work.vsnd"
+                            "value0"        "sounds/blood_elf/spawn/ready_to_work.vsnd"
                         }
                     }
                     "volume"            {   "value"     "2.00000"  }
@@ -62,7 +62,7 @@
     }
 }
 
-"undead.Attack"
+"blood_elf.Attack"
 {
     "operator_stacks"
     {
@@ -78,11 +78,11 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/undead/attack/death_awaits.vsnd"
-                            "value1"        "sounds/undead/attack/death_shall_reign.vsnd"
-                            "value2"        "sounds/undead/attack/grave_calls.vsnd"
-                            "value3"        "sounds/undead/attack/join_us.vsnd"
-                            "value4"        "sounds/undead/attack/let_life_cease.vsnd"
+                            "value0"        "sounds/blood_elf/attack/feel_my_wrath.vsnd"
+                            "value1"        "sounds/blood_elf/attack/incinerate_them.vsnd"
+                            "value2"        "sounds/blood_elf/attack/justice_has_come.vsnd"
+                            "value3"        "sounds/blood_elf/attack/past_redemption.vsnd"
+                            "value4"        "sounds/blood_elf/attack/they_shall_burn.vsnd"
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }
@@ -98,7 +98,7 @@
     }
 }
 
-"undead.Attack.Warcry"
+"blood_elf.Attack.Warcry"
 {
     "operator_stacks"
     {
@@ -114,8 +114,7 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/undead/attack/my_death_awaits.vsnd"
-                            "value1"        "sounds/undead/attack/we_already_died_once.vsnd"
+                            "value0"        "sounds/blood_elf/attack/blood_of_the_highborne.vsnd"
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }
@@ -131,7 +130,7 @@
     }
 }
 
-"undead.Attack.Grunt"
+"blood_elf.Attack.Grunt"
 {
     "operator_stacks"
     {
@@ -147,17 +146,10 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/undead/attack/grunts/grunt1.vsnd"
-                            "value1"        "sounds/undead/attack/grunts/grunt2.vsnd"
-                            "value2"        "sounds/undead/attack/grunts/grunt3.vsnd"
-                            "value3"        "sounds/undead/attack/grunts/grunt4.vsnd"
-                            "value4"        "sounds/undead/attack/grunts/grunt5.vsnd"
-                            "value5"        "sounds/undead/attack/grunts/grunt6.vsnd"
-                            "value6"        "sounds/undead/attack/grunts/grunt7.vsnd"
-                            "value7"        "sounds/undead/attack/grunts/grunt8.vsnd"
-                            "value8"        "sounds/undead/attack/grunts/grunt9.vsnd"
-                            "value9"        "sounds/undead/attack/grunts/grunt10.vsnd"
-                            "value10"       "sounds/undead/attack/grunts/grunt11.vsnd"
+                            "value0"        "sounds/blood_elf/attack/grunts/grunt1.vsnd"
+                            "value1"        "sounds/blood_elf/attack/grunts/grunt2.vsnd"
+                            "value2"        "sounds/blood_elf/attack/grunts/grunt3.vsnd"
+                            "value3"        "sounds/blood_elf/attack/grunts/grunt4.vsnd"
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }
@@ -173,7 +165,7 @@
     }
 }
 
-"undead.Death"
+"blood_elf.Death"
 {
     "operator_stacks"
     {
@@ -189,13 +181,11 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/undead/death/die1.vsnd"
-                            "value1"        "sounds/undead/death/die2.vsnd"
-                            "value2"        "sounds/undead/death/die3.vsnd"
-                            "value3"        "sounds/undead/death/die4.vsnd"
-                            "value4"        "sounds/undead/death/die5.vsnd"
-                            "value5"        "sounds/undead/death/die6.vsnd"
-                            "value6"        "sounds/undead/death/die7.vsnd"
+                            "value0"        "sounds/blood_elf/death/hmm.vsnd"
+                            "value1"        "sounds/blood_elf/death/hmm2.vsnd"
+                            "value2"        "sounds/blood_elf/death/laugh1.vsnd"
+                            "value3"        "sounds/blood_elf/death/laugh2.vsnd"
+                            "value4"        "sounds/blood_elf/death/laugh3.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
@@ -211,7 +201,7 @@
     }
 }
 
-"undead.Move"
+"blood_elf.Move"
 {
     "operator_stacks"
     {
@@ -227,11 +217,14 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/undead/move/death_beckons.vsnd"
-                            "value1"        "sounds/undead/move/fate_is_sealed.vsnd"
-                            "value2"        "sounds/undead/move/hmm.vsnd"
-                            "value3"        "sounds/undead/move/obey.vsnd"
-                            "value4"        "sounds/undead/move/work_work.vsnd"
+                            "value0"        "sounds/blood_elf/move/childs_play.vsnd"
+                            "value1"        "sounds/blood_elf/move/for_my_people.vsnd"
+                            "value2"        "sounds/blood_elf/move/for_now.vsnd"
+                            "value3"        "sounds/blood_elf/move/if_i_must.vsnd"
+                            "value4"        "sounds/blood_elf/move/of_course.vsnd"
+                            "value5"        "sounds/blood_elf/move/too_easy.vsnd"
+                            "value6"        "sounds/blood_elf/move/work_work.vsnd"
+                            "value7"        "sounds/blood_elf/move/yes.vsnd"
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }
@@ -247,7 +240,7 @@
     }
 }
 
-"undead.Select"
+"blood_elf.Select"
 {
     "operator_stacks"
     {
@@ -263,14 +256,12 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/undead/select/biding_master.vsnd"
-                            "value1"        "sounds/undead/select/bow_to_your_will.vsnd"
-                            "value2"        "sounds/undead/select/live_to_serve.vsnd"
-                            "value3"        "sounds/undead/select/restless_work.vsnd"
-                            "value4"        "sounds/undead/select/serve_beyond_the_grave.vsnd"
-                            "value5"        "sounds/undead/select/where_blood_spilled.vsnd"
-                            "value6"        "sounds/undead/select/wish_only_to_serve.vsnd"
-                            "value7"        "sounds/undead/select/yes_master.vsnd"
+                            "value0"        "sounds/blood_elf/select/do_it_right.vsnd"
+                            "value1"        "sounds/blood_elf/select/do_you_see_something.vsnd"
+                            "value2"        "sounds/blood_elf/select/evil_is_near.vsnd"
+                            "value3"        "sounds/blood_elf/select/hurry_up_time_mana.vsnd"
+                            "value4"        "sounds/blood_elf/select/mortal.vsnd"
+                            "value5"        "sounds/blood_elf/select/prattle_bores_me.vsnd"
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }
@@ -286,7 +277,7 @@
     }
 }
 
-"undead.Pissed"
+"blood_elf.Pissed"
 {
     "operator_stacks"
     {
@@ -302,10 +293,42 @@
                     {
                         "value"
                         {                          
-                            "value0"        "sounds/undead/select/death_shall_cleanse_world.vsnd"
-                            "value1"        "sounds/undead/select/killing_me_here.vsnd"
-                            "value2"        "sounds/undead/select/let_blood_drown_the_weak.vsnd"
-                            "value3"        "sounds/undead/select/secret_to_happiness.vsnd"                                           
+                            "value0"        "sounds/blood_elf/pissed/command.vsnd"
+                            "value1"        "sounds/blood_elf/pissed/insolence_disturbing.vsnd"
+                            "value2"        "sounds/blood_elf/pissed/know_what_im_doing.vsnd"
+                            "value3"        "sounds/blood_elf/pissed/silence.vsnd"                                           
+                        }
+                    }
+                    "volume"            {   "value"     "8.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"blood_elf.Pissed.Rare"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {                          
+                            "value0"        "sounds/blood_elf/pissed/blood_blood_blood.vsnd"                                        
                         }
                     }
                     "volume"            {   "value"     "8.00000"  }
