@@ -113,6 +113,7 @@
     "Ability1"                  "blood_elf_heal"
     "Ability2"                  "blood_elf_inner_fire"
     "Ability3"                  "blood_elf_flame_strike"
+    "Ability10"                 "blood_elf_orbs"
     
     // Armor
     //----------------------------------------------------------------

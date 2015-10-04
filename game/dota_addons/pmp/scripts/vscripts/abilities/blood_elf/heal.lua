@@ -1,7 +1,7 @@
 function Animation( event )
     local caster = event.caster
 
-    caster:StartGesture(ACT_DOTA_ATTACK2)
+    StartAnimation(caster, {duration=1, activity=ACT_DOTA_ATTACK2, rate=1})
 end
 
 -- Handles AutoCast Logic
