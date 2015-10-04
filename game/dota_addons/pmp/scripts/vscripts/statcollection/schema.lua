@@ -16,7 +16,7 @@ function customSchema:init(options)
     
     -- Set settings
     self.SCHEMA_KEY = statInfo.schemaID
-    self.HAS_ROUNDS = true
+    self.HAS_ROUNDS = false
     self.GAME_WINNER = true
     self.ANCIENT_EXPLOSION = false
     self.statCollection = options.statCollection

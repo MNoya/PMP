@@ -363,9 +363,11 @@ function statCollection:sendStage3(winners, lastRound)
     end
 
     -- Ensure we can only send it once, and everything is good to go
-    if self.custom.HAS_ROUNDS  == false then
+    if not self.custom.HAS_ROUNDS then
         if self.sentStage3 then return end
         self.sentStage3 = true
+    else
+        self.roundID = self.roundID + 1
     end
 
     -- Print the intro message
@@ -388,7 +390,6 @@ function statCollection:sendStage3(winners, lastRound)
     rounds[tostring(self.roundID)] = {
         players=players
     }
-    self.roundID = self.roundID + 1
     local payload = {
         authKey = self.authKey,
         matchID = self.matchID,
