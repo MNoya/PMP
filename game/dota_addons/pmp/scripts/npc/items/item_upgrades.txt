@@ -1848,7 +1848,7 @@
         "02"
         {
             "var_type"          "FIELD_FLOAT"
-            "extra_bounty"      "1.5 2 3 4 5"
+            "extra_bounty"      "1.5 2 2.3 3 3.5"
         }
     }
 
@@ -1890,7 +1890,7 @@
         "02"
         {
             "var_type"          "FIELD_FLOAT"
-            "extra_bounty"      "1.5 2 3 4 5"
+            "extra_bounty"      "1.5 2 2.3 3 3.5"
         }
     }
 
@@ -1932,7 +1932,7 @@
         "02"
         {
             "var_type"          "FIELD_FLOAT"
-            "extra_bounty"      "1.5 2 3 4 5"
+            "extra_bounty"      "1.5 2 2.3 3 3.5"
         }
     }
 
@@ -1974,7 +1974,7 @@
         "02"
         {
             "var_type"          "FIELD_FLOAT"
-            "extra_bounty"      "1.5 2 3 4 5"
+            "extra_bounty"      "1.5 2 2.3 3 3.5"
         }
     }
 
@@ -2016,7 +2016,7 @@
         "02"
         {
             "var_type"          "FIELD_FLOAT"
-            "extra_bounty"      "1.5 2 3 4 5"
+            "extra_bounty"      "1.5 2 2.3 3 3.5"
         }
     }
 
