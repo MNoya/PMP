@@ -239,7 +239,6 @@
 	        "particle"  "particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
 	        "particle"  "particles/custom/blood_elf/phoenix_fire_spirit_ground.vpcf"
 	        "particle"  "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_requiemofsouls_line_ground.vpcf"
-	        "particle"  "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf"
 	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
 	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 	    }
@@ -282,7 +281,7 @@
 	    {
 	        "FireEffect"
 	        {
-	            "EffectName"        "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf"
+	            "EffectName"        "particles/custom/blood_elf/invoker_sun_strike_team_immortal1.vpcf"
 	            "EffectAttachType"  "world_origin"
 	            "TargetPoint"       "POINT"
 	        }
