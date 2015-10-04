@@ -3361,6 +3361,7 @@
 	    // Abilities
 	    //----------------------------------------------------------------
 	    "Ability1"                  "skeleton_racial"
+	    "Ability11"                 "skeleton_king_particles"
 	
 	    // Armor
 	    //----------------------------------------------------------------
@@ -3628,8 +3629,8 @@
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/props_structures/bad_ancient001.vmdl"
-	    "ModelScale"                "0.3"
+	    "Model"                     "models/props_structures/kings_chair.vmdl"
+	    "ModelScale"                "0.5"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
 	    "RingRadius"                "180"
@@ -3733,6 +3734,7 @@
 	    "Ability4"                  "upgrade_wings1" //Upgrade Wings - 8 Levels
 	    "Ability5"                  "upgrade_health"
 	    "Ability10"                 "ability_building"
+	    "Ability11"                 "skeleton_king_particles"
 	
 	    // Armor
 	    //----------------------------------------------------------------

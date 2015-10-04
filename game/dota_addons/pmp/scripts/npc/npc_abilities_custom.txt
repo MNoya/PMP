@@ -5600,6 +5600,42 @@
 	    "AbilityTextureName"    "skeleton_reincarnation"
 	    "MaxLevel"              "6"
 	}
+	
+	"skeleton_king_particles"
+	{ 
+	    "BaseClass"             "ability_datadriven"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"              "1"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_skeletonking/skeletonking_eyes.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_skeleton_king"
+	        {
+	            "Passive"            "1"
+	            "IsHidden"           "1"
+	    
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/units/heroes/hero_skeletonking/skeletonking_eyes.vpcf"
+	                    "EffectAttachType"  "attach_customorigin"
+	                    "Target"            "TARGET"
+	                    "ControlPointEntities"
+	                    {
+	                        "CASTER"    "attach_eyeL"
+	                        "CASTER"    "attach_eyeR"
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
 	"spawn_skeleton"
 	{
 	    "BaseClass"                     "ability_datadriven"
