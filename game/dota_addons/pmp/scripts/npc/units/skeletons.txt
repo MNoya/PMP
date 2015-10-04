@@ -6,7 +6,7 @@
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/wraith_king/wraith_king.vmdl"
+    "Model"                     "models/heroes/skeleton_king/skeleton_king.vmdl"
     "ModelScale"                "0.7"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
@@ -289,7 +289,7 @@
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
     "Model"                     "models/props_structures/bad_ancient001.vmdl"
-    "ModelScale"                "2"
+    "ModelScale"                "0.3"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
     "RingRadius"                "180"
@@ -374,7 +374,7 @@
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/wraith_king/wraith_king.vmdl"
+    "Model"                     "models/heroes/skeleton_king/skeleton_king.vmdl"
     "ModelScale"                "1.2"
     "Level"                     "10"
     "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
@@ -459,7 +459,7 @@
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
     "Model"                     "models/props_structures/tower_bad.vmdl"
-    "ModelScale"                "2"
+    "ModelScale"                "0.8"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
     "RingRadius"                "100"
@@ -523,7 +523,7 @@
     // General
     //----------------------------------------------------------------
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/heroes/wraith_king/wraith_king.vmdl"
+    "Model"                     "models/heroes/skeleton_king/skeleton_king.vmdl"
     "ModelScale"                "1"
     "Level"                     "1"
     "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"

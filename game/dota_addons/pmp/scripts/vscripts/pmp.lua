@@ -538,6 +538,36 @@ function PMP:OnNPCSpawned(keys)
 end
 
 function PMP:OnHeroInGame(hero)
+
+        local tt = {
+  id=0,
+  ptID="cont_0",
+  layout={2,3,4},
+  size=0,
+  rowStarts={},
+  skins={},
+  buttons={},
+  headerText="Container Test"
+}
+
+tt.size = 9
+table.insert(tt.rowStarts, 1)
+table.insert(tt.rowStarts, 3)
+table.insert(tt.rowStarts, 6)
+
+tt.skins["HourGlass"] = true
+tt.skins["Something"] = true
+
+tt["slot4"] = 255
+tt["slot9"] = 256
+
+tt = {name="cont_0", table=tt}
+
+DeepPrintTable(tt)
+
+local player =PlayerResource:GetPlayer(0)
+CustomGameEventManager:Send_ServerToPlayer(player, "pt_table_full_update", tt )
+    
 	local hero_name = hero:GetUnitName()
 	print("[PMP] OnHeroInGame "..hero_name)
 

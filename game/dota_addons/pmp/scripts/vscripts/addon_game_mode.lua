@@ -65,9 +65,17 @@ function Precache( context )
 	PrecacheUnitByNameSync("blood_elf_leader", context)
 	PrecacheUnitByNameSync("super_blood_elf", context)
 	PrecacheUnitByNameSync("blood_elf_garage", context)
-	PrecacheUnitByNameSync("blood_elf_pimpery", context)	
+	PrecacheUnitByNameSync("blood_elf_pimpery", context)
 	PrecacheUnitByNameSync("blood_elf_tower", context)
 	PrecacheUnitByNameSync("blood_elf_ghost", context)
+
+	PrecacheUnitByNameSync("skeleton", context)
+	PrecacheUnitByNameSync("skeleton_leader", context)
+	PrecacheUnitByNameSync("super_skeleton", context)
+	PrecacheUnitByNameSync("skeleton_garage", context)
+	PrecacheUnitByNameSync("skeleton_pimpery", context)
+	PrecacheUnitByNameSync("skeleton_tower", context)
+	PrecacheUnitByNameSync("skeleton_ghost", context)
 
 	PrecacheUnitByNameSync("nian_boss", context)
 
