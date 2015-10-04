@@ -72,6 +72,7 @@
 		"skeleton_pimpery"                                                                "Skeleton Pimpery"
 		"skeleton_tower"                                                                  "Skeleton Tower"
 		"skeleton_ghost"                                                                  "Skeleton Ghost"
+		"skeleton_shade"                                                                  "Shade"
 
 		"treant"                                                                          "Treant"
 		"treant_leader"                                                                   "Treant Leader"
@@ -130,6 +131,9 @@
 
 		"DOTA_Tooltip_modifier_blood_pool_regen"                                          "Blood Pool Regen"
 		"DOTA_Tooltip_modifier_blood_pool_regen_Description"                              "Standing over a blood pool\nRegenerating %fMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% health per second"
+
+		"DOTA_Tooltip_modifier_reincarnation_buff"                                        "Reincarnation Aura"
+		"DOTA_Tooltip_modifier_reincarnation_buff_Description"                            "This unit is under the effects of Reincarnation aura\nDouble chance to come back to life"
 
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
@@ -538,7 +542,43 @@
 		"DOTA_Tooltip_ability_summon_super_night_elf_empty"                               "Summon Super Night Elf"
 		"DOTA_Tooltip_ability_summon_super_night_elf_empty_Description"                   "You've used all your super units."
 
-		
+		"DOTA_Tooltip_ability_skeleton_carrion_swarm"                                     "Carrion Swarm"
+		"DOTA_Tooltip_ability_skeleton_carrion_swarm_Description"                         "Sends a horde of bats to damage enemies."
+		"DOTA_Tooltip_ability_skeleton_carrion_swarm_start_radius"                        "START RADIUS:"
+		"DOTA_Tooltip_ability_skeleton_carrion_swarm_end_radius"                          "END RADIUS:"
+		"DOTA_Tooltip_ability_skeleton_carrion_swarm_range"                               "RANGE:"
+		"DOTA_Tooltip_ability_skeleton_carrion_swarm_speed"                               "SPEED:"
+
+		"DOTA_Tooltip_ability_skeleton_reincarnation_aura"                                "Reincarnation Aura"
+		"DOTA_Tooltip_ability_skeleton_reincarnation_aura_Description"                    "Doubles the chance of reincarnate of allied skeletons nearby"
+		"DOTA_Tooltip_ability_skeleton_reincarnation_aura_radius"                         "RADIUS:"
+
+		"DOTA_Tooltip_ability_skeleton_sacrifice"                                         "Sacrifice"
+		"DOTA_Tooltip_ability_skeleton_sacrifice_Description"                             "Kills a Skeleton that you control into a Shade.\nShades are invisible scouts, but can't attack."
+
+		"DOTA_Tooltip_ability_skeleton_racial"                                            "Reincarnation"
+		"DOTA_Tooltip_ability_skeleton_racial_Description"                                "<font color='#00ff00'>Racial</font>\nComes back to life to fight once more"
+		"DOTA_Tooltip_ability_skeleton_racial_reincarnate_chance"                         "REINCARNATE CHANCE:"
+		"DOTA_Tooltip_ability_skeleton_racial_Note0"                                      "I'll be back. - Skeleton King 2013"
+
+		"DOTA_Tooltip_ability_skeleton_king_particles"                                    "Skeleton King Particles"
+		"DOTA_Tooltip_ability_skeleton_king_particles_Description"                        ""
+
+		"DOTA_Tooltip_ability_spawn_skeleton"                                             "Spawn Skeleton"
+		"DOTA_Tooltip_ability_spawn_skeleton_Description"                                 ""
+
+		"DOTA_Tooltip_ability_spawn_skeleton_leader"                                      "Spawn Skeleton Leader"
+		"DOTA_Tooltip_ability_spawn_skeleton_leader_Description"                          "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nSkeleton's Leader has the following abilities:\n-Carrion Swarm\n-Sacrifice\n-Reincarnation Aura\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+
+		"DOTA_Tooltip_ability_summon_super_skeleton"                                      "Summon Super Skeleton"
+		"DOTA_Tooltip_ability_summon_super_skeleton_Description"                          "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
+		"DOTA_Tooltip_ability_summon_super_skeleton_duration"                             "DURATION:"
+
+		"DOTA_Tooltip_ability_summon_super_skeleton_empty"                                "Summon Super Skeleton"
+		"DOTA_Tooltip_ability_summon_super_skeleton_empty_Description"                    "You've used all your super units."
+
+		//-----------------------------------------------
+
 		"DOTA_Tooltip_ability_barrage_attack"                                             "Barrage Attack"
 		"DOTA_Tooltip_ability_barrage_attack_Description"                                 ""
 

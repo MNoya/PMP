@@ -5589,9 +5589,178 @@
 	
 	    "AbilityGoldCost"           "100"
 	}
-	//skeleton_carrion_swarm
-	//skeleton_sacrifice
-	//skeleton_resurrection_aura --Doubles the change to resurrect
+	"skeleton_carrion_swarm"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "skeleton_carrion_swarm"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
+	
+	    "AbilityCastRange"              "700"
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCooldown"               "10.0"
+	
+	    "AbilityManaCost"               "45"
+	    "AbilityDamage"                 "20"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+	    }
+	    
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "start_radius"          "150"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "end_radius"            "300"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "range"                 "700"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "speed"                 "1100"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "LinearProjectile"
+	        {
+	            "Target"            "POINT"
+	            "EffectName"        "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
+	            "MoveSpeed"         "%speed"
+	            "StartRadius"       "%start_radius"
+	            "EndRadius"         "%end_radius"
+	            "StartPosition"     "attach_attack1"
+	            "FixedDistance"     "%range"
+	            "TargetTeams"       "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	            "TargetTypes"       "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            "HasFrontalCone"    "1"
+	            "ProvidesVision"    "0"
+	        }
+	
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_DeathProphet.CarrionSwarm"
+	            "Target"        "CASTER"
+	        }
+	    }
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit"   "0"
+	        "FireSound"
+	        {
+	            "EffectName"        "Hero_DeathProphet.CarrionSwarm.Damage"
+	            "Target"            "TARGET"
+	        }
+	
+	        "Damage"
+	        {
+	            "Target"         "TARGET"
+	            "Type"           "DAMAGE_TYPE_MAGICAL"
+	            "Damage"         "%AbilityDamage"
+	        }
+	    }
+	}
+	
+	//Doubles the change to resurrect
+	"skeleton_reincarnation_aura"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityTextureName"            "skeleton_reincarnation_aura"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	    "AbilityCastRange"              "%radius"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "radius"              "350"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_reincarnation_aura"
+	        {
+	            "Passive"            "1"
+	            "IsHidden"           "1"
+	    
+	            "EffectName"        "particles/custom/skeleton/reincarnation_aura.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	
+	            "Aura"              "modifier_reincarnation_aura_check"
+	            "Aura_Radius"       "%radius"
+	            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	            "Aura_Types"        "DOTA_UNIT_TARGET_BASIC"
+	            "Aura_ApplyToCaster" "0"
+	        }
+	
+	        "modifier_reincarnation_aura_check"
+	        {
+	            "IsHidden"  "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/skeleton/reincarnation.lua"
+	                    "Function"      "CheckTarget"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"    "modifier_reincarnation_buff"
+	                    "Target"          "TARGET"
+	                }
+	            }
+	        }
+	
+	        "modifier_reincarnation_buff"
+	        {
+	            "IsHidden"  "0"
+	        }
+	    }
+	}
+	
+	"skeleton_sacrifice"
+	{
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "abilities/skeleton/sacrifice.lua"
+	    "AbilityTextureName"            "skeleton_sacrifice"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityCastRange"              "500"
+	    "AbilityCooldown"               "30"
+	    "AbilityManaCost"               "50"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
+	}
 	"skeleton_racial"
 	{ 
 	    //1/6 to resurrect
@@ -5599,6 +5768,47 @@
 	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"    "skeleton_reincarnation"
 	    "MaxLevel"              "6"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "reincarnate_chance"  "10 12 15 20 25 30"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_skeleton_reincarnation"
+	        {
+	            "Passive"            "1"
+	            "IsHidden"            "1"
+	            
+	            "OnTakeDamage"
+	            // "%attack_damage" is set to the damage value after mitigation
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/skeleton/reincarnation.lua"
+	                    "Function"      "ReincarnationCheck"
+	                    "Damage"        "%attack_damage"
+	                }
+	            }
+	        }
+	
+	        "modifier_reincarnating"
+	        {
+	            "IsHidden"  "1"
+	            "States"
+	            {
+	                "MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_MAGIC_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_STUNNED"       "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	    }
 	}
 	
 	"skeleton_king_particles"

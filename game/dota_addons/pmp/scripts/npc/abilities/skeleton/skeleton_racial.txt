@@ -5,6 +5,47 @@
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"    "skeleton_reincarnation"
     "MaxLevel"              "6"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "reincarnate_chance"  "10 12 15 20 25 30"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_skeleton_reincarnation"
+        {
+            "Passive"            "1"
+            "IsHidden"            "1"
+            
+            "OnTakeDamage"
+            // "%attack_damage" is set to the damage value after mitigation
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/skeleton/reincarnation.lua"
+                    "Function"      "ReincarnationCheck"
+                    "Damage"        "%attack_damage"
+                }
+            }
+        }
+
+        "modifier_reincarnating"
+        {
+            "IsHidden"  "1"
+            "States"
+            {
+                "MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_MAGIC_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_STUNNED"       "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
 }
 
 "skeleton_king_particles"

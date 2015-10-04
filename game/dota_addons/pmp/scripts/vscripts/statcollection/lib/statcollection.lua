@@ -375,9 +375,6 @@ function statCollection:sendStage3(winners, lastRound)
     local players = {}
     for i = 1, (PlayerResource:GetPlayerCount() or 1) do
         local steamID = PlayerResource:GetSteamAccountID(i - 1)
-        if steamID == 0 then
-            steamID = 86718505
-        end
 
         table.insert(players, {
             steamID32 = steamID,

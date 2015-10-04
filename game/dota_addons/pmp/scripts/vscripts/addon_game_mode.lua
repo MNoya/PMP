@@ -75,6 +75,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("skeleton_garage", context)
 	PrecacheUnitByNameSync("skeleton_pimpery", context)
 	PrecacheUnitByNameSync("skeleton_tower", context)
+	PrecacheUnitByNameSync("skeleton_shade", context)
 	PrecacheUnitByNameSync("skeleton_ghost", context)
 
 	PrecacheUnitByNameSync("nian_boss", context)

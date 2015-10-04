@@ -3453,7 +3453,7 @@
 	    //----------------------------------------------------------------
 	    "Ability1"                  "skeleton_carrion_swarm"
 	    "Ability2"                  "skeleton_sacrifice"
-	    "Ability3"                  "skeleton_resurrection_aura"
+	    "Ability3"                  "skeleton_reincarnation_aura"
 	    
 	    // Armor
 	    //----------------------------------------------------------------
@@ -3859,6 +3859,102 @@
 	    // Creature Data
 	    //----------------------------------------------------------------
 	}
+	
+	"skeleton_shade"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/heroes/nevermore/nevermore.vmdl"
+	    "ModelScale"                "0.6"
+	    "Level"                     "1"
+	    "HealthBarOffset"           "140"
+	    "SoundSet"                  "Hero_Nevermore"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+	
+	    "LeavesCorpse"              "0"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "AbilityLayout"             "4"
+	    "Ability1"                  "true_sight"
+	    "Ability2"                  ""   //Reference: Arst
+	    "Ability3"                  ""   //Reference: Alam
+	    "Ability4"                  ""
+	        
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackDamageMin"           "1"
+	    "AttackDamageMax"           "1"
+	    "AttackRate"                "1"
+	    "AttackAnimationPoint"      "0.4"
+	    "AttackAcquisitionRange"    "500"
+	    "AttackRange"               "90"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "20.0"
+	    "BountyGoldMax"             "30.0"
+	    
+	    // Bounds
+	    //----------------------------------------------------------------
+	    "BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
+	    "RingRadius"                "50"
+	    "CollisionSize"             "16"
+	    "FormationRank"             "1"
+	    
+	    // Building Cost Stats
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "0"
+	    "LumberCost"                "0"
+	    "FoodCost"                  "1"
+	    "BuildTime"                 "15"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"             "300"
+	    "MovementTurnRate"          "0.6"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "125"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "800"
+	    "VisionNighttimeRange"      "600"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	    "Creature"
+	    {
+	        "DisableClumpingBehavior"   "1"
+	
+	        "AttachWearables"
+	        {
+	            "Wearable1"     {   "ItemDef"       "509"     }
+	        }
+	    }
+	}
+	
 	
 	"skeleton_ghost"
 	{
