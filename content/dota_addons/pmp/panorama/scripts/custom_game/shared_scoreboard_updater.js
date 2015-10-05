@@ -59,7 +59,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 		{
 			if ( playerInfo.player_selected_hero !== "" )
 			{
-				playerPortrait.SetImage( "file://{images}/heroes/" + playerInfo.player_selected_hero + ".png" );
+				var hero = playerInfo.player_selected_hero
+				if (playerInfo.player_selected_hero == "npc_dota_hero_skeleton_king")
+					hero = "skeleton_king"
+				playerPortrait.SetImage( "file://{images}/heroes/" + hero + ".png" );
 			}
 			else
 			{

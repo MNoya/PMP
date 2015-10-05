@@ -50,13 +50,22 @@ function UpdatePlayer( teamPanel, playerId )
 
 	if ( playerInfo.player_selected_hero !== "" )
 	{
-		playerPortrait.SetImage( "file://{images}/heroes/" + playerInfo.player_selected_hero + ".png" );
+		var hero = playerInfo.player_selected_hero
+		if (hero == "npc_dota_hero_skeleton_king")
+			hero = "skeleton_king"
+
+		playerPortrait.SetImage( "file://{images}/heroes/" + hero + ".png" );
 		playerPanel.SetHasClass( "hero_selected", true );
 		playerPanel.SetHasClass( "hero_highlighted", false );
 	}
 	else if ( playerInfo.possible_hero_selection !== "" && ( playerInfo.player_team_id == localPlayerTeamId ) )
 	{
-		playerPortrait.SetImage( "file://{images}/heroes/npc_dota_hero_" + playerInfo.possible_hero_selection + ".png" );
+		$.Msg(playerInfo.possible_hero_selection)
+		var hero = "npc_dota_hero_" + playerInfo.possible_hero_selection
+		if (hero == "npc_dota_hero_skeleton_king")
+			hero = "skeleton_king"
+
+		playerPortrait.SetImage( "file://{images}/heroes/" + hero + ".png" );
 		playerPanel.SetHasClass( "hero_selected", false );
 		playerPanel.SetHasClass( "hero_highlighted", true );
 	}
