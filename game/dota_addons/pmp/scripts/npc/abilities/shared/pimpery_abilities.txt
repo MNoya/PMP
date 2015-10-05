@@ -2278,7 +2278,860 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 }
 
+//////////////////
+//    BOW    //
+//////////////////
 
+"upgrade_bow1"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow1"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "2"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "10"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "1"
+        }
+    }
+}
+
+"upgrade_bow2"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow2"
+    "MaxLevel"                      "2"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "4"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "25"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "2"
+        }
+    }
+}
+
+"upgrade_bow3"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow3"
+    "MaxLevel"                      "3"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "6"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "40"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "3"
+        }
+    }
+}
+
+"upgrade_bow4"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow4"
+    "MaxLevel"                      "4"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "8"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "55"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "4"
+        }
+    }
+}
+
+"upgrade_bow5"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow5"
+    "MaxLevel"                      "5"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "12"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "70"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "5"
+        }
+    }
+}
+
+"upgrade_bow6"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow6"
+    "MaxLevel"                      "6"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "16"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "85"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "6"
+        }
+    }
+}
+
+"upgrade_bow7"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow7"
+    "MaxLevel"                      "7"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "20"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "100"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "7"
+        }
+    }
+}
+
+"upgrade_bow8"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow8"
+    "MaxLevel"                      "8"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "24"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "115"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "8"
+        }
+    }
+}
+
+"upgrade_bow9"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow9"
+    "MaxLevel"                      "9"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "30"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "130"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "9"
+        }
+    }
+}
+
+"upgrade_bow10"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow10"
+    "MaxLevel"                      "10"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "36"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "145"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "10"
+        }
+    }
+}
+
+"upgrade_bow11"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow11"
+    "MaxLevel"                      "11"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "42"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "160"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "11"
+        }
+    }
+}
+
+"upgrade_bow12"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow12"
+    "MaxLevel"                      "12"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "48"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "175"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "12"
+        }
+    }
+}
+
+"upgrade_bow13"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow13"
+    "MaxLevel"                      "13"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "56"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "190"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "13"
+        }
+    }
+}
+
+"upgrade_bow14"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow14"
+    "MaxLevel"                      "14"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "64"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "205"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "14"
+        }
+    }
+}
+
+"upgrade_bow15"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow15"
+    "MaxLevel"                      "15"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "72"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "220"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "15"
+        }
+    }
+}
+
+"upgrade_bow16"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow16"
+    "MaxLevel"                      "16"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "80"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "235"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "16"
+        }
+    }
+}
+
+"upgrade_bow17"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow17"
+    "MaxLevel"                      "17"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "90"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "250"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "17"
+        }
+    }
+}
+
+"upgrade_bow18"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow18"
+    "MaxLevel"                      "18"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "100"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "265"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "18"
+        }
+    }
+}
+
+"upgrade_bow19"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow19"
+    "MaxLevel"                      "19"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "110"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "280"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "19"
+        }
+    }
+}
+
+"upgrade_bow20"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow20"
+    "MaxLevel"                      "20"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "130"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "295"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "bow"
+            "Level"         "20"
+        }
+    }
+}
+
+
+"upgrade_quiver1"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_quiver1"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "10"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "50"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "quiver"
+            "Level"         "1"
+        }
+    }
+}
+
+"upgrade_quiver2"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_quiver2"
+    "MaxLevel"                      "2"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "20"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "100"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "quiver"
+            "Level"         "2"
+        }
+    }
+}
+
+"upgrade_quiver3"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_quiver3"
+    "MaxLevel"                      "3"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "30"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "150"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "quiver"
+            "Level"         "3"
+        }
+    }
+}
+
+"upgrade_quiver4"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_quiver4"
+    "MaxLevel"                      "4"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "45"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "200"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "quiver"
+            "Level"         "4"
+        }
+    }
+}
+
+"upgrade_quiver5"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_quiver5"
+    "MaxLevel"                      "5"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"           "70"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "lumber_cost"           "300"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "quiver"
+            "Level"         "5"
+        }
+    }
+}
 
 //////////////////
 //    HEALTH    //

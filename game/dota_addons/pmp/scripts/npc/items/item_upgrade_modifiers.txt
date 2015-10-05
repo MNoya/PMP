@@ -593,5 +593,232 @@
                 "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "200"
             }
         }
+
+        // Bow
+        "modifier_bow1"
+        {
+            "TextureName"   "upgrade_bow1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "2"
+            }
+        }
+
+        "modifier_bow2"
+        {
+            "TextureName"   "upgrade_bow2"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "4"
+            }
+        }
+
+        "modifier_bow3"
+        {
+            "TextureName"   "upgrade_bow3"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "6"
+            }
+        }
+
+        "modifier_bow4"
+        {
+            "TextureName"   "upgrade_bow4"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "8"
+            }
+        }
+
+        "modifier_bow5"
+        {
+            "TextureName"   "upgrade_bow5"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "12"
+            }
+        }
+
+        "modifier_bow6"
+        {
+            "TextureName"   "upgrade_bow6"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "16"
+            }
+        }
+
+        "modifier_bow7"
+        {
+            "TextureName"   "upgrade_bow7"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "20"
+            }
+        }
+
+        "modifier_bow8"
+        {
+            "TextureName"   "upgrade_bow8"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "24"
+            }
+        }
+
+        "modifier_bow9"
+        {
+            "TextureName"   "upgrade_bow9"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "30"
+            }
+        }
+
+        "modifier_bow10"
+        {
+            "TextureName"   "upgrade_bow10"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "36"
+            }
+        }
+
+        "modifier_bow11"
+        {
+            "TextureName"   "upgrade_bow11"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "42"
+            }
+        }
+
+        "modifier_bow12"
+        {
+            "TextureName"   "upgrade_bow12"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "48"
+            }
+        }
+
+        "modifier_bow13"
+        {
+            "TextureName"   "upgrade_bow13"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "56"
+            }
+        }
+
+        "modifier_bow14"
+        {
+            "TextureName"   "upgrade_bow14"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "64"
+            }
+        }
+
+        "modifier_bow15"
+        {
+            "TextureName"   "upgrade_bow15"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "72"
+            }
+        }
+
+        "modifier_bow16"
+        {
+            "TextureName"   "upgrade_bow16"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "80"
+            }
+        }
+
+        "modifier_bow17"
+        {
+            "TextureName"   "upgrade_bow17"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "90"
+            }
+        }
+
+        "modifier_bow18"
+        {
+            "TextureName"   "upgrade_bow18"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "100"
+            }
+        }
+
+        "modifier_bow19"
+        {
+            "TextureName"   "upgrade_bow19"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "110"
+            }
+        }
+
+        "modifier_bow20"
+        {
+            "TextureName"   "upgrade_bow20"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "120"
+            }
+        }
+
+        // Quiver
+        "modifier_quiver1"
+        {
+            "TextureName"   "upgrade_quiver1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "10"
+            }
+        }
+
+        "modifier_quiver2"
+        {
+            "TextureName"   "upgrade_quiver2"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "20"
+            }
+        }
+
+        "modifier_quiver3"
+        {
+            "TextureName"   "upgrade_quiver3"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "30"
+            }
+        }
+
+        "modifier_quiver4"
+        {
+            "TextureName"   "upgrade_quiver4"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "45"
+            }
+        }
+
+        "modifier_quiver5"
+        {
+            "TextureName"   "upgrade_quiver5"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "70"
+            }
+        }
     }
 }

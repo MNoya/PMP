@@ -1,9 +1,59 @@
 "night_elf_racial"
-{ 
-    //500 Range, +600 Nightvision
+{
     // Deal 50% damage to melee units, buildings, 100% damage to ranged untis; take 140% from melee, 100% from ranged)
     "BaseClass"             "ability_datadriven"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"    "night_elf_range_attack"
     "MaxLevel"              "6"
+
+    "AbilityCastRange"      "400 450 500 550 600 650"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "attack_range"        "400 450 500 550 600 650"
+        }
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "attack_range_bonus"  "0 50 100 150 200 250"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_night_elf_range"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+    
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%attack_range_bonus"
+            }
+        }
+    }
+}
+
+"night_elf_roots"
+{
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "MaxLevel"              "1"
+    
+    "Modifiers"
+    {
+        "modifier_night_elf_roots"
+        {
+            "OverrideAnimation" "ACT_DOTA_IDLE"
+
+            "Passive"            "1"
+            "IsHidden"           "1"
+    
+            "EffectName"        "particles/custom/night_elf/root_vines.vpcf"
+            "EffectAttachType"  "follow_origin"
+        }
+    }
 }

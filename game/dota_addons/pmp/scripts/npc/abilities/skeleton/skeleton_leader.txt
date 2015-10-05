@@ -123,7 +123,7 @@
             "Aura_Radius"       "%radius"
             "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
             "Aura_Types"        "DOTA_UNIT_TARGET_BASIC"
-            "Aura_Flags"        "DOTA_UNIT_TARGET_NOT_MAGIC_IMMUNE_ALLIES"
+            "Aura_Flags"        "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
             "Aura_ApplyToCaster" "0"
         }
 

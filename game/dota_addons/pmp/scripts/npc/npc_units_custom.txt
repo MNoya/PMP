@@ -2190,7 +2190,9 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "400"
+	    "ProjectileModel"           "particles/units/heroes/hero_drow/drow_base_attack.vpcf"
+	    "ProjectileSpeed"           "900"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -2218,7 +2220,7 @@
 	    // Vision
 	    //----------------------------------------------------------------
 	    "VisionDaytimeRange"        "500"
-	    "VisionNighttimeRange"      "500"
+	    "VisionNighttimeRange"      "700"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -2267,7 +2269,7 @@
 	    //----------------------------------------------------------------
 	    "Ability1"                  "night_elf_owl_scout"
 	    "Ability2"                  "night_elf_mass_windwalk"
-	    "Ability3"                  "night_elf_trueshoot_aura"
+	    "Ability3"                  "night_elf_trueshot_aura"
 	    
 	    // Armor
 	    //----------------------------------------------------------------
@@ -2445,8 +2447,8 @@
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/props_structures/good_ancient001.vmdl"
-	    "ModelScale"                "1"
+	    "Model"                     "models/items/furion/treant/furion_treant_nelum_red/furion_treant_nelum_red.vmdl"
+	    "ModelScale"                "1.6"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
 	    "RingRadius"                "180"
@@ -2469,6 +2471,7 @@
 	    "Ability6"                  "spawn_night_elf_leader"
 	    "Ability7"                  "summon_super_night_elf" //Visible to show the 3 min cd
 	    "Ability10"                 "ability_building"
+	    "Ability11"                 "night_elf_roots"
 	    
 	    // Armor
 	    //----------------------------------------------------------------
@@ -2543,12 +2546,13 @@
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
-	    "AbilityLayout"             "5"
-	    "Ability1"                  "upgrade_weapon1" //Upgrade Weapon - 30 Levels
-	    "Ability2"                  "upgrade_helm1" //Upgrade Helm - 15 Levels
-	    "Ability3"                  "upgrade_shield1" //Upgrade Shield - 11 Levels
-	    "Ability4"                  "upgrade_wings1" //Upgrade Wings - 8 Levels
-	    "Ability5"                  "upgrade_health"
+	    "AbilityLayout"             "6"
+	    "Ability1"                  "upgrade_bow1" //Upgrade Bow - 20 Levels
+	    "Ability2"                  "upgrade_quiver1" //Upgrade Quiver - 5 Levels
+	    "Ability3"                  "upgrade_helm1" //Upgrade Helm - 15 Levels
+	    "Ability4"                  "upgrade_shield1" //Upgrade Shield - 11 Levels
+	    "Ability5"                  "upgrade_wings1" //Upgrade Wings - 8 Levels
+	    "Ability6"                  "upgrade_health"
 	    "Ability10"                 "ability_building"
 	
 	    // Armor
@@ -2616,8 +2620,8 @@
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/props_structures/tower_dragon_white.vmdl"
-	    "ModelScale"                "1"
+	    "Model"                     "models/items/furion/treant/shroomling_treant/shroomling_treant.vmdl"
+	    "ModelScale"                "2.2"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
 	    "RingRadius"                "100"
@@ -2630,6 +2634,7 @@
 	    //----------------------------------------------------------------
 	    "Ability1"                  "ability_tower"
 	    "Ability10"                 "ability_building"
+	    "Ability11"                 "night_elf_roots"
 	    
 	    // Armor
 	    //----------------------------------------------------------------
@@ -2749,6 +2754,70 @@
 	            "Wearable7" { "ItemDef" "267" } //"models/heroes/drow/drow_haircowl.vmdl"
 	        }
 	    }
+	}
+	
+	"nightelf_owl"
+	{                                       
+	    // General
+	    //----------------------------------------------------------------
+	    "Model"                     "models/items/courier/snowl/snowl_flying.vmdl"  // Model.
+	    "BaseClass"                 "npc_dota_beastmaster_hawk"
+	    "SoundSet"                  "0"         // Name of sound set.
+	    "Level"                     "1"
+	    "ModelScale"                "1.0"
+	    "IsSummoned"                "1"
+	    "UnitLabel"                 "hawk"
+	
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "true_sight"            // Ability 1
+	    "Ability2"                  ""          // Ability 2
+	    "Ability3"                  ""          // Ability 3
+	    "Ability4"                  ""          // Ability 4
+	
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"         // Physical protection.
+	
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	
+	    // Bounds
+	    //----------------------------------------------------------------
+	    "HealthBarOffset"           "165"
+	    "FormationRank"             "1"
+	
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyXP"                  "20"        // Experience earn.
+	    "BountyGoldMin"             "30"        // Gold earned min.
+	    "BountyGoldMax"             "30"        // Gold earned max.
+	
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+	    "MovementSpeed"             "270"       // Speed.
+	    "MovementTurnRate"          "0.6"       // Turning rate.
+	
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "40"        // Base health.
+	    "StatusHealthRegen"         "0.5"       // Health regeneration rate.
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "1000"      // Range of vision during day light.
+	    "VisionNighttimeRange"      "1000"      // Range of vision at night time.
+	
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"                            // Team name.
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_WEAK"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    "WakesNeutrals"             "0"
 	}
 	// Main unit
 	// Leader unit (Spawns every 3 minutes and don't count towards food cap)

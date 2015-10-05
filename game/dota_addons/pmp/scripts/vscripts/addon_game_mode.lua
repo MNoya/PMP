@@ -78,6 +78,23 @@ function Precache( context )
 	PrecacheUnitByNameSync("skeleton_shade", context)
 	PrecacheUnitByNameSync("skeleton_ghost", context)
 
+	PrecacheUnitByNameSync("night_elf", context)
+	PrecacheUnitByNameSync("night_elf_leader", context)
+	PrecacheUnitByNameSync("super_night_elf", context)
+	PrecacheUnitByNameSync("night_elf_garage", context)
+	PrecacheUnitByNameSync("night_elf_pimpery", context)
+	PrecacheUnitByNameSync("night_elf_tower", context)
+	PrecacheUnitByNameSync("night_elf_ghost", context)
+	PrecacheUnitByNameSync("nightelf_owl", context)
+
+	PrecacheUnitByNameSync("treant", context)
+	PrecacheUnitByNameSync("treant_leader", context)
+	PrecacheUnitByNameSync("super_treant", context)
+	PrecacheUnitByNameSync("treant_garage", context)
+	PrecacheUnitByNameSync("treant_pimpery", context)
+	PrecacheUnitByNameSync("treant_tower", context)
+	PrecacheUnitByNameSync("treant_ghost", context)
+
 	PrecacheUnitByNameSync("nian_boss", context)
 
 	PrecacheUnitByNameSync("npc_dota_hero_axe", context)

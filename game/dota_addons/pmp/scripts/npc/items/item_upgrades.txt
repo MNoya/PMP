@@ -2469,3 +2469,212 @@
 /////////////////////////////
 // NIGHT ELF RACIAL UPGRADES
 ////////////////////////////
+"item_upgrade_night_elf_racial1"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityTextureName"            "item_upgrade_night_elf_racial"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+
+    "AbilityGoldCost"               "100"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "100"
+        }
+        "02"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "attack_range"        "450 500 550 600 650"
+        }
+    }
+
+    "MaxUpgradeLevel"               "5"
+    "ItemBaseLevel"                 "1"
+
+    "OnSpellStart"
+    {
+        // Add Upgrade and Swap the item for the next upgrade
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "racial"
+            "Level"         "1"
+        }
+    }
+}
+
+"item_upgrade_night_elf_racial2"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityTextureName"            "item_upgrade_night_elf_racial"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+
+    "AbilityGoldCost"               "200"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "200"
+        }
+        "02"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "attack_range"        "450 500 550 600 650"
+        }
+    }
+
+    "MaxUpgradeLevel"               "5"
+    "ItemBaseLevel"                 "2"
+
+    "OnSpellStart"
+    {
+        // Add Upgrade and Swap the item for the next upgrade
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "racial"
+            "Level"         "2"
+        }
+    }
+}
+
+"item_upgrade_night_elf_racial3"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityTextureName"            "item_upgrade_night_elf_racial"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+
+    "AbilityGoldCost"               "300"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "300"
+        }
+        "02"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "attack_range"        "450 500 550 600 650"
+        }
+    }
+
+    "MaxUpgradeLevel"               "5"
+    "ItemBaseLevel"                 "3"
+
+    "OnSpellStart"
+    {
+        // Add Upgrade and Swap the item for the next upgrade
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "racial"
+            "Level"         "3"
+        }
+    }
+}
+
+"item_upgrade_night_elf_racial4"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityTextureName"            "item_upgrade_night_elf_racial"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+
+    "AbilityGoldCost"               "400"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "400"
+        }
+        "02"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "attack_range"        "450 500 550 600 650"
+        }
+    }
+
+    "MaxUpgradeLevel"               "5"
+    "ItemBaseLevel"                 "4"
+
+    "OnSpellStart"
+    {
+        // Add Upgrade and Swap the item for the next upgrade
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "racial"
+            "Level"         "4"
+        }
+    }
+}
+
+"item_upgrade_night_elf_racial5"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityTextureName"            "item_upgrade_night_elf_racial"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+
+    "AbilityGoldCost"               "500"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "gold_cost"           "500"
+        }
+        "02"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "attack_range"        "450 500 550 600 650"
+        }
+    }
+
+    "MaxUpgradeLevel"               "5"
+    "ItemBaseLevel"                 "5"
+
+    "OnSpellStart"
+    {
+        // Add Upgrade and Swap the item for the next upgrade
+        "RunScript"
+        {
+            "ScriptFile"    "upgrades.lua"
+            "Function"      "UpgradeFinished"
+            "Name"          "racial"
+            "Level"         "5"
+        }
+    }
+}

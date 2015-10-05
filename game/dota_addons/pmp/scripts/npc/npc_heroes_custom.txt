@@ -239,7 +239,7 @@
 	    // Abilities
 	    //----------------------------------------------------------------
 	    "AbilityLayout"             "4"
-	    "Ability1"                  "nightelf_racial"
+	    "Ability1"                  "night_elf_racial"
 	    "Ability2"                  ""
 	    "Ability3"                  ""
 	    "Ability4"                  ""

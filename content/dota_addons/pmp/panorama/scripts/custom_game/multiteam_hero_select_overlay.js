@@ -60,7 +60,6 @@ function UpdatePlayer( teamPanel, playerId )
 	}
 	else if ( playerInfo.possible_hero_selection !== "" && ( playerInfo.player_team_id == localPlayerTeamId ) )
 	{
-		$.Msg(playerInfo.possible_hero_selection)
 		var hero = "npc_dota_hero_" + playerInfo.possible_hero_selection
 		if (hero == "npc_dota_hero_skeleton_king")
 			hero = "skeleton_king"
