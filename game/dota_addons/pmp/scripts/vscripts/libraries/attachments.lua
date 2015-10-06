@@ -499,14 +499,14 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     -- Add Particle if there is particle data
     local particle_data = db['Particles'][propModel]
     if particle_data then
-      local particleName = particle_data['EffectName']
-      prop.fx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, prop)
+      for particleName,control_points in pairs(particle_data) do
+        prop.fx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, prop)
 
-      -- Loop through the Control Point Entities
-      local control_points = particle_data['ControlPointEntities']
-      for k,ent_point in pairs(control_points) do
-        ParticleManager:SetParticleControlEnt(prop.fx, tonumber(k), prop, PATTACH_POINT_FOLLOW, ent_point, prop:GetAbsOrigin(), true)
-      end
+        -- Loop through the Control Point Entities
+        for k,ent_point in pairs(control_points) do
+          ParticleManager:SetParticleControlEnt(prop.fx, tonumber(k), prop, PATTACH_POINT_FOLLOW, ent_point, prop:GetAbsOrigin(), true)
+        end
+      end    
     end
 
     if Attachments.timer then

@@ -141,10 +141,12 @@ function Precache( context )
 
 	local AttachmentDatabase = LoadKeyValues("scripts/attachments.txt")
 	local Particles = AttachmentDatabase['Particles']
-	for k,modelName in pairs(Particles) do
-		local effectName = modelName['EffectName']
-		if effectName then
-			PrecacheResource("particle", effectName, context)
+	for k,model in pairs(Particles) do
+		for effectName,values in pairs(model) do
+			if string.match(effectName, "vpcf") then
+				print(effectName)
+				PrecacheResource("particle", effectName, context)
+			end
 		end
 	end
 end

@@ -90,219 +90,202 @@
 	{
 		"models/items/drow/monarch_weapon/monarch_weapon.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/drow/drow_bow_monarch/drow_bowstring_monarch.vpcf"
 			{
 				"2"		"bow_top"
 				"1"		"bow_mid"
 				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/drow/drow_bow_monarch/drow_bowstring_monarch.vpcf"
 		}
 		"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/magnataur/shock_of_the_anvil/magnus_shock_anvil_energy_light_flare.vpcf"
 			{
 				"1"		"fx_core"
 				"0"		"fx_core"
 			}
-			"EffectName"		"particles/econ/items/magnataur/shock_of_the_anvil/magnus_shock_anvil_energy_light_flare.vpcf"
 		}
 		"models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/windrunner/windrunner_weapon_rainmaker/windranger_weapon_rainmaker.vpcf"
 			{
 				"2"		"bow_top"
 				"1"		"bow_mid"
 				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/windrunner/windrunner_weapon_rainmaker/windranger_weapon_rainmaker.vpcf"
 		}
 		"models/items/tiny_01/tiny_haunted_tree.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/tiny/tiny_dryad_tree/tiny_dryad_tree.vpcf"
 			{
 				"0"		"attach_crystal"
 			}
-			"EffectName"		"particles/econ/items/tiny/tiny_dryad_tree/tiny_dryad_tree.vpcf"
 		}
 		"models/items/drow/weapon_howling_wind.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/drow/drow_bow_howling_wind/drow_bowstring_howling_wind.vpcf"
 			{
 				"2"		"bow_top"
 				"1"		"bow_mid"
 				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/drow/drow_bow_howling_wind/drow_bowstring_howling_wind.vpcf"
 		}
 		"models/items/zeus/lightning_weapon/zuus_lightning_weapon.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/zeus/lightning_weapon_fx/zues_immortal_lightning_weapon.vpcf"
 			{
 				"0"		"attach_attack1"
 			}
-			"EffectName"		"particles/econ/items/zeus/lightning_weapon_fx/zues_immortal_lightning_weapon.vpcf"
 		}
 		"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/ember_spirit/ember_spirit_burning_god_weapon/ember_spirit_ambient_burning_god_r.vpcf"
 			{
 				"0"		"attach_weapon"
 			}
-			"EffectName"		"particles/econ/items/ember_spirit/ember_spirit_burning_god_weapon/ember_spirit_ambient_burning_god_r.vpcf"
 		}
 		"models/items/drow/dragonstouch_weapon/dragonstouch_weapon.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/drow/drow_bow_dragons_touch/drow_dragons_touch.vpcf"
 			{
 				"0"		"bow_particle"
 			}
-			"EffectName"		"particles/econ/items/drow/drow_bow_dragons_touch/drow_dragons_touch.vpcf"
-		}
-		"models/items/dragon_knight/dragon_shield/dragon_shield.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"0"		"attach_gem"
-			}
-			"EffectName"		"particles/econ/items/dragon_knight/dragon_shield/dragon_knight_dragon_shield_ambient.vpcf"
-		}
-		"models/items/huskar/searing_dominator/searing_dominator.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"0"		"fx_hair"
-			}
-			"EffectName"		"particles/econ/items/huskar/huskar_searing_dominator/huskar_searing_dominator_backhair.vpcf"
-		}
-		"models/items/windrunner/wr_sparrow_bowab/wr_sparrow_bowab.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"2"		"bow_top"
-				"1"		"bow_top"
-				"0"		"bow_bot"
-			}
-			"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
-		}
-		"models/items/windrunner/wild_wind_bow/wild_wind_bow.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"2"		"bow_top"
-				"1"		"bow_top"
-				"0"		"bow_bot"
-			}
-			"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
-		}
-		"models/items/alchemist/twin_blades_aurelian/twin_blades_aurelian.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"0"		"attach_weapon"
-			}
-			"EffectName"		"particles/items2_fx/radiance_owner.vpcf"
-		}
-		"models/items/furion/dark_staff/dark_staff.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"0"		"attach_attack1"
-			}
-			"EffectName"		"particles/econ/items/natures_prophet/natures_prophet_weapon_sufferwood/natures_prophet_sufferwood_ambient.vpcf"
-		}
-		"models/items/leshrac/tormented_staff/tormented_staff.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"0"		"attach_weapon_glow"
-			}
-			"EffectName"		"particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_tormented_staff.vpcf"
-		}
-		"models/items/drow/lovetraveler_weapon/lovetraveler_weapon.vmdl"
-		{
-			"ControlPointEntities"
+
+			"particles/econ/items/drow/drow_bow_iceburst/drow_bowstring_iceburst.vpcf"
 			{
 				"2"		"bow_top"
 				"1"		"bow_mid"
 				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/drow/drow_bow_lone_traveler/drow_bow_lone_traveler.vpcf"
+		}
+		"models/items/dragon_knight/dragon_shield/dragon_shield.vmdl"
+		{
+			"particles/econ/items/dragon_knight/dragon_shield/dragon_knight_dragon_shield_ambient.vpcf"
+			{
+				"0"		"attach_gem"
+			}
+		}
+		"models/items/huskar/searing_dominator/searing_dominator.vmdl"
+		{
+			"particles/econ/items/huskar/huskar_searing_dominator/huskar_searing_dominator_backhair.vpcf"
+			{
+				"0"		"fx_hair"
+			}
+		}
+		"models/items/windrunner/wr_sparrow_bowab/wr_sparrow_bowab.vmdl"
+		{
+			"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
+			{
+				"2"		"bow_top"
+				"1"		"bow_top"
+				"0"		"bow_bot"
+			}
+		}
+		"models/items/windrunner/wild_wind_bow/wild_wind_bow.vmdl"
+		{
+			"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
+			{
+				"2"		"bow_top"
+				"1"		"bow_top"
+				"0"		"bow_bot"
+			}
+		}
+		"models/items/alchemist/twin_blades_aurelian/twin_blades_aurelian.vmdl"
+		{
+			"particles/items2_fx/radiance_owner.vpcf"
+			{
+				"0"		"attach_weapon"
+			}
+		}
+		"models/items/furion/dark_staff/dark_staff.vmdl"
+		{
+			"particles/econ/items/natures_prophet/natures_prophet_weapon_sufferwood/natures_prophet_sufferwood_ambient.vpcf"
+			{
+				"0"		"attach_attack1"
+			}
+		}
+		"models/items/leshrac/tormented_staff/tormented_staff.vmdl"
+		{
+			"particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_tormented_staff.vpcf"
+			{
+				"0"		"attach_weapon_glow"
+			}
+		}
+		"models/items/drow/lovetraveler_weapon/lovetraveler_weapon.vmdl"
+		{
+			"particles/econ/items/drow/drow_bow_lone_traveler/drow_bow_lone_traveler.vpcf"
+			{
+				"2"		"bow_top"
+				"1"		"bow_mid"
+				"0"		"bow_bot"
+			}
 		}
 		"models/items/axe/vanguard_armor/vanguard_armor.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/axe/axe_vanguard_armor/axe_vanguard_passive.vpcf"
 			{
 				"1"		"attach_vanguard_2"
 				"0"		"attach_vanguard_1"
 			}
-			"EffectName"		"particles/econ/items/axe/axe_vanguard_armor/axe_vanguard_passive.vpcf"
 		}
 		"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/antimage/antimage_weapon_manta/antimage_blade_primary_manta_passive.vpcf"
 			{
 				"0"		"attach_weapon"
 			}
-			"EffectName"		"particles/econ/items/antimage/antimage_weapon_manta/antimage_blade_primary_manta_passive.vpcf"
 		}
 		"models/items/furion/scythe_of_vyse.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/natures_prophet/natures_prophet_weapon_scythe_vyse/furion_staff_glow_scythe.vpcf"
 			{
 				"0"		"attach_attack1"
 			}
-			"EffectName"		"particles/econ/items/natures_prophet/natures_prophet_weapon_scythe_vyse/furion_staff_glow_scythe.vpcf"
 		}
 		"models/items/axe/shout_mask/shout_mask.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_buff_shout_mask.vpcf"
 			{
 				"2"		"attach_mouth"
 				"1"		"attach_eye_l"
 				"0"		"attach_eye_r"
 			}
-			"EffectName"		"particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_buff_shout_mask.vpcf"
 		}
 		"models/items/drow/dotapit_s3_frostfang_bow/dotapit_s3_frostfang_bow.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/drow/drow_bow_dpits3/drow_bowstring_dpits3.vpcf"
 			{
 				"2"		"bow_top"
 				"1"		"bow_mid"
 				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/drow/drow_bow_dpits3/drow_bowstring_dpits3.vpcf"
 		}
 		"models/items/windrunner/lyraleis_breeze/lyraleis_breeze.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
 			{
 				"2"		"bow_top"
 				"1"		"bow_top"
 				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
 		}
 		"models/items/windrunner/orchid_flowersong_weapon/orchid_flowersong_weapon.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
 			{
 				"2"		"bow_top"
 				"1"		"bow_top"
 				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
 		}
 		"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
 		{
-			"ControlPointEntities"
+			"particles/econ/items/wraith_king/wraith_king_winterblight_weapon/wraith_king_winterblight_ambient.vpcf"
 			{
 				"2"		"attach_mouth"
 				"1"		"attach_eye_l"
 				"0"		"attach_eye_r"
 			}
-			"EffectName"		"particles/econ/items/wraith_king/wraith_king_winterblight_weapon/wraith_king_winterblight_ambient.vpcf"
 		}
 	}
 	"models/heroes/dragon_knight/dragon_knight.vmdl"
