@@ -93,25 +93,18 @@ function statCollection:init(options)
         self.doneInit = false
         return
     end
-    if options.customSchema then
-        local status, err = pcall(function()
-            -- Load the module
-            self.custom = require("statcollection." .. options.customSchema)
-            self.custom:init({statCollection = self})
-        end)
+    local status, err = pcall(function()
+        customSchema:init({statCollection = self})
+    end)
 
-        if not status then
-            -- Tell the user about it
-            print(printPrefix .. errorBadSchema)
-            print(err)
-            self.doneInit = false --Make sure this wont work
-            return 
-        end
-    else
+    if not status then
+        -- Tell the user about it
         print(printPrefix .. errorBadSchema)
+        print(err)
         self.doneInit = false --Make sure this wont work
-        return
+        return 
     end
+
     -- Store the modIdentifier
     self.modIdentifier = options.modIdentifier
 
@@ -150,7 +143,7 @@ function statCollection:hookFunctions()
     local this = self
 
     -- Hook winner function
-    if self.custom.GAME_WINNER then
+    if self.GAME_WINNER then
         local oldSetGameWinner = GameRules.SetGameWinner
         GameRules.SetGameWinner = function(gameRules, team)
 
@@ -174,7 +167,7 @@ function statCollection:hookFunctions()
             -- Send pregame stats
             this:sendStage2()
         end
-        if self.custom.ANCIENT_EXPLOSION then
+        if self.ANCIENT_EXPLOSION then
             if state >= DOTA_GAMERULES_STATE_POST_GAME then
                 -- Send postgame stats
                 self:findWinnerUsingForts()
@@ -363,7 +356,7 @@ function statCollection:sendStage3(winners, lastRound)
     end
 
     -- Ensure we can only send it once, and everything is good to go
-    if not self.custom.HAS_ROUNDS then
+    if not self.HAS_ROUNDS then
         if self.sentStage3 then return end
         self.sentStage3 = true
     else
@@ -424,7 +417,7 @@ function statCollection:sendStage3(winners, lastRound)
 end
 function statCollection:submitRound(args)
     --We receive the winners from the custom schema, lets tell phase 3 about it!
-    returnArgs = self.custom:submitRound(args)
+    returnArgs = customSchema:submitRound(args)
     self:sendStage3(returnArgs.winners, returnArgs.lastRound) 
 end
 -- Sends custom
@@ -509,4 +502,12 @@ function statCollection:sendStage(stageName, payload, callback)
         -- Feed the result into our callback
         callback(err, obj)
     end)
+end
+
+function tobool(s)
+    if s=="true" or s=="1" or s==1 then
+        return true
+    else --nil "false" "0"
+        return false
+    end
 end

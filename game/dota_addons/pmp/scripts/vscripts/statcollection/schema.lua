@@ -1,24 +1,12 @@
---[[
-Usage:
+customSchema = class({})
 
-This is an example custom schema. You must assemble your game and players tables, which
-are submitted to the library via a call like:
-
-statCollection:sendCustom(schemaAuthKey, game, players)
-
-The schemaAuthKey is important, and can only be obtained via site admins.
-
-Come bug us in our IRC channel or get in contact via the site chatbox. http://getdotastats.com/#contact
-
-]]
-local customSchema = class({})
 function customSchema:init(options)
     
     -- Set settings
     self.SCHEMA_KEY = statInfo.schemaID
-    self.HAS_ROUNDS = false
-    self.GAME_WINNER = true
-    self.ANCIENT_EXPLOSION = false
+    self.HAS_ROUNDS = tobool(statInfo.HAS_ROUNDS)
+    self.GAME_WINNER = tobool(statInfo.GAME_WINNER)
+    self.ANCIENT_EXPLOSION = tobool(statInfo.GAME_WINNER)
     self.statCollection = options.statCollection
 
     -- Version flag
@@ -128,7 +116,3 @@ function BuildPlayersArray()
 
     return players
 end
-
--------------------------------------
-
-return customSchema

@@ -1,8 +1,11 @@
+require("statcollection/schema")
 require('statcollection/lib/statcollection')
+
 statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 COLLECT_STATS = not Convars:GetBool('developer')
+TESTING = tobool(statInfo.TESTING)
 
-if COLLECT_STATS then
+if COLLECT_STATS or TESTING then
     ListenToGameEvent('game_rules_state_change', function(keys)
         local state = GameRules:State_Get()
         
@@ -10,8 +13,7 @@ if COLLECT_STATS then
 
             -- Init stat collection
             statCollection:init({
-                modIdentifier = statInfo.modID, 
-                customSchema = statInfo.customSchema
+                modIdentifier = statInfo.modID
             })
         end
     end, nil)
