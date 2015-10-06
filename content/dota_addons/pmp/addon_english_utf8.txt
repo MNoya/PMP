@@ -64,6 +64,7 @@
 		"night_elf_pimpery"                                                               "Night Elf Pimpery"
 		"night_elf_tower"                                                                 "Night Elf Tower"
 		"night_elf_ghost"                                                                 "Night Elf Ghost"
+		"nightelf_owl"                                                                    "Nightelf Owl"
 
 		"skeleton"                                                                        "Skeleton"
 		"skeleton_leader"                                                                 "Skeleton Leader"
@@ -133,7 +134,13 @@
 		"DOTA_Tooltip_modifier_blood_pool_regen_Description"                              "Standing over a blood pool\nRegenerating %fMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% health per second"
 
 		"DOTA_Tooltip_modifier_reincarnation_buff"                                        "Reincarnation Aura"
-		"DOTA_Tooltip_modifier_reincarnation_buff_Description"                            "This unit is under the effects of Reincarnation aura\nDouble chance to come back to life"
+		"DOTA_Tooltip_modifier_reincarnation_buff_Description"                            "This unit is under the effects of Reincarnation aura\nDouble chance to resurrect"
+
+		"DOTA_Tooltip_modifier_night_elf_windwalk"                                        "Moonlight Shadow"
+		"DOTA_Tooltip_modifier_night_elf_windwalk_Description"                            "Invisible"
+
+		"DOTA_Tooltip_modifier_trueshot_aura_buff"                                        "Trueshot Aura"
+		"DOTA_Tooltip_modifier_trueshot_aura_buff_Description"                            "Increased damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%"
 
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
@@ -155,7 +162,7 @@
 		"DOTA_Tooltip_modifier_weapon5"                                                   "Weapon 5"
 		"DOTA_Tooltip_modifier_weapon5_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
-		"DOTA_Tooltip_modifier_weapon6"                                                   "Weapon6"
+		"DOTA_Tooltip_modifier_weapon6"                                                   "Weapon 6"
 		"DOTA_Tooltip_modifier_weapon6_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_weapon7"                                                   "Weapon 7"
@@ -230,6 +237,81 @@
 		"DOTA_Tooltip_modifier_weapon30"                                                  "Weapon 30"
 		"DOTA_Tooltip_modifier_weapon30_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
+		"DOTA_Tooltip_modifier_bow1"                                                      "Bow 1"
+		"DOTA_Tooltip_modifier_bow1_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow2"                                                      "Bow 2"
+		"DOTA_Tooltip_modifier_bow2_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow3"                                                      "Bow 3"
+		"DOTA_Tooltip_modifier_bow3_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow4"                                                      "Bow 4"
+		"DOTA_Tooltip_modifier_bow4_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow5"                                                      "Bow 5"
+		"DOTA_Tooltip_modifier_bow5_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow6"                                                      "Bow 6"
+		"DOTA_Tooltip_modifier_bow6_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow7"                                                      "Bow 7"
+		"DOTA_Tooltip_modifier_bow7_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow8"                                                      "Bow 8"
+		"DOTA_Tooltip_modifier_bow8_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow9"                                                      "Bow 9"
+		"DOTA_Tooltip_modifier_bow9_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow10"                                                     "Bow 10"
+		"DOTA_Tooltip_modifier_bow10_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow11"                                                     "Bow 11"
+		"DOTA_Tooltip_modifier_bow11_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow12"                                                     "Bow 12"
+		"DOTA_Tooltip_modifier_bow12_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow13"                                                     "Bow 13"
+		"DOTA_Tooltip_modifier_bow13_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow14"                                                     "Bow 14"
+		"DOTA_Tooltip_modifier_bow14_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow15"                                                     "Bow 15"
+		"DOTA_Tooltip_modifier_bow15_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow16"                                                     "Bow 16"
+		"DOTA_Tooltip_modifier_bow16_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow17"                                                     "Bow 17"
+		"DOTA_Tooltip_modifier_bow17_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow18"                                                     "Bow 18"
+		"DOTA_Tooltip_modifier_bow18_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow19"                                                     "Bow 19"
+		"DOTA_Tooltip_modifier_bow19_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_bow20"                                                     "Bow 20"
+		"DOTA_Tooltip_modifier_bow20_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_quiver1"                                                   "Quiver 1"
+		"DOTA_Tooltip_modifier_quiver1_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_quiver2"                                                   "Quiver 2"
+		"DOTA_Tooltip_modifier_quiver2_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_quiver3"                                                   "Quiver 3"
+		"DOTA_Tooltip_modifier_quiver3_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_quiver4"                                                   "Quiver 4"
+		"DOTA_Tooltip_modifier_quiver4_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_quiver5"                                                   "Quiver 5"
+		"DOTA_Tooltip_modifier_quiver5_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
 		// Helm
 		"DOTA_Tooltip_modifier_helm1"                                                     "Helm 1"
 		"DOTA_Tooltip_modifier_helm1_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
@@ -273,7 +355,7 @@
 		"DOTA_Tooltip_modifier_helm14"                                                    "Helm 14"
 		"DOTA_Tooltip_modifier_helm14_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
-		"DOTA_Tooltip_modifier_helm15"                                                    "Helm15"
+		"DOTA_Tooltip_modifier_helm15"                                                    "Helm 15"
 		"DOTA_Tooltip_modifier_helm15_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
 
 		// Shield
@@ -447,7 +529,7 @@
 		"DOTA_Tooltip_ability_spawn_human_Description"                                    ""
 
 		"DOTA_Tooltip_ability_spawn_human_leader"                                         "Spawn Human Leader"
-		"DOTA_Tooltip_ability_spawn_human_leader_Description"                             "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\Human's Leader has the following abilities:\n-Slow\n-Polymorph\n-Mass Teleport\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_human_leader_Description"                             "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nHuman's Leader has the following abilities:\n-Slow\n-Polymorph\n-Mass Teleport\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_human"                                         "Summon Super Human"
 		"DOTA_Tooltip_ability_summon_super_human_Description"                             "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
@@ -550,7 +632,7 @@
 		"DOTA_Tooltip_ability_skeleton_carrion_swarm_speed"                               "SPEED:"
 
 		"DOTA_Tooltip_ability_skeleton_reincarnation_aura"                                "Reincarnation Aura"
-		"DOTA_Tooltip_ability_skeleton_reincarnation_aura_Description"                    "Doubles the chance of reincarnate of allied skeletons nearby"
+		"DOTA_Tooltip_ability_skeleton_reincarnation_aura_Description"                    "Doubles the reincarnation chance of allied Skeletons nearby"
 		"DOTA_Tooltip_ability_skeleton_reincarnation_aura_radius"                         "RADIUS:"
 
 		"DOTA_Tooltip_ability_skeleton_sacrifice"                                         "Sacrifice"
@@ -730,6 +812,131 @@
 
 		"DOTA_Tooltip_ability_upgrade_weapon_final"                                       "Weapons Fully Upgraded!"
 		"DOTA_Tooltip_ability_upgrade_weapon_final_Description"                           ""
+
+		"DOTA_Tooltip_ability_upgrade_bow1"                                               "Upgrade Bow (1)"
+		"DOTA_Tooltip_ability_upgrade_bow1_Description"                                   "Pimp your units with Bow of the Black Wind Raven"
+		"DOTA_Tooltip_ability_upgrade_bow1_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow1_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow2"                                               "Upgrade Bow (2)"
+		"DOTA_Tooltip_ability_upgrade_bow2_Description"                                   "Pimp your units with Bow of the Winged Bolt"
+		"DOTA_Tooltip_ability_upgrade_bow2_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow2_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow3"                                               "Upgrade Bow (3)"
+		"DOTA_Tooltip_ability_upgrade_bow3_Description"                                   "Pimp your units with Nightsilver Bow"
+		"DOTA_Tooltip_ability_upgrade_bow3_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow3_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow4"                                               "Upgrade Bow (4)"
+		"DOTA_Tooltip_ability_upgrade_bow4_Description"                                   "Pimp your units with Bow of the Moon Rider"
+		"DOTA_Tooltip_ability_upgrade_bow4_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow4_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow5"                                               "Upgrade Bow (5)"
+		"DOTA_Tooltip_ability_upgrade_bow5_Description"                                   "Pimp your units with Crescent Bow"
+		"DOTA_Tooltip_ability_upgrade_bow5_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow5_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow6"                                               "Upgrade Bow (6)"
+		"DOTA_Tooltip_ability_upgrade_bow6_Description"                                   "Pimp your units with Sparrowhawk Bow"
+		"DOTA_Tooltip_ability_upgrade_bow6_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow6_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow7"                                               "Upgrade Bow (7)"
+		"DOTA_Tooltip_ability_upgrade_bow7_Description"                                   "Pimp your units with Lyralei's Breeze"
+		"DOTA_Tooltip_ability_upgrade_bow7_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow7_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow8"                                               "Upgrade Bow (8)"
+		"DOTA_Tooltip_ability_upgrade_bow8_Description"                                   "Pimp your units with Flowersong"
+		"DOTA_Tooltip_ability_upgrade_bow8_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow8_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow9"                                               "Upgrade Bow (9)"
+		"DOTA_Tooltip_ability_upgrade_bow9_Description"                                   "Pimp your units with Song of the Wild Wind"
+		"DOTA_Tooltip_ability_upgrade_bow9_bonus_damage"                                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow9_lumber_cost"                                   "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow10"                                              "Upgrade Bow (10)"
+		"DOTA_Tooltip_ability_upgrade_bow10_Description"                                  "Pimp your units with Rainmaker"
+		"DOTA_Tooltip_ability_upgrade_bow10_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow10_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow11"                                              "Upgrade Bow (11)"
+		"DOTA_Tooltip_ability_upgrade_bow11_Description"                                  "Pimp your units with Molten Genesis"
+		"DOTA_Tooltip_ability_upgrade_bow11_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow11_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow12"                                              "Upgrade Bow (12)"
+		"DOTA_Tooltip_ability_upgrade_bow12_Description"                                  "Pimp your units with Heat"
+		"DOTA_Tooltip_ability_upgrade_bow12_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow12_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow13"                                              "Upgrade Bow (13)"
+		"DOTA_Tooltip_ability_upgrade_bow13_Description"                                  "Pimp your units with Twin Serpent Bow"
+		"DOTA_Tooltip_ability_upgrade_bow13_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow13_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow14"                                              "Upgrade Bow (14)"
+		"DOTA_Tooltip_ability_upgrade_bow14_Description"                                  "Pimp your units with Monarch Bow"
+		"DOTA_Tooltip_ability_upgrade_bow14_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow14_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow15"                                              "Upgrade Bow (15)"
+		"DOTA_Tooltip_ability_upgrade_bow15_Description"                                  "Pimp your units with Bow of the Lone Traveler"
+		"DOTA_Tooltip_ability_upgrade_bow15_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow15_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow16"                                              "Upgrade Bow (16)"
+		"DOTA_Tooltip_ability_upgrade_bow16_Description"                                  "Pimp your units with Bow of the Frostfangs"
+		"DOTA_Tooltip_ability_upgrade_bow16_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow16_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow17"                                              "Upgrade Bow (17)"
+		"DOTA_Tooltip_ability_upgrade_bow17_Description"                                  "Pimp your units with Bow of the Howling Wind"
+		"DOTA_Tooltip_ability_upgrade_bow17_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow17_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow18"                                              "Upgrade Bow (18)"
+		"DOTA_Tooltip_ability_upgrade_bow18_Description"                                  "Pimp your units with Heart of the Emerald Sea"
+		"DOTA_Tooltip_ability_upgrade_bow18_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow18_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow19"                                              "Upgrade Bow (19)"
+		"DOTA_Tooltip_ability_upgrade_bow19_Description"                                  "Pimp your units with Bow of the Beholder"
+		"DOTA_Tooltip_ability_upgrade_bow19_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow19_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_bow20"                                              "Upgrade Bow (20)"
+		"DOTA_Tooltip_ability_upgrade_bow20_Description"                                  "Pimp your units with Bow of the Eldwurm's Touch"
+		"DOTA_Tooltip_ability_upgrade_bow20_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_bow20_lumber_cost"                                  "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_quiver1"                                            "Upgrade Quiver (1)"
+		"DOTA_Tooltip_ability_upgrade_quiver1_Description"                                "Pimp your units with Quiver of the Winged Bolt."
+		"DOTA_Tooltip_ability_upgrade_quiver1_bonus_damage"                               "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_quiver1_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_quiver2"                                            "Upgrade Quiver (2)"
+		"DOTA_Tooltip_ability_upgrade_quiver2_Description"                                "Pimp your units with Lion Quiver of the Moon Rider\nChanges your projectiles to Mirana Arrows"
+		"DOTA_Tooltip_ability_upgrade_quiver2_bonus_damage"                               "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_quiver2_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_quiver3"                                            "Upgrade Quiver (3)"
+		"DOTA_Tooltip_ability_upgrade_quiver3_Description"                                "Pimp your units with Flowersong Thorns\nChanges your projectiles to Wind Arrows"
+		"DOTA_Tooltip_ability_upgrade_quiver3_bonus_damage"                               "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_quiver3_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_quiver4"                                            "Upgrade Quiver (4)"
+		"DOTA_Tooltip_ability_upgrade_quiver4_Description"                                "Pimp your units with Demon Quiver of the Crypt Guardian\nChanges your projectiles to Fire Arrows"
+		"DOTA_Tooltip_ability_upgrade_quiver4_bonus_damage"                               "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_quiver4_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_quiver5"                                            "Upgrade Quiver (5)"
+		"DOTA_Tooltip_ability_upgrade_quiver5_Description"                                "Pimp your units with Quiver of the Boreal Watch\nChanges your projectiles to Frost Arrows"
+		"DOTA_Tooltip_ability_upgrade_quiver5_bonus_damage"                               "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_upgrade_quiver5_lumber_cost"                                "LUMBER COST:"
 
 		// Helms
 		"DOTA_Tooltip_ability_upgrade_helm1"                                              "Upgrade Helm (1)"
@@ -1274,12 +1481,62 @@
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5"                             "Upgrade Blood Elf Racial (5)"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_Description"                 "Increase the level of Blood Elves Blood Pool"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_gold_cost"                   "GOLD COST:"
+
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial1"                              "Upgrade Skeleton Racial (1)"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_Description"                  "Increase the level of Skeleton's Reincarnation"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_gold_cost"                    "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_reincarnate_chance"           "REINCARNATE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial2"                              "Upgrade Skeleton Racial (2)"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_Description"                  "Increase the level of Skeleton's Reincarnation"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_gold_cost"                    "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_reincarnate_chance"           "REINCARNATE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial3"                              "Upgrade Skeleton Racial (3)"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_Description"                  "Increase the level of Skeleton's Reincarnation"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_gold_cost"                    "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_reincarnate_chance"           "REINCARNATE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial4"                              "Upgrade Skeleton Racial (4)"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_Description"                  "Increase the level of Skeleton's Reincarnation"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_gold_cost"                    "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_reincarnate_chance"           "REINCARNATE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial5"                              "Upgrade Skeleton Racial (5)"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_Description"                  "Increase the level of Skeleton's Reincarnation"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_gold_cost"                    "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_reincarnate_chance"           "REINCARNATE CHANCE:"
 		
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_heal_regen_pct"              "HEAL REGEN PCT:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_heal_regen_pct"              "HEAL REGEN PCT:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_heal_regen_pct"              "HEAL REGEN PCT:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_heal_regen_pct"              "HEAL REGEN PCT:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_heal_regen_pct"              "HEAL REGEN PCT:"
+
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1"                             "Upgrade Night Elf Racial1"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_Description"                 "Increase the level of Night Elves Ranged Attack"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_attack_range"                "ATTACK RANGE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2"                             "Upgrade Night Elf Racial2"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_Description"                 "Increase the level of Night Elves Ranged Attack"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_attack_range"                "ATTACK RANGE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3"                             "Upgrade Night Elf Racial3"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_Description"                 "Increase the level of Night Elves Ranged Attack"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_attack_range"                "ATTACK RANGE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4"                             "Upgrade Night Elf Racial4"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_Description"                 "Increase the level of Night Elves Ranged Attack"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_attack_range"                "ATTACK RANGE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5"                             "Upgrade Night Elf Racial5"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_Description"                 "Increase the level of Night Elves Ranged Attack"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_gold_cost"                   "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_attack_range"                "ATTACK RANGE:"
 
 		"DOTA_Tooltip_ability_item_upgrade_modifiers"                                     "Upgrade Modifiers"
 		"DOTA_Tooltip_ability_item_upgrade_modifiers_Description"                         ""
