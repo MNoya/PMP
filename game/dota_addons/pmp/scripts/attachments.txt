@@ -4,14 +4,14 @@
 	{
 		"attach_hitloc"
 		{
-			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
+			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
 			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-100"
+				"scale"		"1.5"
+				"pitch"		"-120"
 				"roll"		"0"
-				"ZPos"		"-157"
-				"YPos"		"-1"
 				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-110"
 				"XPos"		"10"
 			}
 			"models/items/juggernaut/jugg_flag/jugg_flag.vmdl"
@@ -24,16 +24,6 @@
 				"ZPos"		"-130"
 				"XPos"		"0"
 			}
-			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
-			{
-				"scale"		"1.5"
-				"pitch"		"-120"
-				"roll"		"0"
-				"yaw"		"0"
-				"YPos"		"0"
-				"ZPos"		"-110"
-				"XPos"		"10"
-			}
 			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
 			{
 				"scale"		"0.69999998807907"
@@ -43,6 +33,16 @@
 				"YPos"		"-1"
 				"yaw"		"0"
 				"XPos"		"10"
+			}
+			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			{
+				"scale"		"0.89999997615814"
+				"pitch"		"-100"
+				"roll"		"0"
+				"ZPos"		"-147"
+				"YPos"		"3"
+				"yaw"		"0"
+				"XPos"		"50"
 			}
 			"models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
 			{
@@ -74,27 +74,66 @@
 				"ZPos"		"-187"
 				"XPos"		"10"
 			}
-			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
 			{
-				"scale"		"0.89999997615814"
+				"scale"		"0.69999998807907"
 				"pitch"		"-100"
 				"roll"		"0"
-				"ZPos"		"-147"
-				"YPos"		"3"
+				"ZPos"		"-157"
+				"YPos"		"-1"
 				"yaw"		"0"
-				"XPos"		"50"
+				"XPos"		"10"
 			}
 		}
 	}
 	"Particles"
 	{
-		"models/items/dragon_knight/dragon_shield/dragon_shield.vmdl"
+		"models/items/drow/monarch_weapon/monarch_weapon.vmdl"
 		{
 			"ControlPointEntities"
 			{
-				"0"		"attach_gem"
+				"2"		"bow_top"
+				"1"		"bow_mid"
+				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/dragon_knight/dragon_shield/dragon_knight_dragon_shield_ambient.vpcf"
+			"EffectName"		"particles/econ/items/drow/drow_bow_monarch/drow_bowstring_monarch.vpcf"
+		}
+		"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"1"		"fx_core"
+				"0"		"fx_core"
+			}
+			"EffectName"		"particles/econ/items/magnataur/shock_of_the_anvil/magnus_shock_anvil_energy_light_flare.vpcf"
+		}
+		"models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"2"		"bow_top"
+				"1"		"bow_mid"
+				"0"		"bow_bot"
+			}
+			"EffectName"		"particles/econ/items/windrunner/windrunner_weapon_rainmaker/windranger_weapon_rainmaker.vpcf"
+		}
+		"models/items/tiny_01/tiny_haunted_tree.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"0"		"attach_crystal"
+			}
+			"EffectName"		"particles/econ/items/tiny/tiny_dryad_tree/tiny_dryad_tree.vpcf"
+		}
+		"models/items/drow/weapon_howling_wind.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"2"		"bow_top"
+				"1"		"bow_mid"
+				"0"		"bow_bot"
+			}
+			"EffectName"		"particles/econ/items/drow/drow_bow_howling_wind/drow_bowstring_howling_wind.vpcf"
 		}
 		"models/items/zeus/lightning_weapon/zuus_lightning_weapon.vmdl"
 		{
@@ -103,6 +142,58 @@
 				"0"		"attach_attack1"
 			}
 			"EffectName"		"particles/econ/items/zeus/lightning_weapon_fx/zues_immortal_lightning_weapon.vpcf"
+		}
+		"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"0"		"attach_weapon"
+			}
+			"EffectName"		"particles/econ/items/ember_spirit/ember_spirit_burning_god_weapon/ember_spirit_ambient_burning_god_r.vpcf"
+		}
+		"models/items/drow/dragonstouch_weapon/dragonstouch_weapon.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"0"		"bow_particle"
+			}
+			"EffectName"		"particles/econ/items/drow/drow_bow_dragons_touch/drow_dragons_touch.vpcf"
+		}
+		"models/items/dragon_knight/dragon_shield/dragon_shield.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"0"		"attach_gem"
+			}
+			"EffectName"		"particles/econ/items/dragon_knight/dragon_shield/dragon_knight_dragon_shield_ambient.vpcf"
+		}
+		"models/items/huskar/searing_dominator/searing_dominator.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"0"		"fx_hair"
+			}
+			"EffectName"		"particles/econ/items/huskar/huskar_searing_dominator/huskar_searing_dominator_backhair.vpcf"
+		}
+		"models/items/windrunner/wr_sparrow_bowab/wr_sparrow_bowab.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"2"		"bow_top"
+				"1"		"bow_top"
+				"0"		"bow_bot"
+			}
+			"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
+		}
+		"models/items/windrunner/wild_wind_bow/wild_wind_bow.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"2"		"bow_top"
+				"1"		"bow_top"
+				"0"		"bow_bot"
+			}
+			"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
 		}
 		"models/items/alchemist/twin_blades_aurelian/twin_blades_aurelian.vmdl"
 		{
@@ -120,6 +211,24 @@
 			}
 			"EffectName"		"particles/econ/items/natures_prophet/natures_prophet_weapon_sufferwood/natures_prophet_sufferwood_ambient.vpcf"
 		}
+		"models/items/leshrac/tormented_staff/tormented_staff.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"0"		"attach_weapon_glow"
+			}
+			"EffectName"		"particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_tormented_staff.vpcf"
+		}
+		"models/items/drow/lovetraveler_weapon/lovetraveler_weapon.vmdl"
+		{
+			"ControlPointEntities"
+			{
+				"2"		"bow_top"
+				"1"		"bow_mid"
+				"0"		"bow_bot"
+			}
+			"EffectName"		"particles/econ/items/drow/drow_bow_lone_traveler/drow_bow_lone_traveler.vpcf"
+		}
 		"models/items/axe/vanguard_armor/vanguard_armor.vmdl"
 		{
 			"ControlPointEntities"
@@ -129,14 +238,6 @@
 			}
 			"EffectName"		"particles/econ/items/axe/axe_vanguard_armor/axe_vanguard_passive.vpcf"
 		}
-		"models/items/furion/scythe_of_vyse.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"0"		"attach_attack1"
-			}
-			"EffectName"		"particles/econ/items/natures_prophet/natures_prophet_weapon_scythe_vyse/furion_staff_glow_scythe.vpcf"
-		}
 		"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
 		{
 			"ControlPointEntities"
@@ -145,21 +246,13 @@
 			}
 			"EffectName"		"particles/econ/items/antimage/antimage_weapon_manta/antimage_blade_primary_manta_passive.vpcf"
 		}
-		"models/items/leshrac/tormented_staff/tormented_staff.vmdl"
+		"models/items/furion/scythe_of_vyse.vmdl"
 		{
 			"ControlPointEntities"
 			{
-				"0"		"attach_weapon_glow"
+				"0"		"attach_attack1"
 			}
-			"EffectName"		"particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_tormented_staff.vpcf"
-		}
-		"models/items/tiny_01/tiny_haunted_tree.vmdl"
-		{
-			"ControlPointEntities"
-			{
-				"0"		"attach_crystal"
-			}
-			"EffectName"		"particles/econ/items/tiny/tiny_dryad_tree/tiny_dryad_tree.vpcf"
+			"EffectName"		"particles/econ/items/natures_prophet/natures_prophet_weapon_scythe_vyse/furion_staff_glow_scythe.vpcf"
 		}
 		"models/items/axe/shout_mask/shout_mask.vmdl"
 		{
@@ -171,30 +264,35 @@
 			}
 			"EffectName"		"particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_buff_shout_mask.vpcf"
 		}
-		"models/items/huskar/searing_dominator/searing_dominator.vmdl"
+		"models/items/drow/dotapit_s3_frostfang_bow/dotapit_s3_frostfang_bow.vmdl"
 		{
 			"ControlPointEntities"
 			{
-				"0"		"fx_hair"
+				"2"		"bow_top"
+				"1"		"bow_mid"
+				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/huskar/huskar_searing_dominator/huskar_searing_dominator_backhair.vpcf"
+			"EffectName"		"particles/econ/items/drow/drow_bow_dpits3/drow_bowstring_dpits3.vpcf"
 		}
-		"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
+		"models/items/windrunner/lyraleis_breeze/lyraleis_breeze.vmdl"
 		{
 			"ControlPointEntities"
 			{
-				"1"		"fx_core"
-				"0"		"fx_core"
+				"2"		"bow_top"
+				"1"		"bow_top"
+				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/magnataur/shock_of_the_anvil/magnus_shock_anvil_energy_light_flare.vpcf"
+			"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
 		}
-		"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
+		"models/items/windrunner/orchid_flowersong_weapon/orchid_flowersong_weapon.vmdl"
 		{
 			"ControlPointEntities"
 			{
-				"0"		"attach_weapon"
+				"2"		"bow_top"
+				"1"		"bow_top"
+				"0"		"bow_bot"
 			}
-			"EffectName"		"particles/econ/items/ember_spirit/ember_spirit_burning_god_weapon/ember_spirit_ambient_burning_god_r.vpcf"
+			"EffectName"		"particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf"
 		}
 		"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
 		{
@@ -970,15 +1068,15 @@
 				"ZPos"		"-160"
 				"XPos"		"-10"
 			}
-			"models/items/furion/scythe_of_vyse.vmdl"
+			"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
 			{
-				"scale"		"1.2999999523163"
-				"pitch"		"-50"
-				"roll"		"30"
-				"ZPos"		"-110"
-				"YPos"		"-100"
-				"yaw"		"-40"
-				"XPos"		"-5"
+				"scale"		"1.1000000238419"
+				"pitch"		"-40"
+				"roll"		"22"
+				"yaw"		"0"
+				"YPos"		"128"
+				"ZPos"		"-17"
+				"XPos"		"1"
 			}
 			"models/items/kunkka/kunkka_shadow_blade/kunkka_shadow_blade.vmdl"
 			{
@@ -1000,6 +1098,16 @@
 				"yaw"		"0"
 				"XPos"		"0"
 			}
+			"models/items/juggernaut/immortal_warlord_sword/immortal_warlord_sword.vmdl"
+			{
+				"scale"		"1.6499999761581"
+				"pitch"		"320"
+				"roll"		"210"
+				"ZPos"		"-5"
+				"YPos"		"55"
+				"yaw"		"-150"
+				"XPos"		"58"
+			}
 			"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
 			{
 				"scale"		"3.2200000286102"
@@ -1009,16 +1117,6 @@
 				"YPos"		"-1"
 				"ZPos"		"0"
 				"XPos"		"-3"
-			}
-			"models/items/alchemist/twin_blades_aurelian/twin_blades_aurelian.vmdl"
-			{
-				"scale"		"2.2000000476837"
-				"pitch"		"-10"
-				"roll"		"-75"
-				"ZPos"		"0"
-				"YPos"		"0"
-				"yaw"		"-40"
-				"XPos"		"60"
 			}
 			"models/items/zeus/lightning_weapon/zuus_lightning_weapon.vmdl"
 			{
@@ -1050,16 +1148,6 @@
 				"yaw"		"-45"
 				"XPos"		"-65"
 			}
-			"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-40"
-				"roll"		"22"
-				"yaw"		"0"
-				"YPos"		"128"
-				"ZPos"		"-17"
-				"XPos"		"1"
-			}
 			"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
 			{
 				"scale"		"2.5999999046326"
@@ -1069,6 +1157,16 @@
 				"YPos"		"75"
 				"yaw"		"190"
 				"XPos"		"0"
+			}
+			"models/items/alchemist/twin_blades_aurelian/twin_blades_aurelian.vmdl"
+			{
+				"scale"		"2.2000000476837"
+				"pitch"		"-10"
+				"roll"		"-75"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"yaw"		"-40"
+				"XPos"		"60"
 			}
 			"models/items/furion/dark_staff/dark_staff.vmdl"
 			{
@@ -1160,15 +1258,15 @@
 				"yaw"		"-45"
 				"XPos"		"35"
 			}
-			"models/items/juggernaut/immortal_warlord_sword/immortal_warlord_sword.vmdl"
+			"models/items/furion/scythe_of_vyse.vmdl"
 			{
-				"scale"		"1.6499999761581"
-				"pitch"		"320"
-				"roll"		"210"
-				"ZPos"		"-5"
-				"YPos"		"55"
-				"yaw"		"-150"
-				"XPos"		"58"
+				"scale"		"1.2999999523163"
+				"pitch"		"-50"
+				"roll"		"30"
+				"ZPos"		"-110"
+				"YPos"		"-100"
+				"yaw"		"-40"
+				"XPos"		"-5"
 			}
 			"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
 			{
@@ -2785,15 +2883,15 @@
 	{
 		"attach_hitloc"
 		{
-			"models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
+			"models/heroes/shadow_fiend/arcana_wings.vmdl"
 			{
-				"scale"		"0.89999997615814"
-				"pitch"		"-90"
-				"roll"		"0"
-				"ZPos"		"-100"
+				"scale"		"0.69999998807907"
+				"pitch"		"-120"
+				"roll"		"-20"
+				"ZPos"		"-120"
 				"YPos"		"0"
-				"yaw"		"-22"
-				"XPos"		"4"
+				"yaw"		"0"
+				"XPos"		"10"
 			}
 			"models/items/juggernaut/jugg_flag/jugg_flag.vmdl"
 			{
@@ -2815,15 +2913,15 @@
 				"yaw"		"0"
 				"XPos"		"0"
 			}
-			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			"models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
 			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-120"
-				"roll"		"-20"
-				"ZPos"		"-120"
+				"scale"		"0.89999997615814"
+				"pitch"		"-90"
+				"roll"		"0"
+				"ZPos"		"-100"
 				"YPos"		"0"
-				"yaw"		"0"
-				"XPos"		"10"
+				"yaw"		"-22"
+				"XPos"		"4"
 			}
 			"models/heroes/omniknight/omniknightwings.vmdl"
 			{
@@ -2875,14 +2973,14 @@
 	{
 		"attach_hitloc"
 		{
-			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
+			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
 			{
 				"scale"		"0.89999997615814"
-				"pitch"		"-80"
+				"pitch"		"-90"
 				"roll"		"0"
 				"yaw"		"0"
 				"YPos"		"0"
-				"ZPos"		"-160"
+				"ZPos"		"-165"
 				"XPos"		"0"
 			}
 			"models/items/juggernaut/jugg_flag/jugg_flag.vmdl"
@@ -2895,16 +2993,6 @@
 				"ZPos"		"-124"
 				"XPos"		"-10"
 			}
-			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
-			{
-				"scale"		"0.89999997615814"
-				"pitch"		"-90"
-				"roll"		"0"
-				"yaw"		"0"
-				"YPos"		"0"
-				"ZPos"		"-165"
-				"XPos"		"0"
-			}
 			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
 			{
 				"scale"		"1.7000000476837"
@@ -2914,6 +3002,16 @@
 				"YPos"		"0"
 				"ZPos"		"-104"
 				"XPos"		"-5"
+			}
+			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"-90"
+				"roll"		"0"
+				"ZPos"		"-119"
+				"YPos"		"2"
+				"yaw"		"0"
+				"XPos"		"20"
 			}
 			"models/heroes/omniknight/omniknightwings.vmdl"
 			{
@@ -2945,15 +3043,15 @@
 				"yaw"		"0"
 				"XPos"		"-10"
 			}
-			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
 			{
-				"scale"		"0.80000001192093"
-				"pitch"		"-90"
+				"scale"		"0.89999997615814"
+				"pitch"		"-80"
 				"roll"		"0"
-				"ZPos"		"-119"
-				"YPos"		"2"
 				"yaw"		"0"
-				"XPos"		"20"
+				"YPos"		"0"
+				"ZPos"		"-160"
+				"XPos"		"0"
 			}
 		}
 	}
@@ -2961,14 +3059,14 @@
 	{
 		"attach_hitloc"
 		{
-			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
+			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
 			{
 				"scale"		"1"
-				"pitch"		"-30"
+				"pitch"		"-70"
 				"roll"		"0"
-				"ZPos"		"-140"
-				"YPos"		"0"
 				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-170"
 				"XPos"		"35"
 			}
 			"models/items/juggernaut/jugg_flag/jugg_flag.vmdl"
@@ -2981,16 +3079,6 @@
 				"ZPos"		"-125"
 				"XPos"		"2"
 			}
-			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"-70"
-				"roll"		"0"
-				"yaw"		"0"
-				"YPos"		"0"
-				"ZPos"		"-170"
-				"XPos"		"35"
-			}
 			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
 			{
 				"scale"		"1.7000000476837"
@@ -3000,6 +3088,16 @@
 				"YPos"		"0"
 				"yaw"		"-10"
 				"XPos"		"5"
+			}
+			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-50"
+				"roll"		"0"
+				"ZPos"		"-139"
+				"YPos"		"2"
+				"yaw"		"0"
+				"XPos"		"40"
 			}
 			"models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
 			{
@@ -3031,15 +3129,15 @@
 				"yaw"		"0"
 				"XPos"		"0"
 			}
-			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
 			{
 				"scale"		"1"
-				"pitch"		"-50"
+				"pitch"		"-30"
 				"roll"		"0"
-				"ZPos"		"-139"
-				"YPos"		"2"
+				"ZPos"		"-140"
+				"YPos"		"0"
 				"yaw"		"0"
-				"XPos"		"40"
+				"XPos"		"35"
 			}
 		}
 	}
@@ -3219,6 +3317,16 @@
 	{
 		"attach_hitloc"
 		{
+			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
+			{
+				"scale"		"1.7000000476837"
+				"pitch"		"-110"
+				"roll"		"10"
+				"yaw"		"-10"
+				"YPos"		"0"
+				"ZPos"		"-109"
+				"XPos"		"5"
+			}
 			"models/items/juggernaut/jugg_flag/jugg_flag.vmdl"
 			{
 				"scale"		"0.80000001192093"
@@ -3229,15 +3337,15 @@
 				"yaw"		"0"
 				"XPos"		"-2"
 			}
-			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
 			{
-				"scale"		"0.89999997615814"
+				"scale"		"0.80000001192093"
 				"pitch"		"-120"
 				"roll"		"0"
-				"ZPos"		"-148"
-				"YPos"		"4"
+				"ZPos"		"-160"
+				"YPos"		"0"
 				"yaw"		"0"
-				"XPos"		"39"
+				"XPos"		"2"
 			}
 			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
 			{
@@ -3248,16 +3356,6 @@
 				"YPos"		"0"
 				"yaw"		"0"
 				"XPos"		"0"
-			}
-			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"-120"
-				"roll"		"0"
-				"ZPos"		"-160"
-				"YPos"		"0"
-				"yaw"		"0"
-				"XPos"		"2"
 			}
 			"models/heroes/omniknight/omniknightwings.vmdl"
 			{
@@ -3289,15 +3387,15 @@
 				"ZPos"		"-184"
 				"XPos"		"0"
 			}
-			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
+			"models/heroes/shadow_fiend/arcana_wings.vmdl"
 			{
-				"scale"		"1.7000000476837"
-				"pitch"		"-110"
-				"roll"		"10"
-				"yaw"		"-10"
-				"YPos"		"0"
-				"ZPos"		"-109"
-				"XPos"		"5"
+				"scale"		"0.89999997615814"
+				"pitch"		"-120"
+				"roll"		"0"
+				"ZPos"		"-148"
+				"YPos"		"4"
+				"yaw"		"0"
+				"XPos"		"39"
 			}
 		}
 	}
@@ -3950,15 +4048,15 @@
 		"models/items/silencer/whispertribunal_shield_s1/whispertribunal_shield_s1.vmdl"		"Change"
 		"attach_attack1"
 		{
-			"models/items/pudge/pudge_skeleton_hook.vmdl"
+			"models/items/axe/searing_annihilator_weapon/searing_annihilator_weapon.vmdl"
 			{
-				"scale"		"1.7999999523163"
-				"pitch"		"30"
-				"roll"		"-275"
-				"ZPos"		"0"
-				"YPos"		"-7"
-				"yaw"		"-130"
-				"XPos"		"-10"
+				"scale"		"0.89999997615814"
+				"pitch"		"-180"
+				"roll"		"50"
+				"yaw"		"-90"
+				"YPos"		"123"
+				"ZPos"		"-63"
+				"XPos"		"4"
 			}
 			"models/items/magnataur/shock_of_the_anvil/shock_of_the_anvil.vmdl"
 			{
@@ -3980,15 +4078,15 @@
 				"yaw"		"-130"
 				"XPos"		"-10"
 			}
-			"models/items/kunkka/kunkka_shadow_blade/kunkka_shadow_blade.vmdl"
+			"models/items/axe/axe_antler.vmdl"
 			{
-				"scale"		"1.2999999523163"
-				"pitch"		"80"
-				"roll"		"110"
-				"yaw"		"-60"
-				"YPos"		"57"
-				"ZPos"		"-90"
-				"XPos"		"-10"
+				"scale"		"0.89999997615814"
+				"pitch"		"-180"
+				"roll"		"50"
+				"yaw"		"-90"
+				"YPos"		"128"
+				"ZPos"		"-50"
+				"XPos"		"9"
 			}
 			"models/items/obsidian_destroyer/immortal_weapon_1/immortal_weapon_1.vmdl"
 			{
@@ -4060,15 +4158,15 @@
 				"yaw"		"-160"
 				"XPos"		"-59"
 			}
-			"models/items/axe/axe_antler.vmdl"
+			"models/items/pudge/pudge_skeleton_hook.vmdl"
 			{
-				"scale"		"0.89999997615814"
-				"pitch"		"-180"
-				"roll"		"50"
-				"yaw"		"-90"
-				"YPos"		"128"
-				"ZPos"		"-50"
-				"XPos"		"9"
+				"scale"		"1.7999999523163"
+				"pitch"		"30"
+				"roll"		"-275"
+				"ZPos"		"0"
+				"YPos"		"-7"
+				"yaw"		"-130"
+				"XPos"		"-10"
 			}
 			"models/items/faceless_void/voidhammer/voidhammer.vmdl"
 			{
@@ -4090,15 +4188,15 @@
 				"ZPos"		"3"
 				"XPos"		"0"
 			}
-			"models/items/axe/searing_annihilator_weapon/searing_annihilator_weapon.vmdl"
+			"models/items/kunkka/kunkka_shadow_blade/kunkka_shadow_blade.vmdl"
 			{
-				"scale"		"0.89999997615814"
-				"pitch"		"-180"
-				"roll"		"50"
-				"yaw"		"-90"
-				"YPos"		"123"
-				"ZPos"		"-63"
-				"XPos"		"4"
+				"scale"		"1.2999999523163"
+				"pitch"		"80"
+				"roll"		"110"
+				"yaw"		"-60"
+				"YPos"		"57"
+				"ZPos"		"-90"
+				"XPos"		"-10"
 			}
 			"models/items/zeus/lightning_weapon/zuus_lightning_weapon.vmdl"
 			{
@@ -4160,15 +4258,15 @@
 				"ZPos"		"-91"
 				"XPos"		"-15"
 			}
-			"models/items/leshrac/tormented_staff/tormented_staff.vmdl"
+			"models/items/ursa/hat_alpine.vmdl"
 			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-200"
-				"roll"		"40"
-				"ZPos"		"-71"
-				"YPos"		"-100"
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-145"
+				"YPos"		"0"
 				"yaw"		"0"
-				"XPos"		"-12"
+				"XPos"		"-55"
 			}
 			"models/items/wraith_king/relicsword_weapon/relicsword_weapon.vmdl"
 			{
@@ -4180,6 +4278,16 @@
 				"ZPos"		"-4"
 				"XPos"		"69"
 			}
+			"models/items/leshrac/tormented_staff/tormented_staff.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-200"
+				"roll"		"40"
+				"ZPos"		"-71"
+				"YPos"		"-100"
+				"yaw"		"0"
+				"XPos"		"-12"
+			}
 			"models/items/axe/generic_reaver.vmdl"
 			{
 				"scale"		"1"
@@ -4189,16 +4297,6 @@
 				"YPos"		"125"
 				"ZPos"		"-48"
 				"XPos"		"7"
-			}
-			"models/items/ursa/hat_alpine.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"0"
-				"roll"		"0"
-				"ZPos"		"-145"
-				"YPos"		"0"
-				"yaw"		"0"
-				"XPos"		"-55"
 			}
 			"models/items/dazzle/shadowflame_weapon/shadowflame_weapon.vmdl"
 			{
@@ -4612,432 +4710,7 @@
 	}
 	"models/heroes/drow/drow.vmdl"
 	{
-		"attach_hitloc"
-		{
-			"models/items/pudge/hood_of_defiance.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-189"
-				"roll"		"-7"
-				"ZPos"		"-126"
-				"YPos"		"5"
-				"yaw"		"-116"
-				"XPos"		"-20"
-			}
-			"models/items/earthshaker/helm_of_impasse/helm_of_impasse.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-174"
-				"roll"		"-20"
-				"ZPos"		"-91"
-				"YPos"		"0"
-				"yaw"		"-126"
-				"XPos"		"-60"
-			}
-			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-180"
-				"roll"		"-30"
-				"yaw"		"-90"
-				"YPos"		"0"
-				"ZPos"		"-116"
-				"XPos"		"-1"
-			}
-			"models/items/tidehunter/tricorn_head.vmdl"
-			{
-				"scale"		"0.60000002384186"
-				"pitch"		"-194"
-				"roll"		"-10"
-				"yaw"		"-152"
-				"YPos"		"-4"
-				"ZPos"		"-153"
-				"XPos"		"-57"
-			}
-			"models/items/juggernaut/thousand_faces_mask/thousand_faces_mask.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"-184"
-				"roll"		"-7"
-				"yaw"		"-127"
-				"YPos"		"0"
-				"ZPos"		"-140"
-				"XPos"		"-7"
-			}
-			"models/items/juggernaut/jugg_flag/jugg_flag.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"-180"
-				"roll"		"-30"
-				"yaw"		"-90"
-				"YPos"		"0"
-				"ZPos"		"-135"
-				"XPos"		"-1"
-			}
-			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"0"
-				"roll"		"-220"
-				"yaw"		"90"
-				"YPos"		"0"
-				"ZPos"		"-170"
-				"XPos"		"10"
-			}
-			"models/items/doom/baphomet_head/baphomet_head.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-180"
-				"roll"		"-15"
-				"yaw"		"-125"
-				"YPos"		"0"
-				"ZPos"		"-186"
-				"XPos"		"-10"
-			}
-			"models/heroes/shadow_fiend/arcana_wings.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"0"
-				"yaw"		"90"
-				"XPos"		"40"
-				"YPos"		"0"
-				"ZPos"		"-150"
-				"roll"		"-220"
-			}
-			"models/items/ursa/hat_alpine.vmdl"
-			{
-				"scale"		"0.60000002384186"
-				"pitch"		"-190"
-				"roll"		"0"
-				"ZPos"		"-123"
-				"YPos"		"0"
-				"yaw"		"-120"
-				"XPos"		"-24"
-			}
-			"models/items/sven/spartan_helmet.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"-180"
-				"roll"		"-15"
-				"yaw"		"-125"
-				"YPos"		"0"
-				"ZPos"		"-171"
-				"XPos"		"-10"
-			}
-			"models/items/drow/mask_of_madness/mask_of_madness.vmdl"
-			{
-				"scale"		"1.2000000476837"
-				"pitch"		"-189"
-				"roll"		"-7"
-				"ZPos"		"-121"
-				"YPos"		"0"
-				"yaw"		"-131"
-				"XPos"		"5"
-			}
-			"models/items/skywrath_mage/guiding_lights_back/guiding_lights_back.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"-180"
-				"roll"		"-45"
-				"yaw"		"-90"
-				"YPos"		"0"
-				"ZPos"		"-196"
-				"XPos"		"-1"
-			}
-			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"0"
-				"yaw"		"90"
-				"XPos"		"0"
-				"YPos"		"0"
-				"ZPos"		"-180"
-				"roll"		"-220"
-			}
-			"models/items/windrunner/orchid_flowersong_offhand/orchid_flowersong_offhand.vmdl"
-			{
-				"scale"		"1.3999999761581"
-				"pitch"		"120"
-				"roll"		"245"
-				"yaw"		"0"
-				"YPos"		"10"
-				"ZPos"		"-124"
-				"XPos"		"26"
-			}
-			"models/items/sniper/sniper_tallyho_head2/sniper_tallyho_head2.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-180"
-				"roll"		"-10"
-				"yaw"		"-141"
-				"YPos"		"-4"
-				"ZPos"		"-84"
-				"XPos"		"-7"
-			}
-			"models/items/axe/demon_blood_helm.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-174"
-				"roll"		"-20"
-				"ZPos"		"-116"
-				"YPos"		"0"
-				"yaw"		"-126"
-				"XPos"		"-20"
-			}
-			"models/items/drow/lovetraveler_weapon/lovetraveler_weapon.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"10"
-				"roll"		"70"
-				"yaw"		"-285"
-				"YPos"		"-37"
-				"ZPos"		"-82"
-				"XPos"		"-1"
-			}
-			"models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"0"
-				"roll"		"-210"
-				"yaw"		"90"
-				"YPos"		"0"
-				"ZPos"		"-140"
-				"XPos"		"0"
-			}
-			"models/items/chaos_knight/diabolic_aspect/diabolic_aspect.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-180"
-				"roll"		"-15"
-				"yaw"		"-125"
-				"YPos"		"0"
-				"ZPos"		"-201"
-				"XPos"		"5"
-			}
-			"models/items/mirana/sl_quiver/sl_quiver.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"20"
-				"roll"		"-190"
-				"yaw"		"20"
-				"YPos"		"0"
-				"ZPos"		"-97"
-				"XPos"		"50"
-			}
-			"models/items/axe/shout_mask/shout_mask.vmdl"
-			{
-				"scale"		"0.60000002384186"
-				"pitch"		"-184"
-				"roll"		"-7"
-				"yaw"		"-127"
-				"YPos"		"0"
-				"ZPos"		"-116"
-				"XPos"		"-7"
-			}
-			"models/items/clinkz/redbull_clinkz_head/redbull_clinkz_head.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-184"
-				"roll"		"-7"
-				"ZPos"		"-124"
-				"YPos"		"0"
-				"yaw"		"-127"
-				"XPos"		"-7"
-			}
-			"models/items/huskar/searing_dominator/searing_dominator.vmdl"
-			{
-				"scale"		"0.89999997615814"
-				"pitch"		"-180"
-				"roll"		"-12"
-				"yaw"		"-125"
-				"YPos"		"0"
-				"ZPos"		"-127"
-				"XPos"		"-17"
-			}
-			"models/items/pudge/bogatyr_pudge_head/bogatyr_pudge_head.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"-189"
-				"roll"		"0"
-				"yaw"		"-125"
-				"YPos"		"0"
-				"ZPos"		"-121"
-				"XPos"		"-25"
-			}
-			"models/heroes/omniknight/omniknightwings.vmdl"
-			{
-				"scale"		"0.69999998807907"
-				"pitch"		"0"
-				"roll"		"-210"
-				"yaw"		"90"
-				"YPos"		"0"
-				"ZPos"		"0"
-				"XPos"		"0"
-			}
-		}
-		"bow_mid"
-		{
-			"models/items/medusa/emerald_ocean_weapon/emerald_ocean_weapon.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"-150"
-				"roll"		"90"
-				"ZPos"		"20"
-				"YPos"		"4"
-				"yaw"		"-90"
-				"XPos"		"-10"
-			}
-			"models/items/mirana/crescent_bow/crescent_bow.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-10"
-				"roll"		"0"
-				"yaw"		"50"
-				"YPos"		"0"
-				"ZPos"		"-2"
-				"XPos"		"19"
-			}
-			"models/items/drow/lovetraveler_weapon/lovetraveler_weapon.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"10"
-				"roll"		"70"
-				"yaw"		"-285"
-				"YPos"		"-37"
-				"ZPos"		"-82"
-				"XPos"		"-1"
-			}
-			"models/items/windrunner/orchid_flowersong_weapon/orchid_flowersong_weapon.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-60"
-				"roll"		"120"
-				"ZPos"		"-9"
-				"YPos"		"-29"
-				"yaw"		"-30"
-				"XPos"		"-55"
-			}
-			"models/items/clinkz/molten_genesis/molten_genesis.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"10"
-				"roll"		"-90"
-				"yaw"		"-70"
-				"YPos"		"-95"
-				"ZPos"		"47"
-				"XPos"		"10"
-			}
-			"models/items/medusa/twin_serpent_bow/twin_serpent_bow.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"0"
-				"roll"		"0"
-				"yaw"		"90"
-				"YPos"		"13"
-				"ZPos"		"-4"
-				"XPos"		"-130"
-			}
-			"models/items/medusa/blueice_weapon/blueice_weapon.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-150"
-				"roll"		"90"
-				"yaw"		"-90"
-				"YPos"		"0"
-				"ZPos"		"-127"
-				"XPos"		"0"
-			}
-			"models/items/sniper/wolfhound_rifle/wolfhound_rifle.vmdl"
-			{
-				"scale"		"1.2999999523163"
-				"pitch"		"-20"
-				"roll"		"-60"
-				"yaw"		"31"
-				"YPos"		"74"
-				"ZPos"		"-34"
-				"XPos"		"40"
-			}
-			"models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl"
-			{
-				"scale"		"1.3999999761581"
-				"pitch"		"-60"
-				"roll"		"120"
-				"ZPos"		"-13"
-				"YPos"		"-28"
-				"yaw"		"-30"
-				"XPos"		"-60"
-			}
-			"models/items/mirana/sl_bow/sl_bow.vmdl"
-			{
-				"scale"		"1.1000000238419"
-				"pitch"		"-10"
-				"roll"		"0"
-				"yaw"		"50"
-				"YPos"		"0"
-				"ZPos"		"-2"
-				"XPos"		"19"
-			}
-			"models/items/medusa/bow_of_the_serpent/bow_of_the_serpent.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"-22"
-				"roll"		"-7"
-				"ZPos"		"15"
-				"YPos"		"6"
-				"yaw"		"72"
-				"XPos"		"18"
-			}
-			"models/items/mirana/mirana_nightsilver_weapon/mirana_nightsilver_weapon.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"-10"
-				"roll"		"0"
-				"yaw"		"50"
-				"YPos"		"1"
-				"ZPos"		"0"
-				"XPos"		"20"
-			}
-			"models/items/windrunner/wr_sparrow_bowab/wr_sparrow_bowab.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"-60"
-				"roll"		"120"
-				"ZPos"		"-9"
-				"YPos"		"-25"
-				"yaw"		"-30"
-				"XPos"		"-48"
-			}
-			"models/items/windrunner/lyraleis_breeze/lyraleis_breeze.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"-60"
-				"roll"		"120"
-				"ZPos"		"-12"
-				"YPos"		"-29"
-				"yaw"		"-30"
-				"XPos"		"-55"
-			}
-			"models/items/windrunner/wild_wind_bow/wild_wind_bow.vmdl"
-			{
-				"scale"		"1.3999999761581"
-				"pitch"		"-50"
-				"roll"		"120"
-				"ZPos"		"-15"
-				"YPos"		"-29"
-				"yaw"		"-40"
-				"XPos"		"-60"
-			}
-			"models/items/clinkz/bownes/bownes.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"0"
-				"roll"		"-200"
-				"ZPos"		"4"
-				"YPos"		"-85"
-				"yaw"		"-350"
-				"XPos"		"60"
-			}
-		}
+		"models/items/drow/dragonstouch_quiver/dragonstouch_quiver.vmdl"		"Change"
 		"attach_attack1"
 		{
 			"models/items/dragon_knight/dragon_shield/dragon_shield.vmdl"
@@ -5151,6 +4824,475 @@
 				"XPos"		"5"
 			}
 		}
+		"models/items/drow/quiver_of_the_envious_archer/quiver_of_the_envious_archer.vmdl"		"Change"
+		"attach_hitloc"
+		{
+			"models/items/pudge/hood_of_defiance.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-189"
+				"roll"		"-7"
+				"ZPos"		"-126"
+				"YPos"		"5"
+				"yaw"		"-116"
+				"XPos"		"-20"
+			}
+			"models/items/earthshaker/helm_of_impasse/helm_of_impasse.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-174"
+				"roll"		"-20"
+				"ZPos"		"-91"
+				"YPos"		"0"
+				"yaw"		"-126"
+				"XPos"		"-60"
+			}
+			"models/items/legion_commander/valkyrie_back/valkyrie_back.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-180"
+				"roll"		"-30"
+				"yaw"		"-90"
+				"YPos"		"0"
+				"ZPos"		"-116"
+				"XPos"		"-1"
+			}
+			"models/items/tidehunter/tricorn_head.vmdl"
+			{
+				"scale"		"0.60000002384186"
+				"pitch"		"-194"
+				"roll"		"-10"
+				"yaw"		"-152"
+				"YPos"		"-4"
+				"ZPos"		"-153"
+				"XPos"		"-57"
+			}
+			"models/items/juggernaut/thousand_faces_mask/thousand_faces_mask.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-184"
+				"roll"		"-7"
+				"yaw"		"-127"
+				"YPos"		"0"
+				"ZPos"		"-140"
+				"XPos"		"-7"
+			}
+			"models/items/juggernaut/jugg_flag/jugg_flag.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"-180"
+				"roll"		"-30"
+				"yaw"		"-90"
+				"YPos"		"0"
+				"ZPos"		"-135"
+				"XPos"		"-1"
+			}
+			"models/items/nightstalker/black_nihility/black_nihility_back.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"0"
+				"roll"		"-220"
+				"yaw"		"90"
+				"YPos"		"0"
+				"ZPos"		"-170"
+				"XPos"		"10"
+			}
+			"models/items/huskar/searing_dominator/searing_dominator.vmdl"
+			{
+				"scale"		"0.89999997615814"
+				"pitch"		"-180"
+				"roll"		"-12"
+				"yaw"		"-125"
+				"YPos"		"0"
+				"ZPos"		"-127"
+				"XPos"		"-17"
+			}
+			"models/heroes/shadow_fiend/arcana_wings.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"0"
+				"roll"		"-220"
+				"yaw"		"90"
+				"YPos"		"0"
+				"ZPos"		"-150"
+				"XPos"		"40"
+			}
+			"models/items/skywrath_mage/guiding_lights_back/guiding_lights_back.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"-180"
+				"roll"		"-45"
+				"yaw"		"-90"
+				"YPos"		"0"
+				"ZPos"		"-196"
+				"XPos"		"-1"
+			}
+			"models/items/sven/spartan_helmet.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-180"
+				"roll"		"-15"
+				"yaw"		"-125"
+				"YPos"		"0"
+				"ZPos"		"-171"
+				"XPos"		"-10"
+			}
+			"models/items/drow/mask_of_madness/mask_of_madness.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"-189"
+				"roll"		"-7"
+				"ZPos"		"-121"
+				"YPos"		"0"
+				"yaw"		"-131"
+				"XPos"		"5"
+			}
+			"models/items/doom/eternal_fire_back/eternal_fire_back.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"0"
+				"roll"		"-220"
+				"yaw"		"90"
+				"YPos"		"0"
+				"ZPos"		"-180"
+				"XPos"		"0"
+			}
+			"models/items/ursa/hat_alpine.vmdl"
+			{
+				"scale"		"0.60000002384186"
+				"pitch"		"-190"
+				"roll"		"0"
+				"ZPos"		"-123"
+				"YPos"		"0"
+				"yaw"		"-120"
+				"XPos"		"-24"
+			}
+			"models/items/windrunner/orchid_flowersong_offhand/orchid_flowersong_offhand.vmdl"
+			{
+				"scale"		"1.3999999761581"
+				"pitch"		"120"
+				"roll"		"245"
+				"yaw"		"0"
+				"YPos"		"10"
+				"ZPos"		"-124"
+				"XPos"		"26"
+			}
+			"models/items/sniper/sniper_tallyho_head2/sniper_tallyho_head2.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-180"
+				"roll"		"-10"
+				"yaw"		"-141"
+				"YPos"		"-4"
+				"ZPos"		"-84"
+				"XPos"		"-7"
+			}
+			"models/items/axe/demon_blood_helm.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-174"
+				"roll"		"-20"
+				"ZPos"		"-116"
+				"YPos"		"0"
+				"yaw"		"-126"
+				"XPos"		"-20"
+			}
+			"models/items/drow/lovetraveler_weapon/lovetraveler_weapon.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"10"
+				"roll"		"70"
+				"yaw"		"-285"
+				"YPos"		"-37"
+				"ZPos"		"-82"
+				"XPos"		"-1"
+			}
+			"models/items/chaos_knight/diabolic_aspect/diabolic_aspect.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-180"
+				"roll"		"-15"
+				"yaw"		"-125"
+				"YPos"		"0"
+				"ZPos"		"-201"
+				"XPos"		"5"
+			}
+			"models/items/clinkz/redbull_clinkz_head/redbull_clinkz_head.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-184"
+				"roll"		"-7"
+				"ZPos"		"-124"
+				"YPos"		"0"
+				"yaw"		"-127"
+				"XPos"		"-7"
+			}
+			"models/items/mirana/sl_quiver/sl_quiver.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"20"
+				"roll"		"-190"
+				"yaw"		"20"
+				"YPos"		"0"
+				"ZPos"		"-97"
+				"XPos"		"50"
+			}
+			"models/items/axe/shout_mask/shout_mask.vmdl"
+			{
+				"scale"		"0.60000002384186"
+				"pitch"		"-184"
+				"roll"		"-7"
+				"yaw"		"-127"
+				"YPos"		"0"
+				"ZPos"		"-116"
+				"XPos"		"-7"
+			}
+			"models/heroes/omniknight/omniknightwings.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"0"
+				"roll"		"-210"
+				"yaw"		"90"
+				"YPos"		"0"
+				"ZPos"		"0"
+				"XPos"		"0"
+			}
+			"models/items/doom/baphomet_head/baphomet_head.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-180"
+				"roll"		"-15"
+				"yaw"		"-125"
+				"YPos"		"0"
+				"ZPos"		"-186"
+				"XPos"		"-10"
+			}
+			"models/items/pudge/bogatyr_pudge_head/bogatyr_pudge_head.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-189"
+				"roll"		"0"
+				"yaw"		"-125"
+				"YPos"		"0"
+				"ZPos"		"-121"
+				"XPos"		"-25"
+			}
+			"models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"0"
+				"roll"		"-210"
+				"yaw"		"90"
+				"YPos"		"0"
+				"ZPos"		"-140"
+				"XPos"		"0"
+			}
+		}
+		"bow_mid"
+		{
+			"models/items/medusa/emerald_ocean_weapon/emerald_ocean_weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-150"
+				"roll"		"90"
+				"ZPos"		"20"
+				"YPos"		"4"
+				"yaw"		"-90"
+				"XPos"		"-10"
+			}
+			"models/items/mirana/crescent_bow/crescent_bow.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-10"
+				"roll"		"0"
+				"yaw"		"50"
+				"YPos"		"0"
+				"ZPos"		"-2"
+				"XPos"		"19"
+			}
+			"models/items/drow/monarch_weapon/monarch_weapon.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"40"
+				"roll"		"60"
+				"yaw"		"60"
+				"YPos"		"-48"
+				"ZPos"		"-83"
+				"XPos"		"0"
+			}
+			"models/items/clinkz/molten_genesis/molten_genesis.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"10"
+				"roll"		"-90"
+				"yaw"		"-70"
+				"YPos"		"-95"
+				"ZPos"		"47"
+				"XPos"		"10"
+			}
+			"models/items/medusa/twin_serpent_bow/twin_serpent_bow.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"90"
+				"YPos"		"13"
+				"ZPos"		"-4"
+				"XPos"		"-130"
+			}
+			"models/items/mirana/sl_bow/sl_bow.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-10"
+				"roll"		"0"
+				"yaw"		"50"
+				"YPos"		"0"
+				"ZPos"		"-2"
+				"XPos"		"19"
+			}
+			"models/items/sniper/wolfhound_rifle/wolfhound_rifle.vmdl"
+			{
+				"scale"		"1.2999999523163"
+				"pitch"		"-20"
+				"roll"		"-60"
+				"yaw"		"31"
+				"YPos"		"74"
+				"ZPos"		"-34"
+				"XPos"		"40"
+			}
+			"models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl"
+			{
+				"scale"		"1.3999999761581"
+				"pitch"		"-60"
+				"roll"		"120"
+				"ZPos"		"-13"
+				"YPos"		"-28"
+				"yaw"		"-30"
+				"XPos"		"-60"
+			}
+			"models/items/windrunner/wr_sparrow_bowab/wr_sparrow_bowab.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"-55"
+				"yaw"		"-33"
+				"XPos"		"-49"
+				"YPos"		"-27"
+				"ZPos"		"-12"
+				"roll"		"115"
+			}
+			"models/items/windrunner/wild_wind_bow/wild_wind_bow.vmdl"
+			{
+				"scale"		"1.3999999761581"
+				"pitch"		"-50"
+				"roll"		"120"
+				"ZPos"		"-15"
+				"YPos"		"-29"
+				"yaw"		"-40"
+				"XPos"		"-60"
+			}
+			"models/items/windrunner/lyraleis_breeze/lyraleis_breeze.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-60"
+				"roll"		"120"
+				"ZPos"		"-12"
+				"YPos"		"-29"
+				"yaw"		"-30"
+				"XPos"		"-55"
+			}
+			"models/items/drow/lovetraveler_weapon/lovetraveler_weapon.vmdl"
+			{
+				"scale"		"1.3999999761581"
+				"pitch"		"30"
+				"roll"		"70"
+				"yaw"		"-285"
+				"YPos"		"-45"
+				"ZPos"		"-80"
+				"XPos"		"0"
+			}
+			"models/items/drow/dragonstouch_weapon/dragonstouch_weapon.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"30"
+				"roll"		"70"
+				"yaw"		"-285"
+				"YPos"		"-45"
+				"ZPos"		"-80"
+				"XPos"		"0"
+			}
+			"models/items/drow/weapon_howling_wind.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"30"
+				"roll"		"70"
+				"yaw"		"-285"
+				"YPos"		"-45"
+				"ZPos"		"-82"
+				"XPos"		"3"
+			}
+			"models/items/medusa/bow_of_the_serpent/bow_of_the_serpent.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-22"
+				"roll"		"-7"
+				"ZPos"		"15"
+				"YPos"		"6"
+				"yaw"		"72"
+				"XPos"		"18"
+			}
+			"models/items/mirana/mirana_nightsilver_weapon/mirana_nightsilver_weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-10"
+				"roll"		"0"
+				"yaw"		"50"
+				"YPos"		"1"
+				"ZPos"		"0"
+				"XPos"		"20"
+			}
+			"models/items/drow/dotapit_s3_frostfang_bow/dotapit_s3_frostfang_bow.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-15"
+				"roll"		"-15"
+				"ZPos"		"0"
+				"YPos"		"-40"
+				"yaw"		"70"
+				"XPos"		"85"
+			}
+			"models/items/medusa/blueice_weapon/blueice_weapon.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-150"
+				"roll"		"90"
+				"yaw"		"-90"
+				"YPos"		"0"
+				"ZPos"		"-127"
+				"XPos"		"0"
+			}
+			"models/items/windrunner/orchid_flowersong_weapon/orchid_flowersong_weapon.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-60"
+				"roll"		"120"
+				"ZPos"		"-9"
+				"YPos"		"-29"
+				"yaw"		"-30"
+				"XPos"		"-55"
+			}
+			"models/items/clinkz/bownes/bownes.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"-200"
+				"ZPos"		"4"
+				"YPos"		"-85"
+				"yaw"		"-350"
+				"XPos"		"60"
+			}
+		}
+		"models/items/clinkz/clinkz_back_goc/clinkz_back_goc.vmdl"		"Change"
+		"models/items/drow/black_wind_weapon/black_wind_weapon.vmdl"		"Change"
 	}
 	"models/props_structures/tower_bad.vmdl"
 	{

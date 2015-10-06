@@ -183,9 +183,23 @@ function PMP:ApplyUpgrade(unit, name, level)
 			PMP:ApplyModifierUpgrade(unit, name, level)		
 			PMP:UpdateWearablesOnSlot(unit, name, level)
 		end
+
+		if name == "quiver" then
+			PMP:UpdateProjectile(unit, level)
+		end
     end
 
 	AdjustAbilityLayout(unit)
+end
+
+function PMP:UpdateProjectile(unit, level)
+	local quiverTable = GetWearablesForSlot("quiver")
+	local projectileTable = quiverTable['projectile']
+	local newProjectile = projectileTable[tostring(level)]
+
+	if newProjectile then
+		unit:SetRangedProjectileName(newProjectile)
+	end
 end
 
 function PMP:UpdateWearablesOnSlot( unit, name, level )
@@ -263,8 +277,8 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 end
 
 heroUpgrades = {["pimp_damage"]={},["pimp_armor"]={},["pimp_speed"]={},["pimp_regen"]={}}
-slotUpgrades = {["weapon"]={},["helm"]={},["shield"]={},["wings"]={}}
-slots = {"weapon","helm","shield","wings"}
+slotUpgrades = {["weapon"]={},["helm"]={},["shield"]={},["wings"]={},["bow"]={},["quiver"]={}}
+slots = {"weapon","helm","shield","wings","bow","quiver"}
 
 function PMP:ResetAllUpgrades(playerID)
 	local Units = GetPlayerUnits(playerID)

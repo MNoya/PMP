@@ -134,6 +134,11 @@ function Precache( context )
 		end
 	end
 
+	local projectiles = HATS['quiver']['projectile']
+	for k,effectName in pairs(projectiles) do
+		PrecacheResource("particle", effectName, context)
+	end
+
 	local AttachmentDatabase = LoadKeyValues("scripts/attachments.txt")
 	local Particles = AttachmentDatabase['Particles']
 	for k,modelName in pairs(Particles) do

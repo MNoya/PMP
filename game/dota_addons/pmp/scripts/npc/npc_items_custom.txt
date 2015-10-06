@@ -3552,7 +3552,7 @@
 	            "TextureName"   "upgrade_bow19"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "110"
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "115"
 	            }
 	        }
 	
@@ -3561,7 +3561,7 @@
 	            "TextureName"   "upgrade_bow20"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "120"
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "130"
 	            }
 	        }
 	
