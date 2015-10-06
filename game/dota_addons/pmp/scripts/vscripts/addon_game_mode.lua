@@ -144,7 +144,6 @@ function Precache( context )
 	for k,model in pairs(Particles) do
 		for effectName,values in pairs(model) do
 			if string.match(effectName, "vpcf") then
-				print(effectName)
 				PrecacheResource("particle", effectName, context)
 			end
 		end
