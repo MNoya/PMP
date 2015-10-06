@@ -493,6 +493,14 @@ end
 
 --------------------------------------------
 
+function GetPlayerRace( playerID )
+    local hero = PlayerResource:GetSelectedHeroEntity(pID)
+    if not hero then return end
+    local hero_name = hero:GetName()
+
+    return GameRules.HeroKV[hero_name]["Race"]
+end
+
 function GetRace( unit )
     local pID = unit:GetPlayerOwnerID()
     local hero = PlayerResource:GetSelectedHeroEntity(pID)

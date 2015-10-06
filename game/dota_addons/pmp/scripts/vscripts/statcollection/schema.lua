@@ -2,13 +2,6 @@ customSchema = class({})
 
 function customSchema:init(options)
     
-    -- Set settings
-    self.SCHEMA_KEY = statInfo.schemaID
-    self.HAS_ROUNDS = tobool(statInfo.HAS_ROUNDS)
-    self.GAME_WINNER = tobool(statInfo.GAME_WINNER)
-    self.ANCIENT_EXPLOSION = tobool(statInfo.GAME_WINNER)
-    self.statCollection = options.statCollection
-
     -- Version flag
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam, version = GetVersion()})
 
@@ -26,7 +19,7 @@ function customSchema:init(options)
             local players = BuildPlayersArray()
 
             -- Send custom stats
-            self.statCollection:sendCustom({game=game, players=players})
+            statCollection:sendCustom({game=game, players=players})
         end
     end, nil)
 end
@@ -36,7 +29,7 @@ function customSchema:submitRound(args)
     game = BuildGameArray()
     players = BuildPlayersArray()
 
-    self.statCollection:sendCustom({game=game, players=players})
+    statCollection:sendCustom({game=game, players=players})
     
     return {winners = winners, lastRound = false}
 end
@@ -72,7 +65,7 @@ function BuildPlayersArray()
                 table.insert(players, {
                     --steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
-                    phi = PlayerResource:GetSelectedHeroID(playerID), --player_hero_id
+                    ph = GetPlayerRace(playerID), --player_hero
                     pk = PlayerResource:GetKills(playerID), --player_kills
                     pd = PlayerResource:GetDeaths(playerID), --player_deaths
                     pl = GetHeroLevel(playerID), --player_level
