@@ -625,6 +625,14 @@
 		"DOTA_Tooltip_ability_night_elf_owl_scout_owl_movespeed"                          "OWL MOVESPEED:"
 		"DOTA_Tooltip_ability_night_elf_owl_scout_spawn_distance"                         "SPAWN DISTANCE:"
 
+		"DOTA_Tooltip_ability_night_elf_true_sight"                                       "True Sight"
+		"DOTA_Tooltip_ability_night_elf_true_sight_Description"                           "Reveals nearby invisible enemy units"
+		"DOTA_Tooltip_ability_night_elf_true_sight_reveal_radius"                         "REVEAL RADIUS:"
+
+		"DOTA_Tooltip_ability_undead_true_sight"                                          "True Sight"
+		"DOTA_Tooltip_ability_undead_true_sight_Description"                              "Reveals nearby invisible enemy units"
+		"DOTA_Tooltip_ability_undead_true_sight_reveal_radius"                            "REVEAL RADIUS:"
+
 		"DOTA_Tooltip_ability_night_elf_mass_windwalk"                                    "Moonlight Shadow"
 		"DOTA_Tooltip_ability_night_elf_mass_windwalk_Description"                        "Makes all allied nearby units invisible for %duration% seconds."
 		"DOTA_Tooltip_ability_night_elf_mass_windwalk_radius"                             "RADIUS:"
@@ -1482,6 +1490,12 @@
 		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5_Description"                    "Increase the level of Goblin's Greed"
 		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5_gold_cost"                      "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5_extra_bounty"                   "EXTRA BOUNTY:"
+
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial1_lumber_cost"                    "LUMBER COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial2_lumber_cost"                    "LUMBER COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial3_lumber_cost"                    "LUMBER COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial4_lumber_cost"                    "LUMBER COST:"
+		"DOTA_Tooltip_ability_item_upgrade_goblin_racial5_lumber_cost"                    "LUMBER COST:"
 
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1"                             "Upgrade Blood Elf Racial (1)"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_Description"                 "Increase the level of Blood Elves Blood Pool"

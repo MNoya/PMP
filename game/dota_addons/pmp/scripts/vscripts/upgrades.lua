@@ -17,6 +17,7 @@ function UpgradeFinished( event )
 	local lumberCost = ability:GetSpecialValueFor("lumber_cost")
 
 	if not PlayerHasEnoughLumber(pID, lumberCost) then
+		ModifyGold(pID, ability:GetGoldCost(ability:GetLevel()))
 		return
 	else
 		ModifyLumber(pID, -lumberCost)
@@ -126,7 +127,7 @@ function PMP:SetUpgrade( playerID, name, level )
 			if name == "wings" or name == "health" then
 				PMP:ApplyUpgrade(unit, name, level)
 			else
-				if not IsLeaderUnit(unit) then
+				if not IsLeaderUnit(unit) or unit:HasAbility("goblin_attack") then
 					PMP:ApplyUpgrade(unit, name, level)
 				end
 			end
@@ -261,7 +262,7 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 			if name == "wings" or name == "health" then
 				PMP:ApplyUpgrade(unit, name, level)
 			else
-				if not IsLeaderUnit(unit) then
+				if not IsLeaderUnit(unit) or unit:HasAbility("goblin_attack") then
 					PMP:ApplyUpgrade(unit, name, level)
 				end
 			end

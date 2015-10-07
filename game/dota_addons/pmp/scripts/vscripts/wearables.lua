@@ -20,7 +20,10 @@ function ChangeWearableInSlot( unit, slotName, modelName )
         HideWearableInSlot(unit, slotName)
         SetDefaultWearableInSlot(unit, slotName)
 
-        local new_prop = Attachments:AttachProp(unit, attachPoint, modelName)
+        local new_prop
+        if attachPoint then
+            new_prop = Attachments:AttachProp(unit, attachPoint, modelName)
+        end
 
         -- If no attachment can be found on the database, try to set model
         if not new_prop then

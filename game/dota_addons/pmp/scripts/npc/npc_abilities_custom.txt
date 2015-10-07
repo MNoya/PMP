@@ -899,7 +899,7 @@
 	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
 	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
 	
-	    "AbilityCastRange"              "650"
+	    "AbilityCastRange"              "150"
 	    "AbilityCooldown"               "45.0"
 	
 	    "AbilityManaCost"               "100"
@@ -939,7 +939,7 @@
 	        "01"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "1 1.5 2 2.3 3 3.5"
+	            "extra_bounty"      "1 1.5 2 2.5 3 3.5"
 	        }
 	    }
 	}

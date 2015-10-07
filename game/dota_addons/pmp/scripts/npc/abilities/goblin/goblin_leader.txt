@@ -148,7 +148,7 @@
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
     "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
 
-    "AbilityCastRange"              "650"
+    "AbilityCastRange"              "150"
     "AbilityCooldown"               "45.0"
 
     "AbilityManaCost"               "100"

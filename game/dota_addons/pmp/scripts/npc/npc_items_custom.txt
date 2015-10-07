@@ -1939,7 +1939,7 @@
 	"item_upgrade_goblin_racial1"
 	{
 	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_goblin_racial"
+	    "AbilityTextureName"            "item_upgrade_goblin_racial1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	
@@ -1957,8 +1957,13 @@
 	        }
 	        "02"
 	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "lumber_cost"         "100"
+	        }
+	        "03"
+	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "1.5 2 2.3 3 3.5"
+	            "extra_bounty"      "1.5 2 2.5 3 3.5"
 	        }
 	    }
 	
@@ -1981,7 +1986,7 @@
 	"item_upgrade_goblin_racial2"
 	{
 	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_goblin_racial"
+	    "AbilityTextureName"            "item_upgrade_goblin_racial2"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	
@@ -1999,8 +2004,13 @@
 	        }
 	        "02"
 	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "lumber_cost"         "200"
+	        }
+	        "03"
+	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "1.5 2 2.3 3 3.5"
+	            "extra_bounty"      "1.5 2 2.5 3 3.5"
 	        }
 	    }
 	
@@ -2023,7 +2033,7 @@
 	"item_upgrade_goblin_racial3"
 	{
 	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_goblin_racial"
+	    "AbilityTextureName"            "item_upgrade_goblin_racial3"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	
@@ -2041,8 +2051,13 @@
 	        }
 	        "02"
 	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "lumber_cost"         "300"
+	        }
+	        "03"
+	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "1.5 2 2.3 3 3.5"
+	            "extra_bounty"      "1.5 2 2.5 3 3.5"
 	        }
 	    }
 	
@@ -2065,7 +2080,7 @@
 	"item_upgrade_goblin_racial4"
 	{
 	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_goblin_racial"
+	    "AbilityTextureName"            "item_upgrade_goblin_racial4"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	
@@ -2083,8 +2098,13 @@
 	        }
 	        "02"
 	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "lumber_cost"         "400"
+	        }
+	        "03"
+	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "1.5 2 2.3 3 3.5"
+	            "extra_bounty"      "1.5 2 2.5 3 3.5"
 	        }
 	    }
 	
@@ -2107,7 +2127,7 @@
 	"item_upgrade_goblin_racial5"
 	{
 	    "BaseClass"                     "item_datadriven"
-	    "AbilityTextureName"            "item_upgrade_goblin_racial"
+	    "AbilityTextureName"            "item_upgrade_goblin_racial5"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	
@@ -2125,8 +2145,13 @@
 	        }
 	        "02"
 	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "lumber_cost"         "500"
+	        }
+	        "03"
+	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "extra_bounty"      "1.5 2 2.3 3 3.5"
+	            "extra_bounty"      "1.5 2 2.5 3 3.5"
 	        }
 	    }
 	
