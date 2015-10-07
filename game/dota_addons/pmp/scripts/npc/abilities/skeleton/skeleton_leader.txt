@@ -170,4 +170,54 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+        "particle" "particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf"
+    }
+}
+
+"undead_true_sight"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "undead_true_sight"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityCastRange"              "%reveal_radius"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "reveal_radius"       "900"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_true_sight_aura"
+        {
+            "Passive"               "1"
+            "IsHidden"              "1"
+
+            "Aura"                  "modifier_reveal"
+            "Aura_Radius"           "%reveal_radius"
+            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Aura_Types"            "DOTA_UNIT_TARGET_ALL"
+            "Aura_ApplyToCaster"    "0"
+        }
+        "modifier_reveal"
+        {
+            "Priority"              "MODIFIER_PRIORITY_ULTRA"
+            "IsHidden"              "1"
+
+            "States"
+            {
+                "MODIFIER_STATE_INVISIBLE"      "MODIFIER_STATE_VALUE_DISABLED"
+            }
+        }
+    }
 }

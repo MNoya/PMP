@@ -608,14 +608,35 @@
 		"DOTA_Tooltip_ability_summon_super_goblin_empty"                                  "Summon Super Goblin"
 		"DOTA_Tooltip_ability_summon_super_goblin_empty_Description"                      "You've used all your super units."
 
-		"DOTA_Tooltip_ability_night_elf_racial"                                           "Night Elf Racial"
-		"DOTA_Tooltip_ability_night_elf_racial_Description"                               ""
+		"DOTA_Tooltip_ability_night_elf_racial"                                           "Ranged Attack"
+		"DOTA_Tooltip_ability_night_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nNight Elf piercing attacks deal 75%% damage to melee armor, and take 150%% damage from melee attacks."
 
 		"DOTA_Tooltip_ability_spawn_night_elf"                                            "Spawn Night Elf"
 		"DOTA_Tooltip_ability_spawn_night_elf_Description"                                ""
 
 		"DOTA_Tooltip_ability_spawn_night_elf_leader"                                     "Spawn Night Elf Leader"
-		"DOTA_Tooltip_ability_spawn_night_elf_leader_Description"                         ""
+		"DOTA_Tooltip_ability_spawn_night_elf_leader_Description"                         "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nNight Elves Leader has the following abilities:\n-Owl Scout\n-Moonlight Shadow\n-Trueshot Aura\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+
+		"DOTA_Tooltip_ability_night_elf_owl_scout"                                        "Owl Scout"
+		"DOTA_Tooltip_ability_night_elf_owl_scout_Description"                            "Temporarily summons an Owl Scout, which can be used to scout the map.\nCan see invisible units."
+		"DOTA_Tooltip_ability_night_elf_owl_scout_owl_duration"                           "OWL DURATION:"
+		"DOTA_Tooltip_ability_night_elf_owl_scout_owl_hp"                                 "OWL HP:"
+		"DOTA_Tooltip_ability_night_elf_owl_scout_owl_vision"                             "OWL VISION:"
+		"DOTA_Tooltip_ability_night_elf_owl_scout_owl_movespeed"                          "OWL MOVESPEED:"
+		"DOTA_Tooltip_ability_night_elf_owl_scout_spawn_distance"                         "SPAWN DISTANCE:"
+
+		"DOTA_Tooltip_ability_night_elf_mass_windwalk"                                    "Moonlight Shadow"
+		"DOTA_Tooltip_ability_night_elf_mass_windwalk_Description"                        "Makes all allied nearby units invisible for %duration% seconds."
+		"DOTA_Tooltip_ability_night_elf_mass_windwalk_radius"                             "RADIUS:"
+		"DOTA_Tooltip_ability_night_elf_mass_windwalk_duration"                           "DURATION:"
+		"DOTA_Tooltip_ability_night_elf_mass_windwalk_movespeed_pct"                      "%BONUS MOVESPEED:"
+
+		"DOTA_Tooltip_ability_night_elf_trueshot_aura"                                    "Trueshot Aura"
+		"DOTA_Tooltip_ability_night_elf_trueshot_aura_Description"                        "An aura that gives friendly units bonus damage to their ranged attacks."
+		"DOTA_Tooltip_ability_night_elf_trueshot_aura_damage_bonus_percent"               "DAMAGE BONUS PERCENT:"
+		"DOTA_Tooltip_ability_night_elf_trueshot_aura_radius"                             "RADIUS:"
+
+		"DOTA_Tooltip_ability_night_elf_racial_attack_range"                              "ATTACK RANGE:"
 
 		"DOTA_Tooltip_ability_summon_super_night_elf"                                     "Summon Super Night Elf"
 		"DOTA_Tooltip_ability_summon_super_night_elf_Description"                         "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"

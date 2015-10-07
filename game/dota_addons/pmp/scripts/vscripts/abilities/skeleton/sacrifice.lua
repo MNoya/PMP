@@ -11,6 +11,8 @@ function skeleton_sacrifice:OnAbilityPhaseStart()
     local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, target)
     ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin())
 
+    target:EmitSound("Hero_Necrolyte.ReapersScythe.Target")
+
     return true
 end
 

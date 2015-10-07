@@ -537,7 +537,7 @@
     // Abilities
     //----------------------------------------------------------------
     "AbilityLayout"             "4"
-    "Ability1"                  "true_sight"
+    "Ability1"                  "undead_true_sight"
     "Ability2"                  ""   //Reference: Arst
     "Ability3"                  ""   //Reference: Alam
     "Ability4"                  ""

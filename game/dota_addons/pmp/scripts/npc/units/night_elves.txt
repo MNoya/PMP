@@ -616,7 +616,7 @@
 
     // Abilities
     //----------------------------------------------------------------
-    "Ability1"                  "true_sight"            // Ability 1
+    "Ability1"                  "night_elf_true_sight"            // Ability 1
     "Ability2"                  ""          // Ability 2
     "Ability3"                  ""          // Ability 3
     "Ability4"                  ""          // Ability 4
@@ -643,7 +643,7 @@
     // Movement
     //----------------------------------------------------------------
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
-    "MovementSpeed"             "270"       // Speed.
+    "MovementSpeed"             "300"       // Speed.
     "MovementTurnRate"          "0.6"       // Turning rate.
 
     // Status

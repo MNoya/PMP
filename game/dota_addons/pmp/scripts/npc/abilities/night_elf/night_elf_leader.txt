@@ -9,12 +9,12 @@
     "AbilityCastPoint"              "0.3"
     "AbilityCooldown"               "20.0"
 
-    "AbilityManaCost"               "50"
+    "AbilityManaCost"               "10"
 
     "precache"
     {
-        "particle"  "particles/units/heroes/hero_mirana/mirana_starfall_moonray.vpcf"
-        "particle"  "particles/units/heroes/hero_mirana/mirana_moonlight_owner.vpcf"
+        "particle"  "particles/econ/courier/courier_greevil_green/courier_greevil_green_ambient_1.vpcf"
+        "particle"  "particles/status_fx/status_effect_wraithking_ghosts.vpcf" 
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
         "model"     "models/items/courier/snowl/snowl_flying.vmdl"
     }
@@ -108,11 +108,17 @@
         
             "States"
             {
-                "MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_ATTACK_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_MAGIC_IMMUNE"   "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
             }
 
-            "EffectName"        "particles/units/heroes/hero_mirana/mirana_moonlight_owner.vpcf"
-            "EffectAttachType"  "follow_overhead"
+            "EffectName"            "particles/econ/courier/courier_greevil_green/courier_greevil_green_ambient_1.vpcf"
+            "EffectAttachType"      "follow_origin"
+
+            "StatusEffectName"      "particles/status_fx/status_effect_wraithking_ghosts.vpcf"     
+            "StatusEffectPriority"  "10"
         }
     }
 }
@@ -127,6 +133,8 @@
     "AbilityCastPoint"              "0.5"
 
     "AbilityCastRange"              "%radius"
+    "AbilityManaCost"               "70"
+    "AbilityCooldown"               "10"
 
     "AbilitySpecial"
     {
@@ -156,6 +164,11 @@
 
     "OnSpellStart"
     {
+        "FireSound"
+        {
+            "EffectName"    "Ability.MoonlightShadow"
+            "Target"        "CASTER"
+        }
         "RunScript"
         {
             "ScriptFile"    "abilities/night_elf/mass_windwalk.lua"
@@ -244,6 +257,50 @@
             "Properties"
             {
                 "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%damage_bonus_percent"
+            }
+        }
+    }
+}
+
+"night_elf_true_sight"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "night_elf_owl_scout"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityCastRange"              "%reveal_radius"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "reveal_radius"       "900"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_true_sight_aura"
+        {
+            "Passive"               "1"
+            "IsHidden"              "1"
+
+            "Aura"                  "modifier_reveal"
+            "Aura_Radius"           "%reveal_radius"
+            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Aura_Types"            "DOTA_UNIT_TARGET_ALL"
+            "Aura_ApplyToCaster"    "0"
+        }
+        "modifier_reveal"
+        {
+            "Priority"              "MODIFIER_PRIORITY_ULTRA"
+            "IsHidden"              "1"
+
+            "States"
+            {
+                "MODIFIER_STATE_INVISIBLE"      "MODIFIER_STATE_VALUE_DISABLED"
             }
         }
     }

@@ -5,8 +5,8 @@ function MassWindWalk( event )
     local radius = ability:GetSpecialValueFor("radius")
     local duration = ability:GetSpecialValueFor("duration")
 
-    local units = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, 0, DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES, false)
-
+    local units = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES, 0, false)
+    
     for k,unit in pairs(units) do
         ability:ApplyDataDrivenModifier(caster, unit, "modifier_night_elf_windwalk", {duration=duration})
     end
