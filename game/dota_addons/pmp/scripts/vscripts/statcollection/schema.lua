@@ -2,8 +2,8 @@ customSchema = class({})
 
 function customSchema:init(options)
     
-    -- Version flag
-    statCollection:setFlags({team_setting = GameRules.PlayersPerTeam, version = GetVersion()})
+    -- Flags
+    statCollection:setFlags({version = GetVersion()})
 
     -- Listen for changes in the current state
     ListenToGameEvent('game_rules_state_change', function(keys)
@@ -83,7 +83,7 @@ function BuildPlayersArray()
                     ru = GetRepairsUsed(playerID), --repairs_used
 
                     -- Upgrades
-                    uw = player_upgrades["weapon"] or 0, --upgrade_weapon
+                    uw = GetPlayerWeaponLevel(playerID), --upgrade_weapon
                     uh = player_upgrades["helm"] or 0, --upgrade_helm
                     ua = player_upgrades["armor"] or 0, --upgrade_armor
                     uw = player_upgrades["wings"] or 0, --upgrade_wings
@@ -108,4 +108,18 @@ function BuildPlayersArray()
     end
 
     return players
+end
+
+function GetPlayerWeaponLevel( playerID )
+    local player_upgrades = PMP:GetUpgradeList(playerID)
+    local race = GetPlayerRace(playerID)
+    local weapon_level = 0
+    
+    if race == "night_elf" then
+        weapon_level = player_upgrades["bow"] + player_upgrades["quiver"]
+    else
+        weapon_level = player_upgrades["weapon"]
+    end
+
+    return weapon_level
 end

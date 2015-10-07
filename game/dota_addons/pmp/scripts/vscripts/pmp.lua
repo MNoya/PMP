@@ -129,7 +129,7 @@ function PMP:InitGameMode()
         GameRules.PlayersPerTeam = 3
     end
 
-    statCollection:setFlags({team_setting = GameRules.PlayersPerTeam, version = GetVersion()})
+    statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
@@ -450,7 +450,9 @@ function PMP:OnPlayerPickHero(keys)
     hero.Upgrades["helm"] = 0
     hero.Upgrades["armor"] = 0
     hero.Upgrades["wings"] = 0
-    hero.Upgrades["health"] = 0  
+    hero.Upgrades["bow"] = 0
+    hero.Upgrades["quiver"] = 0
+    hero.Upgrades["health"] = 0
 
     hero.Upgrades["critical_strike"] = 0
     hero.Upgrades["stun_hit"] = 0
@@ -883,7 +885,7 @@ function PMP:SetSetting( event )
 
         GameRules.PlayersPerTeam = TEAM_OPTIONS[value]
 
-        statCollection:setFlags({team_setting = GameRules.PlayersPerTeam, version = GetVersion()})
+        statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
     end
 
     -- Update UI on the clients
