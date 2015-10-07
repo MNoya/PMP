@@ -74,6 +74,8 @@ function SpawnSuperUnit( event )
         unit:SetControllableByPlayer(playerID, true)
         FindClearSpaceForUnit(unit, position, true)
 
+        if unit:GetUnitName() == "super_treant" then AddAnimationTranslate(unit, "torment") end
+
         unit:AddNewModifier(caster, nil, "modifier_kill", {duration=duration})
         
         charges = charges - 1

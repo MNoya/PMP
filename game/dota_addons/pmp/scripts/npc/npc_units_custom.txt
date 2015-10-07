@@ -4200,10 +4200,10 @@
 	    "AttackDamageMin"           "4.0"
 	    "AttackDamageMax"           "8.0"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackRate"                "2.00"
+	    "AttackRate"                "2.0"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "100"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -4220,7 +4220,7 @@
 	    // Movement
 	    //----------------------------------------------------------------
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
-	    "MovementSpeed"             "150"
+	    "MovementSpeed"             "100" //Default is 150
 	    "MovementTurnRate"          "0.6"
 	    
 	    // Status
@@ -4264,7 +4264,7 @@
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/items/furion/treant_flower_1.vmdl"
-	    "ModelScale"                "1.5"
+	    "ModelScale"                "1.2"
 	    "Level"                     "2"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
 	    "HealthBarOffset"           "140"
@@ -4292,7 +4292,7 @@
 	    "AttackAnimationPoint"      "0.43"
 	    "AttackAcquisitionRange"    "600"
 	    "AttackRange"               "600"
-	    "ProjectileModel"           "particles/units/heroes/hero_furion/furion_base_attack.vpcf"
+	    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "ProjectileSpeed"           "1100"
 	    
 	    // Bounty
@@ -4444,7 +4444,7 @@
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/heroes/treant_protector/treant_protector.vmdl"
-	    "ModelScale"                "2"
+	    "ModelScale"                "1.5"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
 	    "RingRadius"                "180"
@@ -4483,7 +4483,7 @@
 	    "AttackAnimationPoint"      "0.3"
 	    "AttackAcquisitionRange"    "500"
 	    "AttackRange"               "500"
-	    "ProjectileModel"           "particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_base_attack_tormented.vpcf"
+	    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "ProjectileSpeed"           "1200"
 	    
 	    // Bounty
@@ -4621,8 +4621,8 @@
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/heroes/techies/fx_techiesfx_stasis.vmdl"
-	    "ModelScale"                "2"
+	    "Model"                     "models/items/furion/treant/fungal_lord_shroomthing/fungal_lord_shroomthing.vmdl"
+	    "ModelScale"                "1.2"
 	    "Level"                     "1"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
 	    "RingRadius"                "100"
@@ -4635,6 +4635,7 @@
 	    //----------------------------------------------------------------
 	    "Ability1"                  "ability_tower"
 	    "Ability10"                 "ability_building"
+	    "Ability11"                 "ability_treant_tower"
 	    
 	    // Armor
 	    //----------------------------------------------------------------
