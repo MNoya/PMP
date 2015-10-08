@@ -52,9 +52,9 @@ function UpdatePlayer( teamPanel, playerId )
 	{
 		var hero = playerInfo.player_selected_hero
 		if (hero == "npc_dota_hero_skeleton_king")
-			hero = "skeleton_king"
-
-		playerPortrait.SetImage( "file://{images}/heroes/" + hero + ".png" );
+			playerPortrait.SetImage( "file://{images}/custom_game/skeleton_king.png" );
+		else
+			playerPortrait.SetImage( "file://{images}/heroes/" + hero + ".png" );
 		playerPanel.SetHasClass( "hero_selected", true );
 		playerPanel.SetHasClass( "hero_highlighted", false );
 	}
@@ -62,9 +62,9 @@ function UpdatePlayer( teamPanel, playerId )
 	{
 		var hero = "npc_dota_hero_" + playerInfo.possible_hero_selection
 		if (hero == "npc_dota_hero_skeleton_king")
-			hero = "skeleton_king"
-
-		playerPortrait.SetImage( "file://{images}/heroes/" + hero + ".png" );
+			playerPortrait.SetImage( "file://{images}/custom_game/skeleton_king.png" );
+		else
+			playerPortrait.SetImage( "file://{images}/heroes/" + hero + ".png" );
 		playerPanel.SetHasClass( "hero_selected", false );
 		playerPanel.SetHasClass( "hero_highlighted", true );
 	}
