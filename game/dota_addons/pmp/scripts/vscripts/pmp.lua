@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.31e"
+PMPVERSION = "0.32"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -741,6 +741,22 @@ function PMP:OnEntityKilled( event )
 
             lumber_bounty = lumber_bounty + bonus
             gold_bounty = gold_bounty + bonus
+        end
+
+        -- Anti-farm mechanism
+        local attacker_kills = attacker_hero:GetKills()
+        local killed_kills = killed_hero:GetKills()
+        local kill_difference = attacker_kills - killed_kills
+        local kill_diff_factor = killed_kills / attacker_kills
+
+        if kill_difference > 100 then
+            if kill_diff_factor <= 0.5 then
+                gold_bounty = 1
+                lumber_bounty = 1
+            elseif kill_diff_factor <= 0.75 then
+                gold_bounty = 2
+                lumber_bounty = 2
+            end
         end
 
         ModifyGold(attacker_playerID, gold_bounty)
