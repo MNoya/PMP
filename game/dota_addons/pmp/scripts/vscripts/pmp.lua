@@ -630,6 +630,9 @@ function PMP:OnEntityKilled( event )
         return
     end
 
+    -- Safeguard
+    if killed.reincarnating then return end
+
     -- Killed credentials
     local killed_player = killed:GetPlayerOwner()
     local killed_playerID = killed:GetPlayerOwnerID()

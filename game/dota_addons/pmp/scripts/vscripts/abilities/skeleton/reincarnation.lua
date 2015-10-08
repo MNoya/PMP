@@ -15,7 +15,7 @@ function ReincarnationCheck( event )
 
     -- Check if the damage would be lethal
     local health = caster:GetHealth()
-    if (health - damage) <= 0 then
+    if health <= 0 then
 
         local chance = ability:GetLevelSpecialValueFor("reincarnate_chance", ability:GetLevel()-1)
 
@@ -25,6 +25,8 @@ function ReincarnationCheck( event )
         end
 
         if RollPercentage(chance) then
+            caster.reincarnating = true
+            caster:Heal(damage, caster)
             caster:SetHealth(1)
 
             local duration = 2
@@ -38,6 +40,7 @@ function ReincarnationCheck( event )
                 local particleName = "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
                 ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, caster)
                 caster:RespawnUnit()
+                caster.reincarnating = nil
             end)
         end
     end
