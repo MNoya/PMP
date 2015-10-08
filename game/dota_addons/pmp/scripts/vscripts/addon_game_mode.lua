@@ -19,6 +19,7 @@ require('upgrades')
 require('utilities')
 require('wearables')
 require('sounds')
+require('damage')
 
 ---------------------------------------------------------------------------
 

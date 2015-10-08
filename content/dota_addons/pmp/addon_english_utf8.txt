@@ -609,7 +609,7 @@
 		"DOTA_Tooltip_ability_summon_super_goblin_empty_Description"                      "You've used all your super units."
 
 		"DOTA_Tooltip_ability_night_elf_racial"                                           "Ranged Attack"
-		"DOTA_Tooltip_ability_night_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nNight Elf piercing attacks deal 75%% damage to melee armor, and take 150%% damage from melee attacks."
+		"DOTA_Tooltip_ability_night_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nNight Elf piercing attacks deal 50%% damage to melee armor, and take 150%% damage from melee attacks."
 
 		"DOTA_Tooltip_ability_spawn_night_elf"                                            "Spawn Night Elf"
 		"DOTA_Tooltip_ability_spawn_night_elf_Description"                                ""

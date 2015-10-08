@@ -661,3 +661,47 @@ function IsChanneling ( unit )
 end
 
 -------------------------
+
+ARMOR_TYPES = {
+    ["DOTA_COMBAT_CLASS_DEFEND_SOFT"] = "unarmored",
+    ["DOTA_COMBAT_CLASS_DEFEND_WEAK"] = "light",
+    ["DOTA_COMBAT_CLASS_DEFEND_BASIC"] = "medium",
+    ["DOTA_COMBAT_CLASS_DEFEND_STRONG"] = "heavy",
+    ["DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"] = "fortified",
+    ["DOTA_COMBAT_CLASS_DEFEND_HERO"] = "hero",
+}
+-- Returns a string with the wc3 armor name
+function GetArmorType( unit )
+    if unit and IsValidEntity(unit) then
+        local unitName = unit:GetUnitName()
+        if GameRules.UnitKV[unitName] and GameRules.UnitKV[unitName]["CombatClassDefend"] then
+            local armor_string = GameRules.UnitKV[unitName]["CombatClassDefend"]
+            return ARMOR_TYPES[armor_string]
+        elseif unit:IsHero() then
+            return "hero"
+        end
+    end
+    return 0
+end
+
+ATTACK_TYPES = {
+    ["DOTA_COMBAT_CLASS_ATTACK_BASIC"] = "normal",
+    ["DOTA_COMBAT_CLASS_ATTACK_PIERCE"] = "pierce",
+    ["DOTA_COMBAT_CLASS_ATTACK_SIEGE"] = "siege",
+    ["DOTA_COMBAT_CLASS_ATTACK_LIGHT"] = "chaos",
+    ["DOTA_COMBAT_CLASS_ATTACK_HERO"] = "hero",
+    ["DOTA_COMBAT_CLASS_ATTACK_MAGIC"] = "magic",
+}
+-- Returns a string with the wc3 damage name
+function GetAttackType( unit )
+    if unit and IsValidEntity(unit) then
+        local unitName = unit:GetUnitName()
+        if GameRules.UnitKV[unitName] and GameRules.UnitKV[unitName]["CombatClassAttack"] then
+            local attack_string = GameRules.UnitKV[unitName]["CombatClassAttack"]
+            return ATTACK_TYPES[attack_string]
+        elseif unit:IsHero() then
+            return "hero"
+        end
+    end
+    return 0
+end

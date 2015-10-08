@@ -143,6 +143,7 @@ function PMP:InitGameMode()
 
 	-- Filters
     GameMode:SetExecuteOrderFilter( Dynamic_Wrap( PMP, "FilterExecuteOrder" ), self )
+    GameMode:SetDamageFilter( Dynamic_Wrap( PMP, "FilterDamage" ), self )
 
     -- Register Listener
     CustomGameEventManager:RegisterListener( "reposition_player_camera", Dynamic_Wrap(PMP, "RepositionPlayerCamera"))
