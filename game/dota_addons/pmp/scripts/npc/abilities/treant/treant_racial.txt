@@ -10,6 +10,100 @@
     // Base MS: 100 (Other races have 150)
     // Bonus per stack: -2% MS, +2AS and +5% Armor per stack
     // Radius for the forest link is 350~400. Takes 7 seconds to link
+
+    "AbilityCastRange"  "%radius"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "radius"            "300"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "link_time"         "7"
+        }
+        "03"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "slow_per_stack"    "-5"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_treant_aura"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+    
+            "Aura"              "modifier_treant_proximity"
+            "Aura_Radius"       "%radius"
+            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Types"        "DOTA_UNIT_TARGET_BASIC"
+            "Aura_Flags"        "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+            "Aura_ApplyToCaster" "0"
+        }
+
+        "modifier_treant_proximity"
+        {
+            "IsHidden"  "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/treant/forest.lua"
+                    "Function"      "LinkStart"
+                }
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/treant/forest.lua"
+                    "Function"      "BreakLink"
+                }
+            }
+        }
+
+        "modifier_treant_linking"
+        {
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "100"
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/treant/forest.lua"
+                    "Function"      "LinkStablished"
+                }
+            }
+        }
+
+        "modifier_forest_link"
+        {
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+            }
+
+            "ThinkInterval"  "0.5"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/treant/forest.lua"
+                    "Function"      "LinkThink"
+                }
+            }
+        }
+    }
 }
 
 "ability_treant_tower"
