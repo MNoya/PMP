@@ -1,0 +1,118 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		74,
+		153,
+		255,
+		255,
+	]
+	m_flConstantRadius = 221.778000
+	m_nMaxParticles = 16
+	m_Operators =
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 0.600000
+		},
+		{
+			_class = "C_OP_MaintainSequentialPath"
+			m_flNumToAssign = 2.000000
+			m_PathParams =
+			{
+				m_nEndControlPointNumber = 1
+			}
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_nField = 3
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade =
+			[
+				162,
+				108,
+				41,
+				255,
+			]
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flMinSize = 0.007500
+			m_OutlineColor =
+			[
+				0,
+				0,
+				0,
+				3,
+			]
+			m_flOutlineStart0 = 0.001000
+			m_flOutlineStart1 = 0.002500
+			m_flOutlineEnd0 = 0.001900
+			m_flOutlineEnd1 = 0.999000
+			m_flAnimationRate = 2.976000
+			m_flDiffuseAmount = 0.476000
+			m_flSourceAlphaValueToMapToZero = 0.001000
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_ALPHA_BLEND_1_OVER_0"
+			m_flSequence0RGBWeight = 0.817000
+			m_flSequence1RGBWeight = 0.888000
+			m_flSequence1AlphaWeight = 0.198000
+			m_flAddSelfAmount = 1.000000
+			m_bAdditive = true
+			m_nRefractBlurType = "2"
+			m_bDisableZBuffering = true
+			m_hTexture = resource:"materials/optflare_08.vtex"
+			m_flOverbrightFactor = 2.000000
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.500000
+			m_fLifetimeMax = 1.000000
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 189
+		},
+		{
+			_class = "C_INIT_CreateSequentialPath"
+			m_flNumToAssign = 2.000000
+			m_bLoop = false
+			m_PathParams =
+			{
+				m_nEndControlPointNumber = 1
+			}
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 173.461000
+			m_flRadiusMax = 225.000000
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 10.000000
+		},
+	]
+}

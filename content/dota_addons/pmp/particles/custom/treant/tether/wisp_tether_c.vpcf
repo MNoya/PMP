@@ -1,0 +1,134 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		121,
+		199,
+		243,
+		255,
+	]
+	m_flConstantRadius = 10.000000
+	m_nMaxParticles = 192
+	m_Operators =
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.050000
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade =
+			[
+				162,
+				108,
+				41,
+				255,
+			]
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartTime = 0.750000
+			m_flEndScale = 0.000000
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.125000
+			m_flStartScale = 0.000000
+		},
+		{
+			_class = "C_OP_LockToSavedSequentialPath"
+		},
+		{
+			_class = "C_OP_Noise"
+			m_flOutputMin = 15.000000
+			m_flOutputMax = 45.000000
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_nMinTesselation = 4
+			m_nMaxTesselation = 4
+			m_flTextureVWorldSize = 650.000000
+			m_flTextureVScrollRate = -100.000000
+			m_flRadiusScale = 0.500000
+			m_flAnimationRate = 2.023000
+			m_flSourceAlphaValueToMapToZero = 0.025000
+			m_flSourceAlphaValueToMapToOne = 0.150000
+			m_bSaturateColorPreAlphaBlend = false
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_ALPHA_BLEND_0_OVER_1"
+			m_flAnimationRate2 = 3.928000
+			m_flSequence0RGBWeight = 0.769000
+			m_flSequence0AlphaWeight = 0.658000
+			m_flSequence1RGBWeight = 0.769000
+			m_flSequence1AlphaWeight = 0.650000
+			m_flAddSelfAmount = 3.000000
+			m_bAdditive = true
+			m_nRefractBlurType = "2"
+			m_flOverbrightFactor = 2.000000
+			m_hTexture = resource:"materials/models/particle/quill.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.610000
+			m_fLifetimeMax = 0.900000
+		},
+		{
+			_class = "C_INIT_CreateSequentialPath"
+			m_fMaxDistance = 3.000000
+			m_flNumToAssign = 20.000000
+			m_bLoop = false
+			m_bSaveOffset = true
+			m_PathParams =
+			{
+				m_nEndControlPointNumber = 1
+			}
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMin =
+			[
+				-32.000000,
+				-32.000000,
+				-32.000000,
+			]
+			m_vecOutputMax =
+			[
+				32.000000,
+				32.000000,
+				32.000000,
+			]
+			m_flNoiseScaleLoc = 0.100000
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 0
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 32.000000
+			m_flRadiusMax = 48.000000
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 60.000000
+		},
+	]
+}
