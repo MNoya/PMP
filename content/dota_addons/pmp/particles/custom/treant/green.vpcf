@@ -183,5 +183,8 @@
 		{
 			m_ChildRef = resource:"particles/econ/courier/courier_greevil_green/courier_greevil_green_ambient_c.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/custom/treant/forest_d.vpcf"
+		},
 	]
 }
