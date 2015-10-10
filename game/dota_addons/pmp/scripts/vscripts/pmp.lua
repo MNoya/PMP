@@ -702,8 +702,10 @@ function PMP:OnEntityKilled( event )
             table.remove(unit_table, unit_index)
 
             -- Substract the Food Used
-            local food = GetFoodCost(killed:GetUnitName())
-            ModifyFoodUsed(killed_playerID, -food)
+            if not killed.summoned then
+                local food = GetFoodCost(killed:GetUnitName())
+                ModifyFoodUsed(killed_playerID, -food)
+            end
         end
 
         -- If not denied

@@ -105,7 +105,6 @@ function LinkStablished( event )
         if treantCount > 0 then
             --print("Link Stablished")
 
-            local modifierName = "modifier_forest_link"
             local max_stacks = 10
 
             if treantCount > max_stacks then treantCount = max_stacks end
@@ -120,14 +119,15 @@ function LinkStablished( event )
 end
 
 function CreateParticleLink( owner, target )
-    if owner.particleLink and owner.linkTarget ~= target then
+    if not owner:HasModifier("modifier_forest_link") then return end
+    if owner.particleLink then
         ParticleManager:DestroyParticle(owner.particleLink, false)
         owner.particleLink = nil
     end  
 
     -- Add tether link on the new linked treant
     -- Each linked tree has his own link to another
-    local particleName = "particles/custom/treant/link.vpcf"
+    local particleName = "particles/custom/treant/tether/wisp_tether.vpcf" --"particles/custom/treant/link.vpcf"
     owner.particleLink = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, owner)
     ParticleManager:SetParticleControlEnt(owner.particleLink, 0, owner, PATTACH_POINT_FOLLOW, "attach_hitloc", owner:GetAbsOrigin(), true)
     ParticleManager:SetParticleControlEnt(owner.particleLink, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
@@ -229,7 +229,7 @@ function GetTreantGroup( startingUnit, radius )
 end
 
 function RecursiveFind( unit, radius, group )
-    local units = FindUnitsInRadius(unit:GetTeamNumber(), unit:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES, FIND_ANY_ORDER, true)
+    local units = FindUnitsInRadius(unit:GetTeamNumber(), unit:GetAbsOrigin(), unit, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES, FIND_ANY_ORDER, true)
 
     if units then
         -- Add to group

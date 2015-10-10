@@ -2,7 +2,7 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_nMaxParticles = 64
+	m_nMaxParticles = 20
 	m_ConstantColor =
 	[
 		162,
@@ -94,8 +94,8 @@
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
-			m_nAlphaMin = 155
-			m_nAlphaMax = 175
+			m_nAlphaMin = 100
+			m_nAlphaMax = 125
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"

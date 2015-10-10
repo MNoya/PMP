@@ -3,9 +3,9 @@
 	_class = "CParticleSystemDefinition"
 	m_ConstantColor =
 	[
-		74,
-		153,
-		255,
+		85,
+		170,
+		0,
 		255,
 	]
 	m_flConstantRadius = 221.778000

@@ -4,8 +4,8 @@
 	m_ConstantColor =
 	[
 		85,
-		233,
-		255,
+		170,
+		0,
 		255,
 	]
 	m_flConstantRadius = 32.257999
@@ -14,9 +14,11 @@
 	[
 		{
 			m_ChildRef = resource:"particles/custom/treant/tether/wisp_tether_i.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/treant/tether/wisp_tether_b.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/treant/tether/wisp_tether_e.vpcf"
@@ -29,12 +31,15 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/treant/tether/wisp_tether_c.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/treant/tether/wisp_tether_g.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/treant/tether/wisp_tether_h.vpcf"
+			m_bDisableChild = true
 		},
 	]
 	m_Operators =
@@ -87,9 +92,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				162,
-				108,
-				41,
+				0,
+				170,
+				0,
 				255,
 			]
 			m_flFadeStartTime = 11.800000
@@ -144,6 +149,7 @@
 			m_bReverseOrder = true
 			m_bSaturateColorPreAlphaBlend = false
 			m_flOverbrightFactor = 0.200000
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_RenderRopes"
@@ -162,6 +168,7 @@
 			m_flRefractAmount = 0.100000
 			m_nRefractBlurRadius = 3
 			m_hTexture = resource:"materials/particle/beam_jagged_01.vtex"
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_RenderRopes"
@@ -175,13 +182,13 @@
 			m_flSelfIllumAmount = 1.000000
 			m_bSaturateColorPreAlphaBlend = false
 			m_nSequenceCombineMode = "2"
-			m_flAddSelfAmount = 16.000000
+			m_flAddSelfAmount = 8.000000
 			m_flRefractAmount = 0.500000
 			m_nRefractBlurRadius = 3
 			m_nRefractBlurType = "2"
 			m_hTexture = resource:"materials/particle/particle_sphere_highlight3.vtex"
 			m_bMod2X = true
-			m_flOverbrightFactor = 32.000000
+			m_flOverbrightFactor = 8.000000
 		},
 	]
 	m_Initializers =

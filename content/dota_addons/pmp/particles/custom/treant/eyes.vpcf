@@ -183,6 +183,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/treant/eyes_light.vpcf"
+			m_bDisableChild = true
 		},
 	]
 }

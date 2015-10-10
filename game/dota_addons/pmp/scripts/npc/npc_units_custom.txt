@@ -4263,11 +4263,11 @@
 	    // General
 	    //----------------------------------------------------------------
 	    "BaseClass"                 "npc_dota_creature"
-	    "Model"                     "models/items/furion/treant_flower_1.vmdl"
-	    "ModelScale"                "1.2"
+	    "Model"                     "models/heroes/furion/furion.vmdl"
+	    "ModelScale"                "0.9"
 	    "Level"                     "2"
 	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
-	    "HealthBarOffset"           "140"
+	    "HealthBarOffset"           "180"
 	
 	    "PathfindingSearchDepthScale" "0.5"
 	    
@@ -4275,7 +4275,7 @@
 	    //----------------------------------------------------------------
 	    "Ability1"                  "treant_treants"
 	    "Ability2"                  "treant_detonate"
-	    "Ability3"                  "treant_living_armor"
+	    "Ability3"                  "treant_armor"
 	    
 	    // Armor
 	    //----------------------------------------------------------------
@@ -4292,7 +4292,7 @@
 	    "AttackAnimationPoint"      "0.43"
 	    "AttackAcquisitionRange"    "600"
 	    "AttackRange"               "600"
-	    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+	    "ProjectileModel"           "particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 	    "ProjectileSpeed"           "1100"
 	    
 	    // Bounty
@@ -4337,6 +4337,15 @@
 	    "Creature"
 	    {
 	        "DisableClumpingBehavior"   "1"
+	        "AttachWearables"
+	        {
+	            "Wearable1" { "ItemDef" "7213" } //Fluttering Staff
+	            "Wearable2" { "ItemDef" "5797" } //Cap of the Fungal Lord
+	            "Wearable3" { "ItemDef" "4027" } //Luxuriant Chin-Foliage
+	            "Wearable4" { "ItemDef" "4024" } //Coat of the Elder Grove
+	            "Wearable5" { "ItemDef" "5800" } //Shoulders of the Fungal Lord
+	            "Wearable6" { "ItemDef" "5799" } //Ironwood Arms of the Fungal Lord
+	        }
 	    }
 	}
 	

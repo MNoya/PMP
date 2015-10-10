@@ -70,7 +70,7 @@
         {
             "Passive"       "1"
             "IsHidden"      "1"
-
+            
             "ThinkInterval" "1.0"
             "OnIntervalThink"
             {
