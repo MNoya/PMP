@@ -12,6 +12,12 @@ function SpawnUnit( event )
     local food_cost = GetFoodCost(unit_name)
     local numSpawns = GetSpawnRate(playerID)
 
+    -- Update spawn position to the current active outpost
+    local activeOutpost = GetActiveOutpost(playerID)
+    if activeOutpost then
+        position = activeOutpost:GetAbsOrigin()
+    end
+
     -- Don't spawn more than 1 leader
     if string.match(unit_name,"_leader") then
         numSpawns = 1

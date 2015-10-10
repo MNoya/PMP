@@ -1,0 +1,54 @@
+"active_outpost"
+{
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+    "AbilityTextureName"    "active_outpost"
+    "MaxLevel"              "1"
+
+    "OnToggleOn"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/outpost.lua"
+            "Function"      "ActivateOutpost"
+        }
+    }
+
+    "OnToggleOff"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/outpost.lua"
+            "Function"      "DisableOutpost"
+        }
+    }
+}
+
+"outpost_passive"
+{
+    "BaseClass"                 "ability_datadriven"
+    "AbilityTextureName"        "build_barricades"
+    "MaxLevel"                  "1"
+    
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "Modifiers"
+    {
+        "modifier_outpost"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+
+            "OnTakeDamage"
+            // "%attack_damage" is set to the damage value after mitigation
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/outpost.lua"
+                    "Function"      "OutpostDamaged"
+                    "Damage"        "%attack_damage"
+                }
+            }
+        }
+    }
+}

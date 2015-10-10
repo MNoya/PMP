@@ -146,7 +146,7 @@ function PMP:FilterExecuteOrder( filterTable )
 
     -- Move Flag
     elseif (order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION) then
-        if unit and IsCityCenter(unit) then
+        if unit and (IsCityCenter(unit) or IsOutpost(unit)) then
 
             local event = { pID = issuer, mainSelected = unit:GetEntityIndex(), pos_x = x, pos_y = y, pos_z = z }
             PMP:OnBuildingRallyOrder( event )
@@ -156,6 +156,7 @@ function PMP:FilterExecuteOrder( filterTable )
 
     elseif (unit and order_type == DOTA_UNIT_ORDER_ATTACK_TARGET) then
         local target = EntIndexToHScript(targetIndex)
+        if not target then return end
         local pos = target:GetAbsOrigin()
         for _,unit_index in pairs(units) do
             local unit = EntIndexToHScript(unit_index)
@@ -190,6 +191,10 @@ function PMP:OnBuildingRallyOrder( event )
 
     local building = EntIndexToHScript(mainSelected)
     local player = PlayerResource:GetPlayer(pID)
+
+    if IsOutpost(building) then
+        building = GetPlayerCityCenter(pID)
+    end
 
     -- Remove the old flag if there is one
     if building.flag then

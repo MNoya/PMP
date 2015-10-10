@@ -191,6 +191,10 @@ function IsCityCenter( unit )
     return (unit:GetUnitLabel() == "city_center")
 end
 
+function IsOutpost( unit )
+    return (unit:GetUnitName() == "outpost")
+end
+
 function IsCustomBuilding( unit )
     local ability_building = unit:FindAbilityByName("ability_building")
     local ability_tower = unit:FindAbilityByName("ability_tower")
@@ -491,6 +495,20 @@ function ClearAbilities( unit )
     end
 end
 
+-- ToggleAbility On only if its turned Off
+function ToggleOn( ability )
+    if ability:GetToggleState() == false then
+        ability:ToggleAbility()
+    end
+end
+
+-- ToggleAbility Off only if its turned On
+function ToggleOff( ability )
+    if ability:GetToggleState() == true then
+        ability:ToggleAbility()
+    end
+end
+
 --------------------------------------------
 
 function GetPlayerRace( playerID )
@@ -705,3 +723,123 @@ function GetAttackType( unit )
     end
     return 0
 end
+
+-------------------------------
+--     Outpost Functions     --
+-------------------------------
+function CreateOutpost( playerID, position )
+    local owner = PlayerResource:GetSelectedHeroEntity(playerID)
+    local teamNumber = owner:GetTeamNumber()
+    local unitName = "outpost"
+
+    local unit = CreateUnitByName(unitName, position, true, owner, owner, teamNumber)
+    unit:SetOwner(owner)
+    unit:SetControllableByPlayer(playerID, true)
+    
+    -- Unstuck units
+    local units = FindUnitsInRadius(teamNumber, position, nil, 200, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC, 0, 0, true)
+    for k,v in pairs(units) do
+        if v ~= unit then
+            FindClearSpaceForUnit(v, v:GetAbsOrigin(), true)
+        end
+    end
+
+    SetActiveOutpost(playerID, unit)
+end
+
+function ChangeOutpostControl( unit, new_ownerID )
+    local old_ownerID = unit:GetPlayerOwnerID()
+    local old_owner = PlayerResource:GetSelectedHeroEntity(old_ownerID)
+    local new_owner = PlayerResource:GetSelectedHeroEntity(new_ownerID)
+
+    unit:SetOwner(new_owner)
+    unit:SetControllableByPlayer(new_ownerID, true)
+    unit:SetTeam(new_owner:GetTeamNumber())
+    unit:RespawnUnit()
+
+    SetActiveOutpost(old_ownerID, nil)
+    SetActiveOutpost(new_ownerID, unit)
+
+    AddToPlayerOutposts(new_ownerID, unit)
+    RemoveFromPlayerOutposts(old_ownerID, unit)
+end
+
+
+-- Only one outpost can be active at a time by toggling the outpost ability
+function GetActiveOutpost( playerID )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+        return hero.activeOutpost
+    end
+end
+
+function SetActiveOutpost( playerID, unit )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+        hero.activeOutpost = unit
+
+        if unit then
+
+            local ability = unit:FindAbilityByName("active_outpost")
+            if ability then
+                ToggleOn(ability)
+            end
+
+            -- Turn on
+            local particleName = "particles/custom/cp_captured.vpcf"
+            local teamNumber = unit:GetTeamNumber()
+            local position = unit:GetAbsOrigin()
+            local color = PMP:ColorForTeam( teamNumber )
+            color = Vector(color[1],color[2],color[3])
+
+            if not unit.capturedParticle then
+                print("Creating captured particle")
+                unit.capturedParticle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, unit)
+                ParticleManager:SetParticleControl(unit.capturedParticle, 0, position)
+                ParticleManager:SetParticleControl(unit.capturedParticle, 1, color)
+                ParticleManager:SetParticleControl(unit.capturedParticle, 3, position)
+            else
+                ParticleManager:SetParticleControl(unit.capturedParticle, 1, color)
+            end
+
+            print("Creating captured active")
+            particleName = "particles/custom/cp_captured_active.vpcf"
+            hero.activeOutpostParticle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, unit)
+            ParticleManager:SetParticleControl(hero.activeOutpostParticle, 0, position)
+            ParticleManager:SetParticleControl(hero.activeOutpostParticle, 1, color)
+            ParticleManager:SetParticleControl(hero.activeOutpostParticle, 3, position)
+        
+        elseif hero.activeOutpostParticle then
+            -- Turn off
+            ParticleManager:DestroyParticle(hero.activeOutpostParticle, false)
+        end
+    end
+end
+
+-- List of outposts to be able to toggle all of them off except the one active
+function GetPlayerOutposts( playerID )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+        return hero.outposts
+    end
+end
+
+function AddToPlayerOutposts( playerID, unit )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local outposts = GetPlayerOutposts(playerID)
+
+    table.insert(outposts, unit)
+end
+
+function RemoveFromPlayerOutposts( playerID, unit )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local outposts = GetPlayerOutposts(playerID)
+
+    local unit_index = getIndexTable(outposts, unit)
+    if unit_index then
+        print("Outpost Removed from Table")
+        table.remove(outposts, unit_index)
+    end
+end
+
+-------------------------------

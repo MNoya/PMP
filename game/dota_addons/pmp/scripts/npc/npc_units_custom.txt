@@ -2819,6 +2819,73 @@
 	    
 	    "WakesNeutrals"             "0"
 	}
+	"outpost"
+	{
+	    // General
+	    //----------------------------------------------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "Model"                     "models/props_structures/wooden_sentry_tower001.vmdl"
+	    "ModelScale"                "0.8"
+	    "Level"                     "1"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
+	    "RingRadius"                "150"
+	    "HealthBarOffset"           "280"
+	
+	    "UnitLabel"                 "outpost"
+	
+	    "MinimapIcon"               "minimap_tower90"
+	    "MinimapIconSize"           "320"
+	    
+	    // Abilities
+	    //----------------------------------------------------------------
+	    "Ability1"                  "active_outpost"
+	    "Ability2"                  "outpost_passive"
+	    "Ability10"                 "ability_building"
+	    
+	    // Armor
+	    //----------------------------------------------------------------
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    
+	    // Attack
+	    //----------------------------------------------------------------
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    
+	    // Bounty
+	    //----------------------------------------------------------------
+	    "BountyGoldMin"             "100.0"
+	    "BountyGoldMax"             "100.0"
+	    "BountyLumber"              "100.0"
+	    
+	    // Gold and Lumber
+	    //----------------------------------------------------------------
+	    "GoldCost"                  "100"
+	    "LumberCost"                "100"
+	    
+	    // Movement
+	    //----------------------------------------------------------------
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+	    
+	    // Status
+	    //----------------------------------------------------------------
+	    "StatusHealth"              "5000"
+	    "StatusHealthRegen"         "1.00"
+	    
+	    // Vision
+	    //----------------------------------------------------------------
+	    "VisionDaytimeRange"        "800"
+	    "VisionNighttimeRange"      "800"
+	    
+	    // Team
+	    //----------------------------------------------------------------
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	    
+	    // Creature Data
+	    //----------------------------------------------------------------
+	}
 	// Main unit
 	// Leader unit (Spawns every 3 minutes and don't count towards food cap)
 	// Super unit (Slow restock)

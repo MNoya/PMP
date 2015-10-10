@@ -449,6 +449,8 @@ function PMP:OnPlayerPickHero(keys)
     hero.gold_earned = 0
     hero.lumber_earned = 0
 
+    hero.outposts = {}
+
     hero.Upgrades = {}
     hero.Upgrades["weapon"] = 0
     hero.Upgrades["helm"] = 0
@@ -651,6 +653,9 @@ function PMP:OnEntityKilled( event )
         killed:AddNoDraw()
         print("Garage Down for player",killed_playerID)
 
+        -- Make an Outpost for the attacker on the killed garage position
+        CreateOutpost(attacker_playerID, killed:GetAbsOrigin())
+
         local attacker_garage = GetPlayerCityCenter(attacker_playerID)
         if attacker_garage then
             local charges = attacker_garage:GetModifierStackCount("modifier_super_unit_charges", attacker_garage) + 1
@@ -829,6 +834,8 @@ function PMP:MakePlayerLose( playerID )
         local playerName = PlayerResource:GetPlayerName(playerID)
         if playerName == "" then playerName = "Player "..playerID end
         GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
+
+        hero:SetAbsOrigin(Vector(0,-4000,0))
     end
 end
 
