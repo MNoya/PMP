@@ -810,8 +810,9 @@ function SetActiveOutpost( playerID, unit )
             ParticleManager:SetParticleControl(hero.activeOutpostParticle, 3, position)
         
         elseif hero.activeOutpostParticle then
+
             -- Turn off
-            ParticleManager:DestroyParticle(hero.activeOutpostParticle, false)
+            ParticleManager:DestroyParticle(hero.activeOutpostParticle, true)
         end
     end
 end

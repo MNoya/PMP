@@ -149,11 +149,4 @@
 			m_flEmitRate = 15.000000
 		},
 	]
-	m_Children =
-	[
-		{
-			m_ChildRef = resource:"particles/custom/cp_captured_active.vpcf"
-			m_bDisableChild = true
-		},
-	]
 }
