@@ -86,6 +86,7 @@
 		"barricade"                                                                       "Barricade"
 		"nian_boss"                                                                       "Boss"
 		"trader"                                                                          "Trader"
+		"outpost"                                                                         "Outpost"		
 
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_bloodlust"                                                 "Bloodlust"
@@ -141,6 +142,15 @@
 
 		"DOTA_Tooltip_modifier_trueshot_aura_buff"                                        "Trueshot Aura"
 		"DOTA_Tooltip_modifier_trueshot_aura_buff_Description"                            "Increased damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%"
+
+		"DOTA_Tooltip_modifier_treant_armor"                                              "Living Armor"
+		"DOTA_Tooltip_modifier_treant_armor_Description"                                  "Extra %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor"
+
+		"DOTA_Tooltip_modifier_treant_linking"                                            "Linking"
+		"DOTA_Tooltip_modifier_treant_linking_Description"                                ""
+
+		"DOTA_Tooltip_modifier_forest_link"                                               "Forest Link"
+		"DOTA_Tooltip_modifier_forest_link_Description"                                   "Reduced damage taken by %fMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%\nSlowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
 		// ******************** ITEM MODIFIERS ********************
 		"DOTA_Tooltip_modifier_invulnerability_layer"                                     "Invulnerability Layer"
@@ -418,6 +428,10 @@
 		"DOTA_Tooltip_modifier_wings8_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
 		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_active_outpost"                                             "Activate Outpost"
+		"DOTA_Tooltip_ability_active_outpost_Description"                                 "Toggle On to allow units to spawn from this outpost."
+		"DOTA_Tooltip_ability_active_outpost_Note0"                                       "Right click to set the rally point your rally point and get to your enemies faster."
+
 		"DOTA_Tooltip_ability_trade_gold"                                                 "Purchase 50 gold"
 		"DOTA_Tooltip_ability_trade_gold_Description"                                     "Exchange <font color='#006411'>100 lumber</font> for <font color='#fea500'>50 gold</font>\n\n<font color='#64cf65'>Requires nearby patron</font>."
 
@@ -687,6 +701,42 @@
 
 		"DOTA_Tooltip_ability_summon_super_skeleton_empty"                                "Summon Super Skeleton"
 		"DOTA_Tooltip_ability_summon_super_skeleton_empty_Description"                    "You've used all your super units."
+
+		"DOTA_Tooltip_ability_spawn_treant"                                               "Spawn Treant"
+		"DOTA_Tooltip_ability_spawn_treant_Description"                                   ""
+
+		"DOTA_Tooltip_ability_spawn_treant_leader"                                        "Spawn Treant Leader"
+		"DOTA_Tooltip_ability_spawn_treant_leader_Description"                            "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nTreants's Leader has the following abilities:\n-Spawn Treants\n-Detonate\n-Living Armor\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+
+		"DOTA_Tooltip_ability_summon_super_treant"                                        "Summon Super Treant"
+		"DOTA_Tooltip_ability_summon_super_treant_Description"                            "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
+		"DOTA_Tooltip_ability_summon_super_treant_duration"                               "DURATION:"
+
+		"DOTA_Tooltip_ability_summon_super_treant_empty"                                  "Summon Super Treant"
+		"DOTA_Tooltip_ability_summon_super_treant_empty_Description"                      "You've used all your super units."
+
+		"DOTA_Tooltip_ability_treant_treants"                                             "Spawn Treants"
+		"DOTA_Tooltip_ability_treant_treants_Description"                                 "Target a tree to summon %treant_count% treants for %duration% seconds.\nDoesn't count towards the food limit."
+		"DOTA_Tooltip_ability_treant_treants_treant_count"                                "TREANT COUNT:"
+		"DOTA_Tooltip_ability_treant_treants_duration"                                    "DURATION:"
+
+		"DOTA_Tooltip_ability_treant_detonate"                                            "Detonate"
+		"DOTA_Tooltip_ability_treant_detonate_Description"                                "Sacrifices the Leader, dispelling all magical buffs and has a chance to instantly kill any unit hit by the explosion"
+		"DOTA_Tooltip_ability_treant_detonate_radius"                                     "RADIUS:"
+		"DOTA_Tooltip_ability_treant_detonate_kill_chance"                                "KILL CHANCE:"
+
+		"DOTA_Tooltip_ability_treant_armor"                                               "Living Armor"
+		"DOTA_Tooltip_ability_treant_armor_Description"                                   "Boring bonus armor."
+		"DOTA_Tooltip_ability_treant_armor_armor_bonus"                                   "ARMOR BONUS:"
+		"DOTA_Tooltip_ability_treant_armor_duration"                                      "DURATION:"
+
+		"DOTA_Tooltip_ability_treant_racial"                                              "Treant Forest"
+		"DOTA_Tooltip_ability_treant_racial_Description"                                  ""
+		"DOTA_Tooltip_ability_treant_racial_radius"                                       "RADIUS:"
+		"DOTA_Tooltip_ability_treant_racial_link_time"                                    "LINK TIME:"
+		"DOTA_Tooltip_ability_treant_racial_dmg_reduction_per_stack"                      "DMG REDUCTION PER STACK:"
+		"DOTA_Tooltip_ability_treant_racial_slow_per_stack"                               "SLOW PER STACK:"
+		"DOTA_Tooltip_ability_treant_racial_max_stacks"                                   "MAX STACKS:"
 
 		//-----------------------------------------------
 
@@ -1278,15 +1328,15 @@
 		"DOTA_Tooltip_ability_item_apply_modifiers"                                       "Apply Modifiers"
 		"DOTA_Tooltip_ability_item_apply_modifiers_Description"                           ""
 
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike1"                              "Upgrade Critical Strike1"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike1"                              "Upgrade Critical Strike (1)"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike1_Description"                  "Gives a 20%% chance to do 2 times normal attack on an attack."
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike2"                              "Upgrade Critical Strike2"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike2"                              "Upgrade Critical Strike (2)"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike2_Description"                  "Gives a 21%% chance to do 2.2 times normal attack on an attack."
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike3"                              "Upgrade Critical Strike3"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike3"                              "Upgrade Critical Strike (3)"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike3_Description"                  "Gives a 22%% chance to do 2.4 times normal attack on an attack."
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike4"                              "Upgrade Critical Strike4"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike4"                              "Upgrade Critical Strike (4)"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike4_Description"                  "Gives a 23%% chance to do 2.6 times normal attack on an attack."
-		"DOTA_Tooltip_ability_item_upgrade_critical_strike5"                              "Upgrade Critical Strike5"
+		"DOTA_Tooltip_ability_item_upgrade_critical_strike5"                              "Upgrade Critical Strike (5)"
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike5_Description"                  "Gives a 25%% chance to do 2.8 times normal attack on an attack."
 
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike1_crit_mult"                    "CRIT MULT:"
@@ -1301,15 +1351,15 @@
 		"DOTA_Tooltip_ability_item_upgrade_critical_strike5_crit_chance"                  "CRIT CHANCE:"
 		
 
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit1"                                     "Upgrade Stun Hit1"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit1"                                     "Upgrade Stun Hit (1)"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "Gives a 20%% chance that an attack will do 10 bonus damage and stun an opponent for 1 second."
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit2"                                     "Upgrade Stun Hit2"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit2"                                     "Upgrade Stun Hit (2)"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "Gives a 21%% chance that an attack will do 15 bonus damage and stun an opponent for 2 seconds."
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit3"                                     "Upgrade Stun Hit3"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit3"                                     "Upgrade Stun Hit (3)"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "Gives a 22%% chance that an attack will do 20 bonus damage and stun an opponent for 3 seconds."
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit4"                                     "Upgrade Stun Hit4"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit4"                                     "Upgrade Stun Hit (4)"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "Gives a 23%% chance that an attack will do 25 bonus damage and stun an opponent for 4 seconds."
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit5"                                     "Upgrade Stun Hit5"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit5"                                     "Upgrade Stun Hit (5)"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         "Gives a 25%% chance that an attack will do 30 bonus damage and stun an opponent for 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_duration"                            "DURATION:"
@@ -1329,15 +1379,15 @@
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_bonus_damage"                        "BONUS DAMAGE:"
 		
 
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1"                             "Upgrade Poisoned Weapons1"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1"                             "Upgrade Poisoned Weapons (1)"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_Description"                 "Deals 3 bonus damage per second. Reduces attack and movement speed by 15.\nLasts 5 seconds."
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2"                             "Upgrade Poisoned Weapons2"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2"                             "Upgrade Poisoned Weapons (2)"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_Description"                 "Deals 4 bonus damage per second. Reduces attack and movement speed by 25.\nLasts 5 seconds."
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3"                             "Upgrade Poisoned Weapons3"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3"                             "Upgrade Poisoned Weapons (3)"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_Description"                 "Deals 6 bonus damage per second and reduces attack and movement speed 35.\nLasts 5 seconds."
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4"                             "Upgrade Poisoned Weapons4"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4"                             "Upgrade Poisoned Weapons (4)"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_Description"                 "Deals 9 bonus damage per second. Reduces attack and movement speed by 45.\nLasts 5 seconds."
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5"                             "Upgrade Poisoned Weapons5"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5"                             "Upgrade Poisoned Weapons (5)"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_Description"                 "Deals 12 bonus damage per second. Reduces attack and movement speed by 60.\nLasts 5 seconds."
 
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_damage_per_second"           "DAMAGE PER SECOND:"
@@ -1548,35 +1598,54 @@
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_heal_regen_pct"              "HEAL REGEN PCT:"
 		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_heal_regen_pct"              "HEAL REGEN PCT:"
 
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1"                             "Upgrade Night Elf Racial1"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1"                             "Upgrade Night Elf Racial (1)"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_Description"                 "Increase the level of Night Elves Ranged Attack"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_attack_range"                "ATTACK RANGE:"
 
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2"                             "Upgrade Night Elf Racial2"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2"                             "Upgrade Night Elf Racial (2)"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_Description"                 "Increase the level of Night Elves Ranged Attack"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_attack_range"                "ATTACK RANGE:"
 
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3"                             "Upgrade Night Elf Racial3"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3"                             "Upgrade Night Elf Racial (3)"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_Description"                 "Increase the level of Night Elves Ranged Attack"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_attack_range"                "ATTACK RANGE:"
 
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4"                             "Upgrade Night Elf Racial4"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4"                             "Upgrade Night Elf Racial (4)"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_Description"                 "Increase the level of Night Elves Ranged Attack"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_attack_range"                "ATTACK RANGE:"
 
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5"                             "Upgrade Night Elf Racial5"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5"                             "Upgrade Night Elf Racial (5)"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_Description"                 "Increase the level of Night Elves Ranged Attack"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_gold_cost"                   "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_attack_range"                "ATTACK RANGE:"
 
-		"DOTA_Tooltip_ability_item_upgrade_modifiers"                                     "Upgrade Modifiers"
-		"DOTA_Tooltip_ability_item_upgrade_modifiers_Description"                         ""
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial1"                                "Upgrade Treant Racial (1)"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial1_Description"                    "Increase the level of Treant's Forest"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial1_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial1_dmg_reduction_per_stack"        "DMG REDUCTION PER STACK:"
 
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial2"                                "Upgrade Treant Racial (2)"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial2_Description"                    "Increase the level of Treant's Forest"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial2_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial2_dmg_reduction_per_stack"        "DMG REDUCTION PER STACK:"
 
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial3"                                "Upgrade Treant Racial (3)"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial3_Description"                    "Increase the level of Treant's Forest"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial3_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial3_dmg_reduction_per_stack"        "DMG REDUCTION PER STACK:"
 
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial4"                                "Upgrade Treant Racial (4)"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial4_Description"                    "Increase the level of Treant's Forest"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial4_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial4_dmg_reduction_per_stack"        "DMG REDUCTION PER STACK:"
+
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial5"                                "Upgrade Treant Racial (5)"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial5_Description"                    "Increase the level of Treant's Forest"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial5_gold_cost"                      "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_treant_racial5_dmg_reduction_per_stack"        "DMG REDUCTION PER STACK:"
 	}
 }
