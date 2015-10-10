@@ -113,13 +113,14 @@ function LinkStablished( event )
                 SetForestStacks(v, treantCount)
             end
 
-            CreateParticleLink(target, caster)
+            if target:HasModifier("modifier_forest_link") then
+                CreateParticleLink(target, caster)
+            end
         end
     end)
 end
 
 function CreateParticleLink( owner, target )
-    if not owner:HasModifier("modifier_forest_link") then return end
     if owner.particleLink then
         ParticleManager:DestroyParticle(owner.particleLink, false)
         owner.particleLink = nil
@@ -157,6 +158,12 @@ function CheckParticleLinks( event )
 
         --print("Destroyed particle link on caster:",caster:GetEntityIndex())
     end
+end
+
+function RemoveLink( event )
+    local caster = event.caster
+    ParticleManager:DestroyParticle(caster.particleLink, false)
+    caster.particleLink = nil
 end
 
 function SetForestStacks( unit, number )

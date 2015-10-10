@@ -97,7 +97,7 @@
         {
             "Properties"
             {
-                "MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE" "100"
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-50" 
             }
 
             "ThinkInterval"  "2.0"
@@ -155,6 +155,15 @@
                 {
                     "ScriptFile"    "abilities/treant/forest.lua"
                     "Function"      "LinkThink"
+                }
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/treant/forest.lua"
+                    "Function"      "RemoveLink"
                 }
             }
         }

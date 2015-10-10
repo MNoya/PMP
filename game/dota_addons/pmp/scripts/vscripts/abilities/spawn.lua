@@ -25,36 +25,38 @@ function SpawnUnit( event )
 
     for i=1,numSpawns do
 
-        if not PlayerHasEnoughFood(playerID, food_cost) then
-            return
-        else
-            ModifyFoodUsed(playerID, food_cost)
-        end
-
-        local unit = CreateUnitByName(unit_name, position, true, owner, owner, caster:GetTeamNumber())
-        unit:SetOwner(hero)
-        unit:SetControllableByPlayer(playerID, true)
-        FindClearSpaceForUnit(unit, position, true)
-
-        table.insert(hero.units, unit)
-
-        -- Mark the unit as 'core'
-        unit.pmp = true
-
-        -- Add all current upgrades
-        PMP:ApplyAllUpgrades(playerID, unit)
-
-        -- Play Spawn sound
-        if i == 1 then
-            Sounds:PlaySoundSet( playerID, unit, "SPAWN" )
-        end
-
-        -- Move to rally point
-        Timers:CreateTimer(0.05, function() 
-            unit:MoveToPositionAggressive(caster.rally_point)
-            if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
-                ApplyModifier(unit, "modifier_disable_autoattack")
+        Timers:CreateTimer(i*0.03, function()
+            if not PlayerHasEnoughFood(playerID, food_cost) then
+                return
+            else
+                ModifyFoodUsed(playerID, food_cost)
             end
+
+            local unit = CreateUnitByName(unit_name, position, true, owner, owner, caster:GetTeamNumber())
+            unit:SetOwner(hero)
+            unit:SetControllableByPlayer(playerID, true)
+            FindClearSpaceForUnit(unit, position, true)
+
+            table.insert(hero.units, unit)
+
+            -- Mark the unit as 'core'
+            unit.pmp = true
+
+            -- Add all current upgrades
+            PMP:ApplyAllUpgrades(playerID, unit)
+
+            -- Play Spawn sound
+            if i == 1 then
+                Sounds:PlaySoundSet( playerID, unit, "SPAWN" )
+            end
+
+            -- Move to rally point
+            Timers:CreateTimer(0.05, function() 
+                unit:MoveToPositionAggressive(caster.rally_point)
+                if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
+                    ApplyModifier(unit, "modifier_disable_autoattack")
+                end
+            end)
         end)
     end
 
