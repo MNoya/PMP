@@ -744,7 +744,10 @@ function CreateOutpost( playerID, position )
         end
     end
 
-    SetActiveOutpost(playerID, unit)
+    local ability = unit:FindAbilityByName("active_outpost")
+    if ability then
+        ToggleOn(ability)
+    end
 end
 
 function ChangeOutpostControl( unit, new_ownerID )
@@ -779,11 +782,6 @@ function SetActiveOutpost( playerID, unit )
         hero.activeOutpost = unit
 
         if unit then
-
-            local ability = unit:FindAbilityByName("active_outpost")
-            if ability then
-                ToggleOn(ability)
-            end
 
             -- Turn on
             local particleName = "particles/custom/cp_captured.vpcf"

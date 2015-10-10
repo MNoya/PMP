@@ -162,8 +162,10 @@ end
 
 function RemoveLink( event )
     local caster = event.caster
-    ParticleManager:DestroyParticle(caster.particleLink, false)
-    caster.particleLink = nil
+    if caster.particleLink then
+        ParticleManager:DestroyParticle(caster.particleLink, false)
+        caster.particleLink = nil
+    end
 end
 
 function SetForestStacks( unit, number )
