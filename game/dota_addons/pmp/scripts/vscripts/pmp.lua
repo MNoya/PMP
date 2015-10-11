@@ -552,6 +552,10 @@ function PMP:OnNPCSpawned(keys)
 		PMP:OnHeroInGame(npc)
 	end
 
+    if GameRules['Positions'] and Convars:GetBool('developer') then
+        PMP:SetPlayersStartingPositions()
+    end
+
     --ApplyModifier(npc, "modifier_attackable")
 
     -- Ignore default gold bounty

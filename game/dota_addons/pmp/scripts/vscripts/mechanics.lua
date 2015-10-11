@@ -744,6 +744,8 @@ function CreateOutpost( playerID, position )
         end
     end
 
+    AddToPlayerOutposts(playerID, unit)
+
     local ability = unit:FindAbilityByName("active_outpost")
     if ability then
         ToggleOn(ability)
