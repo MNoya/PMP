@@ -2282,6 +2282,16 @@
 //    BOW    //
 //////////////////
 
+
+"upgrade_bow_final"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_bow20"
+    "MaxLevel"                      "20"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}
+
 "upgrade_bow1"
 {
     "BaseClass"                     "ability_datadriven"
@@ -2962,6 +2972,14 @@
     }
 }
 
+"upgrade_quiver_final"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "upgrade_quiver5"
+    "MaxLevel"                      "5"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}
 
 "upgrade_quiver1"
 {

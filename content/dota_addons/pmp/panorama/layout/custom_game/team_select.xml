@@ -12,6 +12,8 @@
 			<!--Empty space to let the loading screen and chat be visible-->
 			<Panel hittest="false" id="TeamsSelectEmptySpace" />
 
+			<Image hittest="false" src="file://{images}/custom_game/skeleton_king.png" style='opacity:0;' />
+
 			<!-- Custom Host Settings Panel-->
 			 <Panel id="Settings">
 		        <Label class='SettingsHeader' text="GAME SETTINGS" style="" />
@@ -26,6 +28,16 @@
 		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 4)" onmouseover="MouseOver('TeamRow',4)" onmouseout="MouseOut('TeamRow', 4)">
 		            	<Label class="SettingOptionText" text="6"/> </Panel>
 		        </Panel>
+
+		        <Label class='SettingHeader' text="\nAdvanced Options" style="" />
+		        <Panel id="ToggleSettings">
+			        <ToggleButton id="RevealMap" checked="false" text="Reveal Map" onactivate="SetOption('RevealMap')"/>
+			        <ToggleButton id="Positions" checked="false" text="Fixed Team Positions" onactivate="SetOption('Positions')"/>
+			        <ToggleButton id="Outposts" checked="false" text="Outposts" onactivate="SetOption('Outposts')"/>
+			        <!--<ToggleButton id="BossRoam" checked="false" text="Boss Roam" onactivate="SetOption('BossRoam')"/>
+			        <ToggleButton id="Neutrals" checked="false" text="Enable Neutrals" onactivate="SetOption('Neutrals')"/>-->
+			    </Panel>
+
 		        <Label id="Host" text="HOST: " style="" />
 		    </Panel>
 

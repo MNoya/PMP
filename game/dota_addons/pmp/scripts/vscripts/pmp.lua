@@ -263,14 +263,24 @@ function PMP:InitGameMode()
   	
   	-- Starting positions
   	GameRules.StartingPositions = {}
-	local targets = Entities:FindAllByName( "*starting_position" ) --Inside player_start.vmap prefab
+	GameRules.OrderedPositionEntities = Entities:FindAllByName( "*starting_position*" ) --Inside player_start.vmap prefab
 
-    targets = ShuffledList(targets)
+    GameRules.ShuffledPositionEntities = ShuffledList(GameRules.OrderedPositionEntities)
 
-	for k,v in pairs(targets) do
+    --[[print("Ordered:")
+    for k,v in pairs(GameRules.OrderedPositionEntities) do
+        print(k,v:GetName())
+    end
+
+    print("Shuffled:")
+    for k,v in pairs(GameRules.ShuffledPositionEntities) do
+        print(k,v:GetName())
+    end]]
+
+	for k,v in pairs(GameRules.ShuffledPositionEntities) do
 		local pos_table = {}
 		pos_table.position = v:GetAbsOrigin()
-		pos_table.playerID = -1
+		pos_table.playerID = -1 --Unassigned position
 		GameRules.StartingPositions[k-1] = pos_table
 	end
 
@@ -280,7 +290,7 @@ end
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected
 function PMP:PlayerConnect(keys)
-	print('[PMP] PlayerConnect')
+	--print('[PMP] PlayerConnect')
 	--DeepPrintTable(keys)
 end
 
@@ -312,11 +322,15 @@ end
 
 function PMP:OnAllPlayersLoaded()
 	print("[PMP] All Players have loaded into the game")
+
+    if GameRules['Positions'] then
+        PMP:SetPlayersStartingPositions()
+    end
 end
 
 -- A player picked a hero
 function PMP:OnPlayerPickHero(keys)
-	print ('[PMP] OnPlayerPickHero')
+	--print ('[PMP] OnPlayerPickHero')
     local heroName = keys.hero
     local hero = EntIndexToHScript(keys.heroindex)
     local player = EntIndexToHScript(keys.player)
@@ -393,7 +407,7 @@ function PMP:OnPlayerPickHero(keys)
     end
 
 	-- Barricades - 3 on each side
-    print("[PMP] Setting Up Barricades")
+    --print("[PMP] Setting Up Barricades")
     hero.barricade_positions = {}
     hero.barricades = {}
     local Barricades = GameRules.Barricades
@@ -547,7 +561,7 @@ end
 
 function PMP:OnHeroInGame(hero)
 	local hero_name = hero:GetUnitName()
-	print("[PMP] OnHeroInGame "..hero_name)
+	--print("[PMP] OnHeroInGame "..hero_name)
 
     ClearAbilities(hero)
     TeachAbility(hero, "hide_hero", 1)
@@ -654,7 +668,9 @@ function PMP:OnEntityKilled( event )
         print("Garage Down for player",killed_playerID)
 
         -- Make an Outpost for the attacker on the killed garage position
-        CreateOutpost(attacker_playerID, killed:GetAbsOrigin())
+        if GameRules["Outposts"] then
+            CreateOutpost(attacker_playerID, killed:GetAbsOrigin())
+        end
 
         --[[local attacker_garage = GetPlayerCityCenter(attacker_playerID)
         if attacker_garage then
@@ -901,6 +917,42 @@ MULTI_TEAM_MAP_TEAMS = {
 
 TEAM_OPTIONS = { [1] = 2, [2] = 3, [3] = 4, [4] = 6, }
 
+--[[
+    1   2   3   4
+    5   6   7   8
+    9   10  11  12
+]]
+
+FIXED_POSITIONS = {
+    [2] =
+        {               
+            [DOTA_TEAM_GOODGUYS] = {1,2},
+            [DOTA_TEAM_BADGUYS] = {3,4},
+            [DOTA_TEAM_CUSTOM_2] = {5,6},
+            [DOTA_TEAM_CUSTOM_3] = {7,8},
+            [DOTA_TEAM_CUSTOM_4] = {9,10},
+            [DOTA_TEAM_CUSTOM_5] = {11,12},
+        },
+    [3] = 
+        {               
+            [DOTA_TEAM_GOODGUYS] = {1,5,9},
+            [DOTA_TEAM_BADGUYS] = {2,6,10},
+            [DOTA_TEAM_CUSTOM_2] = {3,7,11},
+            [DOTA_TEAM_CUSTOM_3] = {4,8,12},
+        },
+    [4] = 
+        {               
+            [DOTA_TEAM_GOODGUYS] = {1,2,3,4},
+            [DOTA_TEAM_BADGUYS] = {5,6,7,8},
+            [DOTA_TEAM_CUSTOM_2] = {9,10,11,12},
+        },
+    [6] =
+        {               
+            [DOTA_TEAM_GOODGUYS] = {1,2,5,6,9,10},
+            [DOTA_TEAM_BADGUYS] = {3,4,7,8,11,12},
+        }
+}
+
 function PMP:SetSetting( event )
     local setting = event.setting
     local value = tonumber(event.value)
@@ -917,11 +969,98 @@ function PMP:SetSetting( event )
 
         GameRules.PlayersPerTeam = TEAM_OPTIONS[value]
 
+        if GameRules["Positions"] then
+            PMP:SetTeamPositions( playersPerTeam )
+        end
+
         statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
+
+    else
+        local option = tobool(value)
+
+        statCollection:setFlags({setting = option})
+
+        GameRules[setting] = option
+
+        if setting == "RevealMap" then
+            print("SetFogOfWarDisabled:",option)
+            GameRules:GetGameModeEntity():SetFogOfWarDisabled( option )
+        
+        elseif setting == "Positions" then
+
+            if option then
+                PMP:SetTeamPositions(GameRules.PlayersPerTeam)
+            else
+
+                for k,v in pairs(GameRules.ShuffledPositionEntities) do
+                    local pos_table = {}
+                    pos_table.position = v:GetAbsOrigin()
+                    pos_table.playerID = -1 --Unassigned position
+                    GameRules.StartingPositions[k-1] = pos_table
+                end
+            end
+        end
+        
+        --GameRules["Positions"]
+        --GameRules["Outposts"]
+        --GameRules["BossRoam"]
+        --GameRules["Neutrals"]        
     end
 
     -- Update UI on the clients
     CustomGameEventManager:Send_ServerToAllClients("setting_changed", { setting = setting, value = value})
+end
+
+function PMP:SetTeamPositions( playersPerTeam )
+    --print("SetTeamPositions for "..playersPerTeam.." players per team")
+    local layout = FIXED_POSITIONS[playersPerTeam]
+    GameRules.TeamPositions = {}
+
+    for team,positions in pairs(layout) do   
+        GameRules.TeamPositions[team] = positions
+    end
+end
+
+function PMP:SetPlayersStartingPositions()
+
+    for k,teamNumber in pairs(MULTI_TEAM_MAP_TEAMS) do
+        --print("Team Number: ",teamNumber)
+        local playersOnTeam = PlayersOnTeam(teamNumber)
+        local count = 1
+        for playerID,_ in pairs(playersOnTeam) do
+            
+            local positionNumber = PMP:GetPositionNumberForTeam(teamNumber, count)
+            local positionEnt = PMP:GetPositionEntity(positionNumber)
+            count = count+1
+
+            --print("PlayerID "..playerID.." is at teamNumber "..teamNumber.." and is assigned to position number "..positionNumber)
+            --print("The entity is named",positionEnt:GetName())
+
+            local pos_table = {}
+            pos_table.position = positionEnt:GetAbsOrigin()
+            pos_table.playerID = playerID
+            GameRules.StartingPositions[playerID] = pos_table
+        end
+        --print('--------------------')
+    end
+end
+
+function PlayersOnTeam( teamNumber )
+    local playersOnTeam = {}
+    for pID = 0,DOTA_MAX_TEAM_PLAYERS do
+        if PlayerResource:GetTeam(pID) == teamNumber then
+            playersOnTeam[pID] = true
+        end
+    end
+    return playersOnTeam
+end
+
+function PMP:GetPositionNumberForTeam( teamNumber, num )
+    return GameRules.TeamPositions[teamNumber][num]
+end
+
+function PMP:GetPositionEntity( number )
+    return GameRules.OrderedPositionEntities[number]
 end
 
 function PMP:RepositionPlayerCamera( event )

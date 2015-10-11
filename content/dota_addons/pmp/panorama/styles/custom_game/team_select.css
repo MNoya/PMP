@@ -14,7 +14,22 @@
     z-index: 5;
 }
 
-.player_has_host_privileges #Settings
+#ToggleSettings
+{
+    width: 300px;
+    height: fit-children;
+    horizontal-align: left;
+    vertical-align: top;  
+    margin-left: 20px;
+    margin-right: 20px;
+    flow-children: down;
+
+    background-color: #444444;
+    opacity: 0.8;
+    z-index: 5;
+}
+
+.player_has_host_privileges #ToggleSettings
 {
     visibility: visible;
 
@@ -23,10 +38,13 @@
     z-index: 5;
 }
 
-.Hidden 
-{ 
-    visibility: collapse;
-    opacity: 0;
+.player_has_host_privileges #Settings
+{
+    visibility: visible;
+
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
+    opacity: 0.8;
+    z-index: 5;
 }
  
 .SettingsHeader

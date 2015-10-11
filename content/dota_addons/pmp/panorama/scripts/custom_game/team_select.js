@@ -16,30 +16,51 @@ function SetSetting(setting, choice)
     }
 }
 
+function SetOption (panelId) {
+	var panel = $('#' + panelId);
+	if (!IsHost)
+	{
+		panel.checked = !panel.checked;
+	}
+	else
+	{
+		GameEvents.SendCustomGameEventToServer( "set_setting", {setting: panelId, value: panel.checked});
+	}
+}
+
 function OnSettingChanged(event)
 {
 	var setting = event.setting
 	var choice = event.value
 	$.Msg("Setting Changed: ",event);
 
-	CheckForHostPrivileges();
+	if (setting == "TeamRow")
+	{
+		CheckForHostPrivileges();
 
-	// Set Everyone unassigned except for the host (to prevent game ending)
-    if (!IsHost)
-    	OnLeaveTeamPressed()
-    else
-    	Game.PlayerJoinTeam( 2 );
+		// Set Everyone unassigned except for the host (to prevent game ending)
+	    if (!IsHost)
+	    	OnLeaveTeamPressed()
+	    else
+	    	Game.PlayerJoinTeam( 2 );
 
-	RemoveTeamPanels();
+		RemoveTeamPanels();
 
-	$.Schedule(1/30, function(){
-		ConstructTeamPanels()
-	
-		// Automatically assign players to teams.
-	    // Game.AutoAssignPlayersToTeams();
-    });
+		$.Schedule(1/30, function(){
+			ConstructTeamPanels()
+		
+			// Automatically assign players to teams.
+		    // Game.AutoAssignPlayersToTeams();
+	    });
 
-	ChangeSetting($("#" + setting), choice);
+		ChangeSetting($("#" + setting), choice);
+	}
+	else
+	{
+		var panel = $('#' + setting);
+		panel.checked = choice;
+	}
+
 }
 
 function MouseOver (setting, choice) {
@@ -459,6 +480,7 @@ function ConstructTeamPanels () {
     else{
     	$('#PlayersPerTeam').DeleteAsync(0)
     	$('#TeamRow').DeleteAsync(0)
+    	$('#Positions').DeleteAsync(0)
 
     	// Construct the panels for each team
 		ConstructTeamPanels();
