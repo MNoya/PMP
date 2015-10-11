@@ -3,7 +3,8 @@ CHEAT_CODES = {
     ["createunits"] = function(...) PMP:CreateUnits(...) end,  -- Creates 'name' units around the currently selected unit, with optional num and neutral team
     ["pimp"]        = function(...) PMP:SetUpgrade(...) end,    -- upgrade [weapon/helm/armor/wings/health/critical_strike/stun_hit/poisoned_weapons/pulverize/dodge/spiked_armor] [level]
     ["reset"]       = function(...) PMP:ResetAllUpgrades(...) end,
-    ["freeze"]      = function(...) PMP:Freeze(...) end
+    ["freeze"]      = function(...) PMP:Freeze(...) end,
+    ["gg"]          = function(...) PMP:GG(...) end
 }
 
 PLAYER_COMMANDS = {
@@ -156,3 +157,60 @@ function PMP:Freeze()
         end
     end
 end
+
+function PMP:GG()
+    local winningTeam = DOTA_TEAM_CUSTOM_3--PMP:GetWinningTeam()
+    local winners = {}
+
+    CustomGameEventManager:Send_ServerToAllClients("gg", {})
+
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            if not PlayerResource:IsBroadcaster(playerID) then
+                local showcase = GetPlayerShop(playerID)
+                showcase:SetDayTimeVisionRange(1800)
+                showcase:SetNightTimeVisionRange(1800)
+                showcase:SetHullRadius(0)
+                FindClearSpaceForUnit(showcase, Vector( (playerID * 150)-750,-3900,128), true)
+                showcase:RemoveNoDraw()
+                showcase:RemoveModifierByName("modifier_hidden")
+                showcase:SetAngles(0,90,0)
+                if showcase:GetTeamNumber() == winningTeam then
+                    table.insert(winners, showcase)
+                end
+            end
+        end
+    end
+
+    for k,unit in pairs(winners) do
+        unit:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
+        unit:RemoveModifierByName("modifier_building")
+        unit:SetBaseMoveSpeed(400)
+        unit:MoveToPosition(Vector((k*150)-150,-3500,128))
+        Timers:CreateTimer(1,function()
+            if unit:IsIdle() then
+                unit:MoveToPosition(Vector((k*150)-150,-3499,128))
+                local race = GetRace(unit)
+                local animation = endAnimations[race]
+                if race == "night_elf" then
+                    StartAnimation(unit, {duration=10, activity=animation, rate=1, translate="whats_that"})
+                else
+                    StartAnimation(unit, {duration=10, activity=animation, rate=1})
+                end
+            else
+                return 0.5
+            end
+        end)
+    end
+end
+
+endAnimations = {
+    ["undead"]  = ACT_DOTA_VICTORY,
+    ["peon"]    = ACT_DOTA_VICTORY,
+    ["human"]   = ACT_DOTA_VICTORY,
+    ["skeleton"]    = ACT_DOTA_DIE_SPECIAL,
+    ["night_elf"]   = ACT_DOTA_TAUNT,
+    ["blood_elf"]   = ACT_DOTA_VICTORY,
+    ["goblin"]  = ACT_DOTA_VICTORY,
+    ["treant"]  = ACT_DOTA_CAST_ABILITY_5,
+}

@@ -841,7 +841,9 @@ function PMP:MakePlayerLose( playerID )
 
     -- Clear player shop and garage
     if IsValidAlive(playerShop) then
-        UTIL_Remove(playerShop)
+        --UTIL_Remove(playerShop)
+        playerShop:AddNoDraw()
+        ApplyModifier(playerShop, "modifier_hidden")
     end
 
     if IsValidAlive(playerGarage) then

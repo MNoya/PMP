@@ -12,6 +12,18 @@ $("#Positions").checked = true;
 $("#Outposts").checked = true;
 $("#RevealMap").checked = false;
 
+function OnGameEnd() {
+	var pitch = 15
+	var yaw = 180
+	var height = 100
+	var distance = 100
+	GameUI.SetCameraPitchMin( pitch )
+	GameUI.SetCameraPitchMax( pitch )
+	GameUI.SetCameraYaw( yaw )
+	GameUI.SetCameraLookAtPositionHeightOffset( height )
+	GameUI.SetCameraDistance( distance )
+}
+
 function SetSetting(setting, choice)
 {
 	if (IsHost)
@@ -503,5 +515,7 @@ function ConstructTeamPanels () {
 
 	// Custom event for clients to know which options are choosen
 	GameEvents.Subscribe( "setting_changed", OnSettingChanged );
+
+	GameEvents.Subscribe( "gg", OnGameEnd );
 
 })();
