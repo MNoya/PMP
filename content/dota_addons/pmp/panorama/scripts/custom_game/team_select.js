@@ -9,8 +9,6 @@ var settings = ["TeamRow"];
 
 //Defaults
 $("#Positions").checked = true;
-$("#Outposts").checked = true;
-$("#RevealMap").checked = false;
 
 function OnGameEnd() {
 	var pitch = 15

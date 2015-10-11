@@ -32,8 +32,6 @@
 		        <Label class='SettingHeader' text="\nAdvanced Options" style="" />
 		        <Panel id="ToggleSettings">
 			        <ToggleButton id="Positions" text="Fixed Team Positions" onactivate="SetOption('Positions')"/>
-			        <ToggleButton id="Outposts" text="Outposts" onactivate="SetOption('Outposts')"/>
-			        <ToggleButton id="RevealMap" text="Reveal Map" onactivate="SetOption('RevealMap')"/>
 			        <!--<ToggleButton id="BossRoam" checked="false" text="Boss Roam" onactivate="SetOption('BossRoam')"/>
 			        <ToggleButton id="Neutrals" checked="false" text="Enable Neutrals" onactivate="SetOption('Neutrals')"/>-->
 			    </Panel>

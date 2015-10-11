@@ -131,17 +131,13 @@ function PMP:InitGameMode()
         GameRules.PlayersPerTeam = 3
         GameRules.Positions = true
     end
-  
-    GameRules.Outposts = true
-    GameRules.RevealMap = false
+
     --GameRules["BossRoam"]
     --GameRules["Neutrals"]
 
     -- Default Flags
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
     statCollection:setFlags({fixed_positions = GameRules.Positions})
-    statCollection:setFlags({outposts = GameRules.Outposts})
-    statCollection:setFlags({map_revealed = GameRules.RevealMap})
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
@@ -684,9 +680,7 @@ function PMP:OnEntityKilled( event )
         print("Garage Down for player",killed_playerID)
 
         -- Make an Outpost for the attacker on the killed garage position
-        if GameRules["Outposts"] then
-            CreateOutpost(attacker_playerID, killed:GetAbsOrigin())
-        end
+        CreateOutpost(attacker_playerID, killed:GetAbsOrigin())
 
         --[[local attacker_garage = GetPlayerCityCenter(attacker_playerID)
         if attacker_garage then
@@ -999,12 +993,8 @@ function PMP:SetSetting( event )
         statCollection:setFlags({setting = option})
 
         GameRules[setting] = option
-
-        if setting == "RevealMap" then
-            print("SetFogOfWarDisabled:",option)
-            GameRules:GetGameModeEntity():SetFogOfWarDisabled( option )
         
-        elseif setting == "Positions" then
+        if setting == "Positions" then
 
             if option then
                 PMP:SetTeamPositions(GameRules.PlayersPerTeam)
@@ -1020,7 +1010,6 @@ function PMP:SetSetting( event )
         end
         
         --GameRules["Positions"]
-        --GameRules["Outposts"]
         --GameRules["BossRoam"]
         --GameRules["Neutrals"]        
     end
