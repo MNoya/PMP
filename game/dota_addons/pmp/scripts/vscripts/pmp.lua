@@ -489,7 +489,7 @@ function PMP:OnPlayerPickHero(keys)
             SetFoodLimit(playerID, GetFoodLimit(playerID))
         end)
 
-        if Convars:GetBool('developer') then
+        if Convars:GetBool('developer') or PlayerResource:GetPlayerCount() == 1 then
             SetGold(playerID, 50000)
             SetLumber(playerID, 50000)
             --SetFoodLimit(playerID, 100)
