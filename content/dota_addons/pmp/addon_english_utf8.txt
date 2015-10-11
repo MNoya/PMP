@@ -892,6 +892,12 @@
 		"DOTA_Tooltip_ability_upgrade_weapon_final"                                       "Weapons Fully Upgraded!"
 		"DOTA_Tooltip_ability_upgrade_weapon_final_Description"                           ""
 
+		"DOTA_Tooltip_ability_upgrade_bow_final"                                          "Bows Fully Upgraded!"
+		"DOTA_Tooltip_ability_upgrade_bow_final_Description"                              ""
+
+		"DOTA_Tooltip_ability_upgrade_quiver_final"                                       "Quiver Fully Upgraded!"
+		"DOTA_Tooltip_ability_upgrade_quiver_final_Description"                           ""
+
 		"DOTA_Tooltip_ability_upgrade_bow1"                                               "Upgrade Bow (1)"
 		"DOTA_Tooltip_ability_upgrade_bow1_Description"                                   "Pimp your units with Bow of the Black Wind Raven"
 		"DOTA_Tooltip_ability_upgrade_bow1_bonus_damage"                                  "BONUS DAMAGE:"

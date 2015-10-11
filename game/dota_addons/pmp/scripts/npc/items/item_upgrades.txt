@@ -2725,7 +2725,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "attack_range"        "450 500 550 600 650"
+            "attack_range"        "550 600 650 700 750"
         }
     }
 
@@ -2767,7 +2767,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "attack_range"        "450 500 550 600 650"
+            "attack_range"        "550 600 650 700 750"
         }
     }
 
@@ -2809,7 +2809,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "attack_range"        "450 500 550 600 650"
+            "attack_range"        "550 600 650 700 750"
         }
     }
 
@@ -2851,7 +2851,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "attack_range"        "450 500 550 600 650"
+            "attack_range"        "550 600 650 700 750"
         }
     }
 
@@ -2893,7 +2893,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "attack_range"        "450 500 550 600 650"
+            "attack_range"        "550 600 650 700 750"
         }
     }
 

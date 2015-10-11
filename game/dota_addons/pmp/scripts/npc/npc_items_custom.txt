@@ -2835,7 +2835,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "450 500 550 600 650"
+	            "attack_range"        "550 600 650 700 750"
 	        }
 	    }
 	
@@ -2877,7 +2877,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "450 500 550 600 650"
+	            "attack_range"        "550 600 650 700 750"
 	        }
 	    }
 	
@@ -2919,7 +2919,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "450 500 550 600 650"
+	            "attack_range"        "550 600 650 700 750"
 	        }
 	    }
 	
@@ -2961,7 +2961,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "450 500 550 600 650"
+	            "attack_range"        "550 600 650 700 750"
 	        }
 	    }
 	
@@ -3003,7 +3003,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "450 500 550 600 650"
+	            "attack_range"        "550 600 650 700 750"
 	        }
 	    }
 	
@@ -3624,7 +3624,7 @@
 	            "TextureName"   "upgrade_bow1"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "2"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "2"
 	            }
 	        }
 	
@@ -3633,7 +3633,7 @@
 	            "TextureName"   "upgrade_bow2"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "4"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "4"
 	            }
 	        }
 	
@@ -3642,7 +3642,7 @@
 	            "TextureName"   "upgrade_bow3"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "6"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "6"
 	            }
 	        }
 	
@@ -3651,7 +3651,7 @@
 	            "TextureName"   "upgrade_bow4"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "8"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "8"
 	            }
 	        }
 	
@@ -3660,7 +3660,7 @@
 	            "TextureName"   "upgrade_bow5"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "12"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "12"
 	            }
 	        }
 	
@@ -3669,7 +3669,7 @@
 	            "TextureName"   "upgrade_bow6"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "16"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "16"
 	            }
 	        }
 	
@@ -3678,7 +3678,7 @@
 	            "TextureName"   "upgrade_bow7"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "20"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "20"
 	            }
 	        }
 	
@@ -3687,7 +3687,7 @@
 	            "TextureName"   "upgrade_bow8"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "24"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "24"
 	            }
 	        }
 	
@@ -3696,7 +3696,7 @@
 	            "TextureName"   "upgrade_bow9"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "30"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "30"
 	            }
 	        }
 	
@@ -3705,7 +3705,7 @@
 	            "TextureName"   "upgrade_bow10"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "36"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "36"
 	            }
 	        }
 	
@@ -3714,7 +3714,7 @@
 	            "TextureName"   "upgrade_bow11"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "42"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "42"
 	            }
 	        }
 	
@@ -3723,7 +3723,7 @@
 	            "TextureName"   "upgrade_bow12"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "48"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "48"
 	            }
 	        }
 	
@@ -3732,7 +3732,7 @@
 	            "TextureName"   "upgrade_bow13"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "56"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "56"
 	            }
 	        }
 	
@@ -3741,7 +3741,7 @@
 	            "TextureName"   "upgrade_bow14"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "64"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "64"
 	            }
 	        }
 	
@@ -3750,7 +3750,7 @@
 	            "TextureName"   "upgrade_bow15"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "72"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "72"
 	            }
 	        }
 	
@@ -3759,7 +3759,7 @@
 	            "TextureName"   "upgrade_bow16"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "80"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "80"
 	            }
 	        }
 	
@@ -3768,7 +3768,7 @@
 	            "TextureName"   "upgrade_bow17"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "90"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "90"
 	            }
 	        }
 	
@@ -3777,7 +3777,7 @@
 	            "TextureName"   "upgrade_bow18"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "100"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "100"
 	            }
 	        }
 	
@@ -3786,7 +3786,7 @@
 	            "TextureName"   "upgrade_bow19"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "115"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "115"
 	            }
 	        }
 	
@@ -3795,7 +3795,7 @@
 	            "TextureName"   "upgrade_bow20"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "130"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "130"
 	            }
 	        }
 	
@@ -3805,7 +3805,7 @@
 	            "TextureName"   "upgrade_quiver1"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "10"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "10"
 	            }
 	        }
 	
@@ -3814,7 +3814,7 @@
 	            "TextureName"   "upgrade_quiver2"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "20"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "20"
 	            }
 	        }
 	
@@ -3823,7 +3823,7 @@
 	            "TextureName"   "upgrade_quiver3"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "30"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "30"
 	            }
 	        }
 	
@@ -3832,7 +3832,7 @@
 	            "TextureName"   "upgrade_quiver4"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "45"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "45"
 	            }
 	        }
 	
@@ -3841,7 +3841,7 @@
 	            "TextureName"   "upgrade_quiver5"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "70"
+	                "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"  "70"
 	            }
 	        }
 	    }

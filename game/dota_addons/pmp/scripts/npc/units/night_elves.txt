@@ -65,8 +65,8 @@
     
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"        "500"
-    "VisionNighttimeRange"      "700"
+    "VisionDaytimeRange"        "600"
+    "VisionNighttimeRange"      "800"
     
     // Team
     //----------------------------------------------------------------
