@@ -778,7 +778,7 @@ function PMP:OnEntityKilled( event )
         end
 
         -- Anti-farm mechanism
-        local attacker_kills = attacker_hero:GetKills()
+        --[[local attacker_kills = attacker_hero:GetKills()
         local killed_kills = killed_hero:GetKills()
         local kill_difference = attacker_kills - killed_kills
         local kill_diff_factor = killed_kills / attacker_kills
@@ -791,7 +791,7 @@ function PMP:OnEntityKilled( event )
                 gold_bounty = 2
                 lumber_bounty = 2
             end
-        end
+        end]]
 
         ModifyGold(attacker_playerID, gold_bounty)
         PopupGoldGain(killed, gold_bounty, attacker_teamNumber)
