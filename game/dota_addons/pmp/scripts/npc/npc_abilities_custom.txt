@@ -2601,8 +2601,8 @@
 	        "Damage"
 	        {
 	            "Target"        "TARGET"
-	            "Type"          "DAMAGE_TYPE_PHYSICAL"
-	            "Damage"        "500"
+	            "Type"          "DAMAGE_TYPE_PURE"
+	            "Damage"        "10000"
 	        }
 	    }
 	
@@ -2631,6 +2631,12 @@
 	            "Properties"
 	            {
 	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "500"
+	            }
+	
+	            "States"
+	            {
+	                "MODIFIER_STATE_MAGIC_IMMUNE"        "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_ATTACK_IMMUNE"        "MODIFIER_STATE_VALUE_ENABLED"
 	            }
 	        }
 	    }
