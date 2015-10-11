@@ -118,6 +118,7 @@ function PMP:InitGameMode()
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
 
         GameRules.PlayersPerTeam = 1
+        GameRules.Positions = false
         
     else
         -- Default to 3v3v3v3
@@ -126,10 +127,21 @@ function PMP:InitGameMode()
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 3 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 3 )
         GameRules:EnableCustomGameSetupAutoLaunch(false)
+        
         GameRules.PlayersPerTeam = 3
+        GameRules.Positions = true
     end
+  
+    GameRules.Outposts = true
+    GameRules.RevealMap = false
+    --GameRules["BossRoam"]
+    --GameRules["Neutrals"]
 
+    -- Default Flags
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
+    statCollection:setFlags({fixed_positions = GameRules.Positions})
+    statCollection:setFlags({outposts = GameRules.Outposts})
+    statCollection:setFlags({map_revealed = GameRules.RevealMap})
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
@@ -323,7 +335,7 @@ end
 function PMP:OnAllPlayersLoaded()
 	print("[PMP] All Players have loaded into the game")
 
-    if GameRules['Positions'] then
+    if GameRules.Positions then
         PMP:SetPlayersStartingPositions()
     end
 end

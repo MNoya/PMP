@@ -7,6 +7,11 @@ var IsHost = false;
 var panels = [$("#TeamRow")];
 var settings = ["TeamRow"];
 
+//Defaults
+$("#Positions").checked = true;
+$("#Outposts").checked = true;
+$("#RevealMap").checked = false;
+
 function SetSetting(setting, choice)
 {
 	if (IsHost)
