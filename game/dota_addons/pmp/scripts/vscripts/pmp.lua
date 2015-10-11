@@ -656,7 +656,7 @@ function PMP:OnEntityKilled( event )
         -- Make an Outpost for the attacker on the killed garage position
         CreateOutpost(attacker_playerID, killed:GetAbsOrigin())
 
-        local attacker_garage = GetPlayerCityCenter(attacker_playerID)
+        --[[local attacker_garage = GetPlayerCityCenter(attacker_playerID)
         if attacker_garage then
             local charges = attacker_garage:GetModifierStackCount("modifier_super_unit_charges", attacker_garage) + 1
             attacker_garage:SetModifierStackCount("modifier_super_unit_charges", attacker_garage, charges)
@@ -666,7 +666,7 @@ function PMP:OnEntityKilled( event )
             if super_unit_ability then
                 super_unit_ability:SetLevel(1)
             end
-        end
+        end]]
 
         SendDefeatedMessage(attacker_playerID,killed_playerID)
 
