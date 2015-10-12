@@ -58,8 +58,9 @@ end
 
 function BuildGameArray()
     local game = {}
-    game.bk = GetBossKilled() --boss_killed
-    game.tt = GetTimesTraded() --times_traded
+    game.wr = GetRaceWinner() --Winner Race, in team games it will be the player with the highest kill score from the winning team.
+    game.bk = GetBossKilled() --Boss Killed
+    game.tt = GetTimesTraded() --Trades
     return game
 end
 
@@ -72,22 +73,22 @@ function BuildPlayersArray()
                 table.insert(players, {
                     --steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
-                    ph = GetPlayerRace(playerID), --player_hero
-                    pk = PlayerResource:GetKills(playerID), --player_kills
-                    pd = PlayerResource:GetDeaths(playerID), --player_deaths
-                    pl = GetHeroLevel(playerID), --player_level
+                    ph = GetPlayerRace(playerID), --Race
+                    pk = PlayerResource:GetKills(playerID), --Kills
+                    pd = PlayerResource:GetDeaths(playerID), --Deaths
+                    pl = GetHeroLevel(playerID), --Level
                     
                     -- Resources
-                    tge = GetTotalEarnedGold(playerID), --total_gold_earned
-                    tle = GetTotalEarnedLumber(playerID), --total_lumber_earned
-                    txe = GetTotalEarnedXP(playerID), --total_xp_earned
-                    pf = GetFoodLimit(playerID), --player_food
-                    psr = GetSpawnRate(playerID), --player_spawn_rate
+                    pf = GetFoodLimit(playerID), --Food
+                    psr = GetSpawnRate(playerID), --Spawn Rate
+                    tge = GetTotalEarnedGold(playerID), --Gold Earned
+                    tle = GetTotalEarnedLumber(playerID), --Lumber Earned
+                    txe = GetTotalEarnedXP(playerID), --Experience Earned                   
 
                     -- Defensive abilities
-                    spu = GetSuperPeonsUsed(playerID), --super_peons_used
-                    bu = GetBarricadesUsed(playerID), --barricades_used
-                    ru = GetRepairsUsed(playerID), --repairs_used
+                    spu = GetSuperPeonsUsed(playerID), --Super Peons Used
+                    bu = GetBarricadesUsed(playerID), --Barricades Built
+                    ru = GetRepairsUsed(playerID), --Repairs Used
 
                     -- Upgrades
                     uw = GetPlayerWeaponLevel(playerID), --upgrade_weapon
@@ -97,18 +98,18 @@ function BuildPlayersArray()
                     uhp = player_upgrades["health"] or 0, --upgrade_health
 
                     -- Passive ability upgrades
-                    acs = player_upgrades["critical_strike"] or 0, --ability_critical_strike
-                    ash = player_upgrades["stun_hit"] or 0, --ability_stun_hit
-                    apw = player_upgrades["poisoned_weapons"] or 0, --ability_poisoned_weapons
-                    ar = player_upgrades["racial"] or 0, --ability_racial
-                    ad = player_upgrades["dodge"] or 0, --ability_dodge
-                    asa = player_upgrades["spiked_armor"] or 0, --ability_spiked_armor
+                    acs = player_upgrades["critical_strike"] or 0, --Critical Strike Level
+                    ash = player_upgrades["stun_hit"] or 0, --Stun Hit Level
+                    apw = player_upgrades["poisoned_weapons"] or 0, --Poisoned Weapon Level
+                    ar = player_upgrades["racial"] or 0, --Racial Level
+                    ad = player_upgrades["dodge"] or 0, --Dodge Level
+                    asa = player_upgrades["spiked_armor"] or 0, --Spiked Armor Level
                     
                     -- Hero global upgrades
-                    pdmg = player_upgrades["pimp_damage"] or 0, --pimp_damage
-                    parm = player_upgrades["pimp_armor"] or 0, --pimp_armor
-                    pspd = player_upgrades["pimp_speed"] or 0, --pimp_speed
-                    preg = player_upgrades["pimp_regen"] or 0, --pimp_regen
+                    pdmg = player_upgrades["pimp_damage"] or 0, --Pimp Damage
+                    parm = player_upgrades["pimp_armor"] or 0, --Pimp Armor
+                    pspd = player_upgrades["pimp_speed"] or 0, --Pimp Speed
+                    preg = player_upgrades["pimp_regen"] or 0, --Pimp Regen
                 })
             end
         end

@@ -552,6 +552,25 @@ function GetBossKilled()
     return bKilled and 1 or 0
 end
 
+function GetRaceWinner()
+    local winningTeam = PMP:GetWinningTeam()
+    local players = GetPlayerIDsOnTeam(winningTeam)
+    local winnerPlayerID = 0
+
+    if players then
+        local maxKills = 0
+        for k,v in pairs(players) do
+            local thisPlayerKills = PlayerResource:GetKills(v)
+            if thisPlayerKills > maxKills then
+                maxKills = thisPlayerKills
+                winnerPlayerID = v
+            end
+        end
+    end
+
+    return GetPlayerRace(winnerPlayerID)
+end
+
 function GetHeroLevel( pID )
     local hero = PlayerResource:GetSelectedHeroEntity(pID)
     return hero and hero:GetLevel() or 0

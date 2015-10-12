@@ -130,14 +130,14 @@ function PMP:InitGameMode()
         
         GameRules.PlayersPerTeam = 3
         GameRules.Positions = true
+
+        statCollection:setFlags({fixed_positions = GameRules.Positions})    
     end
 
     --GameRules["BossRoam"]
     --GameRules["Neutrals"]
 
-    -- Default Flags
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
-    statCollection:setFlags({fixed_positions = GameRules.Positions})
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
