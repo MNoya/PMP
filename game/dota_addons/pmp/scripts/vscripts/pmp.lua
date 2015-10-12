@@ -66,7 +66,7 @@ function PMP:InitGameMode()
 	GameRules:SetSameHeroSelectionEnabled( true )
 	GameRules:SetHeroSelectionTime( 30 )
 	GameRules:SetPreGameTime( 30 )
-	GameRules:SetPostGameTime( 30 )
+	GameRules:SetPostGameTime( 600 )
 	GameRules:SetTreeRegrowTime( 10000.0 )
 	GameRules:SetUseCustomHeroXPValues ( true )
 	GameRules:SetUseBaseGoldBountyOnHeroes( false ) -- Need to check legacy values
@@ -354,7 +354,7 @@ function PMP:OnPlayerPickHero(keys)
 
     -- Main building
     if not GameRules.StartingPositions[playerID] then 
-        print("Not enough slots!")
+        print("No slot for player "..playerID.."!")
         return
     end
 
@@ -811,6 +811,7 @@ function PMP:MakePlayerLose( playerID )
     local playerUnits = GetPlayerUnits(playerID)
     local playerShop = GetPlayerShop(playerID)
     local playerBarricades = GetPlayerBarricades(playerID)
+    local position = Vector((playerID * 150)-750,-3900,128)
 
     -- Clear the Still In Game table
     local unit_index = getIndexTable(GameRules.StillInGame, hero)
@@ -836,8 +837,9 @@ function PMP:MakePlayerLose( playerID )
     -- Clear player shop and garage
     if IsValidAlive(playerShop) then
         --UTIL_Remove(playerShop)
-        playerShop:AddNoDraw()
-        ApplyModifier(playerShop, "modifier_hidden")
+        playerShop:SetAbsOrigin(position)
+        playerShop:SetAngles(0,90,0)
+        ApplyModifier(playerShop, "modifier_hide")
     end
 
     if IsValidAlive(playerGarage) then
@@ -846,11 +848,15 @@ function PMP:MakePlayerLose( playerID )
 
     -- Give a ghost peon unit to scout
     if hero then
-        -- Fx
-        local explosion1 = ParticleManager:CreateParticle("particles/radiant_fx2/frostivus_wking_altar_smokering.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-        local explosion2 = ParticleManager:CreateParticle("particles/dire_fx/bad_barracks001_ranged_destroy.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-
         local origin = hero:GetAbsOrigin()
+        -- Fx
+        local explosion1 = ParticleManager:CreateParticle("particles/radiant_fx2/frostivus_wking_altar_smokering.vpcf", PATTACH_CUSTOMORIGIN, hero)
+        ParticleManager:SetParticleControl(explosion1, 0, GetGroundPosition(origin, hero))
+        local explosion2 = ParticleManager:CreateParticle("particles/dire_fx/bad_barracks001_ranged_destroy.vpcf", PATTACH_CUSTOMORIGIN, hero)
+        ParticleManager:SetParticleControl(explosion2, 0, GetGroundPosition(origin, hero))
+
+        
+        
         local race = GetRace(hero)
         hero.ghost = CreateUnitByName(race.."_ghost", origin, false, hero, hero, hero:GetTeamNumber())
         hero.ghost:SetOwner(hero)
@@ -858,12 +864,13 @@ function PMP:MakePlayerLose( playerID )
         hero.lost = true
         hero:ForceKill(true)
         hero:SetRespawnsDisabled(true)
+        hero:AddNoDraw()
 
         local playerName = PlayerResource:GetPlayerName(playerID)
         if playerName == "" then playerName = "Player "..playerID end
         GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
 
-        hero:SetAbsOrigin(Vector(0,-4000,0))
+        FindClearSpaceForUnit(hero, position, true)
     end
 end
 
@@ -900,10 +907,11 @@ function PMP:CheckWinCondition()
         end
     end    
 
-    if winnerTeamID then
+    if winnerTeamID and not GameRules.Winner then
         print(winnerTeamID.." is the Winner")
         GameRules.Winner = winnerTeamID
         GameRules:SetGameWinner(winnerTeamID)
+        PMP:GG()
         PMP:PrintWinMessageForTeam(winnerTeamID)
     end
 end
@@ -1095,17 +1103,8 @@ function PMP:GetTeamCount()
 	return teamCount
 end
 
--- This should only be called when all teams but one are defeated
--- Returns the first player with a building left standing
 function PMP:GetWinningTeam()
-	for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
-		if PlayerResource:IsValidPlayerID(playerID) then
-			local player = PlayerResource:GetPlayer(playerID)
-			if #player.structures > 0 then
-				return player:GetTeamNumber()
-			end
-		end
-	end
+	return GameRules.Winner or DOTA_TEAM_GOODGUYS
 end
 
 function PMP:PrintDefeateMessageForTeam( teamID )

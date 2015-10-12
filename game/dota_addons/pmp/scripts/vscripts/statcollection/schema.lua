@@ -18,8 +18,15 @@ function customSchema:init(options)
             -- Build players array
             local players = BuildPlayersArray()
 
+            -- Print the schema data to the console
+            if statCollection.TESTING then
+                PrintSchema(game,players)
+            end
+
             -- Send custom stats
-            statCollection:sendCustom({game=game, players=players})
+            if statCollection.HAS_SCHEMA then
+                statCollection:sendCustom({game=game, players=players})
+            end
         end
     end, nil)
 end
@@ -108,6 +115,14 @@ function BuildPlayersArray()
     end
 
     return players
+end
+
+function PrintSchema( gameArray, playerArray )
+    print("-------- GAME DATA --------")
+    DeepPrintTable(gameArray)
+    print("\n-------- PLAYER DATA --------")
+    DeepPrintTable(playerArray)
+    print("-------------------------------------")
 end
 
 function GetPlayerWeaponLevel( playerID )

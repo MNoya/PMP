@@ -61,12 +61,42 @@ function HideWearableInSlot( unit, slotName )
     end
 end
 
+function HideUnit( unit )
+    unit:AddNoDraw()
+    ApplyModifier(unit, "modifier_hide")
+    if not unit.prop_wearables then return end
+     
+    for k,v in pairs(unit.prop_wearables) do
+        if v and IsValidEntity(v) then
+            v:AddEffects(EF_NODRAW)
+        end
+    end
+end
+
+function RevealUnit( unit )
+    unit:RemoveNoDraw()
+    unit:RemoveModifierByName("modifier_hide")
+    if not unit.prop_wearables then return end  
+    
+    for k,v in pairs(unit.prop_wearables) do
+        if v and IsValidEntity(v) then
+            v:RemoveEffects(EF_NODRAW)
+        end
+    end
+end
+
 function SetDefaultWearableInSlot( unit, slotName )
     local default_wearable_name = GetDefaultWearableNameForSlot(unit, slotName)
     local item_wearable = GetOriginalWearableInSlot(unit, slotName)
 
     if item_wearable and default_wearable_name then
         item_wearable:SetModel(default_wearable_name)
+    end
+end
+
+function HidePropWearableSlot( unit, slot )
+    if unit.prop_wearables[slot] and IsValidEntity(unit.prop_wearables[slot]) then 
+        unit.prop_wearables[slot]:AddEffects(EF_NODRAW)
     end
 end
 

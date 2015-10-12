@@ -109,9 +109,31 @@ function Precache( context )
 	PrecacheItemByNameSync("upgrade_dodge", context)
 	PrecacheItemByNameSync("upgrade_spiked_armor", context)
 
+	PrecacheResource("particle", "particles/radiant_fx2/frostivus_wking_altar_smokering.vpcf", context)
 	PrecacheResource("particle_folder", "particles/custom", context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_techies", context)
 
+	-- Absolutely necessary end game effects
+	PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_disruptor/disruptor_static_storm.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_disruptor/disruptor_kf_formation.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_gyrocopter/gyro_calldown_explosion_second.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_lina/lina_spell_light_strike_array_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_split_tormented.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf", context)
+	
 	--Barricade models
 	GameRules.Barricades = LoadKeyValues("scripts/kv/barricades.kv")
 	for k,v in pairs(GameRules.Barricades) do

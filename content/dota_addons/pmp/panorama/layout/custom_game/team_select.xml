@@ -29,7 +29,7 @@
 		            	<Label class="SettingOptionText" text="6"/> </Panel>
 		        </Panel>
 
-		        <Label class='SettingHeader' text="\nAdvanced Options" style="" />
+		        <Label id='AdvancedOptions' class='SettingHeader' text="\nAdvanced Options" style="" />
 		        <Panel id="ToggleSettings">
 			        <ToggleButton id="Positions" text="Fixed Team Positions" onactivate="SetOption('Positions')"/>
 			        <!--<ToggleButton id="BossRoam" checked="false" text="Boss Roam" onactivate="SetOption('BossRoam')"/>

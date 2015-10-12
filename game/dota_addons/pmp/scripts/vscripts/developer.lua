@@ -118,6 +118,7 @@ function PMP:Music(pID)
     local player = PlayerResource:GetPlayer(pID)
     
     if player and not GameRules.PlayingMusic[pID] then
+
         GameRules.PlayingMusic[pID] = true
         EmitSoundOnClient("PMP.PowerOfTheHorde", player)
         
@@ -130,6 +131,8 @@ function PMP:Music(pID)
                 return
             end
         end)
+    else
+        print(player,GameRules.PlayingMusic[pID])
     end
 end
 
@@ -159,49 +162,62 @@ function PMP:Freeze()
 end
 
 function PMP:GG()
-    local winningTeam = DOTA_TEAM_CUSTOM_3--PMP:GetWinningTeam()
+    local winningTeam = DOTA_TEAM_GOODGUYS--PMP:GetWinningTeam()
     local winners = {}
+    local losers = {}
 
+    GameRules:SetCustomVictoryMessageDuration( 600 )
+
+    -- Change the camera
     CustomGameEventManager:Send_ServerToAllClients("gg", {})
 
+    -- Camera Unit
+    GameMode:SetFogOfWarDisabled( true )
+    local centerUnit = CreateUnitByName("dummy_vision", Vector(-300,-4000,128), false, nil, nil, 0)
+
+    -- Put players into Winners or Lossers and set the camera
     for playerID = 0, DOTA_MAX_PLAYERS do
         if PlayerResource:IsValidPlayerID(playerID) then
+            PlayerResource:SetCameraTarget(playerID, centerUnit)
+            PMP:StopMusic(playerID)
             if not PlayerResource:IsBroadcaster(playerID) then
-                local showcase = GetPlayerShop(playerID)
-                showcase:SetDayTimeVisionRange(1800)
-                showcase:SetNightTimeVisionRange(1800)
-                showcase:SetHullRadius(0)
-                FindClearSpaceForUnit(showcase, Vector( (playerID * 150)-750,-3900,128), true)
-                showcase:RemoveNoDraw()
-                showcase:RemoveModifierByName("modifier_hidden")
-                showcase:SetAngles(0,90,0)
-                if showcase:GetTeamNumber() == winningTeam then
-                    table.insert(winners, showcase)
+                local unit = GetPlayerShop(playerID)
+                if unit:GetTeamNumber() == winningTeam then
+                    table.insert(winners, unit)
+                else
+                    table.insert(losers, unit)
                 end
             end
         end
     end
 
+    -- Do Thunders and shit
+    PMP:DoMichaelBayEffects(winners, losers)
+    
+    -- Win Animations
     for k,unit in pairs(winners) do
-        unit:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
         unit:RemoveModifierByName("modifier_building")
-        unit:SetBaseMoveSpeed(400)
-        unit:MoveToPosition(Vector((k*150)-150,-3500,128))
-        Timers:CreateTimer(1,function()
-            if unit:IsIdle() then
-                unit:MoveToPosition(Vector((k*150)-150,-3499,128))
-                local race = GetRace(unit)
-                local animation = endAnimations[race]
-                if race == "night_elf" then
-                    StartAnimation(unit, {duration=10, activity=animation, rate=1, translate="whats_that"})
-                else
-                    StartAnimation(unit, {duration=10, activity=animation, rate=1})
-                end
+        unit:SetAbsOrigin(Vector((k*150)-150,-3800,128))
+        unit:SetAngles(0,90,0)
+        local race = GetRace(unit)
+        local animation = endAnimations[race]
+        local duration = victoryAnimDurations[race]
+        Timers:CreateTimer(function()
+            if race == "night_elf" then
+                StartAnimation(unit, {duration=duration, activity=animation, rate=1, translate="whats_that"})
             else
-                return 0.5
+                StartAnimation(unit, {duration=duration, activity=animation, rate=1})
             end
+            return duration/30
         end)
     end
+
+    for k,unit in pairs(losers) do
+        local position = Vector((k*150)-750,-4000,128)
+        unit:RemoveModifierByName("modifier_building")
+        unit:SetAbsOrigin(position)
+        unit:SetAngles(0,90,0)
+    end 
 end
 
 endAnimations = {
@@ -213,4 +229,138 @@ endAnimations = {
     ["blood_elf"]   = ACT_DOTA_VICTORY,
     ["goblin"]  = ACT_DOTA_VICTORY,
     ["treant"]  = ACT_DOTA_CAST_ABILITY_5,
+}
+
+victoryAnimDurations = 
+{
+    ["undead"]  = 132,
+    ["peon"]    = 121,
+    ["human"]   = 80,
+    ["skeleton"]    = 118,
+    ["night_elf"]   = 150,
+    ["blood_elf"]   = 190,
+    ["goblin"]  = 30,
+    ["treant"]  = 55,
+}
+
+function PMP:DoMichaelBayEffects(winners, losers)
+    EmitGlobalSound("PMP.PowerOfTheHorde")
+
+    local outerRight = Vector(-750,-4000,128)
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", PATTACH_CUSTOMORIGIN, nil)
+    ParticleManager:SetParticleControl(particle, 0, Vector(outerRight.x,outerRight.y,2000))
+    ParticleManager:SetParticleControl(particle, 1, outerRight) -- point landing
+    ParticleManager:SetParticleControl(particle, 2, outerRight) -- point origin
+
+    for k,unit in pairs(losers) do
+        Timers:CreateTimer(k*0.2, function()
+
+            local position = Vector((k*150)-750,-4000,128)
+            
+            -- RIP
+            unit:ForceKill(false)      
+
+            -- Particles
+            local skyPosition = Vector(position.x,position.y,2000) 
+
+            local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", PATTACH_CUSTOMORIGIN, nil)
+            ParticleManager:SetParticleControl(particle, 0, skyPosition)
+            ParticleManager:SetParticleControl(particle, 1, position) -- point landing
+            ParticleManager:SetParticleControl(particle, 2, position) -- point origin
+
+            local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf", PATTACH_CUSTOMORIGIN, nil)
+            ParticleManager:SetParticleControl(particle, 0, position)
+            ParticleManager:SetParticleControl(particle, 1, position)
+            ParticleManager:SetParticleControl(particle, 2, position)
+
+            local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf", PATTACH_CUSTOMORIGIN, nil)
+            ParticleManager:SetParticleControl(particle, 0, position)
+            local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf", PATTACH_CUSTOMORIGIN, nil)
+            ParticleManager:SetParticleControl(particle, 0, position)
+            ParticleManager:SetParticleControl(particle, 1, position)
+
+        end)
+    end
+
+    Timers:CreateTimer(3.8, function()
+        
+        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", PATTACH_CUSTOMORIGIN, nil)
+        ParticleManager:SetParticleControl(particle, 0, Vector(outerRight.x,outerRight.y,2000))
+        ParticleManager:SetParticleControl(particle, 1, outerRight)
+        ParticleManager:SetParticleControl(particle, 2, outerRight)
+
+        local outerLeft = Vector(750,-4000,128)
+        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", PATTACH_CUSTOMORIGIN, nil)
+        ParticleManager:SetParticleControl(particle, 0, Vector(outerLeft.x,outerLeft.y,2000))
+        ParticleManager:SetParticleControl(particle, 1, outerLeft)
+        ParticleManager:SetParticleControl(particle, 2, outerLeft)
+    end)
+
+    Timers:CreateTimer(4, function()
+        local nextWave = RandomFloat(0.1, 0.9)
+        for i=0,4 do
+            local randomOrigin = Vector(-300,-3900,128) + RandomVector(RandomInt(-300, 600))
+            local random = RandomInt(1,3)
+            local particleName = lightnings[random]
+            
+            local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
+            ParticleManager:SetParticleControl(particle, 0, Vector(randomOrigin.x,randomOrigin.y,2000))
+            ParticleManager:SetParticleControl(particle, 1, randomOrigin)
+            ParticleManager:SetParticleControl(particle, 2, randomOrigin)
+        end
+        return nextWave
+    end)
+
+    Timers:CreateTimer(17, function()
+        local origin = Vector(0,-4000,128)
+
+        local particle = ParticleManager:CreateParticle("particles/custom/disruptor_static_storm.vpcf", PATTACH_CUSTOMORIGIN, nil)
+        ParticleManager:SetParticleControl(particle, 0, origin) --location
+        ParticleManager:SetParticleControl(particle, 1, Vector(2000,2000,1)) --ring
+        ParticleManager:SetParticleControl(particle, 2, Vector(100,100,1)) --duration
+
+        Timers:CreateTimer(3,function()
+            local randomGround = ground[RandomInt(1,2)]
+            local particle = ParticleManager:CreateParticle(randomGround, PATTACH_CUSTOMORIGIN, nil)
+            ParticleManager:SetParticleControl(particle, 0, origin) --location
+            ParticleManager:SetParticleControl(particle, 1, Vector(1000,1000,1000)) --ring
+
+            return 3
+        end)
+
+    end)
+
+    Timers:CreateTimer(28, function()
+        for i=0,4 do
+            local randomOrigin = Vector(-300,-3900,128) + RandomVector(RandomInt(-500, 800))
+            randomOrigin.z = RandomInt(128, 256)
+            local random = RandomInt(1,4)
+            local particleName = explosions[random]
+            
+            local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
+            ParticleManager:SetParticleControl(particle, 0, Vector(randomOrigin.x,randomOrigin.y,2000))
+            ParticleManager:SetParticleControl(particle, 1, randomOrigin)
+            ParticleManager:SetParticleControl(particle, 3, randomOrigin)      
+        end
+        return 1
+    end)
+
+end
+
+lightnings = {
+    [1] = "particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf",
+    [2] = "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf",
+    [3] = "particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf",
+}
+
+explosions = {
+    [1] = "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf",
+    [2] = "particles/units/heroes/hero_gyrocopter/gyro_calldown_explosion_second.vpcf",
+    [3] = "particles/units/heroes/hero_lina/lina_spell_light_strike_array_explosion.vpcf",
+    [4] = "particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf",
+}
+
+ground = {
+    [1] = "particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_split_tormented.vpcf",
+    [2] = "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
 }
