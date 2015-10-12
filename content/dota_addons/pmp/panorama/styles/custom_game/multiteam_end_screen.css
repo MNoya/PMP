@@ -183,7 +183,7 @@
 {
 	margin-top: 1px;
 	margin-left: 306px;
-	width: 79px;
+	width: 158px;
 	height: 100%;
     background-color: BACKGROUND_COLOR;
 }
@@ -367,7 +367,7 @@
 
 .ScoreCol_TeamScore
 {
-	width: 80px;
+	width: 160px;
 	text-align: center;
 }
 
@@ -386,7 +386,7 @@
 .ScoreCol_Deaths,
 .ScoreCol_Assists
 {
-	width: 50px;
+	width: 100px;
 	text-align: center;
 }
 

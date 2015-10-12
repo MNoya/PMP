@@ -161,8 +161,11 @@ function PMP:Freeze()
     end
 end
 
-function PMP:GG()
-    local winningTeam = PMP:GetWinningTeam()
+function PMP:GG(winningTeam)
+    if winningTeam == 0 then winningTeam=DOTA_TEAM_GOODGUYS end
+    print(winningTeam," is the Winner")
+    GameRules.Winner = winningTeam
+
     local winners = {}
     local losers = {}
 
@@ -201,23 +204,29 @@ function PMP:GG()
         unit:SetAngles(0,90,0)
         local race = GetRace(unit)
         local animation = endAnimations[race]
-        local duration = victoryAnimDurations[race]
+        local duration = victoryAnimDurations[race]/30
         Timers:CreateTimer(function()
             if race == "night_elf" then
                 StartAnimation(unit, {duration=duration, activity=animation, rate=1, translate="whats_that"})
             else
                 StartAnimation(unit, {duration=duration, activity=animation, rate=1})
             end
-            return duration/30
+            return duration
         end)
     end
 
     for k,unit in pairs(losers) do
         local position = Vector((k*150)-750,-4000,128)
         unit:RemoveModifierByName("modifier_building")
+        ApplyModifier(unit, "modifier_no_health_bar")
+        --unit:RemoveModifierByName("modifier_hide")
         unit:SetAbsOrigin(position)
         unit:SetAngles(0,90,0)
-    end 
+    end
+
+    Timers:CreateTimer(3, function()
+        GameRules:SetGameWinner(winningTeam)
+    end)
 end
 
 endAnimations = {
@@ -258,7 +267,7 @@ function PMP:DoMichaelBayEffects(winners, losers)
             local position = Vector((k*150)-750,-4000,128)
             
             -- RIP
-            unit:ForceKill(false)      
+            unit:ForceKill(true)
 
             -- Particles
             local skyPosition = Vector(position.x,position.y,2000) 
@@ -343,6 +352,25 @@ function PMP:DoMichaelBayEffects(winners, losers)
             ParticleManager:SetParticleControl(particle, 3, randomOrigin)      
         end
         return 1
+    end)
+
+    Timers:CreateTimer(45, function()
+        local center = Vector(0,-3800,128)
+        local particle = ParticleManager:CreateParticle("particles/econ/items/enigma/enigma_world_chasm/enigma_blackhole_ti5.vpcf", PATTACH_CUSTOMORIGIN, nil)
+        ParticleManager:SetParticleControl(particle, 0, center)
+        ParticleManager:SetParticleControl(particle, 1, center)
+ 
+        local count = 10
+        for i=1,count do 
+            local rotate_pos = center + Vector(1,0,0) * 500
+            local position = RotatePosition(center, QAngle(0, i*36, 0), rotate_pos)
+     
+            Timers:CreateTimer(i*0.5, function()
+                local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_enigma/enigma_blackhole.vpcf", PATTACH_CUSTOMORIGIN, nil)
+                ParticleManager:SetParticleControl(particle, 0, position)
+                ParticleManager:SetParticleControl(particle, 1, position)
+            end)
+        end
     end)
 
 end

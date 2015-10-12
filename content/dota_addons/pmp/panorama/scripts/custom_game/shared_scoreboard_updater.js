@@ -123,7 +123,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 		}
 	}
 	
-	var playerItemsContainer = playerPanel.FindChildInLayoutFile( "PlayerItemsContainer" );
+	/*var playerItemsContainer = playerPanel.FindChildInLayoutFile( "PlayerItemsContainer" );
 	if ( playerItemsContainer )
 	{
 		var playerItems = Game.GetPlayerItems( playerId );
@@ -156,7 +156,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				}
 			}
 		}
-	}
+	}*/
 
 	if ( isTeammate )
 	{

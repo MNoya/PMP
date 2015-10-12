@@ -42,9 +42,9 @@
 			<Panel id="DeathsContainer" class="ScoreCol_Deaths ScoreboardPanel">
 				<Label id="Deaths" text="999" />
 			</Panel>
-			<Panel id="AssistsContainer" class="ScoreCol_Assists ScoreboardPanel">
+			<!--<Panel id="AssistsContainer" class="ScoreCol_Assists ScoreboardPanel">
 				<Label id="Assists" text="999" />
-			</Panel>
+			</Panel>-->
 		</Panel>
 		<Panel id="UltimateIndicatorBG" class="UltimateIndicatorShared" />
 		<Panel id="UltimateIndicator" class="UltimateIndicatorShared" />

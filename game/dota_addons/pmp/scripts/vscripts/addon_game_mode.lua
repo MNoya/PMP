@@ -133,6 +133,8 @@ function Precache( context )
 	PrecacheResource("particle", "particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf", context)
 	PrecacheResource("particle", "particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_split_tormented.vpcf", context)
 	PrecacheResource("particle", "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/enigma/enigma_world_chasm/enigma_blackhole_ti5.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_enigma/enigma_blackhole.vpcf", context)
 	
 	--Barricade models
 	GameRules.Barricades = LoadKeyValues("scripts/kv/barricades.kv")

@@ -908,10 +908,7 @@ function PMP:CheckWinCondition()
     end    
 
     if winnerTeamID and not GameRules.Winner then
-        print(winnerTeamID.." is the Winner")
-        GameRules.Winner = winnerTeamID
-        GameRules:SetGameWinner(winnerTeamID)
-        PMP:GG()
+        PMP:GG(winnerTeamID)
         PMP:PrintWinMessageForTeam(winnerTeamID)
     end
 end
