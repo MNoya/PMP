@@ -188,12 +188,13 @@
                 "MODIFIER_STATE_INVISIBLE"        "MODIFIER_STATE_VALUE_ENABLED"
             }
             "IsPurgable"    "1"
+
             "OnAttackLanded"
             {
                 "RemoveModifier"
                 {
                     "ModifierName"  "modifier_night_elf_windwalk"
-                    "Target"        "CASTER"
+                    "Target"        "TARGET"
                 }
             }
 
@@ -202,7 +203,7 @@
                 "RemoveModifier"
                 {
                     "ModifierName"  "modifier_night_elf_windwalk"
-                    "Target"        "CASTER"
+                    "Target"        "TARGET"
                 }
             }
         }

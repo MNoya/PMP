@@ -172,6 +172,21 @@
                     "Function"      "RemoveLink"
                 }
             }
+
+            "Aura"              "modifier_forest_slow_debuff"
+            "Aura_Radius"       "%radius"
+            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Aura_Types"        "DOTA_UNIT_TARGET_BASIC"
+            "Aura_ApplyToCaster" "0"
+        }
+
+        "modifier_forest_slow_debuff"
+        {
+            "IsDebuff"  "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-50"
+            }
         }
     }
 }

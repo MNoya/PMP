@@ -512,7 +512,7 @@ end
 --------------------------------------------
 
 function GetPlayerRace( playerID )
-    local hero = PlayerResource:GetSelectedHeroEntity(pID)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if not hero then return end
     local hero_name = hero:GetName()
 
@@ -732,7 +732,7 @@ function CreateOutpost( playerID, position )
     local teamNumber = owner:GetTeamNumber()
     local unitName = "outpost"
 
-    local unit = CreateUnitByName(unitName, position, true, owner, owner, teamNumber)
+    local unit = CreateUnitByName(unitName, position, false, owner, owner, teamNumber)
     unit:SetOwner(owner)
     unit:SetControllableByPlayer(playerID, true)
     
