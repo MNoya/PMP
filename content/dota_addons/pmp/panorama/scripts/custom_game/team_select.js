@@ -12,7 +12,7 @@ $("#Positions").checked = true;
 
 function OnGameEnd() {
 	var pitch = 15
-	var yaw = 180
+	var yaw = 170
 	var height = 100
 	var distance = 100
 	GameUI.SetCameraPitchMin( pitch )

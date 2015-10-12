@@ -176,7 +176,23 @@ function PMP:GG(winningTeam)
 
     -- Camera Unit
     GameMode:SetFogOfWarDisabled( true )
-    local centerUnit = CreateUnitByName("dummy_vision", Vector(-300,-4000,128), false, nil, nil, 0)
+    local cameraPos = Vector(-300,-4000,50)
+    
+    if GameRules.PlayersPerTeam == 1 then
+        cameraPos.y = -4500
+    elseif GameRules.PlayersPerTeam == 2 then
+        cameraPos.y = -4500
+    elseif GameRules.PlayersPerTeam == 3 then
+        cameraPos.x = -200
+        cameraPos.y = -4200
+    elseif GameRules.PlayersPerTeam == 4 then
+        cameraPos.x = -150
+        cameraPos.y = -4100
+    elseif GameRules.PlayersPerTeam == 6 then
+        cameraPos.x = 0
+    end
+
+    local centerUnit = CreateUnitByName("dummy_vision", cameraPos, false, nil, nil, 0)
 
     -- Put players into Winners or Lossers and set the camera
     for playerID = 0, DOTA_MAX_PLAYERS do
@@ -200,7 +216,7 @@ function PMP:GG(winningTeam)
     -- Win Animations
     for k,unit in pairs(winners) do
         unit:RemoveModifierByName("modifier_building")
-        unit:SetAbsOrigin(Vector((k*150)-150,-3800,128))
+        unit:SetAbsOrigin(Vector((k*200)-200,-3800,128))
         unit:SetAngles(0,90,0)
         local race = GetRace(unit)
         local animation = endAnimations[race]
