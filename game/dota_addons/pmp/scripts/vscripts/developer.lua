@@ -162,7 +162,7 @@ function PMP:Freeze()
 end
 
 function PMP:GG()
-    local winningTeam = DOTA_TEAM_GOODGUYS--PMP:GetWinningTeam()
+    local winningTeam = PMP:GetWinningTeam()
     local winners = {}
     local losers = {}
 
