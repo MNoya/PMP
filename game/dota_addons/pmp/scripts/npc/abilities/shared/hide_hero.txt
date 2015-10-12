@@ -2,7 +2,7 @@
 {
 	"BaseClass"             		"ability_datadriven"
 	"MaxLevel" 						"1"
-	"DisplayAdditionalHeroes"       "1"
+	//"DisplayAdditionalHeroes"       "1"
 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	"Modifiers"
