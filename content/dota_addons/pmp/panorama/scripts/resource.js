@@ -20,7 +20,7 @@ function UpdateGold()
 	var iPlayerID = Players.GetLocalPlayer()
 	var gold = Players.GetGold( iPlayerID )
 	$('#GoldText').text = gold
-	//$.Schedule( 0.1, UpdateGold );
+	$.Schedule( 0.1, UpdateGold );
 }
 
 function UpdateClock()
@@ -42,9 +42,7 @@ function UpdateClock()
     if (Seconds < 0)
     	ClockText = ClockText+Math.abs(Seconds)
    	else
-   		ClockText = ClockText+Seconds
-
-    $.Msg(ClockText)   
+   		ClockText = ClockText+Seconds 
 
     $('#ClockTime').text = ClockText;
 
