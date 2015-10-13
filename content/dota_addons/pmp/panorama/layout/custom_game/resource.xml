@@ -10,7 +10,7 @@
 	</script>
 	<Panel hittest="false" class='ResourcePanel'>
 		<Panel hittest="false" id='LumberPanel'>
-			<Label hittest="false" id="LumberText" text="50" html="true" class="TitleFont" />
+			<Label hittest="false" id="LumberText" text="50" class="TitleFont" />
 			<Image hittest="false" id="LumberIcon" src="file://{images}/custom_game/lumber_icon.png" />
 		</Panel>
 		<Panel hittest="false" id='FoodPanel'>
@@ -20,6 +20,9 @@
 		<Panel hittest="false" id='GoldPanel'>
 			<Label hittest="false" id="GoldText" text="50" html="true" class="TitleFont" />
 			<Image hittest="false" id="GoldIcon" src="file://{images}/custom_game/gold_icon.png" />
+		</Panel>
+		<Panel hittest="false" id='ClockPanel'>
+			<Label hittest="false" id="ClockTime" text="" html="true" class="TitleFont" />
 		</Panel>
 	</Panel>
 </root>

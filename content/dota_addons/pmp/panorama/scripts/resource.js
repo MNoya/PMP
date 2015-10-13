@@ -20,7 +20,35 @@ function UpdateGold()
 	var iPlayerID = Players.GetLocalPlayer()
 	var gold = Players.GetGold( iPlayerID )
 	$('#GoldText').text = gold
-	$.Schedule( 0.1, UpdateGold );
+	//$.Schedule( 0.1, UpdateGold );
+}
+
+function UpdateClock()
+{
+    var DotaTime = Game.GetDOTATime( false, true )
+    var Seconds = DotaTime.toFixed(0)
+    var Minutes = Math.floor(Seconds / 60)
+    Seconds = Seconds % 60
+    Minutes = Minutes % 60
+
+    if (Minutes == -1)
+    	Minutes = "-0"
+    
+    var ClockText = Minutes+":"
+
+    if (Math.abs(Seconds) < 10)
+    	ClockText = ClockText+"0"
+
+    if (Seconds < 0)
+    	ClockText = ClockText+Math.abs(Seconds)
+   	else
+   		ClockText = ClockText+Seconds
+
+    $.Msg(ClockText)   
+
+    $('#ClockTime').text = ClockText;
+
+    $.Schedule( 0.1, UpdateClock );
 }
 
 function OnPlayerFoodChanged ( args ) {
@@ -57,6 +85,7 @@ function CheckHudFlipped() {
 
 (function () {
 	UpdateGold();
+	UpdateClock();
 	CheckHudFlipped();
 	GameEvents.Subscribe( "player_lumber_changed", OnPlayerLumberChanged );
 	GameEvents.Subscribe( "player_food_changed", OnPlayerFoodChanged );

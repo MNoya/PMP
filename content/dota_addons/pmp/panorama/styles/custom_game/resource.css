@@ -14,6 +14,26 @@
     horizontal-align: left;
 }
 
+#ClockPanel
+{
+    width: 130px;
+    height: 30px;
+    
+    horizontal-align: right;
+    vertical-align: bottom;
+    margin-right: 45px;
+    margin-bottom: 50px;
+}
+
+#ClockTime
+{
+    color: white;
+    font-size: 25px;
+    font-family: Radiance;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px 3.0 #000000;
+}
+
 #LumberPanel
 {
     width: 100px;
