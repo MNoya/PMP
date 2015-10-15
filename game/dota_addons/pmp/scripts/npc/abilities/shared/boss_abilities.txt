@@ -1,0 +1,254 @@
+// Nian Useful Animations:
+// ACT_DOTA_NIAN_INTRO_LEAP - Leap forward
+// ACT_DOTA_LEAP_SWIPE - Leap and swipe
+// ACT_DOTA_AREA_DENY - Roar spawn
+// ACT_DOTA_NIAN_GAME_END - Short roar
+// ACT_DOTA_VICTORY - Long roar
+// ACT_DOTA_CAST_ABILITY_5 - Tail 360
+// ACT_DOTA_CAST_ABILITY_6 - Tail back hit
+// ACT_DOTA_RATTLETRAP_HOOKSHOT_START - Long cast animation
+// ACT_DOTA_NIAN_PIN_START + ACT_DOTA_NIAN_PIN_LOOP + ACT_DOTA_NIAN_PIN_END - Eat
+// ACT_DOTA_MAGNUS_SKEWER_START + ACT_DOTA_MAGNUS_SKEWER_END - Skewer forward
+// ACT_DOTA_ATTACK - Swipes Left and Right
+
+"boss_shockwave"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "boss_shockwave"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+    "AbilityCastAnimation"          "ACT_DOTA_RATTLETRAP_HOOKSHOT_START"
+
+    "AbilityCastRange"              "700"
+    "AbilityCastPoint"              "1.5"
+    "AbilityCooldown"               "10.0"
+
+    "AbilityManaCost"               "0"
+    "AbilityDamage"                 "200"
+
+    "precache"
+    {
+        "particle"  "particles/econ/items/magnataur/shock_of_the_anvil/magnataur_shockanvil.vpcf"
+        "particle"  "particles/econ/items/magnataur/shock_of_the_anvil/magnataur_shockanvil_cast.vpcf"
+        "particle"  "particles/econ/items/magnataur/shock_of_the_anvil/magnataur_shockanvil_hit.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+    }
+    
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "shock_speed"           "900"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "shock_width"           "250"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "shock_distance"        "700"
+        }
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "shock_vision"          "300"
+        }
+    }
+
+    "OnAbilityPhaseStart"
+    {
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_shockwave_hidden_cast"
+            "Target"        "CASTER"
+        }
+    }
+
+    "OnSpellStart"
+    {   
+        "FireSound"
+        {
+            "EffectName"        "Hero_Magnataur.ShockWave.Cast"
+            "Target"            "CASTER"
+        }
+
+        "FireSound"
+        {
+            "EffectName"        "Hero_Magnataur.ShockWave.Particle"
+            "Target"            "CASTER"
+        }
+
+        "LinearProjectile"
+        {
+            "Target"        "POINT"
+            "EffectName"    "particles/econ/items/magnataur/shock_of_the_anvil/magnataur_shockanvil.vpcf"
+            "MoveSpeed"     "%shock_speed"
+            "StartRadius"   "%shock_width"
+            "StartPosition" "attach_attack1"
+            "EndRadius"     "%shock_width"
+            "FixedDistance" "%shock_distance"
+            "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+            "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+            "HasFrontalCone" "0"
+            "ProvidesVision" "1"
+            "VisionRadius"  "%shock_vision"
+        }
+    }
+
+    "OnProjectileHitUnit"
+    {
+        "DeleteOnHit"       "0"
+
+        "Damage"
+        {
+            "Target"         "TARGET"
+            "Type"           "DAMAGE_TYPE_MAGICAL"
+            "Damage"         "%AbilityDamage"
+        }
+
+        "FireSound"
+        {
+            "EffectName"    "Hero_Magnataur.ShockWave.Target"
+            "Target"        "TARGET"
+        }           
+    }
+
+    "Modifiers"
+    {
+        "modifier_shockwave_hidden_cast"
+        {
+            "IsHidden"  "1"
+            "Duration"  "1.5"
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/items/magnataur/shock_of_the_anvil/magnataur_shockanvil_cast.vpcf"
+                    "EffectAttachType"  "attach_attack1"
+                    "Target"            "CASTER"
+                    "ControlPointEntities"
+                    {
+                        "CASTER"        "attach_attack1"
+                        "CASTER"        "attach_attack1"
+                    }
+                }
+            }
+        }
+    }
+}
+
+"boss_devour"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "boss_devour"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
+    "AbilityCastAnimation"          "ACT_DOTA_NIAN_GAME_END"
+
+    "AbilityCooldown"               "20.0"
+    "AbilityCastRange"              "300"
+
+    "precache"
+    {
+        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+        "particle"          "particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf"
+    }
+
+    "OnSpellStart"
+    {
+        "FireSound"
+        {
+            "EffectName"    "Hero_DoomBringer.DevourCast"
+            "Target"        "TARGET"
+        }
+
+        "FireEffect"
+        {
+            "EffectName"        "particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf"
+            "EffectAttachType"  "follow_origin"
+            
+            "ControlPointEntities"
+            {
+                "TARGET"    "attach_origin"
+                "CASTER"    "attach_origin"
+            }
+        }
+
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/boss.lua"
+            "Function"      "Devour"
+        }
+    }
+}
+
+"boss_buff"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "boss_buff"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "OnOwnerDied"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "abilities/boss.lua"
+            "Function"      "StartRespawn"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_boss_buff"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+           
+            "States"
+            {
+                "MODIFIER_STATE_MAGIC_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED"
+            }
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/boss.lua"
+                    "Function"      "ApplyStacks"
+                }
+            }
+
+            "ThinkInterval"  "10"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/boss.lua"
+                    "Function"      "UpdateStacks"
+                }
+            }
+        }
+
+        "modifier_boss_stacks"
+        {
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_HEALTH_BONUS"  "1000"
+                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "10" 
+            }
+        }
+    }
+}

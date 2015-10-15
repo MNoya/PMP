@@ -575,6 +575,8 @@ function PMP:OnHeroInGame(hero)
 	local hero_name = hero:GetUnitName()
 	--print("[PMP] OnHeroInGame "..hero_name)
 
+    if hero_name == "nian_boss" then return end
+
     ClearAbilities(hero)
     TeachAbility(hero, "hide_hero", 1)
 
@@ -673,6 +675,8 @@ function PMP:OnGameInProgress()
 
     GameRules:SendCustomMessage("Welcome to <font color='#FF0000'>Pimp My Peon</font>!", 0, 0)
     GameRules:SendCustomMessage("Version: <font color='#FF0000'>"..PMPVERSION.."</font>", 0, 0)
+
+    PMP:SpawnBoss()
 
     -- Lumber Tick for players
     for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
@@ -996,6 +1000,27 @@ function PMP:OnPlayerSelectedEntities( event )
 	GameRules.SELECTED_UNITS[pID] = event.selected_entities
 
     FireGameEvent( 'ability_values_force_check', { player_ID = pID })
+end
+
+function PMP:SpawnBoss()
+    local spawnEnt = Entities:FindByName(nil, "boss_spawn_point")
+    local position = spawnEnt:GetAbsOrigin()
+    local boss = CreateUnitByName("nian_boss", position, true, nil, nil, DOTA_TEAM_NEUTRALS)
+    
+    boss:StartGesture(ACT_DOTA_AREA_DENY)
+    boss:SetAngles(0,45,0)
+
+    boss.roamPoints = Entities:FindAllByName("boss_roam_point")
+
+    Timers:CreateTimer(1, function()
+        for i=0,DOTA_TEAM_COUNT do
+            AddFOWViewer ( i, boss:GetAbsOrigin(), 1000, 1.1, false)
+        end
+        return 1
+    end)
+
+    GameRules.Boss = boss
+    print("[PMP] Boss Active")
 end
 
 -- Teams Blue, Red, Purple, Orange, Yellow and Green

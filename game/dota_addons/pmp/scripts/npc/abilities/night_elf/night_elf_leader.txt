@@ -254,7 +254,8 @@
         }
         
         "modifier_trueshot_aura_buff"
-        {           
+        {   
+            "TextureName"   "night_elf_trueshot_aura"
             "Properties"
             {
                 "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%damage_bonus_percent"

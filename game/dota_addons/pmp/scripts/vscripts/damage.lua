@@ -29,6 +29,10 @@ function PMP:FilterDamage( filterTable )
                 damage = damage * 1.5 -- Take 150% damage from melee attacks
             end
         end
+
+        if IsSuperPeon(attacker) and IsBoss(victim) then
+            return false
+        end
 		
 		-- Reassign the new damage
 		filterTable["damage"] = damage

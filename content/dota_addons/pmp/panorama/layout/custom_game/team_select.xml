@@ -32,8 +32,8 @@
 		        <Label id='AdvancedOptions' class='SettingHeader' text="\nAdvanced Options" style="" />
 		        <Panel id="ToggleSettings">
 			        <ToggleButton id="Positions" text="Fixed Team Positions" onactivate="SetOption('Positions')"/>
-			        <!--<ToggleButton id="BossRoam" checked="false" text="Boss Roam" onactivate="SetOption('BossRoam')"/>
-			        <ToggleButton id="Neutrals" checked="false" text="Enable Neutrals" onactivate="SetOption('Neutrals')"/>-->
+			        <ToggleButton id="BossRoam" checked="false" text="Boss Roam" onactivate="SetOption('BossRoam')"/>
+			        <!--<ToggleButton id="Neutrals" checked="false" text="Enable Neutrals" onactivate="SetOption('Neutrals')"/>-->
 			    </Panel>
 
 		        <Label id="Host" text="HOST: " style="" />

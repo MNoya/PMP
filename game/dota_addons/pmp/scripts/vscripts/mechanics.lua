@@ -233,6 +233,11 @@ function IsSuperPeon( unit )
     return (string.match(unit_name,"super_"))
 end
 
+function IsBoss( unit )
+    local unit_name = unit:GetUnitName()
+    return (string.match(unit_name,"_boss"))
+end
+
 ------------------------------------------------
 --             Selection functions            --
 ------------------------------------------------
@@ -548,8 +553,7 @@ function GetRepairsUsed( pID )
 end
 
 function GetBossKilled()
-    local bKilled = GameRules.Boss and IsValidAlive(GameRules.Boss)
-    return bKilled and 1 or 0
+    return GameRules.TimesBossKilled or 0
 end
 
 function GetRaceWinner()
