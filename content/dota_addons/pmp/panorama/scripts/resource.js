@@ -29,7 +29,7 @@ function UpdateClock()
     var Seconds = DotaTime.toFixed(0)
     var Minutes = Math.floor(Seconds / 60)
     Seconds = Seconds % 60
-    Minutes = Minutes % 60
+    Minutes = Minutes
 
     if (Minutes == -1)
     	Minutes = "-0"

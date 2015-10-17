@@ -194,7 +194,7 @@
                 "RemoveModifier"
                 {
                     "ModifierName"  "modifier_night_elf_windwalk"
-                    "Target"        "TARGET"
+                    "Target"        "ATTACKER"
                 }
             }
 
@@ -203,7 +203,7 @@
                 "RemoveModifier"
                 {
                     "ModifierName"  "modifier_night_elf_windwalk"
-                    "Target"        "TARGET"
+                    "Target"        "UNIT"
                 }
             }
         }

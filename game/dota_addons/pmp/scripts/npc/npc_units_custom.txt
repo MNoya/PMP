@@ -633,8 +633,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "20000"
-	    "VisionNighttimeRange"      "20000"
+	    "VisionDaytimeRange"        "10000"
+	    "VisionNighttimeRange"      "10000"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -702,7 +702,7 @@
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
 	    "AttackRate"                "2.5"
 	    "AttackAnimationPoint"      "0.3"
-	    "AttackAcquisitionRange"    "1000"
+	    "AttackAcquisitionRange"    "500"
 	    "AttackRange"               "150"
 	    
 	    // Bounty
@@ -715,7 +715,7 @@
 	    // Movement
 	    //----------------------------------------------------------------
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
-	    "MovementSpeed"             "270"
+	    "MovementSpeed"             "300"
 	    "MovementTurnRate"          "0.6"
 	    
 	    // Status
@@ -740,6 +740,10 @@
 	    
 	    // Creature Data
 	    //----------------------------------------------------------------
+	    "Creature"
+	    {
+	        "DisableResistance" "100"
+	    }
 	}
 	"dummy_unit"
 	{
@@ -1539,8 +1543,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "20000"
-	    "VisionNighttimeRange"      "20000"
+	    "VisionDaytimeRange"        "10000"
+	    "VisionNighttimeRange"      "10000"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -2130,8 +2134,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "20000"
-	    "VisionNighttimeRange"      "20000"
+	    "VisionDaytimeRange"        "10000"
+	    "VisionNighttimeRange"      "10000"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -2732,8 +2736,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "20000"
-	    "VisionNighttimeRange"      "20000"
+	    "VisionDaytimeRange"        "10000"
+	    "VisionNighttimeRange"      "10000"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -2877,8 +2881,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "800"
-	    "VisionNighttimeRange"      "800"
+	    "VisionDaytimeRange"        "1800"
+	    "VisionNighttimeRange"      "1800"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -3455,8 +3459,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "20000"
-	    "VisionNighttimeRange"      "20000"
+	    "VisionDaytimeRange"        "10000"
+	    "VisionNighttimeRange"      "10000"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -4144,8 +4148,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "20000"
-	    "VisionNighttimeRange"      "20000"
+	    "VisionDaytimeRange"        "10000"
+	    "VisionNighttimeRange"      "10000"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -4809,8 +4813,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "20000"
-	    "VisionNighttimeRange"      "20000"
+	    "VisionDaytimeRange"        "10000"
+	    "VisionNighttimeRange"      "10000"
 	    
 	    // Team
 	    //----------------------------------------------------------------
@@ -5393,8 +5397,8 @@
 	    
 	    // Vision
 	    //----------------------------------------------------------------
-	    "VisionDaytimeRange"        "20000"
-	    "VisionNighttimeRange"      "20000"
+	    "VisionDaytimeRange"        "10000"
+	    "VisionNighttimeRange"      "10000"
 	    
 	    // Team
 	    //----------------------------------------------------------------

@@ -523,7 +523,6 @@ function PMP:OnPlayerPickHero(keys)
             local unit = CreateUnitByName(race, center_position, true, hero, hero, hero:GetTeamNumber())
             unit:SetOwner(hero)
             unit:SetControllableByPlayer(playerID, true)
-            unit:AddNewModifier(unit, nil, "modifier_movespeed_cap", {})
             FindClearSpaceForUnit(unit, center_position, true)
             ModifyFoodUsed(playerID, 1)
             table.insert(hero.units, unit)
@@ -569,6 +568,8 @@ function PMP:OnNPCSpawned(keys)
     -- Ignore default gold bounty
     npc:SetMaximumGoldBounty(0)
     npc:SetMinimumGoldBounty(0)
+
+    npc:AddNewModifier(npc, nil, "modifier_movespeed_cap", {})
 end
 
 function PMP:OnHeroInGame(hero)
@@ -753,6 +754,11 @@ function PMP:OnEntityKilled( event )
     local attacker_playerID = attacker and attacker:GetPlayerOwnerID()
     local attacker_teamNumber = attacker and attacker:GetTeamNumber()
     local attacker_hero = attacker_playerID and PlayerResource:GetSelectedHeroEntity(attacker_playerID)
+
+    -- Boss killed
+    if IsBoss(killed) then
+        SendBossSlain(attacker_playerID)
+    end
 
     -- Garage killed
     if IsCityCenter(killed) then
@@ -1003,21 +1009,17 @@ function PMP:OnPlayerSelectedEntities( event )
 end
 
 function PMP:SpawnBoss()
+    if IsValidAlive(GameRules.boss) then GameRules.boss:ForceKill(true) end
+
     local spawnEnt = Entities:FindByName(nil, "boss_spawn_point")
     local position = spawnEnt:GetAbsOrigin()
     local boss = CreateUnitByName("nian_boss", position, true, nil, nil, DOTA_TEAM_NEUTRALS)
+    GameRules.boss = boss
     
     boss:StartGesture(ACT_DOTA_AREA_DENY)
     boss:SetAngles(0,45,0)
 
-    boss.roamPoints = Entities:FindAllByName("boss_roam_point")
-
-    Timers:CreateTimer(1, function()
-        for i=0,DOTA_TEAM_COUNT do
-            AddFOWViewer ( i, boss:GetAbsOrigin(), 1000, 1.1, false)
-        end
-        return 1
-    end)
+    BossAI:Start(boss)
 
     GameRules.Boss = boss
     print("[PMP] Boss Active")

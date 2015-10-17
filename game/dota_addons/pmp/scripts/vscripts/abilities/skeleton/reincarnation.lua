@@ -32,6 +32,10 @@ function ReincarnationCheck( event )
             local duration = 2
             ability:ApplyDataDrivenModifier(caster, caster, "modifier_reincarnating", {duration=duration})
 
+            if caster:HasModifier("modifier_hide") then
+                unit:RemoveModifierByName("modifier_hide")
+            end
+
             local particleName = "particles/custom/skeleton/reincarnate_explode.vpcf"
             ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, caster)
 

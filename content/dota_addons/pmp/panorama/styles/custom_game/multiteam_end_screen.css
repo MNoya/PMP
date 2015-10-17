@@ -7,6 +7,182 @@
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000FF ), color-stop( 0.12, #000000ff ), color-stop( 0.5, #00000022 ), to( #00000000 ) );
 }
 
+////////////////
+
+@define TotalLength: 20s;
+@define TimingFunc: linear;
+@define IterationCount: 10;
+@define AnimationDelay: 0s;
+
+#CreditContainer
+{
+    width: 300px;
+    height: 100%;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+#CreditTitle
+{
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #000000;
+    margin-left: 40px;
+}
+
+.Credits
+{
+    font-size: 40px;
+    color: white;
+    vertical-align: bottom;
+    flow-children: down;
+    animation-name: ende;
+    animation-delay: AnimationDelay;
+    animation-duration: TotalLength;
+    animation-timing-function: TimingFunc;
+    animation-iteration-count: IterationCount;  
+}
+
+@keyframes 'ende'
+{
+  0%
+  {
+    transform: translateX( 0px ) translateY( 0px );
+    transform: rotateZ( -32deg ) rotateX( 30deg );
+    transform: translate3d( 0px, 600px, 0px );
+  }
+
+  100%
+  {
+    transform: translateX( 0px ) translateY( -1000px );
+  }
+}
+
+#DevCredits
+{
+    flow-children: down;
+    text-align: center;
+}
+
+#DevTitle
+{
+    font-size: 45px;
+    margin-left: 38px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#DevText
+{
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.ActorText
+{
+    font-size: 20px;
+    margin-top: 6px;
+    margin-left: 10px;
+    color: white;
+}
+
+#VoiceActorTitle
+{
+    font-size: 40px;
+    margin-left: 25px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#VoiceCredits
+{
+    margin-top: 20px;
+    margin-left: 10px;
+    flow-children: down;
+}
+
+#ArtCredits
+{
+    margin-top: 20px;
+    margin-left: 10px;
+    flow-children: down;
+}
+
+#ArtistTitle
+{
+    width: 250px;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#ArtistText
+{
+    width: 250px;
+    margin-top: 12px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+
+#SpecialCredits
+{
+    flow-children: down;
+}
+
+#SpecialTitle
+{
+    margin-top: 20px;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#SpecialText
+{
+    width: 250px;
+    margin-top: 12px;
+    margin-left: 5px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.VoiceActor
+{
+    flow-children: right;
+    margin-left: 45px;
+}
+
+.Devs
+{
+    flow-children: right;
+}
+
+#Hammer
+{
+    width:70px; 
+    height:65px;
+    background-size: 100% 100%;
+}
+
+.ActorIcon
+{
+    background-size: 100% 100%;
+}
+
+////////////////
+
+
 #VictoryRow
 {
 	flow-children: right;

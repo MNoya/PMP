@@ -31,5 +31,36 @@
 				<Label text="#CustomEndScreenClose" />
 			</Button>
 		</Panel>
+
+        <Panel id="CreditContainer">
+            <Label id="CreditTitle" text="Credits" />
+            <Panel class="Credits">
+                <Panel id="DevCredits">
+                    <Label id="DevTitle" text="Developers"/>
+                    <Panel class="Devs">
+                        <Image id="Rapier" src="file://{images}/custom_game/rapier.png" /><Label id="DevText" text="Baumi &amp; Noya"/><Image id="Hammer" src="file://{images}/custom_game/hom.png" />
+                    </Panel>
+                </Panel>
+                <Panel id="VoiceCredits">
+                    <Label id="VoiceActorTitle" text="Voice Actors"/>
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_undead.png" /><Label class="ActorText" text="Pyrion Flax"/></Panel>
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_blood_elf.png" /><Label class="ActorText" text="ODPixel"/></Panel>
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_peon.png" /><Label class="ActorText" text="KotlGuy"/></Panel>
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_skeleton.png" /><Label class="ActorText" text="Frej"/></Panel>
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_treant.png" /><Label class="ActorText" text="Baumi"/></Panel>
+                    <!--<Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_human.png" /><Label class="ActorText" text="VoiceHuman"/></Panel>
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_goblin.png" /><Label class="ActorText" text="VoiceGoblin"/></Panel>
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_night_elf.png" /><Label class="ActorText" text="VoiceElf"/></Panel>-->
+                </Panel>
+                <!--<Panel id="ArtCredits">
+                    <Label id="ArtistTitle" text="Workshop Art"/>
+                    <Label id="ArtistText" text="[S]teamhat"/>
+                </Panel>-->
+                <Panel id="SpecialCredits">
+                    <Label id="SpecialTitle" text="Special Thanks"/>
+                    <Label id="SpecialText" text="#special_thanks"/>
+                </Panel>
+            </Panel>
+        </Panel>
 	</Panel>
 </root>

@@ -4,7 +4,8 @@ CHEAT_CODES = {
     ["pimp"]        = function(...) PMP:SetUpgrade(...) end,    -- upgrade [weapon/helm/armor/wings/health/critical_strike/stun_hit/poisoned_weapons/pulverize/dodge/spiked_armor] [level]
     ["reset"]       = function(...) PMP:ResetAllUpgrades(...) end,
     ["freeze"]      = function(...) PMP:Freeze(...) end,
-    ["gg"]          = function(...) PMP:GG(...) end
+    ["gg"]          = function(...) PMP:GG(...) end,
+    ["boss"]        = function(...) PMP:SpawnBoss(...) end,
 }
 
 PLAYER_COMMANDS = {
@@ -265,7 +266,7 @@ victoryAnimDurations =
     ["night_elf"]   = 150,
     ["blood_elf"]   = 190,
     ["goblin"]  = 30,
-    ["treant"]  = 55,
+    ["treant"]  = 150,
 }
 
 function PMP:DoMichaelBayEffects(winners, losers)

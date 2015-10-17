@@ -121,6 +121,20 @@
 	                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK" "1"
 	            }      
 	        }
+	
+	        "modifier_roaming"
+	        {
+	            "IsHidden"            "0"
+	            "TextureName"         "boss_roam"
+	
+	            "EffectName"          "particles/generic_gameplay/rune_haste_owner.vpcf"
+	            "EffectAttachType"    "follow_origin"
+	
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE" "500" 
+	            }
+	        }
 		}
 	}
 	/////////////////////////////
@@ -1121,7 +1135,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "melee_damage_return" "20 30 40 50 65"
+	            "damage_return" "20 30 40 50 65"
 	        }
 	    }
 	
@@ -1163,7 +1177,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "melee_damage_return" "20 30 40 50 65"
+	            "damage_return" "20 30 40 50 65"
 	        }
 	    }
 	
@@ -1205,7 +1219,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "melee_damage_return" "20 30 40 50 65"
+	            "damage_return" "20 30 40 50 65"
 	        }
 	    }
 	
@@ -1247,7 +1261,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "melee_damage_return" "20 30 40 50 65"
+	            "damage_return" "20 30 40 50 65"
 	        }
 	    }
 	
@@ -1289,7 +1303,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "melee_damage_return" "20 30 40 50 65"
+	            "damage_return" "20 30 40 50 65"
 	        }
 	    }
 	

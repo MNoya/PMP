@@ -10,7 +10,7 @@
     "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
         
     "AbilityCastRange"          "600"
-    "AbilityCooldown"           "30"
+    "AbilityCooldown"           "60"
     "AbilityManaCost"           "0"
 
     "AbilitySpecial"

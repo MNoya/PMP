@@ -162,6 +162,12 @@
 	    "override_hero"             "npc_dota_hero_dragon_knight"
 	    "Race"                      "human"
 	    
+	    "SoundSet"                  ""
+	    "GameSoundsFile"            ""
+	    "IdleSoundLoop"             ""
+	    "VoiceFile"                 ""
+	    "HeroSelectSoundEffect"     "human.Pick"
+	
 	    // Abilities
 	    //----------------------------------------------------------------
 	    "AbilityLayout"             "4"
@@ -310,6 +316,12 @@
 	    "override_hero"             "npc_dota_hero_axe"
 	    "Race"                      "peon"
 	    "FormationRank"             "2"
+	
+	    "SoundSet"                  ""
+	    "GameSoundsFile"            ""
+	    "IdleSoundLoop"             ""
+	    "VoiceFile"                 ""
+	    "HeroSelectSoundEffect"     "orc.Pick"
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -466,6 +478,12 @@
 	    "override_hero"             "npc_dota_hero_treant"
 	    "Race"                      "treant"
 	    
+	    "SoundSet"                  ""
+	    "GameSoundsFile"            ""
+	    "IdleSoundLoop"             ""
+	    "VoiceFile"                 ""
+	    "HeroSelectSoundEffect"     "treant.Pick"
+	
 	    // Abilities
 	    //----------------------------------------------------------------
 	    "AbilityLayout"             "4"

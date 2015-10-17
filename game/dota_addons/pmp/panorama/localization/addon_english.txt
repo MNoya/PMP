@@ -43,5 +43,9 @@
 		"error_not_enough_lumber"				"Not Enough Lumber"	
 		"error_no_buyers_found"					"No buyers in range"
 		"error_cant_target_level6"				"Can't target creeps over level 5"
+
+		// Credits
+
+		"special_thanks"	"BMD Perry\njimmydorry SinZ\nggthb DoctorGester\nXavice Tomcrash GuessWho\nand all the MNI Crew!"
 	}
 }

@@ -22,7 +22,7 @@ end
 
 function LinkThink( event )
     local target = event.target
-    local radius = 300
+    local radius = 500
 
     local resultGroup = GetTreantGroup(target, radius)
     local treantCount = resultGroup.unitCount
@@ -41,7 +41,7 @@ end
 
 function LinkingCheck( event )
     local target = event.target
-    local radius = 300
+    local radius = 500
 
     local treeOrigin = FindClosestTreant(target, radius)
 
@@ -142,7 +142,7 @@ function BreakLink( event )
 
     local caster = event.caster
     local target = event.target
-    local radius = 300
+    local radius = 500
 
     local modifierName = "modifier_forest_link"
     target:RemoveModifierByName(modifierName)
@@ -152,7 +152,7 @@ end
 function CheckParticleLinks( event )
     local caster = event.caster
     local target = caster.linkTarget
-    if caster.particleLink and (not IsValidAlive(target) or caster:GetRangeToUnit(target) > 300) then
+    if caster.particleLink and (not IsValidAlive(target) or caster:GetRangeToUnit(target) > 500) then
         ParticleManager:DestroyParticle(caster.particleLink, false)
         caster.particleLink = nil
 

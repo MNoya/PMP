@@ -6,6 +6,12 @@
     "override_hero"             "npc_dota_hero_axe"
     "Race"                      "peon"
     "FormationRank"             "2"
+
+    "SoundSet"                  ""
+    "GameSoundsFile"            ""
+    "IdleSoundLoop"             ""
+    "VoiceFile"                 ""
+    "HeroSelectSoundEffect"     "orc.Pick"
     
     // Abilities
     //----------------------------------------------------------------

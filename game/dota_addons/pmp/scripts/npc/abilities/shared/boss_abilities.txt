@@ -24,11 +24,11 @@
     "AbilityCastAnimation"          "ACT_DOTA_RATTLETRAP_HOOKSHOT_START"
 
     "AbilityCastRange"              "700"
-    "AbilityCastPoint"              "1.5"
-    "AbilityCooldown"               "10.0"
+    "AbilityCastPoint"              "1.8"
+    "AbilityCooldown"               "30.0"
 
     "AbilityManaCost"               "0"
-    "AbilityDamage"                 "200"
+    "AbilityDamage"                 "100"
 
     "precache"
     {
@@ -132,12 +132,12 @@
                 "AttachEffect"
                 {
                     "EffectName"        "particles/econ/items/magnataur/shock_of_the_anvil/magnataur_shockanvil_cast.vpcf"
-                    "EffectAttachType"  "attach_attack1"
+                    "EffectAttachType"  "attach_mouthbase"
                     "Target"            "CASTER"
                     "ControlPointEntities"
                     {
-                        "CASTER"        "attach_attack1"
-                        "CASTER"        "attach_attack1"
+                        "CASTER"        "attach_mouthbase"
+                        "CASTER"        "attach_mouthbase"
                     }
                 }
             }
@@ -220,6 +220,7 @@
             "States"
             {
                 "MODIFIER_STATE_MAGIC_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
             }
 
             "OnCreated"
@@ -228,6 +229,16 @@
                 {
                     "ScriptFile"    "abilities/boss.lua"
                     "Function"      "ApplyStacks"
+                }
+            }
+
+            "OnTakeDamage"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/boss.lua"
+                    "Function"      "BossDamaged"
+                    "Damage"        "%attack_damage"
                 }
             }
 
@@ -251,4 +262,14 @@
             }
         }
     }
+}
+
+// Added on Roam Mode
+"boss_roam"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "boss_roam"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 }

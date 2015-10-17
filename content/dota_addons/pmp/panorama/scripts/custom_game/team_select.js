@@ -495,7 +495,6 @@ function ConstructTeamPanels () {
     else{
     	$('#PlayersPerTeam').DeleteAsync(0)
     	$('#TeamRow').DeleteAsync(0)
-    	$('#AdvancedOptions').DeleteAsync(0)
     	$('#Positions').DeleteAsync(0)
 
     	// Construct the panels for each team

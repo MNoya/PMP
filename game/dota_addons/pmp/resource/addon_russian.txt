@@ -1,0 +1,1307 @@
+"lang"
+{
+    "Language"      "Russian"
+    "Tokens"
+    {       
+        "addon_game_name"           "Pimp My Peon"
+
+
+        // ******************** HEROES ********************
+        "npc_dota_hero_axe"                                                               "Орк"
+        "npc_dota_hero_undying"                                                           "Мертвяк"
+        "npc_dota_hero_silencer"                                                          "Кровавый Эльф"
+        "npc_dota_hero_meepo"                                                             "Гоблин"
+        "npc_dota_hero_dragon_knight"                                                     "Человек"
+        "npc_dota_hero_drow_ranger"                                                       "Ночной Эльф"
+        "npc_dota_hero_skeleton_king"                                                     "Скелет"
+        "npc_dota_hero_treant"                                                            "Энт"
+
+        // ******************** UNITS ********************
+        "peon"                                                                            "Раб"
+        "peon_leader"                                                                     "Рабовладелец"
+        "super_peon"                                                                      "Супер Раб"
+        "peon_garage"                                                                     "Бараки"
+        "peon_pimpery"                                                                    "Центр Прокачки"
+        "peon_tower"                                                                      "Башня Рабов"
+        "peon_ghost"                                                                      "Призрак раба"
+
+        "undead"                                                                          "Мертвяк"
+        "undead_leader"                                                                   "Смертоносная Банши"
+        "super_undead"                                                                    "Супер Мертвяк"
+        "undead_garage"                                                                   "Мавзолей"
+        "undead_pimpery"                                                                  "Центр Прокачки"
+        "undead_tower"                                                                    "Башня Нежити"
+        "undead_ghost"                                                                    "Призрак Мертвяка"
+
+        "human"                                                                           "Человек"
+        "human_leader"                                                                    "Архимаг"
+        "super_human"                                                                     "Супер Людей"
+        "human_garage"                                                                    "Казармы"
+        "human_pimpery"                                                                   "Центр Прокачки"
+        "human_tower"                                                                     "Башня Людей"
+        "human_ghost"                                                                     "Призрак"
+
+        "blood_elf"                                                                       "Кровавый Эльф"
+        "blood_elf_leader"                                                                "Лидер Кровавых Эльфов"
+        "super_blood_elf"                                                                 "Супер Кровавых Эльфов"
+        "blood_elf_garage"                                                                "Эльфийские Казармы"
+        "blood_elf_pimpery"                                                               "Центр Прокачки"
+        "blood_elf_tower"                                                                 "Башня Кровавых Эльфов"
+        "blood_elf_ghost"                                                                 "Призрак Кровавого Эльфа"
+
+        "goblin"                                                                          "Гоблин"
+        "goblin_leader"                                                                   "Гоблак"
+        "super_goblin"                                                                    "Супер Гоблин"
+        "goblin_garage"                                                                   "Норы Гоблинов"
+        "goblin_pimpery"                                                                  "Центр Прокачки"
+        "goblin_tower"                                                                    "Башенка Гоблинов"
+        "goblin_ghost"                                                                    "Призрак Гоблина"
+
+        "night_elf"                                                                       "Ночной Эльф"
+        "night_elf_leader"                                                                "Лидер Ночных Эльфов"
+        "super_night_elf"                                                                 "Супер ночных эльфов"
+        "night_elf_garage"                                                                "Казармы ночных эльфов"
+        "night_elf_pimpery"                                                               "Центр прокачки"
+        "night_elf_tower"                                                                 "Башня ночных эльфов"
+        "night_elf_ghost"                                                                 "Призрак ночного эльфа"
+
+        "skeleton"                                                                        "Скелет"
+        "skeleton_leader"                                                                 "Лидер Скелетов"
+        "super_skeleton"                                                                  "Супер Скелет"
+        "skeleton_pimpery"                                                                "Центр прокачки"
+        "skeleton_tower"                                                                  "Костяная башня"
+        "skeleton_ghost"                                                                  "Призрак костей"
+        "skeleton_shade"                                                                  "Тень"
+
+        "treant"                                                                          "Энт"
+        "treant_leader"                                                                   "Энт Лидер"
+        "super_treant"                                                                    "Супер Энт"
+        "treant_garage"                                                                   "Семя Энтов"
+        "treant_pimpery"                                                                  "Центр Прокачки"
+        "treant_tower"                                                                    "Башня Энтов"
+        "treant_ghost"                                                                    "Призрак Энта"
+
+        "barricade"                                                                       "Баррикада"
+        "nian_boss"                                                                       "Босс"
+        "trader"                                                                          "Торговец"
+
+        // ******************** ABILITY MODIFIERS ********************
+        "DOTA_Tooltip_modifier_bloodlust"                                                 "Жажда Крови"
+        "DOTA_Tooltip_modifier_bloodlust_Description"                                     "Скорость атаки и передвижения этого юнита увеличены"
+
+        "DOTA_Tooltip_modifier_far_sight_vision"                                          "Дальнее Зрение"
+        "DOTA_Tooltip_modifier_far_sight_vision_Description"                              "Раскрыты способностью Дальнее Зрение"
+
+        "DOTA_Tooltip_modifier_stun_hit_debuff"                                           "Оглушен"
+        "DOTA_Tooltip_modifier_stun_hit_debuff_Description"                               ""
+
+        "DOTA_Tooltip_modifier_poisoned_weapons_debuff"                                   "Отравлен"
+        "DOTA_Tooltip_modifier_poisoned_weapons_debuff_Description"                       ""
+
+        "DOTA_Tooltip_modifier_super_unit_charges"                                        "Заряды Super Unit"
+        "DOTA_Tooltip_modifier_super_unit_charges_Description"                            ""
+
+        "DOTA_Tooltip_modifier_sleep"                                                     "Спит"
+        "DOTA_Tooltip_modifier_sleep_Description"                                         ""
+
+        "DOTA_Tooltip_modifier_undead_curse"                                              "Проклят"
+        "DOTA_Tooltip_modifier_undead_curse_Description"                                  ""
+
+        "DOTA_Tooltip_modifier_possession_target"                                         "Одержим"
+        "DOTA_Tooltip_modifier_possession_target_Description"                             ""
+
+        "DOTA_Tooltip_modifier_possession_caster"                                         "Применяется Одержимость"
+        "DOTA_Tooltip_modifier_possession_caster_Description"                             ""
+
+        "DOTA_Tooltip_modifier_human_slow"                                                "Замедлен"
+        "DOTA_Tooltip_modifier_human_slow_Description"                                    ""
+
+        "DOTA_Tooltip_modifier_peon_frenzy_stacks"                                        "Ярость"
+        "DOTA_Tooltip_modifier_peon_frenzy_stacks_Description"                            "Дополнительно имеет %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки и передвижения"
+
+        "DOTA_Tooltip_modifier_inner_fire"                                                "Внутренний Огонь"
+        "DOTA_Tooltip_modifier_inner_fire_Description"                                    ""
+
+        "DOTA_Tooltip_modifier_flame_strike_first_burn"                                   "Горит"
+        "DOTA_Tooltip_modifier_flame_strike_first_burn_Description"                       ""
+
+        "DOTA_Tooltip_modifier_flame_strike_second_burn"                                  "Горит"
+        "DOTA_Tooltip_modifier_flame_strike_second_burn_Description"                      ""
+
+        "DOTA_Tooltip_modifier_blood_pool_regen"                                          "Регенерация от Лужи Крови"
+        "DOTA_Tooltip_modifier_blood_pool_regen_Description"                              "Восстанавливает %fMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% здоровья в секунду"
+
+        "DOTA_Tooltip_modifier_reincarnation_buff"                                        "Аура перерождения"
+        "DOTA_Tooltip_modifier_reincarnation_buff_Description"                            "Этот юнит имеет двойной шанс возродиться"
+
+        // ******************** ITEM MODIFIERS ********************
+        "DOTA_Tooltip_modifier_invulnerability_layer"                                     "Неуязвимость"
+        "DOTA_Tooltip_modifier_invulnerability_layer_Description"                         "Количество целых башен"
+
+        // Weapons
+        "DOTA_Tooltip_modifier_weapon1"                                                   "Оружие 1"
+        "DOTA_Tooltip_modifier_weapon1_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon2"                                                   "Оружие 2"
+        "DOTA_Tooltip_modifier_weapon2_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon3"                                                   "Оружие 3"
+        "DOTA_Tooltip_modifier_weapon3_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon4"                                                   "Оружие 4"
+        "DOTA_Tooltip_modifier_weapon4_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon5"                                                   "Оружие 5"
+        "DOTA_Tooltip_modifier_weapon5_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon6"                                                   "Оружие 6"
+        "DOTA_Tooltip_modifier_weapon6_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon7"                                                   "Оружие 7"
+        "DOTA_Tooltip_modifier_weapon7_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon8"                                                   "Оружие 8"
+        "DOTA_Tooltip_modifier_weapon8_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon9"                                                   "Оружие 9"
+        "DOTA_Tooltip_modifier_weapon9_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon10"                                                  "Оружие 10"
+        "DOTA_Tooltip_modifier_weapon10_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon11"                                                  "Оружие 11"
+        "DOTA_Tooltip_modifier_weapon11_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon12"                                                  "Оружие 12"
+        "DOTA_Tooltip_modifier_weapon12_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon13"                                                  "Оружие 13"
+        "DOTA_Tooltip_modifier_weapon13_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon14"                                                  "Оружие 14"
+        "DOTA_Tooltip_modifier_weapon14_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon15"                                                  "Оружие 15"
+        "DOTA_Tooltip_modifier_weapon15_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon16"                                                  "Оружие 16"
+        "DOTA_Tooltip_modifier_weapon16_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon17"                                                  "Оружие 17"
+        "DOTA_Tooltip_modifier_weapon17_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon18"                                                  "Оружие 18"
+        "DOTA_Tooltip_modifier_weapon18_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon19"                                                  "Оружие 19"
+        "DOTA_Tooltip_modifier_weapon19_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon20"                                                  "Оружие 20"
+        "DOTA_Tooltip_modifier_weapon20_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon21"                                                  "Оружие 21"
+        "DOTA_Tooltip_modifier_weapon21_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon22"                                                  "Оружие 22"
+        "DOTA_Tooltip_modifier_weapon22_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon23"                                                  "Оружие 23"
+        "DOTA_Tooltip_modifier_weapon23_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon24"                                                  "Оружие 24"
+        "DOTA_Tooltip_modifier_weapon24_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon25"                                                  "Оружие 25"
+        "DOTA_Tooltip_modifier_weapon25_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon26"                                                  "Оружие 26"
+        "DOTA_Tooltip_modifier_weapon26_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon27"                                                  "Оружие 27"
+        "DOTA_Tooltip_modifier_weapon27_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon28"                                                  "Оружие 28"
+        "DOTA_Tooltip_modifier_weapon28_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon29"                                                  "Оружие 29"
+        "DOTA_Tooltip_modifier_weapon29_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        "DOTA_Tooltip_modifier_weapon30"                                                  "Оружие 30"
+        "DOTA_Tooltip_modifier_weapon30_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
+        // Helm
+        "DOTA_Tooltip_modifier_helm1"                                                     "Шлем 1"
+        "DOTA_Tooltip_modifier_helm1_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm2"                                                     "Шлем 2"
+        "DOTA_Tooltip_modifier_helm2_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm3"                                                     "Шлем 3"
+        "DOTA_Tooltip_modifier_helm3_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm4"                                                     "Шлем 4"
+        "DOTA_Tooltip_modifier_helm4_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm5"                                                     "Шлем 5"
+        "DOTA_Tooltip_modifier_helm5_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm6"                                                     "Шлем 6"
+        "DOTA_Tooltip_modifier_helm6_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm7"                                                     "Шлем 7"
+        "DOTA_Tooltip_modifier_helm7_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm8"                                                     "Шлем 8"
+        "DOTA_Tooltip_modifier_helm8_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm9"                                                     "Шлем 9"
+        "DOTA_Tooltip_modifier_helm9_Description"                                         "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm10"                                                    "Шлем 10"
+        "DOTA_Tooltip_modifier_helm10_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm11"                                                    "Шлем 11"
+        "DOTA_Tooltip_modifier_helm11_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm12"                                                    "Шлем 12"
+        "DOTA_Tooltip_modifier_helm12_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm13"                                                    "Шлем 13"
+        "DOTA_Tooltip_modifier_helm13_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm14"                                                    "Шлем 14"
+        "DOTA_Tooltip_modifier_helm14_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_helm15"                                                    "Шлем 15"
+        "DOTA_Tooltip_modifier_helm15_Description"                                        "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        // Shield
+        "DOTA_Tooltip_modifier_shield1"                                                   "Щит 1"
+        "DOTA_Tooltip_modifier_shield1_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield2"                                                   "Щит 2"
+        "DOTA_Tooltip_modifier_shield2_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield3"                                                   "Щит 3"
+        "DOTA_Tooltip_modifier_shield3_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield4"                                                   "Щит 4"
+        "DOTA_Tooltip_modifier_shield4_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield5"                                                   "Щит 5"
+        "DOTA_Tooltip_modifier_shield5_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield6"                                                   "Щит 6"
+        "DOTA_Tooltip_modifier_shield6_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield7"                                                   "Щит 7"
+        "DOTA_Tooltip_modifier_shield7_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield8"                                                   "Щит 8"
+        "DOTA_Tooltip_modifier_shield8_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield9"                                                   "Щит 9"
+        "DOTA_Tooltip_modifier_shield9_Description"                                       "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield10"                                                  "Щит 10"
+        "DOTA_Tooltip_modifier_shield10_Description"                                      "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        "DOTA_Tooltip_modifier_shield11"                                                  "Щит 11"
+        "DOTA_Tooltip_modifier_shield11_Description"                                      "+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% брони"
+
+        // Wings
+        "DOTA_Tooltip_modifier_wings1"                                                    "Крылья 1"
+        "DOTA_Tooltip_modifier_wings1_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки"
+
+        "DOTA_Tooltip_modifier_wings2"                                                    "Крылья 2"
+        "DOTA_Tooltip_modifier_wings2_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки"
+
+        "DOTA_Tooltip_modifier_wings3"                                                    "Крылья 3"
+        "DOTA_Tooltip_modifier_wings3_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки"
+
+        "DOTA_Tooltip_modifier_wings4"                                                    "Крылья 4"
+        "DOTA_Tooltip_modifier_wings4_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки"
+
+        "DOTA_Tooltip_modifier_wings5"                                                    "Крылья 5"
+        "DOTA_Tooltip_modifier_wings5_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки"
+
+        "DOTA_Tooltip_modifier_wings6"                                                    "Крылья 6"
+        "DOTA_Tooltip_modifier_wings6_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки"
+
+        "DOTA_Tooltip_modifier_wings7"                                                    "Крылья 7"
+        "DOTA_Tooltip_modifier_wings7_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки"
+
+        "DOTA_Tooltip_modifier_wings8"                                                    "Крылья 8"
+        "DOTA_Tooltip_modifier_wings8_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% скорости передвижения\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% скорости атаки"
+
+        // ******************** ABILITIES ********************
+        "DOTA_Tooltip_ability_trade_gold"                                                 "Купить 50 золота"
+        "DOTA_Tooltip_ability_trade_gold_Description"                                     "Обменять <font color='#006411'>100 дерева</font> на <font color='#fea500'>50 золота</font>\n\n<font color='#64cf65'>Покупатель должен быть рядом</font>."
+
+        "DOTA_Tooltip_ability_trade_lumber"                                               "Купить 50 дерева"
+        "DOTA_Tooltip_ability_trade_lumber_Description"                                   "Обменять <font color='#fea500'>100 золота</font> на <font color='#006411'>50 дерева</font>\n\n<font color='#64cf65'>Покупатель должен быть рядом</font>."
+        "DOTA_Tooltip_ability_trade_lumber_Note0"                                         "Покупатель должен быть рядом"
+
+        "DOTA_Tooltip_ability_goblin_racial"                                               "Жадный Гоблин"
+        "DOTA_Tooltip_ability_goblin_racial_Description"                                   "<font color='#00ff00'>Расовая</font>\nПолучает дополнительное золото и дерево за убийства"
+        "DOTA_Tooltip_ability_goblin_racial_extra_bounty"                                  "ДОПОЛНИТЕЛЬНАЯ НАГРАДА:"
+
+        "DOTA_Tooltip_ability_peon_racial"                                                "Ярость Орков"
+        "DOTA_Tooltip_ability_peon_racial_Description"                                    "<font color='#00ff00'>Расовая</font>\nУвеличивает скорость атаки и передвижения после каждой атаки"
+        "DOTA_Tooltip_ability_peon_racial_speed_per_hit"                                  "СКОРОСТЬ ЗА АТАКУ:"
+        "DOTA_Tooltip_ability_peon_racial_max_stacks"                                     "МАКСИМУМ СТАКОВ:"
+        "DOTA_Tooltip_ability_peon_racial_duration"                                       "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_peon_chain_lightning"                                       "Цепная молния"
+        "DOTA_Tooltip_ability_peon_chain_lightning_Description"                           "Поражает цель молнией, прыгающей на соседних врагов. Каждый прыжок наносит меньше урона."
+        "DOTA_Tooltip_ability_peon_chain_lightning_lightning_damage"                      "УРОН:"
+        "DOTA_Tooltip_ability_peon_chain_lightning_lightning_bounces"                     "КОЛИЧЕСТВО ПРЫЖКОВ:"
+        "DOTA_Tooltip_ability_peon_chain_lightning_bounce_range"                          "РАДИУС ПРЫЖКА:"
+        "DOTA_Tooltip_ability_peon_chain_lightning_lightning_decay"                       "УМЕНЬШЕНИЕ УРОНА:"
+
+        "DOTA_Tooltip_ability_peon_bloodlust"                                             "Жажда Крови"
+        "DOTA_Tooltip_ability_peon_bloodlust_Description"                                 "Увеличивает скорость атаки и передвижения союзника."
+        "DOTA_Tooltip_ability_peon_bloodlust_duration"                                    "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_peon_bloodlust_attack_speed_increase"                       "БОНУС СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_peon_bloodlust_movement_speed_increase"                     "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+
+        "DOTA_Tooltip_ability_peon_far_sight"                                             "Дальнее Зрение"
+        "DOTA_Tooltip_ability_peon_far_sight_Description"                                 "Открывает указанную область карты и обнаруживает невидмых юнитов в ней."
+        "DOTA_Tooltip_ability_peon_far_sight_reveal_radius"                               "ОБЛАСТЬ РАЗВЕДКИ:"
+        "DOTA_Tooltip_ability_peon_far_sight_duration"                                    "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_spawn_undead"                                               "Призыв Нежити"
+        "DOTA_Tooltip_ability_spawn_undead_Description"                                   ""
+
+        "DOTA_Tooltip_ability_undead_sleep"                                               "Сон"
+        "DOTA_Tooltip_ability_undead_sleep_Description"                                   "Усыпляет цель. Спящий юнит проснется, если его атаковать."
+        "DOTA_Tooltip_ability_undead_sleep_duration"                                      "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_undead_curse"                                               "Проклятие"
+        "DOTA_Tooltip_ability_undead_curse_Description"                                   "Проклинает цель, заставляя её промахиваться."
+        "DOTA_Tooltip_ability_undead_curse_duration"                                      "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_undead_curse_miss_chance"                                   "ШАНС ПРОМАХА:"
+
+        "DOTA_Tooltip_ability_undead_possession"                                          "Одержимость"
+        "DOTA_Tooltip_ability_undead_possession_Description"                              "Поглощает душу цели, забирая контроль над ней, ценой вашего тела.\nНе может быть использовано на героев или юнитов с уровнем больше 5."
+        "DOTA_Tooltip_ability_undead_possession_damage_increase_while_channeling"         "ПОСТЕПЕННОЕ УВЕЛИЧЕНИЕ УРОНА:"
+        "DOTA_Tooltip_ability_undead_possession_channel_range"                            "ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:"
+        "DOTA_Tooltip_ability_undead_possession_channel_duration"                         "CHANNEL ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_undead_possession_max_level"                                "МАКСИМАЛЬНЫЙ УРОВЕНЬ:"
+
+        "DOTA_Tooltip_ability_undead_racial"                                           "Воля Бессмертных"
+        "DOTA_Tooltip_ability_undead_racial_Description"                               "<font color='#00ff00'>Расовая</font>\nВорует здоровье с каждой атакой."
+        "DOTA_Tooltip_ability_undead_racial_lifesteal_percent"                         "ВАМПИРИЗМ:"
+
+        "DOTA_Tooltip_ability_spawn_peon"                                                 "Призыв Раба"
+        "DOTA_Tooltip_ability_spawn_peon_Description"                                     ""
+
+        "DOTA_Tooltip_ability_spawn_peon_leader"                                          "Призыв Рабовладельца"
+        "DOTA_Tooltip_ability_spawn_peon_leader_Description"                              "Каждые 3 минуты призывается рабовладелец с мощными поддерживающими способностями.\nСпособности рабовладельца:\n-Цепная Молния\n-Жажда Крови\n-Дальнее Зрение\n\n<b><font color='#00ff00'>Рабовладельцы не расходуют еду.</font></b>"
+
+        "DOTA_Tooltip_ability_summon_super_peon"                                          "Призвать Супер Раба"
+        "DOTA_Tooltip_ability_summon_super_peon_Description"                              "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_peon_duration"                                 "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_summon_super_peon_Note0"                                    "Используйте с умом!"
+
+        "DOTA_Tooltip_ability_summon_super_peon_empty"                                    "Призыв Супер-Раба"
+        "DOTA_Tooltip_ability_summon_super_peon_empty_Description"                        "Вы уже использовали всех своих Суперов."
+
+        "DOTA_Tooltip_ability_spawn_undead_leader"                                        "Призыв Лидера Нежити"
+        "DOTA_Tooltip_ability_spawn_undead_leader_Description"                            "Каждые 3 минуты призывается лидер с мощными поддерживающими способностями.\nСпособности лидера:\n-Проклятье\n-Сон\n-Одержимость\n\n<b><font color='#00ff00'>Лидеры не расходуют еду.</font></b>"
+
+        "DOTA_Tooltip_ability_summon_super_undead"                                        "Призыв Супера Нежити"
+        "DOTA_Tooltip_ability_summon_super_undead_Description"                            "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_undead_duration"                               "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_summon_super_undead_Note0"                                  "Используйте с умом!"
+
+        "DOTA_Tooltip_ability_summon_super_undead_empty"                                  "Призыв Супера Нежити"
+        "DOTA_Tooltip_ability_summon_super_undead_empty_Description"                      "Вы уже использовали всех своих Суперов."
+
+        "DOTA_Tooltip_ability_human_slow"                                                 "Замедление"
+        "DOTA_Tooltip_ability_human_slow_Description"                                     "Замедляет атаку и передвижение цели."
+        "DOTA_Tooltip_ability_human_slow_duration"                                        "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_human_slow_attack_speed"                                    "ЗАМЕДЛЕНИЕ АТАКИ:"
+        "DOTA_Tooltip_ability_human_slow_move_speed"                                      "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_human_slow_autocast_radius"                                 "РАДИУС ПРИМЕНЕИЯ:"
+
+        "DOTA_Tooltip_ability_human_polymorph"                                            "Полиморф"
+        "DOTA_Tooltip_ability_human_polymorph_Description"                                "Превращает цель в овцу."
+        "DOTA_Tooltip_ability_human_polymorph_duration"                                   "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_human_polymorph_movespeed"                                  "СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+
+        "DOTA_Tooltip_ability_human_mass_teleport"                                        "Массовая телепортация"
+        "DOTA_Tooltip_ability_human_mass_teleport_Description"                            "Телепортирует ближайшие войска к союзному юниту или зданию."
+        "DOTA_Tooltip_ability_human_mass_teleport_max_units_teleported"                   "МАКСИМАЛЬНОЕ ЧИСЛО ТЕЛЕПОРТИРУЕМЫХ:"
+        "DOTA_Tooltip_ability_human_mass_teleport_radius"                                 "РАДИУС:"
+        "DOTA_Tooltip_ability_human_mass_teleport_channel_time"                           "ВРЕМЯ ВЫПОЛНЕНИЯ:"
+
+        "DOTA_Tooltip_ability_human_racial"                                        "Сила Драконов"
+        "DOTA_Tooltip_ability_human_racial_Description"                            "<font color='#00ff00'>Расовая</font>\nДает шанс моментально уничтожить врага при атаке."
+        "DOTA_Tooltip_ability_human_racial_instakill_chance"                       "ШАНС УБИТЬ:"
+
+        "DOTA_Tooltip_ability_spawn_human"                                                "Призыв Людей"
+        "DOTA_Tooltip_ability_spawn_human_Description"                                    ""
+
+        "DOTA_Tooltip_ability_spawn_human_leader"                                         "Призыв Лидера Людей"
+        "DOTA_Tooltip_ability_spawn_human_leader_Description"                             "Каждые 3 минуты призывается лидер с мощными поддерживающими способностями.\nСпособности лидера:\n-Замедление\n-Полиморф\n-Массовая телепортация\n\n<b><font color='#00ff00'>Лидеры не расходуют еду.</font></b>"
+
+        "DOTA_Tooltip_ability_summon_super_human"                                         "Призвать Супера Людей"
+        "DOTA_Tooltip_ability_summon_super_human_Description"                             "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_human_duration"                                "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_summon_super_human_Note0"                                   "Используйте с умом!"
+
+        "DOTA_Tooltip_ability_summon_super_human_empty"                                   "Призвать Супера Людей"
+        "DOTA_Tooltip_ability_summon_super_human_empty_Description"                       "Вы уже использовали всех своих Суперов."
+
+        "DOTA_Tooltip_ability_blood_elf_heal"                                             "Лечение"
+        "DOTA_Tooltip_ability_blood_elf_heal_Description"                                 "Восстанавливает %heal% здоровья цели."
+        "DOTA_Tooltip_ability_blood_elf_heal_heal"                                        "ЗДОРОВЬЯ ВОССТАНОВЛЕНО:"
+        "DOTA_Tooltip_ability_blood_elf_heal_autocast_radius"                             "ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:"
+
+        "DOTA_Tooltip_ability_blood_elf_inner_fire"                                       "Душевное Пламя"
+        "DOTA_Tooltip_ability_blood_elf_inner_fire_Description"                           "Увеличивает урон и броню союзника."
+        "DOTA_Tooltip_ability_blood_elf_inner_fire_duration"                              "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_blood_elf_inner_fire_armor_bonus"                           "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_blood_elf_inner_fire_damage_bonus_pct"                      "БОНУС УРОНА:"
+        "DOTA_Tooltip_ability_blood_elf_inner_fire_autocast_radius"                       "РАДИУС ПРИМЕНЕНИЯ:"
+
+        "DOTA_Tooltip_ability_blood_elf_flame_strike"                                     "Огненный Столб"
+        "DOTA_Tooltip_ability_blood_elf_flame_strike_Description"                         "Создает столб огня, который наносит урон в указанной области."
+        "DOTA_Tooltip_ability_blood_elf_flame_strike_radius"                              "ОБЛАСТЬ ДЕЙСТВИЯ:"
+        "DOTA_Tooltip_ability_blood_elf_flame_strike_first_strike_dps"                    "УРОН В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_blood_elf_flame_strike_first_strike_duration"               "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_blood_elf_flame_strike_burn_dps"                            "УРОН ОТ ГОРЕНИЯ:"
+        "DOTA_Tooltip_ability_blood_elf_flame_strike_burn_duration"                       "ПРОДОЛЖИТЕЛЬНОСТЬ ГОРЕНИЯ:"
+        "DOTA_Tooltip_ability_blood_elf_flame_strike_delay"                               "ЗАДЕРЖКА:"
+
+        "DOTA_Tooltip_ability_blood_elf_racial"                                           "Лужа Крови"
+        "DOTA_Tooltip_ability_blood_elf_racial_Description"                               "<font color='#00ff00'>Расовая</font>\nКогда Кровавые Эльфы умирают, они оставляют кровавые лужи на земле. Сражающиеся в этих лужах союзники получают усиленную регенерацию здоровья."
+        "DOTA_Tooltip_ability_blood_elf_racial_heal_regen_pct"                            "%РЕГЕНЕРАЦИИ:"
+        "DOTA_Tooltip_ability_blood_elf_racial_radius"                                    "ОБЛАСТЬ ДЕЙСТВИЯ:"
+        "DOTA_Tooltip_ability_blood_elf_racial_duration"                                  "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_spawn_blood_elf"                                            "Призыв Кровавого Эльфа"
+        "DOTA_Tooltip_ability_spawn_blood_elf_Description"                                ""
+
+        "DOTA_Tooltip_ability_spawn_blood_elf_leader"                                     "Призыв Лидера Кровавых Эльфов"
+        "DOTA_Tooltip_ability_spawn_blood_elf_leader_Description"                         "Каждые 3 минуты призывается лидер с мощными поддерживающими способностями.\nСпособности лидера:\n-Лечение\n-Душевное Пламя\n-Огненный Столб\n\n<b><font color='#00ff00'>Лидеры не расходуют еду.</font></b>"
+
+        "DOTA_Tooltip_ability_summon_super_blood_elf"                                     "Призвать Супера Кровывх Эльфов"
+        "DOTA_Tooltip_ability_summon_super_blood_elf_Description"                         "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_blood_elf_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_summon_super_blood_elf_empty"                               "Призвать Супера Кровавых Эльфов"
+        "DOTA_Tooltip_ability_summon_super_blood_elf_empty_Description"                   "Вы уже использовали всех своих Суперов."
+
+        "DOTA_Tooltip_ability_goblin_healing_spray"                                       "Лечебный Туман"
+        "DOTA_Tooltip_ability_goblin_healing_spray_Description"                           "Распылить лечащее вещество, восстанавливающее здоровье союзников в указанной области."
+        "DOTA_Tooltip_ability_goblin_healing_spray_radius"                                "ОБЛАСТЬ ДЕЙСТВИЯ:"
+        "DOTA_Tooltip_ability_goblin_healing_spray_wave_duration"                         "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_goblin_healing_spray_wave_count"                            "КОЛИЧЕСТВО ВОЛН:"
+        "DOTA_Tooltip_ability_goblin_healing_spray_wave_heal"                             "ЛЕЧЕНИЕ ЗА ВОЛНУ:"
+        "DOTA_Tooltip_ability_goblin_healing_spray_wave_interval"                         "ИНТЕРВАЛ МЕЖДУ ВОЛНАМИ:"
+
+        "DOTA_Tooltip_ability_goblin_attack"                                              "Атака Гоблина"
+        "DOTA_Tooltip_ability_goblin_attack_Description"                                  "Лидер Гоблинов может атаковать, в отличие от других Лидеров."
+
+        "DOTA_Tooltip_ability_goblin_transmute"                                           "Трансмутация"
+        "DOTA_Tooltip_ability_goblin_transmute_Description"                               "Уничтожает цель, превращая её в золото."
+        "DOTA_Tooltip_ability_goblin_transmute_gold_bounty_multiplier"                    "УВЕЛИЧЕНИЕ НАГРАДЫ:"
+        "DOTA_Tooltip_ability_goblin_transmute_Note0"                                     "Не может быть использовано на героев или существ выше 5 уровня."
+
+        "DOTA_Tooltip_ability_spawn_goblin"                                               "Призыв Гоблинов"
+        "DOTA_Tooltip_ability_spawn_goblin_Description"                                   ""
+
+        "DOTA_Tooltip_ability_spawn_goblin_leader"                                        "Призыв Лидера Гоблинов"
+        "DOTA_Tooltip_ability_spawn_goblin_leader_Description"                            "Каждые 3 минуты призывается лидер с мощными поддерживающими способностями.\nСпособности лидера:\n-Лечебный Туман\n-Атака Гоблина\n-Трансмутация\n\n<b><font color='#00ff00'>Лидеры не расходуют еду.</font></b>"
+
+        "DOTA_Tooltip_ability_summon_super_goblin"                                        "Призвать Супера Гоблинов"
+        "DOTA_Tooltip_ability_summon_super_goblin_Description"                            "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_goblin_duration"                               "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_summon_super_goblin_empty"                                  "Призвать Супера Гоблинов"
+        "DOTA_Tooltip_ability_summon_super_goblin_empty_Description"                      "Вы уже использовали всех своих Суперов."
+
+        "DOTA_Tooltip_ability_night_elf_racial"                                           "Night Elf Racial"
+        "DOTA_Tooltip_ability_night_elf_racial_Description"                               ""
+
+        "DOTA_Tooltip_ability_spawn_night_elf"                                            "Призыв Ночного Эльфа"
+        "DOTA_Tooltip_ability_spawn_night_elf_Description"                                ""
+
+        "DOTA_Tooltip_ability_spawn_night_elf_leader"                                     "Призыв Лидера Ночных Эльфов"
+        "DOTA_Tooltip_ability_spawn_night_elf_leader_Description"                         ""
+
+        "DOTA_Tooltip_ability_summon_super_night_elf"                                     "Призвать Супера Ночных Эльфов"
+        "DOTA_Tooltip_ability_summon_super_night_elf_Description"                         "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_night_elf_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_summon_super_night_elf_empty"                               "Призвать Супера Ночных Эльфов"
+        "DOTA_Tooltip_ability_summon_super_night_elf_empty_Description"                   "Вы уже использовали всех своих Суперов."
+
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm"                                     "Рой мышей"
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_Description"                         "Насылает на врагов множество летучих мышей."
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_start_radius"                        "НАЧАЛЬНЫЙ ОБЛАСТЬ:"
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_end_radius"                          "КОНЕЧНАЯ ОБЛАСТЬ:"
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_range"                               "ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:"
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_speed"                               "СКОРОСТЬ:"
+
+        "DOTA_Tooltip_ability_skeleton_reincarnation_aura"                                "Аура перерождения"
+        "DOTA_Tooltip_ability_skeleton_reincarnation_aura_Description"                    "Удваивает шанс возрождения ближайших Скелетов."
+        "DOTA_Tooltip_ability_skeleton_reincarnation_aura_radius"                         "РАДИУС:"
+
+        "DOTA_Tooltip_ability_skeleton_sacrifice"                                         "Жертва"
+        "DOTA_Tooltip_ability_skeleton_sacrifice_Description"                             "Убивает союзного Скелета, превращая его в Тень.\nТени - невидимые разведчики, не могущие атаковать."
+
+        "DOTA_Tooltip_ability_skeleton_racial"                                            "Перерождение"
+        "DOTA_Tooltip_ability_skeleton_racial_Description"                                "<font color='#00ff00'>Расовая</font>\nВозвращается к жизни, чтобы сразиться с врагами еще раз."
+        "DOTA_Tooltip_ability_skeleton_racial_reincarnate_chance"                         "ШАНС ВОЗВРОДИТЬСЯ:"
+        "DOTA_Tooltip_ability_skeleton_racial_Note0"                                      "I'll be back. - Skeleton King 2013"
+        "DOTA_Tooltip_ability_skeleton_racial_Note1"                                      "doot doot doot"
+
+        "DOTA_Tooltip_ability_skeleton_king_particles"                                    "Skeleton King Particles"
+        "DOTA_Tooltip_ability_skeleton_king_particles_Description"                        ""
+
+        "DOTA_Tooltip_ability_spawn_skeleton"                                             "Призыв Скелета"
+        "DOTA_Tooltip_ability_spawn_skeleton_Description"                                 ""
+
+        "DOTA_Tooltip_ability_spawn_skeleton_leader"                                      "Призыв Скелета Лидера"
+        "DOTA_Tooltip_ability_spawn_skeleton_leader_Description"                          "Каждые 3 минуты призывается лидер с мощными поддерживающими способностями.\nСпособности лидера:\n-Рой мышей\n-Жертва\n-Аура Перерождения\n\n<b><font color='#00ff00'>Лидеры не расходуют еду.</font></b>"
+
+        "DOTA_Tooltip_ability_summon_super_skeleton"                                      "Призвать Супер Скелета"
+        "DOTA_Tooltip_ability_summon_super_skeleton_Description"                          "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_skeleton_duration"                             "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_summon_super_skeleton_empty"                                "Призыв Супер Скелета"
+        "DOTA_Tooltip_ability_summon_super_skeleton_empty_Description"                    "Вы уже использовали всех своих Суперов."
+
+        //-----------------------------------------------
+
+        "DOTA_Tooltip_ability_barrage_attack"                                             "Barrage Attack"
+        "DOTA_Tooltip_ability_barrage_attack_Description"                                 ""
+
+        "DOTA_Tooltip_ability_ghost_peon"                                                 "Призрак Рядового"
+        "DOTA_Tooltip_ability_ghost_peon_Description"                                     "Вы проиграли!"
+
+        "DOTA_Tooltip_ability_upgrade_food_limit"                                         "Прокачать Столовые"
+        "DOTA_Tooltip_ability_upgrade_food_limit_Description"                             "Увеличить ваши запасы еды на 1"
+
+        "DOTA_Tooltip_ability_upgrade_spawn_rate"                                         "Прокачать Казармы"
+        "DOTA_Tooltip_ability_upgrade_spawn_rate_Description"                             "Увеличивает количество появляющихся рядовых на 1"
+
+        "DOTA_Tooltip_ability_build_barricades"                                           "Обновить баррикады"
+        "DOTA_Tooltip_ability_build_barricades_Description"                               "Построить дополнительные баррикады вокруг вашей базы"
+
+        "DOTA_Tooltip_ability_barricade_hit"                                              "Баррикада"
+        "DOTA_Tooltip_ability_barricade_hit_Description"                                  "Уничтожается за два удара"
+
+        "DOTA_Tooltip_ability_repair_buildings"                                           "Починка зданий"
+        "DOTA_Tooltip_ability_repair_buildings_Description"                               "Восстановить 20%% от максимального запаса здоровья ваших зданий"
+        "DOTA_Tooltip_ability_repair_buildings_repair_percent"                            "ЗДОРОВЬЯ ВОССТАНОВЛЕНО:"
+
+        "DOTA_Tooltip_ability_hide_hero"                                                  "Hide Hero"
+        "DOTA_Tooltip_ability_hide_hero_Description"                                      ""
+
+        "DOTA_Tooltip_ability_ability_tower"                                              "Резервные ресурсы"
+        "DOTA_Tooltip_ability_ability_tower_Description"                                  "<font color='#fea500'>80 золота</font> и <font color='#006411'>20 дерева</font> за уничтожение этого здания!"
+
+        // Weapons
+        "DOTA_Tooltip_ability_upgrade_weapon1"                                            "Прокачать Оружие (1)"
+        "DOTA_Tooltip_ability_upgrade_weapon1_Description"                                "Skullsplitter Axe прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon1_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon2"                                            "Прокачать Оружие (2)"
+        "DOTA_Tooltip_ability_upgrade_weapon2_Description"                                "Wyvernguard Edge прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon2_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon3"                                            "Прокачать Оружие (3)"
+        "DOTA_Tooltip_ability_upgrade_weapon3_Description"                                "Mountain Splitter прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon3_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon4"                                            "Прокачать Оружие (4)"
+        "DOTA_Tooltip_ability_upgrade_weapon4_Description"                                "Ram's Head Blade прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon4_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon5"                                            "Прокачать Оружие (5)"
+        "DOTA_Tooltip_ability_upgrade_weapon5_Description"                                "Trident of the Deep One прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon5_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon6"                                            "Прокачать Оружие (6)"
+        "DOTA_Tooltip_ability_upgrade_weapon6_Description"                                "Lance of the Wurmblood прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon6_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon7"                                            "Прокачать Оружие (7)"
+        "DOTA_Tooltip_ability_upgrade_weapon7_Description"                                "Tormented Staff прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon7_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon8"                                            "Прокачать Оружие (8)"
+        "DOTA_Tooltip_ability_upgrade_weapon8_Description"                                "Sufferwood Sapling прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon8_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon9"                                            "Прокачать Оружие (9)"
+        "DOTA_Tooltip_ability_upgrade_weapon9_Description"                                "Dazolator прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon9_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon10"                                           "Прокачать Оружие (10)"
+        "DOTA_Tooltip_ability_upgrade_weapon10_Description"                               "Relic Sword прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon10_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon11"                                           "Прокачать Оружие (11)"
+        "DOTA_Tooltip_ability_upgrade_weapon11_Description"                               "Winterblight прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon11_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon12"                                           "Прокачать Оружие (12)"
+        "DOTA_Tooltip_ability_upgrade_weapon12_Description"                               "Shadow Blade прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon12_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon13"                                           "Прокачать Оружие (13)"
+        "DOTA_Tooltip_ability_upgrade_weapon13_Description"                               "Relentless прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon13_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon14"                                           "Прокачать Оружие (14)"
+        "DOTA_Tooltip_ability_upgrade_weapon14_Description"                               "Staff of the Infinite Waves прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon14_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon15"                                           "Прокачать Оружие (15)"
+        "DOTA_Tooltip_ability_upgrade_weapon15_Description"                               "Voidhammer прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon15_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon16"                                           "Прокачать Оружие (16)"
+        "DOTA_Tooltip_ability_upgrade_weapon16_Description"                               "Shock of the Anvil прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon16_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon17"                                           "Прокачать Оружие (17)"
+        "DOTA_Tooltip_ability_upgrade_weapon17_Description"                               "Words of the Drunken Warlord прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon17_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon18"                                           "Прокачать Оружие (18)"
+        "DOTA_Tooltip_ability_upgrade_weapon18_Description"                               "Shards of Exile прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon18_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon19"                                           "Прокачать Оружие (19)"
+        "DOTA_Tooltip_ability_upgrade_weapon19_Description"                               "Grasping Bludgeon прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon19_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon20"                                           "Прокачать Оружие (20)"
+        "DOTA_Tooltip_ability_upgrade_weapon20_Description"                               "Scythe of Twin Deaths прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon20_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon21"                                           "Прокачать Оружие (21)"
+        "DOTA_Tooltip_ability_upgrade_weapon21_Description"                               "Eye of Omoz прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon21_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon22"                                           "Прокачать Оружие (22)"
+        "DOTA_Tooltip_ability_upgrade_weapon22_Description"                               "Basher прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon22_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon23"                                           "Прокачать Оружие (23)"
+        "DOTA_Tooltip_ability_upgrade_weapon23_Description"                               "Righteous Thunderbolt прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon23_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon24"                                           "Прокачать Оружие (24)"
+        "DOTA_Tooltip_ability_upgrade_weapon24_Description"                               "Crystal Dryad прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon24_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon25"                                           "Прокачать Оружие (25)"
+        "DOTA_Tooltip_ability_upgrade_weapon25_Description"                               "Dragonclaw Hook прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon25_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon26"                                           "Прокачать Оружие (26)"
+        "DOTA_Tooltip_ability_upgrade_weapon26_Description"                               "Scythe of Vyse прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon26_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon27"                                           "Прокачать Оружие (27)"
+        "DOTA_Tooltip_ability_upgrade_weapon27_Description"                               "Arcs of Manta прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon27_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon28"                                           "Прокачать Оружие (28)"
+        "DOTA_Tooltip_ability_upgrade_weapon28_Description"                               "Battlefury прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon28_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon29"                                           "Прокачать Оружие (29)"
+        "DOTA_Tooltip_ability_upgrade_weapon29_Description"                               "Eternal Radiance Blade прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon29_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon30"                                           "Прокачать Оружие (30)"
+        "DOTA_Tooltip_ability_upgrade_weapon30_Description"                               "Rapier of the Burning God прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_weapon30_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_weapon_final"                                       "Оружие полностью прокачано!"
+        "DOTA_Tooltip_ability_upgrade_weapon_final_Description"                           ""
+
+        // Helms
+        "DOTA_Tooltip_ability_upgrade_helm1"                                              "Прокачать Шлем (1)"
+        "DOTA_Tooltip_ability_upgrade_helm1_Description"                                  "Alpine Stalker Hat прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm1_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm2"                                              "Прокачать Шлем (2)"
+        "DOTA_Tooltip_ability_upgrade_helm2_Description"                                  "Hunter Helm прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm2_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm3"                                              "Прокачать Шлем (3)"
+        "DOTA_Tooltip_ability_upgrade_helm3_Description"                                  "Pirate Slayer's Tricorn прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm3_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:" 
+
+        "DOTA_Tooltip_ability_upgrade_helm4"                                              "Прокачать Шлем (4)"
+        "DOTA_Tooltip_ability_upgrade_helm4_Description"                                  "Rampant Outrage прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm4_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm5"                                              "Прокачать Шлем (5)"
+        "DOTA_Tooltip_ability_upgrade_helm5_Description"                                  "Mask of a Thousand Faces прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm5_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm6"                                              "Прокачать Шлем (6)"
+        "DOTA_Tooltip_ability_upgrade_helm6_Description"                                  "Hood of the Fallen Cloak прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm6_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm7"                                              "Прокачать Шлем (7)"
+        "DOTA_Tooltip_ability_upgrade_helm7_Description"                                  "Mania's Mask прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm7_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm8"                                              "Прокачать Шлем (8)"
+        "DOTA_Tooltip_ability_upgrade_helm8_Description"                                  "Hood of Defiance прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm8_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm9"                                              "Прокачать Шлем (9)"
+        "DOTA_Tooltip_ability_upgrade_helm9_Description"                                  "Demon Blood Helm прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm9_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm10"                                             "Прокачать Шлем (10)"
+        "DOTA_Tooltip_ability_upgrade_helm10_Description"                                 "Helm of Impasse прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm10_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm11"                                             "Прокачать Шлем (11)"
+        "DOTA_Tooltip_ability_upgrade_helm11_Description"                                 "Old Helmet of the Bogatyr прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm11_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm12"                                             "Прокачать Шлем (12)"
+        "DOTA_Tooltip_ability_upgrade_helm12_Description"                                 "Skull of Vashundol прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm12_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm13"                                             "Прокачать Шлем (13)"
+        "DOTA_Tooltip_ability_upgrade_helm13_Description"                                 "Diabolic Aspect прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm13_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm14"                                             "Прокачать Шлем (14)"
+        "DOTA_Tooltip_ability_upgrade_helm14_Description"                                 "Spartan Helmet прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm14_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm15"                                             "Прокачать Шлем (15)"
+        "DOTA_Tooltip_ability_upgrade_helm15_Description"                                 "Searing Dominator прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_helm15_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_helm_final"                                         "Шлем полностью прокачан!"
+        "DOTA_Tooltip_ability_upgrade_helm_final_Description"                             ""
+
+        // Shields
+        "DOTA_Tooltip_ability_upgrade_shield1"                                            "Прокачать Щит (1)"
+        "DOTA_Tooltip_ability_upgrade_shield1_Description"                                "Poor Man Shield прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield1_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield2"                                            "Прокачать Щит (2)"
+        "DOTA_Tooltip_ability_upgrade_shield2_Description"                                "Vanguard прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield2_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield3"                                            "Прокачать Щит (3)"
+        "DOTA_Tooltip_ability_upgrade_shield3_Description"                                "Shield of the Silent Guardian прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield3_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield4"                                            "Прокачать Щит (4)"
+        "DOTA_Tooltip_ability_upgrade_shield4_Description"                                "Rider's Eclipse Shield прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield4_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield5"                                            "Прокачать Щит (5)"
+        "DOTA_Tooltip_ability_upgrade_shield5_Description"                                "Shield of the Tribunal прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield5_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield6"                                            "Прокачать Щит (6)"
+        "DOTA_Tooltip_ability_upgrade_shield6_Description"                                "Moonfall прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield6_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield7"                                            "Прокачать Щит (7)"
+        "DOTA_Tooltip_ability_upgrade_shield7_Description"                                "Shield of the Wurmblood прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield7_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield8"                                            "Прокачать Щит (8)"
+        "DOTA_Tooltip_ability_upgrade_shield8_Description"                                "Dark Ruin Gaze прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield8_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield9"                                            "Прокачать Щит (9)"
+        "DOTA_Tooltip_ability_upgrade_shield9_Description"                                "Shield of Screaming Souls прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield9_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield10"                                           "Прокачать Щит (10)"
+        "DOTA_Tooltip_ability_upgrade_shield10_Description"                               "Crest of the Wyrm Lords прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield10_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield11"                                           "Прокачать Щит (11)"
+        "DOTA_Tooltip_ability_upgrade_shield11_Description"                               "Immortal Vigil Signet прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_shield11_lumber_cost"                               "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_shield_final"                                       "Щит полностью прокачан!"
+        "DOTA_Tooltip_ability_upgrade_shield_final_Description"                           ""
+
+        // Wings
+        "DOTA_Tooltip_ability_upgrade_wings1"                                             "Прокачать Крылья (1)"
+        "DOTA_Tooltip_ability_upgrade_wings1_Description"                                 "Battle Banner of the Masked прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_wings1_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_wings2"                                             "Прокачать Крылья (2)"
+        "DOTA_Tooltip_ability_upgrade_wings2_Description"                                 "Wings of the Valkyrie прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_wings2_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_wings3"                                             "Прокачать Крылья (3)"
+        "DOTA_Tooltip_ability_upgrade_wings3_Description"                                 "Span of Cerulean Light прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_wings3_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_wings4"                                             "Прокачать Крылья (4)"
+        "DOTA_Tooltip_ability_upgrade_wings4_Description"                                 "Omni Wings прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_wings4_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_wings5"                                             "Прокачать Крылья (5)"
+        "DOTA_Tooltip_ability_upgrade_wings5_Description"                                 "Bloodfeather Wings прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_wings5_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_wings6"                                             "Прокачать Крылья (6)"
+        "DOTA_Tooltip_ability_upgrade_wings6_Description"                                 "Span of Black Nihility прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_wings6_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_wings7"                                             "Прокачать Крылья (7)"
+        "DOTA_Tooltip_ability_upgrade_wings7_Description"                                 "Wings of Eternal Fire прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_wings7_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_wings8"                                             "Прокачать Крылья (8)"
+        "DOTA_Tooltip_ability_upgrade_wings8_Description"                                 "Soul Eater Wings прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_wings8_lumber_cost"                                 "ТРЕБУЕТ ДЕРЕВА:"
+
+        "DOTA_Tooltip_ability_upgrade_wings_final"                                        "Крылья полностью прокачаны!"
+        "DOTA_Tooltip_ability_upgrade_wings_final_Description"                            ""
+
+        "DOTA_Tooltip_ability_upgrade_weapon1_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon2_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon3_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon4_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon5_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon6_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon7_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon8_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon9_bonus_damage"                               "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon10_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon11_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon12_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon13_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon14_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon15_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon16_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon17_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon18_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon19_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon20_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon21_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon22_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon23_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon24_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon25_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon26_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon27_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon28_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon29_bonus_damage"                              "БОНУС АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_weapon30_bonus_damage"                              "БОНУС АТАКИ:"
+
+        "DOTA_Tooltip_ability_upgrade_helm1_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm2_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm3_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm4_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm5_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm6_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm7_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm8_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm9_bonus_armor"                                  "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm10_bonus_armor"                                 "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm11_bonus_armor"                                 "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm12_bonus_armor"                                 "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm13_bonus_armor"                                 "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm14_bonus_armor"                                 "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_helm15_bonus_armor"                                 "БОНУС ЗАЩИТЫ:"
+
+        "DOTA_Tooltip_ability_upgrade_shield1_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield2_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield3_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield4_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield5_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield6_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield7_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield8_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield9_bonus_armor"                                "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield10_bonus_armor"                               "БОНУС ЗАЩИТЫ:"
+        "DOTA_Tooltip_ability_upgrade_shield11_bonus_armor"                               "БОНУС ЗАЩИТЫ:"
+
+        "DOTA_Tooltip_ability_upgrade_wings1_bonus_movespeed"                             "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_upgrade_wings1_bonus_attackspeed"                           "БОНУС СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_wings2_bonus_movespeed"                             "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_upgrade_wings2_bonus_attackspeed"                           "БОНУС СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_wings3_bonus_movespeed"                             "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_upgrade_wings3_bonus_attackspeed"                           "БОНУС СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_wings4_bonus_movespeed"                             "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_upgrade_wings4_bonus_attackspeed"                           "БОНУС СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_wings5_bonus_movespeed"                             "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_upgrade_wings5_bonus_attackspeed"                           "БОНУС СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_wings6_bonus_movespeed"                             "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_upgrade_wings6_bonus_attackspeed"                           "БОНУС СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_wings7_bonus_movespeed"                             "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_upgrade_wings7_bonus_attackspeed"                           "БОНУС СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_upgrade_wings8_bonus_movespeed"                             "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_upgrade_wings8_bonus_attackspeed"                           "БОНУС СКОРОСТИ АТАКИ:"
+        
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike1_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit1_gold_cost"                           "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_pulverize1_gold_cost"                          "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge1_gold_cost"                              "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor1_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike2_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit2_gold_cost"                           "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_pulverize2_gold_cost"                          "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge2_gold_cost"                              "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor2_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike3_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit3_gold_cost"                           "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_pulverize3_gold_cost"                          "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge3_gold_cost"                              "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor3_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike4_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit4_gold_cost"                           "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_pulverize4_gold_cost"                          "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge4_gold_cost"                              "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor4_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike5_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit5_gold_cost"                           "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_pulverize5_gold_cost"                          "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge5_gold_cost"                              "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor5_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+
+        //-----
+        "DOTA_Tooltip_ability_upgrade_health"                                             "Прокачать Здоровье"
+        "DOTA_Tooltip_ability_upgrade_health_Description"                                 "Увеличивает здоровье ваших рядовых на 5.\nДругие войска и здания получают бонус в 10%%"
+
+        "DOTA_Tooltip_ability_health"                                                     "Здоровье"
+        "DOTA_Tooltip_ability_health_Description"                                         ""
+
+        "DOTA_Tooltip_ability_critical_strike"                                            "Критический удар"
+        "DOTA_Tooltip_ability_critical_strike_Description"                                "Дает шанс нанести критический удар противнику."
+        "DOTA_Tooltip_ability_critical_strike_crit_mult"                                  "КРИТИЧЕСКИЙ УРОН:"
+        "DOTA_Tooltip_ability_critical_strike_crit_chance"                                "ШАНС:"
+
+        "DOTA_Tooltip_ability_stun_hit"                                                   "Оглушающий Удар"
+        "DOTA_Tooltip_ability_stun_hit_Description"                                       "Дает шанс оглушить противника во время атаки и нанести ему дополнительный урон."
+        "DOTA_Tooltip_ability_stun_hit_duration"                                          "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_stun_hit_stun_chance"                                       "ШАНС ОГЛУШИТЬ:"
+        "DOTA_Tooltip_ability_stun_hit_bonus_damage"                                      "БОНУСНЫЙ УРОН:"
+
+        "DOTA_Tooltip_ability_poisoned_weapons"                                           "Отравленное Оружие"
+        "DOTA_Tooltip_ability_poisoned_weapons_Description"                               "Наносит урон в секунду и замедляет атакуемых врагов."
+        "DOTA_Tooltip_ability_poisoned_weapons_damage_per_second"                         "УРОНА В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_poisoned_weapons_reduced_attack_speed"                      "ЗАМЕДЛЕНИЕ АТАКИ:"
+        "DOTA_Tooltip_ability_poisoned_weapons_reduced_movement_speed"                    "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_poisoned_weapons_duration"                                  "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_ability_dodge"                                                      "Уклонение"
+        "DOTA_Tooltip_ability_dodge_Description"                                          "Дает шанс уклониться от атаки противника."
+        "DOTA_Tooltip_ability_dodge_dodge_chance"                                         "УКЛОНЕНИЕ:"
+
+        "DOTA_Tooltip_ability_spiked_armor"                                               "Шипастая Броня"
+        "DOTA_Tooltip_ability_spiked_armor_Description"                                   "Острые шипы на этой броне возвращают урон войскам ближнего боя."
+        "DOTA_Tooltip_ability_spiked_armor_melee_damage_return"                           "ВОЗВРАЩАЕМЫЙ УРОН:"
+
+        "DOTA_Tooltip_ability_pimp_damage"                                                "Прокачать Атаку"
+        "DOTA_Tooltip_ability_pimp_damage_Description"                                    "Увеличивает атаку ваших войск и зданий на 1."
+
+        "DOTA_Tooltip_ability_pimp_armor"                                                 "Прокачать Защиту"
+        "DOTA_Tooltip_ability_pimp_armor_Description"                                     "Увеличивает защиту ваших войск и зданий на 1."
+
+        "DOTA_Tooltip_ability_pimp_speed"                                                 "Прокачать Скорость"
+        "DOTA_Tooltip_ability_pimp_speed_Description"                                     "Увеличивает скорость атаки и передвижения ваших войск и зданий на 5%%."
+
+        "DOTA_Tooltip_ability_pimp_regen"                                                 "Прокачать Регенерацию"
+        "DOTA_Tooltip_ability_pimp_regen_Description"                                     "Увеличивает скорость регенерации ваших войск и зданий."
+
+
+        // ******************** ITEMS ********************
+        "DOTA_Tooltip_ability_item_apply_modifiers"                                       "Apply Modifiers"
+        "DOTA_Tooltip_ability_item_apply_modifiers_Description"                           ""
+
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike1"                              "Прокачать Критический Удар 1"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike1_Description"                  "Дает 20%% шанс нанести в 2 раза больше урона каждую атаку."
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike2"                              "Прокачать Критический Удар 2"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike2_Description"                  "Дает 21%% шанс нанести в 2.2 раза больше урона каждую атаку."
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike3"                              "Прокачать Критический Удар 3"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike3_Description"                  "Дает 22%% шанс нанести в 2.4 раза больше урона каждую атаку."
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike4"                              "Прокачать Критический Удар 4"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike4_Description"                  "Дает 23%% шанс нанести в 2.6 раза больше урона каждую атаку."
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike5"                              "Прокачать Критический Удар 5"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike5_Description"                  "Дает 25%% шанс нанести в 2.8 раза больше урона каждую атаку."
+
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike1_crit_mult"                    "КРИТИЧЕСКИЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike1_crit_chance"                  "ШАНС:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike2_crit_mult"                    "КРИТИЧЕСКИЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike2_crit_chance"                  "ШАНС:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike3_crit_mult"                    "КРИТИЧЕСКИЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike3_crit_chance"                  "ШАНС:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike4_crit_mult"                    "КРИТИЧЕСКИЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike4_crit_chance"                  "ШАНС:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike5_crit_mult"                    "КРИТИЧЕСКИЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_critical_strike5_crit_chance"                  "ШАНС:"
+        
+
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit1"                                     "Прокачать Оглушающий Удар 1"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "Дает 20%% шанс оглушить противника на 1 секунду и нанести ему 10 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit2"                                     "Прокачать Оглушающий Удар 2"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "Дает 21%% шанс оглушить противника на 2 секунды и нанести ему 15 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit3"                                     "Прокачать Оглушающий Удар 3"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "Дает 22%% шанс оглушить противника на 3 секунды и нанести ему 20 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit4"                                     "Прокачать Оглушающий Удар 4"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "Дает 23%% шанс оглушить противника на 4 секунды и нанести ему 25 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit5"                                     "Прокачать Оглушающий Удар 5"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         "Дает 25%% шанс оглушить противника на 5 секунд и нанести ему 30 бонусного урона."
+
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit1_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit1_stun_chance"                         "ШАНС ОГЛУШИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit1_bonus_damage"                        "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit2_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit2_stun_chance"                         "ШАНС ОГЛУШИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit2_bonus_damage"                        "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit3_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit3_stun_chance"                         "ШАНС ОГЛУШИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit3_bonus_damage"                        "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit4_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit4_stun_chance"                         "ШАНС ОГЛУШИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit4_bonus_damage"                        "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit5_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit5_stun_chance"                         "ШАНС ОГЛУШИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit5_bonus_damage"                        "БОНУСНЫЙ УРОН:"
+        
+
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1"                             "Прокачать Отравленное Оружие 1"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_Description"                 "Наносит 3 бонусного урона в секунду. Понижает скорость атаки и передвижения на 15.\nДлится 5 секунд."
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2"                             "Прокачать Отравленное Оружие 2"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_Description"                 "Наносит 4 бонусного урона в секунду. Понижает скорость атаки и передвижения на 25.\nДлится 5 секунд."
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3"                             "Прокачать Отравленное Оружие 3"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_Description"                 "Наносит 6 бонусного урона в секунду. Понижает скорость атаки и передвижения на 35.\nДлится 5 секунд."
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4"                             "Прокачать Отравленное Оружие 4"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_Description"                 "Наносит 9 бонусного урона в секунду. Понижает скорость атаки и передвижения на 45.\nДлится 5 секунд."
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5"                             "Прокачать Отравленное Оружие 5"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_Description"                 "Наносит 12 бонусного урона в секунду. Понижает скорость атаки и передвижения на 60.\nДлится 5 секунд."
+
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_damage_per_second"           "УРОНА В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_damage_per_second"           "УРОНА В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_damage_per_second"           "УРОНА В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_damage_per_second"           "УРОНА В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_damage_per_second"           "УРОНА В СЕКУНДУ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_reduced_attack_speed"        "ЗАМЕДЛЕНИЕ АТАКИ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_reduced_movement_speed"      "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_reduced_attack_speed"        "ЗАМЕДЛЕНИЕ АТАКИ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_reduced_movement_speed"      "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_reduced_attack_speed"        "ЗАМЕДЛЕНИЕ АТАКИ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_reduced_movement_speed"      "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_reduced_attack_speed"        "ЗАМЕДЛЕНИЕ АТАКИ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_reduced_movement_speed"      "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_reduced_attack_speed"        "ЗАМЕДЛЕНИЕ АТАКИ:"
+        "DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_reduced_movement_speed"      "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"    
+
+        "DOTA_Tooltip_ability_item_upgrade_dodge1"                                        "Прокачать Уклонение 1"
+        "DOTA_Tooltip_ability_item_upgrade_dodge1_Description"                            "Дает 20%% шанс уклониться от вражеской атаки."
+        "DOTA_Tooltip_ability_item_upgrade_dodge2"                                        "Прокачать Уклонение 2"
+        "DOTA_Tooltip_ability_item_upgrade_dodge2_Description"                            "Дает 21%% шанс уклониться от вражеской атаки."
+        "DOTA_Tooltip_ability_item_upgrade_dodge3"                                        "Прокачать Уклонение 3"
+        "DOTA_Tooltip_ability_item_upgrade_dodge3_Description"                            "Дает 22%% шанс уклониться от вражеской атаки."
+        "DOTA_Tooltip_ability_item_upgrade_dodge4"                                        "Прокачать Уклонение 4"
+        "DOTA_Tooltip_ability_item_upgrade_dodge4_Description"                            "Дает 23%% шанс уклониться от вражеской атаки."
+        "DOTA_Tooltip_ability_item_upgrade_dodge5"                                        "Прокачать Уклонение 5"
+        "DOTA_Tooltip_ability_item_upgrade_dodge5_Description"                            "Дает 25%% шанс уклониться от вражеской атаки."
+
+        "DOTA_Tooltip_ability_item_upgrade_dodge1_dodge_chance"                           "УКЛОНЕНИЕ:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge2_dodge_chance"                           "УКЛОНЕНИЕ:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge3_dodge_chance"                           "УКЛОНЕНИЕ:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge4_dodge_chance"                           "УКЛОНЕНИЕ:"
+        "DOTA_Tooltip_ability_item_upgrade_dodge5_dodge_chance"                           "УКЛОНЕНИЕ:"
+        
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor1"                                 "Прокачать Шипастую Броню 1"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor1_Description"                     "Острые шипы на броне возвращают 20%% урона атакующему."
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor2"                                 "Прокачать Шипастую Броню 2"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor2_Description"                     "Острые шипы на броне возвращают 30%% урона атакующему."
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor3"                                 "Прокачать Шипастую Броню 3"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor3_Description"                     "Острые шипы на броне возвращают 40%% урона атакующему."
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor4"                                 "Прокачать Шипастую Броню 4"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor4_Description"                     "Острые шипы на броне возвращают 50%% урона атакующему."
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor5"                                 "Прокачать Шипастую Броню 5"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor5_Description"                     "Острые шипы на броне возвращают 65%% урона атакующему."
+
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor1_melee_damage_return"             "ВОЗВРАЩАЕМЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor2_melee_damage_return"             "ВОЗВРАЩАЕМЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor3_melee_damage_return"             "ВОЗВРАЩАЕМЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor4_melee_damage_return"             "ВОЗВРАЩАЕМЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_spiked_armor5_melee_damage_return"             "ВОЗВРАЩАЕМЫЙ УРОН:"
+
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial1"                                  "Прокачать Рабов (1)"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial1_Description"                      "Увеличивает уровень способности Axe's Frenzy"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial1_gold_cost"                        "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial2"                                  "Прокачать Рабов  (2)"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial2_Description"                      "Увеличивает уровень способности Axe's Frenzy"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial2_gold_cost"                        "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial3"                                  "Прокачать Рабов (3)"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial3_Description"                      "Увеличивает уровень способности Axe's Frenzy"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial3_gold_cost"                        "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial4"                                  "Прокачать Рабов (4)"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial4_Description"                      "Увеличивает уровень способности Axe's Frenzy"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial4_gold_cost"                        "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial5"                                  "Прокачать Рабов (5)"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial5_Description"                      "Увеличивает уровень способности Axe's Frenzy"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial5_gold_cost"                        "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial1_speed_per_hit"                    "СКОРОСТЬ ЗА АТАКУ:"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial2_speed_per_hit"                    "СКОРОСТЬ ЗА АТАКУ:"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial3_speed_per_hit"                    "СКОРОСТЬ ЗА АТАКУ:"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial4_speed_per_hit"                    "СКОРОСТЬ ЗА АТАКУ:"
+        "DOTA_Tooltip_ability_item_upgrade_peon_racial5_speed_per_hit"                    "СКОРОСТЬ ЗА АТАКУ:"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial1_instakill_chance"                "ШАНС УБИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial2_instakill_chance"                "ШАНС УБИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial3_instakill_chance"                "ШАНС УБИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial4_instakill_chance"                "ШАНС УБИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial5_instakill_chance"                "ШАНС УБИТЬ:"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial1_lifesteal_percent"              "ВАМПИРИЗМ:"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial2_lifesteal_percent"              "ВАМПИРИЗМ:"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial3_lifesteal_percent"              "ВАМПИРИЗМ:"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial4_lifesteal_percent"              "ВАМПИРИЗМ:"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial5_lifesteal_percent"              "ВАМПИРИЗМ:"
+
+        "DOTA_Tooltip_ability_item_upgrade_human_racial1"                                 "Прокачать Людей (1)"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial1_Description"                     "Увеличивает уровень способности Human's Strike"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial1_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_human_racial2"                                 "Прокачать Людей (2)"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial2_Description"                     "Увеличивает уровень способности Human's Strike"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial2_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_human_racial3"                                 "Прокачать Людей (3)"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial3_Description"                     "Увеличивает уровень способности Human's Strike"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial3_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_human_racial4"                                 "Прокачать Людей (4)"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial4_Description"                     "Увеличивает уровень способности Human's Strike"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial4_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_human_racial5"                                 "Прокачать Людей (5)"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial5_Description"                     "Увеличивает уровень способности Human's Strike"
+        "DOTA_Tooltip_ability_item_upgrade_human_racial5_gold_cost"                       "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial1"                                "Прокачать Нежить (1)"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial1_Description"                    "Увеличивает уровень способности Undead's Lifesteal"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial1_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial2"                                "Прокачать Нежить (2)"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial2_Description"                    "Увеличивает уровень способности Undead's Lifesteal"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial2_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial3"                                "Прокачать Нежить (3)"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial3_Description"                    "Увеличивает уровень способности Undead's Lifesteal"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial3_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial4"                                "Прокачать Нежить (4)"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial4_Description"                    "Увеличивает уровень способности Undead's Lifesteal"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial4_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial5"                                "Прокачать Нежить (5)"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial5_Description"                    "Увеличивает уровень способности Undead's Lifesteal"
+        "DOTA_Tooltip_ability_item_upgrade_undead_racial5_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial1"                                "Прокачать Гоблинов (1)"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial1_Description"                    "Увеличивает уровень способности Goblin's Greed"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial1_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial1_extra_bounty"                   "ДОПОЛНИТЕЛЬНАЯ НАГРАДА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial2"                                "Прокачать Гоблинов (2)"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial2_Description"                    "Увеличивает уровень способности Goblins's Greed"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial2_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial2_extra_bounty"                   "ДОПОЛНИТЕЛЬНАЯ НАГРАДА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial3"                                "Прокачать Гоблинов (3)"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial3_Description"                    "Увеличивает уровень способности Goblin's Greed"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial3_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial3_extra_bounty"                   "ДОПОЛНИТЕЛЬНАЯ НАГРАДА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial4"                                "Прокачать Гоблинов (4)"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial4_Description"                    "Увеличивает уровень способности Goblin's Greed"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial4_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial4_extra_bounty"                   "ДОПОЛНИТЕЛЬНАЯ НАГРАДА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial5"                                "Прокачать Гоблинов (5)"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial5_Description"                    "Увеличивает уровень способности Goblin's Greed"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial5_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_goblin_racial5_extra_bounty"                   "ДОПОЛНИТЕЛЬНАЯ НАГРАДА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1"                             "Прокачать Кровавых Эльфов (1)"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_Description"                 "Увеличивает уровень способности Blood Elves Blood Pool"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2"                             "Прокачать Кровавых Эльфов (2)"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_Description"                 "Увеличивает уровень способности Blood Elves Blood Pool"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3"                             "Прокачать Кровавых Эльфов (3)"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_Description"                 "Увеличивает уровень способности Blood Elves Blood Pool"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4"                             "Прокачать Кровавых Эльфов (4)"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_Description"                 "Увеличивает уровень способности Blood Elves Blood Pool"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5"                             "Прокачать Кровавых Эльфов (5)"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_Description"                 "Увеличивает уровень способности Blood Elves Blood Pool"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial1"                              "Прокачать Скелетов (1)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_Description"                  "Увеличивает уровень способности Skeleton's Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_reincarnate_chance"           "ШАНС ВОЗВРОДИТЬСЯ:"
+
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial2"                              "Прокачать Скелетов (2)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_Description"                  "Увеличивает уровень способности Skeleton's Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_reincarnate_chance"           "ШАНС ВОЗВРОДИТЬСЯ:"
+
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial3"                              "Прокачать Скелетов (3)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_Description"                  "Увеличивает уровень способности Skeleton's Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_reincarnate_chance"           "ШАНС ВОЗВРОДИТЬСЯ:"
+
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial4"                              "Прокачать Скелетов (4)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_Description"                  "Увеличивает уровень способности Skeleton's Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_reincarnate_chance"           "ШАНС ВОЗВРОДИТЬСЯ:"
+
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial5"                              "Прокачать Скелетов (5)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_Description"                  "Увеличивает уровень способности Skeleton's Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_reincarnate_chance"           "ШАНС ВОЗВРОДИТЬСЯ:"
+        
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_heal_regen_pct"              "ПРОЦЕНТ РЕГЕНЕРАЦИИ ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_heal_regen_pct"              "ПРОЦЕНТ РЕГЕНЕРАЦИИ ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_heal_regen_pct"              "ПРОЦЕНТ РЕГЕНЕРАЦИИ ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_heal_regen_pct"              "ПРОЦЕНТ РЕГЕНЕРАЦИИ ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_heal_regen_pct"              "ПРОЦЕНТ РЕГЕНЕРАЦИИ ЗДОРОВЬЯ:"
+
+        "DOTA_Tooltip_ability_item_upgrade_modifiers"                                     "Upgrade Modifiers"
+        "DOTA_Tooltip_ability_item_upgrade_modifiers_Description"                         ""
+
+
+
+    }
+}

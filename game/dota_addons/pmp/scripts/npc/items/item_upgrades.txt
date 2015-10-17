@@ -996,7 +996,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "melee_damage_return" "20 30 40 50 65"
+            "damage_return" "20 30 40 50 65"
         }
     }
 
@@ -1038,7 +1038,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "melee_damage_return" "20 30 40 50 65"
+            "damage_return" "20 30 40 50 65"
         }
     }
 
@@ -1080,7 +1080,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "melee_damage_return" "20 30 40 50 65"
+            "damage_return" "20 30 40 50 65"
         }
     }
 
@@ -1122,7 +1122,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "melee_damage_return" "20 30 40 50 65"
+            "damage_return" "20 30 40 50 65"
         }
     }
 
@@ -1164,7 +1164,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "melee_damage_return" "20 30 40 50 65"
+            "damage_return" "20 30 40 50 65"
         }
     }
 

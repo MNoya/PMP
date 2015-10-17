@@ -105,6 +105,14 @@ function PimpUpgrade( event )
 	if IsValidAlive(garage) then
 		PMP:ApplyModifierUpgradeStacks(garage, ability_name, level)
 	end
+
+	-- Buff outposts
+	local Outposts = GetPlayerOutposts(playerID)
+	for _,outpost in pairs(Outposts) do
+		if IsValidAlive(outpost) and outpost:GetPlayerOwnerID() == playerID then
+			PMP:ApplyModifierUpgradeStacks(outpost, ability_name, level)
+		end
+	end
 end
 
 function PMP:SetUpgrade( playerID, name, level )
@@ -153,6 +161,15 @@ function PMP:SetUpgrade( playerID, name, level )
 	local Pimpery = GetPlayerShop(playerID)
 	if IsValidAlive(Pimpery) and slotUpgrades[name] then
 		PMP:UpdateWearablesOnSlot(Pimpery, name, level)
+	end
+
+	-- Armor and Regen to outposts
+	if name == "pimp_regen" or name == "pimp_armor" then
+		local Outposts = GetPlayerOutposts(playerID)
+		for _,unit in pairs(Outposts) do
+			print("SetUpgrade!!!!! OUTPOST")
+			PMP:ApplyUpgrade(unit, name, level)
+		end
 	end
 end
 
@@ -272,6 +289,18 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 				local original_scale = GetOriginalModelScale(unit)
 				local increase = 0.1*math.log(tonumber(level+1),2)+level*0.002
 				unit:SetModelScale(original_scale+increase)
+			end
+		end
+	end
+end
+
+function PMP:ApplyOutpostUpgrades( playerID, unit )
+	local upgrades = PMP:GetUpgradeList(playerID)
+
+	for name,level in pairs(upgrades) do
+		if heroUpgrades[name] then
+			if level ~= 0 then
+				PMP:ApplyModifierUpgradeStacks(unit, name, level)
 			end
 		end
 	end

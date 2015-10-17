@@ -30,7 +30,35 @@ function SendDefeatedMessage( pID_attacker, pID_killed )
     Notifications:TopToAll({text=string2, continue=true, duration=10})
     Notifications:TopToAll({text=string3, style={color=team_killed_color}, continue=true, duration=10})
     Notifications:TopToAll({text=string4, continue=true, duration=10})
+end
 
+function SendBossFocusMessage( pID_target )
+    local playerName = PlayerResource:GetPlayerName(pID_target)
+    if playerName == "" then playerName = "Player "..pID_target end
+
+    local player_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_target)) )
+
+    local string1 = "The Boss is now under control of "
+    local string2 = playerName.."!"
+    
+    Notifications:TopToAll({image="file://{images}/custom_game/nian.png", duration=10})
+    Notifications:TopToAll({text=string1, continue=true, duration=10})
+    Notifications:TopToAll({text=string2, style={color=player_color}, continue=true, duration=10})
+end
+
+function SendBossSlain( pID_target )
+    local playerName = PlayerResource:GetPlayerName(pID_target)
+    if playerName == "" then playerName = "Player "..pID_target end
+
+    local player_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_target)))
+    local race = GetRace(PlayerResource:GetSelectedHeroEntity(pID_target))
+
+    local string1 = "The Boss has been slain by "
+    local string2 = playerName.."!"
+    
+    Notifications:TopToAll({text=string1, duration=10})
+    Notifications:TopToAll({image="file://{images}/custom_game/food_"..race..".png", continue=true, duration=10})
+    Notifications:TopToAll({text=string2, style={color=player_color}, continue=true, duration=10})
 end
 
 ------------------------------------------------
@@ -851,6 +879,17 @@ end
 function AddToPlayerOutposts( playerID, unit )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local outposts = GetPlayerOutposts(playerID)
+
+    -- Remove old pimp_ modifiers
+    unit:RemoveModifierByName("modifier_pimp_regen_building")
+    unit:RemoveModifierByName("modifier_pimp_armor")
+    unit:RemoveModifierByName("modifier_pimp_damage")
+    unit:RemoveModifierByName("modifier_pimp_speed")
+
+    -- Add new pimp_ modifiers
+    Timers:CreateTimer(0.1, function()
+        PMP:ApplyOutpostUpgrades(playerID, unit)
+    end)
 
     table.insert(outposts, unit)
 end

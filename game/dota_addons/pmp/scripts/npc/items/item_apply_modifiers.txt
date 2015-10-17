@@ -119,5 +119,19 @@
                 "MODIFIER_PROPERTY_DISABLE_AUTOATTACK" "1"
             }      
         }
+
+        "modifier_roaming"
+        {
+            "IsHidden"            "0"
+            "TextureName"         "boss_roam"
+
+            "EffectName"          "particles/generic_gameplay/rune_haste_owner.vpcf"
+            "EffectAttachType"    "follow_origin"
+
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE" "500" 
+            }
+        }
 	}
 }
