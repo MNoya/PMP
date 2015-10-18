@@ -28,7 +28,7 @@ local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 local postLocation = 'http://getdotastats.com/s2/api/'
 
 -- The schema version we are currently using
-local schemaVersion = 2
+local schemaVersion = 1
 
 -- Constants used for pretty formatting, as well as strings
 local printPrefix = 'Stat Collection: '
@@ -62,19 +62,36 @@ local messageFlagsSet       = 'Flag was successfully set!'
 -- Store the first detected steamID
 local firstConnectedSteamID = -1
 ListenToGameEvent('player_connect', function(keys)
--- Grab their steamID
+
+    DeepPrintTable(keys)
+    local playerID = keys.index
+    
+    -- Grab their steamID
     local steamID64 = tostring(keys.xuid)
     local steamIDPart = tonumber(steamID64:sub(4))
     if not steamIDPart then return end
     local steamID = tostring(steamIDPart - 61197960265728)
 
+    CustomNetTables:SetTableValue("statcollection", tostring(playerID),  {steamID = steamID})
+
     -- Store it
     firstConnectedSteamID = steamID
 end, nil)
 
+-- Lua Modifier used for collecting client data
+LinkLuaModifier( "modifier_statcollection_network", "statcollection/lib/statcollection_client.lua", LUA_MODIFIER_MOTION_NONE )
+
 -- Create the stat collection class
 if not statCollection then
     statCollection = class({})
+end
+
+function statCollection:OnPlayerPickHero(keys)  
+    local hero = EntIndexToHScript(keys.heroindex)
+
+    if hero then
+        hero:AddNewModifier(hero, nil, "modifier_statcollection_network", {})
+    end
 end
 
 -- Function that will setup stat collection
@@ -85,6 +102,9 @@ function statCollection:init()
         return
     end
     self.doneInit = true
+
+    -- Listen to hero pick to create the network client modifier
+    ListenToGameEvent("dota_player_pick_hero", Dynamic_Wrap(statCollection, 'OnPlayerPickHero'), statCollection)
 
     -- Print the intro message
     print(printPrefix .. messageStarting)
@@ -120,6 +140,7 @@ function statCollection:init()
 
     -- Store the modIdentifier
     self.modIdentifier = modIdentifier
+    CustomNetTables:SetTableValue("statcollection", "modID", {modID = modIdentifier})
 
     -- Store the schemaIdentifier
     self.SCHEMA_KEY = statInfo.schemaID
@@ -305,6 +326,8 @@ function statCollection:sendStage1()
         this.authKey = res.authKey
         this.matchID = res.matchID
 
+        CustomNetTables:SetTableValue("statcollection", "matchID", {matchID = this.matchID})
+
         -- Tell the user
         print(printPrefix .. messagePhase1Complete)
     end)
@@ -327,12 +350,14 @@ function statCollection:sendStage2()
 
     -- Build players array
     local players = {}
-    for i = 1, (PlayerResource:GetPlayerCount() or 1) do
-        table.insert(players, {
-            playerName = PlayerResource:GetPlayerName(i - 1),
-            steamID32 = PlayerResource:GetSteamAccountID(i - 1),
-            connectionState = PlayerResource:GetConnectionState(i - 1)
-        })
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            table.insert(players, {
+                playerName = PlayerResource:GetPlayerName(playerID),
+                steamID32 = PlayerResource:GetSteamAccountID(playerID),
+                connectionState = PlayerResource:GetConnectionState(playerID)
+            })
+        end
     end
 
     local payload = {
