@@ -1,0 +1,51 @@
+"addon"
+{
+    "Language"      "Russian"
+    "Tokens"
+    {  
+        "addon_game_name"   "Pimp My Peon"
+        "addonname"         "Pimp My Peon"
+ 
+        "game_info_header_objective"            "Цель игры:"
+        "brief_description"                     "Уничтожить базы врагов!"
+        "game_info_header_how_to_play"          "Как играть:"
+        "game_info_throne"                      "Войска будут постоянно выходить из ваших <span class='bold'>Бараков</span>, которые также содержат улучшения для увеличения лимита войск и частоты призыва, а также различные защитные способности."
+        "game_info_coins"                       "Прокачайте ваших юнитов мощным <span class='bold'>Оружием</span>, <span class='bold'>Шлемами</span>, <span class='bold'>Щитами</span> and <span class='bold'>Крыльями</span>, и усильте их различными <span class='bold'>пассивными способностями</span> чтобы уничтожить врагов!"
+        "game_info_tips_header"                 "Подсказки:"
+        "game_info_tip01"                       "• Убивайте врагов, получайте <span class='gold'>золото</span> и <span class='lumber'>дерево</span>."
+        "game_info_tip02"                       "• Каждые 3 минуты на Вашей базе появляется <span class='bold'>Лидер</span> с поддерживающими способностями."
+        "game_info_tip03"                       "• Ваш <span class='bold'>Герой</span> имеет доступ к улучшениям Ваших войск."
+        "game_info_tip04"                       "• Установите <span class='bold'>Точку Сбора</span> используя правый клик из ваших Бараков."
+        "game_info_tip05"                       "• Попробуйте режим <span class='bold'>Free For All</span> и <span class='bold'>Classic</span> для командной игры!"
+        "game_info_tip06"                       "• Если Вас победили, вы можете остаться в игре как <span class='bold'>Ghost</span>-зритель."
+        "game_info_tip07"                       "• Используйте <span class='bold'>Торговца</span> для обмена ресурсов."
+   
+        "custom_end_screen_victory_message"     "{s:winning_team_name} Победила!"
+ 
+        "Unassigned"                                    "Команда не выбрана"
+        "Spectator"                                     "Зрители"
+        "Neutrals"                                      "Нейтральные войска"
+        "NoTeam"                                        "Нет команды"
+ 
+        "DOTA_GoodGuys"                                 "Синяя Команда"
+        "DOTA_BadGuys"                                  "Красная Команда"
+        "DOTA_Custom1"                                  "Голубая Команда"
+        "DOTA_Custom2"                                  "Фиолетовая Команда"
+        "DOTA_Custom3"                                  "Желтая Команда"
+        "DOTA_Custom4"                                  "Оранжевая Команда"
+        "DOTA_Custom5"                                  "Зеленая Команда"
+        "DOTA_Custom6"                                  "Розовая Команда"
+        "DOTA_Custom7"                                  "Коричневая Команда"
+        "DOTA_Custom8"                                  "Оливковая Команда"
+ 
+        // Error Messages
+        "error_not_enough_gold"                 "Недостаточно золота"
+        "error_not_enough_lumber"               "Недостаточно дерева"
+        "error_no_buyers_found"                 "Требуется покупатель"
+        "error_cant_target_level6"              "Цель должна быть меньше 5 уровня"
+
+        // Credits
+
+        "special_thanks"    "BMD Perry Myll\njimmydorry SinZ\nggthb DoctorGester\nXavice Tomcrash GuessWho\n汉化：Rabbitism\n和所有MNI的成员！"
+    }
+}

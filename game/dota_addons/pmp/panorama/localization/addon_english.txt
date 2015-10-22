@@ -46,6 +46,6 @@
 
 		// Credits
 
-		"special_thanks"	"BMD Perry\njimmydorry SinZ\nggthb DoctorGester\nXavice Tomcrash GuessWho\nand all the MNI Crew!"
+		"special_thanks"	"BMD Perry Myll\njimmydorry SinZ\nggthb DoctorGester\nXavice Tomcrash GuessWho\n汉化：Rabbitism\nand all the MNI Crew!"
 	}
 }

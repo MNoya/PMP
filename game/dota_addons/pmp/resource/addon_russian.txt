@@ -84,6 +84,7 @@
         "barricade"                                                                       "Баррикада"
         "nian_boss"                                                                       "Босс"
         "trader"                                                                          "Торговец"
+        "outpost"                                                                         "Аванпост"
 
         // ******************** ABILITY MODIFIERS ********************
         "DOTA_Tooltip_modifier_bloodlust"                                                 "Жажда Крови"
@@ -134,7 +135,106 @@
         "DOTA_Tooltip_modifier_reincarnation_buff"                                        "Аура перерождения"
         "DOTA_Tooltip_modifier_reincarnation_buff_Description"                            "Этот юнит имеет двойной шанс возродиться"
 
+        "DOTA_Tooltip_modifier_night_elf_windwalk"                                        "Лунная Тень"
+        "DOTA_Tooltip_modifier_night_elf_windwalk_Description"                            "Невидимый"
+ 
+        "DOTA_Tooltip_modifier_trueshot_aura_buff"                                        "Аура Меткости"
+        "DOTA_Tooltip_modifier_trueshot_aura_buff_Description"                            "Урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%"
+ 
+        "DOTA_Tooltip_modifier_treant_armor"                                              "Живая Броня"
+        "DOTA_Tooltip_modifier_treant_armor_Description"                                  "Дополнительно имеет %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% защиты"
+ 
+        "DOTA_Tooltip_modifier_treant_linking"                                            "Связан"
+        "DOTA_Tooltip_modifier_treant_linking_Description"                                ""
+ 
+        "DOTA_Tooltip_modifier_forest_link"                                               "Лесная Связь"
+        "DOTA_Tooltip_modifier_forest_link_Description"                                   "Уменьшает получаемый урон на %fMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%\nЗамедлен на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+ 
+        "DOTA_Tooltip_modifier_forest_slow_debuff"                                        "Замедляющие Корни"
+        "DOTA_Tooltip_modifier_forest_slow_debuff_Description"                            "Скорость передвижения замедлена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+ 
+        "DOTA_Tooltip_modifier_boss_stacks"                                               "Сила Времени"
+        "DOTA_Tooltip_modifier_boss_stacks_Description"                                   "Бонусные %dMODIFIER_PROPERTY_HEALTH_BONUS% здоровья и %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% защиты"
+
         // ******************** ITEM MODIFIERS ********************
+        "DOTA_Tooltip_modifier_roaming"                                                   "Бродячий"
+        "DOTA_Tooltip_modifier_roaming_Description"                                       "Случайным образом перемещается между базами"
+ 
+        "DOTA_Tooltip_modifier_bow1"                                                      "Лук 1"
+        "DOTA_Tooltip_modifier_bow1_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow2"                                                      "Лук 2"
+        "DOTA_Tooltip_modifier_bow2_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow3"                                                      "Лук 3"
+        "DOTA_Tooltip_modifier_bow3_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow4"                                                      "Лук 4"
+        "DOTA_Tooltip_modifier_bow4_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow5"                                                      "Лук 5"
+        "DOTA_Tooltip_modifier_bow5_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow6"                                                      "Лук 6"
+        "DOTA_Tooltip_modifier_bow6_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow7"                                                      "Лук 7"
+        "DOTA_Tooltip_modifier_bow7_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow8"                                                      "Лук 8"
+        "DOTA_Tooltip_modifier_bow8_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow9"                                                      "Лук 9"
+        "DOTA_Tooltip_modifier_bow9_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow10"                                                     "Лук 10"
+        "DOTA_Tooltip_modifier_bow10_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow11"                                                     "Лук 11"
+        "DOTA_Tooltip_modifier_bow11_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow12"                                                     "Лук 12"
+        "DOTA_Tooltip_modifier_bow12_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow13"                                                     "Лук 13"
+        "DOTA_Tooltip_modifier_bow13_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow14"                                                     "Лук 14"
+        "DOTA_Tooltip_modifier_bow14_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow15"                                                     "Лук 15"
+        "DOTA_Tooltip_modifier_bow15_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow16"                                                     "Лук 16"
+        "DOTA_Tooltip_modifier_bow16_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow17"                                                     "Лук 17"
+        "DOTA_Tooltip_modifier_bow17_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow18"                                                     "Лук 18"
+        "DOTA_Tooltip_modifier_bow18_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow19"                                                     "Лук 19"
+        "DOTA_Tooltip_modifier_bow19_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_bow20"                                                     "Лук 20"
+        "DOTA_Tooltip_modifier_bow20_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_quiver1"                                                   "Колчан 1"
+        "DOTA_Tooltip_modifier_quiver1_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_quiver2"                                                   "Колчан 2"
+        "DOTA_Tooltip_modifier_quiver2_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_quiver3"                                                   "Колчан 3"
+        "DOTA_Tooltip_modifier_quiver3_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_quiver4"                                                   "Колчан 4"
+        "DOTA_Tooltip_modifier_quiver4_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+ 
+        "DOTA_Tooltip_modifier_quiver5"                                                   "Колчан 5"
+        "DOTA_Tooltip_modifier_quiver5_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона"
+
         "DOTA_Tooltip_modifier_invulnerability_layer"                                     "Неуязвимость"
         "DOTA_Tooltip_modifier_invulnerability_layer_Description"                         "Количество целых башен"
 
@@ -576,6 +676,277 @@
         "DOTA_Tooltip_ability_summon_super_skeleton_empty_Description"                    "Вы уже использовали всех своих Суперов."
 
         //-----------------------------------------------
+
+         "DOTA_Tooltip_ability_boss_buff"                                                  "Сила Времени"
+        "DOTA_Tooltip_ability_boss_buff_Description"                                      "Босс получает 1000 здоровья и 10 защиты каждые 3 минуты"
+ 
+        "DOTA_Tooltip_ability_boss_shockwave"                                             "Волна Силы"
+        "DOTA_Tooltip_ability_boss_shockwave_Description"                                 "Посылает вперед Волну Силы, наносящую урон противникам по линии."
+        "DOTA_Tooltip_ability_boss_shockwave_shock_speed"                                 "СКОРОСТЬ ВОЛНЫ:"
+        "DOTA_Tooltip_ability_boss_shockwave_shock_width"                                 "ШИРИНА ВОЛНЫ:"
+        "DOTA_Tooltip_ability_boss_shockwave_shock_distance"                              "ДАЛЬНОСТЬ ВОЛНЫ:"
+        "DOTA_Tooltip_ability_boss_shockwave_shock_vision"                                "ОБЛАСТЬ ВИДИМОСТИ:"
+ 
+        "DOTA_Tooltip_ability_boss_devour"                                                "Поглощение"
+        "DOTA_Tooltip_ability_boss_devour_Description"                                    "Получает все способности существ, которых поглощает"
+ 
+        "DOTA_Tooltip_ability_boss_roam"                                                  "Врум-Врум!"
+        "DOTA_Tooltip_ability_boss_roam_Description"                                      "Бродячий Босс включен!\nБосс будет странствовать между базами, атакуя ближайших игроков, имеющих больше всего убийств."
+ 
+        "DOTA_Tooltip_ability_active_outpost"                                             "Активировать Аванпост"
+        "DOTA_Tooltip_ability_active_outpost_Description"                                 "Включите это способность, чтобы Ваши войска выходилии из этого Аванпоста."
+        "DOTA_Tooltip_ability_active_outpost_Note0"                                       "Щелкните правой кнопкой мыши, чтобы назначить точку сбора."
+ 
+ 
+        "DOTA_Tooltip_ability_night_elf_racial"                                           "Дальний Бой"
+        "DOTA_Tooltip_ability_night_elf_racial_Description"                               "<font color='#00ff00'>Расовая</font>\nСтрелы ночных эльфов наносят 50%% урона войскам ближнего боя и получают 150%% урона от них."
+ 
+        "DOTA_Tooltip_ability_spawn_night_elf"                                            "Призыв Ночных Эльфов"
+        "DOTA_Tooltip_ability_spawn_night_elf_Description"                                ""
+ 
+        "DOTA_Tooltip_ability_spawn_night_elf_leader"                                     "Призыв Лидера Ночных Эльфов"
+        "DOTA_Tooltip_ability_spawn_night_elf_leader_Description"                         "Каждые 3 минуты призывается лидер с мощными поддерживающими способностями.\nСпособности лидера:\n-Сова Разведчик\n-Лунная Тень\n-Аура Меткости\n\n<b><font color='#00ff00'>Лидеры не расходуют еду.</font></b>"
+ 
+        "DOTA_Tooltip_ability_night_elf_owl_scout"                                        "Сова Разведчик"
+        "DOTA_Tooltip_ability_night_elf_owl_scout_Description"                            "Временно призывает Сову-Разведчика.\nМожет видеть невидимые войска."
+        "DOTA_Tooltip_ability_night_elf_owl_scout_owl_duration"                           "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_night_elf_owl_scout_owl_hp"                                 "ЗДОРОВЬЕ СОВЫ:"
+        "DOTA_Tooltip_ability_night_elf_owl_scout_owl_vision"                             "РАДИУС ЗРЕНИЯ:"
+        "DOTA_Tooltip_ability_night_elf_owl_scout_owl_movespeed"                          "СКОРОСТЬ ПЕРЕДВИЖЕНИЯ СОВЫ:"
+        "DOTA_Tooltip_ability_night_elf_owl_scout_spawn_distance"                         "ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:"
+ 
+        "DOTA_Tooltip_ability_night_elf_true_sight"                                       "Острое Зрение"
+        "DOTA_Tooltip_ability_night_elf_true_sight_Description"                           "Обнаруживает невидимые войска поблизости."
+        "DOTA_Tooltip_ability_night_elf_true_sight_reveal_radius"                         "ОБЛАСТЬ ДЕЙСТВИЯ:"
+ 
+        "DOTA_Tooltip_ability_undead_true_sight"                                          "Острое Зрение"
+        "DOTA_Tooltip_ability_undead_true_sight_Description"                              "Обнаруживает невидимые войска поблизости."
+        "DOTA_Tooltip_ability_undead_true_sight_reveal_radius"                            "ОБЛАСТЬ ДЕЙСТВИЯ:"
+ 
+        "DOTA_Tooltip_ability_night_elf_mass_windwalk"                                    "Лунная Тень"
+        "DOTA_Tooltip_ability_night_elf_mass_windwalk_Description"                        "Делает союзников поблизости невидимыми на %duration% секунд."
+        "DOTA_Tooltip_ability_night_elf_mass_windwalk_radius"                             "ОБЛАСТЬ ДЕЙСТВИЯ:"
+        "DOTA_Tooltip_ability_night_elf_mass_windwalk_duration"                           "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_night_elf_mass_windwalk_movespeed_pct"                      "БОНУС СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+ 
+        "DOTA_Tooltip_ability_night_elf_trueshot_aura"                                    "Аура Меткости"
+        "DOTA_Tooltip_ability_night_elf_trueshot_aura_Description"                        "Дает вашим войскам дальнего боя бонусный урон."
+        "DOTA_Tooltip_ability_night_elf_trueshot_aura_damage_bonus_percent"               "ПРОЦЕНТ БОНУСНОГО УРОНА:"
+        "DOTA_Tooltip_ability_night_elf_trueshot_aura_radius"                             "ОБЛАСТЬ ДЕЙСТВИЯ:"
+ 
+        "DOTA_Tooltip_ability_night_elf_racial_attack_range"                              "ДАЛЬНОСТЬ АТАКИ:"
+ 
+        "DOTA_Tooltip_ability_summon_super_night_elf"                                     "Призыв Супера Ночных Эльфов"
+        "DOTA_Tooltip_ability_summon_super_night_elf_Description"                         "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_night_elf_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+ 
+        "DOTA_Tooltip_ability_summon_super_night_elf_empty"                               "Призыв Супера Ночных Эльфов"
+        "DOTA_Tooltip_ability_summon_super_night_elf_empty_Description"                   "Вы уже использовали всех своих Суперов."
+ 
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm"                                     "Рой Летучих Мышей"
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_Description"                         "Насылает на ваших врагов орду летучих мышей."
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_start_radius"                        "НАЧАЛЬНАЯ ОБЛАСТЬ:"
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_end_radius"                          "КОНЕЧНАЯ ОБЛАСТЬ:"
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_range"                               "ДАЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_skeleton_carrion_swarm_speed"                               "СКОРОСТЬ:"
+ 
+        "DOTA_Tooltip_ability_skeleton_reincarnation_aura"                                "Аура Перерождения"
+        "DOTA_Tooltip_ability_skeleton_reincarnation_aura_Description"                    "Удваивает шанс перерождения союзных Скелетов поблизости."
+        "DOTA_Tooltip_ability_skeleton_reincarnation_aura_radius"                         "ОБЛАСТЬ ДЕЙСТВИЯ:"
+ 
+        "DOTA_Tooltip_ability_skeleton_sacrifice"                                         "Жертвоприношение"
+        "DOTA_Tooltip_ability_skeleton_sacrifice_Description"                             "Убивает вашего Скелета, превращая его в Тень.\nТени - невидимые разведчики, неспособные атаковать."
+ 
+        "DOTA_Tooltip_ability_skeleton_racial"                                            "Перерождение"
+        "DOTA_Tooltip_ability_skeleton_racial_Description"                                "<font color='#00ff00'>Расовая</font>\nВовзращается к жизни чтобы сражаться еще раз."
+        "DOTA_Tooltip_ability_skeleton_racial_reincarnate_chance"                         "ШАНС ВОЗРОДИТЬСЯ:"
+        "DOTA_Tooltip_ability_skeleton_racial_Note0"                                      "I'll be back. - Skeleton King 2013"
+ 
+        "DOTA_Tooltip_ability_skeleton_king_particles"                                    "Skeleton King Particles"
+        "DOTA_Tooltip_ability_skeleton_king_particles_Description"                        ""
+ 
+        "DOTA_Tooltip_ability_spawn_skeleton"                                             "Призыв Скелетов"
+        "DOTA_Tooltip_ability_spawn_skeleton_Description"                                 ""
+ 
+        "DOTA_Tooltip_ability_spawn_skeleton_leader"                                      "Призыв Лидера Скелетов"
+        "DOTA_Tooltip_ability_spawn_skeleton_leader_Description"                          "Каждые 3 минуты призывается лидер с мощными поддерживающими способностями.\nСпособности лидера:\n-Рой Летучих Мышей\n-Жертвоприношение\n-Аура Перерождения\n\n<b><font color='#00ff00'>Лидеры не расходуют еду.</font></b>"
+ 
+        "DOTA_Tooltip_ability_summon_super_skeleton"                                      "Призыв Супера Скелетов"
+        "DOTA_Tooltip_ability_summon_super_skeleton_Description"                          "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_skeleton_duration"                             "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+ 
+        "DOTA_Tooltip_ability_summon_super_skeleton_empty"                                "Призыв Супера Скелетов"
+        "DOTA_Tooltip_ability_summon_super_skeleton_empty_Description"                    "Вы уже использовали всех своих Суперов."
+ 
+        "DOTA_Tooltip_ability_spawn_treant"                                               "Призыв Энтов"
+        "DOTA_Tooltip_ability_spawn_treant_Description"                                   ""
+ 
+        "DOTA_Tooltip_ability_spawn_treant_leader"                                        "Призыв Лидера Энтов"
+        "DOTA_Tooltip_ability_spawn_treant_leader_Description"                            "Каждые 3 минуты призывается лидер с мощными поддерживающими способностями.\nСпособности лидера:\n-Призвать Энтов\n-Взрыв\n-Живая Броня\n\n<b><font color='#00ff00'>Лидеры не расходуют еду.</font></b>"
+ 
+        "DOTA_Tooltip_ability_summon_super_treant"                                        "Призыв Супера Энтов"
+        "DOTA_Tooltip_ability_summon_super_treant_Description"                            "Призывает Супера, который будет защищать вашу базу в течение 20 секунд. Супер не может покинуть базу!\n\n<b><font color='#ff0000'>Вы можете призвать всего 3 Суперов за игру.</font></b>\n<b><font color='#00ff00'>Суперы не расходуют еду.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_treant_duration"                               "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+ 
+        "DOTA_Tooltip_ability_summon_super_treant_empty"                                  "Призыв Супера Энтов"
+        "DOTA_Tooltip_ability_summon_super_treant_empty_Description"                      "Вы уже использовали всех своих Суперов."
+ 
+        "DOTA_Tooltip_ability_treant_treants"                                             "Призыв Энтов"
+        "DOTA_Tooltip_ability_treant_treants_Description"                                 "Укажите на дерево, чтобы призвать %treant_count% энтов на %duration% секунд.\nПризванные Энты не требуют еды."
+        "DOTA_Tooltip_ability_treant_treants_treant_count"                                "ЭНТОВ ПРИЗВАНО:"
+        "DOTA_Tooltip_ability_treant_treants_duration"                                    "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+ 
+        "DOTA_Tooltip_ability_treant_detonate"                                            "Взрыв"
+        "DOTA_Tooltip_ability_treant_detonate_Description"                                "Приносит лидера в жертву, снимая все магические эффекты с войск вокруг, с шансом мгновенно убить их."
+        "DOTA_Tooltip_ability_treant_detonate_radius"                                     "РАДИУС ПОРАЖЕНИЯ:"
+        "DOTA_Tooltip_ability_treant_detonate_kill_chance"                                "ШАНС УБИТЬ:"
+ 
+        "DOTA_Tooltip_ability_treant_armor"                                               "Живая Броня"
+        "DOTA_Tooltip_ability_treant_armor_Description"                                   "Просто скучный бонус защиты."
+        "DOTA_Tooltip_ability_treant_armor_armor_bonus"                                   "БОНУСНАЯ ЗАЩИТА:"
+        "DOTA_Tooltip_ability_treant_armor_duration"                                      "ПРОДОЛЖИТЕЛЬНОСТЬ:"
+ 
+        "DOTA_Tooltip_ability_treant_racial"                                              "Лес Энтов"
+        "DOTA_Tooltip_ability_treant_racial_Description"                                  "Если Энты стоят на месте %link_time% секунд, они связываются и образуют Лес, уменьшающий получаемый урон, но замедляющий скорость передвижения.\nСила способности зависит от количества связанных Энтов.\nСвязь слабнет, когда Энт отдаляется от него на %radius%.\nВраги входящие в Лес замедлены на 50%%."
+        "DOTA_Tooltip_ability_treant_racial_radius"                                       "РАДИУС:"
+        "DOTA_Tooltip_ability_treant_racial_link_time"                                    "ВРЕМЯ СВЯЗЫВАНИЯ:"
+        "DOTA_Tooltip_ability_treant_racial_dmg_reduction_per_stack"                      "-УРОНА%% ЗА СТАК:"
+        "DOTA_Tooltip_ability_treant_racial_slow_per_stack"                               "ЗАМЕДЛЕНИЯ ЗА СТАК:"
+        "DOTA_Tooltip_ability_treant_racial_max_stacks"                                   "МАКСИМУМ СТАКОВ:"
+ 
+ 
+ 
+        "DOTA_Tooltip_ability_upgrade_bow_final"                                          "Луки полностью прокачаны!"
+        "DOTA_Tooltip_ability_upgrade_bow_final_Description"                              ""
+ 
+        "DOTA_Tooltip_ability_upgrade_quiver_final"                                       "Колчаны полностью прокачаны!"
+        "DOTA_Tooltip_ability_upgrade_quiver_final_Description"                           ""
+ 
+        "DOTA_Tooltip_ability_upgrade_bow1"                                               "Прокачать Луки (1)"
+        "DOTA_Tooltip_ability_upgrade_bow1_Description"                                   "Bow of the Black Wind Raven прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow1_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow1_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow2"                                               "Прокачать Луки (2)"
+        "DOTA_Tooltip_ability_upgrade_bow2_Description"                                   "Bow of the Winged Bolt прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow2_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow2_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow3"                                               "Прокачать Луки (3)"
+        "DOTA_Tooltip_ability_upgrade_bow3_Description"                                   "Nightsilver Bow прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow3_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow3_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow4"                                               "Прокачать Луки (4)"
+        "DOTA_Tooltip_ability_upgrade_bow4_Description"                                   "Bow of the Moon Rider прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow4_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow4_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow5"                                               "Прокачать Луки (5)"
+        "DOTA_Tooltip_ability_upgrade_bow5_Description"                                   "Crescent Bow прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow5_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow5_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow6"                                               "Прокачать Луки (6)"
+        "DOTA_Tooltip_ability_upgrade_bow6_Description"                                   "Sparrowhawk Bow прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow6_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow6_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow7"                                               "Прокачать Луки (7)"
+        "DOTA_Tooltip_ability_upgrade_bow7_Description"                                   "Lyralei's Breeze прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow7_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow7_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow8"                                               "Прокачать Луки (8)"
+        "DOTA_Tooltip_ability_upgrade_bow8_Description"                                   "Flowersong прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow8_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow8_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow9"                                               "Прокачать Луки (9)"
+        "DOTA_Tooltip_ability_upgrade_bow9_Description"                                   "Song of the Wild Wind прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow9_bonus_damage"                                  "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow9_lumber_cost"                                   "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow10"                                              "Прокачать Луки (10)"
+        "DOTA_Tooltip_ability_upgrade_bow10_Description"                                  "Rainmaker прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow10_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow10_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow11"                                              "Прокачать Луки (11)"
+        "DOTA_Tooltip_ability_upgrade_bow11_Description"                                  "Molten Genesis прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow11_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow11_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow12"                                              "Прокачать Луки (12)"
+        "DOTA_Tooltip_ability_upgrade_bow12_Description"                                  "Heat прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow12_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow12_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow13"                                              "Прокачать Луки (13)"
+        "DOTA_Tooltip_ability_upgrade_bow13_Description"                                  "Twin Serpent Bow прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow13_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow13_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow14"                                              "Прокачать Луки (14)"
+        "DOTA_Tooltip_ability_upgrade_bow14_Description"                                  "Monarch Bow прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow14_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow14_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow15"                                              "Прокачать Луки (15)"
+        "DOTA_Tooltip_ability_upgrade_bow15_Description"                                  "Bow of the Lone Traveler прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow15_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow15_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow16"                                              "Прокачать Луки (16)"
+        "DOTA_Tooltip_ability_upgrade_bow16_Description"                                  "Bow of the Frostfangs прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow16_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow16_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow17"                                              "Прокачать Луки (17)"
+        "DOTA_Tooltip_ability_upgrade_bow17_Description"                                  "Bow of the Howling Wind прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow17_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow17_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow18"                                              "Прокачать Луки (18)"
+        "DOTA_Tooltip_ability_upgrade_bow18_Description"                                  "Heart of the Emerald Sea прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow18_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow18_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow19"                                              "Прокачать Луки (19)"
+        "DOTA_Tooltip_ability_upgrade_bow19_Description"                                  "Bow of the Beholder прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow19_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow19_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_bow20"                                              "Прокачать Луки (20)"
+        "DOTA_Tooltip_ability_upgrade_bow20_Description"                                  "Bow of the Eldwurm's Touch прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_bow20_bonus_damage"                                 "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_bow20_lumber_cost"                                  "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_quiver1"                                            "Прокачать Колчаны (1)"
+        "DOTA_Tooltip_ability_upgrade_quiver1_Description"                                "Quiver of the Winged Bolt. прокачает ваши войска как надо!"
+        "DOTA_Tooltip_ability_upgrade_quiver1_bonus_damage"                               "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_quiver1_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_quiver2"                                            "Прокачать Колчаны (2)"
+        "DOTA_Tooltip_ability_upgrade_quiver2_Description"                                "Lion Quiver of the Moon Rider прокачает ваши войска как надо!\nЗаменяет снаряды на Стрелы Мираны"
+        "DOTA_Tooltip_ability_upgrade_quiver2_bonus_damage"                               "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_quiver2_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_quiver3"                                            "Прокачать Колчаны (3)"
+        "DOTA_Tooltip_ability_upgrade_quiver3_Description"                                "Flowersong Thorns прокачает ваши войска как надо!\nЗаменяет снаряды на Стрелы Ветра"
+        "DOTA_Tooltip_ability_upgrade_quiver3_bonus_damage"                               "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_quiver3_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_quiver4"                                            "Прокачать Колчаны (4)"
+        "DOTA_Tooltip_ability_upgrade_quiver4_Description"                                "Demon Quiver of the Crypt Guardian прокачает ваши войска как надо!\nЗаменяет снаряды на Огненные Стрелы"
+        "DOTA_Tooltip_ability_upgrade_quiver4_bonus_damage"                               "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_quiver4_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+ 
+        "DOTA_Tooltip_ability_upgrade_quiver5"                                            "Прокачать Колчаны (5)"
+        "DOTA_Tooltip_ability_upgrade_quiver5_Description"                                "Quiver of the Boreal Watch прокачает ваши войска как надо!\nЗаменяет снаряды на Ледяные Стрелы"
+        "DOTA_Tooltip_ability_upgrade_quiver5_bonus_damage"                               "БОНУСНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_upgrade_quiver5_lumber_cost"                                "ТРЕБУЕТ ДЕРЕВА:"
+ 
 
         "DOTA_Tooltip_ability_barrage_attack"                                             "Barrage Attack"
         "DOTA_Tooltip_ability_barrage_attack_Description"                                 ""
@@ -1300,6 +1671,87 @@
 
         "DOTA_Tooltip_ability_item_upgrade_modifiers"                                     "Upgrade Modifiers"
         "DOTA_Tooltip_ability_item_upgrade_modifiers_Description"                         ""
+
+         "DOTA_Tooltip_ability_item_upgrade_skeleton_racial1"                              "Прокачать Скелетов (1)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_Description"                  "Увеличивает уровень способности Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial1_reincarnate_chance"           "ШАНС ВОЗРОДИТЬСЯ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial2"                              "Прокачать Скелетов (2)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_Description"                  "Увеличивает уровень способности Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial2_reincarnate_chance"           "ШАНС ВОЗРОДИТЬСЯ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial3"                              "Прокачать Скелетов (3)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_Description"                  "Увеличивает уровень способности Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial3_reincarnate_chance"           "ШАНС ВОЗРОДИТЬСЯ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial4"                              "Прокачать Скелетов (4)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_Description"                  "Увеличивает уровень способности Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial4_reincarnate_chance"           "ШАНС ВОЗРОДИТЬСЯ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial5"                              "Прокачать Скелетов (5)"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_Description"                  "Увеличивает уровень способности Reincarnation"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_gold_cost"                    "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_reincarnate_chance"           "ШАНС ВОЗРОДИТЬСЯ:"
+       
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_heal_regen_pct"              "ВОССТАНАВЛИВАЕТ % ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_heal_regen_pct"              "ВОССТАНАВЛИВАЕТ % ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_heal_regen_pct"              "ВОССТАНАВЛИВАЕТ % ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_heal_regen_pct"              "ВОССТАНАВЛИВАЕТ % ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_heal_regen_pct"              "ВОССТАНАВЛИВАЕТ % ЗДОРОВЬЯ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial1"                             "Прокачать Ночных Эльфов (1)"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_Description"                 "Увеличивает уровень Дальнего Боя"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_attack_range"                "ДАЛЬНОСТЬ АТАКИ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial2"                             "Прокачать Ночных Эльфов (2)"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_Description"                 "Увеличивает уровень Дальнего Боя"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_attack_range"                "ДАЛЬНОСТЬ АТАКИ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial3"                             "Прокачать Ночных Эльфов (3)"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_Description"                 "Увеличивает уровень Дальнего Боя"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_attack_range"                "ДАЛЬНОСТЬ АТАКИ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial4"                             "Прокачать Ночных Эльфов (4)"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_Description"                 "Увеличивает уровень Дальнего Боя"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_attack_range"                "ДАЛЬНОСТЬ АТАКИ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial5"                             "Прокачать Ночных Эльфов (5)"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_Description"                 "Увеличивает уровень Дальнего Боя"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_gold_cost"                   "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_attack_range"                "ДАЛЬНОСТЬ АТАКИ:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial1"                                "Прокачать Энтов (1)"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial1_Description"                    "Увеличивает уровень способности Forest"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial1_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial1_dmg_reduction_per_stack"        "ПОГЛОЩЕНИЕ УРОНА ЗА СТАК:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial2"                                "Прокачать Энтов (2)"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial2_Description"                    "Увеличивает уровень способности Forest"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial2_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial2_dmg_reduction_per_stack"        "ПОГЛОЩЕНИЕ УРОНА ЗА СТАК:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial3"                                "Прокачать Энтов (3)"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial3_Description"                    "Увеличивает уровень способности Forest"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial3_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial3_dmg_reduction_per_stack"        "ПОГЛОЩЕНИЕ УРОНА ЗА СТАК:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial4"                                "Прокачать Энтов (4)"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial4_Description"                    "Увеличивает уровень способности Forest"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial4_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial4_dmg_reduction_per_stack"        "ПОГЛОЩЕНИЕ УРОНА ЗА СТАК:"
+ 
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial5"                                "Прокачать Энтов (5)"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial5_Description"                    "Увеличивает уровень способности Forest"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial5_gold_cost"                      "ТРЕБУЕТ ЗОЛОТА:"
+        "DOTA_Tooltip_ability_item_upgrade_treant_racial5_dmg_reduction_per_stack"        "ПОГЛОЩЕНИЕ УРОНА ЗА СТАК:"
 
 
 

@@ -1,0 +1,51 @@
+"addon"
+{
+	"Language"		"schinese"
+	"Tokens"
+	{	
+		"addon_game_name"	"血腥苦工大作战"
+		"addonname"			"血腥苦工大作战"
+
+		"game_info_header_objective"			"目标："
+		"brief_description"					    "摧毁敌人的基地！"
+		"game_info_header_how_to_play"		    "游戏指南："
+		"game_info_throne"					    "苦工将会持续从你的<span class='bold'>基地</span>中被召唤出来，基地还可用于升级人口上限和召唤速率，研习各种防御技能。"
+		"game_info_coins"						"强化你的苦工，为他们升级<span class='bold'>武器</span>、<span class='bold'>头盔</span>、<span class='bold'>护盾</span>和<span class='bold'>翅膀</span>等等，以及各种<span class='bold'>被动技能</span>，最终摧毁敌人！"
+		"game_info_tips_header"				    "贴士："
+		"game_info_tip01"						"• 击杀敌方苦工可以获得<span class='gold'>金币</span>和<span class='lumber'>木材</span>。"
+		"game_info_tip02"						"• 每过3分钟，基地都将召唤一个<span class='bold'>首领</span>，他拥有各种辅助技能。"
+		"game_info_tip03"						"• 点击你的<span class='bold'>英雄头像</span>可以为全部单位升级。"
+		"game_info_tip04"						"• 选择基地并右键点击可以设置<span class='bold'>集结地点</span>。"
+		"game_info_tip05"						"• 选择<span class='bold'>Free For All</span>和<span class='bold'>Classic</span>地图可以进行组队游戏！"
+		"game_info_tip06"						"• 如果你不幸被击败，可以选择成为<span class='bold'>游魂</span>在游戏中继续观战。"
+		"game_info_tip07"						"• 在<span class='bold'>商人</span>附近可以兑换资源。"
+	
+		"custom_end_screen_victory_message"		"{s:winning_team_name}获胜！"
+
+		"Unassigned"      								"未指定阵营"
+		"Spectator"       								"观战阵营"
+		"Neutrals"        								"中立阵营"
+		"NoTeam"          								"无阵营"
+
+		"DOTA_GoodGuys"   								"蓝色阵营"
+		"DOTA_BadGuys"    								"红色阵营"
+		"DOTA_Custom1"    								"青色阵营"
+		"DOTA_Custom2"    								"紫色阵营"
+		"DOTA_Custom3"    								"黄色阵营"
+		"DOTA_Custom4"    								"橙色阵营"
+		"DOTA_Custom5"    								"绿色阵营"
+		"DOTA_Custom6"    								"粉色阵营"
+		"DOTA_Custom7"    								"棕色阵营"
+		"DOTA_Custom8"    								"橄榄阵营"
+
+		// Error Messages
+		"error_not_enough_gold"					"金钱不足"
+		"error_not_enough_lumber"				"木材不足"	
+		"error_no_buyers_found"					"附近没有买家"
+		"error_cant_target_level6"				"无法对5级以上小兵使用"
+
+		// Credits
+
+		"special_thanks"	"BMD Perry Myll\njimmydorry SinZ\nggthb DoctorGester\nXavice Tomcrash GuessWho\n汉化：Rabbitism\n和所有MNI的成员！"
+	}
+}
