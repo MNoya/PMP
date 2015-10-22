@@ -62,36 +62,19 @@ local messageFlagsSet       = 'Flag was successfully set!'
 -- Store the first detected steamID
 local firstConnectedSteamID = -1
 ListenToGameEvent('player_connect', function(keys)
-
-    DeepPrintTable(keys)
-    local playerID = keys.index
-    
-    -- Grab their steamID
+-- Grab their steamID
     local steamID64 = tostring(keys.xuid)
     local steamIDPart = tonumber(steamID64:sub(4))
     if not steamIDPart then return end
     local steamID = tostring(steamIDPart - 61197960265728)
 
-    CustomNetTables:SetTableValue("statcollection", tostring(playerID),  {steamID = steamID})
-
     -- Store it
     firstConnectedSteamID = steamID
 end, nil)
 
--- Lua Modifier used for collecting client data
-LinkLuaModifier( "modifier_statcollection_network", "statcollection/lib/statcollection_client.lua", LUA_MODIFIER_MOTION_NONE )
-
 -- Create the stat collection class
 if not statCollection then
     statCollection = class({})
-end
-
-function statCollection:OnPlayerPickHero(keys)  
-    local hero = EntIndexToHScript(keys.heroindex)
-
-    if hero then
-        hero:AddNewModifier(hero, nil, "modifier_statcollection_network", {})
-    end
 end
 
 -- Function that will setup stat collection
@@ -102,9 +85,6 @@ function statCollection:init()
         return
     end
     self.doneInit = true
-
-    -- Listen to hero pick to create the network client modifier
-    ListenToGameEvent("dota_player_pick_hero", Dynamic_Wrap(statCollection, 'OnPlayerPickHero'), statCollection)
 
     -- Print the intro message
     print(printPrefix .. messageStarting)
@@ -140,7 +120,6 @@ function statCollection:init()
 
     -- Store the modIdentifier
     self.modIdentifier = modIdentifier
-    CustomNetTables:SetTableValue("statcollection", "modID", {modID = modIdentifier})
 
     -- Store the schemaIdentifier
     self.SCHEMA_KEY = statInfo.schemaID
@@ -326,8 +305,6 @@ function statCollection:sendStage1()
         this.authKey = res.authKey
         this.matchID = res.matchID
 
-        CustomNetTables:SetTableValue("statcollection", "matchID", {matchID = this.matchID})
-
         -- Tell the user
         print(printPrefix .. messagePhase1Complete)
     end)
@@ -496,7 +473,6 @@ function statCollection:sendCustom(args)
     -- Print the intro message
     print(printPrefix .. messageCustomStarting)
 
-    -- Build rounds table
     -- Build rounds table
     rounds = {}
     rounds[tostring(self.roundID)] = {
