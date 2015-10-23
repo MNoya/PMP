@@ -16,20 +16,6 @@ function PMP:FilterDamage( filterTable )
 	if damagetype == DAMAGE_TYPE_PHYSICAL then
 		local damage = filterTable["damage"] --Post reduction
 
-        if GetRace(attacker) == "night_elf" then
-            local armor_victim = GetArmorType(victim)
-            if armor_victim == "medium" then
-                damage = damage * (2/3) -- Put piercing damage to 50% from 75%
-            elseif armor_victim == "unarmored" then
-                damage = damage * 0.5 -- Put piercing damage to 100% from 200%
-            end
-        elseif GetRace(victim) == "night_elf" then
-            local attack_attacker = GetAttackType(attacker)
-            if attack_attacker == "normal" then
-                damage = damage * 1.5 -- Take 150% damage from melee attacks
-            end
-        end
-
         if IsSuperPeon(attacker) and IsBoss(victim) then
             return false
         end

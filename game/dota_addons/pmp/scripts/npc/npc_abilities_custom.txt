@@ -1884,10 +1884,32 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "attack_range"        "500 550 600 650 700 750"
 	        }
-	        "01"
+	        "02"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "damage_dealt"        "75 80 85 90 95 100"
+	        }
+	        "03"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "damage_taken"        "150 145 140 135 130 125"
+	        }
+	
+	        // Real internal values, not for tooltip
+	        "04"
 	        {
 	            "var_type"            "FIELD_INTEGER"
 	            "attack_range_bonus"  "0 50 100 150 200 250"
+	        }
+	        "05"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "damage_dealt_minus"  "-25.0 -20.0 -15.0 -10.0 -5.0 -0.0"
+	        }
+	        "06"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "damage_taken_bonus"  "50.0 45.0 40.0 35.0 30.0 25.0"
 	        }
 	    }
 	
@@ -1900,6 +1922,8 @@
 	    
 	            "Properties"
 	            {
+	                "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION"   "%damage_dealt_minus"
+	                "MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE" "%damage_taken_bonus"
 	                "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%attack_range_bonus"
 	            }
 	        }
