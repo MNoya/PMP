@@ -153,7 +153,7 @@
 		"DOTA_Tooltip_modifier_forest_link_Description"                                   "Reduced damage taken by %fMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%\nSlowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
 		"DOTA_Tooltip_modifier_forest_slow_debuff"                                        "Forest Slow"
-		"DOTA_Tooltip_modifier_forest_slow_debuff_Description"                            "Slowed by Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_forest_slow_debuff_Description"                            "Slowed attack and movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
 		"DOTA_Tooltip_modifier_boss_stacks"                                               "Time Buff"
 		"DOTA_Tooltip_modifier_boss_stacks_Description"                                   "Bonus %dMODIFIER_PROPERTY_HEALTH_BONUS% HP and %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
@@ -468,7 +468,7 @@
 		"DOTA_Tooltip_ability_goblin_racial_Description"                                   "<font color='#00ff00'>Racial</font>\nThe Goblins gain additional gold and lumber for each kill on an enemy unit."
 		"DOTA_Tooltip_ability_goblin_racial_extra_bounty"                                  "EXTRA BOUNTY:"
 		"DOTA_Tooltip_ability_goblin_racial_Note0"      								"Only Goblin Peons gain the extra bounty, the Goblin Leader and Super Peon do not."
-		"DOTA_Tooltip_ability_goblin_racial_Note1" 										"For x.5 values there is a 50%% chance for the value rounded up and a 50%% chance for the value rounded down."
+		"DOTA_Tooltip_ability_goblin_racial_Note1" 										"For x.5 values there is a 50% chance for the value rounded up and a 50% chance for the value rounded down."
 
 		"DOTA_Tooltip_ability_peon_racial"                                                "Frenzy"
 		"DOTA_Tooltip_ability_peon_racial_Description"                                    "<font color='#00ff00'>Racial</font>\nIncreases attack and movement speed after each hit."
@@ -765,7 +765,7 @@
 		"DOTA_Tooltip_ability_treant_armor_duration"                                      "DURATION:"
 
 		"DOTA_Tooltip_ability_treant_racial"                                              "Treant Forest"
-		"DOTA_Tooltip_ability_treant_racial_Description"                                  "After standing still for %link_time% seconds, the Treants are linked together forming a Forest, reducing all damage taken but slowing their movement speed.\nA larger group of treants will form a stronger Forest, boosting the ability's effect.\nThe link is weakened whenever a tree goes past %radius% range of the group.\nEnemies that enter the Forest are also slowed by 50%%"
+		"DOTA_Tooltip_ability_treant_racial_Description"                                  "After standing still for %link_time% seconds, the Treants are linked together forming a Forest, reducing all damage taken.\nA larger group of treants will form a stronger Forest, boosting the ability's effect.\nThe link is weakened whenever a tree goes past %radius% range of the group.\nEnemies that enter the forrest also have their attack and movement speed slowed."
 		"DOTA_Tooltip_ability_treant_racial_radius"                                       "RADIUS:"
 		"DOTA_Tooltip_ability_treant_racial_link_time"                                    "LINK TIME:"
 		"DOTA_Tooltip_ability_treant_racial_dmg_reduction_per_stack"                      "-DMG% PER STACK:"
@@ -1345,7 +1345,7 @@
 
 		"DOTA_Tooltip_ability_dodge"                                                      "Evasion"
 		"DOTA_Tooltip_ability_dodge_Description"                                          "Grants a chance to dodge an enemies attack."
-		"DOTA_Tooltip_ability_dodge_dodge_chance"                                         "DODGE CHANCE:"
+		"DOTA_Tooltip_ability_dodge_dodge_chance"                                         "EVASION CHANCE:"
 
 		"DOTA_Tooltip_ability_spiked_armor"                                               "Spiked Armor"
 		"DOTA_Tooltip_ability_spiked_armor_Description"                                   "Returns a percentage of damage taken to the attacker."

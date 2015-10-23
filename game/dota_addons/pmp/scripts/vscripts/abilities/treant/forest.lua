@@ -255,3 +255,16 @@ function RecursiveFind( unit, radius, group )
         return group
     end
 end
+
+function AdjustDebuffStacks( event )
+    local caster = event.caster -- The treant aura that applied the modifier
+    local target = event.target
+    local modifierName = "modifier_forest_link"
+    local debuff = target:FindModifierByName("modifier_forest_slow_debuff")
+
+    if caster:HasModifier(modifierName) then
+        local modifier = caster:FindModifierByName(modifierName)
+        local stacks = modifier:GetStackCount()
+        debuff:SetStackCount(stacks)
+    end
+end

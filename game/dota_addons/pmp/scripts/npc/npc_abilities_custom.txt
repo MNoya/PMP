@@ -8015,13 +8015,6 @@
 	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"    "treant_forest"
 	    "MaxLevel"              "6"
-	    
-	    // Treants are slower than the other races but gain basic movement, armor and attack speed by standing around other treants
-	    // Max bonus is granted at 10 units linked together
-	    // Base MS: 100 (Other races have 150)
-	    // Bonus per stack: -2% MS, +2AS and +5% Armor per stack
-	    // Radius for the forest link is 350~400. Takes 7 seconds to link
-	
 	    "AbilityCastRange"  "%radius"
 	
 	    "AbilitySpecial"
@@ -8111,11 +8104,6 @@
 	
 	        "modifier_treant_linking"
 	        {
-	            "Properties"
-	            {
-	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-50" 
-	            }
-	
 	            "ThinkInterval"  "2.0"
 	            "OnIntervalThink"
 	            {
@@ -8158,7 +8146,6 @@
 	        {
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack"
 	                "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%dmg_reduction_per_stack"
 	            }
 	
@@ -8196,7 +8183,17 @@
 	            "IsDebuff"  "1"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-50"
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%slow_per_stack"
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack"
+	            }
+	            "ThinkInterval"  "0.5"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "abilities/treant/forest.lua"
+	                    "Function"      "AdjustDebuffStacks"
+	                }
 	            }
 	        }
 	    }
