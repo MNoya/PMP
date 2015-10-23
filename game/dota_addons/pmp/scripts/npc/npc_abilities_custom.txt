@@ -8037,9 +8037,14 @@
 	        "04"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "slow_per_stack"    "-5"
+	            "ms_slow_per_stack"    "-5"
 	        }
 	        "05"
+	        {
+	            "var_type"          "FIELD_INTEGER"
+	            "as_slow_per_stack"    "-1"
+	        }
+	        "06"
 	        {
 	            "var_type"          "FIELD_INTEGER"
 	            "max_stacks"        "10"
@@ -8172,7 +8177,7 @@
 	            }
 	
 	            "Aura"              "modifier_forest_slow_debuff"
-	            "Aura_Radius"       "%radius"
+	            "Aura_Radius"       "%radius/2"
 	            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	            "Aura_Types"        "DOTA_UNIT_TARGET_BASIC"
 	            "Aura_ApplyToCaster" "0"
@@ -8183,8 +8188,8 @@
 	            "IsDebuff"  "1"
 	            "Properties"
 	            {
-	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%slow_per_stack"
-	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack"
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%as_slow_per_stack"
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow_per_stack"
 	            }
 	            "ThinkInterval"  "0.5"
 	            "OnIntervalThink"

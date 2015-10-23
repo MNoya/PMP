@@ -769,7 +769,8 @@
 		"DOTA_Tooltip_ability_treant_racial_radius"                                       "RADIUS:"
 		"DOTA_Tooltip_ability_treant_racial_link_time"                                    "LINK TIME:"
 		"DOTA_Tooltip_ability_treant_racial_dmg_reduction_per_stack"                      "-DMG% PER STACK:"
-		"DOTA_Tooltip_ability_treant_racial_slow_per_stack"                               "SLOW PER STACK:"
+		"DOTA_Tooltip_ability_treant_racial_ms_slow_per_stack"                            "MOVE SLOW PER STACK:"
+		"DOTA_Tooltip_ability_treant_racial_as_slow_per_stack"                            "ATTACK SLOW PER STACK:"
 		"DOTA_Tooltip_ability_treant_racial_max_stacks"                                   "MAX STACKS:"
 
 		//-----------------------------------------------
