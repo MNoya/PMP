@@ -86,7 +86,7 @@
 		"barricade"                                                                       "Barricade"
 		"nian_boss"                                                                       "Boss"
 		"trader"                                                                          "Trader"
-		"outpost"                                                                         "Outpost"		
+		"outpost"                                                                         "Outpost"
 
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_bloodlust"                                                 "Bloodlust"
@@ -437,11 +437,11 @@
 		"DOTA_Tooltip_modifier_wings8_Description"                                        "+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% Move Speed\n+%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
 		// ******************** ABILITIES ********************
-		"DOTA_Tooltip_ability_boss_buff"                                                  "Boss Buff"
-		"DOTA_Tooltip_ability_boss_buff_Description"                                      "The Boss gains more power every 3 minutes"
+		"DOTA_Tooltip_ability_boss_buff"                                                  "Time Buff"
+		"DOTA_Tooltip_ability_boss_buff_Description"                                      "The Boss gains an extra 1000 HP and 10 Armor power every 3 minutes.\nNian is immune to magic."
 
 		"DOTA_Tooltip_ability_boss_shockwave"                                             "Shockwave"
-		"DOTA_Tooltip_ability_boss_shockwave_Description"                                 ""
+		"DOTA_Tooltip_ability_boss_shockwave_Description"                                 "Sends out a wave of force, damaging enemy units in a line."
 		"DOTA_Tooltip_ability_boss_shockwave_shock_speed"                                 "SHOCK SPEED:"
 		"DOTA_Tooltip_ability_boss_shockwave_shock_width"                                 "SHOCK WIDTH:"
 		"DOTA_Tooltip_ability_boss_shockwave_shock_distance"                              "SHOCK DISTANCE:"
@@ -465,14 +465,18 @@
 		"DOTA_Tooltip_ability_trade_lumber_Note0"                                     	  "Requires nearby patron"
 
 		"DOTA_Tooltip_ability_goblin_racial"                                               "Goblin Greed"
-		"DOTA_Tooltip_ability_goblin_racial_Description"                                   "<font color='#00ff00'>Racial</font>\nGets extra gold and lumber on each kill"
+		"DOTA_Tooltip_ability_goblin_racial_Description"                                   "<font color='#00ff00'>Racial</font>\nThe Goblins gain additional gold and lumber for each kill on an enemy unit."
 		"DOTA_Tooltip_ability_goblin_racial_extra_bounty"                                  "EXTRA BOUNTY:"
+		"DOTA_Tooltip_ability_goblin_racial_Note0"      								"Only Goblin Peons gain the extra bounty, the Goblin Leader and Super Peon do not."
+		"DOTA_Tooltip_ability_goblin_racial_Note1" 										"For x.5 values there is a 50%% chance for the value rounded up and a 50%% chance for the value rounded down."
 
-		"DOTA_Tooltip_ability_peon_racial"                                                "Axe's Frenzy"
-		"DOTA_Tooltip_ability_peon_racial_Description"                                    "<font color='#00ff00'>Racial</font>\nIncreases attack and movement speed after each hit"
+		"DOTA_Tooltip_ability_peon_racial"                                                "Frenzy"
+		"DOTA_Tooltip_ability_peon_racial_Description"                                    "<font color='#00ff00'>Racial</font>\nIncreases attack and movement speed after each hit."
 		"DOTA_Tooltip_ability_peon_racial_speed_per_hit"                                  "SPEED PER HIT:"
 		"DOTA_Tooltip_ability_peon_racial_max_stacks"                                     "MAX STACKS:"
 		"DOTA_Tooltip_ability_peon_racial_duration"                                       "DURATION:"
+		"DOTA_Tooltip_ability_peon_racial_Note0"                                       "Maximum bonus for each level: 25/35/45/60/75/100"
+		"DOTA_Tooltip_ability_peon_racial_Note1"                                       "New stacks refresh old stacks."
 
 		"DOTA_Tooltip_ability_peon_chain_lightning"                                       "Chain Lightning"
 		"DOTA_Tooltip_ability_peon_chain_lightning_Description"                           "Hurls a bolt of damaging lightning at a target enemy that jumps to nearby enemies. Each jump deals less damage."
@@ -507,14 +511,14 @@
 		"DOTA_Tooltip_ability_undead_curse_miss_chance"                                   "MISS CHANCE:"
 
 		"DOTA_Tooltip_ability_undead_possession"                                          "Possession"
-		"DOTA_Tooltip_ability_undead_possession_Description"                              "Displaces the soul of an enemy, giving you permanent control of it, but destroying the caster's body.\nPossession cannot be used on Heroes, or creeps above level 5."
+		"DOTA_Tooltip_ability_undead_possession_Description"                              "Displaces the soul of an enemy, giving you permanent control of it, but destroying the caster's body."
 		"DOTA_Tooltip_ability_undead_possession_damage_increase_while_channeling"         "DAMAGE INCREASE WHILE CHANNELING:"
 		"DOTA_Tooltip_ability_undead_possession_channel_range"                            "CHANNEL RANGE:"
 		"DOTA_Tooltip_ability_undead_possession_channel_duration"                         "CHANNEL DURATION:"
 		"DOTA_Tooltip_ability_undead_possession_max_level"                                "MAX LEVEL:"
 
-		"DOTA_Tooltip_ability_undead_racial"                                           "Undying's Will"
-		"DOTA_Tooltip_ability_undead_racial_Description"                               "<font color='#00ff00'>Racial</font>\nGains health with each attack."
+		"DOTA_Tooltip_ability_undead_racial"                                           "Undying Will"
+		"DOTA_Tooltip_ability_undead_racial_Description"                               "<font color='#00ff00'>Racial</font>\nGives a powerful lifestealing effect."
 		"DOTA_Tooltip_ability_undead_racial_lifesteal_percent"                         "LIFESTEAL PERCENT:"
 
 		"DOTA_Tooltip_ability_spawn_peon"                                                 "Spawn Peon"
@@ -546,7 +550,7 @@
 		"DOTA_Tooltip_ability_human_slow_Description"                                     "Slows a target enemy unit's attack and movement speed rate."
 		"DOTA_Tooltip_ability_human_slow_duration"                                        "DURATION:"
 		"DOTA_Tooltip_ability_human_slow_attack_speed"                                    "ATTACK SPEED:"
-		"DOTA_Tooltip_ability_human_slow_move_speed"                                      "MOVE SPEED:"
+		"DOTA_Tooltip_ability_human_slow_move_speed"                                      "%MOVE SPEED:"
 		"DOTA_Tooltip_ability_human_slow_autocast_radius"                                 "AUTOCAST RADIUS:"
 
 		"DOTA_Tooltip_ability_human_polymorph"                                            "Polymorph"
@@ -561,8 +565,10 @@
 		"DOTA_Tooltip_ability_human_mass_teleport_channel_time"                           "CHANNEL TIME:"
 
 		"DOTA_Tooltip_ability_human_racial"                                        "Dragon's Force"
-		"DOTA_Tooltip_ability_human_racial_Description"                            "<font color='#00ff00'>Racial</font>\nGives a chance to instantly kill the attacked unit"
+		"DOTA_Tooltip_ability_human_racial_Description"                            "<font color='#00ff00'>Racial</font>\nGives a chance to instantly kill the attacked unit."
 		"DOTA_Tooltip_ability_human_racial_instakill_chance"                       "INSTAKILL CHANCE:"
+		"DOTA_Tooltip_ability_human_racial_Note0"									"This ability has not effect on neutral units."
+		"DOTA_Tooltip_ability_human_racial_Note1"									"Enemies hit by this ability will also be knocked back."
 
 		"DOTA_Tooltip_ability_spawn_human"                                                "Spawn Human"
 		"DOTA_Tooltip_ability_spawn_human_Description"                                    ""
@@ -579,12 +585,12 @@
 		"DOTA_Tooltip_ability_summon_super_human_empty_Description"                       "You've used all your super units."
 
 		"DOTA_Tooltip_ability_blood_elf_heal"                                             "Heal"
-		"DOTA_Tooltip_ability_blood_elf_heal_Description"                                 "Heals a target friendly wounded unit for %heal% hit points."
+		"DOTA_Tooltip_ability_blood_elf_heal_Description"                                 "Heals a target friendly unit for 25 hit points."
 		"DOTA_Tooltip_ability_blood_elf_heal_heal"                                        "HEAL:"
 		"DOTA_Tooltip_ability_blood_elf_heal_autocast_radius"                             "AUTOCAST RADIUS:"
 
 		"DOTA_Tooltip_ability_blood_elf_inner_fire"                                       "Inner Fire"
-		"DOTA_Tooltip_ability_blood_elf_inner_fire_Description"                           "Increases a target friendly unit's damage by %damage_bonus_pct%% and armor by %darmor_bonus%."
+		"DOTA_Tooltip_ability_blood_elf_inner_fire_Description"                           "Increases a target friendly units damage and armor."
 		"DOTA_Tooltip_ability_blood_elf_inner_fire_duration"                              "DURATION:"
 		"DOTA_Tooltip_ability_blood_elf_inner_fire_armor_bonus"                           "ARMOR BONUS:"
 		"DOTA_Tooltip_ability_blood_elf_inner_fire_damage_bonus_pct"                      "DAMAGE BONUS PCT:"
@@ -600,8 +606,8 @@
 		"DOTA_Tooltip_ability_blood_elf_flame_strike_delay"                               "DELAY:"
 
 		"DOTA_Tooltip_ability_blood_elf_racial"                                           "Blood Pool"
-		"DOTA_Tooltip_ability_blood_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nWhenever a Blood Elf dies they leave a pool of blood behind. Any of your units fighting on top of this pool of blood will gain a huge health regeneration bonus."
-		"DOTA_Tooltip_ability_blood_elf_racial_heal_regen_pct"                            "%HEALTH REGEN:"
+		"DOTA_Tooltip_ability_blood_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nWhenever a Blood Elf dies they leave a pool of blood behind. Any of your units fighting on top of this pool of blood will gain a huge health regeneration bonus based on their maximum HP."
+		"DOTA_Tooltip_ability_blood_elf_racial_heal_regen_pct"                            "%HEALTH REGEN PER SECOND:"
 		"DOTA_Tooltip_ability_blood_elf_racial_radius"                                    "RADIUS:"
 		"DOTA_Tooltip_ability_blood_elf_racial_duration"                                  "DURATION:"
 
@@ -619,7 +625,7 @@
 		"DOTA_Tooltip_ability_summon_super_blood_elf_empty_Description"                   "You've used all your super units."
 
 		"DOTA_Tooltip_ability_goblin_healing_spray"                                       "Healing Spray"
-		"DOTA_Tooltip_ability_goblin_healing_spray_Description"                           "Sprays waves of healing mist that heals units in a target area."
+		"DOTA_Tooltip_ability_goblin_healing_spray_Description"                           "Sprays waves of healing mist that heals units in a target area.\nThe heal affects both allies as well as enemies."
 		"DOTA_Tooltip_ability_goblin_healing_spray_radius"                                "RADIUS:"
 		"DOTA_Tooltip_ability_goblin_healing_spray_wave_duration"                         "WAVE DURATION:"
 		"DOTA_Tooltip_ability_goblin_healing_spray_wave_count"                            "WAVE COUNT:"
@@ -627,12 +633,13 @@
 		"DOTA_Tooltip_ability_goblin_healing_spray_wave_interval"                         "WAVE INTERVAL:"
 
 		"DOTA_Tooltip_ability_goblin_attack"                                              "Ogre Attack"
-		"DOTA_Tooltip_ability_goblin_attack_Description"                                  "The Goblin Leader can attack, unlike other races"
+		"DOTA_Tooltip_ability_goblin_attack_Description"                                  "Unlike other races, the Goblin Leader can attack and is granted the benefits from all weapon upgrades."
+		"DOTA_Tooltip_ability_goblin_Note0" 											  "This includes Weapons, Helmets and Shields."
 
 		"DOTA_Tooltip_ability_goblin_transmute"                                           "Goblin Transmute"
-		"DOTA_Tooltip_ability_goblin_transmute_Description"                               "Kills a target unit instantly, transforming it into gold which is added to your available gold."
+		"DOTA_Tooltip_ability_goblin_transmute_Description"                               "Kills a target unit instantly, transforming it into gold."
 		"DOTA_Tooltip_ability_goblin_transmute_gold_bounty_multiplier"                    "GOLD BOUNTY MULTIPLIER:"
-		"DOTA_Tooltip_ability_goblin_transmute_Note0"									  "Transmute cannot be used on Heroes, or creeps above level 5."
+		"DOTA_Tooltip_ability_goblin_transmute_Note1" 									  "The lumber bounty does not get amplified."
 
 		"DOTA_Tooltip_ability_spawn_goblin"                                               "Spawn Goblin"
 		"DOTA_Tooltip_ability_spawn_goblin_Description"                                   ""
@@ -648,7 +655,10 @@
 		"DOTA_Tooltip_ability_summon_super_goblin_empty_Description"                      "You've used all your super units."
 
 		"DOTA_Tooltip_ability_night_elf_racial"                                           "Ranged Attack"
-		"DOTA_Tooltip_ability_night_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nNight Elf piercing attacks deal 50%% damage to melee armor, and take 150%% damage from melee attacks."
+		"DOTA_Tooltip_ability_night_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nNight Elves use bows to attack their enemies from afar. They also deal less damage to and take more damage from enemy melee units."
+		"DOTA_Tooltip_ability_night_elf_racial_attack_range"                              "ATTACK RANGE:"
+		"DOTA_Tooltip_ability_night_elf_racial_damage_dealt"                              "DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_night_elf_racial_damage_taken"                              "DAMAGE TAKEN:"
 
 		"DOTA_Tooltip_ability_spawn_night_elf"                                            "Spawn Night Elf"
 		"DOTA_Tooltip_ability_spawn_night_elf_Description"                                ""
@@ -682,8 +692,7 @@
 		"DOTA_Tooltip_ability_night_elf_trueshot_aura_Description"                        "An aura that gives friendly units bonus damage to their ranged attacks."
 		"DOTA_Tooltip_ability_night_elf_trueshot_aura_damage_bonus_percent"               "DAMAGE BONUS PERCENT:"
 		"DOTA_Tooltip_ability_night_elf_trueshot_aura_radius"                             "RADIUS:"
-
-		"DOTA_Tooltip_ability_night_elf_racial_attack_range"                              "ATTACK RANGE:"
+		"DOTA_Tooltip_ability_night_elf_trueshot_aura_Note0"                              "This ability does not stack."
 
 		"DOTA_Tooltip_ability_summon_super_night_elf"                                     "Summon Super Night Elf"
 		"DOTA_Tooltip_ability_summon_super_night_elf_Description"                         "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
@@ -707,7 +716,7 @@
 		"DOTA_Tooltip_ability_skeleton_sacrifice_Description"                             "Kills a Skeleton that you control into a Shade.\nShades are invisible scouts, but can't attack."
 
 		"DOTA_Tooltip_ability_skeleton_racial"                                            "Reincarnation"
-		"DOTA_Tooltip_ability_skeleton_racial_Description"                                "<font color='#00ff00'>Racial</font>\nComes back to life to fight once more"
+		"DOTA_Tooltip_ability_skeleton_racial_Description"                                "<font color='#00ff00'>Racial</font>\nSkeletons have a chance to resurrect.\nThe resurrection takes 2 seconds."
 		"DOTA_Tooltip_ability_skeleton_racial_reincarnate_chance"                         "REINCARNATE CHANCE:"
 		"DOTA_Tooltip_ability_skeleton_racial_Note0"                                      "I'll be back. - Skeleton King 2013"
 
@@ -1311,7 +1320,7 @@
 		"DOTA_Tooltip_ability_health_Description"                                         ""
 
 		"DOTA_Tooltip_ability_critical_strike"                                            "Critical Strike"
-		"DOTA_Tooltip_ability_critical_strike_Description"                                "Gives a chance to crit on attack."
+		"DOTA_Tooltip_ability_critical_strike_Description"                                "Grants each attack a chance to deal additional damage."
 		"DOTA_Tooltip_ability_critical_strike_crit_mult"                                  "CRIT MULT:"
 		"DOTA_Tooltip_ability_critical_strike_crit_chance"                                "CRIT CHANCE:"
 
@@ -1322,7 +1331,7 @@
 		"DOTA_Tooltip_ability_stun_hit_bonus_damage"                                      "BONUS DAMAGE:"
 
 		"DOTA_Tooltip_ability_poisoned_weapons"                                           "Poisoned Weapons"
-		"DOTA_Tooltip_ability_poisoned_weapons_Description"                               "Deals damage over time and reduces attack and movement speed for a duration."
+		"DOTA_Tooltip_ability_poisoned_weapons_Description"                               "Grants your attacks a damage per second and slowing effect."
 		"DOTA_Tooltip_ability_poisoned_weapons_damage_per_second"                         "DAMAGE PER SECOND:"
 		"DOTA_Tooltip_ability_poisoned_weapons_reduced_attack_speed"                      "ATTACKSPEED SLOW:"
 		"DOTA_Tooltip_ability_poisoned_weapons_reduced_movement_speed"                    "MOVESPEED SLOW:"
@@ -1334,12 +1343,12 @@
 		"DOTA_Tooltip_ability_pulverize_extra_damage"                                     "EXTRA DAMAGE:"
 		"DOTA_Tooltip_ability_pulverize_radius"                                           "RADIUS:"
 
-		"DOTA_Tooltip_ability_dodge"                                                      "Dodge"
-		"DOTA_Tooltip_ability_dodge_Description"                                          "Gives a chance to avoid an enemy attack."
+		"DOTA_Tooltip_ability_dodge"                                                      "Evasion"
+		"DOTA_Tooltip_ability_dodge_Description"                                          "Grants a chance to dodge an enemies attack."
 		"DOTA_Tooltip_ability_dodge_dodge_chance"                                         "DODGE CHANCE:"
 
 		"DOTA_Tooltip_ability_spiked_armor"                                               "Spiked Armor"
-		"DOTA_Tooltip_ability_spiked_armor_Description"                                   "Razor-sharp spikes on Armor deal a percentage of an enemy unit's attack damage back to it."
+		"DOTA_Tooltip_ability_spiked_armor_Description"                                   "Returns a percentage of damage taken to the attacker."
 		"DOTA_Tooltip_ability_spiked_armor_damage_return"                           	  "DAMAGE RETURN:"
 
 		"DOTA_Tooltip_ability_pimp_damage"                                                "Pimp Damage"
@@ -1506,6 +1515,16 @@
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_lifesteal_percent"              "LIFESTEAL PERCENT:"
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_lifesteal_percent"              "LIFESTEAL PERCENT:"
 		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_lifesteal_percent"              "LIFESTEAL PERCENT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_damage_dealt"                "DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_damage_taken"                "DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_damage_dealt"                "DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_damage_taken"                "DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_damage_dealt"                "DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_damage_taken"                "DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_damage_dealt"                "DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_damage_taken"                "DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_damage_dealt"                "DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_damage_taken"                "DAMAGE TAKEN:"
 
 		"DOTA_Tooltip_ability_item_upgrade_human_racial1"                                 "Upgrade Human Racial (1)"
 		"DOTA_Tooltip_ability_item_upgrade_human_racial1_Description"                     "Increase the level of Human's Strike"
