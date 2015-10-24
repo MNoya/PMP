@@ -35,7 +35,7 @@
         "05"
         {
             "var_type"            "FIELD_FLOAT"
-            "damage_dealt_minus"  "-25.0 -20.0 -15.0 -10.0 -5.0 -0.0"
+            "damage_dealt_minus"  "-40.0 -35.0 -30.0 -20.0 -10.0 -0.0"
         }
         "06"
         {
