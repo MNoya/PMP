@@ -166,7 +166,7 @@
             }
 
             "Aura"              "modifier_forest_slow_debuff"
-            "Aura_Radius"       "%radius/2"
+            "Aura_Radius"       "300"
             "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_ENEMY"
             "Aura_Types"        "DOTA_UNIT_TARGET_BASIC"
             "Aura_ApplyToCaster" "0"

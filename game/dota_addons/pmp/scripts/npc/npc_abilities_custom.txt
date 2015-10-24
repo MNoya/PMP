@@ -1669,8 +1669,6 @@
 	            "States"
 	            {
 	                "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_ATTACK_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_MAGIC_IMMUNE"   "MODIFIER_STATE_VALUE_ENABLED"
 	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
 	            }
 	
@@ -1887,7 +1885,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "damage_dealt"        "75 80 85 90 95 100"
+	            "damage_dealt"        "60 65 70 80 90 100"
 	        }
 	        "03"
 	        {
@@ -8177,7 +8175,7 @@
 	            }
 	
 	            "Aura"              "modifier_forest_slow_debuff"
-	            "Aura_Radius"       "%radius/2"
+	            "Aura_Radius"       "300"
 	            "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	            "Aura_Types"        "DOTA_UNIT_TARGET_BASIC"
 	            "Aura_ApplyToCaster" "0"
