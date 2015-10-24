@@ -70,6 +70,9 @@ function BuildPlayersArray()
         if PlayerResource:IsValidPlayerID(playerID) then
             if not PlayerResource:IsBroadcaster(playerID) then
                 local player_upgrades = PMP:GetUpgradeList(playerID)
+
+                DeepPrintTable(player_upgrades)
+
                 table.insert(players, {
                     --steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
@@ -93,7 +96,7 @@ function BuildPlayersArray()
                     -- Upgrades
                     uw = GetPlayerWeaponLevel(playerID), --upgrade_weapon
                     uh = player_upgrades["helm"] or 0, --upgrade_helm
-                    ua = player_upgrades["armor"] or 0, --upgrade_armor
+                    ua = player_upgrades["shield"] or 0, --upgrade_shield
                     uw = player_upgrades["wings"] or 0, --upgrade_wings
                     uhp = player_upgrades["health"] or 0, --upgrade_health
 
@@ -118,6 +121,7 @@ function BuildPlayersArray()
     return players
 end
 
+-- Prints the custom schema, required to get an schemaID
 function PrintSchema( gameArray, playerArray )
     print("-------- GAME DATA --------")
     DeepPrintTable(gameArray)
@@ -125,6 +129,13 @@ function PrintSchema( gameArray, playerArray )
     DeepPrintTable(playerArray)
     print("-------------------------------------")
 end
+
+-- Write 'test_schema' on the console to test your current functions instead of having to end the game
+if Convars:GetBool('developer') then
+    Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(),BuildPlayersArray()) end, "Test the custom schema arrays", 0)
+end
+
+----------------------------------------------------------------------------
 
 function GetPlayerWeaponLevel( playerID )
     local player_upgrades = PMP:GetUpgradeList(playerID)

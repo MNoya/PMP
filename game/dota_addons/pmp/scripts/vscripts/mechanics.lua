@@ -617,7 +617,11 @@ function GetPlayersPerTeam()
 end
 
 function GetTotalEarnedGold( pID )
-    return PlayerResource:GetTotalEarnedGold(pID)
+    local totalEarnedGold = PlayerResource:GetTotalEarnedGold(pID)
+    if totalEarnedGold > 100000 then
+        totalEarnedGold = 100000
+    end
+    return totalEarnedGold
 end
 
 function GetTotalEarnedXP( pID )

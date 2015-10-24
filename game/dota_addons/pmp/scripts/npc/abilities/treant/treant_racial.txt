@@ -31,7 +31,7 @@
         "05"
         {
             "var_type"          "FIELD_INTEGER"
-            "as_slow_per_stack"    "-1"
+            "as_slow_per_stack"    "-2"
         }
         "06"
         {

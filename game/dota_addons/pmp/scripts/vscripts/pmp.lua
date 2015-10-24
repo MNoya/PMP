@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.32"
+PMPVERSION = "0.33"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -476,7 +476,7 @@ function PMP:OnPlayerPickHero(keys)
     hero.Upgrades = {}
     hero.Upgrades["weapon"] = 0
     hero.Upgrades["helm"] = 0
-    hero.Upgrades["armor"] = 0
+    hero.Upgrades["shield"] = 0
     hero.Upgrades["wings"] = 0
     hero.Upgrades["bow"] = 0
     hero.Upgrades["quiver"] = 0
@@ -511,10 +511,13 @@ function PMP:OnPlayerPickHero(keys)
             SetFoodLimit(playerID, GetFoodLimit(playerID))
         end)
 
-        if Convars:GetBool('developer') or PlayerResource:GetPlayerCount() == 1 then
-            SetGold(playerID, 50000)
-            SetLumber(playerID, 50000)
-            --SetFoodLimit(playerID, 100)
+        if Convars:GetBool('developer') then
+            local steamID = PlayerResource:GetSteamAccountID(playerID)
+            if steamID == 86718505 then
+                SetGold(playerID, 50000)
+                SetLumber(playerID, 50000)
+                --SetFoodLimit(playerID, 100)
+            end
         end
 
         -- Set initial units
