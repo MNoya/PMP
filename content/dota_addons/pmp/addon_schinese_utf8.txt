@@ -795,123 +795,123 @@
 
 		// Weapons
 		"DOTA_Tooltip_ability_upgrade_weapon1"                                            "升级武器(1)"
-		"DOTA_Tooltip_ability_upgrade_weapon1_Description"                                "用强化你的单位！Skullsplitter Axe!"
+		"DOTA_Tooltip_ability_upgrade_weapon1_Description"                                "用劈颅巨斧强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon1_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon2"                                            "升级武器(2)"
-		"DOTA_Tooltip_ability_upgrade_weapon2_Description"                                "用强化你的单位！Wyvernguard Edge!"
+		"DOTA_Tooltip_ability_upgrade_weapon2_Description"                                "用飞龙守护之锋强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon2_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon3"                                            "升级武器(3)"
-		"DOTA_Tooltip_ability_upgrade_weapon3_Description"                                "用强化你的单位！Mountain Splitter!"
+		"DOTA_Tooltip_ability_upgrade_weapon3_Description"                                "用开山之斧强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon3_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon4"                                            "升级武器(4)"
-		"DOTA_Tooltip_ability_upgrade_weapon4_Description"                                "用强化你的单位！Ram's Head Blade!"
+		"DOTA_Tooltip_ability_upgrade_weapon4_Description"                                "用头羊战刃强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon4_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon5"                                            "升级武器(5)"
-		"DOTA_Tooltip_ability_upgrade_weapon5_Description"                                "用强化你的单位！Trident of the Deep One!"
+		"DOTA_Tooltip_ability_upgrade_weapon5_Description"                                "用深海住民三叉戟强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon5_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon6"                                            "升级武器(6)"
-		"DOTA_Tooltip_ability_upgrade_weapon6_Description"                                "用强化你的单位！Lance of the Wurmblood!"
+		"DOTA_Tooltip_ability_upgrade_weapon6_Description"                                "用龙血长矛强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon6_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon7"                                            "升级武器(7)"
-		"DOTA_Tooltip_ability_upgrade_weapon7_Description"                                "用强化你的单位！Tormented Staff!"
+		"DOTA_Tooltip_ability_upgrade_weapon7_Description"                                "用刑受神杖强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon7_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon8"                                            "升级武器(8)"
-		"DOTA_Tooltip_ability_upgrade_weapon8_Description"                                "用强化你的单位！Sufferwood Sapling!"
+		"DOTA_Tooltip_ability_upgrade_weapon8_Description"                                "用苦木独苗强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon8_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon9"                                            "升级武器(9)"
-		"DOTA_Tooltip_ability_upgrade_weapon9_Description"                                "用强化你的单位！Dazolator!"
+		"DOTA_Tooltip_ability_upgrade_weapon9_Description"                                "用暗灭强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon9_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon10"                                           "升级武器(10)"
-		"DOTA_Tooltip_ability_upgrade_weapon10_Description"                               "用强化你的单位！Relic Sword!"
+		"DOTA_Tooltip_ability_upgrade_weapon10_Description"                               "用圣者遗物强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon10_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon11"                                           "升级武器(11)"
-		"DOTA_Tooltip_ability_upgrade_weapon11_Description"                               "用强化你的单位！Winterblight!"
+		"DOTA_Tooltip_ability_upgrade_weapon11_Description"                               "用冥冬之患强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon11_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon12"                                           "升级武器(12)"
-		"DOTA_Tooltip_ability_upgrade_weapon12_Description"                               "用强化你的单位！Shadow Blade!"
+		"DOTA_Tooltip_ability_upgrade_weapon12_Description"                               "用影刃强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon12_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon13"                                           "升级武器(13)"
-		"DOTA_Tooltip_ability_upgrade_weapon13_Description"                               "用强化你的单位！Relentless!"
+		"DOTA_Tooltip_ability_upgrade_weapon13_Description"                               "用不屈之剑强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon13_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon14"                                           "升级武器(14)"
-		"DOTA_Tooltip_ability_upgrade_weapon14_Description"                               "用强化你的单位！Staff of the Infinite Waves!"
+		"DOTA_Tooltip_ability_upgrade_weapon14_Description"                               "用无尽攻势长棍强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon14_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon15"                                           "升级武器(15)"
-		"DOTA_Tooltip_ability_upgrade_weapon15_Description"                               "用强化你的单位！Voidhammer!"
+		"DOTA_Tooltip_ability_upgrade_weapon15_Description"                               "用虚空神锤强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon15_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon16"                                           "升级武器(16)"
-		"DOTA_Tooltip_ability_upgrade_weapon16_Description"                               "用强化你的单位！Shock of the Anvil!"
+		"DOTA_Tooltip_ability_upgrade_weapon16_Description"                               "用锤公震强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon16_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon17"                                           "升级武器(17)"
-		"DOTA_Tooltip_ability_upgrade_weapon17_Description"                               "用强化你的单位！Words of the Drunken Warlord!"
+		"DOTA_Tooltip_ability_upgrade_weapon17_Description"                               "用醉酒战将箴言强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon17_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon18"                                           "升级武器(18)"
-		"DOTA_Tooltip_ability_upgrade_weapon18_Description"                               "用强化你的单位！Shards of Exile!"
+		"DOTA_Tooltip_ability_upgrade_weapon18_Description"                               "用放逐之晶强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon18_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon19"                                           "升级武器(19)"
-		"DOTA_Tooltip_ability_upgrade_weapon19_Description"                               "用强化你的单位！Grasping Bludgeon!"
+		"DOTA_Tooltip_ability_upgrade_weapon19_Description"                               "用纯金大器在握强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon19_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon20"                                           "升级武器(20)"
-		"DOTA_Tooltip_ability_upgrade_weapon20_Description"                               "用强化你的单位！Scythe of Twin Deaths!"
+		"DOTA_Tooltip_ability_upgrade_weapon20_Description"                               "用死神双子镰刀强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon20_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon21"                                           "升级武器(21)"
-		"DOTA_Tooltip_ability_upgrade_weapon21_Description"                               "用强化你的单位！Eye of Omoz!"
+		"DOTA_Tooltip_ability_upgrade_weapon21_Description"                               "用魔渊之眼强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon21_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon22"                                           "升级武器(22)"
-		"DOTA_Tooltip_ability_upgrade_weapon22_Description"                               "用强化你的单位！Basher!"
+		"DOTA_Tooltip_ability_upgrade_weapon22_Description"                               "用重锤强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon22_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon23"                                           "升级武器(23)"
-		"DOTA_Tooltip_ability_upgrade_weapon23_Description"                               "用强化你的单位！Righteous Thunderbolt!"
+		"DOTA_Tooltip_ability_upgrade_weapon23_Description"                               "用真霹实雳强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon23_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon24"                                           "升级武器(24)"
-		"DOTA_Tooltip_ability_upgrade_weapon24_Description"                               "用强化你的单位！Crystal Dryad!"
+		"DOTA_Tooltip_ability_upgrade_weapon24_Description"                               "用水晶妖藤强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon24_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon25"                                           "升级武器(25)"
-		"DOTA_Tooltip_ability_upgrade_weapon25_Description"                               "用强化你的单位！Dragonclaw Hook!"
+		"DOTA_Tooltip_ability_upgrade_weapon25_Description"                               "用龙爪弯钩强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon25_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon26"                                           "升级武器(26)"
-		"DOTA_Tooltip_ability_upgrade_weapon26_Description"                               "用强化你的单位！Scythe of Vyse!"
+		"DOTA_Tooltip_ability_upgrade_weapon26_Description"                               "用邪恶镰刀强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon26_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon27"                                           "升级武器(27)"
-		"DOTA_Tooltip_ability_upgrade_weapon27_Description"                               "用强化你的单位！Arcs of Manta!"
+		"DOTA_Tooltip_ability_upgrade_weapon27_Description"                               "用分身弧强化你的单位！A"
 		"DOTA_Tooltip_ability_upgrade_weapon27_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon28"                                           "升级武器(28)"
-		"DOTA_Tooltip_ability_upgrade_weapon28_Description"                               "用强化你的单位！Battlefury!"
+		"DOTA_Tooltip_ability_upgrade_weapon28_Description"                               "用狂战斧强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon28_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon29"                                           "升级武器(29)"
-		"DOTA_Tooltip_ability_upgrade_weapon29_Description"                               "用强化你的单位！Eternal Radiance Blade!"
+		"DOTA_Tooltip_ability_upgrade_weapon29_Description"                               "用永世之辉耀强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon29_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon30"                                           "升级武器(30)"
-		"DOTA_Tooltip_ability_upgrade_weapon30_Description"                               "用强化你的单位！Rapier of the Burning God!"
+		"DOTA_Tooltip_ability_upgrade_weapon30_Description"                               "用真神炎剑强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_weapon30_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_weapon_final"                                       "武器已经升至满级！"
@@ -924,189 +924,189 @@
 		"DOTA_Tooltip_ability_upgrade_quiver_final_Description"                           ""
 
 		"DOTA_Tooltip_ability_upgrade_bow1"                                               "升级弓箭(1)"
-		"DOTA_Tooltip_ability_upgrade_bow1_Description"                                   "用强化你的单位！Bow of the Black Wind Raven"
+		"DOTA_Tooltip_ability_upgrade_bow1_Description"                                   "用黑风之鸦长弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow1_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow1_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow2"                                               "升级弓箭(2)"
-		"DOTA_Tooltip_ability_upgrade_bow2_Description"                                   "用强化你的单位！Bow of the Winged Bolt"
+		"DOTA_Tooltip_ability_upgrade_bow2_Description"                                   "用蝶翼之箭长弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow2_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow2_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow3"                                               "升级弓箭(3)"
-		"DOTA_Tooltip_ability_upgrade_bow3_Description"                                   "用强化你的单位！Nightsilver Bow"
+		"DOTA_Tooltip_ability_upgrade_bow3_Description"                                   "用银夜之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow3_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow3_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow4"                                               "升级弓箭(4)"
-		"DOTA_Tooltip_ability_upgrade_bow4_Description"                                   "用强化你的单位！Bow of the Moon Rider"
+		"DOTA_Tooltip_ability_upgrade_bow4_Description"                                   "用银月骑士之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow4_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow4_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow5"                                               "升级弓箭(5)"
-		"DOTA_Tooltip_ability_upgrade_bow5_Description"                                   "用强化你的单位！Crescent Bow"
+		"DOTA_Tooltip_ability_upgrade_bow5_Description"                                   "用新月之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow5_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow5_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow6"                                               "升级弓箭(6)"
-		"DOTA_Tooltip_ability_upgrade_bow6_Description"                                   "用强化你的单位！Sparrowhawk Bow"
+		"DOTA_Tooltip_ability_upgrade_bow6_Description"                                   "用鹰雀之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow6_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow6_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow7"                                               "升级弓箭(7)"
-		"DOTA_Tooltip_ability_upgrade_bow7_Description"                                   "用强化你的单位！Lyralei's Breeze"
+		"DOTA_Tooltip_ability_upgrade_bow7_Description"                                   "用莱瑞蕾的清风之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow7_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow7_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow8"                                               "升级弓箭(8)"
-		"DOTA_Tooltip_ability_upgrade_bow8_Description"                                   "用强化你的单位！Flowersong"
+		"DOTA_Tooltip_ability_upgrade_bow8_Description"                                   "用芳歌强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow8_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow8_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow9"                                               "升级弓箭(9)"
-		"DOTA_Tooltip_ability_upgrade_bow9_Description"                                   "用强化你的单位！Song of the Wild Wind"
+		"DOTA_Tooltip_ability_upgrade_bow9_Description"                                   "用狂风之歌强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow9_bonus_damage"                                  "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow9_lumber_cost"                                   "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow10"                                              "升级弓箭(10)"
-		"DOTA_Tooltip_ability_upgrade_bow10_Description"                                  "用强化你的单位！Rainmaker"
+		"DOTA_Tooltip_ability_upgrade_bow10_Description"                                  "用箭雨之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow10_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow10_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow11"                                              "升级弓箭(11)"
-		"DOTA_Tooltip_ability_upgrade_bow11_Description"                                  "用强化你的单位！Molten Genesis"
+		"DOTA_Tooltip_ability_upgrade_bow11_Description"                                  "用炽热之源强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow11_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow11_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow12"                                              "升级弓箭(12)"
-		"DOTA_Tooltip_ability_upgrade_bow12_Description"                                  "用强化你的单位！Heat"
+		"DOTA_Tooltip_ability_upgrade_bow12_Description"                                  "用热骨强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow12_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow12_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow13"                                              "升级弓箭(13)"
-		"DOTA_Tooltip_ability_upgrade_bow13_Description"                                  "用强化你的单位！Twin Serpent Bow"
+		"DOTA_Tooltip_ability_upgrade_bow13_Description"                                  "用孪蟒之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow13_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow13_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow14"                                              "升级弓箭(14)"
-		"DOTA_Tooltip_ability_upgrade_bow14_Description"                                  "用强化你的单位！Monarch Bow"
+		"DOTA_Tooltip_ability_upgrade_bow14_Description"                                  "用霸王蝶强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow14_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow14_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow15"                                              "升级弓箭(15)"
-		"DOTA_Tooltip_ability_upgrade_bow15_Description"                                  "用强化你的单位！Bow of the Lone Traveler"
+		"DOTA_Tooltip_ability_upgrade_bow15_Description"                                  "用独行游侠之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow15_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow15_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow16"                                              "升级弓箭(16)"
-		"DOTA_Tooltip_ability_upgrade_bow16_Description"                                  "用强化你的单位！Bow of the Frostfangs"
+		"DOTA_Tooltip_ability_upgrade_bow16_Description"                                  "用霜之獠牙长强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow16_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow16_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow17"                                              "升级弓箭(17)"
-		"DOTA_Tooltip_ability_upgrade_bow17_Description"                                  "用强化你的单位！Bow of the Howling Wind"
+		"DOTA_Tooltip_ability_upgrade_bow17_Description"                                  "用呼啸狂风之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow17_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow17_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow18"                                              "升级弓箭(18)"
-		"DOTA_Tooltip_ability_upgrade_bow18_Description"                                  "用强化你的单位！Heart of the Emerald Sea"
+		"DOTA_Tooltip_ability_upgrade_bow18_Description"                                  "用碧海魔强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow18_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow18_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow19"                                              "升级弓箭(19)"
-		"DOTA_Tooltip_ability_upgrade_bow19_Description"                                  "用强化你的单位！Bow of the Beholder"
+		"DOTA_Tooltip_ability_upgrade_bow19_Description"                                  "用倾城之弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow19_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow19_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_bow20"                                              "升级弓箭(20)"
-		"DOTA_Tooltip_ability_upgrade_bow20_Description"                                  "用强化你的单位！Bow of the Eldwurm's Touch"
+		"DOTA_Tooltip_ability_upgrade_bow20_Description"                                  "用古龙之触长弓强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_bow20_bonus_damage"                                 "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_bow20_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_quiver1"                                            "升级箭袋(1)"
-		"DOTA_Tooltip_ability_upgrade_quiver1_Description"                                "用强化你的单位！Quiver of the Winged Bolt."
+		"DOTA_Tooltip_ability_upgrade_quiver1_Description"                                "用强化你的单位！蝶翼之箭箭袋"
 		"DOTA_Tooltip_ability_upgrade_quiver1_bonus_damage"                               "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_quiver1_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_quiver2"                                            "升级箭袋(2)"
-		"DOTA_Tooltip_ability_upgrade_quiver2_Description"                                "用强化你的单位！Lion Quiver of the Moon Rider\nChanges your projectiles to Mirana Arrows"
+		"DOTA_Tooltip_ability_upgrade_quiver2_Description"                                "用银月骑士的雄狮箭袋强化你的单位！\n弹道将变为米拉娜的箭。"
 		"DOTA_Tooltip_ability_upgrade_quiver2_bonus_damage"                               "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_quiver2_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_quiver3"                                            "升级箭袋(3)"
-		"DOTA_Tooltip_ability_upgrade_quiver3_Description"                                "用强化你的单位！Flowersong Thorns\nChanges your projectiles to Wind Arrows"
+		"DOTA_Tooltip_ability_upgrade_quiver3_Description"                                "用芳歌之棘强化你的单位！\n弹道将变为风箭"
 		"DOTA_Tooltip_ability_upgrade_quiver3_bonus_damage"                               "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_quiver3_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_quiver4"                                            "升级箭袋(4)"
-		"DOTA_Tooltip_ability_upgrade_quiver4_Description"                                "用强化你的单位！Demon Quiver of the Crypt Guardian\nChanges your projectiles to Fire Arrows"
+		"DOTA_Tooltip_ability_upgrade_quiver4_Description"                                "用陵寝护卫的恶魔箭袋强化你的单位！\n弹道将变为火箭"
 		"DOTA_Tooltip_ability_upgrade_quiver4_bonus_damage"                               "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_quiver4_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_quiver5"                                            "升级箭袋(5)"
-		"DOTA_Tooltip_ability_upgrade_quiver5_Description"                                "用强化你的单位！Quiver of the Boreal Watch\nChanges your projectiles to Frost Arrows"
+		"DOTA_Tooltip_ability_upgrade_quiver5_Description"                                "用北方守卫箭袋强化你的单位！\n弹道将变为冰箭"
 		"DOTA_Tooltip_ability_upgrade_quiver5_bonus_damage"                               "攻击力加成："
 		"DOTA_Tooltip_ability_upgrade_quiver5_lumber_cost"                                "木材消耗："
 
 		// Helms
 		"DOTA_Tooltip_ability_upgrade_helm1"                                              "升级头盔(1)"
-		"DOTA_Tooltip_ability_upgrade_helm1_Description"                                  "用强化你的单位！Alpine Stalker Hat!"
+		"DOTA_Tooltip_ability_upgrade_helm1_Description"                                  "用幸运山地行者之帽强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm1_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm2"                                              "升级头盔(2)"
-		"DOTA_Tooltip_ability_upgrade_helm2_Description"                                  "用强化你的单位！Hunter Helm!"
+		"DOTA_Tooltip_ability_upgrade_helm2_Description"                                  "用猎人头盔强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm2_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm3"                                              "升级头盔(3)"
-		"DOTA_Tooltip_ability_upgrade_helm3_Description"                                  "用强化你的单位！Pirate Slayer's Tricorn!"
+		"DOTA_Tooltip_ability_upgrade_helm3_Description"                                  "用海盗杀手三角帽强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm3_lumber_cost"                                  "木材消耗："	
 
 		"DOTA_Tooltip_ability_upgrade_helm4"                                              "升级头盔(4)"
-		"DOTA_Tooltip_ability_upgrade_helm4_Description"                                  "用强化你的单位！Rampant Outrage!"
+		"DOTA_Tooltip_ability_upgrade_helm4_Description"                                  "用暴走之慨强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm4_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm5"                                              "升级头盔(5)"
-		"DOTA_Tooltip_ability_upgrade_helm5_Description"                                  "用强化你的单位！Mask of a Thousand Faces!"
+		"DOTA_Tooltip_ability_upgrade_helm5_Description"                                  "用千面战神的面具强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm5_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm6"                                              "升级头盔(6)"
-		"DOTA_Tooltip_ability_upgrade_helm6_Description"                                  "用强化你的单位！Hood of the Fallen Cloak!"
+		"DOTA_Tooltip_ability_upgrade_helm6_Description"                                  "用堕落斗篷头巾强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm6_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm7"                                              "升级头盔(7)"
-		"DOTA_Tooltip_ability_upgrade_helm7_Description"                                  "用强化你的单位！Mania's Mask!"
+		"DOTA_Tooltip_ability_upgrade_helm7_Description"                                  "用狂人面具强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm7_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm8"                                              "升级头盔(8)"
-		"DOTA_Tooltip_ability_upgrade_helm8_Description"                                  "用强化你的单位！Hood of Defiance!"
+		"DOTA_Tooltip_ability_upgrade_helm8_Description"                                  "用挑战头巾强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm8_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm9"                                              "升级头盔(9)"
-		"DOTA_Tooltip_ability_upgrade_helm9_Description"                                  "用强化你的单位！Demon Blood Helm!"
+		"DOTA_Tooltip_ability_upgrade_helm9_Description"                                  "用恶魔之血头盔强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm9_lumber_cost"                                  "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm10"                                             "升级头盔(10)"
-		"DOTA_Tooltip_ability_upgrade_helm10_Description"                                 "用强化你的单位！Helm of Impasse!"
+		"DOTA_Tooltip_ability_upgrade_helm10_Description"                                 "用绝境之盔强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm10_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm11"                                             "升级头盔(11)"
-		"DOTA_Tooltip_ability_upgrade_helm11_Description"                                 "用强化你的单位！Old Helmet of the Bogatyr!"
+		"DOTA_Tooltip_ability_upgrade_helm11_Description"                                 "用力士旧盔强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm11_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm12"                                             "升级头盔(12)"
-		"DOTA_Tooltip_ability_upgrade_helm12_Description"                                 "用强化你的单位！Skull of Vashundol!"
+		"DOTA_Tooltip_ability_upgrade_helm12_Description"                                 "用魔将之颅强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm12_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm13"                                             "升级头盔(13)"
-		"DOTA_Tooltip_ability_upgrade_helm13_Description"                                 "用强化你的单位！Diabolic Aspect!"
+		"DOTA_Tooltip_ability_upgrade_helm13_Description"                                 "用魔族之颜强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm13_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm14"                                             "升级头盔(14)"
-		"DOTA_Tooltip_ability_upgrade_helm14_Description"                                 "用强化你的单位！Spartan Helmet!"
+		"DOTA_Tooltip_ability_upgrade_helm14_Description"                                 "用斯巴达之盔强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm14_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm15"                                             "升级头盔(15)"
-		"DOTA_Tooltip_ability_upgrade_helm15_Description"                                 "用强化你的单位！Searing Dominator!"
+		"DOTA_Tooltip_ability_upgrade_helm15_Description"                                 "用烧灼之主强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_helm15_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_helm_final"                                         "头盔已经升至满级！"
@@ -1114,47 +1114,47 @@
 
 		// Shields
 		"DOTA_Tooltip_ability_upgrade_shield1"                                            "升级护盾(1)"
-		"DOTA_Tooltip_ability_upgrade_shield1_Description"                                "用强化你的单位！Poor Man Shield!"
+		"DOTA_Tooltip_ability_upgrade_shield1_Description"                                "用穷鬼盾强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield1_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield2"                                            "升级护盾(2)"
-		"DOTA_Tooltip_ability_upgrade_shield2_Description"                                "用强化你的单位！Vanguard!"
+		"DOTA_Tooltip_ability_upgrade_shield2_Description"                                "用先锋盾强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield2_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield3"                                            "升级护盾(3)"
-		"DOTA_Tooltip_ability_upgrade_shield3_Description"                                "用强化你的单位！Shield of the Silent Guardian!"
+		"DOTA_Tooltip_ability_upgrade_shield3_Description"                                "用沉默守卫之盾强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield3_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield4"                                            "升级护盾(4)"
-		"DOTA_Tooltip_ability_upgrade_shield4_Description"                                "用强化你的单位！Rider's Eclipse Shield!"
+		"DOTA_Tooltip_ability_upgrade_shield4_Description"                                "用月蚀骑手战盾强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield4_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield5"                                            "升级护盾(5)"
-		"DOTA_Tooltip_ability_upgrade_shield5_Description"                                "用强化你的单位！Shield of the Tribunal!"
+		"DOTA_Tooltip_ability_upgrade_shield5_Description"                                "用裁决之盾强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield5_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield6"                                            "升级护盾(6)"
-		"DOTA_Tooltip_ability_upgrade_shield6_Description"                                "用强化你的单位！Moonfall!"
+		"DOTA_Tooltip_ability_upgrade_shield6_Description"                                "用月陨强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield6_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield7"                                            "升级护盾(7)"
-		"DOTA_Tooltip_ability_upgrade_shield7_Description"                                "用强化你的单位！Shield of the Wurmblood!"
+		"DOTA_Tooltip_ability_upgrade_shield7_Description"                                "用龙血战盾强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield7_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield8"                                            "升级护盾(8)"
-		"DOTA_Tooltip_ability_upgrade_shield8_Description"                                "用强化你的单位！Dark Ruin Gaze!"
+		"DOTA_Tooltip_ability_upgrade_shield8_Description"                                "用暗黑毁灭妖瞳强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield8_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield9"                                            "升级护盾(9)"
-		"DOTA_Tooltip_ability_upgrade_shield9_Description"                                "用强化你的单位！Shield of Screaming Souls!"
+		"DOTA_Tooltip_ability_upgrade_shield9_Description"                                "用尖叫之魂盾牌强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield9_lumber_cost"                                "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield10"                                           "升级护盾(10)"
-		"DOTA_Tooltip_ability_upgrade_shield10_Description"                               "用强化你的单位！Crest of the Wyrm Lords!"
+		"DOTA_Tooltip_ability_upgrade_shield10_Description"                               "用飞龙之主纹章强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield10_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield11"                                           "升级护盾(11)"
-		"DOTA_Tooltip_ability_upgrade_shield11_Description"                               "用强化你的单位！Immortal Vigil Signet!"
+		"DOTA_Tooltip_ability_upgrade_shield11_Description"                               "用不朽守夜法印强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_shield11_lumber_cost"                               "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_shield_final"                                       "护盾已经升至满级！"
@@ -1162,35 +1162,35 @@
 
 		// Wings
 		"DOTA_Tooltip_ability_upgrade_wings1"                                             "升级翅膀(1)"
-		"DOTA_Tooltip_ability_upgrade_wings1_Description"                                 "用强化你的单位！Battle Banner of the Masked!"
+		"DOTA_Tooltip_ability_upgrade_wings1_Description"                                 "用遮面一族的战斗旗帜强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_wings1_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_wings2"                                             "升级翅膀(2)"
-		"DOTA_Tooltip_ability_upgrade_wings2_Description"                                 "用强化你的单位！Wings of the Valkyrie!"
+		"DOTA_Tooltip_ability_upgrade_wings2_Description"                                 "用女武神双翼强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_wings2_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_wings3"                                             "升级翅膀(3)"
-		"DOTA_Tooltip_ability_upgrade_wings3_Description"                                 "用强化你的单位！Span of Cerulean Light!"
+		"DOTA_Tooltip_ability_upgrade_wings3_Description"                                 "用蔚蓝天光翼展强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_wings3_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_wings4"                                             "升级翅膀(4)"
-		"DOTA_Tooltip_ability_upgrade_wings4_Description"                                 "用强化你的单位！Omni Wings!"
+		"DOTA_Tooltip_ability_upgrade_wings4_Description"                                 "用全能之翼强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_wings4_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_wings5"                                             "升级翅膀(5)"
-		"DOTA_Tooltip_ability_upgrade_wings5_Description"                                 "用强化你的单位！Bloodfeather Wings!"
+		"DOTA_Tooltip_ability_upgrade_wings5_Description"                                 "用血羽魔翼强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_wings5_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_wings6"                                             "升级翅膀(6)"
-		"DOTA_Tooltip_ability_upgrade_wings6_Description"                                 "用强化你的单位！Span of Black Nihility!"
+		"DOTA_Tooltip_ability_upgrade_wings6_Description"                                 "用暗之空寂翼展强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_wings6_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_wings7"                                             "升级翅膀(7)"
-		"DOTA_Tooltip_ability_upgrade_wings7_Description"                                 "用强化你的单位！Wings of Eternal Fire!"
+		"DOTA_Tooltip_ability_upgrade_wings7_Description"                                 "用永世魔火之翼强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_wings7_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_wings8"                                             "升级翅膀(8)"
-		"DOTA_Tooltip_ability_upgrade_wings8_Description"                                 "用强化你的单位！Soul Eater Wings!"
+		"DOTA_Tooltip_ability_upgrade_wings8_Description"                                 "用噬魂之翼强化你的单位！"
 		"DOTA_Tooltip_ability_upgrade_wings8_lumber_cost"                                 "木材消耗："
 
 		"DOTA_Tooltip_ability_upgrade_wings_final"                                        "翅膀已经升至满级！"

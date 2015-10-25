@@ -161,79 +161,79 @@
         "DOTA_Tooltip_modifier_roaming_Description"                                       "Случайным образом перемещается между базами"
  
         "DOTA_Tooltip_modifier_bow1"                                                      "Лук 1"
-        "DOTA_Tooltip_modifier_bow1_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow1_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow2"                                                      "Лук 2"
-        "DOTA_Tooltip_modifier_bow2_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow2_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow3"                                                      "Лук 3"
-        "DOTA_Tooltip_modifier_bow3_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow3_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow4"                                                      "Лук 4"
-        "DOTA_Tooltip_modifier_bow4_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow4_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow5"                                                      "Лук 5"
-        "DOTA_Tooltip_modifier_bow5_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow5_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow6"                                                      "Лук 6"
-        "DOTA_Tooltip_modifier_bow6_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow6_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow7"                                                      "Лук 7"
-        "DOTA_Tooltip_modifier_bow7_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow7_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow8"                                                      "Лук 8"
-        "DOTA_Tooltip_modifier_bow8_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow8_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow9"                                                      "Лук 9"
-        "DOTA_Tooltip_modifier_bow9_Description"                                          "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow9_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow10"                                                     "Лук 10"
-        "DOTA_Tooltip_modifier_bow10_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow10_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow11"                                                     "Лук 11"
-        "DOTA_Tooltip_modifier_bow11_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow11_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow12"                                                     "Лук 12"
-        "DOTA_Tooltip_modifier_bow12_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow12_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow13"                                                     "Лук 13"
-        "DOTA_Tooltip_modifier_bow13_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow13_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow14"                                                     "Лук 14"
-        "DOTA_Tooltip_modifier_bow14_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow14_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow15"                                                     "Лук 15"
-        "DOTA_Tooltip_modifier_bow15_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow15_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow16"                                                     "Лук 16"
-        "DOTA_Tooltip_modifier_bow16_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow16_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow17"                                                     "Лук 17"
-        "DOTA_Tooltip_modifier_bow17_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow17_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow18"                                                     "Лук 18"
-        "DOTA_Tooltip_modifier_bow18_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow18_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow19"                                                     "Лук 19"
-        "DOTA_Tooltip_modifier_bow19_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow19_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_bow20"                                                     "Лук 20"
-        "DOTA_Tooltip_modifier_bow20_Description"                                         "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_bow20_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_quiver1"                                                   "Колчан 1"
-        "DOTA_Tooltip_modifier_quiver1_Description"                                       "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_quiver1_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_quiver2"                                                   "Колчан 2"
-        "DOTA_Tooltip_modifier_quiver2_Description"                                       "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_quiver2_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_quiver3"                                                   "Колчан 3"
-        "DOTA_Tooltip_modifier_quiver3_Description"                                       "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_quiver3_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_quiver4"                                                   "Колчан 4"
-        "DOTA_Tooltip_modifier_quiver4_Description"                                       "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_quiver4_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
  
         "DOTA_Tooltip_modifier_quiver5"                                                   "Колчан 5"
-        "DOTA_Tooltip_modifier_quiver5_Description"                                       "+%MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
+        "DOTA_Tooltip_modifier_quiver5_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% урона"
 
         "DOTA_Tooltip_modifier_invulnerability_layer"                                     "Неуязвимость"
         "DOTA_Tooltip_modifier_invulnerability_layer_Description"                         "Количество целых башен"

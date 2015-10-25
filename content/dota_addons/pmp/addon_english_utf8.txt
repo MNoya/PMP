@@ -5,6 +5,9 @@
 	{		
 		"addon_game_name"			"Pimp My Peon"
 
+		// Override default dota bots/lobby messages
+		"Dota_shared_content_available"			""
+		"DOTA_Chat_NoBattlePoints_WrongLobby"	""
 
 		// ******************** HEROES ********************
 		"npc_dota_hero_axe"                                                               "Orc"
@@ -150,10 +153,10 @@
 		"DOTA_Tooltip_modifier_treant_linking_Description"                                ""
 
 		"DOTA_Tooltip_modifier_forest_link"                                               "Forest Link"
-		"DOTA_Tooltip_modifier_forest_link_Description"                                   "Reduced damage taken by %fMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%\nSlowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_forest_link_Description"                                   "Reduced damage taken by %fMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%"
 
 		"DOTA_Tooltip_modifier_forest_slow_debuff"                                        "Forest Slow"
-		"DOTA_Tooltip_modifier_forest_slow_debuff_Description"                            "Slowed attack and movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_forest_slow_debuff_Description"                            "Slowed attack speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%% and movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
 		"DOTA_Tooltip_modifier_boss_stacks"                                               "Time Buff"
 		"DOTA_Tooltip_modifier_boss_stacks_Description"                                   "Bonus %dMODIFIER_PROPERTY_HEALTH_BONUS% HP and %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor"
@@ -257,79 +260,79 @@
 		"DOTA_Tooltip_modifier_weapon30_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow1"                                                      "Bow 1"
-		"DOTA_Tooltip_modifier_bow1_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow1_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow2"                                                      "Bow 2"
-		"DOTA_Tooltip_modifier_bow2_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow2_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow3"                                                      "Bow 3"
-		"DOTA_Tooltip_modifier_bow3_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow3_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow4"                                                      "Bow 4"
-		"DOTA_Tooltip_modifier_bow4_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow4_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow5"                                                      "Bow 5"
-		"DOTA_Tooltip_modifier_bow5_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow5_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow6"                                                      "Bow 6"
-		"DOTA_Tooltip_modifier_bow6_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow6_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow7"                                                      "Bow 7"
-		"DOTA_Tooltip_modifier_bow7_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow7_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow8"                                                      "Bow 8"
-		"DOTA_Tooltip_modifier_bow8_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow8_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow9"                                                      "Bow 9"
-		"DOTA_Tooltip_modifier_bow9_Description"                                          "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow9_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow10"                                                     "Bow 10"
-		"DOTA_Tooltip_modifier_bow10_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow10_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow11"                                                     "Bow 11"
-		"DOTA_Tooltip_modifier_bow11_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow11_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow12"                                                     "Bow 12"
-		"DOTA_Tooltip_modifier_bow12_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow12_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow13"                                                     "Bow 13"
-		"DOTA_Tooltip_modifier_bow13_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow13_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow14"                                                     "Bow 14"
-		"DOTA_Tooltip_modifier_bow14_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow14_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow15"                                                     "Bow 15"
-		"DOTA_Tooltip_modifier_bow15_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow15_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow16"                                                     "Bow 16"
-		"DOTA_Tooltip_modifier_bow16_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow16_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow17"                                                     "Bow 17"
-		"DOTA_Tooltip_modifier_bow17_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow17_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow18"                                                     "Bow 18"
-		"DOTA_Tooltip_modifier_bow18_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow18_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow19"                                                     "Bow 19"
-		"DOTA_Tooltip_modifier_bow19_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow19_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow20"                                                     "Bow 20"
-		"DOTA_Tooltip_modifier_bow20_Description"                                         "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_bow20_Description"                                         "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_quiver1"                                                   "Quiver 1"
-		"DOTA_Tooltip_modifier_quiver1_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_quiver1_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_quiver2"                                                   "Quiver 2"
-		"DOTA_Tooltip_modifier_quiver2_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_quiver2_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_quiver3"                                                   "Quiver 3"
-		"DOTA_Tooltip_modifier_quiver3_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_quiver3_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_quiver4"                                                   "Quiver 4"
-		"DOTA_Tooltip_modifier_quiver4_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_quiver4_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_quiver5"                                                   "Quiver 5"
-		"DOTA_Tooltip_modifier_quiver5_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+		"DOTA_Tooltip_modifier_quiver5_Description"                                       "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
 
 		// Helm
 		"DOTA_Tooltip_modifier_helm1"                                                     "Helm 1"
@@ -519,7 +522,7 @@
 
 		"DOTA_Tooltip_ability_undead_racial"                                           "Undying Will"
 		"DOTA_Tooltip_ability_undead_racial_Description"                               "<font color='#00ff00'>Racial</font>\nGives a powerful lifestealing effect."
-		"DOTA_Tooltip_ability_undead_racial_lifesteal_percent"                         "LIFESTEAL PERCENT:"
+		"DOTA_Tooltip_ability_undead_racial_lifesteal_percent"                         "%LIFESTEAL:"
 
 		"DOTA_Tooltip_ability_spawn_peon"                                                 "Spawn Peon"
 		"DOTA_Tooltip_ability_spawn_peon_Description"                                     ""
@@ -657,8 +660,8 @@
 		"DOTA_Tooltip_ability_night_elf_racial"                                           "Ranged Attack"
 		"DOTA_Tooltip_ability_night_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nNight Elves use bows to attack their enemies from afar. They also deal less damage to and take more damage from enemy melee units."
 		"DOTA_Tooltip_ability_night_elf_racial_attack_range"                              "ATTACK RANGE:"
-		"DOTA_Tooltip_ability_night_elf_racial_damage_dealt"                              "DAMAGE DEALT:"
-		"DOTA_Tooltip_ability_night_elf_racial_damage_taken"                              "DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_night_elf_racial_damage_dealt"                              "%DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_night_elf_racial_damage_taken"                              "%DAMAGE TAKEN:"
 
 		"DOTA_Tooltip_ability_spawn_night_elf"                                            "Spawn Night Elf"
 		"DOTA_Tooltip_ability_spawn_night_elf_Description"                                ""
@@ -717,7 +720,7 @@
 
 		"DOTA_Tooltip_ability_skeleton_racial"                                            "Reincarnation"
 		"DOTA_Tooltip_ability_skeleton_racial_Description"                                "<font color='#00ff00'>Racial</font>\nSkeletons have a chance to resurrect.\nThe resurrection takes 2 seconds."
-		"DOTA_Tooltip_ability_skeleton_racial_reincarnate_chance"                         "REINCARNATE CHANCE:"
+		"DOTA_Tooltip_ability_skeleton_racial_reincarnate_chance"                         "%REINCARNATE CHANCE:"
 		"DOTA_Tooltip_ability_skeleton_racial_Note0"                                      "I'll be back. - Skeleton King 2013"
 
 		"DOTA_Tooltip_ability_skeleton_king_particles"                                    "Skeleton King Particles"
@@ -1322,13 +1325,13 @@
 
 		"DOTA_Tooltip_ability_critical_strike"                                            "Critical Strike"
 		"DOTA_Tooltip_ability_critical_strike_Description"                                "Grants each attack a chance to deal additional damage."
-		"DOTA_Tooltip_ability_critical_strike_crit_mult"                                  "CRIT MULT:"
-		"DOTA_Tooltip_ability_critical_strike_crit_chance"                                "CRIT CHANCE:"
+		"DOTA_Tooltip_ability_critical_strike_crit_mult"                                  "%CRITICAL DAMAGE:"
+		"DOTA_Tooltip_ability_critical_strike_crit_chance"                                "%PROC CHANCE:"
 
 		"DOTA_Tooltip_ability_stun_hit"                                                   "Stun Hit"
 		"DOTA_Tooltip_ability_stun_hit_Description"                                       "Gives a chance that an attack will do bonus damage and stun an opponent for a duration."
 		"DOTA_Tooltip_ability_stun_hit_duration"                                          "DURATION:"
-		"DOTA_Tooltip_ability_stun_hit_stun_chance"                                       "STUN CHANCE:"
+		"DOTA_Tooltip_ability_stun_hit_stun_chance"                                       "%STUN CHANCE:"
 		"DOTA_Tooltip_ability_stun_hit_bonus_damage"                                      "BONUS DAMAGE:"
 
 		"DOTA_Tooltip_ability_poisoned_weapons"                                           "Poisoned Weapons"
@@ -1346,11 +1349,11 @@
 
 		"DOTA_Tooltip_ability_dodge"                                                      "Evasion"
 		"DOTA_Tooltip_ability_dodge_Description"                                          "Grants a chance to dodge an enemies attack."
-		"DOTA_Tooltip_ability_dodge_dodge_chance"                                         "EVASION CHANCE:"
+		"DOTA_Tooltip_ability_dodge_dodge_chance"                                         "%EVASION CHANCE:"
 
 		"DOTA_Tooltip_ability_spiked_armor"                                               "Spiked Armor"
 		"DOTA_Tooltip_ability_spiked_armor_Description"                                   "Returns a percentage of damage taken to the attacker."
-		"DOTA_Tooltip_ability_spiked_armor_damage_return"                           	  "DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_spiked_armor_damage_return"                           	  "%DAMAGE RETURN:"
 
 		"DOTA_Tooltip_ability_pimp_damage"                                                "Pimp Damage"
 		"DOTA_Tooltip_ability_pimp_damage_Description"                                    "Increases the damage of your units and buildings by 1."
@@ -1437,15 +1440,15 @@
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_damage_per_second"           "DAMAGE PER SECOND:"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_damage_per_second"           "DAMAGE PER SECOND:"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_reduced_attack_speed"        "ATTACKSPEED SLOW:"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_reduced_movement_speed"      "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons1_reduced_movement_speed"      "%MOVESPEED SLOW:"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_reduced_attack_speed"        "ATTACKSPEED SLOW:"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_reduced_movement_speed"      "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons2_reduced_movement_speed"      "%MOVESPEED SLOW:"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_reduced_attack_speed"        "ATTACKSPEED SLOW:"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_reduced_movement_speed"      "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons3_reduced_movement_speed"      "%MOVESPEED SLOW:"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_reduced_attack_speed"        "ATTACKSPEED SLOW:"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_reduced_movement_speed"      "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons4_reduced_movement_speed"      "%MOVESPEED SLOW:"
 		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_reduced_attack_speed"        "ATTACKSPEED SLOW:"
-		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_reduced_movement_speed"      "MOVESPEED SLOW:"	
+		"DOTA_Tooltip_ability_item_upgrade_poisoned_weapons5_reduced_movement_speed"      "%MOVESPEED SLOW:"	
 
 		"DOTA_Tooltip_ability_item_upgrade_dodge1"                                        "Upgrade Dodge1"
 		"DOTA_Tooltip_ability_item_upgrade_dodge1_Description"                            "Gives a 20 to avoid an enemy attack."
@@ -1511,21 +1514,21 @@
 		"DOTA_Tooltip_ability_item_upgrade_human_racial3_instakill_chance"                "INSTAKILL CHANCE:"
 		"DOTA_Tooltip_ability_item_upgrade_human_racial4_instakill_chance"                "INSTAKILL CHANCE:"
 		"DOTA_Tooltip_ability_item_upgrade_human_racial5_instakill_chance"                "INSTAKILL CHANCE:"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial1_lifesteal_percent"              "LIFESTEAL PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial2_lifesteal_percent"              "LIFESTEAL PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_lifesteal_percent"              "LIFESTEAL PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_lifesteal_percent"              "LIFESTEAL PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_lifesteal_percent"              "LIFESTEAL PERCENT:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_damage_dealt"                "DAMAGE DEALT:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_damage_taken"                "DAMAGE TAKEN:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_damage_dealt"                "DAMAGE DEALT:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_damage_taken"                "DAMAGE TAKEN:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_damage_dealt"                "DAMAGE DEALT:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_damage_taken"                "DAMAGE TAKEN:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_damage_dealt"                "DAMAGE DEALT:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_damage_taken"                "DAMAGE TAKEN:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_damage_dealt"                "DAMAGE DEALT:"
-		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_damage_taken"                "DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial1_lifesteal_percent"              "%LIFESTEAL:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial2_lifesteal_percent"              "%LIFESTEAL:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial3_lifesteal_percent"              "%LIFESTEAL:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial4_lifesteal_percent"              "%LIFESTEAL:"
+		"DOTA_Tooltip_ability_item_upgrade_undead_racial5_lifesteal_percent"              "%LIFESTEAL:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_damage_dealt"                "%DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_damage_taken"                "%DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_damage_dealt"                "%DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial2_damage_taken"                "%DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_damage_dealt"                "%DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial3_damage_taken"                "%DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_damage_dealt"                "%DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial4_damage_taken"                "%DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_damage_dealt"                "%DAMAGE DEALT:"
+		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial5_damage_taken"                "%DAMAGE TAKEN:"
 
 		"DOTA_Tooltip_ability_item_upgrade_human_racial1"                                 "Upgrade Human Racial (1)"
 		"DOTA_Tooltip_ability_item_upgrade_human_racial1_Description"                     "Increase the level of Human's Strike"
