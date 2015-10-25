@@ -2869,7 +2869,7 @@
 	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "damage_dealt"        "65 70 80 90 100"
+	            "damage_dealt"        "65 70 75 80 85"
 	        }
 	        "04"
 	        {
@@ -2921,7 +2921,7 @@
 	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "damage_dealt"        "65 70 80 90 100"
+	            "damage_dealt"        "65 70 75 80 85"
 	        }
 	        "04"
 	        {
@@ -2973,7 +2973,7 @@
 	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "damage_dealt"        "65 70 80 90 100"
+	            "damage_dealt"        "65 70 75 80 85"
 	        }
 	        "04"
 	        {
@@ -3025,7 +3025,7 @@
 	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "damage_dealt"        "65 70 80 90 100"
+	            "damage_dealt"        "65 70 75 80 85"
 	        }
 	        "04"
 	        {
@@ -3077,7 +3077,7 @@
 	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "damage_dealt"        "65 70 80 90 100"
+	            "damage_dealt"        "65 70 75 80 85"
 	        }
 	        "04"
 	        {

@@ -515,7 +515,7 @@
 
 		"DOTA_Tooltip_ability_undead_possession"                                          "Possession"
 		"DOTA_Tooltip_ability_undead_possession_Description"                              "Displaces the soul of an enemy, giving you permanent control of it, but destroying the caster's body."
-		"DOTA_Tooltip_ability_undead_possession_damage_increase_while_channeling"         "DAMAGE INCREASE WHILE CHANNELING:"
+		"DOTA_Tooltip_ability_undead_possession_damage_increase_while_channeling"         "%DAMAGE INCREASE WHILE CHANNELING:"
 		"DOTA_Tooltip_ability_undead_possession_channel_range"                            "CHANNEL RANGE:"
 		"DOTA_Tooltip_ability_undead_possession_channel_duration"                         "CHANNEL DURATION:"
 		"DOTA_Tooltip_ability_undead_possession_max_level"                                "MAX LEVEL:"
@@ -569,7 +569,7 @@
 
 		"DOTA_Tooltip_ability_human_racial"                                        "Dragon's Force"
 		"DOTA_Tooltip_ability_human_racial_Description"                            "<font color='#00ff00'>Racial</font>\nGives a chance to instantly kill the attacked unit."
-		"DOTA_Tooltip_ability_human_racial_instakill_chance"                       "INSTAKILL CHANCE:"
+		"DOTA_Tooltip_ability_human_racial_instakill_chance"                       "%INSTAKILL CHANCE:"
 		"DOTA_Tooltip_ability_human_racial_Note0"									"This ability has not effect on neutral units."
 		"DOTA_Tooltip_ability_human_racial_Note1"									"Enemies hit by this ability will also be knocked back."
 
