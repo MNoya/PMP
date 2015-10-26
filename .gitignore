@@ -18,3 +18,5 @@ game/dota_addons/*/scripts/vscripts/statcollection/settings.kv
 
 #Github dump
 *.stackdump
+
+!game/dota_addons/pmp/skeletonking/materials/models/heroes/skeleton_king/*
