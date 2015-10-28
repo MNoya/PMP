@@ -67,8 +67,7 @@ function Possession( event )
             target:SetControllableByPlayer(newOwnerID, true)
             target:SetTeam(newTeam)
             target:EmitSound("Hero_DeathProphet.Death")
-
-
+            target.summoned = true --skips the -1 food decrease
 
             -- kill and set selection
             AddUnitToSelection(target)
