@@ -94,10 +94,10 @@ function BuildPlayersArray()
                     ru = GetRepairsUsed(playerID), --Repairs Used
 
                     -- Upgrades
-                    uw = GetPlayerWeaponLevel(playerID), --upgrade_weapon
+                    uwe = GetPlayerWeaponLevel(playerID), --upgrade_weapon
                     uh = player_upgrades["helm"] or 0, --upgrade_helm
                     ua = player_upgrades["shield"] or 0, --upgrade_shield
-                    uw = player_upgrades["wings"] or 0, --upgrade_wings
+                    uwi = player_upgrades["wings"] or 0, --upgrade_wings
                     uhp = player_upgrades["health"] or 0, --upgrade_health
 
                     -- Passive ability upgrades
