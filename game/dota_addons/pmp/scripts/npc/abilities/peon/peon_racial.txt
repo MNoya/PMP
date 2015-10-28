@@ -23,7 +23,7 @@
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "duration"              "5"
+            "duration"              "10"
         }            
     }
 
@@ -35,6 +35,15 @@
             "IsHidden"  "1"
             "IsPurgable" "1"
             "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/peon/frenzy.lua"
+                    "Function"      "FrenzyAttack"
+                }
+            }
+
+            "OnAttacked"
             {
                 "RunScript"
                 {
