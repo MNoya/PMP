@@ -1,7 +1,6 @@
-@define TotalLength: 0s;
+@define TotalLength: 20s;
 @define TimingFunc: linear;
 @define IterationCount: 1;
-@define AnimationDelay: 0s;
 
 .AddonLoadingRoot
 {
@@ -9,6 +8,29 @@
     height: 100%;
     background-color: black;
     overflow: clip;
+}
+
+#GameModeDescription
+{
+    font-size: 27px;
+  text-transform: uppercase;
+  color: #cccccc;
+}
+
+#GameModeHints
+{
+  margin: 10px;
+  font-size: 18px;
+  color: #8f9092;
+}
+
+#GameModeImage
+{
+  horizontal-align: center;
+  width: 200px;
+  height: 150px;
+
+  box-shadow: inset black 5px 5px 10px 10px;
 }
 
 #TitlePanel
@@ -20,53 +42,217 @@
   flow-children: right;
 }
 
-#AddonTitle
+#seq
 {
-  margin-bottom: -15px;
-  vertical-align: center;
-  text-transform: uppercase;
-  font-size: 80px;
-  color: #cccccc;
-  text-shadow: 2px 2px 2px #000000;
-}
-
-.SeqImg
-{
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 100% 100%;
-}
-
-#CustomBg
-{
-
-  margin-top: 0px;
     overflow: clip;
-  pre-transform-scale2d: 1.0;
-  animation-name: gamemode_anim;
-  animation-delay: AnimationDelay;
+    //pre-transform-scale2d: 1.35, 1.35;
+}
+
+@keyframes 'x' {}
+
+#seq_2_tree
+{
+  animation-name: seq_tree_anim;
   animation-duration: TotalLength;
-  animation-timing-function: TimingFunc;
+  animation-timing-function: ease;
   animation-iteration-count: IterationCount;
 }
 
-#gamemode
-{
-  margin-left: 0px;
-  /*margin-bottom: 0px;*/
-  
-}
-
-@keyframes 'gamemode_anim'
+@keyframes 'seq_tree_anim'
 {
   0%
   {
-    transform: translateX( 0px ) translateY( 0px );
-    pre-transform-scale2d: .8;
+    transform: translateX( 250px );
+    pre-transform-scale2d: 1.0;
   }
 
   100%
   {
-    transform: translateX( 0px ) translateY( -200px );
   }
 }
+
+#seq_3_drow
+{
+  animation-name: seq_drow_anim;
+  animation-duration: TotalLength;
+  animation-timing-function: ease;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_drow_anim'
+{
+  0%
+  {
+    transform: translateY( 100px );
+  }
+
+  100%
+  {
+  }
+}
+
+#seq_4_undead
+{
+  animation-name: seq_undead_anim;
+  animation-duration: TotalLength;
+  animation-timing-function: ease;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_undead_anim'
+{
+  0%
+  {
+    transform: translateX( 200px );
+  }
+
+  100%
+  {
+  }
+}
+
+#seq_5_bloodelf
+{
+  animation-name: seq_bloodelf_anim;
+  animation-duration: TotalLength;
+  animation-timing-function: ease;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_bloodelf_anim'
+{
+  0%
+  {
+    transform: translateX( 250px ) translateY( 250px );
+  }
+
+  100%
+  {
+  }
+}
+
+#seq_6_knights
+{
+  animation-name: seq_knights_an;
+  animation-duration: TotalLength;
+  animation-timing-function: ease;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_knights_an'
+{
+  0%
+  {
+    transform: translateX( 250px );
+  }
+
+  100%
+  {
+  }
+}
+
+#seq_7_axe
+{
+  animation-name: seq_axe_anim;
+  animation-duration: TotalLength;
+  animation-timing-function: ease;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_axe_anim'
+{
+  0%
+  {
+    transform: translateY( 1000px );
+  }
+
+  100%
+  {
+  }
+}
+
+#seq_8_rapier
+{
+  animation-name: seq_rapier_anim;
+  animation-duration: TotalLength;
+  animation-timing-function: linear;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_rapier_anim'
+{
+  0%
+  {
+    transform: translateX( -1200px );
+  }
+
+  100%
+  {
+  }
+}
+
+
+#seq_9_meepo
+{
+  animation-name: seq_meepo_anim;
+  animation-duration: TotalLength;
+  animation-timing-function: ease;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_meepo_anim'
+{
+  0%
+  {
+    transform: translateY( 350px );
+  }
+
+  100%
+  {
+  }
+}
+
+
+#seq_10_frontlight
+{
+  animation-name: seq_light_anim;
+  animation-duration: TotalLength;
+  animation-timing-function: ease;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_light_anim'
+{
+  0%
+  {
+    transform: translateY( 100px );
+  }
+
+  100%
+  {
+  }
+}
+
+
+#seq_12_logo
+{
+  margin-left: 300px;
+  margin-top: -50px;
+  animation-name: seq_logo_an;
+  animation-duration: TotalLength;
+  animation-timing-function: linear;
+  animation-iteration-count: IterationCount;
+}
+
+@keyframes 'seq_logo_an'
+{
+  0%
+  {
+    transform: translateX( -800px ) translateY( 600px );
+  }
+
+  100%
+  {
+  }
+}
+

@@ -8,36 +8,36 @@
 		<include src="file://{resources}/scripts/custom_game/team_select.js" />
 	</scripts>
 	<Panel hittest="false" class="TeamSelect">
+		<!-- Custom Host Settings Panel-->
+		 <Panel id="Settings">
+	        <Label class='SettingsHeader' text="GAME SETTINGS" style="" />
+	        <Label id="PlayersPerTeam" class='SettingHeader' text="Players Per Team" style="" />
+	        <Panel id="TeamRow" class="SettingsRow">
+	            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 1)" onmouseover="MouseOver('TeamRow',1)" onmouseout="MouseOut('TeamRow', 1)"> 
+	            	<Label class="SettingOptionText" text="2"/> </Panel>
+	            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 2)" onmouseover="MouseOver('TeamRow',2)" onmouseout="MouseOut('TeamRow', 2)">
+	            	<Label class="SettingOptionText" text="3"/> </Panel>
+	            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 3)" onmouseover="MouseOver('TeamRow',3)" onmouseout="MouseOut('TeamRow', 3)">
+	            	<Label class="SettingOptionText" text="4"/> </Panel>
+	            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 4)" onmouseover="MouseOver('TeamRow',4)" onmouseout="MouseOut('TeamRow', 4)">
+	            	<Label class="SettingOptionText" text="6"/> </Panel>
+	        </Panel>
+
+	        <Label id='AdvancedOptions' class='SettingHeader' text="\nAdvanced Options" style="" />
+	        <Panel id="ToggleSettings">
+		        <ToggleButton id="Positions" text="Fixed Team Positions" onactivate="SetOption('Positions')"/>
+		        <ToggleButton id="BossRoam" checked="false" text="Boss Roam" onactivate="SetOption('BossRoam')"/>
+		        <!--<ToggleButton id="Neutrals" checked="false" text="Enable Neutrals" onactivate="SetOption('Neutrals')"/>-->
+		    </Panel>
+
+	        <Label id="Host" text="HOST: " style="" />
+	    </Panel>
+		    
 		<Panel hittest="false" id="TeamSelectContainer" selectionpos="auto">`
 			<!--Empty space to let the loading screen and chat be visible-->
 			<Panel hittest="false" id="TeamsSelectEmptySpace" />
 
 			<Image hittest="false" src="file://{images}/custom_game/skeleton_king.png" style='opacity:0;' />
-
-			<!-- Custom Host Settings Panel-->
-			 <Panel id="Settings">
-		        <Label class='SettingsHeader' text="GAME SETTINGS" style="" />
-		        <Label id="PlayersPerTeam" class='SettingHeader' text="Players Per Team" style="" />
-		        <Panel id="TeamRow" class="SettingsRow">
-		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 1)" onmouseover="MouseOver('TeamRow',1)" onmouseout="MouseOut('TeamRow', 1)"> 
-		            	<Label class="SettingOptionText" text="2"/> </Panel>
-		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 2)" onmouseover="MouseOver('TeamRow',2)" onmouseout="MouseOut('TeamRow', 2)">
-		            	<Label class="SettingOptionText" text="3"/> </Panel>
-		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 3)" onmouseover="MouseOver('TeamRow',3)" onmouseout="MouseOut('TeamRow', 3)">
-		            	<Label class="SettingOptionText" text="4"/> </Panel>
-		            <Panel class="SettingBox" onactivate="SetSetting('TeamRow', 4)" onmouseover="MouseOver('TeamRow',4)" onmouseout="MouseOut('TeamRow', 4)">
-		            	<Label class="SettingOptionText" text="6"/> </Panel>
-		        </Panel>
-
-		        <Label id='AdvancedOptions' class='SettingHeader' text="\nAdvanced Options" style="" />
-		        <Panel id="ToggleSettings">
-			        <ToggleButton id="Positions" text="Fixed Team Positions" onactivate="SetOption('Positions')"/>
-			        <ToggleButton id="BossRoam" checked="false" text="Boss Roam" onactivate="SetOption('BossRoam')"/>
-			        <!--<ToggleButton id="Neutrals" checked="false" text="Enable Neutrals" onactivate="SetOption('Neutrals')"/>-->
-			    </Panel>
-
-		        <Label id="Host" text="HOST: " style="" />
-		    </Panel>
 
 			<!--Teams List, left hand panel-->
 			<Panel id="TeamsList" >
@@ -59,10 +59,10 @@
 				
 				<Panel id="GameInfoPanel" >
 					
-					<!--Game mode and map-->
+					<!--Game mode and map
 					<Panel id="CustomGameModeName">
 						<Label id="GameModeNameLabel" text="#addon_game_name" />
-					</Panel>
+					</Panel>-->
 					<Panel id="MapInfo">
 						<Label id="MapInfoLabel" text="#LoadingScreenMapInfo" />
 					</Panel>

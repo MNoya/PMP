@@ -53,11 +53,8 @@ function OnSettingChanged(event)
 	{
 		CheckForHostPrivileges();
 
-		// Set Everyone unassigned except for the host (to prevent game ending)
-	    if (!IsHost)
-	    	OnLeaveTeamPressed()
-	    else
-	    	Game.PlayerJoinTeam( 2 );
+		// Set Everyone unassigned
+	    OnLeaveTeamPressed()
 
 		RemoveTeamPanels();
 

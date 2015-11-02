@@ -52,10 +52,10 @@
                     <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_goblin.png" /><Label class="ActorText" text="VoiceGoblin"/></Panel>
                     <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_night_elf.png" /><Label class="ActorText" text="VoiceElf"/></Panel>-->
                 </Panel>
-                <!--<Panel id="ArtCredits">
+                <Panel id="ArtCredits">
                     <Label id="ArtistTitle" text="Workshop Art"/>
                     <Label id="ArtistText" text="[S]teamhat"/>
-                </Panel>-->
+                </Panel>
                 <Panel id="SpecialCredits">
                     <Label id="SpecialTitle" text="Special Thanks"/>
                     <Label id="SpecialText" text="#special_thanks"/>

@@ -3,8 +3,19 @@
 		<include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
 	</styles>
   	<Panel class="AddonLoadingRoot">
-		<Panel id="CustomBg" >
-	 		<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/loading_screen/gamemode.png" />
-		</Panel>
+		<Panel id="seq" >
+            <Image id="seq_1_bg" src="file://{images}/custom_game/loading_screen/1_bg.png" />
+            <Image id="seq_2_tree" src="file://{images}/custom_game/loading_screen/2_tree.png" />
+            <Image id="seq_3_drow" src="file://{images}/custom_game/loading_screen/3_drow.png" />
+            <Image id="seq_4_undead" src="file://{images}/custom_game/loading_screen/4_undead.png" />
+            <Image id="seq_5_bloodelf" src="file://{images}/custom_game/loading_screen/5_bloodelf.png" />
+            <Image id="seq_6_knights" src="file://{images}/custom_game/loading_screen/6_knights.png" />
+            <Image id="seq_7_axe" src="file://{images}/custom_game/loading_screen/7_axe.png" />
+            <Image id="seq_8_rapier" src="file://{images}/custom_game/loading_screen/8_rapier.png" />
+            <Image id="seq_9_meepo" src="file://{images}/custom_game/loading_screen/9_meepo.png" />
+            <Image src="file://{images}/custom_game/loading_screen/10_frontlight.png" />
+            <!--<Image id="seq_11_infobar" src="file://{images}/custom_game/loading_screen/11_infobar.png" />-->
+            <Image id="seq_12_logo" src="file://{images}/custom_game/loading_screen/12_logo.png" />
+        </Panel>
 	</Panel>
 </root>

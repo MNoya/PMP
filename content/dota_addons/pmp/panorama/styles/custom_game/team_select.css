@@ -6,12 +6,11 @@
     vertical-align: top;  
     margin-left: 20px;
     margin-top: 20px;
-    box-shadow: black -4px -4px 8px 8px;
     flow-children: down;
 
-    background-color: #444444;
-    opacity: 0.8;
-    z-index: 5;
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
+    box-shadow: inset #000000 0px 2px 6px 3px;
+    border-bottom: 1px solid #404b4a11;
 }
 
 #ToggleSettings
@@ -23,10 +22,6 @@
     margin-left: 20px;
     margin-right: 20px;
     flow-children: down;
-
-    background-color: #444444;
-    opacity: 0.8;
-    z-index: 5;
 }
 
 .player_has_host_privileges #ToggleSettings
@@ -152,8 +147,8 @@
     padding-left: 16px;
 	padding-right: 16px;
     margin-left: 16px;
-    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
-    box-shadow: black -4px -4px 8px 8px;
+    //background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
+    //box-shadow: black -4px -4px 8px 8px;
    
 	animation-name: TeamsListAppear;
 	animation-duration: 0.75s;
@@ -192,7 +187,8 @@
 	text-transform: uppercase;
     font-size: 22px;
 	letter-spacing: 1px;
-    color: #667273;
+    color: #111111;
+    font-weight: bold;
 	//margin-top: 16px;
 	margin-left: 8px;
 }
@@ -240,13 +236,14 @@
 	text-transform: uppercase;
     margin-top: 2px;
     margin-right: 5px;
-    color: #6e6f6f;
+    color: #111111;
+    font-weight: bold;
     vertical-align: center;
 }
 
 #ShuffleTeamAssignmentButton:hover Label
 {
-	color: white;
+	color: gray;
 }
 
 #ShuffleTeamAssignmentButton:active
@@ -258,13 +255,13 @@
 {
     width: 24px;
 	height: 24px;
-	wash-color: #888888;
+	wash-color: black;
     vertical-align: center;
 }
 
 #ShuffleTeamAssignmentButton:hover Image
 {
-	wash-color: white;
+	wash-color: gray;
 }
 
 #GameAndPlayersRoot
@@ -272,8 +269,8 @@
     width: 400px;
     height: 100%;
     flow-children: down;
- 	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619 ), to( #000000 ) );
-    box-shadow: black -4px -4px 16px 16px;
+ 	//background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619 ), to( #000000 ) );
+    //box-shadow: black -4px -4px 16px 16px;
 }
 
 #GameInfoPanel 
@@ -290,7 +287,8 @@
 
 #MapInfoLabel
 {
-    color: #a9aaaa;
+    font-size: 32px;
+    color: #111111;
 	text-transform: uppercase;
 }
 
@@ -391,11 +389,13 @@
 {
     flow-children: down;
 	height: fill-parent-flow (1);
-	max-height: 80%;
+    vertical-align: center;
+	max-height: 68%;
 	width: 100%;
 	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
 	box-shadow: inset #000000 0px 2px 6px 3px;
     border-bottom: 1px solid #404b4a11;
+    opacity: 0.9;
 }
 
 #UnassignedPlayersHeader
@@ -464,7 +464,7 @@
 	text-transform: uppercase;
     margin-top: 2px;
     margin-left: 5px;
-    color: #6e6f6f;
+    color: #111111;
     vertical-align: center;
 }
 
@@ -482,7 +482,7 @@
 {
     width: 24px;
 	height: 24px;
-	wash-color: #888888;
+	wash-color: #111111;
     vertical-align: center;
 }
 
@@ -545,10 +545,10 @@
 #CancelAndUnlockButton
 { 
     horizontal-align: right;
-    //background-color: gradient( linear, 0% 0%, 0% 100%, from( #722217 ), to( #DD4A29 ) );
-	//box-shadow: fill #DD4A2922 -4px -4px 8px 8px;
-	//border-top: 1px solid #ffffff03;
-	//border-left: 1px solid #ffffff03; 
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #722217 ), to( #DD4A29 ) );
+	box-shadow: fill #DD4A2922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
     visibility: collapse;
 
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #2c1b1b ), to( #482e2f ) );
@@ -588,19 +588,21 @@
 {
     width: 100%;
     margin: 6px;
-	background-color: gradient( linear, 100% 0%, 100% 100%, from( #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
+	//background-color: gradient( linear, 100% 0%, 100% 100%, from( #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
+    background-color: #272b30dd;
     
-    //box-shadow: fill #44444430 -5px -5px 9px 9px;
-    //border-top: 1px solid #ffffff10;
-	//border-right: 1px solid #000000ff;
-	//border-left: 1px solid #ffffff10;
-	//border-bottom: 1px solid #000000ff;
+    box-shadow: fill #44444430 -5px -5px 9px 9px;
+    border-top: 1px solid #ffffff10;
+	border-right: 1px solid #000000ff;
+	border-left: 1px solid #ffffff10;
+	border-bottom: 1px solid #000000ff;
 }
 
 .TeamSelectTeam.local_player_on_this_team
 {
-    box-shadow: fill #ffffff40 -3px -3px 3px 6px;
-    //box-shadow: -3px -3px 12px 6px #FFFFFF88;
+    //box-shadow: fill #33333340 -3px -3px 3px 6px;
+    box-shadow: -3px -3px 12px 6px #FFFFFF88;
+    background-color: #272b30dd;
 }
 
 .TeamSelectTeam:hover
