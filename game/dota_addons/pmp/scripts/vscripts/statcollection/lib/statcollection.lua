@@ -28,7 +28,7 @@ local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 local postLocation = 'http://getdotastats.com/s2/api/'
 
 -- The schema version we are currently using
-local schemaVersion = 2
+local schemaVersion = 3
 
 -- Constants used for pretty formatting, as well as strings
 local printPrefix = 'Stat Collection: '
@@ -163,7 +163,11 @@ function statCollection:hookFunctions()
     -- Grab the current state
         local state = GameRules:State_Get()
 
-        if state >= DOTA_GAMERULES_STATE_PRE_GAME then
+        if state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+            -- Load time flag
+            statCollection:setFlags({loadTime = math.floor(GameRules:GetGameTime())})
+
+        elseif state >= DOTA_GAMERULES_STATE_PRE_GAME then
             -- Send pregame stats
             this:sendStage2()
         end
@@ -272,7 +276,6 @@ function statCollection:sendStage1()
     local payload = {
         modIdentifier = self.modIdentifier,
         hostSteamID32 = tostring(hostSteamID),
-        numPlayers = playerCount,
         schemaVersion = schemaVersion
     }
 
@@ -508,7 +511,7 @@ end
 function statCollection:sendStage(stageName, payload, callback)
     -- Create the request
     local req = CreateHTTPRequest('POST', postLocation .. stageName)
-    print(json.encode(payload))
+    --print(json.encode(payload))
     -- Add the data
     req:SetHTTPRequestGetOrPostParameter('payload', json.encode(payload))
 
