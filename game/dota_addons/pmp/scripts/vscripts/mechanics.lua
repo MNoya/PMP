@@ -811,14 +811,15 @@ function ChangeOutpostControl( unit, new_ownerID )
     local old_ownerID = unit:GetPlayerOwnerID()
     local old_owner = PlayerResource:GetSelectedHeroEntity(old_ownerID)
     local new_owner = PlayerResource:GetSelectedHeroEntity(new_ownerID)
+    local ability = unit:FindAbilityByName("active_outpost")
+    ToggleOff(ability)
 
     unit:SetOwner(new_owner)
     unit:SetControllableByPlayer(new_ownerID, true)
     unit:SetTeam(new_owner:GetTeamNumber())
     unit:RespawnUnit()
 
-    SetActiveOutpost(old_ownerID, nil)
-    SetActiveOutpost(new_ownerID, unit)
+    ToggleOn(ability)
 
     AddToPlayerOutposts(new_ownerID, unit)
     RemoveFromPlayerOutposts(old_ownerID, unit)
@@ -836,9 +837,14 @@ end
 function SetActiveOutpost( playerID, unit )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if hero then
-        hero.activeOutpost = unit
+
+        if hero.activeOutpostParticle then
+            -- Turn off
+            ParticleManager:DestroyParticle(hero.activeOutpostParticle, true)
+        end
 
         if unit then
+            hero.activeOutpost = unit
 
             -- Turn on
             local particleName = "particles/custom/cp_captured.vpcf"
@@ -863,9 +869,16 @@ function SetActiveOutpost( playerID, unit )
             ParticleManager:SetParticleControl(hero.activeOutpostParticle, 0, position)
             ParticleManager:SetParticleControl(hero.activeOutpostParticle, 1, color)
             ParticleManager:SetParticleControl(hero.activeOutpostParticle, 3, position)
-        
-        elseif hero.activeOutpostParticle then
+        end
+    end
+end
 
+function DeactivateOutpost( playerID )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+
+        hero.activeOutpost = nil
+        if hero.activeOutpostParticle then
             -- Turn off
             ParticleManager:DestroyParticle(hero.activeOutpostParticle, true)
         end

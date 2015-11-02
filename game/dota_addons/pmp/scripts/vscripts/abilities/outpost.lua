@@ -26,7 +26,7 @@ function DisableOutpost( event )
 
     -- Stop units from spawning from here
     print("DisableOutpost")
-    SetActiveOutpost(playerID, nil)
+    DeactivateOutpost(playerID)
 end
 
 function OutpostDamaged( event )

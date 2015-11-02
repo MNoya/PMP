@@ -35,11 +35,15 @@ function PMP:OnPlayerChat(keys)
     end
 end
 
-function PMP:GreedIsGood(pID, value)
+function PMP:GreedIsGood(playerID, value)
     if not value then value = 500 end
     
-    ModifyGold(pID, tonumber(value))
-    ModifyLumber(pID, tonumber(value))
+    for pID=0,DOTA_MAX_TEAM_PLAYERS do
+        if PlayerResource:IsValidPlayerID(pID) then
+            ModifyGold(pID, tonumber(value))
+            ModifyLumber(pID, tonumber(value))
+        end
+    end    
     
     GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
 end
