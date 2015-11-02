@@ -9,6 +9,7 @@ var settings = ["TeamRow"];
 
 //Defaults
 $("#Positions").checked = true;
+$("#BossRoam").checked = true;
 
 function OnGameEnd() {
 	var pitch = 15

@@ -10,7 +10,7 @@
         "01"
         {
             "var_type"          "FIELD_INTEGER"
-            "instakill_chance"  "5 6 8 10 12 15"
+            "instakill_chance"  "6 8 10 12 15 20"
         }
     }
 

@@ -96,7 +96,6 @@
     "BaseClass"                     "ability_datadriven"
     "AbilityTextureName"            "pimp_regen"
     "MaxLevel"                      "20"
-    "LevelsBetweenUpgrades"         "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 

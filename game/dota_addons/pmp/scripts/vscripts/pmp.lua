@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.36"
+PMPVERSION = "0.37"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -134,7 +134,6 @@ function PMP:InitGameMode()
         statCollection:setFlags({fixed_positions = GameRules.Positions})    
     end
 
-    --GameRules["BossRoam"]
     --GameRules["Neutrals"]
 
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
@@ -1121,7 +1120,6 @@ function PMP:SetSetting( event )
         end
         
         --GameRules["Positions"]
-        --GameRules["BossRoam"]
         --GameRules["Neutrals"]        
     end
 

@@ -18,6 +18,7 @@
 		"npc_dota_hero_drow_ranger"                                                       " Night Elf"
 		"npc_dota_hero_skeleton_king"                                                     "Skeleton"
 		"npc_dota_hero_treant"                                                            "Treant"
+		"npc_dota_hero_jakiro"                                                            "Demon"
 
 		// ******************** UNITS ********************
 		"peon"                                                                            "Peon"
@@ -87,7 +88,7 @@
 		"treant_ghost"                                                                    "Treant Ghost"
 
 		"barricade"                                                                       "Barricade"
-		"nian_boss"                                                                       "Boss"
+		"nian_boss"                                                                       "Ashley"
 		"trader"                                                                          "Trader"
 		"outpost"                                                                         "Outpost"
 

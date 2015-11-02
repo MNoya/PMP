@@ -1561,7 +1561,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "instakill_chance"  "6 8 10 12 15"
+	            "instakill_chance"  "8 10 12 15 20"
 	        }
 	    }
 	
@@ -1603,7 +1603,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "instakill_chance"  "6 8 10 12 15"
+	            "instakill_chance"  "8 10 12 15 20"
 	        }
 	    }
 	
@@ -1645,7 +1645,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "instakill_chance"  "6 8 10 12 15"
+	            "instakill_chance"  "8 10 12 15 20"
 	        }
 	    }
 	
@@ -1687,7 +1687,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "instakill_chance"  "6 8 10 12 15"
+	            "instakill_chance"  "8 10 12 15 20"
 	        }
 	    }
 	
@@ -1729,7 +1729,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "instakill_chance"  "6 8 10 12 15"
+	            "instakill_chance"  "8 10 12 15 20"
 	        }
 	    }
 	
@@ -2864,14 +2864,9 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "550 600 650 700 750"
-	        }
-	        "03"
-	        {
-	            "var_type"            "FIELD_INTEGER"
 	            "damage_dealt"        "65 70 75 80 85"
 	        }
-	        "04"
+	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
 	            "damage_taken"        "145 140 135 130 125"
@@ -2916,14 +2911,9 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "550 600 650 700 750"
-	        }
-	        "03"
-	        {
-	            "var_type"            "FIELD_INTEGER"
 	            "damage_dealt"        "65 70 75 80 85"
 	        }
-	        "04"
+	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
 	            "damage_taken"        "145 140 135 130 125"
@@ -2968,14 +2958,9 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "550 600 650 700 750"
-	        }
-	        "03"
-	        {
-	            "var_type"            "FIELD_INTEGER"
 	            "damage_dealt"        "65 70 75 80 85"
 	        }
-	        "04"
+	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
 	            "damage_taken"        "145 140 135 130 125"
@@ -3020,14 +3005,9 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "550 600 650 700 750"
-	        }
-	        "03"
-	        {
-	            "var_type"            "FIELD_INTEGER"
 	            "damage_dealt"        "65 70 75 80 85"
 	        }
-	        "04"
+	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
 	            "damage_taken"        "145 140 135 130 125"
@@ -3072,14 +3052,9 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "attack_range"        "550 600 650 700 750"
-	        }
-	        "03"
-	        {
-	            "var_type"            "FIELD_INTEGER"
 	            "damage_dealt"        "65 70 75 80 85"
 	        }
-	        "04"
+	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
 	            "damage_taken"        "145 140 135 130 125"
