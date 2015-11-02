@@ -497,8 +497,16 @@ function PMP:OnPlayerPickHero(keys)
 
     -- Set Resources
     Timers:CreateTimer(function()
-        SetGold(playerID, INITIAL_GOLD)
-        SetLumber(playerID, INITIAL_LUMBER)
+        local gold = INITIAL_GOLD
+        local lumber = INITIAL_LUMBER
+
+        if PlayerResource:HasRandomed(playerID) then
+            gold = gold + 10
+            lumber = lumber + 10
+        end
+
+        SetGold(playerID, gold)
+        SetLumber(playerID, lumber)
         SetFoodUsed(playerID, 0)
         SetFoodLimit(playerID, INITIAL_FOOD_LIMIT)
 
@@ -510,14 +518,14 @@ function PMP:OnPlayerPickHero(keys)
             SetFoodLimit(playerID, GetFoodLimit(playerID))
         end)
 
-        if Convars:GetBool('developer') then
+        --[[if Convars:GetBool('developer') then
             local steamID = PlayerResource:GetSteamAccountID(playerID)
             if steamID == 86718505 then
                 SetGold(playerID, 50000)
                 SetLumber(playerID, 50000)
                 --SetFoodLimit(playerID, 100)
             end
-        end
+        end]]
 
         -- Set initial units
         hero.units = {}
