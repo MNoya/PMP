@@ -62,8 +62,8 @@
 {
   0%
   {
-    transform: translateX( 250px );
-    pre-transform-scale2d: 1.0;
+    transform: translateY( -50px );
+    pre-transform-scale2d: 0.9, 0.9;
   }
 
   100%
@@ -83,7 +83,8 @@
 {
   0%
   {
-    transform: translateY( 100px );
+    transform: translateX( -150px ) translateY( 150px );
+    pre-transform-scale2d: 0.9, 0.9;
   }
 
   100%
@@ -103,7 +104,8 @@
 {
   0%
   {
-    transform: translateX( 200px );
+    transform: translateX( -100px ) translateY( 100px );
+    pre-transform-scale2d: 0.8, 0.8;
   }
 
   100%
@@ -123,7 +125,8 @@
 {
   0%
   {
-    transform: translateX( 250px ) translateY( 250px );
+    //transform: translateX( 250px ) translateY( 250px );
+    pre-transform-scale2d: 0.8, 0.8;
   }
 
   100%
@@ -143,7 +146,8 @@
 {
   0%
   {
-    transform: translateX( 250px );
+    transform: translateY( 100px );
+    pre-transform-scale2d: 0.8, 0.8;
   }
 
   100%
@@ -163,7 +167,8 @@
 {
   0%
   {
-    transform: translateX( 1000px );
+    transform: translateX( 100px );
+    pre-transform-scale2d: 1.2, 1.2;
   }
 
   100%
@@ -183,7 +188,8 @@
 {
   0%
   {
-    transform: translateX( -1200px );
+    transform: translateX( 100px );
+    pre-transform-scale2d: 1.2, 1.2;
   }
 
   100%
@@ -204,7 +210,8 @@
 {
   0%
   {
-    transform: translateY( 350px );
+    transform: translateY( 150px );
+    pre-transform-scale2d: 0.8, 0.8;
   }
 
   100%
@@ -225,7 +232,7 @@
 {
   0%
   {
-    transform: translateY( 100px );
+    //transform: translateY( 100px );
   }
 
   100%
@@ -248,7 +255,7 @@
 {
   0%
   {
-    transform: translateX( -800px ) translateY( 600px );
+    //transform: translateX( -800px ) translateY( 600px );
   }
 
   100%
