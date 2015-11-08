@@ -68,5 +68,8 @@ function TeleportUnit( unit, position )
     Timers:CreateTimer(TELEPORT_DELAY, function()
         FindClearSpaceForUnit(unit, position, true)
         ApplyModifier(unit, "modifier_teleport_sickness")
+        Timers:CreateTimer(0.5, function()
+            unit:Stop()
+        end)
     end)
 end

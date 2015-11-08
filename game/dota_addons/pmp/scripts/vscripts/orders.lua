@@ -80,6 +80,12 @@ function PMP:FilterExecuteOrder( filterTable )
         local forward = (point-origin):Normalized()
         local right = RotatePosition(Vector(0,0,0), QAngle(0,90,0), forward)
 
+        if IsTouchingTriggerY(point) then
+            offsetY = 0
+        elseif IsTouchingTriggerX(point) then
+            offsetX = 0
+        end
+
         for i=1,unitsPerRow do
           for j=1,unitsPerColumn do
             --print ('grid point (' .. curX .. ', ' .. curY .. ')')
@@ -258,6 +264,33 @@ function RemoveElementFromTable(table, element)
     end
 
     return new_table
+end
+
+function IsTouchingTriggerY(point)
+    local bTouching = InsideEntBounds(GameRules.triggerEast, point) or InsideEntBounds(GameRules.triggerWest, point)
+    return bTouching
+end
+
+function IsTouchingTriggerX(point)
+    local bTouching = InsideEntBounds(GameRules.triggerNorth, point) or InsideEntBounds(GameRules.triggerSouth, point)
+    return bTouching
+end
+
+function InsideEntBounds( ent, point )
+    local origin = ent:GetAbsOrigin()
+    local bounds = ent:GetBounds()
+    local min = bounds.Mins
+    local max = bounds.Maxs
+    local X = point.x
+    local Y = point.y
+    local minX = min.x + origin.x
+    local minY = min.y + origin.y
+    local maxX = max.x + origin.x
+    local maxY = max.y + origin.y
+    local betweenX = X >= minX and X <= maxX
+    local betweenY = Y >= minY and Y <= maxY
+
+    return betweenX and betweenY
 end
 
 ORDERS = {

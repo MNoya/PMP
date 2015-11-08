@@ -271,6 +271,11 @@ function PMP:InitGameMode()
   	GameRules.StartingPositions = {}
 	GameRules.OrderedPositionEntities = Entities:FindAllByName( "*starting_position*" ) --Inside player_start.vmap prefab
 
+    GameRules.triggerNorth = Entities:FindByName( nil, "*triggerNorth*" )
+    GameRules.triggerSouth = Entities:FindByName( nil, "*triggerSouth*" )
+    GameRules.triggerEast = Entities:FindByName( nil, "*triggerEast*" )
+    GameRules.triggerWest = Entities:FindByName( nil, "*triggerWest*" )
+
     GameRules.ShuffledPositionEntities = ShuffledList(GameRules.OrderedPositionEntities)
 
     --[[print("Ordered:")
