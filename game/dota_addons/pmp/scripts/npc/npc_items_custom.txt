@@ -135,6 +135,13 @@
 	                "MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE" "500" 
 	            }
 	        }
+	
+	        "modifier_teleport_sickness"
+	        {
+	            "IsDebuff"      "1"
+	            "TextureName"   "teleport"
+	            "Duration"      "3"
+	        }
 		}
 	}
 	/////////////////////////////

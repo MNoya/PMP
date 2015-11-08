@@ -4,7 +4,7 @@
     "IsPlayable"    "1"
     "free_for_all"
     {
-        "MaxPlayers"     "10"
+        "MaxPlayers"     "9"
     }
     "teams"
     {

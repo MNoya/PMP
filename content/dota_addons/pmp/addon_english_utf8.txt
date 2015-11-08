@@ -93,6 +93,9 @@
 		"outpost"                                                                         "Outpost"
 
 		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_teleport_sickness"                                         "Teleport Sickness"
+		"DOTA_Tooltip_modifier_teleport_sickness_Description"                             ""
+		
 		"DOTA_Tooltip_modifier_bloodlust"                                                 "Bloodlust"
 		"DOTA_Tooltip_modifier_bloodlust_Description"                                     "This unit has Bloodlust; its attack rate and movement speed are increased"
 

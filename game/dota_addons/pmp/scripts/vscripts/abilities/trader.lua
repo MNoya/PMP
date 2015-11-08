@@ -90,7 +90,7 @@ function TraderHasNearbyPatronForPlayer( pID )
     if trader.current_unit[pID] then
         local unit = trader.current_unit[pID]
         --Double check
-        if IsValidAlive(unit) and trader:GetRangeToUnit(unit) <= 900 then
+        if IsValidAlive(unit) and trader:GetRangeToUnit(unit) <= 1000 then
             return unit
         else
             return false
@@ -115,7 +115,7 @@ function CheckUnitsInRadius( event )
             if IsValidAlive(current_unit) then
                 
                 -- Break out of range
-                if trader:GetRangeToUnit(current_unit) > 900 then
+                if trader:GetRangeToUnit(current_unit) > 1000 then
                     if trader.active_particle[playerID] then
                         ParticleManager:DestroyParticle(trader.active_particle[playerID], true)
                     end
@@ -125,7 +125,7 @@ function CheckUnitsInRadius( event )
                 end
             else
                 -- Find nearby units in radius
-                local units = FindUnitsInRadius(DOTA_TEAM_NEUTRALS, trader:GetAbsOrigin(), nil, 900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false)
+                local units = FindUnitsInRadius(DOTA_TEAM_NEUTRALS, trader:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false)
 
                 -- Filter by units that only belong to that players team
                 local target
