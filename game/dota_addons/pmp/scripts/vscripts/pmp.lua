@@ -102,7 +102,7 @@ function PMP:InitGameMode()
     end
 
 	-- DebugPrint
-	Convars:RegisterConvar('debug_spew', tostring(DEBUG_SPEW), 'Set to 1 to start spewing debug info. Set to 0 to disable.', 0)
+	--Convars:RegisterConvar('debug_spew', tostring(DEBUG_SPEW), 'Set to 1 to start spewing debug info. Set to 0 to disable.', 0)
 
     if GetMapName() == "free_for_all" then
         -- 9 teams of 1 player

@@ -40,7 +40,7 @@
     
     // Movement
     //----------------------------------------------------------------
-    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"             "320"
     "MovementTurnRate"          "0.40"
     
