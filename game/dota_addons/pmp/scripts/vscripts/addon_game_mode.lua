@@ -28,6 +28,7 @@ function Precache( context )
 	print("[PMP] Performing pre-load precache")
 
 	PrecacheResource("soundfile", "soundevents/pmp_custom_sounds.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/pmp_announcer.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/undead_soundset.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/blood_elf_soundset.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/orc_soundset.vsndevts", context)
