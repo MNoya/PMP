@@ -9,6 +9,7 @@
 *.vjs_c
 *.vxml_c
 *.vcss_c
+*.vsnd_c
 
 # Map files
 *.vpk

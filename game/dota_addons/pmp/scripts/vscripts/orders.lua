@@ -34,7 +34,7 @@ function PMP:FilterExecuteOrder( filterTable )
     end
 
     if unit then
-        Sounds:PlaySoundSet(issuer, unit, order_type)
+        Sounds:PlaySoundSet(unit:GetMainControllingPlayer(), unit, order_type)
     end
 
     local numUnits = 0

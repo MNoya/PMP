@@ -67,7 +67,7 @@ function Sounds:PlaySoundSet( playerID, unit, order )
             if order == "SPAWN" then
                 EmitSoundOnLocationForAllies(unit:GetAbsOrigin(), sound_string, unit)
             else
-                EmitSoundOnClient(sound_string, player)
+                Sounds:EmitSoundOnClient( playerID, sound_string )
             end
 
             --print("Playing",sound_string,"for",duration,"seconds")
@@ -118,6 +118,13 @@ end
 
 function Sounds:SetNextValidTime( playerID, time )
     Sounds.LastSoundDuration[playerID] = time
+end
+
+function Sounds:EmitSoundOnClient( playerID, sound )
+    local player = PlayerResource:GetPlayer(playerID)
+    if player then
+        CustomGameEventManager:Send_ServerToPlayer(player, "emit_client_sound", {sound=sound})
+    end
 end
 
 Sounds:Start()
