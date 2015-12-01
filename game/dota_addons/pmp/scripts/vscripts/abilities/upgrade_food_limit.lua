@@ -12,7 +12,11 @@ function upgrade_food_limit:OnSpellStart()
     local maxLevel = ability:GetMaxLevel()
     if level == maxLevel then
         ability:SetHidden(true)
+        
+        Sounds:EmitSoundOnClient(pID, "Announcer.Upgrade.Food.Max")
     else
+        Sounds:EmitSoundOnClient(pID, "Announcer.Upgrade.Food")
+
         ability:SetLevel(level + 1)
     end
 

@@ -57,6 +57,20 @@ function BuildBarricades( event )
         barricade:SetOwner(hero)
         table.insert(hero.barricades, barricade)
     end
+
+    -- If more than 5 sets of barricades (20), announce the "Heavy" barricade
+    local barricadeCount = 0
+    for k,v in pairs(hero.barricades) do
+        if IsValidAlive(v) then
+            barricadeCount = barricadeCount + 1
+        end
+    end
+
+    if barricadeCount > 20 then
+        Sounds:EmitSoundOnClient(hero:GetPlayerID(), "Announcer.Buildings.Barricades.Heavy")
+    else
+        Sounds:EmitSoundOnClient(hero:GetPlayerID(), "Announcer.Buildings.Barricades")
+    end
 end
 
 -- Barricades take 2 hits to destroy

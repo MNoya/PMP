@@ -59,6 +59,13 @@
                     "Function"      "SpawnUnit"
                     "UnitName"      "treant_leader"
                 }
+
+                "RunScript"
+                {
+                    "ScriptFile"    "sounds.lua"
+                    "Function"      "PlayAnnouncerSound"
+                    "Sound"         "Announcer.Leader.Join"
+                }
             }
         }
     }

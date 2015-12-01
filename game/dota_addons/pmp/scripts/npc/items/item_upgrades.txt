@@ -12,13 +12,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "50"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "50"
+            "gold_cost"           "50 130 210 290 370"
         }
         "02"
         {
@@ -59,13 +58,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "130"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "130"
+            "gold_cost"           "50 130 210 290 370"
         }
         "02"
         {
@@ -105,13 +103,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "210"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "210"
+            "gold_cost"           "50 130 210 290 370"
         }
         "02"
         {
@@ -151,13 +148,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "290"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "290"
+            "gold_cost"           "50 130 210 290 370"
         }
         "02"
         {
@@ -197,13 +193,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "370"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "370"
+            "gold_cost"           "50 130 210 290 370"
         }
         "02"
         {
@@ -247,14 +242,12 @@
     "ItemDroppable"                 "0"
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
-
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "100"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -300,13 +293,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -352,13 +344,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -403,13 +394,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -454,13 +444,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -509,13 +498,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "70"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "70"
+            "gold_cost"           "70 210 350 490 630"
         }
         "02"
         {
@@ -561,13 +549,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "210"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "210"
+            "gold_cost"           "70 210 350 490 630"
         }
         "02"
         {
@@ -613,13 +600,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "350"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "350"
+            "gold_cost"           "70 210 350 490 630"
         }
         "02"
         {
@@ -665,7 +651,6 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "490"
     "AbilitySpecial"
     {
         "01"
@@ -717,13 +702,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "630"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "630"
+            "gold_cost"           "70 210 350 490 630"
         }
         "02"
         {
@@ -774,13 +758,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "55"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "55"
+            "gold_cost"           "55 125 195 265 335"
         }
         "02"
         {
@@ -816,13 +799,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "125"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "125"
+            "gold_cost"           "55 125 195 265 335"
         }
         "02"
         {
@@ -857,13 +839,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "195"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "195"
+            "gold_cost"           "55 125 195 265 335"
         }
         "02"
         {
@@ -898,13 +879,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "265"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "265"
+            "gold_cost"           "55 125 195 265 335"
         }
         "02"
         {
@@ -939,13 +919,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "335"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "335"
+            "gold_cost"           "55 125 195 265 335"
         }
         "02"
         {
@@ -985,13 +964,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "110"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "110"
+            "gold_cost"           "110 200 290 380 470"
         }
         "02"
         {
@@ -1027,13 +1005,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "110 200 290 380 470"
         }
         "02"
         {
@@ -1069,13 +1046,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "290"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "290"
+            "gold_cost"           "110 200 290 380 470"
         }
         "02"
         {
@@ -1111,13 +1087,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "380"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "380"
+            "gold_cost"           "110 200 290 380 470"
         }
         "02"
         {
@@ -1153,13 +1128,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "470"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "470"
+            "gold_cost"           "110 200 290 380 470"
         }
         "02"
         {
@@ -1198,13 +1172,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "100"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1240,13 +1213,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1282,13 +1254,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1324,13 +1295,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1366,13 +1336,13 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
+
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1411,7 +1381,6 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
@@ -1453,13 +1422,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1495,13 +1463,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1537,13 +1504,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1579,13 +1545,13 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
+
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1624,7 +1590,6 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
@@ -1666,13 +1631,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1708,13 +1672,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1750,13 +1713,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1792,13 +1754,13 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
+
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1837,7 +1799,6 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
@@ -1884,13 +1845,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1931,13 +1891,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -1978,13 +1937,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2025,13 +1983,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2075,7 +2032,6 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
@@ -2117,13 +2073,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2159,13 +2114,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2201,13 +2155,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2243,13 +2196,13 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
+
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2288,7 +2241,6 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
@@ -2330,13 +2282,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2372,13 +2323,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2414,13 +2364,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2456,13 +2405,13 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
+
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2501,7 +2450,6 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
@@ -2543,13 +2491,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2585,13 +2532,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2627,13 +2573,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2669,13 +2614,13 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
+
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2714,7 +2659,6 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "100"
     "AbilitySpecial"
     {
         "01"
@@ -2761,13 +2705,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "200"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2808,13 +2751,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "300"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "300"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2855,13 +2797,12 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "400"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "400"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {
@@ -2902,13 +2843,13 @@
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
 
-    "AbilityGoldCost"               "500"
+
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "gold_cost"           "500"
+            "gold_cost"           "100 200 300 400 500"
         }
         "02"
         {

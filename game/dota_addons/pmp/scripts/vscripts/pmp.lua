@@ -28,6 +28,20 @@ TEAM_COLORS[DOTA_TEAM_CUSTOM_6] = { 197, 77, 168 }  --  Pink
 TEAM_COLORS[DOTA_TEAM_CUSTOM_7] = { 129, 83, 54 }   --  Brown
 TEAM_COLORS[DOTA_TEAM_CUSTOM_8] = { 199, 228, 13 }  --  Olive
 
+-- For announcer
+TEAM_NUMER_TO_COLOR = {
+    [DOTA_TEAM_GOODGUYS] = "blue",
+    [DOTA_TEAM_BADGUYS] = "red",
+    [DOTA_TEAM_CUSTOM_1] = "teal",
+    [DOTA_TEAM_CUSTOM_2] = "purple",
+    [DOTA_TEAM_CUSTOM_3] = "yellow",
+    [DOTA_TEAM_CUSTOM_4] = "orange",
+    [DOTA_TEAM_CUSTOM_5] = "green",
+    [DOTA_TEAM_CUSTOM_6] = "pink",
+    [DOTA_TEAM_CUSTOM_7] = "brown",
+    [DOTA_TEAM_CUSTOM_8] = "olive"
+}
+
 PLAYER_COLORS = {}
 PLAYER_COLORS[0] = { 52, 85, 255 }   --  Blue
 PLAYER_COLORS[1]  = { 255, 52, 85 }   --  Red
@@ -146,6 +160,7 @@ function PMP:InitGameMode()
 	ListenToGameEvent('player_connect', Dynamic_Wrap(PMP, 'PlayerConnect'), self)
     ListenToGameEvent('player_disconnect', Dynamic_Wrap(PMP, 'OnDisconnect'), self)
     ListenToGameEvent('player_chat', Dynamic_Wrap(PMP, 'OnPlayerChat'), self)
+    ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(PMP, 'OnPlayerLevelUp'), self)
 
 	-- Filters
     GameMode:SetExecuteOrderFilter( Dynamic_Wrap( PMP, "FilterExecuteOrder" ), self )
@@ -234,7 +249,7 @@ function PMP:InitGameMode()
 
                     -- If there's an item in this slot, define the number to show
                     if item then
-                        local cost = item:GetGoldCost(1)
+                        local cost = item:GetLevelSpecialValueFor("gold_cost", item:GetLevel() - 1)
                         if cost then
                             table.insert(itemValues,cost)
                         else
@@ -349,7 +364,7 @@ function PMP:OnPlayerPickHero(keys)
     local teamNumber = hero:GetTeamNumber()
     local race = GetRace(hero)
     local playerName = PlayerResource:GetPlayerName(playerID)
-    if playerName == "" then playerName = "Player "..playerID end
+    if playerName == "" then playerName = "Player "..playerID+1 end
 
     -- Color
     local color = PMP:ColorForTeam( teamNumber )
@@ -610,6 +625,33 @@ function PMP:OnHeroInGame(hero)
     hero:AddAbility("pimp_speed")
     hero:AddAbility("pimp_regen")
     hero:AddNoDraw()
+
+    -- Check for excess resources periodically
+    local playerID = hero:GetPlayerID()
+    local excessInterval = 30
+    Timers:CreateTimer(excessInterval, function() 
+        if not hero.lost then
+            if CanAffordAllGoldUpgrades(playerID) then
+                Sounds:EmitSoundOnClient(playerID, "Announcer.Resource.ExcessGold")
+            end
+
+            return excessInterval
+        else
+            return
+        end
+    end)
+
+    Timers:CreateTimer(45, function() 
+        if not hero.lost then
+            if CanAffordAllLumberUpgrades(playerID) then
+                Sounds:EmitSoundOnClient(playerID, "Announcer.Resource.ExcessLumber")
+            end
+
+            return excessInterval
+        else
+            return
+        end
+    end)
    
     CustomGameEventManager:RegisterListener( "center_hero_camera", CenterCamera)
 end
@@ -707,8 +749,10 @@ function PMP:OnGameInProgress()
     end    
 
     Timers:CreateTimer(1, function() 
-        PMP:CheckWinCondition()
-        return 1
+        if not GameRules.Winner then
+            PMP:CheckWinCondition()
+            return 1
+        end
     end)
 end
 
@@ -774,6 +818,10 @@ function PMP:OnEntityKilled( event )
         SendBossSlain(attacker_playerID)
     end
 
+    if killed:GetUnitName() == "outpost" then
+        Sounds:EmitSoundOnClient(killed_playerID, "Announcer.Destroyed.Outpost")
+    end
+
     -- Garage killed
     if IsCityCenter(killed) then
         killed:AddNoDraw()
@@ -814,7 +862,12 @@ function PMP:OnEntityKilled( event )
         ParticleManager:CreateParticle("particles/newplayer_fx/npx_wood_break.vpcf", PATTACH_ABSORIGIN, killed)
         killed:AddNoDraw()
 
-        ReduceInvulnerabilityCount(killed_hero)
+        local bInvuln = ReduceInvulnerabilityCount(killed_hero)
+        if bInvuln == 0 then
+            Sounds:EmitSoundOnClient(killed_playerID, "Announcer.Attacked.Garage")
+        else
+            Sounds:EmitSoundOnClient(killed_playerID, "Announcer.Destroyed.Tower")
+        end
 
         print("Reduced Invulnerability count of playerID ",killed_playerID)    
 
@@ -918,6 +971,34 @@ function PMP:MakePlayerLose( playerID )
     if unit_index then
         print("MakePlayerLose",playerID)
         table.remove(GameRules.StillInGame, unit_index)
+        hero.lost = true
+    end
+
+    -- Play local defeat sound
+    Sounds:EmitSoundOnClient(playerID, "Announcer.Eliminated.Self")
+
+    --Decide if we should announce that a team was eliminated instead
+    local eliminatedSound = "Announcer.Player.Eliminated."..playerID+1
+    if GetMapName()=="teams" then 
+        local teamID = PlayerResource:GetTeam(playerID)
+        local teamStillInGame = false
+        for k,v in pairs(GameRules.StillInGame) do
+            if v:GetTeamNumber() == teamID then
+                teamStillInGame = true
+                break
+            end
+        end
+
+        if not teamStillInGame then
+            eliminatedSound = "Announcer.Team.Eliminated."..TEAM_NUMER_TO_COLOR[teamID]
+        end
+    end
+
+    -- Play announcer sound
+    for i=0,12 do
+        if PlayerResource:IsValidPlayer(i) and i~=playerID then
+            Sounds:EmitSoundOnClient(i, eliminatedSound)
+        end
     end
 
     -- Clear player units
@@ -988,6 +1069,16 @@ function PMP:OnDisconnect(keys)
     end]]
 end
 
+function PMP:OnPlayerLevelUp(keys)
+    local player = EntIndexToHScript(keys.player)
+    local level = keys.level
+    local playerID = player:GetPlayerID()
+
+    Timers:CreateTimer(3, function()
+        Sounds:EmitSoundOnClient( playerID, "Announcer.Upgrade.Level" )
+    end)
+end
+
 -- Check for win condition
 function PMP:CheckWinCondition()
     local winnerTeamID = nil
@@ -1007,7 +1098,7 @@ function PMP:CheckWinCondition()
         end
     end    
 
-    if winnerTeamID and not GameRules.Winner then
+    if winnerTeamID then
         PMP:GG(winnerTeamID)
         PMP:PrintWinMessageForTeam(winnerTeamID)
     end

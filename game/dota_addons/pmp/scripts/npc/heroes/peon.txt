@@ -11,7 +11,7 @@
     "GameSoundsFile"            ""
     "IdleSoundLoop"             ""
     "VoiceFile"                 ""
-    "HeroSelectSoundEffect"     "orc.Pick"
+    "HeroSelectSoundEffect"     "Announcer.Pick.orcs"
     
     // Abilities
     //----------------------------------------------------------------

@@ -22,6 +22,15 @@ function BossDamaged( event )
         boss.playerControlled = true
         boss:RespawnUnit()
         boss:SetHealth(boss:GetMaxHealth())
+
+        Sounds:EmitSoundOnClient(playerID, "Announcer.Boss.Slain.Self")
+        local slainSound = RollPercentage(10) and "Announcer.Boss.Slain.Rare" or "Announcer.Boss.Slain"
+        -- Play slain sound for the others
+        for i=0,12 do
+            if PlayerResource:IsValidPlayer(i) and i~=playerID then
+                Sounds:EmitSoundOnClient(i, slainSound)
+            end
+        end
     end
 end
 
@@ -133,6 +142,7 @@ function StartRespawn( event )
         if not IsValidAlive(GameRules.boss) then
             print("[PMP] Respawn Boss")
             PMP:SpawnBoss()
+            EmitGlobalSound("Announcer.Boss.Respawned")
         end
     end)
 end

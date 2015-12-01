@@ -121,5 +121,12 @@
             "ScriptFile"    "abilities/garage.lua"
             "Function"      "RepairBuildings"
         }
+
+        "RunScript"
+        {
+            "ScriptFile"    "sounds.lua"
+            "Function"      "PlayAnnouncerSound"
+            "Sound"         "Announcer.Buildings.Repair"
+        }
     }
 }

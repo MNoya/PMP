@@ -10,7 +10,7 @@
     "GameSoundsFile"            ""
     "IdleSoundLoop"             ""
     "VoiceFile"                 ""
-    "HeroSelectSoundEffect"     "undead.Pick"
+    "HeroSelectSoundEffect"     "Announcer.Pick.undead"
     
     // Abilities
     //----------------------------------------------------------------

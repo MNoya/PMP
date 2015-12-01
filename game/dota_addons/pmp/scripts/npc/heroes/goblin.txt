@@ -5,6 +5,12 @@
     //----------------------------------------------------------------
     "override_hero"             "npc_dota_hero_meepo"
     "Race"                      "goblin"
+
+    "SoundSet"                  ""
+    "GameSoundsFile"            ""
+    "IdleSoundLoop"             ""
+    "VoiceFile"                 ""
+    "HeroSelectSoundEffect"     "Announcer.Pick.goblins"
     
     // Abilities
     //----------------------------------------------------------------

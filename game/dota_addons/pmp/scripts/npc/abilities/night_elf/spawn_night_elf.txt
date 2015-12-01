@@ -59,6 +59,13 @@
                     "Function"      "SpawnUnit"
                     "UnitName"      "night_elf_leader"
                 }
+
+                "RunScript"
+                {
+                    "ScriptFile"    "sounds.lua"
+                    "Function"      "PlayAnnouncerSound"
+                    "Sound"         "Announcer.Leader.Join"
+                }
             }
         }
     }

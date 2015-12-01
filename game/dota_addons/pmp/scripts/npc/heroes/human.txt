@@ -10,7 +10,7 @@
     "GameSoundsFile"            ""
     "IdleSoundLoop"             ""
     "VoiceFile"                 ""
-    "HeroSelectSoundEffect"     "human.Pick"
+    "HeroSelectSoundEffect"     "Announcer.Pick.humans"
 
     // Abilities
     //----------------------------------------------------------------

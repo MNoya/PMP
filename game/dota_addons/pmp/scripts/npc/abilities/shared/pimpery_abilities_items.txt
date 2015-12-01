@@ -22,7 +22,7 @@
         "02"
         {
             "var_type"                  "FIELD_INTEGER"
-            "crit_chance"               "20 21 22 23 25"
+            "crit_chance"               "10 15 20 25 30"
         }
     }
 
@@ -431,13 +431,6 @@
     }
 }
 
-//20%
-//21%
-//22%
-//23%
-//25%
-
-// Note: This scaling seems flawed. The first level costs 55 gold, while going from 1 to 5 costs over 700 gold just for a 5% increase.
 "dodge"
 {
     "BaseClass"                 "ability_datadriven"
@@ -452,7 +445,7 @@
         "01"
         {
             "var_type"         "FIELD_INTEGER"
-            "dodge_chance"     "20 21 22 23 25"
+            "dodge_chance"     "5 10 15 20 25"
         }
     }
 

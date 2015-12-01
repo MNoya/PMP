@@ -174,6 +174,24 @@ function PMP:GG(winningTeam)
     local winners = {}
     local losers = {}
 
+    -- Announce victory
+    local soundVictory
+    if GetMapName() == "free_for_all" then
+        -- Find out the player
+        local playerID
+        for pID = 0,DOTA_MAX_TEAM_PLAYERS do
+            if PlayerResource:IsValidPlayerID(pID) and PlayerResource:GetTeam(pID) == winningTeam then
+                playerID = pID
+            end
+        end
+        soundVictory = "Announcer.Player.Victory."..playerID+1
+    else
+        -- Victory to that team
+        soundVictory = "Announcer.Team.Victory."..TEAM_NUMER_TO_COLOR[winningTeam]
+    end
+
+    EmitGlobalSound(soundVictory)
+
     GameRules:SetCustomVictoryMessageDuration( 600 )
 
     -- Change the camera
@@ -215,9 +233,6 @@ function PMP:GG(winningTeam)
         end
     end
 
-    -- Do Thunders and shit
-    PMP:DoMichaelBayEffects(winners, losers)
-    
     -- Win Animations
     for k,unit in pairs(winners) do
         unit:RemoveModifierByName("modifier_building")
@@ -245,8 +260,14 @@ function PMP:GG(winningTeam)
         unit:SetAngles(0,90,0)
     end
 
-    Timers:CreateTimer(3, function()
-        GameRules:SetGameWinner(winningTeam)
+    Timers:CreateTimer(2, function()
+
+        -- Do Thunders and shit
+        PMP:DoMichaelBayEffects(winners, losers)
+        
+        Timers:CreateTimer(1, function()
+            GameRules:SetGameWinner(winningTeam)
+        end)
     end)
 end
 
@@ -289,6 +310,7 @@ function PMP:DoMichaelBayEffects(winners, losers)
             
             -- RIP
             unit:ForceKill(true)
+            unit:StartGesture(ACT_DOTA_DIE)
 
             -- Particles
             local skyPosition = Vector(position.x,position.y,2000) 

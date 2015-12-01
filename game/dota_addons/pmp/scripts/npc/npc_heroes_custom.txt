@@ -12,7 +12,7 @@
 	    "GameSoundsFile"            ""
 	    "IdleSoundLoop"             ""
 	    "VoiceFile"                 ""
-	    "HeroSelectSoundEffect"     "blood_elf.Pick"
+	    "HeroSelectSoundEffect"     "Announcer.Pick.blood_elves"
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -87,6 +87,12 @@
 	    //----------------------------------------------------------------
 	    "override_hero"             "npc_dota_hero_meepo"
 	    "Race"                      "goblin"
+	
+	    "SoundSet"                  ""
+	    "GameSoundsFile"            ""
+	    "IdleSoundLoop"             ""
+	    "VoiceFile"                 ""
+	    "HeroSelectSoundEffect"     "Announcer.Pick.goblins"
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -166,7 +172,7 @@
 	    "GameSoundsFile"            ""
 	    "IdleSoundLoop"             ""
 	    "VoiceFile"                 ""
-	    "HeroSelectSoundEffect"     "human.Pick"
+	    "HeroSelectSoundEffect"     "Announcer.Pick.humans"
 	
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -241,6 +247,12 @@
 	    //----------------------------------------------------------------
 	    "override_hero"             "npc_dota_hero_drow_ranger"
 	    "Race"                      "night_elf"
+	
+	    "SoundSet"                  ""
+	    "GameSoundsFile"            ""
+	    "IdleSoundLoop"             ""
+	    "VoiceFile"                 ""
+	    "HeroSelectSoundEffect"     "Announcer.Pick.night_elves"
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -321,7 +333,7 @@
 	    "GameSoundsFile"            ""
 	    "IdleSoundLoop"             ""
 	    "VoiceFile"                 ""
-	    "HeroSelectSoundEffect"     "orc.Pick"
+	    "HeroSelectSoundEffect"     "Announcer.Pick.orcs"
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -402,7 +414,7 @@
 	    "GameSoundsFile"            ""
 	    "IdleSoundLoop"             ""
 	    "VoiceFile"                 ""
-	    "HeroSelectSoundEffect"     "skeleton.Pick"
+	    "HeroSelectSoundEffect"     "Announcer.Pick.skeletons"
 	    
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -482,7 +494,7 @@
 	    "GameSoundsFile"            ""
 	    "IdleSoundLoop"             ""
 	    "VoiceFile"                 ""
-	    "HeroSelectSoundEffect"     "treant.Pick"
+	    "HeroSelectSoundEffect"     "Announcer.Pick.treants"
 	
 	    // Abilities
 	    //----------------------------------------------------------------
@@ -562,7 +574,7 @@
 	    "GameSoundsFile"            ""
 	    "IdleSoundLoop"             ""
 	    "VoiceFile"                 ""
-	    "HeroSelectSoundEffect"     "undead.Pick"
+	    "HeroSelectSoundEffect"     "Announcer.Pick.undead"
 	    
 	    // Abilities
 	    //----------------------------------------------------------------

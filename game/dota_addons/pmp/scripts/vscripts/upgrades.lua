@@ -14,14 +14,19 @@ function UpgradeFinished( event )
 	local caster = event.caster
 	local ability = event.ability
 	local pID = caster:GetPlayerOwnerID()
-	local lumberCost = ability:GetSpecialValueFor("lumber_cost")
+	local lumberCost = ability:GetSpecialValueFor("lumber_cost") or 0
+	local goldCost = ability:GetLevelSpecialValueFor("gold_cost", ability:GetLevel()-1) or 0
+
+	if not PlayerHasEnoughGold(pID, goldCost) then
+		return
+	end
 
 	if not PlayerHasEnoughLumber(pID, lumberCost) then
-		ModifyGold(pID, ability:GetGoldCost(ability:GetLevel()))
 		return
-	else
-		ModifyLumber(pID, -lumberCost)
 	end
+
+	ModifyGold(pID, -goldCost)
+	ModifyLumber(pID, -lumberCost)
 
 	-- Different animations for pimperies
 	local anim = animations[caster:GetUnitName()]
@@ -36,6 +41,8 @@ function UpgradeFinished( event )
 
 	-- Replace with the next level
 	if ability:IsItem() then
+		Sounds:EmitSoundOnClient( pID, "Announcer.Upgrade.Pimp" )
+
 		local old_slot = GetItemSlot(caster, ability)
 		ability:RemoveSelf()
 
@@ -62,7 +69,9 @@ function UpgradeFinished( event )
 
 			print("New Rank: "..new_ability_name)
 			new_ability:SetLevel(new_ability:GetMaxLevel())
-			--new_ability:StartCooldown(1)		
+			--new_ability:StartCooldown(1)
+
+			Sounds:PlayUpgradeSound(pID, upgrade_name)
 		else
 			print("Max Rank of "..upgrade_name.." reached!")
 
@@ -72,6 +81,8 @@ function UpgradeFinished( event )
 			caster:SwapAbilities(filler_name, old_ability_name, true, false)			
 			
 			ability:SetLevel(0)
+
+			Sounds:PlayUpgradeSoundMax(pID, upgrade_name)
 		end
 	end
 

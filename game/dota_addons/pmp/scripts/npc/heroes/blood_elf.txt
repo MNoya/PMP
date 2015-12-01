@@ -10,7 +10,7 @@
     "GameSoundsFile"            ""
     "IdleSoundLoop"             ""
     "VoiceFile"                 ""
-    "HeroSelectSoundEffect"     "blood_elf.Pick"
+    "HeroSelectSoundEffect"     "Announcer.Pick.blood_elves"
     
     // Abilities
     //----------------------------------------------------------------

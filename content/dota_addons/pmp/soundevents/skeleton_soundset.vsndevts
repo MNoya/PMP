@@ -187,7 +187,6 @@
                             "value3"        "sounds/skeleton/yes/to_battle.vsnd"
                             "value4"        "sounds/skeleton/yes/travel_my_bones.vsnd"
                             "value5"        "sounds/skeleton/yes/work_work.vsnd"
-                            "value6"        "sounds/skeleton/yes/yes.vsnd"
                         }
                     }
                     "volume"            {   "value"     "3.00000"  }

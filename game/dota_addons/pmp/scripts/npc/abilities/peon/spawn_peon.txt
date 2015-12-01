@@ -62,6 +62,13 @@
                     "Function"      "SpawnUnit"
                     "UnitName"      "peon_leader"
                 }
+
+                "RunScript"
+                {
+                    "ScriptFile"    "sounds.lua"
+                    "Function"      "PlayAnnouncerSound"
+                    "Sound"         "Announcer.Leader.Join"
+                }
             }
         }
     }

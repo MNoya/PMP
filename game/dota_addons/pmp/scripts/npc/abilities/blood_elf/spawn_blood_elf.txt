@@ -37,6 +37,13 @@
                     "Function"      "SpawnUnit"
                     "UnitName"      "blood_elf"
                 }
+
+                "RunScript"
+                {
+                    "ScriptFile"    "sounds.lua"
+                    "Function"      "PlayAnnouncerSound"
+                    "Sound"         "Announcer.Leader.Join"
+                }
             }
         }
     }

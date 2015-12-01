@@ -12,9 +12,18 @@ function upgrade_spawn_rate:OnSpellStart()
     local maxLevel = ability:GetMaxLevel()
     if level == maxLevel then
         ability:SetHidden(true)
+        
+        if RollPercentage(25) then
+            Sounds:EmitSoundOnClient(pID, "Announcer.Upgrade.Spawn.Max.Rare")
+        else
+            Sounds:EmitSoundOnClient(pID, "Announcer.Upgrade.Spawn.Max")
+        end
+
     else
+        Sounds:EmitSoundOnClient(pID, "Announcer.Upgrade.Spawn")
+
         ability:SetLevel(level + 1)
-    end
+    end 
 
     return 
 end

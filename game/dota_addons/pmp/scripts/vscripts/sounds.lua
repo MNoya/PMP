@@ -16,6 +16,7 @@ end
 function Sounds:Start()
     Sounds.Sets = LoadKeyValues("scripts/kv/sounds.kv")
     Sounds.LastSoundDuration = {}
+    Sounds.LastAnnouncerTime = {}
     Sounds.PissedUnits = {}
 
     Sounds.OrdersToStrings = {
@@ -106,6 +107,11 @@ function Sounds:GetRandomLineForOrder( soundset_table )
     return soundset_table[random]
 end
 
+function Sounds:GetUpgradeSound( upgrade_name )
+    local upgrade_table = Sounds.Sets['announcer']['upgrades']
+    return upgrade_table[upgrade_name]
+end
+
 function Sounds:IsStillPlaying( playerID )
     local current_time = GameRules:GetGameTime()
     local valid_time = Sounds:GetNextValidTime(playerID)
@@ -120,11 +126,39 @@ function Sounds:SetNextValidTime( playerID, time )
     Sounds.LastSoundDuration[playerID] = time
 end
 
+function Sounds:TimeSinceLastAnnounce(playerID)
+    return GameRules:GetGameTime() - (Sounds.LastAnnouncerTime[playerID] or 0)
+end
+
 function Sounds:EmitSoundOnClient( playerID, sound )
     local player = PlayerResource:GetPlayer(playerID)
     if player then
-        CustomGameEventManager:Send_ServerToPlayer(player, "emit_client_sound", {sound=sound})
+        if Sounds:TimeSinceLastAnnounce(playerID) >= 2 then
+            Sounds.LastAnnouncerTime[playerID] = GameRules:GetGameTime()
+            CustomGameEventManager:Send_ServerToPlayer(player, "emit_client_sound", {sound=sound})
+        end
+    else
+        print("ERROR - No player with ID",playerID)
     end
 end
 
+function Sounds:PlayUpgradeSound(playerID, upgrade_name)
+    local sound_string = Sounds:GetUpgradeSound( upgrade_name )
+    Sounds:EmitSoundOnClient( playerID, sound_string )
+end
+
+function Sounds:PlayUpgradeSoundMax(playerID, upgrade_name)
+    local sound_string = Sounds:GetUpgradeSound( upgrade_name )..'.Max'
+    Sounds:EmitSoundOnClient( playerID, sound_string )
+end
+
 Sounds:Start()
+
+---------------------------------------------------------
+
+function PlayAnnouncerSound( event )
+    local playerID = event.caster:GetPlayerOwnerID()
+    local sound = tostring(event.Sound)
+
+    Sounds:EmitSoundOnClient( playerID, sound )
+end

@@ -11,7 +11,7 @@
     "GameSoundsFile"            ""
     "IdleSoundLoop"             ""
     "VoiceFile"                 ""
-    "HeroSelectSoundEffect"     "skeleton.Pick"
+    "HeroSelectSoundEffect"     "Announcer.Pick.skeletons"
     
     // Abilities
     //----------------------------------------------------------------

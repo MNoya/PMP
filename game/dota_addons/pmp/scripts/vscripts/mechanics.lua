@@ -7,15 +7,22 @@
 function SendErrorMessage( pID, string )
     Notifications:ClearBottom(pID)
     Notifications:Bottom(pID, {text=string, style={color='#E62020'}, duration=2})
-    EmitSoundOnClient("General.Cancel", PlayerResource:GetPlayer(pID))
+
+    if string == "#error_not_enough_gold" then
+        Sounds:EmitSoundOnClient(pID, "Announcer.Resource.MoreGold", 2)
+    elseif string == "#error_not_enough_lumber" then
+        Sounds:EmitSoundOnClient(pID, "Announcer.Resource.MoreLumber", 2)
+    else
+        Sounds:EmitSoundOnClient(pID, "General.Cancel")
+    end
 end
 
 function SendDefeatedMessage( pID_attacker, pID_killed )
     local playerName_attacker = PlayerResource:GetPlayerName(pID_attacker)
     local playerName_killed = PlayerResource:GetPlayerName(pID_killed)
 
-    if playerName_attacker == "" then playerName_attacker = "Player "..pID_attacker end
-    if playerName_killed == "" then playerName_killed = "Player "..pID_killed end
+    if playerName_attacker == "" then playerName_attacker = "Player "..pID_attacker+1 end
+    if playerName_killed == "" then playerName_killed = "Player "..pID_killed+1 end
 
     local team_attacker_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_attacker)) )
     local team_killed_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_killed)) )
@@ -34,7 +41,7 @@ end
 
 function SendBossFocusMessage( pID_target )
     local playerName = PlayerResource:GetPlayerName(pID_target)
-    if playerName == "" then playerName = "Player "..pID_target end
+    if playerName == "" then playerName = "Player "..pID_target+1 end
 
     local player_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_target)) )
 
@@ -406,6 +413,8 @@ function ReduceInvulnerabilityCount( hero )
     if hero.invulnCount == 0 then
         hero.garage:RemoveModifierByName("modifier_invulnerability_layer")
     end
+
+    return hero.invulnCount
 end
 
 --------------------------------------------
@@ -923,3 +932,71 @@ function RemoveFromPlayerOutposts( playerID, unit )
 end
 
 -------------------------------
+
+function CanAffordAllGoldUpgrades(playerID)
+    local maxGoldRequired = GetMaxGoldCostFromAbilities(playerID)
+
+    return GetGold(playerID) > maxGoldRequired
+end
+
+
+function CanAffordAllLumberUpgrades(playerID)
+    local maxLumberRequired = GetMaxLumberCostFromAbilities(playerID)
+
+    return GetLumber(playerID) > maxLumberRequired
+end
+
+function GetMaxGoldCostFromAbilities(playerID)
+    local maxCost = 0
+    local gold_cost = 0
+    local pimpery = GetPlayerShop(playerID)
+    local garage = GetPlayerCityCenter(playerID)
+    
+    -- Check pimpery health gold cost
+    local healthUpgrade = pimpery:FindAbilityByName("upgrade_health")
+    if healthUpgrade then
+        gold_cost = healthUpgrade:GetGoldCost(healthUpgrade:GetLevel())
+        maxCost = (gold_cost > maxCost) and gold_cost or maxCost
+    end
+
+    -- Check pimpery items
+    for i=0,5 do
+        local item = pimpery:GetItemInSlot(i)
+        if item then
+            gold_cost = item:GetLevelSpecialValueFor("gold_cost", item:GetLevel()-1)
+            maxCost = (gold_cost > maxCost) and gold_cost or maxCost
+        end
+    end
+
+    -- Check garage spawn and food upgrade
+    local foodUpgrade = pimpery:FindAbilityByName("upgrade_food_limit")
+    if foodUpgrade then
+        gold_cost = foodUpgrade:GetGoldCost(foodUpgrade:GetLevel())
+        maxCost = (gold_cost > maxCost) and gold_cost or maxCost
+    end
+
+    local spawnUpgrade = pimpery:FindAbilityByName("upgrade_spawn_rate")
+    if spawnUpgrade then
+        gold_cost = spawnUpgrade:GetGoldCost(spawnUpgrade:GetLevel())
+        maxCost = (gold_cost > maxCost) and gold_cost or maxCost
+    end
+
+    return maxCost
+end
+
+function GetMaxLumberCostFromAbilities(playerID)
+    local maxCost = 0
+    local lumber_cost = 0
+    local pimpery = GetPlayerShop(playerID)
+    
+    -- Check pimp upgrades
+    for i=0,15 do
+        local ability = pimpery:GetAbilityByIndex(i)
+        if ability then
+            lumber_cost = ability:GetSpecialValueFor("lumber_cost")
+            maxCost = (lumber_cost > maxCost) and lumber_cost or maxCost
+        end
+    end
+
+    return maxCost
+end

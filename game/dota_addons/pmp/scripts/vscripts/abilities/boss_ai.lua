@@ -92,6 +92,7 @@ function BossAI:IdleThink()
         ApplyModifier(unit, "modifier_roaming")
         unit:StartGesture(ACT_DOTA_MAGNUS_SKEWER_END)
         GameRules:SendCustomMessage("The Boss starts roaming!", 0, 0)
+        EmitGlobalSound("Announcer.Boss.Roaming")
         print("IDLE -> ROAM")
         return true
     end

@@ -1,36 +1,3 @@
-"Announcer.Destroyed.Tower"
-{
-    "operator_stacks"
-    {
-        "update_stack"
-        {
-            "reference_operator"
-            {
-                "operator"              "sos_reference_stack"
-                "reference_stack"       "dota_src1_3d"
-                "operator_variables"
-                {
-                    "vsnd_files"
-                    {
-                        "value"
-                        {
-                            "value0"        "sounds/announcer/one_of_your_towers_have_fallen.vsnd"
-                            "value1"        "sounds/announcer/one_of_your_towers_have_fallen_2.vsnd"
-                        }
-                    }
-                    "volume"            {   "value"     "1.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
-                    "pitch"             {   "value"     "1.000000"  }
-                    "soundlevel"        {   "value"     "100.00000" }
-                    "distance_max"      {   "value"     "1600.000"  }
-                    "event_type"        {   "value"     "1.000000"  }
-                }
-            }
-        }
-    }
-}
-
 "Announcer.Destroyed.Outpost"
 {
     "operator_stacks"
@@ -50,6 +17,39 @@
                             "value0"        "sounds/announcer/attacked/your_outpost_was_destroyed.vsnd"
                             "value1"        "sounds/announcer/attacked/your_outpost_was_destroyed_2.vsnd"
                             "value2"        "sounds/announcer/attacked/your_outpost_was_destroyed_3.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.05000"  }
+                    "pitch_rand_max"    {   "value"     "0.050000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"Announcer.Destroyed.Tower"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/announcer/attacked/one_of_your_towers_have_fallen.vsnd"
+                            "value1"        "sounds/announcer/attacked/one_of_your_towers_have_fallen_2.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
@@ -1316,7 +1316,7 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/announcer/lose/team_has_been_eliminated_brown.vsnd"
+                            "value0"        "sounds/announcer/lose/you_have_been_eliminated.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
@@ -2634,70 +2634,6 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/announcer/upgrades/armor_max.vsnd"
-                        }
-                    }
-                    "volume"            {   "value"     "1.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
-                    "pitch"             {   "value"     "1.000000"  }
-                    "soundlevel"        {   "value"     "100.00000" }
-                    "distance_max"      {   "value"     "1600.000"  }
-                    "event_type"        {   "value"     "1.000000"  }
-                }
-            }
-        }
-    }
-}
-
-"Announcer.Upgrade.Quivers.Max.Rare"
-{
-    "operator_stacks"
-    {
-        "update_stack"
-        {
-            "reference_operator"
-            {
-                "operator"              "sos_reference_stack"
-                "reference_stack"       "dota_src1_3d"
-                "operator_variables"
-                {
-                    "vsnd_files"
-                    {
-                        "value"
-                        {
-                            "value0"        "sounds/announcer/upgrades/armor_max.vsnd"
-                        }
-                    }
-                    "volume"            {   "value"     "1.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
-                    "pitch"             {   "value"     "1.000000"  }
-                    "soundlevel"        {   "value"     "100.00000" }
-                    "distance_max"      {   "value"     "1600.000"  }
-                    "event_type"        {   "value"     "1.000000"  }
-                }
-            }
-        }
-    }
-}
-
-"Announcer.Upgrade.Quivers.Max.Rare"
-{
-    "operator_stacks"
-    {
-        "update_stack"
-        {
-            "reference_operator"
-            {
-                "operator"              "sos_reference_stack"
-                "reference_stack"       "dota_src1_3d"
-                "operator_variables"
-                {
-                    "vsnd_files"
-                    {
-                        "value"
-                        {
                             "value0"        "sounds/announcer/upgrades/quivers_max_rare.vsnd"
                         }
                     }
@@ -2714,7 +2650,7 @@
     }
 }
 
-"Announcer.Upgrade.Food.Max"
+"Announcer.Upgrade.Spawn.Max"
 {
     "operator_stacks"
     {
@@ -2747,7 +2683,7 @@
     }
 }
 
-"Announcer.Upgrade.Food.Max.Rare"
+"Announcer.Upgrade.Spawn.Max.Rare"
 {
     "operator_stacks"
     {
@@ -2764,38 +2700,6 @@
                         "value"
                         {
                             "value0"        "sounds/announcer/upgrades/spawn_rate_max_rare.vsnd"
-                        }
-                    }
-                    "volume"            {   "value"     "1.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
-                    "pitch"             {   "value"     "1.000000"  }
-                    "soundlevel"        {   "value"     "100.00000" }
-                    "distance_max"      {   "value"     "1600.000"  }
-                    "event_type"        {   "value"     "1.000000"  }
-                }
-            }
-        }
-    }
-}
-
-"Announcer.Upgrade.UnitCount.Max"
-{
-    "operator_stacks"
-    {
-        "update_stack"
-        {
-            "reference_operator"
-            {
-                "operator"              "sos_reference_stack"
-                "reference_stack"       "dota_src1_3d"
-                "operator_variables"
-                {
-                    "vsnd_files"
-                    {
-                        "value"
-                        {
-                            "value0"        "sounds/announcer/upgrades/unit_count_max_rant.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
@@ -2894,7 +2798,6 @@
                         {
                             "value0"        "sounds/announcer/upgrades/your_armor_has_been_upgraded.vsnd"
                             "value1"        "sounds/announcer/upgrades/your_armor_has_been_upgraded_2.vsnd"
-                            "value2"        "sounds/announcer/upgrades/your_bows_have_been_upgraded.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
@@ -2961,6 +2864,38 @@
                         "value"
                         {
                             "value0"        "sounds/announcer/upgrades/your_food_cap_has_been_increased.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.05000"  }
+                    "pitch_rand_max"    {   "value"     "0.050000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"Announcer.Upgrade.Food.Max"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/announcer/upgrades/unit_count_max_rant.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

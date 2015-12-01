@@ -13,7 +13,11 @@ function upgrade_health:OnSpellStart()
     local maxLevel = 100
     if level == maxLevel then
         ability:SetHidden(true)
+        
+        Sounds:EmitSoundOnClient(pID, "Announcer.Upgrade.Health.Max")
     else
+        Sounds:EmitSoundOnClient(pID, "Announcer.Upgrade.Health")
+
         ability:SetLevel(level + 1)
     end
 
