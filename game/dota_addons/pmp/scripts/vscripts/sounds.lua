@@ -17,6 +17,7 @@ function Sounds:Start()
     Sounds.Sets = LoadKeyValues("scripts/kv/sounds.kv")
     Sounds.LastSoundDuration = {}
     Sounds.LastAnnouncerTime = {}
+    Sounds.SoundPlayTime = {}
     Sounds.PissedUnits = {}
 
     Sounds.OrdersToStrings = {
@@ -136,10 +137,12 @@ function Sounds:EmitSoundOnClient( playerID, sound )
         if Sounds:TimeSinceLastAnnounce(playerID) >= 2 then
             Sounds.LastAnnouncerTime[playerID] = GameRules:GetGameTime()
             CustomGameEventManager:Send_ServerToPlayer(player, "emit_client_sound", {sound=sound})
+            return true
         end
     else
         print("ERROR - No player with ID",playerID)
     end
+    return false
 end
 
 function Sounds:PlayUpgradeSound(playerID, upgrade_name)
@@ -150,6 +153,71 @@ end
 function Sounds:PlayUpgradeSoundMax(playerID, upgrade_name)
     local sound_string = Sounds:GetUpgradeSound( upgrade_name )..'.Max'
     Sounds:EmitSoundOnClient( playerID, sound_string )
+end
+
+function Sounds:ResolveAttackedSounds(victim)
+    local playerID = victim:GetPlayerOwnerID()
+
+    if IsCustomBuilding(victim) then
+        -- Choose a possible line for each structure
+        local sound = "Announcer.Attacked.Structures"
+
+        if victim:GetHealthPercent() <= 25 then
+            sound = "Announcer.Attacked.Structures.Heavy"
+        end
+
+        -- Specific structure line
+        if RollPercentage(50) then
+            if IsCityCenter(victim) then
+                sound = "Announcer.Attacked.Garage"
+            elseif IsOutpost(victim) then
+                sound = "Announcer.Attacked.Outpost"
+            elseif IsCustomTower(victim) then
+                sound = "Announcer.Attacked.Tower"
+            end
+        end
+
+        -- Restrict any 'under attack' every some seconds
+        if Sounds:TimeSinceLastPlayed(playerID, "ATTACKED") > 15 then
+            -- Play the sound, if it can't be played then don't increase the countdown
+            if Sounds:EmitSoundOnClient(playerID, sound) then
+                Sounds:SetTimePlayed(playerID, "ATTACKED")
+            end
+        end
+
+        -- Announce other allies that the player is under attack
+        local teamNumber = victim:GetTeamNumber()
+        for i=0,DOTA_MAX_TEAM_PLAYERS do
+            if i~=playerID and PlayerResource:IsValidPlayerID(i) and PlayerResource:GetTeam(i) == teamNumber then
+                if Sounds:TimeSinceLastPlayed(i, "ALLIED_ATTACKED") > 30 then
+                    if Sounds:EmitSoundOnClient(i, "Announcer.Attacked.Ally") then
+                        Sounds:SetTimePlayed(i, "ALLIED_ATTACKED")
+                    end
+                end
+            end
+        end
+
+    elseif IsPimpUnit(victim) then
+
+        if Sounds:TimeSinceLastPlayed(playerID, "Announcer.Attacked.Army") > 30 then
+            if Sounds:EmitSoundOnClient(playerID, "Announcer.Attacked.Army") then
+                Sounds:SetTimePlayed(playerID, "Announcer.Attacked.Army")
+            end
+        end
+    end
+end
+
+function Sounds:TimeSinceLastPlayed(playerID, sound)
+    return GameRules:GetGameTime() - Sounds:GetTimePlayed(playerID, sound)
+end
+
+function Sounds:SetTimePlayed(playerID, sound)
+    Sounds.SoundPlayTime[playerID][sound] = GameRules:GetGameTime()
+end
+
+function Sounds:GetTimePlayed(playerID, sound)
+    Sounds.SoundPlayTime[playerID] = Sounds.SoundPlayTime[playerID] or {}
+    return (Sounds.SoundPlayTime[playerID] and Sounds.SoundPlayTime[playerID][sound]) or 0
 end
 
 Sounds:Start()

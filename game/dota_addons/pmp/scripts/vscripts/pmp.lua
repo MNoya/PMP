@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.38"
+PMPVERSION = "0.39"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -161,6 +161,7 @@ function PMP:InitGameMode()
     ListenToGameEvent('player_disconnect', Dynamic_Wrap(PMP, 'OnDisconnect'), self)
     ListenToGameEvent('player_chat', Dynamic_Wrap(PMP, 'OnPlayerChat'), self)
     ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(PMP, 'OnPlayerLevelUp'), self)
+    ListenToGameEvent('entity_hurt', Dynamic_Wrap(PMP, 'OnEntityHurt'), self)
 
 	-- Filters
     GameMode:SetExecuteOrderFilter( Dynamic_Wrap( PMP, "FilterExecuteOrder" ), self )
@@ -629,7 +630,7 @@ function PMP:OnHeroInGame(hero)
     -- Check for excess resources periodically
     local playerID = hero:GetPlayerID()
     local excessInterval = 30
-    Timers:CreateTimer(excessInterval, function() 
+    Timers:CreateTimer(excessInterval + RandomInt(2, 4), function() 
         if not hero.lost then
             if CanAffordAllGoldUpgrades(playerID) then
                 Sounds:EmitSoundOnClient(playerID, "Announcer.Resource.ExcessGold")
@@ -641,7 +642,7 @@ function PMP:OnHeroInGame(hero)
         end
     end)
 
-    Timers:CreateTimer(45, function() 
+    Timers:CreateTimer(45 + RandomInt(2, 4), function() 
         if not hero.lost then
             if CanAffordAllLumberUpgrades(playerID) then
                 Sounds:EmitSoundOnClient(playerID, "Announcer.Resource.ExcessLumber")
@@ -654,6 +655,15 @@ function PMP:OnHeroInGame(hero)
     end)
    
     CustomGameEventManager:RegisterListener( "center_hero_camera", CenterCamera)
+end
+
+-- An entity somewhere has been hurt.
+function PMP:OnEntityHurt(keys)
+    if keys.entindex_killed ~= nil then
+        local victim = EntIndexToHScript(keys.entindex_killed)
+
+        Sounds:ResolveAttackedSounds(victim)
+    end
 end
 
 -- Notify Panorama that the player acquired a new hero
