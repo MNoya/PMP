@@ -28,7 +28,7 @@ end
 function Tutorial:Start(event)
     local playerID = event.PlayerID
     print("[Tutorial] Start for player "..playerID)
-    
+
     Tutorial.Active[playerID] = true
     Tutorial.HighlightParticles[playerID] = {}
     Tutorial.HighlightAbilities[playerID] = {}
@@ -48,7 +48,7 @@ function Tutorial:Start(event)
     -- highlight food cap and spawn rate buttons
     Tutorial.Timers[playerID][2] = Timers:CreateTimer(Tutorial.Times.food, function()
         local garage = GetPlayerCityCenter(playerID)
-        ApplyModifier(garage,"modifier_tutorial")
+        ApplyModifier(garage,"modifier_tutorial", Tutorial.Times.super - Tutorial.Times.food)
         Tutorial:HighlightAbility(playerID, garage:FindAbilityByName("upgrade_food_limit"))
         Tutorial:HighlightAbility(playerID, garage:FindAbilityByName("upgrade_spawn_rate"))
     end)
@@ -66,7 +66,6 @@ function Tutorial:Start(event)
         Tutorial:PingEnemyBases(playerID)
 
         local garage = GetPlayerCityCenter(playerID)
-        garage:RemoveModifierByName("modifier_tutorial")
         RemoveHighlightAbilities(playerID)
     end)
     
@@ -89,7 +88,7 @@ function Tutorial:Start(event)
     -- hightlight upgrade buttons
     Tutorial.Timers[playerID][7] = Timers:CreateTimer(Tutorial.Times.upgrades, function()
         local pimpery = GetPlayerShop(playerID)
-        ApplyModifier(pimpery,"modifier_tutorial")
+        ApplyModifier(pimpery,"modifier_tutorial", Tutorial.Times.resources - Tutorial.Times.upgrades)
         Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_weapon"))
         Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_helm"))
         Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_shield"))
@@ -102,7 +101,6 @@ function Tutorial:Start(event)
         RemoveHighlightAbilities(playerID)
 
         local pimpery = GetPlayerCityCenter(playerID)
-        pimpery:RemoveModifierByName("modifier_tutorial")
         Tutorial:HighlightResourceUI(playerID)
     end)
     
@@ -144,6 +142,7 @@ end
 
 function Tutorial:PingEnemyBases(playerID)
     local teamNumber = PlayerResource:GetTeam(playerID)
+    print("pings")
     for i=0,12 do
         Timers:CreateTimer(i*0.5, function()
             if PlayerResource:IsValidPlayerID(i) and PlayerResource:GetTeam(i) ~= teamNumber then
@@ -161,8 +160,8 @@ function Tutorial:HighlightAbility(playerID, ability)
         table.insert(Tutorial.HighlightAbilities[playerID], ability)
         ToggleOn(ability)
         ability.highlight = true
-        Timers:CreateTimer(0.5, function()
-            if IsValidEntity(ability) and ability.highlight then
+        ability.highlight = Timers:CreateTimer(0.5, function()
+            if IsValidEntity(ability) then
                 ability:ToggleAbility()
                 ability:EndCooldown()
                 return 0.5
@@ -176,7 +175,9 @@ end
 function Tutorial:StopHighlightAbility(ability)
     if IsValidEntity(ability) then
         ToggleOff(ability)
-        ability.highlight = nil
+        if ability.highlight then
+            Timers:RemoveTimer(ability.highlight)
+        end
     end
 end
 

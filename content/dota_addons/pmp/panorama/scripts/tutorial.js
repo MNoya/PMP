@@ -13,6 +13,7 @@ function TutorialStart() {
     else //Cancel
     {
         ToggleOff()
+        GameEvents.SendCustomGameEventToServer( "tutorial_end", {} );
     }
 }
 
@@ -27,15 +28,14 @@ function ToggleOff() {
     active = false
     $("#TutorialPanel").RemoveClass("Cancel")
     $("#TutorialText").text = "TUTORIAL"
-    GameEvents.SendCustomGameEventToServer( "tutorial_end", {} );
 }
 
 function TutorialStop() {
     if (tutorialSound)
     {
         Game.StopSound(tutorialSound)
+        ToggleOff()
         byeSound = Game.EmitSound("Tutorial.End")
-        if (active) ToggleOn()
     }
 }
 

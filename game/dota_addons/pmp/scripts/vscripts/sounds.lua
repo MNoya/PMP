@@ -138,7 +138,7 @@ function Sounds:EmitSoundOnClient( playerID, sound )
     if Tutorial.Active[playerID] then return end
 
     if player then
-        if string.match("Announcer.", sound) then
+        if string.match(sound, "Announcer.") then
             if Sounds:TimeSinceLastAnnounce(playerID) >= 2 then
                 Sounds.LastAnnouncerTime[playerID] = GameRules:GetGameTime()
                 CustomGameEventManager:Send_ServerToPlayer(player, "emit_client_sound", {sound=sound})
