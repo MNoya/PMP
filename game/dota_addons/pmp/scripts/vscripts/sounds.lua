@@ -133,9 +133,15 @@ end
 
 function Sounds:EmitSoundOnClient( playerID, sound )
     local player = PlayerResource:GetPlayer(playerID)
+
+    -- Don't play sounds during tutorial
+    if Tutorial.Active[playerID] then return end
+
     if player then
-        if Sounds:TimeSinceLastAnnounce(playerID) >= 2 then
+        if string.match("Announcer.", sound) and Sounds:TimeSinceLastAnnounce(playerID) >= 2 then
             Sounds.LastAnnouncerTime[playerID] = GameRules:GetGameTime()
+            CustomGameEventManager:Send_ServerToPlayer(player, "emit_client_sound", {sound=sound})
+        else
             CustomGameEventManager:Send_ServerToPlayer(player, "emit_client_sound", {sound=sound})
             return true
         end
@@ -157,6 +163,8 @@ end
 
 function Sounds:ResolveAttackedSounds(victim)
     local playerID = victim:GetPlayerOwnerID()
+
+    if Tutorial.Active[playerID] then return end
 
     if IsCustomBuilding(victim) then
         -- Choose a possible line for each structure

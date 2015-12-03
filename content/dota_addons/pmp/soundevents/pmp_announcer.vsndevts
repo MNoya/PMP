@@ -19,7 +19,7 @@
                             "value2"        "sounds/announcer/attacked/your_outpost_was_destroyed_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -52,7 +52,7 @@
                             "value1"        "sounds/announcer/attacked/one_of_your_towers_have_fallen_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -85,7 +85,7 @@
                             "value1"        "sounds/announcer/attacked/your_ally_is_under_attack_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -119,7 +119,7 @@
                             "value2"        "sounds/announcer/attacked/your_forces_are_under_attack_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -153,7 +153,7 @@
                             "value2"        "sounds/announcer/attacked/your_garage_is_exposed_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -186,7 +186,7 @@
                             "value1"        "sounds/announcer/attacked/your_structures_are_under_attack_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -219,7 +219,7 @@
                             "value1"        "sounds/announcer/attacked/your_structures_are_under_attack_cons_1.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -252,7 +252,7 @@
                             "value1"        "sounds/announcer/attacked/your_outpost_is_under_attack_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -284,7 +284,7 @@
                             "value0"        "sounds/announcer/attacked/your_towers_are_under_attack.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -320,7 +320,7 @@
                             "value4"        "sounds/announcer/boss/ashley_has_been_slain_5.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -352,7 +352,7 @@
                             "value0"        "sounds/announcer/boss/ashley_has_been_slain_rare.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -385,7 +385,7 @@
                             "value0"        "sounds/announcer/boss/ashley_is_roaming_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -418,7 +418,7 @@
                             "value0"        "sounds/announcer/boss/ashley_respawned_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -450,7 +450,7 @@
                             "value0"        "sounds/announcer/boss/you_have_slain_ashley.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -483,7 +483,7 @@
                             "value1"        "sounds/announcer/buildings/barricades_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -516,7 +516,7 @@
                             "value1"        "sounds/announcer/buildings/barricades_cons_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -549,7 +549,7 @@
                             "value1"        "sounds/announcer/buildings/buildings_repair_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -583,7 +583,7 @@
                             "value2"        "sounds/announcer/leader/a_leader_has_joined_your_army_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -615,7 +615,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_1.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -647,7 +647,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -679,7 +679,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -711,7 +711,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_4.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -743,7 +743,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_5.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -775,7 +775,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_6.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -807,7 +807,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_7.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -839,7 +839,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_8.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -871,7 +871,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_9.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -903,7 +903,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_10.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -935,7 +935,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_11.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -967,7 +967,7 @@
                             "value0"        "sounds/announcer/lose/player_has_been_eliminated_12.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -999,7 +999,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_blue.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1031,7 +1031,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_brown.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1063,7 +1063,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_cyan.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1095,7 +1095,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_green.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1127,7 +1127,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_olive.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1159,7 +1159,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_orange.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1191,7 +1191,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_pink.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1223,7 +1223,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_purple.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1255,7 +1255,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_teal.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1287,7 +1287,7 @@
                             "value0"        "sounds/announcer/lose/team_has_been_eliminated_yellow.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1319,7 +1319,7 @@
                             "value0"        "sounds/announcer/lose/you_have_been_eliminated.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1351,7 +1351,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_1.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1383,7 +1383,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1415,7 +1415,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1447,7 +1447,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_4.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1479,7 +1479,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_5.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1511,7 +1511,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_6.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1543,7 +1543,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_7.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1575,7 +1575,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_8.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1607,7 +1607,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_9.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1639,7 +1639,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_10.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1671,7 +1671,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_11.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1703,7 +1703,7 @@
                             "value0"        "sounds/announcer/victory/player_victory_12.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1735,7 +1735,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_blue.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1767,7 +1767,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_brown.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1799,7 +1799,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_cyan.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1831,7 +1831,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_green.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1863,7 +1863,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_olive.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1895,7 +1895,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_orange.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1927,7 +1927,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_pink.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1959,7 +1959,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_purple.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1991,7 +1991,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_teal.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2023,7 +2023,7 @@
                             "value0"        "sounds/announcer/victory/team_victory_yellow.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2055,7 +2055,7 @@
                             "value0"        "sounds/announcer/picks/blood_elves.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2087,7 +2087,7 @@
                             "value0"        "sounds/announcer/picks/goblins.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2119,7 +2119,7 @@
                             "value0"        "sounds/announcer/picks/humans.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2151,7 +2151,7 @@
                             "value0"        "sounds/announcer/picks/night_elves.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2183,7 +2183,7 @@
                             "value0"        "sounds/announcer/picks/orcs.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2215,7 +2215,7 @@
                             "value0"        "sounds/announcer/picks/skeletons.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2247,7 +2247,7 @@
                             "value0"        "sounds/announcer/picks/treants.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2279,7 +2279,7 @@
                             "value0"        "sounds/announcer/picks/undead.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2312,7 +2312,7 @@
                             "value1"        "sounds/announcer/resource/excess_gold_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2345,7 +2345,7 @@
                             "value1"        "sounds/announcer/resource/excess_lumber_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2379,7 +2379,7 @@
                             "value2"        "sounds/announcer/resource/more_gold_required_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2413,7 +2413,7 @@
                             "value2"        "sounds/announcer/resource/more_lumber_required_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2445,7 +2445,7 @@
                             "value0"        "sounds/announcer/upgrades/armor_max.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2477,7 +2477,7 @@
                             "value0"        "sounds/announcer/upgrades/bows_max.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2509,7 +2509,7 @@
                             "value0"        "sounds/announcer/upgrades/health_max_rant.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2541,7 +2541,7 @@
                             "value0"        "sounds/announcer/upgrades/health_upgraded.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2573,7 +2573,7 @@
                             "value0"        "sounds/announcer/upgrades/helmets_max.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2605,7 +2605,7 @@
                             "value0"        "sounds/announcer/upgrades/quivers_max.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2637,7 +2637,7 @@
                             "value0"        "sounds/announcer/upgrades/quivers_max_rare.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2670,7 +2670,7 @@
                             "value1"        "sounds/announcer/upgrades/spawn_rate_max_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2702,7 +2702,7 @@
                             "value0"        "sounds/announcer/upgrades/spawn_rate_max_rare.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2734,7 +2734,7 @@
                             "value0"        "sounds/announcer/upgrades/weapons_max.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2767,7 +2767,7 @@
                             "value1"        "sounds/announcer/upgrades/wings_max_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2800,7 +2800,7 @@
                             "value1"        "sounds/announcer/upgrades/your_armor_has_been_upgraded_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2834,7 +2834,7 @@
                             "value2"        "sounds/announcer/upgrades/your_bows_have_been_upgraded_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2866,7 +2866,7 @@
                             "value0"        "sounds/announcer/upgrades/your_food_cap_has_been_increased.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2898,7 +2898,7 @@
                             "value0"        "sounds/announcer/upgrades/unit_count_max_rant.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2931,7 +2931,7 @@
                             "value1"        "sounds/announcer/upgrades/your_helmets_have_been_upgraded_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2965,7 +2965,7 @@
                             "value2"        "sounds/announcer/upgrades/your_peons_abilities_have_been_upgraded_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -2998,7 +2998,7 @@
                             "value1"        "sounds/announcer/upgrades/your_quivers_have_been_upgraded_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -3032,7 +3032,7 @@
                             "value2"        "sounds/announcer/upgrades/your_race_has_leveled_up_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -3066,7 +3066,7 @@
                             "value2"        "sounds/announcer/upgrades/your_spawn_rate_has_been_increased_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -3099,7 +3099,7 @@
                             "value1"        "sounds/announcer/upgrades/your_weapons_have_been_upgraded_2.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -3133,7 +3133,7 @@
                             "value2"        "sounds/announcer/upgrades/your_wings_have_been_upgraded_3.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

@@ -23,6 +23,23 @@ function upgrade_food_limit:OnSpellStart()
     return 
 end
 
+function upgrade_food_limit:OnToggle()
+    if self:GetToggleState() then
+        self:GetCaster():GetOwner():ModifyGold(self:GetGoldCost(self:GetLevel()), false, 0)
+    end
+end
+
+function upgrade_food_limit:GetBehavior()
+    local behav = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE
+    local caster = self:GetCaster()
+
+    if caster:HasModifier("modifier_tutorial") then      
+        return behav + DOTA_ABILITY_BEHAVIOR_TOGGLE
+    else
+        return behav
+    end
+end
+
 function upgrade_food_limit:GetGoldCost()
     local ability = self
 

@@ -61,24 +61,42 @@ function OnPlayerFoodChanged ( args ) {
 }
 
 function CheckHudFlipped() {
-	var lumberPanel = $.FindChildInContext( "#LumberPanel" );
-	var foodPanel = $.FindChildInContext( "#FoodPanel" );
+    var lumberPanel = $.FindChildInContext( "#LumberPanel" );
+    var foodPanel = $.FindChildInContext( "#FoodPanel" );
+    var goldPanel = $.FindChildInContext( "#GoldPanel" );
+    var clockPanel = $.FindChildInContext( "#ClockPanel" );
 
-	if (Game.IsHUDFlipped())
-	{
-		//$.Msg('LoL Player detected, Flipping Panels... ')
-		lumberPanel.RemoveClass( "Right" );
-		foodPanel.RemoveClass( "Right" );
-		lumberPanel.AddClass( "Flipped" );
-		foodPanel.AddClass( "Flipped" );	
-	}
-	else
-	{
-		lumberPanel.RemoveClass( "Flipped" );
-		foodPanel.RemoveClass( "Flipped" );
-		lumberPanel.AddClass( "Right" );
-		foodPanel.AddClass( "Right" );	
-	}
+    if (Game.IsHUDFlipped())
+    {
+        //$.Msg('LoL Player detected, Flipping Panels... ')
+        lumberPanel.RemoveClass( "Right" );
+        foodPanel.RemoveClass( "Right" );
+        goldPanel.RemoveClass( "Right" );
+        clockPanel.RemoveClass( "Right" );
+
+        lumberPanel.AddClass( "Flipped" );
+        foodPanel.AddClass( "Flipped" );
+        goldPanel.AddClass( "Flipped" );
+        clockPanel.AddClass( "Flipped" );    
+    }
+    else
+    {
+        lumberPanel.RemoveClass( "Flipped" );
+        foodPanel.RemoveClass( "Flipped" );
+        goldPanel.RemoveClass( "Flipped" );
+        clockPanel.RemoveClass( "Flipped" );
+        
+        lumberPanel.AddClass( "Right" );
+        foodPanel.AddClass( "Right" );
+        goldPanel.AddClass( "Right" );
+        clockPanel.AddClass( "Right" ); 
+    }
+}
+
+function HighlightResources() {
+    var panel = $('#ResourceBox')
+    panel.RemoveClass( "Hidden" );
+    $.Schedule( 8, function()  { panel.AddClass( "Hidden"  ) }  );
 }
 
 (function () {
@@ -87,4 +105,6 @@ function CheckHudFlipped() {
 	CheckHudFlipped();
 	GameEvents.Subscribe( "player_lumber_changed", OnPlayerLumberChanged );
 	GameEvents.Subscribe( "player_food_changed", OnPlayerFoodChanged );
+
+    GameEvents.Subscribe( "highlight_resource_panel", HighlightResources );
 })();

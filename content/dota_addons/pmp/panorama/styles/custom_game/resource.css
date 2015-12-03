@@ -1,7 +1,32 @@
-.ResourcePanel
+.ResourceRoot
 {
     width: 100%;
     height: 100%;
+}
+
+#ResourcePanel
+{
+    width: 100%;
+    height: 100%;
+}
+
+#ResourceBox
+{
+    horizontal-align: right;
+    vertical-align: bottom;
+
+    width: 210px;
+    height: 50px;
+    margin-bottom: 160px;
+    margin-right: 11px;
+
+    box-shadow: 0 0 10px 10px gold;
+}
+
+.Hidden 
+{ 
+    visibility: collapse;
+    opacity: 0;
 }
 
 .Right
@@ -19,9 +44,10 @@
     width: 130px;
     height: 30px;
     
-    horizontal-align: right;
     vertical-align: bottom;
+
     margin-right: 45px;
+    margin-left: 45px;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -74,10 +100,10 @@
     height: 40px;
 
     vertical-align: bottom;
-    horizontal-align: right;
 
     margin-bottom: 160px;
     margin-right: 107px;
+    margin-left: 107px;
 }
 
 #GoldText

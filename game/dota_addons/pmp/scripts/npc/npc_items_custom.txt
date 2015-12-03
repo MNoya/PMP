@@ -142,6 +142,11 @@
 	            "TextureName"   "teleport"
 	            "Duration"      "3"
 	        }
+	
+	        "modifier_tutorial"
+	        {
+	            "IsHidden"      "1"
+	        }
 		}
 	}
 	/////////////////////////////

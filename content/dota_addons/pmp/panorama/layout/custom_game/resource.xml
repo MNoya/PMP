@@ -8,21 +8,24 @@
 	<script>
 		$.Msg( "Compiled Panorama Resource!" );
 	</script>
-	<Panel hittest="false" class='ResourcePanel'>
-		<Panel hittest="false" id='LumberPanel'>
-			<Label hittest="false" id="LumberText" text="50" class="TitleFont" />
-			<Image hittest="false" id="LumberIcon" src="file://{images}/custom_game/lumber_icon.png" />
-		</Panel>
-		<Panel hittest="false" id='FoodPanel'>
-			<Label hittest="false" id="FoodText" text="10/10" html="true" class="TitleFont" />
-			<Image hittest="false" id="FoodIcon" />
-		</Panel>
-		<Panel hittest="false" id='GoldPanel'>
-			<Label hittest="false" id="GoldText" text="50" html="true" class="TitleFont" />
-			<Image hittest="false" id="GoldIcon" src="file://{images}/custom_game/gold_icon.png" />
-		</Panel>
-		<Panel hittest="false" id='ClockPanel'>
-			<Label hittest="false" id="ClockTime" text="" html="true" class="TitleFont" />
+	<Panel hittest="false" class='ResourceRoot'>
+		<Panel hittest="false" class='Hidden' id='ResourceBox'> </Panel>
+		<Panel hittest="false" id='ResourcePanel'>
+			<Panel hittest="false" id='LumberPanel'>
+				<Label hittest="false" id="LumberText" text="50" class="TitleFont" />
+				<Image hittest="false" id="LumberIcon" src="file://{images}/custom_game/lumber_icon.png" />
+			</Panel>
+			<Panel hittest="false" id='FoodPanel'>
+				<Label hittest="false" id="FoodText" text="10/10" html="true" class="TitleFont" />
+				<Image hittest="false" id="FoodIcon" />
+			</Panel>
+			<Panel hittest="false" id='GoldPanel'>
+				<Label hittest="false" id="GoldText" text="50" html="true" class="TitleFont" />
+				<Image hittest="false" id="GoldIcon" src="file://{images}/custom_game/gold_icon.png" />
+			</Panel>
+			<Panel hittest="false" id='ClockPanel'>
+				<Label hittest="false" id="ClockTime" text="" html="true" class="TitleFont" />
+			</Panel>
 		</Panel>
 	</Panel>
 </root>

@@ -20,6 +20,7 @@ require('utilities')
 require('wearables')
 require('sounds')
 require('damage')
+require('tutorial')
 require('abilities/boss_ai')
 
 ---------------------------------------------------------------------------
@@ -29,6 +30,7 @@ function Precache( context )
 
 	PrecacheResource("soundfile", "soundevents/pmp_custom_sounds.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/pmp_announcer.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/pmp_tutorial.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/undead_soundset.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/blood_elf_soundset.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/orc_soundset.vsndevts", context)

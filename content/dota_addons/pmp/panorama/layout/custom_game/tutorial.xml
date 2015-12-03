@@ -1,0 +1,18 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/tutorial.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/tutorial.js" />
+	</scripts>
+	<script>
+		$.Msg( "Compiled Panorama Tutorial!" );
+	</script>
+	<Panel hittest="false" class='TutorialRoot'>
+		<Image id="CloseButton" onactivate="Close()" />
+		<Panel id='TutorialPanel' onactivate="TutorialStart()">
+			<Image id="TutorialButton"  src="file://{images}/custom_game/tutorial/gold_button.png" />
+			<Label id="TutorialText" text="TUTORIAL" class="TitleFont" />
+		</Panel>
+	</Panel>
+</root>

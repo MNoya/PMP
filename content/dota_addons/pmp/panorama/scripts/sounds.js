@@ -3,7 +3,7 @@
 function EmitClientSound(msg)
 {
     if (msg.sound){
-        Game.EmitSound(msg.sound);
+        Game.EmitSound(msg.sound); 
     }
 }
 
