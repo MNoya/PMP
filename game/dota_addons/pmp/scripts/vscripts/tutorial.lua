@@ -10,6 +10,7 @@ function Tutorial:Init()
     Tutorial.Arrows = {}
     Tutorial.HighlightParticles = {}
     Tutorial.HighlightAbilities = {}
+    Tutorial.Timers = {}
     Tutorial.Times = {
         ['garage'] = 18,
         ['food'] = 28,
@@ -31,106 +32,88 @@ function Tutorial:Start(event)
     Tutorial.Active[playerID] = true
     Tutorial.HighlightParticles[playerID] = {}
     Tutorial.HighlightAbilities[playerID] = {}
+    Tutorial.Timers[playerID] = {}
+    ClearTimers(playerID)
+    ClearArrowParticles(playerID)
     RemoveHighlightParticles(playerID)
     RemoveHighlightAbilities(playerID)
 
     -- Center camera on garage
-    Timers:CreateTimer(Tutorial.Times.garage, function()
-        if Tutorial.Active[playerID] then
-            local garage = GetPlayerCityCenter(playerID)
-            PMP:RepositionPlayerCamera({pID = playerID, entIndex=garage:GetEntityIndex()})
-            Tutorial:HighlightUnitForPlayer(playerID, garage,Tutorial.Times.goal - Tutorial.Times.garage)
-        end
+    Tutorial.Timers[playerID][1] = Timers:CreateTimer(Tutorial.Times.garage, function()
+        local garage = GetPlayerCityCenter(playerID)
+        PMP:RepositionPlayerCamera({pID = playerID, entIndex=garage:GetEntityIndex()})
+        Tutorial:HighlightUnitForPlayer(playerID, garage,Tutorial.Times.goal - Tutorial.Times.garage, true)
     end)
 
     -- highlight food cap and spawn rate buttons
-    Timers:CreateTimer(Tutorial.Times.food, function()
-        if Tutorial.Active[playerID] then
-            local garage = GetPlayerCityCenter(playerID)
-            ApplyModifier(garage,"modifier_tutorial")
-            Tutorial:HighlightAbility(playerID, garage:FindAbilityByName("upgrade_food_limit"))
-            Tutorial:HighlightAbility(playerID, garage:FindAbilityByName("upgrade_spawn_rate"))
-        end
+    Tutorial.Timers[playerID][2] = Timers:CreateTimer(Tutorial.Times.food, function()
+        local garage = GetPlayerCityCenter(playerID)
+        ApplyModifier(garage,"modifier_tutorial")
+        Tutorial:HighlightAbility(playerID, garage:FindAbilityByName("upgrade_food_limit"))
+        Tutorial:HighlightAbility(playerID, garage:FindAbilityByName("upgrade_spawn_rate"))
     end)
     
     -- highlight super peon button
-    Timers:CreateTimer(Tutorial.Times.super, function()
-        if Tutorial.Active[playerID] then
-            local garage = GetPlayerCityCenter(playerID)
-            local super_peon = GetSuperUnitAbility(garage)
-            RemoveHighlightAbilities(playerID)
-            Tutorial:HighlightAbility(playerID, super_peon)
-
-        end
+    Tutorial.Timers[playerID][3] = Timers:CreateTimer(Tutorial.Times.super, function()
+        local garage = GetPlayerCityCenter(playerID)
+        local super_peon = GetSuperUnitAbility(garage)
+        RemoveHighlightAbilities(playerID)
+        Tutorial:HighlightAbility(playerID, super_peon)
     end)
     
     -- ping out all opponent bases
-    Timers:CreateTimer(Tutorial.Times.goal, function()
-        if Tutorial.Active[playerID] then
-            Tutorial:PingEnemyBases(playerID)
+    Tutorial.Timers[playerID][4] = Timers:CreateTimer(Tutorial.Times.goal, function()
+        Tutorial:PingEnemyBases(playerID)
 
-            local garage = GetPlayerCityCenter(playerID)
-            garage:RemoveModifierByName("modifier_tutorial")
-            RemoveHighlightAbilities(playerID)
-        end
+        local garage = GetPlayerCityCenter(playerID)
+        garage:RemoveModifierByName("modifier_tutorial")
+        RemoveHighlightAbilities(playerID)
     end)
     
     -- highlight all your towers
-    Timers:CreateTimer(Tutorial.Times.towers, function()
-        if Tutorial.Active[playerID] then
-            local playerTowers = GetPlayerTowers(playerID)
-            for k,tower in pairs(playerTowers) do
-                if IsValidAlive(tower) then
-                    Tutorial:HighlightUnitForPlayer(playerID, tower,Tutorial.Times.pimpery - Tutorial.Times.towers)
-                end
+    Tutorial.Timers[playerID][5] = Timers:CreateTimer(Tutorial.Times.towers, function()
+        local playerTowers = GetPlayerTowers(playerID)
+        for k,tower in pairs(playerTowers) do
+            if IsValidAlive(tower) then
+                Tutorial:HighlightUnitForPlayer(playerID, tower,Tutorial.Times.pimpery - Tutorial.Times.towers)
             end
         end
     end)
     
     -- highlight pimpery
-    Timers:CreateTimer(Tutorial.Times.pimpery, function()
-        if Tutorial.Active[playerID] then
-            local pimpery = GetPlayerShop(playerID)
-            Tutorial:HighlightUnitForPlayer(playerID, pimpery,Tutorial.Times.fight - Tutorial.Times.pimpery)
-        end
+    Tutorial.Timers[playerID][6] = Timers:CreateTimer(Tutorial.Times.pimpery, function()
+        local pimpery = GetPlayerShop(playerID)
+        Tutorial:HighlightUnitForPlayer(playerID, pimpery,Tutorial.Times.fight - Tutorial.Times.pimpery)
     end)
     
     -- hightlight upgrade buttons
-    Timers:CreateTimer(Tutorial.Times.upgrades, function()
-        if Tutorial.Active[playerID] then
-            local pimpery = GetPlayerShop(playerID)
-            ApplyModifier(pimpery,"modifier_tutorial")
-            Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_weapon"))
-            Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_helm"))
-            Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_shield"))
-            Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_wings"))
-            Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_health"))
-        end
+    Tutorial.Timers[playerID][7] = Timers:CreateTimer(Tutorial.Times.upgrades, function()
+        local pimpery = GetPlayerShop(playerID)
+        ApplyModifier(pimpery,"modifier_tutorial")
+        Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_weapon"))
+        Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_helm"))
+        Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_shield"))
+        Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_wings"))
+        Tutorial:HighlightAbility(playerID, FindAbilityWithName(pimpery, "upgrade_health"))
     end)
     
     -- highlight resource ui
-    Timers:CreateTimer(Tutorial.Times.resources, function()
-        if Tutorial.Active[playerID] then
-            RemoveHighlightAbilities(playerID)
+    Tutorial.Timers[playerID][8] = Timers:CreateTimer(Tutorial.Times.resources, function()
+        RemoveHighlightAbilities(playerID)
 
-            local pimpery = GetPlayerCityCenter(playerID)
-            pimpery:RemoveModifierByName("modifier_tutorial")
-            Tutorial:HighlightResourceUI(playerID)
-        end
+        local pimpery = GetPlayerCityCenter(playerID)
+        pimpery:RemoveModifierByName("modifier_tutorial")
+        Tutorial:HighlightResourceUI(playerID)
     end)
     
     -- particle arrows that point out of your base and towards the others
-    Timers:CreateTimer(Tutorial.Times.fight, function()
-        if Tutorial.Active[playerID] then
-            Tutorial:SignalArrows(playerID)
-        end
+    Tutorial.Timers[playerID][9] = Timers:CreateTimer(Tutorial.Times.fight, function()
+        Tutorial:SignalArrows(playerID)
     end)
 
     -- on close
-    Timers:CreateTimer(Tutorial.Times.bye, function()
-        if Tutorial.Active[playerID] then
-            Tutorial:End({PlayerID=playerID})
-        end
+    Tutorial.Timers[playerID][10] = Timers:CreateTimer(Tutorial.Times.bye, function()
+        Tutorial:End({PlayerID=playerID})
     end)
 end
 
@@ -138,14 +121,16 @@ function Tutorial:End(event)
     local playerID = event.PlayerID
     Tutorial.Active[playerID] = false
     ClearArrowParticles(playerID)
+    ClearTimers(playerID)
     RemoveHighlightParticles(playerID)
     RemoveHighlightAbilities(playerID)
 
     CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "tutorial_stop_sound", {})
 end
 
-function Tutorial:HighlightUnitForPlayer(playerID, unit, time)
+function Tutorial:HighlightUnitForPlayer(playerID, unit, time, big)
     local light = "particles/custom/tutorial/highlight_trail_05.vpcf"
+    if big then light = "particles/custom/tutorial/highlight_big_trail_05.vpcf" end
     
     unit.highlight = ParticleManager:CreateParticleForPlayer(light, PATTACH_ABSORIGIN, unit, PlayerResource:GetPlayer(playerID))
     table.insert(Tutorial.HighlightParticles[playerID], unit.highlight)
@@ -229,6 +214,16 @@ function ClearArrowParticles( playerID )
         end
     end
     Tutorial.Arrows[playerID] = {}
+end
+
+function ClearTimers( playerID )
+    if Tutorial.Timers[playerID] then
+        for i=1,10 do
+            if Tutorial.Timers[playerID][i] then
+                Timers:RemoveTimer(Tutorial.Timers[playerID][i])
+            end
+        end
+    end
 end
 
 function RemoveHighlightParticles(playerID)
