@@ -2198,7 +2198,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "800"
-	    "AttackRange"               "400"
+	    "AttackRange"               "322"
 	    "ProjectileModel"           "particles/units/heroes/hero_drow/drow_base_attack.vpcf"
 	    "ProjectileSpeed"           "900"
 	    
