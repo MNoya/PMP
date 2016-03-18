@@ -584,5 +584,5 @@ function statCollection:sendStage(stageName, payload, callback)
 end
 
 function tobool(s)
-    return s == true or s == "true" or s == "1" or s == 1 then
+    return s == true or s == "true" or s == "1" or s == 1
 end
