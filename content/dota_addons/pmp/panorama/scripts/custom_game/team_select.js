@@ -10,6 +10,7 @@ var settings = ["TeamRow"];
 //Defaults
 $("#Positions").checked = true;
 $("#BossRoam").checked = true;
+GameEvents.SendCustomGameEventToServer( "set_setting", {setting: "BossRoam", value: true});
 
 function OnGameEnd() {
 	var pitch = 15

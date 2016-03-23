@@ -29,6 +29,12 @@ function customSchema:init(options)
             end
         end
     end, nil)
+
+    -- Write 'test_schema' on the console to test your current functions instead of having to end the game
+    if Convars:GetBool('developer') then
+        Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(), BuildPlayersArray()) end, "Test the custom schema arrays", 0)
+        Convars:RegisterCommand("test_end_game", function() GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS) end, "Test the end game", 0)
+    end
 end
 
 function customSchema:submitRound(args)
@@ -128,11 +134,6 @@ function PrintSchema( gameArray, playerArray )
     print("\n-------- PLAYER DATA --------")
     DeepPrintTable(playerArray)
     print("-------------------------------------")
-end
-
--- Write 'test_schema' on the console to test your current functions instead of having to end the game
-if Convars:GetBool('developer') then
-    Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(),BuildPlayersArray()) end, "Test the custom schema arrays", 0)
 end
 
 ----------------------------------------------------------------------------
