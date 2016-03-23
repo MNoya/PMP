@@ -437,7 +437,7 @@ function PMP:OnPlayerPickHero(keys)
     --print("[PMP] Setting Up Barricades")
     hero.barricade_positions = {}
     hero.barricades = {}
-    local Barricades = GameRules.Barricades
+    --[[local Barricades = GameRules.Barricades
     local randomN = Barricades["Random"]
 
     local barricadeEntsX = Entities:FindAllByNameWithin("*barricade_positionX", center_position, 1200)
@@ -475,7 +475,7 @@ function PMP:OnPlayerPickHero(keys)
         end
 
         table.insert(hero.barricade_positions, pos)
-    end
+    end]]
 
     -- Tracking
     hero.lumber = 0

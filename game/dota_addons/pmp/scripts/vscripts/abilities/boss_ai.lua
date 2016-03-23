@@ -271,7 +271,7 @@ end
 
 function ShouldRoam(unit)
     local time = GameRules:GetDOTATime(false, true)
-    
+
     if unit.bRoam then
 
         local time = GameRules:GetDOTATime(false, true)
