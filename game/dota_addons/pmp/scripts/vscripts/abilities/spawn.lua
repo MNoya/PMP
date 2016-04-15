@@ -5,9 +5,9 @@ function SpawnUnit( event )
     local playerID = player:GetPlayerID()
     local hero = player:GetAssignedHero()
     local ability = event.ability
+    local holdAbility = caster:FindAbilityByName("hold_peons")
     local unit_name = event.UnitName
     local position = caster:GetAbsOrigin()
-    local teamID = caster:GetTeam()
 
     local food_cost = GetFoodCost(unit_name)
     local numSpawns = GetSpawnRate(playerID)
@@ -23,6 +23,9 @@ function SpawnUnit( event )
         numSpawns = 1
     end
 
+    -- If we are holding peons, don't send them to the waypoint yet
+    local bHolding = caster.HoldingPeons
+
     for i=1,numSpawns do
 
         Timers:CreateTimer(i*0.03, function()
@@ -33,9 +36,20 @@ function SpawnUnit( event )
             end
 
             local unit = CreateUnitByName(unit_name, position, true, owner, owner, caster:GetTeamNumber())
-            unit:SetOwner(hero)
-            unit:SetControllableByPlayer(playerID, true)
-            FindClearSpaceForUnit(unit, position, true)
+
+            if bHolding then
+                ApplyModifier(unit, "modifier_hide")
+                unit:AddNoDraw()
+                caster.held_units = caster.held_units + 1
+                if not caster:HasModifier("modifier_hold_peons") then
+                    holdAbility:ApplyDataDrivenModifier(caster, caster, "modifier_hold_peons", {})
+                end
+                caster:SetModifierStackCount("modifier_hold_peons", caster, caster.held_units)
+            else                
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(playerID, true)
+                FindClearSpaceForUnit(unit, position, true)
+            end
 
             table.insert(hero.units, unit)
 
@@ -46,17 +60,19 @@ function SpawnUnit( event )
             PMP:ApplyAllUpgrades(playerID, unit)
 
             -- Play Spawn sound
-            if i == 1 then
+            if i == 1 and not bHolding then
                 Sounds:PlaySoundSet( playerID, unit, "SPAWN" )
             end
 
             -- Move to rally point
-            Timers:CreateTimer(0.05, function() 
-                unit:MoveToPositionAggressive(caster.rally_point)
-                if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
-                    ApplyModifier(unit, "modifier_disable_autoattack")
-                end
-            end)
+            if not bHolding then
+                Timers:CreateTimer(0.05, function() 
+                    unit:MoveToPositionAggressive(caster.rally_point)
+                    if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
+                        ApplyModifier(unit, "modifier_disable_autoattack")
+                    end
+                end)
+            end
         end)
     end
 
@@ -73,7 +89,6 @@ function SpawnSuperUnit( event )
     local unit_name = event.UnitName
     local duration = event.Duration
     local position = caster:GetAbsOrigin()
-    local teamID = caster:GetTeam()
 
     local charges = caster:GetModifierStackCount("modifier_super_unit_charges", caster)
     if charges and charges > 0 then

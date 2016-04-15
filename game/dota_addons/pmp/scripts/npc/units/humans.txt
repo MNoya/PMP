@@ -304,7 +304,7 @@
     "AbilityLayout"             "6"
     "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
     "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
-    "Ability3"                  "build_barricades"  //Build Barricades
+    "Ability3"                  "hold_peons" //Toggle
     "Ability4"                  "repair_buildings"  //Repair
     "Ability5"                  "spawn_human" //Hidden
     "Ability6"                  "spawn_human_leader"

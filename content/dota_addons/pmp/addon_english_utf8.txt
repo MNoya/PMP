@@ -663,7 +663,6 @@
 
 		"DOTA_Tooltip_ability_night_elf_racial"                                           "Ranged Attack"
 		"DOTA_Tooltip_ability_night_elf_racial_Description"                               "<font color='#00ff00'>Racial</font>\nNight Elves use bows to attack their enemies from afar. They also deal less damage to and take more damage from enemy melee units."
-		"DOTA_Tooltip_ability_night_elf_racial_attack_range"                              "ATTACK RANGE:"
 		"DOTA_Tooltip_ability_night_elf_racial_damage_dealt"                              "%DAMAGE DEALT:"
 		"DOTA_Tooltip_ability_night_elf_racial_damage_taken"                              "%DAMAGE TAKEN:"
 
@@ -793,6 +792,9 @@
 
 		"DOTA_Tooltip_ability_upgrade_spawn_rate"                                         "Upgrade Spawn Rate"
 		"DOTA_Tooltip_ability_upgrade_spawn_rate_Description"                             "Increase the amount of peons spawned by 1"
+
+		"DOTA_Tooltip_ability_hold_peons"										  		  "Hold Spawns"
+		"DOTA_Tooltip_ability_hold_peons_Description" 							  	 	  "While active, your units will remain hidden inside the garage instead of spawning at every interval.\nDeactivate the ability to release them at any time.\nFood cap, spawn rates and outposts still appy as normal."
 
 		"DOTA_Tooltip_ability_build_barricades"                                           "Build Barricades"
 		"DOTA_Tooltip_ability_build_barricades_Description"                               "Spawns additional barricades around your base"

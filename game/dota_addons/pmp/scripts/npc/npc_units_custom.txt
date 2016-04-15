@@ -374,7 +374,7 @@
 	    "AbilityLayout"             "6"
 	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
-	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability3"                  "hold_peons" //Toggle
 	    "Ability4"                  "repair_buildings"  //Repair
 	    "Ability5"                  "spawn_blood_elf" //Hidden
 	    "Ability6"                  "spawn_blood_elf_leader"
@@ -1284,7 +1284,7 @@
 	    "AbilityLayout"             "6"
 	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
-	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability3"                  "hold_peons" //Toggle
 	    "Ability4"                  "repair_buildings"  //Repair
 	    "Ability5"                  "spawn_goblin" //Hidden
 	    "Ability6"                  "spawn_goblin_leader"
@@ -1875,7 +1875,7 @@
 	    "AbilityLayout"             "6"
 	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
-	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability3"                  "hold_peons" //Toggle
 	    "Ability4"                  "repair_buildings"  //Repair
 	    "Ability5"                  "spawn_human" //Hidden
 	    "Ability6"                  "spawn_human_leader"
@@ -2473,7 +2473,7 @@
 	    "AbilityLayout"             "6"
 	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
-	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability3"                  "hold_peons" //Toggle
 	    "Ability4"                  "repair_buildings"  //Repair
 	    "Ability5"                  "spawn_night_elf" //Hidden
 	    "Ability6"                  "spawn_night_elf_leader"
@@ -3203,7 +3203,7 @@
 	    "AbilityLayout"             "6"
 	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase spawned peons by 1
-	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability3"                  "hold_peons" //Toggle
 	    "Ability4"                  "repair_buildings"  //Repair
 	    "Ability5"                  "spawn_peon" //Hidden
 	    "Ability6"                  "spawn_peon_leader"
@@ -3792,7 +3792,7 @@
 	    "AbilityLayout"             "6"
 	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
-	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability3"                  "hold_peons" //Toggle
 	    "Ability4"                  "repair_buildings"  //Repair
 	    "Ability5"                  "spawn_skeleton" //Hidden
 	    "Ability6"                  "spawn_skeleton_leader"
@@ -4545,7 +4545,7 @@
 	    "AbilityLayout"             "6"
 	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
-	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability3"                  "hold_peons" //Toggle
 	    "Ability4"                  "repair_buildings"  //Repair
 	    "Ability5"                  "spawn_treant" //Hidden
 	    "Ability6"                  "spawn_treant_leader"
@@ -5142,7 +5142,7 @@
 	    "AbilityLayout"             "6"
 	    "Ability1"                  "upgrade_food_limit"  //Increase food capacity by 1
 	    "Ability2"                  "upgrade_spawn_rate"  //Increase units spawned by 1
-	    "Ability3"                  "build_barricades"  //Build Barricades
+	    "Ability3"                  "hold_peons"  //Toggle
 	    "Ability4"                  "repair_buildings"  //Repair
 	    "Ability5"                  "spawn_undead" //Hidden
 	    "Ability6"                  "spawn_undead_leader"

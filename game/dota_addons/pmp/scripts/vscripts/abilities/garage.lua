@@ -30,6 +30,51 @@ function RegainHealthPercent( unit, percentage )
     end
 end
 
+function HoldPeons( event )
+    local caster = event.caster
+    caster.HoldingPeons = true
+    caster.held_units = 0
+end
+
+function ReleasePeons( event )
+    local caster = event.caster
+    local position = caster:GetAbsOrigin()
+    local hero = caster:GetOwner()
+    local playerID = caster:GetPlayerOwnerID()
+
+    -- Update spawn position to the current active outpost
+    local activeOutpost = GetActiveOutpost(playerID)
+    if activeOutpost then
+        position = activeOutpost:GetAbsOrigin()
+    end
+
+    -- Spawn count of stored peons and leaders
+    local playSound = true
+    caster:RemoveModifierByName("modifier_hold_peons")
+    for _,unit in pairs(hero.units) do
+        if IsValidAlive(unit) and unit:HasModifier("modifier_hide") then
+            if playSound then
+                playSound = false
+                Sounds:PlaySoundSet(playerID, unit, DOTA_UNIT_ORDER_ATTACK_MOVE)
+            end
+
+            unit:RemoveNoDraw()
+            unit:RemoveModifierByName("modifier_hide")
+
+            unit:SetOwner(hero)
+            unit:SetControllableByPlayer(playerID, true)
+            FindClearSpaceForUnit(unit, position, true)
+            unit:MoveToPositionAggressive(caster.rally_point)
+
+            if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
+                ApplyModifier(unit, "modifier_disable_autoattack")
+            end
+        end
+    end
+
+    caster.HoldingPeons = false
+    caster.held_units = 0
+end
 
 -- Go to each barricade map point and place an extra random crate model on top
 function BuildBarricades( event )

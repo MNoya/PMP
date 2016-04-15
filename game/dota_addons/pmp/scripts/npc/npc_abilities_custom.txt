@@ -3112,7 +3112,7 @@
 	}
 	//upgrade_food_limit
 	//upgrade_spawn_rate
-	//build_barricades
+	//hold_peons
 	//repair_buildings
 	
 	"upgrade_food_limit"
@@ -3139,6 +3139,48 @@
 	    "AbilityUpgradeGoldCost"        "100"
 	}
 	
+	"hold_peons"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityTextureName"        "hold_peons"
+	    "MaxLevel"                  "1"
+	        
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+	        
+	    "AbilityCastPoint"          "0"
+	    "AbilityCooldown"           "0"
+	    "AbilityManaCost"           "0"
+	
+	    "OnToggleOn"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/garage.lua"
+	            "Function"      "HoldPeons"
+	        }
+	    }
+	
+	    "OnToggleOff"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/garage.lua"
+	            "Function"      "ReleasePeons"
+	        }
+	    }
+	
+	    "Modifiers"
+	    {
+	        // Just for tooltip
+	        "modifier_hold_peons"
+	        {    
+	            "IsHidden" "0"
+	        }
+	    }
+	}
+	
+	
+	// Outdated
 	"build_barricades"
 	{
 	    "BaseClass"                 "ability_datadriven"
@@ -3202,6 +3244,7 @@
 	        }
 	    }
 	}
+	
 	"repair_buildings"
 	{
 	    "BaseClass"                 "ability_datadriven"
