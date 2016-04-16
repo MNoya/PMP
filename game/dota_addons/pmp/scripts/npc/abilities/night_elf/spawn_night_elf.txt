@@ -34,7 +34,7 @@
     "MaxLevel"                      "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "AbilityCooldown"               "180"
+    "AbilityCooldown"               "120"
 
     "Modifiers"
     {
@@ -50,7 +50,7 @@
                     "Function"      "StartCooldown"
                 }
             }
-            "ThinkInterval"     "180.0"
+            "ThinkInterval"     "120.0"
             "OnIntervalThink"
             {
                 "RunScript"

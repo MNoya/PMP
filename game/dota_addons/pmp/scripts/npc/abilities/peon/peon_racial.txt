@@ -7,11 +7,11 @@
             
     "AbilitySpecial"
     {
-        // On Max Stacks: 25 35 45 60 75 100 AS and MS
+        // On Max Stacks: 42 54 72 90 120 150 AS and MS
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "speed_per_hit"         "5 7 9 12 15 20"
+            "speed_per_hit"         "7 9 12 15 20 25"
         }
 
         "02"

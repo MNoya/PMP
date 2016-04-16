@@ -662,7 +662,7 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityCooldown"               "180"
+	    "AbilityCooldown"               "120"
 	
 	    "Modifiers"
 	    {
@@ -678,7 +678,7 @@
 	                    "Function"      "StartCooldown"
 	                }
 	            }
-	            "ThinkInterval"     "180.0"
+	            "ThinkInterval"     "120.0"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"
@@ -981,7 +981,7 @@
 	    }
 	}
 	
-	// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+	// Spawn rate: 120 seconds (2 minutes) - 0 Food cost
 	"spawn_goblin_leader"
 	{
 	    "BaseClass"                     "ability_datadriven"
@@ -989,7 +989,7 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityCooldown"               "180"
+	    "AbilityCooldown"               "120"
 	
 	    "Modifiers"
 	    {
@@ -1005,7 +1005,7 @@
 	                    "Function"      "StartCooldown"
 	                }
 	            }
-	            "ThinkInterval"     "180.0"
+	            "ThinkInterval"     "120.0"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"
@@ -1467,7 +1467,7 @@
 	    }
 	}
 	
-	// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+	// Spawn rate: 120 seconds (2 minutes) - 0 Food cost
 	"spawn_human_leader"
 	{
 	    "BaseClass"                     "ability_datadriven"
@@ -1475,7 +1475,7 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityCooldown"               "180"
+	    "AbilityCooldown"               "120"
 	
 	    "Modifiers"
 	    {
@@ -1491,7 +1491,7 @@
 	                    "Function"      "StartCooldown"
 	                }
 	            }
-	            "ThinkInterval"     "180.0"
+	            "ThinkInterval"     "120.0"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"
@@ -1994,7 +1994,7 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityCooldown"               "180"
+	    "AbilityCooldown"               "120"
 	
 	    "Modifiers"
 	    {
@@ -2010,7 +2010,7 @@
 	                    "Function"      "StartCooldown"
 	                }
 	            }
-	            "ThinkInterval"     "180.0"
+	            "ThinkInterval"     "120.0"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"
@@ -2112,7 +2112,7 @@
 	    "AbilityCastPoint"              "0.2"
 	    "AbilityCooldown"               "15.0"
 	
-	    "AbilityManaCost"               "40"
+	    "AbilityManaCost"               "25"
 	
 	    "precache"
 	    {
@@ -2175,7 +2175,7 @@
 	    "AbilityCastRange"          "600"
 	    "AbilityCastPoint"          "0"
 	    "AbilityCooldown"           "1"
-	    "AbilityManaCost"           "15"
+	    "AbilityManaCost"           "10"
 	        
 	    "AbilitySpecial"
 	    {
@@ -2383,11 +2383,11 @@
 	            
 	    "AbilitySpecial"
 	    {
-	        // On Max Stacks: 25 35 45 60 75 100 AS and MS
+	        // On Max Stacks: 42 54 72 90 120 150 AS and MS
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "speed_per_hit"         "5 7 9 12 15 20"
+	            "speed_per_hit"         "7 9 12 15 20 25"
 	        }
 	
 	        "02"
@@ -2473,7 +2473,7 @@
 	    }
 	}
 	
-	// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+	// Spawn rate: 120 seconds (2 minutes) - 0 Food cost
 	"spawn_peon_leader"
 	{
 	    "BaseClass"                     "ability_datadriven"
@@ -2481,7 +2481,7 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityCooldown"               "180"
+	    "AbilityCooldown"               "120"
 	
 	    "Modifiers"
 	    {
@@ -2497,7 +2497,7 @@
 	                    "Function"      "StartCooldown"
 	                }
 	            }
-	            "ThinkInterval"     "180.0"
+	            "ThinkInterval"     "120.0"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"
@@ -3179,6 +3179,46 @@
 	    }
 	}
 	
+	"repair_buildings"
+	{
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityTextureName"        "repair_buildings"
+	    "MaxLevel"                  "1"
+	        
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BUILDING"
+	        
+	    "AbilityCastPoint"          "0"
+	    "AbilityCooldown"           "1"
+	    "AbilityManaCost"           "0"
+	    "AbilityGoldCost"           "100"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"           "FIELD_INTEGER"
+	            "repair_percent"     "20"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "abilities/garage.lua"
+	            "Function"      "RepairBuildings"
+	        }
+	
+	        "RunScript"
+	        {
+	            "ScriptFile"    "sounds.lua"
+	            "Function"      "PlayAnnouncerSound"
+	            "Sound"         "Announcer.Buildings.Repair"
+	        }
+	    }
+	}
 	
 	// Outdated
 	"build_barricades"
@@ -3244,47 +3284,7 @@
 	        }
 	    }
 	}
-	
-	"repair_buildings"
-	{
-	    "BaseClass"                 "ability_datadriven"
-	    "AbilityTextureName"        "repair_buildings"
-	    "MaxLevel"                  "1"
-	        
-	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BUILDING"
-	        
-	    "AbilityCastPoint"          "0"
-	    "AbilityCooldown"           "1"
-	    "AbilityManaCost"           "0"
-	    "AbilityGoldCost"           "100"
-	
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"           "FIELD_INTEGER"
-	            "repair_percent"     "20"
-	        }
-	    }
-	
-	    "OnSpellStart"
-	    {
-	        "RunScript"
-	        {
-	            "ScriptFile"    "abilities/garage.lua"
-	            "Function"      "RepairBuildings"
-	        }
-	
-	        "RunScript"
-	        {
-	            "ScriptFile"    "sounds.lua"
-	            "Function"      "PlayAnnouncerSound"
-	            "Sound"         "Announcer.Buildings.Repair"
-	        }
-	    }
-	}
+	///----
 	"ghost_peon"
 	{
 	    "BaseClass"                     "ability_datadriven"
@@ -7447,7 +7447,7 @@
 	
 	    "AbilityCastRange"              "500"
 	    "AbilityCooldown"               "30"
-	    "AbilityManaCost"               "50"
+	    "AbilityManaCost"               "20"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -7516,7 +7516,7 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "reincarnate_chance"  "10 12 15 20 25 30"
+	            "reincarnate_chance"  "12 15 20 25 30 35"
 	        }
 	    }
 	
@@ -7629,7 +7629,7 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityCooldown"               "180"
+	    "AbilityCooldown"               "120"
 	
 	    "Modifiers"
 	    {
@@ -7645,7 +7645,7 @@
 	                    "Function"      "StartCooldown"
 	                }
 	            }
-	            "ThinkInterval"     "180.0"
+	            "ThinkInterval"     "120.0"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"
@@ -7766,7 +7766,7 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityCooldown"               "180"
+	    "AbilityCooldown"               "120"
 	
 	    "Modifiers"
 	    {
@@ -7782,7 +7782,7 @@
 	                    "Function"      "StartCooldown"
 	                }
 	            }
-	            "ThinkInterval"     "180.0"
+	            "ThinkInterval"     "120.0"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"
@@ -8348,7 +8348,7 @@
 	    }
 	}
 	
-	// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+	// Spawn rate: 120 seconds (2 minutes) - 0 Food cost
 	"spawn_undead_leader"
 	{
 	    "BaseClass"                     "ability_datadriven"
@@ -8356,7 +8356,7 @@
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityCooldown"               "180"
+	    "AbilityCooldown"               "120"
 	
 	    "Modifiers"
 	    {
@@ -8372,7 +8372,7 @@
 	                    "Function"      "StartCooldown"
 	                }
 	            }
-	            "ThinkInterval"     "180.0"
+	            "ThinkInterval"     "120"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"

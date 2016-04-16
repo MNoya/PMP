@@ -1333,7 +1333,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "speed_per_hit"     "7 9 12 15 20"
+	            "speed_per_hit"     "9 12 15 20 25"
 	        }
 	    }
 	
@@ -1374,7 +1374,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "speed_per_hit"     "7 9 12 15 20"
+	            "speed_per_hit"     "9 12 15 20 25"
 	        }
 	    }
 	
@@ -1415,7 +1415,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "speed_per_hit"     "7 9 12 15 20"
+	            "speed_per_hit"     "9 12 15 20 25"
 	        }
 	    }
 	
@@ -1456,7 +1456,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "speed_per_hit"     "7 9 12 15 20"
+	            "speed_per_hit"     "9 12 15 20 25"
 	        }
 	    }
 	
@@ -1498,7 +1498,7 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "speed_per_hit"     "7 9 12 15 20"
+	            "speed_per_hit"     "9 12 15 20 25"
 	        }
 	    }
 	
@@ -2402,7 +2402,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "reincarnate_chance"  "12 15 20 25 30"
+	            "reincarnate_chance"  "15 20 25 30 35"
 	        }
 	    }
 	
@@ -2443,7 +2443,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "reincarnate_chance"  "12 15 20 25 30"
+	            "reincarnate_chance"  "15 20 25 30 35"
 	        }
 	    }
 	
@@ -2484,7 +2484,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "reincarnate_chance"  "12 15 20 25 30"
+	            "reincarnate_chance"  "15 20 25 30 35"
 	        }
 	    }
 	
@@ -2525,7 +2525,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "reincarnate_chance"  "12 15 20 25 30"
+	            "reincarnate_chance"  "15 20 25 30 35"
 	        }
 	    }
 	
@@ -2567,7 +2567,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "reincarnate_chance"  "12 15 20 25 30"
+	            "reincarnate_chance"  "15 20 25 30 35"
 	        }
 	    }
 	

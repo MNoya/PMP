@@ -165,7 +165,7 @@
 
     "AbilityCastRange"              "500"
     "AbilityCooldown"               "30"
-    "AbilityManaCost"               "50"
+    "AbilityManaCost"               "20"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"

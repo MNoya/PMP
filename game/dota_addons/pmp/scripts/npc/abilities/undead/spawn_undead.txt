@@ -39,7 +39,7 @@
     }
 }
 
-// Spawn rate: 180 seconds (3 minutes) - 0 Food cost
+// Spawn rate: 120 seconds (2 minutes) - 0 Food cost
 "spawn_undead_leader"
 {
     "BaseClass"                     "ability_datadriven"
@@ -47,7 +47,7 @@
     "MaxLevel"                      "1"
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "AbilityCooldown"               "180"
+    "AbilityCooldown"               "120"
 
     "Modifiers"
     {
@@ -63,7 +63,7 @@
                     "Function"      "StartCooldown"
                 }
             }
-            "ThinkInterval"     "180.0"
+            "ThinkInterval"     "120"
             "OnIntervalThink"
             {
                 "RunScript"
