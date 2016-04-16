@@ -83,8 +83,8 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 500.000000
-			m_flRadiusMax = 500.000000
+			m_flRadiusMin = 600.000000
+			m_flRadiusMax = 600.000000
 		},
 	]
 	m_Emitters =

@@ -99,7 +99,7 @@
     }
 }
 
-//30 mana 25 armor autocastable living armor 1 sec cd
+//25 armor autocastable living armor 1 sec cd
 "treant_armor"
 {
     "BaseClass"                 "ability_datadriven"
@@ -115,7 +115,7 @@
     "AbilityCastRange"          "600"
     "AbilityCastPoint"          "0"
     "AbilityCooldown"           "1"
-    "AbilityManaCost"           "30"
+    "AbilityManaCost"           "15"
         
     "AbilitySpecial"
     {

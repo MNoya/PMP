@@ -93,6 +93,9 @@
 		"outpost"                                                                         "Outpost"
 
 		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_hold_peons"                                                "Holding Spawn"
+		"DOTA_Tooltip_modifier_hold_peons_Description"                                    "Deactivate the ability to spawn all the units inside."
+
 		"DOTA_Tooltip_modifier_teleport_sickness"                                         "Teleport Sickness"
 		"DOTA_Tooltip_modifier_teleport_sickness_Description"                             ""
 		
@@ -532,7 +535,7 @@
 		"DOTA_Tooltip_ability_spawn_peon_Description"                                     ""
 
 		"DOTA_Tooltip_ability_spawn_peon_leader"                                          "Spawn Peon Leader"
-		"DOTA_Tooltip_ability_spawn_peon_leader_Description"                              "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nPeon's Leader has the following abilities:\n-Chain Lightning\n-Bloodlust\n-Far Sight\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_peon_leader_Description"                              "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nPeon's Leader has the following abilities:\n-Chain Lightning\n-Bloodlust\n-Far Sight\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_peon"                                          "Summon Super Peon"
 		"DOTA_Tooltip_ability_summon_super_peon_Description"                              "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
@@ -543,7 +546,7 @@
 		"DOTA_Tooltip_ability_summon_super_peon_empty_Description"                        "You've used all your super units."
 
 		"DOTA_Tooltip_ability_spawn_undead_leader"                                        "Spawn Undead Leader"
-		"DOTA_Tooltip_ability_spawn_undead_leader_Description"                            "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nPeon's Leader has the following abilities:\n-Curse\n-Sleep\n-Possession\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_undead_leader_Description"                            "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nPeon's Leader has the following abilities:\n-Curse\n-Sleep\n-Possession\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_undead"                                        "Summon Super Undead"
 		"DOTA_Tooltip_ability_summon_super_undead_Description"                            "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
@@ -581,7 +584,7 @@
 		"DOTA_Tooltip_ability_spawn_human_Description"                                    ""
 
 		"DOTA_Tooltip_ability_spawn_human_leader"                                         "Spawn Human Leader"
-		"DOTA_Tooltip_ability_spawn_human_leader_Description"                             "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nHuman's Leader has the following abilities:\n-Slow\n-Polymorph\n-Mass Teleport\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_human_leader_Description"                             "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nHuman's Leader has the following abilities:\n-Slow\n-Polymorph\n-Mass Teleport\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_human"                                         "Summon Super Human"
 		"DOTA_Tooltip_ability_summon_super_human_Description"                             "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
@@ -622,7 +625,7 @@
 		"DOTA_Tooltip_ability_spawn_blood_elf_Description"                                ""
 
 		"DOTA_Tooltip_ability_spawn_blood_elf_leader"                                     "Spawn Blood Elf Leader"
-		"DOTA_Tooltip_ability_spawn_blood_elf_leader_Description"                         "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nBlood Elves' Leader has the following abilities:\n-Heal\n-Inner Fire\n-Flame Strike\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_blood_elf_leader_Description"                         "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nBlood Elves' Leader has the following abilities:\n-Heal\n-Inner Fire\n-Flame Strike\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_blood_elf"                                     "Summon Super Blood Elf"
 		"DOTA_Tooltip_ability_summon_super_blood_elf_Description"                         "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
@@ -652,7 +655,7 @@
 		"DOTA_Tooltip_ability_spawn_goblin_Description"                                   ""
 
 		"DOTA_Tooltip_ability_spawn_goblin_leader"                                        "Spawn Goblin Leader"
-		"DOTA_Tooltip_ability_spawn_goblin_leader_Description"                            "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nGoblin's Leader has the following abilities:\n-Healing Spray\n-Ogre Attack\n-Transmute\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_goblin_leader_Description"                            "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nGoblin's Leader has the following abilities:\n-Healing Spray\n-Ogre Attack\n-Transmute\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_goblin"                                        "Summon Super Goblin"
 		"DOTA_Tooltip_ability_summon_super_goblin_Description"                            "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
@@ -670,7 +673,7 @@
 		"DOTA_Tooltip_ability_spawn_night_elf_Description"                                ""
 
 		"DOTA_Tooltip_ability_spawn_night_elf_leader"                                     "Spawn Night Elf Leader"
-		"DOTA_Tooltip_ability_spawn_night_elf_leader_Description"                         "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nNight Elves Leader has the following abilities:\n-Owl Scout\n-Moonlight Shadow\n-Trueshot Aura\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_night_elf_leader_Description"                         "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nNight Elves Leader has the following abilities:\n-Owl Scout\n-Moonlight Shadow\n-Trueshot Aura\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_night_elf_owl_scout"                                        "Owl Scout"
 		"DOTA_Tooltip_ability_night_elf_owl_scout_Description"                            "Temporarily summons an Owl Scout, which can be used to scout the map.\nCan see invisible units."
@@ -733,7 +736,7 @@
 		"DOTA_Tooltip_ability_spawn_skeleton_Description"                                 ""
 
 		"DOTA_Tooltip_ability_spawn_skeleton_leader"                                      "Spawn Skeleton Leader"
-		"DOTA_Tooltip_ability_spawn_skeleton_leader_Description"                          "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nSkeleton's Leader has the following abilities:\n-Carrion Swarm\n-Sacrifice\n-Reincarnation Aura\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_skeleton_leader_Description"                          "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nSkeleton's Leader has the following abilities:\n-Carrion Swarm\n-Sacrifice\n-Reincarnation Aura\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_skeleton"                                      "Summon Super Skeleton"
 		"DOTA_Tooltip_ability_summon_super_skeleton_Description"                          "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
@@ -746,7 +749,7 @@
 		"DOTA_Tooltip_ability_spawn_treant_Description"                                   ""
 
 		"DOTA_Tooltip_ability_spawn_treant_leader"                                        "Spawn Treant Leader"
-		"DOTA_Tooltip_ability_spawn_treant_leader_Description"                            "Every 3 minutes, a Leader unit with powerful supportive abilities will spawn.\nTreants's Leader has the following abilities:\n-Spawn Treants\n-Detonate\n-Living Armor\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+		"DOTA_Tooltip_ability_spawn_treant_leader_Description"                            "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nTreants's Leader has the following abilities:\n-Spawn Treants\n-Detonate\n-Living Armor\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
 
 		"DOTA_Tooltip_ability_summon_super_treant"                                        "Summon Super Treant"
 		"DOTA_Tooltip_ability_summon_super_treant_Description"                            "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
