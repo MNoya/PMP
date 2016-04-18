@@ -185,6 +185,9 @@ function PMP:InitGameMode()
     -- Don't end the game if everyone is unassigned
     SendToServerConsole("dota_surrender_on_disconnect 0")
 
+    -- Increase time to load
+    SendToServerConsole("dota_wait_for_players_to_load_timeout 240")
+
 	-- Change random seed
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
 	math.randomseed(tonumber(timeTxt))
