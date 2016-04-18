@@ -61,6 +61,11 @@
     margin-left: 20px;
     margin-top: 3px;
 }
+
+.player_has_host_privileges .SettingHeader
+{
+    color: #ffffff;
+}
  
 .SettingsRow
 {
