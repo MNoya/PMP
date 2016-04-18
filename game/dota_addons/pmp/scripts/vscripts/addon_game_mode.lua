@@ -35,6 +35,8 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/blood_elf_soundset.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/orc_soundset.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/skeleton_soundset.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/treant_soundset.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/night_elf_soundset.vsndevts", context)
 
 	PrecacheUnitByNameSync("peon", context)
 	PrecacheUnitByNameSync("peon_leader", context)

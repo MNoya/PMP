@@ -1,0 +1,318 @@
+"treant.Pick"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/treant/spawn/ready_to_work.vsnd"
+                            "value1"        "sounds/treant/spawn/ready_to_work2.vsnd"
+                            "value2"        "sounds/treant/spawn/ready_to_work3.vsnd"
+                            "value3"        "sounds/treant/spawn/work_work.vsnd"
+                            "value4"        "sounds/treant/spawn/work_work2.vsnd"
+                            "value5"        "sounds/treant/spawn/work_work3.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"treant.Spawn"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/treant/spawn/ready_to_work.vsnd"
+                            "value1"        "sounds/treant/spawn/ready_to_work2.vsnd"
+                            "value2"        "sounds/treant/spawn/ready_to_work3.vsnd"
+                            "value3"        "sounds/treant/spawn/work_work.vsnd"
+                            "value4"        "sounds/treant/spawn/work_work2.vsnd"
+                            "value5"        "sounds/treant/spawn/work_work3.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"treant.Attack"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/treant/attack/are_you_prepared.vsnd"
+                            "value1"        "sounds/treant/attack/are_you_prepared2.vsnd"
+                            "value2"        "sounds/treant/attack/been_a_while.vsnd"
+                            "value3"        "sounds/treant/attack/been_a_while2.vsnd"
+                            "value4"        "sounds/treant/attack/been_a_while3.vsnd"
+                            "value5"        "sounds/treant/attack/brother_fight.vsnd"
+                            "value6"        "sounds/treant/attack/brother_fight2.vsnd"
+                            "value7"        "sounds/treant/attack/here_we_go.vsnd"
+                            "value8"        "sounds/treant/attack/here_we_go2.vsnd"
+                            "value9"        "sounds/treant/attack/we_can_handle_this.vsnd"
+                            "value10"        "sounds/treant/attack/we_can_handle_this2.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"treant.Attack.Warcry"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/treant/warcry/this_is_it.vsnd"
+                            "value0"        "sounds/treant/warcry/this_is_it2.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"treant.Select"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/treant/attack/brother.vsnd"
+                            "value1"        "sounds/treant/attack/brother_what.vsnd"
+                            "value2"        "sounds/treant/attack/brother_what2.vsnd"
+                            "value3"        "sounds/treant/attack/brother_what3.vsnd"
+                            "value4"        "sounds/treant/attack/our_time_has_come.vsnd"
+                            "value5"        "sounds/treant/attack/our_time_has_come2.vsnd"
+                            "value6"        "sounds/treant/attack/take_it_slow.vsnd"
+                            "value7"        "sounds/treant/attack/take_it_slow2.vsnd"
+                            "value8"        "sounds/treant/attack/take_it_slow3.vsnd"
+                            "value9"        "sounds/treant/attack/take_it_slow4.vsnd"
+                            "value10"        "sounds/treant/attack/we_are_the_forest.vsnd"
+                            "value11"        "sounds/treant/attack/we_are_the_forest2.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"treant.Move"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/treant/yes/alright.vsnd"
+                            "value1"        "sounds/treant/yes/alright2.vsnd"
+                            "value2"        "sounds/treant/yes/alright3.vsnd"
+                            "value3"        "sounds/treant/yes/brother2.vsnd"
+                            "value4"        "sounds/treant/yes/brother3.vsnd"
+                            "value5"        "sounds/treant/yes/brother4.vsnd"
+                            "value6"        "sounds/treant/yes/lets_go.vsnd"
+                            "value7"        "sounds/treant/yes/lets_go2.vsnd"
+                            "value8"        "sounds/treant/yes/the_forest_moves.vsnd"
+                            "value9"        "sounds/treant/yes/the_forest_moves2.vsnd"
+                            "value10"       "sounds/treant/yes/the_forest_moves3.vsnd"
+                            "value11"       "sounds/treant/yes/together_we_go.vsnd"
+                            "value12"       "sounds/treant/yes/together_we_go2.vsnd"
+                            "value13"       "sounds/treant/yes/together_we_go3.vsnd"
+                            "value14"       "sounds/treant/yes/tree_and_leave.vsnd"
+                            "value15"       "sounds/treant/yes/we_are_one.vsnd"
+                            "value16"       "sounds/treant/yes/we_are_one2.vsnd"
+                            "value17"       "sounds/treant/yes/we_waited_long_enough.vsnd"
+                            "value18"       "sounds/treant/yes/we_waited_long_enough2.vsnd"
+                            "value19"       "sounds/treant/yes/we_waited_long_enough3.vsnd"
+                            "value20"       "sounds/treant/yes/yes.vsnd"
+                            "value21"       "sounds/treant/yes/yes2.vsnd"
+                            "value22"       "sounds/treant/yes/yes3.vsnd"
+                            "value23"        "sounds/treant/yes/yes4.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"treant.Pissed"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {                          
+                            "value0"        "sounds/treant/pissed/alright_stop.vsnd"
+                            "value1"        "sounds/treant/pissed/alright_stop2.vsnd"
+                            "value2"        "sounds/treant/pissed/bitch_stop.vsnd"
+                            "value3"        "sounds/treant/pissed/fighting_for.vsnd"
+                            "value4"        "sounds/treant/pissed/tree_and_leave2.vsnd"
+                            "value5"        "sounds/treant/pissed/what_is_this_war_about.vsnd"            
+                            "value6"        "sounds/treant/pissed/relax.vsnd"
+                            "value7"        "sounds/treant/pissed/relax2.vsnd"
+                            "value8"        "sounds/treant/pissed/relax3.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.50000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}
+
+"treant.Pissed.Rare"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"              "sos_reference_stack"
+                "reference_stack"       "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {                          
+                            "value0"        "sounds/treant/pissed/plucky.vsnd"                                       
+                        }
+                    }
+                    "volume"            {   "value"     "1.50000"  }
+                    "pitch_rand_min"    {   "value"     "-0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+}

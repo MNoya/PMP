@@ -49,8 +49,8 @@
                     <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_skeleton.png" /><Label class="ActorText" text="Frej"/></Panel>
                     <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_treant.png" /><Label class="ActorText" text="Baumi"/></Panel>
                     <!--<Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_human.png" /><Label class="ActorText" text="VoiceHuman"/></Panel>
-                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_goblin.png" /><Label class="ActorText" text="VoiceGoblin"/></Panel>
-                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_night_elf.png" /><Label class="ActorText" text="VoiceElf"/></Panel>-->
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_goblin.png" /><Label class="ActorText" text="VoiceGoblin"/></Panel>-->
+                    <Panel class="VoiceActor"><Image class="ActorIcon" src="file://{images}/custom_game/food_night_elf.png" /><Label class="ActorText" text="Bunny"/></Panel>
                 </Panel>
                 <Panel id="ArtCredits">
                     <Label id="ArtistTitle" text="Workshop Art"/>
