@@ -171,14 +171,15 @@ function PMP:GG(winningTeam)
     print(winningTeam," is the Winner")
     GameRules.Winner = winningTeam
 
-    local winners = {}
-    local losers = {}
+    Timers:CreateTimer(3, function()
+        GameRules:SetGameWinner(winningTeam)
+    end)
 
     -- Announce victory
     local soundVictory
     if GetMapName() == "free_for_all" then
         -- Find out the player
-        local playerID
+        local playerID = 0
         for pID = 0,DOTA_MAX_TEAM_PLAYERS do
             if PlayerResource:IsValidPlayerID(pID) and PlayerResource:GetTeam(pID) == winningTeam then
                 playerID = pID
@@ -191,8 +192,6 @@ function PMP:GG(winningTeam)
     end
 
     EmitGlobalSound(soundVictory)
-
-    GameRules:SetCustomVictoryMessageDuration( 600 )
 
     -- Change the camera
     CustomGameEventManager:Send_ServerToAllClients("gg", {})
@@ -218,6 +217,8 @@ function PMP:GG(winningTeam)
     local centerUnit = CreateUnitByName("dummy_vision", cameraPos, false, nil, nil, 0)
 
     -- Put players into Winners or Lossers and set the camera
+    local winners = {}
+    local losers = {}
     for playerID = 0, DOTA_MAX_PLAYERS do
         if PlayerResource:IsValidPlayerID(playerID) then
             PlayerResource:SetCameraTarget(playerID, centerUnit)
@@ -264,10 +265,6 @@ function PMP:GG(winningTeam)
 
         -- Do Thunders and shit
         PMP:DoMichaelBayEffects(winners, losers)
-        
-        Timers:CreateTimer(1, function()
-            GameRules:SetGameWinner(winningTeam)
-        end)
     end)
 end
 
