@@ -58,6 +58,7 @@ function ReleasePeons( event )
                 Sounds:PlaySoundSet(playerID, unit, DOTA_UNIT_ORDER_ATTACK_MOVE)
             end
 
+            ShowPropWearables(unit)
             unit:RemoveNoDraw()
             unit:RemoveModifierByName("modifier_hide")
 

@@ -72,6 +72,8 @@ function SpawnUnit( event )
                         ApplyModifier(unit, "modifier_disable_autoattack")
                     end
                 end)
+            else
+                HidePropWearables(unit)
             end
         end)
     end

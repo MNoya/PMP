@@ -122,6 +122,25 @@ function ClearPropWearables( unit )
     end
 end
 
+function HidePropWearables( unit )
+    if not unit.prop_wearables then return end
+    for slot,prop in pairs(unit.prop_wearables) do
+        if IsValidEntity(prop) then
+            prop:AddEffects(EF_NODRAW)
+        end
+    end
+end
+
+function ShowPropWearables( unit )
+    if not unit.prop_wearables then return end
+    for slot,prop in pairs(unit.prop_wearables) do
+        if IsValidEntity(prop) then
+            prop:RemoveEffects(EF_NODRAW)
+        end
+    end
+end
+
+
 function PrintWearables( unit )
     print("---------------------")
     print("Wearable List of "..unit:GetUnitName())
@@ -135,7 +154,6 @@ function PrintWearables( unit )
         wearable = wearable:NextMovePeer()
     end
 end
-
 
 -------------------------------------------
 
