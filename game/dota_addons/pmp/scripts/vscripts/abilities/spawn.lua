@@ -1,13 +1,16 @@
 function SpawnUnit( event )
     local caster = event.caster
-    local owner = caster:GetOwner()
-    local player = caster:GetPlayerOwner()
-    local playerID = player:GetPlayerID()
-    local hero = player:GetAssignedHero()
+    local playerID = caster:GetPlayerOwnerID()
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local ability = event.ability
     local holdAbility = caster:FindAbilityByName("hold_peons")
     local unit_name = event.UnitName
     local position = caster:GetAbsOrigin()
+
+    -- Don't spawn while disconnected
+    if PlayerResource:GetConnectionState(playerID) ~= DOTA_CONNECTION_STATE_CONNECTED then
+        return
+    end
 
     local food_cost = GetFoodCost(unit_name)
     local numSpawns = GetSpawnRate(playerID)
@@ -35,7 +38,7 @@ function SpawnUnit( event )
                 ModifyFoodUsed(playerID, food_cost)
             end
 
-            local unit = CreateUnitByName(unit_name, position, true, owner, owner, caster:GetTeamNumber())
+            local unit = CreateUnitByName(unit_name, position, true, hero, hero, caster:GetTeamNumber())
 
             if bHolding then
                 ApplyModifier(unit, "modifier_hide")

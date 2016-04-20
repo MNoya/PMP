@@ -193,7 +193,7 @@ function PMP:InitGameMode()
 	math.randomseed(tonumber(timeTxt))
 
     self.vUserIds = {}
-    self.vPlayerUserIds = {}
+    playerIDs = {}
 
     -- Win Condition
     GameRules.StillInGame = {}
@@ -334,13 +334,28 @@ function PMP:OnConnectFull(keys)
     -- The Player entity of the joining user
     local ply = EntIndexToHScript(entIndex)
 
-    -- The Player ID of the joining player
-    local playerID = ply:GetPlayerID()
+    Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
+        if not ply then return end -- Something went wrong
+        
+        local playerID = ply:GetPlayerID()
+        if playerID and playerID ~= -1 then
+            if not tableContains(playerIDs, playerID) then
+                table.insert(playerIDs, playerID)
+            else
+                PMP:OnReconnect(playerID)
+            end
 
-    -- Update the user ID table with this user
-    self.vUserIds[keys.userid] = ply
-    self.vPlayerUserIds[playerID] = keys.userid
+            -- Update the user ID table with this user
+            self.vUserIds[keys.userid] = ply
+        end
+    end)
+end
 
+function PMP:OnReconnect(playerID)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+        Setup_Hero_Panel(hero)
+    end
 end
 
 function PMP:PostLoadPrecache()
@@ -618,7 +633,6 @@ function PMP:OnHeroInGame(hero)
     Timers:CreateTimer(1, function()
         Setup_Hero_Panel(hero)
 
-
         if hero:HasModifier("modifier_silencer_int_steal") then
             hero:RemoveModifierByName("modifier_silencer_int_steal")
         end
@@ -657,8 +671,6 @@ function PMP:OnHeroInGame(hero)
             return
         end
     end)
-   
-    CustomGameEventManager:RegisterListener( "center_hero_camera", CenterCamera)
 end
 
 -- An entity somewhere has been hurt.
@@ -679,66 +691,12 @@ function Setup_Hero_Panel(hero)
     -- get hero entindex and create hero panel
     local HeroIndex = hero:GetEntityIndex()
     Create_Hero_Panel(playerid, heroid, heroname, "landscape", HeroIndex)
-
-    local hero_health = hero:GetHealth()
-    local damagedbool = false
-    local grace_peroid = false
-    -- update hero panel
-    Timers:CreateTimer(function()
-        local player = PlayerResource:GetPlayer(playerid)
-        local unspentpoints = hero:GetAbilityPoints()
-        local current_hero_health = hero:GetHealth()
-        
-        -- if not grace peroid, check for health difference
-        if not grace_peroid then
-            if current_hero_health < hero_health and damagedbool == false then
-                damagedbool = true
-                
-                -- set delay for the red to stay
-                Timers:CreateTimer(1, function()
-                    hero_health = current_hero_health
-                    damagedbool = false
-                    grace_peroid = true
-                    -- set grace peroid
-                    Timers:CreateTimer(1, function() grace_peroid = false end)
-                end)
-            else
-                hero_health = current_hero_health
-            end
-        end
-        
-        CustomGameEventManager:Send_ServerToPlayer(player, "update_hero", {playerid = playerid, heroname=heroname, hero=HeroIndex, damaged=damagedbool, unspent_points=unspentpoints})
-        return 0.1
-    end)
 end
 
 function Create_Hero_Panel(playerid, heroID, heroname, imagestyle, HeroIndex)
     local player = PlayerResource:GetPlayer(playerid)
 
     CustomGameEventManager:Send_ServerToPlayer(player, "create_hero", {heroid=heroID, heroname=heroname, imagestyle=imagestyle, playerid = playerid, hero=HeroIndex})
-end
-
--- Panorama action: Double click on the hero portrait
-function CenterCamera(eventSourceIndex, args )
-    local heroname = args.heroname
-    local heroes = Entities:FindAllByName(heroname)
-    -- can use eventSourceIndex-1 || args.playerid
-    local playerid = args.playerid
-    
-    for k,foundhero in pairs(heroes) do
-        if foundhero:GetPlayerOwnerID() == playerid then        
-            -- add camera modifier to instantly move camera
-            print("hero found")
-            
-            PlayerResource:SetCameraTarget(playerid, foundhero)
-            Timers:CreateTimer(function()
-                PlayerResource:SetCameraTarget(playerid, nil)
-            end)
-            
-            --foundhero:AddNewModifier(foundhero, nil, "modifier_camera_follow", {})
-            return
-        end 
-    end
 end
 
 function PMP:OnGameInProgress()
@@ -1050,8 +1008,6 @@ function PMP:MakePlayerLose( playerID )
         local explosion2 = ParticleManager:CreateParticle("particles/dire_fx/bad_barracks001_ranged_destroy.vpcf", PATTACH_CUSTOMORIGIN, hero)
         ParticleManager:SetParticleControl(explosion2, 0, GetGroundPosition(origin, hero))
 
-        
-        
         local race = GetRace(hero)
         hero.ghost = CreateUnitByName(race.."_ghost", origin, false, hero, hero, hero:GetTeamNumber())
         hero.ghost:SetOwner(hero)
@@ -1075,12 +1031,6 @@ function PMP:OnDisconnect(keys)
     local networkid = keys.networkid
     local reason = keys.reason
     local userid = keys.userid
-
-    --[[if self.vUserIds[userid] then
-        local playerID = self.vUserIds[userid]:GetPlayerID()
-
-        PMP:MakePlayerLose( playerID )
-    end]]
 end
 
 function PMP:OnPlayerLevelUp(keys)
@@ -1107,7 +1057,7 @@ function PMP:CheckWinCondition()
         local teamNumber = hero:GetTeamNumber()
         if not winnerTeamID then
             winnerTeamID = teamNumber
-        elseif winnerTeamID ~= teamNumber then
+        elseif winnerTeamID ~= teamNumber and not hero:HasOwnerAbandoned() then
             return
         end
     end    

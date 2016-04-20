@@ -63,6 +63,8 @@ function create_hero(data){
 	abilitypoints.visible = false	
 
 	HeroPanelID = HeroPanelID + 1
+
+	update_hero()
 }
 
 function OnFirstHeroButtonPressed (args) {
@@ -97,10 +99,10 @@ function Key_Bind_Pressed(key_pressed, playerid){
 	}
 }
 
-function update_hero(data){
-	var playerid = data.playerid
-	var heroname = data.heroname
-	var hero = data.hero
+function update_hero(){
+	var playerid = Game.GetLocalPlayerID()
+	var hero = Players.GetPlayerHeroEntityIndex(playerid)
+	var heroname = Entities.GetUnitName(hero)
 	
 	// calculate percentages
 	var	heroHealthPercentage =  Entities.GetHealthPercent(hero)
@@ -112,38 +114,33 @@ function update_hero(data){
 		heroManaPercentage = 0
 	}
 	
-	// find health bar and change health width
-	/*var statusbar = $.FindChildInContext('#Hero_Health_'+data.playerid+'_'+data.heroname, 'Hero_Status_Container_'+data.playerid+'_'+data.heroname)
-	statusbar.style['width'] = heroHealthPercentage+'%'
-	
-	// find mana bar and change mana width
-	statusbar = $.FindChildInContext('#Hero_Mana_'+data.playerid+'_'+data.heroname, 'Hero_Status_Container_'+data.playerid+'_'+data.heroname)
-	statusbar.style['width'] = heroManaPercentage+'%'*/
-	
 	//$.Msg(Entities.HasUpgradeableAbilities(hero))
-	var overlay = $.FindChildInContext('#Hero_levelup_'+data.playerid+'_'+data.heroname, hero)
-	if (data.unspent_points > 0){
+	var overlay = $.FindChildInContext('#Hero_levelup_'+playerid+'_'+heroname, hero)
+	var unspent_points = Entities.GetAbilityPoints(hero)
+	if (unspent_points > 0){
 		overlay.visible = true
 		var overlaytext = overlay.GetChild(0)
-		overlaytext.text = data.unspent_points
+		overlaytext.text = unspent_points
 	}
 	else{
 		overlay.visible = false
 	}
 	
 	// check if any overlays need to be added
-	hero_overlay(data)
+	hero_overlay()
+
+	$.Schedule(0.1, update_hero)
 }
 
 // first true value is saved and then returned so that they don't overlap, meaning the order of importance
-function hero_overlay(data){	
-	var playerid = data.playerid
-	var heroname = data.heroname
-	var hero = data.hero
+function hero_overlay(){	
+	var playerid = Game.GetLocalPlayerID()
+	var hero = Players.GetPlayerHeroEntityIndex(playerid)
+	var heroname = Entities.GetUnitName(hero)
 	
 	// find panels
-	var overlay = $.FindChildInContext('#Hero_Overlay_'+data.playerid+'_'+data.heroname, 'Hero_'+data.playerid+'_'+data.heroname)
-	var button = $.FindChildInContext('#Hero_revive_'+data.playerid+'_'+data.heroname, 'Hero_'+data.playerid+'_'+data.heroname)
+	var overlay = $.FindChildInContext('#Hero_Overlay_'+playerid+'_'+heroname, 'Hero_'+playerid+'_'+heroname)
+	var button = $.FindChildInContext('#Hero_revive_'+playerid+'_'+heroname, 'Hero_'+playerid+'_'+heroname)
 	//var statuscontainer = $.FindChildInContext('#Hero_Status_Container_'+data.playerid+'_'+data.heroname, 'Hero_'+data.playerid+'_'+data.heroname)
 	
 	// if hero is dead, enable overlay
@@ -174,7 +171,7 @@ function hero_overlay(data){
 	}
 	
 	// if hero not found or not damaged, there's nothing below that has to be done, so return
-	var selectionfocus = $.FindChildInContext('#Hero_selectionfocus_'+data.playerid+'_'+data.heroname, 'Hero_Status_Container_'+data.playerid+'_'+data.heroname)
+	var selectionfocus = $.FindChildInContext('#Hero_selectionfocus_'+playerid+'_'+heroname, 'Hero_Status_Container_'+playerid+'_'+heroname)
 	if (heroFound == false){
 		selectionfocus.visible = false
 		return
@@ -239,7 +236,8 @@ function clicked_portrait(hero, playerid, heroname){
 	// if equal to 2 then panel was double pressed
 	double_clicked[playerid] = double_clicked[playerid] + 1
 	if (double_clicked[playerid] == 2){
-		GameEvents.SendCustomGameEventToServer( "center_hero_camera", { "heroname" : heroname, "playerid" : playerid} );
+		GameUI.SetCameraTarget(hero)
+		$.Schedule(0.1, function(){ GameUI.SetCameraTarget(-1)})
 	}
 	
 	// reset counter every 0.5 sec

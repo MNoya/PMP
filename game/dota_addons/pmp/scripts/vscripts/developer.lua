@@ -220,7 +220,7 @@ function PMP:GG(winningTeam)
     local winners = {}
     local losers = {}
     for playerID = 0, DOTA_MAX_PLAYERS do
-        if PlayerResource:IsValidPlayerID(playerID) then
+        if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetSelectedHeroEntity(playerID) then
             PlayerResource:SetCameraTarget(playerID, centerUnit)
             PMP:StopMusic(playerID)
             if not PlayerResource:IsBroadcaster(playerID) then
