@@ -27,7 +27,7 @@ function PMP:FilterExecuteOrder( filterTable )
     local unit = EntIndexToHScript(units["0"])
     if unit and unit.skip then
         if DEBUG then print("Skip") end
-            unit.skip = false
+        unit.skip = false
         return true
     else
         if DEBUG then print("Execute this order") end
@@ -141,7 +141,7 @@ function PMP:FilterExecuteOrder( filterTable )
             n = n+1
 
             -- Don't move aggresive with the Leader units
-            if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
+            if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") and not unit:HasAbility("demon_evasion") then
                 ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = pos, Queue = queue})
             else
                 ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = order_type, Position = pos, Queue = queue})
@@ -170,7 +170,7 @@ function PMP:FilterExecuteOrder( filterTable )
             unit.skip = true
 
             -- Don't move aggresive with the Leader units
-            if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
+            if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") and not unit:HasAbility("demon_evasion") then
                 ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = pos, Queue = queue})
             else
                 ExecuteOrderFromTable({ UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET, TargetIndex = targetIndex, Queue = queue})

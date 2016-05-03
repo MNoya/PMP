@@ -450,6 +450,10 @@ function PMP:OnPlayerPickHero(keys)
         tower:SetOwner(hero)
         tower:SetControllableByPlayer(playerID, true)
         table.insert(hero.towers, tower)
+
+        if race == "demon" then
+            tower:StartGesture(ACT_DOTA_IDLE)
+        end
     end
 
 	-- Barricades - 3 on each side

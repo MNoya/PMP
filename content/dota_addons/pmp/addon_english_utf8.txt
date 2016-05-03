@@ -18,7 +18,7 @@
 		"npc_dota_hero_drow_ranger"                                                       " Night Elf"
 		"npc_dota_hero_skeleton_king"                                                     "Skeleton"
 		"npc_dota_hero_treant"                                                            "Treant"
-		"npc_dota_hero_jakiro"                                                            "Demon"
+		"npc_dota_hero_warlock"                                                           "Demon"
 
 		// ******************** UNITS ********************
 		"peon"                                                                            "Peon"
@@ -87,6 +87,14 @@
 		"treant_tower"                                                                    "Treant Tower"
 		"treant_ghost"                                                                    "Treant Ghost"
 
+		"demon"                                                                          "Demon"
+		"demon_leader"                                                                   "Demon Leader"
+		"super_demon"                                                                    "Super Demon"
+		"demon_garage"                                                                   "Demon Garage"
+		"demon_pimpery"                                                                  "Demon Pimpery"
+		"demon_tower"                                                                    "Demon Tower"
+		"demon_ghost"                                                                    "Demon Ghost"
+
 		"barricade"                                                                       "Barricade"
 		"nian_boss"                                                                       "Ashley"
 		"trader"                                                                          "Trader"
@@ -95,6 +103,12 @@
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_hold_peons"                                                "Holding Spawn"
 		"DOTA_Tooltip_modifier_hold_peons_Description"                                    "Deactivate the ability to spawn all the units inside."
+
+		"DOTA_Tooltip_modifier_demon_rush"                                                "Demon Rush"
+		"DOTA_Tooltip_modifier_demon_rush_Description"                                    "Will quickly charge into range and perform a Double Strike."
+
+		"DOTA_Tooltip_modifier_unholy_aura_buff"                                          "Unholy Aura"
+		"DOTA_Tooltip_modifier_unholy_aura_buff_Description"                              "This unit is under the effects of Unholy Aura; it and movement speed and health regeneration rate are increased"
 
 		"DOTA_Tooltip_modifier_teleport_sickness"                                         "Teleport Sickness"
 		"DOTA_Tooltip_modifier_teleport_sickness_Description"                             ""
@@ -265,6 +279,96 @@
 
 		"DOTA_Tooltip_modifier_weapon30"                                                  "Weapon 30"
 		"DOTA_Tooltip_modifier_weapon30_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon1"                                                   "Off-Hand Weapon 1"
+		"DOTA_Tooltip_modifier_second_weapon1_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon2"                                                   "Off-Hand Weapon 2"
+		"DOTA_Tooltip_modifier_second_weapon2_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon3"                                                   "Off-Hand Weapon 3"
+		"DOTA_Tooltip_modifier_second_weapon3_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon4"                                                   "Off-Hand Weapon 4"
+		"DOTA_Tooltip_modifier_second_weapon4_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon5"                                                   "Off-Hand Weapon 5"
+		"DOTA_Tooltip_modifier_second_weapon5_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon6"                                                   "Off-Hand Weapon 6"
+		"DOTA_Tooltip_modifier_second_weapon6_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon7"                                                   "Off-Hand Weapon 7"
+		"DOTA_Tooltip_modifier_second_weapon7_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon8"                                                   "Off-Hand Weapon 8"
+		"DOTA_Tooltip_modifier_second_weapon8_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon9"                                                   "Off-Hand Weapon 9"
+		"DOTA_Tooltip_modifier_second_weapon9_Description"                                       "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon10"                                                  "Off-Hand Weapon 10"
+		"DOTA_Tooltip_modifier_second_weapon10_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon11"                                                  "Off-Hand Weapon 11"
+		"DOTA_Tooltip_modifier_second_weapon11_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon12"                                                  "Off-Hand Weapon 12"
+		"DOTA_Tooltip_modifier_second_weapon12_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon13"                                                  "Off-Hand Weapon 13"
+		"DOTA_Tooltip_modifier_second_weapon13_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon14"                                                  "Off-Hand Weapon 14"
+		"DOTA_Tooltip_modifier_second_weapon14_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon15"                                                  "Off-Hand Weapon 15"
+		"DOTA_Tooltip_modifier_second_weapon15_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon16"                                                  "Off-Hand Weapon 16"
+		"DOTA_Tooltip_modifier_second_weapon16_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon17"                                                  "Off-Hand Weapon 17"
+		"DOTA_Tooltip_modifier_second_weapon17_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon18"                                                  "Off-Hand Weapon 18"
+		"DOTA_Tooltip_modifier_second_weapon18_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon19"                                                  "Off-Hand Weapon 19"
+		"DOTA_Tooltip_modifier_second_weapon19_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon20"                                                  "Off-Hand Weapon 20"
+		"DOTA_Tooltip_modifier_second_weapon20_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon21"                                                  "Off-Hand Weapon 21"
+		"DOTA_Tooltip_modifier_second_weapon21_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon22"                                                  "Off-Hand Weapon 22"
+		"DOTA_Tooltip_modifier_second_weapon22_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon23"                                                  "Off-Hand Weapon 23"
+		"DOTA_Tooltip_modifier_second_weapon23_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon24"                                                  "Off-Hand Weapon 24"
+		"DOTA_Tooltip_modifier_second_weapon24_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon25"                                                  "Off-Hand Weapon 25"
+		"DOTA_Tooltip_modifier_second_weapon25_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon26"                                                  "Off-Hand Weapon 26"
+		"DOTA_Tooltip_modifier_second_weapon26_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon27"                                                  "Off-Hand Weapon 27"
+		"DOTA_Tooltip_modifier_second_weapon27_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon28"                                                  "Off-Hand Weapon 28"
+		"DOTA_Tooltip_modifier_second_weapon28_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon29"                                                  "Off-Hand Weapon 29"
+		"DOTA_Tooltip_modifier_second_weapon29_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
+
+		"DOTA_Tooltip_modifier_second_weapon30"                                                  "Off-Hand Weapon 30"
+		"DOTA_Tooltip_modifier_second_weapon30_Description"                                      "+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Damage"
 
 		"DOTA_Tooltip_modifier_bow1"                                                      "Bow 1"
 		"DOTA_Tooltip_modifier_bow1_Description"                                          "+%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Damage"
@@ -603,7 +707,7 @@
 		"DOTA_Tooltip_ability_blood_elf_inner_fire_Description"                           "Increases a target friendly units damage and armor."
 		"DOTA_Tooltip_ability_blood_elf_inner_fire_duration"                              "DURATION:"
 		"DOTA_Tooltip_ability_blood_elf_inner_fire_armor_bonus"                           "ARMOR BONUS:"
-		"DOTA_Tooltip_ability_blood_elf_inner_fire_damage_bonus_pct"                      "DAMAGE BONUS PCT:"
+		"DOTA_Tooltip_ability_blood_elf_inner_fire_damage_bonus_pct"                      "%DAMAGE BONUS:"
 		"DOTA_Tooltip_ability_blood_elf_inner_fire_autocast_radius"                       "AUTOCAST RADIUS:"
 
 		"DOTA_Tooltip_ability_blood_elf_flame_strike"                                     "Flame Strike"
@@ -774,13 +878,43 @@
 		"DOTA_Tooltip_ability_treant_armor_duration"                                      "DURATION:"
 
 		"DOTA_Tooltip_ability_treant_racial"                                              "Treant Forest"
-		"DOTA_Tooltip_ability_treant_racial_Description"                                  "After standing still for %link_time% seconds, the Treants are linked together forming a Forest, reducing all damage taken.\nA larger group of treants will form a stronger Forest, boosting the ability's effect.\nThe link is weakened whenever a tree goes past %radius% range of the group.\nEnemies that enter the forrest also have their attack and movement speed slowed."
+		"DOTA_Tooltip_ability_treant_racial_Description"                                  "<font color='#00ff00'>Racial</font>\nAfter standing still for %link_time% seconds, the Treants are linked together forming a Forest, reducing all damage taken.\nA larger group of treants will form a stronger Forest, boosting the ability's effect.\nThe link is weakened whenever a tree goes past %radius% range of the group.\nEnemies that enter the forrest also have their attack and movement speed slowed."
 		"DOTA_Tooltip_ability_treant_racial_radius"                                       "RADIUS:"
 		"DOTA_Tooltip_ability_treant_racial_link_time"                                    "LINK TIME:"
 		"DOTA_Tooltip_ability_treant_racial_dmg_reduction_per_stack"                      "-DMG% PER STACK:"
 		"DOTA_Tooltip_ability_treant_racial_ms_slow_per_stack"                            "MOVE SLOW PER STACK:"
 		"DOTA_Tooltip_ability_treant_racial_as_slow_per_stack"                            "ATTACK SLOW PER STACK:"
 		"DOTA_Tooltip_ability_treant_racial_max_stacks"                                   "MAX STACKS:"
+
+		"DOTA_Tooltip_ability_demon_evasion"                                              "Evasion"
+        "DOTA_Tooltip_ability_demon_evasion_Description"                                  "Gives a chance to dodge attacks.\nThe Demon Leader can attack and is granted the benefits from all weapon upgrades."
+        "DOTA_Tooltip_ability_demon_evasion_miss_chance"                                  "%MISS CHANCE:"
+
+        "DOTA_Tooltip_ability_demon_rush"                                           	  "Demon Rush"
+        "DOTA_Tooltip_ability_demon_rush_Description"                                     "When targetting an enemy for an attack, the demon will quickly charge into range and perform an extra hit."
+
+        "DOTA_Tooltip_ability_demon_unholy_aura"                                          "Unholy Aura"
+        "DOTA_Tooltip_ability_demon_unholy_aura_Description"                              "Increases the movement speed and life regeneration rate of nearby friendly units."
+        "DOTA_Tooltip_ability_demon_unholy_aura_move_speed_bonus"                         "%MOVE SPEED BONUS:"
+        "DOTA_Tooltip_ability_demon_unholy_aura_health_regen_bonus_pct"                   "%HEALTH REGEN BONUS:"
+        "DOTA_Tooltip_ability_demon_unholy_aura_radius"                                   "RADIUS:"
+
+        "DOTA_Tooltip_ability_demon_racial"                                               "Double Strike"
+        "DOTA_Tooltip_ability_demon_racial_Description"                                   "<font color='#00ff00'>Racial</font>\nDemons can equip two weapons at the same time, sacrificing a shield slot.\nEvery attack landed has a chance to trigger an extra hit."
+        "DOTA_Tooltip_ability_demon_racial_double_strike_chance_pct"                      "%CHANCE:"
+
+        "DOTA_Tooltip_ability_spawn_demon"                                                "Spawn Demon"
+        "DOTA_Tooltip_ability_spawn_demon_Description"                                    ""
+
+        "DOTA_Tooltip_ability_spawn_demon_leader"                                         "Spawn Demon Leader"
+        "DOTA_Tooltip_ability_spawn_demon_leader_Description"                             "Every 2 minutes, a Leader unit with powerful supportive abilities will spawn.\nDemon's Leader has the following abilities:\n-Double Strike\n-Demon Edge\n-Evasion\n-Unholy Aura\n\n<b><font color='#00ff00'>Leader units don't require food.</font></b>"
+
+        "DOTA_Tooltip_ability_summon_super_demon"                                         "Summon Super Demon"
+        "DOTA_Tooltip_ability_summon_super_demon_Description"                             "Spawn a Super Unit that will defend your base for 20 seconds. It can't leave the base!\n\n<b><font color='#ff0000'>You only get 3 super units per game.</font></b>\n<b><font color='#00ff00'>Super units don't require food.</font></b>\n"
+        "DOTA_Tooltip_ability_summon_super_demon_duration"                                "DURATION:"
+
+        "DOTA_Tooltip_ability_summon_super_demon_empty"                                   "Summon Super Demon Empty"
+        "DOTA_Tooltip_ability_summon_super_demon_empty_Description"                       "You've used all your super units."
 
 		//-----------------------------------------------
 
@@ -935,6 +1069,129 @@
 		"DOTA_Tooltip_ability_upgrade_weapon30"                                           "Upgrade Weapon (30)"
 		"DOTA_Tooltip_ability_upgrade_weapon30_Description"                               "Pimp your units with Rapier of the Burning God!"
 		"DOTA_Tooltip_ability_upgrade_weapon30_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_weapon_final"                                       "Weapons Fully Upgraded!"
+		"DOTA_Tooltip_ability_upgrade_weapon_final_Description"                           ""
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon1"                                            "Upgrade Off-Hand Weapon (1)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon1_Description"                                "Pimp your units with Skullsplitter Axe!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon1_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon2"                                            "Upgrade Off-Hand Weapon (2)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon2_Description"                                "Pimp your units with Wyvernguard Edge!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon2_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon3"                                            "Upgrade Off-Hand Weapon (3)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon3_Description"                                "Pimp your units with Mountain Splitter!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon3_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon4"                                            "Upgrade Off-Hand Weapon (4)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon4_Description"                                "Pimp your units with Ram's Head Blade!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon4_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon5"                                            "Upgrade Off-Hand Weapon (5)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon5_Description"                                "Pimp your units with Trident of the Deep One!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon5_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon6"                                            "Upgrade Off-Hand Weapon (6)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon6_Description"                                "Pimp your units with Lance of the Wurmblood!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon6_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon7"                                            "Upgrade Off-Hand Weapon (7)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon7_Description"                                "Pimp your units with Tormented Staff!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon7_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon8"                                            "Upgrade Off-Hand Weapon (8)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon8_Description"                                "Pimp your units with Sufferwood Sapling!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon8_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon9"                                            "Upgrade Off-Hand Weapon (9)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon9_Description"                                "Pimp your units with Dazolator!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon9_lumber_cost"                                "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon10"                                           "Upgrade Off-Hand Weapon (10)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon10_Description"                               "Pimp your units with Relic Sword!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon10_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon11"                                           "Upgrade Off-Hand Weapon (11)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon11_Description"                               "Pimp your units with Winterblight!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon11_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon12"                                           "Upgrade Off-Hand Weapon (12)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon12_Description"                               "Pimp your units with Shadow Blade!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon12_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon13"                                           "Upgrade Off-Hand Weapon (13)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon13_Description"                               "Pimp your units with Relentless!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon13_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon14"                                           "Upgrade Off-Hand Weapon (14)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon14_Description"                               "Pimp your units with Staff of the Infinite Waves!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon14_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon15"                                           "Upgrade Off-Hand Weapon (15)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon15_Description"                               "Pimp your units with Voidhammer!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon15_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon16"                                           "Upgrade Off-Hand Weapon (16)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon16_Description"                               "Pimp your units with Shock of the Anvil!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon16_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon17"                                           "Upgrade Off-Hand Weapon (17)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon17_Description"                               "Pimp your units with Words of the Drunken Warlord!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon17_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon18"                                           "Upgrade Off-Hand Weapon (18)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon18_Description"                               "Pimp your units with Shards of Exile!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon18_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon19"                                           "Upgrade Off-Hand Weapon (19)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon19_Description"                               "Pimp your units with Grasping Bludgeon!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon19_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon20"                                           "Upgrade Off-Hand Weapon (20)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon20_Description"                               "Pimp your units with Scythe of Twin Deaths!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon20_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon21"                                           "Upgrade Off-Hand Weapon (21)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon21_Description"                               "Pimp your units with Eye of Omoz!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon21_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon22"                                           "Upgrade Off-Hand Weapon (22)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon22_Description"                               "Pimp your units with Basher!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon22_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon23"                                           "Upgrade Off-Hand Weapon (23)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon23_Description"                               "Pimp your units with Righteous Thunderbolt!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon23_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon24"                                           "Upgrade Off-Hand Weapon (24)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon24_Description"                               "Pimp your units with Crystal Dryad!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon24_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon25"                                           "Upgrade Off-Hand Weapon (25)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon25_Description"                               "Pimp your units with Dragonclaw Hook!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon25_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon26"                                           "Upgrade Off-Hand Weapon (26)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon26_Description"                               "Pimp your units with Scythe of Vyse!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon26_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon27"                                           "Upgrade Off-Hand Weapon (27)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon27_Description"                               "Pimp your units with Arcs of Manta!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon27_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon28"                                           "Upgrade Off-Hand Weapon (28)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon28_Description"                               "Pimp your units with Battlefury!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon28_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon29"                                           "Upgrade Off-Hand Weapon (29)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon29_Description"                               "Pimp your units with Eternal Radiance Blade!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon29_lumber_cost"                               "LUMBER COST:"
+
+		"DOTA_Tooltip_ability_upgrade_second_weapon30"                                           "Upgrade Weapon (30)"
+		"DOTA_Tooltip_ability_upgrade_second_weapon30_Description"                               "Pimp your units with Rapier of the Burning God!"
+		"DOTA_Tooltip_ability_upgrade_second_weapon30_lumber_cost"                               "LUMBER COST:"
 
 		"DOTA_Tooltip_ability_upgrade_weapon_final"                                       "Weapons Fully Upgraded!"
 		"DOTA_Tooltip_ability_upgrade_weapon_final_Description"                           ""
@@ -1374,7 +1631,7 @@
 		"DOTA_Tooltip_ability_pimp_speed_Description"                                     "Increases the movement and attack speeds of your units and buildings by 5%%."
 
 		"DOTA_Tooltip_ability_pimp_regen"                                                 "Pimp Regen"
-		"DOTA_Tooltip_ability_pimp_regen_Description"                                     "Increases the regeneration rate of your units and buildings."
+		"DOTA_Tooltip_ability_pimp_regen_Description"                                     "Increases the regeneration rate of your units by 1%% of their max health and buildings by 0.25%%."
 
 
 		// ******************** ITEMS ********************
@@ -1655,11 +1912,11 @@
 		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_gold_cost"                    "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_skeleton_racial5_reincarnate_chance"           "REINCARNATE CHANCE:"
 		
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_heal_regen_pct"              "HEAL REGEN PCT:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_heal_regen_pct"              "HEAL REGEN PCT:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_heal_regen_pct"              "HEAL REGEN PCT:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_heal_regen_pct"              "HEAL REGEN PCT:"
-		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_heal_regen_pct"              "HEAL REGEN PCT:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial1_heal_regen_pct"              "%HEAL REGEN:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial2_heal_regen_pct"              "%HEAL REGEN:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial3_heal_regen_pct"              "%HEAL REGEN:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial4_heal_regen_pct"              "%HEAL REGEN:"
+		"DOTA_Tooltip_ability_item_upgrade_blood_elf_racial5_heal_regen_pct"              "%HEAL REGEN:"
 
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1"                             "Upgrade Night Elf Racial (1)"
 		"DOTA_Tooltip_ability_item_upgrade_night_elf_racial1_Description"                 "Increase the level of Night Elves Ranged Attack"
@@ -1710,5 +1967,30 @@
 		"DOTA_Tooltip_ability_item_upgrade_treant_racial5_Description"                    "Increase the level of Treant's Forest"
 		"DOTA_Tooltip_ability_item_upgrade_treant_racial5_gold_cost"                      "GOLD COST:"
 		"DOTA_Tooltip_ability_item_upgrade_treant_racial5_dmg_reduction_per_stack"        "DMG REDUCTION PER STACK:"
+
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial1"                                 "Upgrade Demon Racial (1)"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial1_Description"                     "Increase the level of Demon's Double Strike"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial1_gold_cost"                       "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial1_double_strike_chance_pct"        "%DOUBLE STRIKE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial2"                                 "Upgrade Demon Racial (2)"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial2_Description"                     "Increase the level of Demon's Double Strike"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial2_gold_cost"                       "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial2_double_strike_chance_pct"        "%DOUBLE STRIKE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial3"                                 "Upgrade Demon Racial (3)"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial3_Description"                     "Increase the level of Demon's Double Strike"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial3_gold_cost"                       "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial3_double_strike_chance_pct"        "%DOUBLE STRIKE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial4"                                 "Upgrade Demon Racial (4)"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial4_Description"                     "Increase the level of Demon's Double Strike"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial4_gold_cost"                       "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial4_double_strike_chance_pct"        "%DOUBLE STRIKE CHANCE:"
+
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial5"                                 "Upgrade Demon Racial (5)"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial5_Description"                     "Increase the level of Demon's Double Strike"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial5_gold_cost"                       "GOLD COST:"
+		"DOTA_Tooltip_ability_item_upgrade_demon_racial5_double_strike_chance_pct"        "%DOUBLE STRIKE CHANCE:"
 	}
 }

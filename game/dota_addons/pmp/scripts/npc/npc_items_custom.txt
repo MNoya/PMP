@@ -3029,6 +3029,215 @@
 	        }
 	    }
 	}
+	
+	/////////////////////////////
+	// NIGHT ELF RACIAL UPGRADES
+	////////////////////////////
+	"item_upgrade_demon_racial1"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_demon_racial"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "100"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "double_strike_chance_pct"  "30 40 50 60 70 80"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "1"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "racial"
+	            "Level"         "1"
+	        }
+	    }
+	}
+	
+	"item_upgrade_demon_racial2"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_demon_racial"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "100 200 300 400 500"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "double_strike_chance_pct"  "30 40 50 60 70 80"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "2"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "racial"
+	            "Level"         "2"
+	        }
+	    }
+	}
+	
+	"item_upgrade_demon_racial3"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_demon_racial"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "100 200 300 400 500"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "double_strike_chance_pct"  "30 40 50 60 70 80"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "3"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "racial"
+	            "Level"         "3"
+	        }
+	    }
+	}
+	
+	"item_upgrade_demon_racial4"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_demon_racial"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "100 200 300 400 500"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "double_strike_chance_pct"  "30 40 50 60 70 80"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "4"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "racial"
+	            "Level"         "4"
+	        }
+	    }
+	}
+	
+	"item_upgrade_demon_racial5"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityTextureName"            "item_upgrade_demon_racial"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "gold_cost"           "100 200 300 400 500"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "double_strike_chance_pct"  "30 40 50 60 70 80"
+	        }
+	    }
+	
+	    "MaxUpgradeLevel"               "5"
+	    "ItemBaseLevel"                 "5"
+	
+	    "OnSpellStart"
+	    {
+	        // Add Upgrade and Swap the item for the next upgrade
+	        "RunScript"
+	        {
+	            "ScriptFile"    "upgrades.lua"
+	            "Function"      "UpgradeFinished"
+	            "Name"          "racial"
+	            "Level"         "5"
+	        }
+	    }
+	}
 	"item_upgrade_modifiers"
 	{
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -3300,6 +3509,277 @@
 	        }
 	
 	        "modifier_weapon30"
+	        {
+	            "TextureName"   "upgrade_weapon30"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "300"
+	            }
+	        }
+	
+	        //Offhand
+	        "modifier_second_weapon1"
+	        {
+	            "TextureName"   "upgrade_weapon1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "2"
+	            }
+	        }
+	
+	        "modifier_second_weapon2"
+	        {
+	            "TextureName"   "upgrade_weapon2"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "4"
+	            }
+	        }
+	
+	        "modifier_second_weapon3"
+	        {
+	            "TextureName"   "upgrade_weapon3"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "6"
+	            }
+	        }
+	
+	        "modifier_second_weapon4"
+	        {
+	            "TextureName"   "upgrade_weapon4"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "8"
+	            }
+	        }
+	
+	        "modifier_second_weapon5"
+	        {
+	            "TextureName"   "upgrade_weapon5"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "12"
+	            }
+	        }
+	
+	        "modifier_second_weapon6"
+	        {
+	            "TextureName"   "upgrade_weapon6"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "16"
+	            }
+	        }
+	
+	        "modifier_second_weapon7"
+	        {
+	            "TextureName"   "upgrade_weapon7"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "20"
+	            }
+	        }
+	
+	        "modifier_second_weapon8"
+	        {
+	            "TextureName"   "upgrade_weapon8"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "24"
+	            }
+	        }
+	
+	        "modifier_second_weapon9"
+	        {
+	            "TextureName"   "upgrade_weapon9"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "30"
+	            }
+	        }
+	
+	        "modifier_second_weapon10"
+	        {
+	            "TextureName"   "upgrade_weapon10"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "36"
+	            }
+	        }
+	
+	        "modifier_second_weapon11"
+	        {
+	            "TextureName"   "upgrade_weapon11"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "42"
+	            }
+	        }
+	
+	        "modifier_second_weapon12"
+	        {
+	            "TextureName"   "upgrade_weapon12"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "48"
+	            }
+	        }
+	
+	        "modifier_second_weapon13"
+	        {
+	            "TextureName"   "upgrade_weapon13"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "56"
+	            }
+	        }
+	
+	        "modifier_second_weapon14"
+	        {
+	            "TextureName"   "upgrade_weapon14"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "64"
+	            }
+	        }
+	
+	        "modifier_second_weapon15"
+	        {
+	            "TextureName"   "upgrade_weapon15"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "72"
+	            }
+	        }
+	
+	        "modifier_second_weapon16"
+	        {
+	            "TextureName"   "upgrade_weapon16"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "80"
+	            }
+	        }
+	
+	        "modifier_second_weapon17"
+	        {
+	            "TextureName"   "upgrade_weapon17"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "90"
+	            }
+	        }
+	
+	        "modifier_second_weapon18"
+	        {
+	            "TextureName"   "upgrade_weapon18"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "100"
+	            }
+	        }
+	
+	        "modifier_second_weapon19"
+	        {
+	            "TextureName"   "upgrade_weapon19"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "110"
+	            }
+	        }
+	
+	        "modifier_second_weapon20"
+	        {
+	            "TextureName"   "upgrade_weapon20"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "120"
+	            }
+	        }
+	
+	        "modifier_second_weapon21"
+	        {
+	            "TextureName"   "upgrade_weapon21"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "130"
+	            }
+	        }
+	
+	        "modifier_second_weapon22"
+	        {
+	            "TextureName"   "upgrade_weapon22"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "140"
+	            }
+	        }
+	
+	        "modifier_second_weapon23"
+	        {
+	            "TextureName"   "upgrade_weapon23"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "160"
+	            }
+	        }
+	
+	        "modifier_second_weapon24"
+	        {
+	            "TextureName"   "upgrade_weapon24"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "175"
+	            }
+	        }
+	
+	        "modifier_second_weapon25"
+	        {
+	            "TextureName"   "upgrade_weapon25"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "191"
+	            }
+	        }
+	
+	        "modifier_second_weapon26"
+	        {
+	            "TextureName"   "upgrade_weapon26"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "208"
+	            }
+	        }
+	
+	        "modifier_second_weapon27"
+	        {
+	            "TextureName"   "upgrade_weapon27"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "226"
+	            }
+	        }
+	
+	        "modifier_second_weapon28"
+	        {
+	            "TextureName"   "upgrade_weapon28"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "250"
+	            }
+	        }
+	
+	        "modifier_second_weapon29"
+	        {
+	            "TextureName"   "upgrade_weapon29"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "275"
+	            }
+	        }
+	
+	        "modifier_second_weapon30"
 	        {
 	            "TextureName"   "upgrade_weapon30"
 	            "Properties"

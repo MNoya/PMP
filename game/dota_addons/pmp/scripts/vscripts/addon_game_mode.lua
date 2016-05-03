@@ -104,6 +104,14 @@ function Precache( context )
 	PrecacheUnitByNameSync("treant_tower", context)
 	PrecacheUnitByNameSync("treant_ghost", context)
 
+	PrecacheUnitByNameSync("demon", context)
+	PrecacheUnitByNameSync("demon_leader", context)
+	PrecacheUnitByNameSync("super_demon", context)
+	PrecacheUnitByNameSync("demon_garage", context)
+	PrecacheUnitByNameSync("demon_pimpery", context)
+	PrecacheUnitByNameSync("demon_tower", context)
+	PrecacheUnitByNameSync("demon_ghost", context)
+
 	PrecacheUnitByNameSync("nian_boss", context)
 
 	PrecacheUnitByNameSync("npc_dota_hero_axe", context)

@@ -1,0 +1,75 @@
+// Spawn rate: 7 seconds
+// Spawn 1 at a time and increases with upgrade
+"spawn_demon"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_demon"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityCooldown"               "7"
+
+    "Modifiers"
+    {
+        "modifier_spawn_demon"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "ThinkInterval"     "7.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "demon"
+                }
+            }
+        }
+    }
+}
+
+// Spawn rate: 120 seconds (2 minutes) - 0 Food cost
+"spawn_demon_leader"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "spawn_demon_leader"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityCooldown"               "120"
+
+    "Modifiers"
+    {
+        "modifier_spawn_demon_caster"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/shared.lua"
+                    "Function"      "StartCooldown"
+                }
+            }
+            "ThinkInterval"     "120.0"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/spawn.lua"
+                    "Function"      "SpawnUnit"
+                    "UnitName"      "demon_leader"
+                }
+
+                "RunScript"
+                {
+                    "ScriptFile"    "sounds.lua"
+                    "Function"      "PlayAnnouncerSound"
+                    "Sound"         "Announcer.Leader.Join"
+                }
+            }
+        }
+    }
+}

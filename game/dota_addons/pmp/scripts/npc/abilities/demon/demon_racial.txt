@@ -1,0 +1,79 @@
+"demon_racial"
+{
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "demon_racial"
+    "MaxLevel"              "6"
+            
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "double_strike_chance_pct"  "30 40 50 60 70 80"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_demon_strike"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "abilities/demon/double_strike.lua"
+                    "Function"      "OnAttackLanded"
+                }
+            }
+        }
+
+        "modifier_demon_double_strike"
+        {
+            "IsHidden"  "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "1000"
+            }
+
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/custom/demon/ambient.vpcf"
+                    "EffectAttachType"  "attach_customorigin"
+                    "Target"            "TARGET"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_origin"
+                        "TARGET"    "attach_attack1"
+                        "TARGET"    "attach_attack2"
+                    }
+                }
+            }
+
+            "OnAttackLanded"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"   "modifier_demon_double_strike"
+                    "Target"         "CASTER"
+                }
+
+                "RemoveModifier"
+                {
+                    "ModifierName"   "modifier_demon_rush"
+                    "Target"         "TARGET"
+                }
+
+                "RemoveModifier"
+                {
+                    "ModifierName"   "modifier_demon_rush_dash"
+                    "Target"         "TARGET"
+                }
+            }
+        }
+    }
+}

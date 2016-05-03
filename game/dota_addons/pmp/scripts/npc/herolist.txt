@@ -13,6 +13,7 @@
 	"npc_dota_hero_drow_ranger" "-1" //Night Elf
 	"npc_dota_hero_silencer" "-1" //Blood Elf
 	"npc_dota_hero_treant" "-1" // Treant
+	"npc_dota_hero_warlock" "-1" //Demon
 
 	"npc_dota_hero_alchemist" "0"
 	"npc_dota_hero_ancient_apparition" "0"
@@ -71,7 +72,6 @@
 	"npc_dota_hero_huskar" "0"
 	"npc_dota_hero_jakiro" "0"
 	"npc_dota_hero_batrider" "0"
-	"npc_dota_hero_warlock" "0"
 	"npc_dota_hero_windrunner" "0"
 	"npc_dota_hero_death_prophet" "0"
 	"npc_dota_hero_ursa" "0"

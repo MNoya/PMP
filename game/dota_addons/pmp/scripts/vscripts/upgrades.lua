@@ -7,6 +7,7 @@ animations = {
 	["blood_elf_pimpery"]	= ACT_DOTA_CAST_ABILITY_1,
 	["goblin_pimpery"]	= ACT_DOTA_CAST_ABILITY_1,
 	["treant_pimpery"]	= ACT_DOTA_CAST_ABILITY_5,
+	["demon_pimpery"]	= ACT_DOTA_ATTACK,
 }
 
 -- This is called after a unit upgrade is purchased
@@ -146,7 +147,7 @@ function PMP:SetUpgrade( playerID, name, level )
 			if name == "wings" or name == "health" then
 				PMP:ApplyUpgrade(unit, name, level)
 			else
-				if not IsLeaderUnit(unit) or unit:HasAbility("goblin_attack") then
+				if not IsLeaderUnit(unit) or (unit:HasAbility("goblin_attack") or unit:HasAbility("demon_evasion")) then
 					PMP:ApplyUpgrade(unit, name, level)
 				end
 			end
@@ -290,7 +291,7 @@ function PMP:ApplyAllUpgrades(playerID, unit)
 			if name == "wings" or name == "health" then
 				PMP:ApplyUpgrade(unit, name, level)
 			else
-				if not IsLeaderUnit(unit) or unit:HasAbility("goblin_attack") then
+				if not IsLeaderUnit(unit) or (unit:HasAbility("goblin_attack") or unit:HasAbility("demon_evasion")) then
 					PMP:ApplyUpgrade(unit, name, level)
 				end
 			end
@@ -318,8 +319,8 @@ function PMP:ApplyOutpostUpgrades( playerID, unit )
 end
 
 heroUpgrades = {["pimp_damage"]={},["pimp_armor"]={},["pimp_speed"]={},["pimp_regen"]={}}
-slotUpgrades = {["weapon"]={},["helm"]={},["shield"]={},["wings"]={},["bow"]={},["quiver"]={}}
-slots = {"weapon","helm","shield","wings","bow","quiver"}
+slotUpgrades = {["weapon"]={},["second_weapon"]={},["helm"]={},["shield"]={},["wings"]={},["bow"]={},["quiver"]={}}
+slots = {"weapon","second_weapon","helm","shield","wings","bow","quiver"}
 
 function PMP:ResetAllUpgrades(playerID)
 	local Units = GetPlayerUnits(playerID)

@@ -71,7 +71,7 @@ function SpawnUnit( event )
             if not bHolding then
                 Timers:CreateTimer(0.05, function() 
                     unit:MoveToPositionAggressive(caster.rally_point)
-                    if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") then
+                    if IsLeaderUnit(unit) and not unit:HasAbility("goblin_attack") and not unit:HasAbility("demon_evasion") then
                         ApplyModifier(unit, "modifier_disable_autoattack")
                     end
                 end)
