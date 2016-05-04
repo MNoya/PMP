@@ -80,7 +80,7 @@ function PMP:InitGameMode()
 	GameRules:SetSameHeroSelectionEnabled( true )
 	GameRules:SetHeroSelectionTime( 30 )
 	GameRules:SetPreGameTime( 30 )
-	GameRules:SetPostGameTime( 600 )
+	GameRules:SetPostGameTime( 100 )
 	GameRules:SetTreeRegrowTime( 10000.0 )
 	GameRules:SetUseCustomHeroXPValues ( true )
 	GameRules:SetUseBaseGoldBountyOnHeroes( false ) -- Need to check legacy values
@@ -130,6 +130,12 @@ function PMP:InitGameMode()
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
+        VALID_TEAMS =  {DOTA_TEAM_GOODGUYS,
+                        DOTA_TEAM_BADGUYS,DOTA_TEAM_CUSTOM_1,
+                        DOTA_TEAM_CUSTOM_2,DOTA_TEAM_CUSTOM_3,
+                        DOTA_TEAM_CUSTOM_4,DOTA_TEAM_CUSTOM_5,
+                        DOTA_TEAM_CUSTOM_6,DOTA_TEAM_CUSTOM_7,}
+        PMP_MAX_PLAYERS = 9
 
         GameRules.PlayersPerTeam = 1
         GameRules.Positions = false
@@ -140,6 +146,8 @@ function PMP:InitGameMode()
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 3 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 3 )
         GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 3 )
+        VALID_TEAMS = {DOTA_TEAM_GOODGUYS,DOTA_TEAM_BADGUYS,DOTA_TEAM_CUSTOM_1,DOTA_TEAM_CUSTOM_2,}
+        PMP_MAX_PLAYERS = 12
         GameRules:EnableCustomGameSetupAutoLaunch(false)
         
         GameRules.PlayersPerTeam = 3
@@ -755,6 +763,9 @@ function PMP:OnGameRulesStateChange(keys)
 	if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
         PMP:PostLoadPrecache()
         PMP:OnAllPlayersLoaded()
+
+        Timers:CreateTimer(0.1, AI:SpawnBots())
+
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		PMP:OnGameInProgress()
 	end

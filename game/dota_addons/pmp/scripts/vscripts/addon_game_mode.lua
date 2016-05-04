@@ -21,6 +21,7 @@ require('wearables')
 require('sounds')
 require('damage')
 require('tutorial')
+require('ai/manager')
 require('abilities/boss_ai')
 
 ---------------------------------------------------------------------------
