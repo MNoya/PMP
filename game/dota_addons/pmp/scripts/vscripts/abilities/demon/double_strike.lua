@@ -3,7 +3,7 @@ function OnAttackLanded(event)
     local target = event.target
     local ability = event.ability
 
-    if caster:HasModifier("modifier_demon_edge") then
+    if caster:HasModifier("modifier_demon_rush") then
         caster.double_strike = true
         ability:ApplyDataDrivenModifier(caster, caster, "modifier_demon_double_strike", {duration=1})
         return

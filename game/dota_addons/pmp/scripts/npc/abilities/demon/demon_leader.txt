@@ -45,10 +45,11 @@
     "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
     "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
     "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+    "AnimationPlaybackRate"     "2"
     "AbilityTextureName"        "demon_rush"
     "MaxLevel"                  "1"
 
-    "AbilityManaCost"           "10"
+    //"AbilityManaCost"           "10"
     "AbilityCooldown"           "2"
     "AbilityCastRange"          "900"
 
@@ -183,12 +184,12 @@
         "01"
         {
             "var_type"              "FIELD_FLOAT"
-            "move_speed_bonus"      "20"
+            "move_speed_bonus"      "30"
         }
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "health_regen_bonus_pct" "0.5"
+            "health_regen_bonus_pct" "1"
         }
         "03"
         {

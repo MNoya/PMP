@@ -4,8 +4,11 @@ function CheckAggro( event )
     if target then
         if unit:GetRangeToUnit(target) < 900 then
             unit:SetForceAttackTarget(target)
-            event.ability:ApplyDataDrivenModifier(unit, unit, "modifier_demon_rush_dash", {})
             Timers:CreateTimer(0.1, function() unit:SetForceAttackTarget(nil) end)
+            local ability = event.ability
+            if ability then
+                ability:ApplyDataDrivenModifier(unit, unit, "modifier_demon_rush_dash", {})
+            end
         end
     else
         if unit:HasModifier("modifier_demon_rush_dash") then
