@@ -1429,15 +1429,15 @@
         
 
         "DOTA_Tooltip_ability_item_upgrade_stun_hit1"                                     "Прокачать Оглушающий Удар 1"
-        "DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "Дает 20%% шанс оглушить противника на 1 секунду и нанести ему 10 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "Дает 15%% шанс оглушить противника на 1 секунду."
         "DOTA_Tooltip_ability_item_upgrade_stun_hit2"                                     "Прокачать Оглушающий Удар 2"
-        "DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "Дает 21%% шанс оглушить противника на 2 секунды и нанести ему 15 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "Дает 20%% шанс оглушить противника на 1.5 секунды."
         "DOTA_Tooltip_ability_item_upgrade_stun_hit3"                                     "Прокачать Оглушающий Удар 3"
-        "DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "Дает 22%% шанс оглушить противника на 3 секунды и нанести ему 20 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "Дает 25%% шанс оглушить противника на 2 секундыа."
         "DOTA_Tooltip_ability_item_upgrade_stun_hit4"                                     "Прокачать Оглушающий Удар 4"
-        "DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "Дает 23%% шанс оглушить противника на 4 секунды и нанести ему 25 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "Дает 30%% шанс оглушить противника на 2.5 секунды."
         "DOTA_Tooltip_ability_item_upgrade_stun_hit5"                                     "Прокачать Оглушающий Удар 5"
-        "DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         "Дает 25%% шанс оглушить противника на 5 секунд и нанести ему 30 бонусного урона."
+        "DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         "Дает 35%% шанс оглушить противника на 3 секунд."
 
         "DOTA_Tooltip_ability_item_upgrade_stun_hit1_duration"                            "ПРОДОЛЖИТЕЛЬНОСТЬ:"
         "DOTA_Tooltip_ability_item_upgrade_stun_hit1_stun_chance"                         "ШАНС ОГЛУШИТЬ:"

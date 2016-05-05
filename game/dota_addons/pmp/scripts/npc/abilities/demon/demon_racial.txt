@@ -47,7 +47,7 @@
                     "Target"            "TARGET"
                     "ControlPointEntities"
                     {
-                        "TARGET"    "attach_origin"
+                        "TARGET"    "attach_hitloc"
                         "TARGET"    "attach_attack1"
                         "TARGET"    "attach_attack2"
                     }

@@ -252,17 +252,12 @@
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "1.0 2.0 3.0 4.0 5.0"
+            "duration"              "1.0 1.5 2.0 2.5 3.0"
         }
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "stun_chance"           "20 21 22 23 25"
-        }
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "bonus_damage"          "10 15 20 25 30"
+            "stun_chance"           "15 20 25 30 35"
         }
     }
 
@@ -303,17 +298,12 @@
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "1.0 2.0 3.0 4.0 5.0"
+            "duration"              "1.0 1.5 2.0 2.5 3.0"
         }
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "stun_chance"           "20 21 22 23 25"
-        }
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "bonus_damage"          "10 15 20 25 30"
+            "stun_chance"           "15 20 25 30 35"
         }
     }
     "ItemCost"                      "100"
@@ -354,17 +344,12 @@
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "1.0 2.0 3.0 4.0 5.0"
+            "duration"              "1.0 1.5 2.0 2.5 3.0"
         }
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "stun_chance"           "20 21 22 23 25"
-        }
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "bonus_damage"          "10 15 20 25 30"
+            "stun_chance"           "15 20 25 30 35"
         }
     }
 
@@ -404,17 +389,12 @@
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "1.0 2.0 3.0 4.0 5.0"
+            "duration"              "1.0 1.5 2.0 2.5 3.0"
         }
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "stun_chance"           "20 21 22 23 25"
-        }
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "bonus_damage"          "10 15 20 25 30"
+            "stun_chance"           "15 20 25 30 35"
         }
     }
 
@@ -454,17 +434,12 @@
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "1.0 2.0 3.0 4.0 5.0"
+            "duration"              "1.0 1.5 2.0 2.5 3.0"
         }
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "stun_chance"           "20 21 22 23 25"
-        }
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "bonus_damage"          "10 15 20 25 30"
+            "stun_chance"           "15 20 25 30 35"
         }
     }
 

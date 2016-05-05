@@ -1383,15 +1383,15 @@
 		
 
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit1"                                     "升级眩晕重击(1)"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "攻击时有20%%几率对敌人造成10点额外伤害并使其眩晕1秒。"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_Description"                         "攻击时有15%%几率对敌人造成10点额外伤害并使其眩晕1秒。"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit2"                                     "升级眩晕重击(2)"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "攻击时有21%%几率对敌人造成15点额外伤害并使其眩晕2秒。"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit2_Description"                         "攻击时有20%%几率对敌人造成15点额外伤害并使其眩晕1.5秒。"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit3"                                     "升级眩晕重击(3)"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "攻击时有22%%几率对敌人造成20点额外伤害并使其眩晕3秒。"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit3_Description"                         "攻击时有25%%几率对敌人造成20点额外伤害并使其眩晕2秒。"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit4"                                     "升级眩晕重击(4)"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "攻击时有23%%几率对敌人造成25点额外伤害并使其眩晕4秒。"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit4_Description"                         "攻击时有30%%几率对敌人造成25点额外伤害并使其眩晕2.5秒。"
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit5"                                     "升级眩晕重击(5)"
-		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         "攻击时有25%%几率对敌人造成30点额外伤害并使其眩晕5秒。"
+		"DOTA_Tooltip_ability_item_upgrade_stun_hit5_Description"                         "攻击时有35%%几率对敌人造成30点额外伤害并使其眩晕3秒。"
 
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_duration"                            "持续时间："
 		"DOTA_Tooltip_ability_item_upgrade_stun_hit1_stun_chance"                         "眩晕几率："
