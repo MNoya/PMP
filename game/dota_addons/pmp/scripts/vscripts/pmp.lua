@@ -217,6 +217,7 @@ function PMP:InitGameMode()
 
     GameRules.APPLIER = CreateItem("item_apply_modifiers", nil, nil)
     GameRules.UPGRADER = CreateItem("item_upgrade_modifiers", nil, nil)
+    GameRules.ADDON_ENGLISH = LoadKeyValues("resource/addon_english.txt")
 
     -- Lumber AbilityValue, credits to zed https://github.com/zedor/AbilityValues
     Convars:RegisterCommand( "ability_values_entity", function(name, entityIndex)
@@ -385,10 +386,17 @@ end
 -- A player picked a hero
 function PMP:OnPlayerPickHero(keys)
 	--print ('[PMP] OnPlayerPickHero')
+
     local heroName = keys.hero
     local hero = EntIndexToHScript(keys.heroindex)
     local player = EntIndexToHScript(keys.player)
     local playerID = player:GetPlayerID()
+
+    -- Setup bots in AI Spawn
+    --[[if PlayerResource:IsFakeClient(playerID) then
+        return
+    end]]
+
     local teamNumber = hero:GetTeamNumber()
     local race = GetRace(hero)
     local playerName = PlayerResource:GetPlayerName(playerID)
@@ -468,45 +476,6 @@ function PMP:OnPlayerPickHero(keys)
     --print("[PMP] Setting Up Barricades")
     hero.barricade_positions = {}
     hero.barricades = {}
-    --[[local Barricades = GameRules.Barricades
-    local randomN = Barricades["Random"]
-
-    local barricadeEntsX = Entities:FindAllByNameWithin("*barricade_positionX", center_position, 1200)
-    for k,v in pairs(barricadeEntsX) do
-        local pos = v:GetAbsOrigin()
-
-        for i=-1,1 do
-            local nBarricade = tostring(RandomInt(1, randomN))
-            local posX = pos+Vector(i*70,0,0)
-            local barricade = CreateUnitByName("barricade", posX, false, hero, hero, teamNumber)
-            barricade:SetModel(Barricades[nBarricade]["Model"])
-            barricade:SetModelScale(Barricades[nBarricade]["Scale"])
-            barricade:SetAngles(0, RandomInt(0,360), 0)
-            barricade:SetAbsOrigin(GetGroundPosition(posX, barricade))
-            barricade:SetOwner(hero)
-            table.insert(hero.barricades, barricade)
-        end
-
-        table.insert(hero.barricade_positions, pos)
-    end
-
-    local barricadeEntsY = Entities:FindAllByNameWithin("*barricade_positionY", center_position, 1200)
-    for k,v in pairs(barricadeEntsY) do
-        local pos = v:GetAbsOrigin()
-
-        for i=-1,1 do
-            local nBarricade = tostring(RandomInt(1, randomN))
-            local posY = pos+Vector(0,i*70,0)
-            local barricade = CreateUnitByName("barricade", posY, false, hero, hero, teamNumber)
-            barricade:SetModel(Barricades[nBarricade]["Model"])
-            barricade:SetModelScale(Barricades[nBarricade]["Scale"])
-            barricade:SetAngles(0, RandomInt(0,360), 0)
-            barricade:SetAbsOrigin(GetGroundPosition(posY, barricade))
-            table.insert(hero.barricades, barricade)
-        end
-
-        table.insert(hero.barricade_positions, pos)
-    end]]
 
     -- Tracking
     hero.lumber = 0
@@ -571,11 +540,11 @@ function PMP:OnPlayerPickHero(keys)
 
         if Convars:GetBool('developer') then
             local steamID = PlayerResource:GetSteamAccountID(playerID)
-            if steamID == 86718505 then
+            --[[if steamID == 86718505 then
                 SetGold(playerID, 50000)
                 SetLumber(playerID, 50000)
                 --SetFoodLimit(playerID, 100)
-            end
+            end]]
         end
 
         -- Set initial units
@@ -660,29 +629,31 @@ function PMP:OnHeroInGame(hero)
     -- Check for excess resources periodically
     local playerID = hero:GetPlayerID()
     local excessInterval = 30
-    Timers:CreateTimer(excessInterval + RandomInt(2, 4), function() 
-        if not hero.lost then
-            if CanAffordAllGoldUpgrades(playerID) then
-                Sounds:EmitSoundOnClient(playerID, "Announcer.Resource.ExcessGold")
+    if not PlayerResource:IsFakeClient(playerID) then
+        Timers:CreateTimer(excessInterval + RandomInt(2, 4), function() 
+            if not hero.lost then
+                if CanAffordAllGoldUpgrades(playerID) then
+                    Sounds:EmitSoundOnClient(playerID, "Announcer.Resource.ExcessGold")
+                end
+
+                return excessInterval
+            else
+                return
             end
+        end)
 
-            return excessInterval
-        else
-            return
-        end
-    end)
+        Timers:CreateTimer(45 + RandomInt(2, 4), function() 
+            if not hero.lost then
+                if CanAffordAllLumberUpgrades(playerID) then
+                    Sounds:EmitSoundOnClient(playerID, "Announcer.Resource.ExcessLumber")
+                end
 
-    Timers:CreateTimer(45 + RandomInt(2, 4), function() 
-        if not hero.lost then
-            if CanAffordAllLumberUpgrades(playerID) then
-                Sounds:EmitSoundOnClient(playerID, "Announcer.Resource.ExcessLumber")
+                return excessInterval
+            else
+                return
             end
-
-            return excessInterval
-        else
-            return
-        end
-    end)
+        end)
+    end
 end
 
 -- An entity somewhere has been hurt.
@@ -764,7 +735,7 @@ function PMP:OnGameRulesStateChange(keys)
         PMP:PostLoadPrecache()
         PMP:OnAllPlayersLoaded()
 
-        Timers:CreateTimer(0.1, AI:SpawnBots())
+        Timers:CreateTimer(0.1, function() AI:SpawnBots() end)
 
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		PMP:OnGameInProgress()
@@ -1052,6 +1023,10 @@ function PMP:OnPlayerLevelUp(keys)
     local player = EntIndexToHScript(keys.player)
     local level = keys.level
     local playerID = player:GetPlayerID()
+
+    if PlayerResource:IsFakeClient(playerID) then
+        AI:OnLevelUp(playerID)
+    end
 
     Timers:CreateTimer(3, function()
         Sounds:EmitSoundOnClient( playerID, "Announcer.Upgrade.Level" )

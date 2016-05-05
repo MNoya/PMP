@@ -8,7 +8,8 @@ function SpawnUnit( event )
     local position = caster:GetAbsOrigin()
 
     -- Don't spawn while disconnected
-    if PlayerResource:GetConnectionState(playerID) ~= DOTA_CONNECTION_STATE_CONNECTED then
+    local state = PlayerResource:GetConnectionState(playerID)
+    if not (state == DOTA_CONNECTION_STATE_CONNECTED or state == DOTA_CONNECTION_STATE_NOT_YET_CONNECTED) then
         return
     end
 

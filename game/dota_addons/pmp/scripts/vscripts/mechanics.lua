@@ -815,7 +815,7 @@ function CreateOutpost( playerID, position )
     AddToPlayerOutposts(playerID, unit)
 
     local ability = unit:FindAbilityByName("active_outpost")
-    if ability then
+    if ability and not PlayerResource:IsFakeClient(playerID) then
         ToggleOn(ability)
     end
 end
@@ -832,7 +832,9 @@ function ChangeOutpostControl( unit, new_ownerID )
     unit:SetTeam(new_owner:GetTeamNumber())
     unit:RespawnUnit()
 
-    ToggleOn(ability)
+    if not PlayerResource:IsFakeClient(new_ownerID) then
+        ToggleOn(ability)
+    end
 
     AddToPlayerOutposts(new_ownerID, unit)
     RemoveFromPlayerOutposts(old_ownerID, unit)
@@ -937,6 +939,26 @@ end
 
 -------------------------------
 
+function CDOTABaseAbility:CanBeAffordedByPlayer(playerID)
+    local gold_cost = self:GetGoldCost(self:GetLevel())
+    local lumber_cost = self:GetSpecialValueFor("lumber_cost")
+    local current_gold = GetGold(playerID)
+    local current_lumber = GetLumber(playerID)
+    local enoughGold = not gold_cost or current_gold >= gold_cost
+    local enoughLumber = not lumber_cost or current_lumber >= lumber_cost
+    return enoughGold and enoughLumber
+end
+
+function CDOTA_BaseNPC:FindItemByName(item_name)
+    for i=0,15 do
+        local item = self:GetItemInSlot(i)
+        if item and item:GetAbilityName() == item_name then
+            return item
+        end
+    end
+    return nil
+end
+
 function CanAffordAllGoldUpgrades(playerID)
     local maxGoldRequired = GetMaxGoldCostFromAbilities(playerID)
 
@@ -1003,4 +1025,8 @@ function GetMaxLumberCostFromAbilities(playerID)
     end
 
     return maxCost
+end
+
+function GetEnglishTranslation(key)
+    return GameRules.ADDON_ENGLISH.Tokens[key]
 end

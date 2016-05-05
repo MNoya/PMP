@@ -68,13 +68,13 @@ function UpgradeFinished( event )
 			caster:SwapAbilities(new_ability_name, old_ability_name, true, false)
 			caster:RemoveAbility(old_ability_name)
 
-			print("New Rank: "..new_ability_name)
+			--print("New Rank: "..new_ability_name)
 			new_ability:SetLevel(new_ability:GetMaxLevel())
 			--new_ability:StartCooldown(1)
 
 			Sounds:PlayUpgradeSound(pID, upgrade_name)
 		else
-			print("Max Rank of "..upgrade_name.." reached!")
+			--print("Max Rank of "..upgrade_name.." reached!")
 
 			-- Add a filler ability showing the last rank has been reached
 			local filler_name = "upgrade_"..upgrade_name.."_final"
@@ -136,7 +136,7 @@ function PMP:SetUpgrade( playerID, name, level )
 	end
 	upgrades[name] = level
 
-	print("SetUpgrade: "..name.." Level "..level)
+	--print("SetUpgrade: "..name.." Level "..level)
 
 	local Units = GetPlayerUnits(playerID)
 
@@ -179,7 +179,7 @@ function PMP:SetUpgrade( playerID, name, level )
 	if name == "pimp_regen" or name == "pimp_armor" then
 		local Outposts = GetPlayerOutposts(playerID)
 		for _,unit in pairs(Outposts) do
-			print("SetUpgrade!!!!! OUTPOST")
+			--print("SetUpgrade!!!!! OUTPOST")
 			PMP:ApplyUpgrade(unit, name, level)
 		end
 	end
