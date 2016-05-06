@@ -20,7 +20,7 @@ function AI:SpawnBots()
 
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, bots_required + PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) )
     for playerID=player_count,PMP_MAX_PLAYERS-1 do
-        Timers:CreateTimer(playerID*2, function()
+        Timers:CreateTimer((playerID-1)*3, function()
             AI:print("AddBot "..playerID)
             Tutorial:AddBot(races[RandomInt(1,#races)],'','',false)
 
@@ -112,7 +112,7 @@ function AI:Think(playerID)
     AI:GroupUnits(playerID)
 
     Timers:CreateTimer(30, function()
-        if not PlayerResource:GetSelectedHeroEntity(targetEnemy).lost then
+        if not PlayerResource:GetSelectedHeroEntity(playerID).lost then
             AI:AcquireWeakEnemy(playerID)
             return 30
         end
@@ -264,47 +264,51 @@ function AI:AcquireWeakEnemy(playerID)
     local targetEnemy
     local teamNumber = PlayerResource:GetTeam(playerID)
     local origin = GetPlayerCityCenter(playerID):GetAbsOrigin()
-    local targetDistance = 99999
-    local targetKills = 99999
+
+    --[[Distance to nearby base is ~2.5k, ~3.6k in diagonal, ~5.7k to the other side, ~7.2k on cross diagonal
+    Logic should be:
+        If there is a target reachable on the side (first <3k, then <4k) attack the best of those
+        If there isn't, find on the whole map
+    --]]
+
+    local thresholds = {3000,4000,6000,10000}
     local myKills = PlayerResource:GetKills(playerID)
-
-    for _,hero in pairs(GameRules.StillInGame) do
-        local pID = hero:GetPlayerID()
-        if PlayerResource:GetTeam(pID) ~= teamNumber then
-            local kills = PlayerResource:GetKills(pID)
-            local distance = (origin - hero:GetAbsOrigin()):Length2D()
-
-            --[[Distance to nearby base is ~2.5k, ~3.6k in diagonal, ~5.7k to the other side, ~7.2k on cross diagonal
-            Logic should be:
-                If there is a target reachable on the side (first <3k, then <4k) attack the best of those
-                If there isn't, find on the whole map
-            --]]
-            if distance < 3000 then
-                if kills <= targetKills then
+    local targetKills = 99999
+    for _,distance in pairs(thresholds) do
+        local enemyList = AI:GetEnemiesBelowDistance(teamNumber, origin, distance)
+        if #enemyList > 0 then
+            for _,pID in pairs(enemyList) do
+                local kills = PlayerResource:GetKills(pID)
+                if kills < targetKills then
                     targetEnemy = pID
-                    targetDistance = distance
                     targetKills = kills
                 end
-
-            elseif distance < 4000 and targetDistance >= 3000 then
-                if kills <= targetKills then
-                    targetEnemy = pID
-                    targetDistance = distance
-                    targetKills = kills
-                end
-
-            else --Only attack an enemy past 4k if there is no one close to attack
-                if kills <= targetKills then
-                    targetEnemy = pID
-                    targetDistance = distance
-                    targetKills = kills
-                end              
             end
+            break
         end
     end
     
-    AI:print("SetBotAttackTarget "..playerID..": ".. targetEnemy.." with "..targetKills.." kills at "..targetDistance.." distance","AcquireWeakEnemy")
-    AI:SetBotAttackTarget(playerID, targetEnemy)
+    if targetEnemy then
+        local targetDistance = (origin - PlayerResource:GetSelectedHeroEntity(targetEnemy):GetAbsOrigin()):Length2D()
+        --AI:print("SetBotAttackTarget "..playerID..": ".. targetEnemy.." with "..targetKills.." kills at "..targetDistance.." distance","AcquireWeakEnemy")
+        AI:SetBotAttackTarget(playerID, targetEnemy)
+    else
+        AI:print("Something is wrong, no target found for "..playerID..", this shouldn't happen unless the game is over")
+    end
+end
+
+function AI:GetEnemiesBelowDistance(teamNumber, origin, maxDistance)
+    local list = {}
+    for _,hero in pairs(GameRules.StillInGame) do
+        local playerID = hero:GetPlayerID()
+        if PlayerResource:GetTeam(playerID) ~= teamNumber then
+            local distance = (origin - hero:GetAbsOrigin()):Length2D()
+            if distance <= maxDistance then
+                table.insert(list, playerID)
+            end
+        end
+    end
+    return list
 end
 
 function AI:ActiveLog( level )
