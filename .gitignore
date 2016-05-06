@@ -17,7 +17,10 @@
 # Stat keys
 game/dota_addons/*/scripts/vscripts/statcollection/settings.kv
 
-#Github dump
+# Github dump
 *.stackdump
+
+panorama_debugger.cfg
+game/dota_addons/pmp/scripts/vscripts/ai/logs/*
 
 !game/dota_addons/pmp/skeletonking/materials/models/heroes/skeleton_king/*

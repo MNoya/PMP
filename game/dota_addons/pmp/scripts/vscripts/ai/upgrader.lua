@@ -15,40 +15,57 @@ function AI:UseResources(playerID)
     local shop = GetPlayerShop(playerID)
     local garage = GetPlayerCityCenter(playerID)
     
-    local nextGold = self:GetNextGoldUpgrade(playerID)
-    local nextLumber = self:GetNextLumberUpgrade(playerID)
-
     self:print("UseResources "..GetGold(playerID).." gold & "..GetLumber(playerID).." lumber","Resource")
 
     if IsValidAlive(shop) and IsValidAlive(garage) then
+        local nextGold = self:GetNextGoldUpgrade(playerID)
+        local nextLumber = self:GetNextLumberUpgrade(playerID)
+
         if nextGold then
             self:print("Next Gold upgrade: "..nextGold,"Resource")
-            if self:TryUpgrade(playerID, shop, nextGold) or self:TryUpgrade(playerID, garage, nextGold) then
+            local unit = shop
+            local upgrade_ability = unit:FindAbilityByName(nextGold) or unit:FindItemByName(nextGold)
+            if not upgrade_ability then
+                unit = garage
+                upgrade_ability = unit:FindAbilityByName(nextGold)
+            end
+
+            if not upgrade_ability then
+                AI:Log(playerID, "Error, can't find upgrade ability "..nextGold)
+                local upgrades = PMP:GetUpgradeList(playerID)
+                for k,v in pairs(upgrades) do
+                    AI:Log(playerID, "    " ..k..": "..v)
+                end
+            elseif upgrade_ability:CanBeAffordedByPlayer(playerID) then
+                AI:Log(playerID, "Used "..nextGold)
                 self:print("SUCCESS: Upgraded "..nextGold,"Resource")
+                upgrade_ability:CastAbility()
                 self:IncrementNextGoldUpgrade(playerID)
             end
         end
 
         if nextLumber then
-            self:print("Next Lumber upgrade: "..nextLumber,"Resource")
-            if self:TryUpgrade(playerID, shop, nextLumber) then
-                self:print("SUCCESS: Upgraded "..nextLumber,"Resource")
+            local build = self:GetBuild(playerID)
+            local level = build.next_lumber_upgrade
+            self:print("Current Lumber upgrade of "..playerID..": "..nextLumber.."("..level..")","Resource")
+            
+            local upgrade_ability = shop:FindAbilityByName(nextLumber)
+            if not upgrade_ability then
+                AI:Log(playerID, "Error, can't find upgrade ability "..nextLumber)
+                local upgrades = PMP:GetUpgradeList(playerID)
+                for k,v in pairs(upgrades) do
+                    if tonumber(v) > 0 then
+                        AI:Log(playerID,"    "..k.." "..v)
+                    end
+                end
+
+            elseif upgrade_ability:CanBeAffordedByPlayer(playerID) then
+                ExecuteOrderFromTable({UnitIndex = shop:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET, AbilityIndex = upgrade_ability:GetEntityIndex(), Queue = 1}) 
+                AI:Log(playerID, "Used "..nextLumber.." - next : "..self:GetNextLumberUpgrade(playerID))
                 self:IncrementNextLumberUpgrade(playerID)
             end
         end
     end
-end
-
-function AI:TryUpgrade(playerID, unit, upgrade_name) 
-    local upgrade_ability = unit:FindAbilityByName(upgrade_name) or unit:FindItemByName(upgrade_name)
-    if upgrade_ability then
-        if upgrade_ability:CanBeAffordedByPlayer(playerID) then
-            self:print("Casting "..upgrade_name.." on "..unit:GetUnitName(),"Resource")
-            unit:CastAbilityNoTarget(upgrade_ability, playerID)
-            return true
-        end
-    end
-    return false
 end
 
 function AI:IncrementNextGoldUpgrade(playerID)
@@ -74,5 +91,5 @@ function AI:GetNextLumberUpgrade(playerID)
 end
 
 function AI:GetBuild( playerID )
-    return self.Players[playerID].Build
+    return AI.Players[playerID].Build
 end

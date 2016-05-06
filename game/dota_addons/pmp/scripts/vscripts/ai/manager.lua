@@ -1,16 +1,24 @@
 if not AI then
     AI = class({})
-    require("ai/controller")
-    require("ai/upgrader")
 end
+
+require("ai/controller")
+require("ai/upgrader")
+require("ai/debug")
 
 function AI:Init()
     AI.Players = {}
-    AI.Log = {}
-    AI.Log["Resource"] = false
-    AI.Log["Movement"] = false
+    AI.Logs = {}
+    AI.PrintLevels = {}
+
+    AI.PrintLevels["Resource"] = false
+    AI.PrintLevels["Upgrades"] = true
+    AI.PrintLevels["Movement"] = false
+
     AI.Settings = LoadKeyValues("scripts/kv/ai_settings.kv")
-    AI_THINK_TIME = 0.5
+    AI_THINK_TIME = 1
+
+    Convars:RegisterCommand("aidebug_upgrades", function(...) AI:DebugUpgrades(...) end, "", 0)
 end
 
 local races = {"npc_dota_hero_axe","npc_dota_hero_undying","npc_dota_hero_skeleton_king","npc_dota_hero_meepo","npc_dota_hero_dragon_knight",
@@ -21,7 +29,7 @@ function AI:SpawnBots()
     local bots_required = PMP_MAX_PLAYERS - player_count
 
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, bots_required + PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) )
-    for playerID=player_count,PMP_MAX_PLAYERS-1 do
+    for playerID=player_count,player_count+bots_required-1 do
         Timers:CreateTimer((playerID-1)*3, function()
             AI:print("AddBot "..playerID)
             Tutorial:AddBot(races[RandomInt(1,#races)],'','',false)
@@ -63,10 +71,12 @@ function AI:InitFakePlayer(playerID)
 
         print("InitFakePlayer "..playerID.." "..playerName.." on team "..teamNumber)
 
-        self.Players[playerID] = {}
-        self.Players[playerID].Build = self.Settings['Builds']['Generic']
-        self.Players[playerID].Build.next_gold_upgrade = 1
-        self.Players[playerID].Build.next_lumber_upgrade = 1
+        AI:InitPlayerLog(playerID)
+
+        AI.Players[playerID] = {}
+        AI.Players[playerID].Build = LoadKeyValues("scripts/kv/ai_settings.kv")['Builds']['Generic']
+        AI.Players[playerID].Build.next_gold_upgrade = 1
+        AI.Players[playerID].Build.next_lumber_upgrade = 1
 
         hero:SetTeam(teamNumber)
         hero:SetPlayerID(playerID)
@@ -117,10 +127,6 @@ function AI:Think(playerID)
             return 30
         end
     end)
-end
-
-function AI:ActiveLog( level )
-    return AI.Log[level]
 end
 
 function AI:print(str, level)
