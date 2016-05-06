@@ -92,8 +92,6 @@ function AI:InitFakePlayer(playerID)
         SetGold(playerID, INITIAL_GOLD+20)
         SetLumber(playerID, INITIAL_LUMBER+20)
 
-        table.insert(GameRules.StillInGame, hero)
-
         Timers:CreateTimer(function()
             if GameRules:State_Get() >= DOTA_GAMERULES_STATE_PRE_GAME then
                 if not hero.lost then

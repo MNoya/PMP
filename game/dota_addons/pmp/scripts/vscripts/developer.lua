@@ -171,7 +171,7 @@ function PMP:GG(winningTeam)
     print(winningTeam," is the Winner")
     GameRules.Winner = winningTeam
 
-    Timers:CreateTimer(3, function()
+    Timers:CreateTimer(5, function()
         GameRules:SetGameWinner(winningTeam)
     end)
 
@@ -241,10 +241,12 @@ function PMP:GG(winningTeam)
         unit:SetAngles(0,90,0)
         local race = GetRace(unit)
         local animation = endAnimations[race]
-        local duration = victoryAnimDurations[race]/30
+        local duration = victoryAnimDurations[race] and victoryAnimDurations[race]/30
         Timers:CreateTimer(function()
             if race == "night_elf" then
                 StartAnimation(unit, {duration=duration, activity=animation, rate=1, translate="whats_that"})
+            elseif race == "demon" then
+                unit:StartGesture(ACT_DOTA_RUN)
             else
                 StartAnimation(unit, {duration=duration, activity=animation, rate=1})
             end
