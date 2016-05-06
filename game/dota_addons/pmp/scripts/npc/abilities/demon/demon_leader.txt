@@ -123,6 +123,11 @@
             {
                 "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "1000"
             }
+
+            "States"
+            {
+                "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+            }
         }
 
         "modifier_demon_rush_autocast"
@@ -216,6 +221,7 @@
 
         "modifier_unholy_aura_buff"
         {
+            "TextureName"       "demon_unholy_aura"
             "Properties"
             {
                 "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"     "%health_regen_bonus_pct"

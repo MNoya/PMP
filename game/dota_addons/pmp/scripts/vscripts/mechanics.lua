@@ -1027,6 +1027,13 @@ function GetMaxLumberCostFromAbilities(playerID)
     return maxCost
 end
 
+function IterateAbilities( unit, callback )
+    for i=0,15 do
+        local ability = unit:GetAbilityByIndex(i)
+        if ability then callback(ability) end
+    end
+end
+
 function GetEnglishTranslation(key)
     return GameRules.ADDON_ENGLISH.Tokens[key]
 end

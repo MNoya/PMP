@@ -20,7 +20,7 @@ end
 function AutocastLogic( event )
     local caster = event.caster
     local ability = event.ability
-    local autocast_radius = ability:GetCastRange()
+    local autocast_radius = ability and ability:GetCastRange() or 900
     local modifierName = "modifier_demon_rush"
 
     -- Get if the ability is on autocast mode and cast the ability on a valid target
