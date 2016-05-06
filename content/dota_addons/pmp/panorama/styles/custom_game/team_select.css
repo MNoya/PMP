@@ -11,6 +11,8 @@
     background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
     box-shadow: inset #000000 0px 2px 6px 3px;
     border-bottom: 1px solid #404b4a11;
+    border-radius: 10px;
+    opacity: 0.8;
 }
 
 #ToggleSettings
@@ -38,14 +40,13 @@
     visibility: visible;
 
     background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
-    opacity: 0.8;
+    opacity: 1;
     z-index: 5;
 }
  
 .SettingsHeader
 {
     margin-top: 3px;
-    margin-left: -9px;
     horizontal-align: center;
     font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
     font-size: 40px;
@@ -100,6 +101,7 @@
     horizontal-align: center;
     margin-left: 0px;
 }
+
 .SettingBoxSelected
 {
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #225927 ), to( #65CF6E ) );

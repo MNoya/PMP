@@ -830,6 +830,7 @@
 	        "modifier_demon_rush"
 	        {
 	            "ThinkInterval"  "0.1"
+	            "TextureName"   "demon_rush"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"

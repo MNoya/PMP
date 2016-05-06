@@ -25,8 +25,11 @@
 
 	        <Label id='AdvancedOptions' class='SettingHeader' text="\nAdvanced Options" style="" />
 	        <Panel id="ToggleSettings">
+
 		        <ToggleButton id="Positions" text="Fixed Team Positions" onactivate="SetOption('Positions')"/>
+		    	<ToggleButton id="FillWithBots" checked="false" text="Fill With Bots" onactivate="SetOption('FillWithBots')"/>
 		        <ToggleButton id="BossRoam" checked="false" text="Boss Roam" onactivate="SetOption('BossRoam')"/>
+
 		        <!--<ToggleButton id="Neutrals" checked="false" text="Enable Neutrals" onactivate="SetOption('Neutrals')"/>-->
 		    </Panel>
 

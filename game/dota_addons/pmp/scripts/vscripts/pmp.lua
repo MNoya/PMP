@@ -156,9 +156,12 @@ function PMP:InitGameMode()
         statCollection:setFlags({fixed_positions = GameRules.Positions})    
     end
 
-    --GameRules["Neutrals"]
+    GameRules.BossRoam = false
+    GameRules.FillWithBots = true
 
+    statCollection:setFlags({use_bots = GameRules.PlayersPerTeam})
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
+    statCollection:setFlags({boss_roam = GameRules.BossRoam})
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
@@ -735,7 +738,9 @@ function PMP:OnGameRulesStateChange(keys)
         PMP:PostLoadPrecache()
         PMP:OnAllPlayersLoaded()
 
-        Timers:CreateTimer(0.1, function() AI:SpawnBots() end)
+        if GameRules.FillWithBots then
+            Timers:CreateTimer(0.1, function() AI:SpawnBots() end)
+        end
 
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		PMP:OnGameInProgress()

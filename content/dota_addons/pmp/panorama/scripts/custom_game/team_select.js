@@ -10,7 +10,7 @@ var settings = ["TeamRow"];
 //Defaults
 $("#Positions").checked = true;
 $("#BossRoam").checked = false;
-GameEvents.SendCustomGameEventToServer( "set_setting", {setting: "BossRoam", value: false});
+$("#FillWithBots").checked = true;
 
 function OnGameEnd() {
 	var pitch = 15
@@ -487,11 +487,12 @@ function ConstructTeamPanels () {
 	if (Map_Name == "teams")
 	{
 		$('#Settings').RemoveClass('Hidden')
+		//$('#FillWithBots').DeleteAsync(0)
 
-		// Set default on the host panel
-    	GameEvents.SendCustomGameEventToServer( "set_setting", {setting: settings[0], value: 2});
+		GameEvents.SendCustomGameEventToServer( "set_setting", {setting: settings[0], value: 2});
     }
-    else{
+    else
+    {
     	$('#PlayersPerTeam').DeleteAsync(0)
     	$('#TeamRow').DeleteAsync(0)
     	$('#Positions').DeleteAsync(0)
