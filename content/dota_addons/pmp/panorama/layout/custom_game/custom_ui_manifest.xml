@@ -58,5 +58,7 @@
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/hero_panels.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tutorial.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/statcollection.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/demon.xml" />
+        
 	</Panel>
 </root>

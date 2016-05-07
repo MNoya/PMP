@@ -1,0 +1,8 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/demon.css" />
+    </styles>
+    <Panel hittest="false" class='Root'>
+        <DOTAScenePanel id="Demon" map="background" camera="demon"/>
+    </Panel>
+</root>

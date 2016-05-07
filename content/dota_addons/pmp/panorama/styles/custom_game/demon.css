@@ -1,0 +1,14 @@
+.Root
+{
+    width: 100%;
+    height: 100%;
+}
+
+#Demon
+{
+    align: center center;
+    width: 600px;
+    height: 600px;
+    opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
+    background-color: black;
+}
