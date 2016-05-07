@@ -940,12 +940,14 @@ end
 -------------------------------
 
 function CDOTABaseAbility:CanBeAffordedByPlayer(playerID)
-    local gold_cost = self:GetGoldCost(self:GetLevel())
-    local lumber_cost = self:GetSpecialValueFor("lumber_cost")
+    local gold_cost = self:GetLevelSpecialValueFor("gold_cost", self:GetLevel()-1) or self:GetGoldCost(self:GetLevel())
+    local lumber_cost = self:GetLevelSpecialValueFor("lumber_cost", self:GetLevel()-1)
     local current_gold = GetGold(playerID)
     local current_lumber = GetLumber(playerID)
+
     local enoughGold = not gold_cost or current_gold >= gold_cost
     local enoughLumber = not lumber_cost or current_lumber >= lumber_cost
+
     return enoughGold and enoughLumber
 end
 

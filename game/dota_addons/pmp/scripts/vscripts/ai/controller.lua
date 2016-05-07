@@ -49,7 +49,7 @@ end
 
 --sorta lazy check
 function AI:AreUnitsGrouped(playerID, units)
-    return GetFoodUsed(playerID) >= GetFoodLimit(playerID)*0.7
+    return GetFoodUsed(playerID) >= GetFoodLimit(playerID)-GetSpawnRate(playerID)
 end
 
 function AI:GetBotAttackTarget(playerID)
@@ -93,8 +93,6 @@ function AI:AcquireWeakEnemy(playerID)
         --AI:print("SetBotAttackTarget "..playerID..": ".. targetEnemy.." with "..targetKills.." kills at "..targetDistance.." distance","AcquireWeakEnemy")
         --AI:print(TEAM_NUMER_TO_COLOR[PlayerResource:GetTeam(playerID)].. " bot is attacking "..TEAM_NUMER_TO_COLOR[PlayerResource:GetTeam(targetEnemy)])
         AI:SetBotAttackTarget(playerID, targetEnemy)
-    else
-        AI:print("Something is wrong, no target found for "..playerID..", this shouldn't happen unless the game is over")
     end
 end
 

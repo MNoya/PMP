@@ -67,14 +67,16 @@ function AI:InitFakePlayer(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if hero and teamNumber then
         local color = PMP:ColorForTeam( teamNumber )
+        local race = GetRace(hero)
         local playerName = GetEnglishTranslation(hero:GetUnitName()).." Bot"
 
         print("InitFakePlayer "..playerID.." "..playerName.." on team "..teamNumber)
 
         AI:InitPlayerLog(playerID)
 
+        local build = LoadKeyValues("scripts/kv/ai_settings.kv")
         AI.Players[playerID] = {}
-        AI.Players[playerID].Build = LoadKeyValues("scripts/kv/ai_settings.kv")['Builds']['Generic']
+        AI.Players[playerID].Build = build['Builds'][race] or build['Builds']['Generic']
         AI.Players[playerID].Build.next_gold_upgrade = 1
         AI.Players[playerID].Build.next_lumber_upgrade = 1
 
@@ -103,7 +105,8 @@ function AI:InitFakePlayer(playerID)
         SetLumber(playerID, INITIAL_LUMBER+20)
 
         Timers:CreateTimer(function()
-            if GameRules:State_Get() >= DOTA_GAMERULES_STATE_PRE_GAME then
+            local state = GameRules:State_Get()
+            if state >= DOTA_GAMERULES_STATE_PRE_GAME and state < DOTA_GAMERULES_STATE_POST_GAME then
                 if not hero.lost then
                     self:Think(playerID)
                     return AI_THINK_TIME
@@ -120,13 +123,6 @@ end
 function AI:Think(playerID)
     AI:UseResources(playerID)
     AI:GroupUnits(playerID)
-
-    Timers:CreateTimer(30, function()
-        if not PlayerResource:GetSelectedHeroEntity(playerID).lost then
-            AI:AcquireWeakEnemy(playerID)
-            return 30
-        end
-    end)
 end
 
 function AI:print(str, level)

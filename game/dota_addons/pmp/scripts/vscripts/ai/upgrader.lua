@@ -39,7 +39,7 @@ function AI:UseResources(playerID)
             elseif upgrade_ability:CanBeAffordedByPlayer(playerID) then
                 AI:Log(playerID, "Used "..nextGold)
                 self:print("SUCCESS: Upgraded "..nextGold,"Resource")
-                upgrade_ability:CastAbility()
+                ExecuteOrderFromTable({UnitIndex = unit:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET, AbilityIndex = upgrade_ability:GetEntityIndex(), Queue = 1}) 
                 self:IncrementNextGoldUpgrade(playerID)
             end
         end
