@@ -18,11 +18,8 @@ function SendErrorMessage( pID, string )
 end
 
 function SendDefeatedMessage( pID_attacker, pID_killed )
-    local playerName_attacker = PlayerResource:GetPlayerName(pID_attacker)
-    local playerName_killed = PlayerResource:GetPlayerName(pID_killed)
-
-    if playerName_attacker == "" then playerName_attacker = "Player "..pID_attacker+1 end
-    if playerName_killed == "" then playerName_killed = "Player "..pID_killed+1 end
+    local playerName_attacker = GetPlayerName(pID_attacker)
+    local playerName_killed = GetPlayerName(pID_killed)
 
     local team_attacker_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_attacker)) )
     local team_killed_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_killed)) )
@@ -66,6 +63,48 @@ function SendBossSlain( pID_target )
     Notifications:TopToAll({text=string1, duration=10})
     Notifications:TopToAll({image="file://{images}/custom_game/food_"..race..".png", continue=true, duration=10})
     Notifications:TopToAll({text=string2, style={color=player_color}, continue=true, duration=10})
+end
+
+function GetPlayerName(playerID)
+    local playerName = PlayerResource:GetPlayerName(playerID)
+    if playerName == "" then
+        if PlayerResource:GetSteamAccountID(playerID) == 86718505 then
+            return "Noya"
+        elseif PlayerResource:IsFakeClient(playerID) then
+            return GetBotName(playerID)
+        else
+            return "Player "..playerID+1
+        end
+    end
+end
+
+function GetBotName(playerID)
+    local botTable = CustomNetTables:GetTableValue("bots", tostring(playerID))
+    local name = ""
+    if not botTable then
+        local random_index = RandomInt(1, #GameRules.BotNames)
+        local random_name = GameRules.BotNames[random_index]
+        if random_name then
+            name = random_name.." Bot"
+        else
+            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+            if hero then
+                local race = GetEnglishTranslation(hero:GetUnitName())
+                if race then
+                    return race.." Bot"
+                end
+            end
+            print("ERROR, no name for bot ",playerID)
+            return "Bot"
+        end
+
+        table.remove(GameRules.BotNames, random_index)
+        CustomNetTables:SetTableValue("bots", tostring(playerID), {name=name})
+    else
+        return botTable.name
+    end
+
+    return name
 end
 
 ------------------------------------------------

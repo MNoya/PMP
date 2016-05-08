@@ -10,7 +10,7 @@
         <include src="file://{resources}/scripts/custom_game/multiteam_flyout_scoreboard.js" />
     </scripts>
 
-  <Panel hittest="false" class="FlyoutScoreboardRoot">
+    <Panel hittest="false" class="FlyoutScoreboardRoot">
 		<Panel class="Legend">
 			<Panel class="LegendPanel ScoreCol_TeamInfo" />
 			<Panel class="LegendPanel ScoreCol_Hero" />

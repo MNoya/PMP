@@ -1,5 +1,14 @@
 "use strict";
 
+//=============================================================================
+//=============================================================================
+function GameUI.GetPlayerName(playerID) {
+	var name = Players.GetPlayerName(playerID)
+	var bot = CustomNetTables.GetTableValue("bots", String(playerID))
+	if (bot !== undefined)
+		name = bot.name
+	return name
+}
 
 //=============================================================================
 //=============================================================================
@@ -13,7 +22,6 @@ function _ScoreboardUpdater_SetTextSafe( panel, childName, textValue )
 	
 	childPanel.text = textValue;
 }
-
 
 //=============================================================================
 //=============================================================================
@@ -48,7 +56,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 		playerPanel.SetHasClass( "local_player_teammate", isTeammate && ( playerId != Game.GetLocalPlayerID() ) );
 
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "RespawnTimer", ( "RIP" ) );
-		_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerName", playerInfo.player_name );
+		_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerName", GameUI.GetPlayerName(playerId) );
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "Level", playerInfo.player_level );
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", playerInfo.player_kills );
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );

@@ -158,6 +158,7 @@ function PMP:InitGameMode()
 
     GameRules.BossRoam = false
     GameRules.FillWithBots = true
+    GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori",}
 
     statCollection:setFlags({use_bots = GameRules.PlayersPerTeam})
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
@@ -394,16 +395,27 @@ function PMP:OnPlayerPickHero(keys)
     local hero = EntIndexToHScript(keys.heroindex)
     local player = EntIndexToHScript(keys.player)
     local playerID = player:GetPlayerID()
-
-    -- Setup bots in AI Spawn
-    --[[if PlayerResource:IsFakeClient(playerID) then
-        return
-    end]]
-
     local teamNumber = hero:GetTeamNumber()
+
+    -- Setup bots team in FFA
+    if PlayerResource:IsFakeClient(playerID) then
+        for k,teamID in pairs(VALID_TEAMS) do
+            local teamPlayerCount = PlayerResource:GetPlayerCountForTeam(teamID)
+            if teamPlayerCount == 0 then
+                print("FakePlayer "..playerID.." reassigned to team "..teamID)
+                PlayerResource:SetCustomTeamAssignment(playerID, teamID)
+                teamNumber = teamID
+                break
+            end
+        end
+
+        hero:SetTeam(teamNumber)
+        hero:SetPlayerID(playerID)
+        hero:SetOwner(PlayerResource:GetPlayer(playerID))
+    end
+
     local race = GetRace(hero)
-    local playerName = PlayerResource:GetPlayerName(playerID)
-    if playerName == "" then playerName = "Player "..playerID+1 end
+    local playerName = GetPlayerName(playerID)
 
     -- Color
     local color = PMP:ColorForTeam( teamNumber )
@@ -447,8 +459,11 @@ function PMP:OnPlayerPickHero(keys)
     -- The main hero is an invulnerable fake just used to get global upgrades
     center_position.z = -128
     Timers:CreateTimer(1, function()
-        hero:SetAbsOrigin(center_position)
-        hero:AddNoDraw()
+        if (hero:GetAbsOrigin() - center_position):Length2D() > 200 then
+            hero:SetAbsOrigin(center_position)
+            hero:AddNoDraw()
+        end
+        return 1 --repeat until its set
     end)
 
     -- Upgrade Shop
@@ -528,6 +543,12 @@ function PMP:OnPlayerPickHero(keys)
             lumber = lumber + 10
         end
 
+        -- Small bot advantage
+        if PlayerResource:IsFakeClient(playerID) then
+            gold = gold + 20
+            lumber = lumber + 20
+        end
+
         SetGold(playerID, gold)
         SetLumber(playerID, lumber)
         SetFoodUsed(playerID, 0)
@@ -553,7 +574,7 @@ function PMP:OnPlayerPickHero(keys)
         -- Set initial units
         hero.units = {}
         for i=1,INITIAL_PEONS do
-            local unit = CreateUnitByName(race, center_position, true, hero, hero, hero:GetTeamNumber())
+            local unit = CreateUnitByName(race, center_position, true, hero, hero, teamNumber)
             unit:SetOwner(hero)
             unit:SetControllableByPlayer(playerID, true)
             FindClearSpaceForUnit(unit, center_position, true)
@@ -1008,9 +1029,9 @@ function PMP:MakePlayerLose( playerID )
         hero:SetRespawnsDisabled(true)
         hero:AddNoDraw()
 
-        local playerName = PlayerResource:GetPlayerName(playerID)
-        if playerName == "" then playerName = "Player "..playerID end
-        GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
+        local playerName = GetPlayerName(playerID)
+        local team_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(playerID)) )
+        GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.." was defeated", 0, 0)
 
         FindClearSpaceForUnit(hero, position, true)
     end
@@ -1275,9 +1296,9 @@ function PMP:PrintDefeateMessageForTeam( teamID )
 		if PlayerResource:IsValidPlayerID(playerID) then
 			local player = PlayerResource:GetPlayer(playerID)
 			if player:GetTeamNumber() == teamID then
-				local playerName = PlayerResource:GetPlayerName(playerID)
-				if playerName == "" then playerName = "Player "..playerID end
-				GameRules:SendCustomMessage(playerName.." was defeated", 0, 0)
+				local playerName = GetPlayerName(playerID)
+                local team_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(playerID)) )
+                GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.." was defeated", 0, 0)
 			end
 		end
 	end
@@ -1288,9 +1309,9 @@ function PMP:PrintWinMessageForTeam( teamID )
 		if PlayerResource:IsValidPlayerID(playerID) then
 			local player = PlayerResource:GetPlayer(playerID)
 			if player and player:GetTeamNumber() == teamID then
-				local playerName = PlayerResource:GetPlayerName(playerID)
-				if playerName == "" then playerName = "Player "..playerID end
-				GameRules:SendCustomMessage(playerName.." was victorious!", 0, 0)
+				local playerName = GetPlayerName(playerID)
+                local team_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(playerID)) )
+                GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.." was victorious!", 0, 0)
 			end
 		end
 	end

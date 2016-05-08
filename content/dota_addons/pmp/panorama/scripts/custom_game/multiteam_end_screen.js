@@ -41,7 +41,7 @@
 		if (playersOnWinningTeam.length == 1)
 		{
 			var playerID = playersOnWinningTeam[0]
-			winString = Players.GetPlayerName( playerID )
+			winString = GameUI.GetPlayerName( playerID )
 		}
 		
 		endScreenVictory.SetDialogVariable( "winning_team_name", winString );
