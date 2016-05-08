@@ -106,6 +106,13 @@ function SpawnSuperUnit( event )
         if unit:GetUnitName() == "super_treant" then AddAnimationTranslate(unit, "torment") end
 
         unit:AddNewModifier(caster, nil, "modifier_kill", {duration=duration})
+        unit:SetIdleAcquire(true)
+        Timers:CreateTimer(0.1, function()
+            ExecuteOrderFromTable({UnitIndex = unit:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE, Position = unit:GetAbsOrigin(), Queue = 0}) 
+            if PlayerResource:IsFakeClient(playerID) then
+                SuperUnitAI:Start(playerID, unit)
+            end
+        end)
         
         charges = charges - 1
         caster:SetModifierStackCount("modifier_super_unit_charges", caster, charges)

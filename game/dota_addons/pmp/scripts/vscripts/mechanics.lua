@@ -460,6 +460,11 @@ function ReduceInvulnerabilityCount( hero )
     return hero.invulnCount
 end
 
+function GetInvunerabilityCount( playerID )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    return hero and hero.invulnCount or 0
+end
+
 --------------------------------------------
 
 function GetPlayerUnits( playerID )
@@ -483,7 +488,6 @@ function GetPlayerBarricades( playerID )
         end
     end
 
-    print("Hero has ",#barricades,"barricades")
     hero.barricades = barricades
 
     return hero.barricades

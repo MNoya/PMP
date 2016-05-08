@@ -1,4 +1,4 @@
-function AI:GroupUnits(playerID)
+function AI:ControlUnits(playerID)
     local units = GetPlayerUnits(playerID)
 
     -- First, make sure the units are in a group

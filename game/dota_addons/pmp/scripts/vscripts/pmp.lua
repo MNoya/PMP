@@ -947,7 +947,6 @@ function PMP:MakePlayerLose( playerID )
     local playerGarage = GetPlayerCityCenter(playerID)
     local playerUnits = GetPlayerUnits(playerID)
     local playerShop = GetPlayerShop(playerID)
-    local playerBarricades = GetPlayerBarricades(playerID)
     local position = Vector((playerID * 150)-750,-3900,128)
 
     -- Clear the Still In Game table
@@ -994,11 +993,6 @@ function PMP:MakePlayerLose( playerID )
         end)
     end
 
-    -- Clear barricades
-    for k,barricade in pairs(playerBarricades) do
-        UTIL_Remove(barricade)
-    end 
-
     -- Clear player shop and garage
     if IsValidAlive(playerShop) then
         --UTIL_Remove(playerShop)
@@ -1031,7 +1025,7 @@ function PMP:MakePlayerLose( playerID )
 
         local playerName = GetPlayerName(playerID)
         local team_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(playerID)) )
-        GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.." was defeated", 0, 0)
+        GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.."</font> was defeated", 0, 0)
 
         FindClearSpaceForUnit(hero, position, true)
     end
@@ -1298,7 +1292,7 @@ function PMP:PrintDefeateMessageForTeam( teamID )
 			if player:GetTeamNumber() == teamID then
 				local playerName = GetPlayerName(playerID)
                 local team_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(playerID)) )
-                GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.." was defeated", 0, 0)
+                GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.."</font> was defeated", 0, 0)
 			end
 		end
 	end
@@ -1311,7 +1305,7 @@ function PMP:PrintWinMessageForTeam( teamID )
 			if player and player:GetTeamNumber() == teamID then
 				local playerName = GetPlayerName(playerID)
                 local team_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(playerID)) )
-                GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.." was victorious!", 0, 0)
+                GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.."</font> was victorious!", 0, 0)
 			end
 		end
 	end

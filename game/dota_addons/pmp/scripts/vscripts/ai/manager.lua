@@ -5,6 +5,8 @@ end
 require("ai/controller")
 require("ai/upgrader")
 require("ai/debug")
+require("ai/garage_ai")
+require("ai/super_unit_ai")
 
 function AI:Init()
     AI.Players = {}
@@ -69,7 +71,9 @@ function AI:InitFakePlayer(playerID)
         AI.Players[playerID].Build.next_gold_upgrade = 1
         AI.Players[playerID].Build.next_lumber_upgrade = 1
 
-        Timers:CreateTimer(function()
+        GarageAI:Start(playerID, GetPlayerCityCenter(playerID))
+
+        Timers:CreateTimer(AI_THINK_TIME, function()
             local state = GameRules:State_Get()
             if state >= DOTA_GAMERULES_STATE_PRE_GAME and state < DOTA_GAMERULES_STATE_POST_GAME then
                 if not hero.lost then
@@ -87,7 +91,7 @@ end
 
 function AI:Think(playerID)
     AI:UseResources(playerID)
-    AI:GroupUnits(playerID)
+    AI:ControlUnits(playerID)
 end
 
 function AI:print(str, level)
