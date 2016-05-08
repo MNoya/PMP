@@ -7,8 +7,8 @@
 #Demon
 {
     align: center center;
-    width: 600px;
-    height: 600px;
-    opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
+    width: 376px;
+    height: 515px;
+    //opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
     background-color: black;
 }
