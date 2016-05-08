@@ -95,8 +95,8 @@ function GetGridAroundPoint( numUnits, point )
     local curX = start
     local curY = 0
 
-    local offsetX = 100
-    local offsetY = 100
+    local offsetX = UNIT_FORMATION_DISTANCE
+    local offsetY = UNIT_FORMATION_DISTANCE
 
     for i=1,unitsPerRow do
       for j=1,unitsPerColumn do
