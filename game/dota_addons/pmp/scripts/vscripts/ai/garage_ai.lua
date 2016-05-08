@@ -37,10 +37,9 @@ end
 function GarageAI:Think()
     local unit = self.unit
     local target = unit:GetAttackTarget()
-    local enemies = {}
+    local enemies = FindUnitsInRadius(unit:GetTeamNumber(), unit:GetAbsOrigin(), nil, unit.range+unit:GetHullRadius(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
 
     if not target or not target:IsAlive() or unit:GetRangeToUnit(target) > unit.range then
-        enemies = FindUnitsInRadius(unit:GetTeamNumber(), unit:GetAbsOrigin(), nil, unit.range+unit:GetHullRadius(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
         for _,enemy in pairs(enemies) do
             if not target then
                 target = enemy
