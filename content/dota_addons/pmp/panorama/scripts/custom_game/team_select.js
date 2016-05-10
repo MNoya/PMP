@@ -487,7 +487,7 @@ function ConstructTeamPanels () {
 	if (Map_Name == "teams")
 	{
 		$('#Settings').RemoveClass('Hidden')
-		//$('#FillWithBots').DeleteAsync(0)
+		$('#FillWithBots').DeleteAsync(0)
 
 		GameEvents.SendCustomGameEventToServer( "set_setting", {setting: settings[0], value: 2});
     }

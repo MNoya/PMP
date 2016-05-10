@@ -157,7 +157,7 @@ function PMP:InitGameMode()
     end
 
     GameRules.BossRoam = false
-    GameRules.FillWithBots = true
+    GameRules.FillWithBots = GetMapName() == "free_for_all"
     GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori",}
 
     statCollection:setFlags({use_bots = GameRules.PlayersPerTeam})
