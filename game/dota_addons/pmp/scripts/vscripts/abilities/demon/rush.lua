@@ -25,7 +25,7 @@ function AutocastLogic( event )
     local modifierName = "modifier_demon_rush"
 
     -- Get if the ability is on autocast mode and cast the ability on a valid target
-    if (caster:IsIdle() or caster:IsAttacking()) and ability:GetAutoCastState() and ability:IsFullyCastable() and not caster:IsSilenced() then
+    if (caster:IsIdle() or caster:IsAttacking()) and ability:GetAutoCastState() and ability:IsFullyCastable() and ability:IsCooldownReady() and not caster:IsSilenced() then
         -- Find damaged targets in radius
         local allies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, autocast_radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 0, FIND_FARTHEST, false)
         for k,unit in pairs(allies) do

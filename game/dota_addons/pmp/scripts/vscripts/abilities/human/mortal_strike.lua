@@ -14,20 +14,9 @@ function MortalStrike( event )
             local fv = caster:GetForwardVector()
             fv.z = 0.1
 
-            Physics:Unit(target)
-            target:PreventDI(true)
-            target:FollowNavMesh(false)
-            target:SetNavCollisionType(PHYSICS_NAV_NOTHING)
-            target:SetPhysicsVelocity(fv * 3000)
-            target:SetPhysicsAcceleration(Vector(0,0,-1000))
-            target:SetPhysicsFriction(0.1)
-            
-            target:Kill(ability, caster)
-
-            Timers:CreateTimer(0.5, function()
-                target:SetPhysicsVelocity(Vector(0,0,0))
-                target:PreventDI(false)
-            end)         
+            target.mortal_striked = true
+            PhysicsFlail(target, caster, 3000)
+            target:Kill(ability, caster)        
         end
     end
 end

@@ -876,6 +876,10 @@ function PMP:OnEntityKilled( event )
             end
         end
 
+        if not killed.mortal_striked then
+            PhysicsFlail(killed, attacker)
+        end
+
         -- If not denied
         if killed_teamNumber ~= attacker_teamNumber then
             
