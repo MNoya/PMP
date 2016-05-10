@@ -135,7 +135,7 @@ end
 -- Do stuff when a super peon leaves base
 function LeaveBase( trigger )
     local activator = trigger.activator
-    if IsSuperPeon(activator) and IsValidAlive(activator) then
+    if activator and IsSuperPeon(activator) and IsValidAlive(activator) then
         print("Super Peon leaving the base")     
         local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_low.vpcf", PATTACH_CUSTOMORIGIN, activator)
         ParticleManager:SetParticleControl(particle, 0, activator:GetAbsOrigin())

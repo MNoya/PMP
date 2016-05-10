@@ -63,7 +63,9 @@ restricted_devour_skills = {
 ["treant_racial"]={},
 ["skeleton_racial"]={},
 ["barrage_attack"]={},
-["skeleton_reincarnation_aura"]={}
+["skeleton_reincarnation_aura"]={},
+["demon_evasion"]={},
+["demon_rush"]={},
 }
 
 function ApplyStacks( event )
