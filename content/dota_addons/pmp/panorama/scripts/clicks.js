@@ -21,7 +21,7 @@ function OnRightButtonPressed()
 
 		var GamePos = Game.ScreenXYToWorld(cursor[0], cursor[1]);
 		GameEvents.SendCustomGameEventToServer( "building_rally_order", { pID: iPlayerID, mainSelected: mainSelected, position: GamePos})
-		return true;
+		return false;
 	}
 
 	return false;

@@ -207,6 +207,10 @@ function PMP:OnBuildingRallyOrder( event )
         ParticleManager:DestroyParticle(building.flag, true)
     end
 
+    if building.line_particle then
+        ParticleManager:DestroyParticle(building.line_particle, true)
+    end
+
     if IsCityCenter(building) then
         EmitSoundOnClient("DOTA_Item.ObserverWard.Activate", player)
 
@@ -224,6 +228,13 @@ function PMP:OnBuildingRallyOrder( event )
         local Xparticle = ParticleManager:CreateParticleForTeam("particles/custom/x_marker.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
         ParticleManager:SetParticleControl(Xparticle, 0, position) --Orientation
         ParticleManager:SetParticleControl(Xparticle, 15, Vector(color[1], color[2], color[3])) --Color   
+
+        -- Line Particle
+        building.line_particle = ParticleManager:CreateParticleForTeam("particles/custom/range_finder_line.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
+        ParticleManager:SetParticleControl(building.line_particle, 0, building:GetAbsOrigin())
+        ParticleManager:SetParticleControl(building.line_particle, 1, building:GetAbsOrigin())
+        ParticleManager:SetParticleControl(building.line_particle, 2, position)
+        ParticleManager:SetParticleControl(building.line_particle, 15, Vector(color[1], color[2], color[3])) --Color
     end
 end
 
