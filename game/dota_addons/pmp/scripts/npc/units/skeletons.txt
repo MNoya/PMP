@@ -37,7 +37,7 @@
     "AttackRate"                "2.00"
     "AttackAnimationPoint"      "0.5"
     "AttackAcquisitionRange"    "500"
-    "AttackRange"               "90"
+    "AttackRange"               "128"
     
     // Bounty
     //----------------------------------------------------------------
@@ -556,7 +556,7 @@
     "AttackRate"                "1"
     "AttackAnimationPoint"      "0.4"
     "AttackAcquisitionRange"    "500"
-    "AttackRange"               "90"
+    "AttackRange"               "128"
     
     // Bounty
     //----------------------------------------------------------------

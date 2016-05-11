@@ -102,7 +102,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "128"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -782,7 +782,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "128"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -1580,7 +1580,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "128"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -2174,7 +2174,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "128"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -2767,7 +2767,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "800"
-	    "AttackRange"               "322"
+	    "AttackRange"               "350"
 	    "ProjectileModel"           "particles/units/heroes/hero_drow/drow_base_attack.vpcf"
 	    "ProjectileSpeed"           "900"
 	    
@@ -3506,7 +3506,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "128"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -4091,7 +4091,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "128"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -4610,7 +4610,7 @@
 	    "AttackRate"                "1"
 	    "AttackAnimationPoint"      "0.4"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "128"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
@@ -5443,7 +5443,7 @@
 	    "AttackRate"                "2.00"
 	    "AttackAnimationPoint"      "0.5"
 	    "AttackAcquisitionRange"    "500"
-	    "AttackRange"               "90"
+	    "AttackRange"               "128"
 	    
 	    // Bounty
 	    //----------------------------------------------------------------
