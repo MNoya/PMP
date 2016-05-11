@@ -759,8 +759,9 @@
 	    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
 	    "HealthBarOffset"           "140"
 	    "SelectionGroup"            "Demons"
-	    "SoundSet"                  "Hero_Warlock"
+	    "SoundSet"                  "Hero_WarlockGolem"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_warlock_golem.vsndevts"
 	
 	    "PathfindingSearchDepthScale" "0.5"
 	    

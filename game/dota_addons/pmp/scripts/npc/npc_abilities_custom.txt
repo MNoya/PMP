@@ -814,10 +814,17 @@
 	    "precache"
 	    {
 	        "particle"  "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf"
+	        "soundfile" "sounds/weapons/hero/phantom_lancer/phantom_edge.vsnd"
+	        "soundfile" "sounds/weapons/hero/terrorblade/conjuration.vsnd"
 	    }
 	
 	    "OnSpellStart"
 	    {
+	        "FireSound"
+	        {
+	            "EffectName"    "Hero_Terrorblade.ConjureImage"
+	            "Target"        "TARGET"
+	        }
 	        "ApplyModifier"
 	        {
 	            "ModifierName"    "modifier_demon_rush"
@@ -877,6 +884,15 @@
 	            "IsHidden"  "1"
 	            "EffectName"        "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf"
 	            "EffectAttachType"  "follow_origin"
+	
+	            "OnCreated"
+	            {
+	                "FireSound"
+	                {
+	                    "EffectName"    "Hero_PhantomLancer.PhantomEdge"
+	                    "Target"        "TARGET"
+	                }
+	            }
 	
 	            "Properties"
 	            {
