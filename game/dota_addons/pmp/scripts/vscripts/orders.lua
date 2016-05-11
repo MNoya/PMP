@@ -198,6 +198,7 @@ function PMP:OnBuildingRallyOrder( event )
     local building = EntIndexToHScript(mainSelected)
     local player = PlayerResource:GetPlayer(pID)
 
+    local origin = building:GetAbsOrigin()
     if IsOutpost(building) then
         building = GetPlayerCityCenter(pID)
     end
@@ -231,8 +232,8 @@ function PMP:OnBuildingRallyOrder( event )
 
         -- Line Particle
         building.line_particle = ParticleManager:CreateParticleForTeam("particles/custom/range_finder_line.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
-        ParticleManager:SetParticleControl(building.line_particle, 0, building:GetAbsOrigin())
-        ParticleManager:SetParticleControl(building.line_particle, 1, building:GetAbsOrigin())
+        ParticleManager:SetParticleControl(building.line_particle, 0, origin)
+        ParticleManager:SetParticleControl(building.line_particle, 1, origin)
         ParticleManager:SetParticleControl(building.line_particle, 2, position)
         ParticleManager:SetParticleControl(building.line_particle, 15, Vector(color[1], color[2], color[3])) --Color
     end
