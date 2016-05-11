@@ -9,7 +9,9 @@
 		$.Msg( "Compiled Panorama Resource!" );
 	</script>
 	<Panel hittest="false" class='ResourceRoot'>
-		<Panel hittest="false" class='Hidden' id='ResourceBox'> </Panel>
+		<Panel hittest="false" id="MinimapOverlay">
+			<Label hittest="false" id='Version' text=""/>
+		</Panel>
 		<Panel hittest="false" id='ResourcePanel'>
 			<Panel hittest="false" id='LumberPanel'>
 				<Label hittest="false" id="LumberText" text="50" class="TitleFont" />

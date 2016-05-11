@@ -7,6 +7,9 @@ GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, false );
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD, false );
 
+var MinimapUI = $( "#MinimapOverlay" )
+var VersionUI = $("#Version")
+
 function OnPlayerLumberChanged ( args ) {
 	var iPlayerID = Players.GetLocalPlayer()
 	var lumber = args.lumber
@@ -73,11 +76,13 @@ function CheckHudFlipped() {
         foodPanel.RemoveClass( "Right" );
         goldPanel.RemoveClass( "Right" );
         clockPanel.RemoveClass( "Right" );
+        MinimapUI.RemoveClass( "Flipped" );
 
         lumberPanel.AddClass( "Flipped" );
         foodPanel.AddClass( "Flipped" );
         goldPanel.AddClass( "Flipped" );
-        clockPanel.AddClass( "Flipped" );    
+        clockPanel.AddClass( "Flipped" ); 
+        MinimapUI.AddClass( "Right" );
     }
     else
     {
@@ -85,11 +90,13 @@ function CheckHudFlipped() {
         foodPanel.RemoveClass( "Flipped" );
         goldPanel.RemoveClass( "Flipped" );
         clockPanel.RemoveClass( "Flipped" );
+        MinimapUI.RemoveClass( "Right" );
         
         lumberPanel.AddClass( "Right" );
         foodPanel.AddClass( "Right" );
         goldPanel.AddClass( "Right" );
         clockPanel.AddClass( "Right" ); 
+        MinimapUI.AddClass( "Flipped" );
     }
 }
 
@@ -105,6 +112,7 @@ function HighlightResources() {
 	CheckHudFlipped();
 	GameEvents.Subscribe( "player_lumber_changed", OnPlayerLumberChanged );
 	GameEvents.Subscribe( "player_food_changed", OnPlayerFoodChanged );
-
     GameEvents.Subscribe( "highlight_resource_panel", HighlightResources );
+
+    VersionUI.text = "Version "+CustomNetTables.GetTableValue('gameinfo', 'version').value
 })();

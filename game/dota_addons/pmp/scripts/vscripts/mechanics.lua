@@ -79,7 +79,7 @@ function GetPlayerName(playerID)
 end
 
 function GetBotName(playerID)
-    local botTable = CustomNetTables:GetTableValue("bots", tostring(playerID))
+    local botTable = CustomNetTables:GetTableValue("gameinfo", tostring(playerID))
     local name = ""
     if not botTable then
         local random_index = RandomInt(1, #GameRules.BotNames)
@@ -99,7 +99,7 @@ function GetBotName(playerID)
         end
 
         table.remove(GameRules.BotNames, random_index)
-        CustomNetTables:SetTableValue("bots", tostring(playerID), {name=name})
+        CustomNetTables:SetTableValue("gameinfo", tostring(playerID), {name=name})
     else
         return botTable.name
     end
@@ -656,7 +656,12 @@ function GetRaceWinner()
         end
     end
 
-    return GetPlayerRace(winnerPlayerID)
+    local race = GetPlayerRace(winnerPlayerID)
+    if PlayerResource:IsFakeClient(winnerPlayerID) then
+        race = race .. " bot"
+    end
+
+    return race
 end
 
 function GetHeroLevel( pID )
@@ -1085,11 +1090,22 @@ end
 
 
 ------------------------------------------------
-function PhysicsFlail(unit, killer, distance)
-    Physics:Unit(unit)
-    local duration = 0.8
-    distance = distance or RandomInt(600,1500)
+FLAIL_CHANCE = 50
+FLIP_CHANCE = 50
 
+function PhysicsFlail(unit, killer, distance)
+    if not distance and not RollPercentage(FLAIL_CHANCE) then return end
+
+    Physics:Unit(unit)
+    distance = distance or RandomInt(200,600)
+
+    local random = RandomInt(0,1)
+    local shouldFlip = RollPercentage(FLIP_CHANCE)
+    if shouldFlip then
+        distance = math.max(distance, RandomInt(600,1500))
+    end
+
+    local duration = distance*0.0005
     local angles = unit:GetAngles()
     angles.x = 0
     unit:SetAngles(angles.x, angles.y, angles.z)
@@ -1101,42 +1117,46 @@ function PhysicsFlail(unit, killer, distance)
     unit:Hibernate(false)
     unit:SetAutoUnstuck(false)
     unit:SetPhysicsFriction(0.1)
-    unit:SetPhysicsAcceleration(Vector(0,0,-1000))
+    unit:SetPhysicsAcceleration(Vector(0,0,-distance))
 
     local xydir = (unit:GetAbsOrigin() - killer:GetAbsOrigin()):Normalized()
-    unit:SetPhysicsVelocity(xydir * (distance / duration) + Vector(0,0,unit:GetPhysicsAcceleration().z / -2 * duration))
+    if distance < 1500 then
+        unit:SetPhysicsVelocity(xydir * (distance / duration) + Vector(0,0,unit:GetPhysicsAcceleration().z / -2 * duration))
+    else
+        unit:SetPhysicsVelocity(xydir * distance)
+    end
 
     local flip = 360
     local flip_step = flip / duration / 30
     local count = 0
 
-    local random = RandomInt(0,1)
-
     -- Flip timer
-    Timers:CreateTimer(function()
-        local pitch = angles.x - flip_step*count
+    if shouldFlip then
+        Timers:CreateTimer(function()
+            local pitch = angles.x - flip_step*count
 
-        if random == 1 then
-            unit:SetAngles(pitch, angles.y, angles.z)
-        else 
-            unit:SetAngles(angles.x, angles.y + flip_step*count, angles.z)
-        end
+            if random == 1 then
+                unit:SetAngles(pitch, angles.y, angles.z)
+            else 
+                unit:SetAngles(angles.x, angles.y + flip_step*count, angles.z)
+            end
 
-        local factor = (180 - math.abs(pitch)) / 5
-        if random == 0 then factor = factor / 2 end
+            local factor = (180 - math.abs(pitch)) / 5
+            if random == 0 then factor = factor / 2 end
 
-        if count < duration * 15 then
+            if count < duration * 15 then
+                unit:SetAbsOrigin(unit:GetAbsOrigin() + Vector(0,0,factor))
+            else
             unit:SetAbsOrigin(unit:GetAbsOrigin() + Vector(0,0,factor))
-        else
-        unit:SetAbsOrigin(unit:GetAbsOrigin() + Vector(0,0,factor))
-        end
-        if count >= duration * 30 then
-            unit:SetAngles(angles.x, angles.y, angles.z)
-            return
-        end
-        count = count + 1
-        return .03
-    end)
+            end
+            if count >= duration * 30 then
+                unit:SetAngles(angles.x, angles.y, angles.z)
+                return
+            end
+            count = count + 1
+            return .03
+        end)
+    end
 
     -- End
     Timers:CreateTimer(duration+.03, function()

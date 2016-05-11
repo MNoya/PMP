@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.43"
+PMPVERSION = "0.44"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -160,9 +160,9 @@ function PMP:InitGameMode()
     GameRules.FillWithBots = GetMapName() == "free_for_all"
     GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori",}
 
-    statCollection:setFlags({use_bots = GameRules.PlayersPerTeam})
+    statCollection:setFlags({FillWithBots = GameRules.FillWithBots})
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
-    statCollection:setFlags({boss_roam = GameRules.BossRoam})
+    statCollection:setFlags({BossRoam = GameRules.BossRoam})
 
 	-- Event Hooks
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(PMP, 'OnEntityKilled'), self)
@@ -327,6 +327,12 @@ function PMP:InitGameMode()
 		pos_table.playerID = -1 --Unassigned position
 		GameRules.StartingPositions[k-1] = pos_table
 	end
+
+    -- Less expensive pathing?
+    LimitPathingSearchDepth(0.5)
+
+    -- Version Label
+    CustomNetTables:SetTableValue("gameinfo", "version", {value=PMPVERSION})
 
 	print('[PMP] Done loading gamemode!')
 end
@@ -710,7 +716,7 @@ function PMP:OnGameInProgress()
 	print("[PMP] The game has officially begun")
 
     GameRules:SendCustomMessage("Welcome to <font color='#FF0000'>Pimp My Peon</font>!", 0, 0)
-    GameRules:SendCustomMessage("Version: <font color='#FF0000'>"..PMPVERSION.."</font>", 0, 0)
+    --GameRules:SendCustomMessage("Version: <font color='#FF0000'>"..PMPVERSION.."</font>", 0, 0)
 
     PMP:SpawnBoss()
 
@@ -1198,10 +1204,7 @@ function PMP:SetSetting( event )
                     GameRules.StartingPositions[k-1] = pos_table
                 end
             end
-        end
-        
-        --GameRules["Positions"]
-        --GameRules["Neutrals"]        
+        end      
     end
 
     -- Update UI on the clients

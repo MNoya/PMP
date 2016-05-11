@@ -4,7 +4,7 @@
 //=============================================================================
 GameUI.GetPlayerName = function (playerID) {
 	var name = Players.GetPlayerName(playerID)
-	var bot = CustomNetTables.GetTableValue("bots", String(playerID))
+	var bot = CustomNetTables.GetTableValue("gameinfo", String(playerID))
 	if (bot !== undefined)
 		name = bot["name"]
 	return name

@@ -62,7 +62,7 @@ function GarageAI:Think()
 
         -- Cast early for advantage
         if charges == 3 then
-            bCast = numEnemies >= 10
+            bCast = numEnemies > 10
 
         -- Later if we can secure many kills with it
         elseif charges == 2 then
