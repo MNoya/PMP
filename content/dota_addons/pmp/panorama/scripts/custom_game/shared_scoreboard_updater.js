@@ -25,10 +25,19 @@ function _ScoreboardUpdater_SetTextSafe( panel, childName, textValue )
 
 //=============================================================================
 //=============================================================================
-function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContainer, playerId, localPlayerTeamId )
+function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContainer, playerId, teamId, localPlayerTeamId )
 {
 	var playerPanelName = "_dynamic_player_" + playerId;
+
 	var playerPanel = playersContainer.FindChild( playerPanelName );
+
+	if (Game.GetMapInfo().map_display_name == "free_for_all" && Players.GetTeam(playerId) != teamId)
+	{
+		if (playerPanel !== null)
+			playerPanel.DeleteAsync(0)
+		return
+	}
+
 	if ( playerPanel === null )
 	{
 		playerPanel = $.CreatePanel( "Panel", playersContainer, playerPanelName );
@@ -235,7 +244,7 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
 	{
 		for ( var playerId of teamPlayers )
 		{
-			_ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContainer, playerId, localPlayerTeamId )
+			_ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContainer, playerId, teamId, localPlayerTeamId )
 		}
 	}
 	

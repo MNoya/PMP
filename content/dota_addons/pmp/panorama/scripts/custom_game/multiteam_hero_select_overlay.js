@@ -14,17 +14,32 @@ function UpdateTeam( teamId )
 	var teamPanel = $( "#"+teamPanelName );
 	var teamPlayers = Game.GetPlayerIDsOnTeam( teamId );
 	teamPanel.SetHasClass( "no_players", ( teamPlayers.length == 0 ) );
+
+	var playerContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
+	var childN = playerContainer.GetChildCount()
+	
+	// Cleanup panels
+	if (Game.GetMapInfo().map_display_name == "free_for_all")
+	{
+		for (var playerId of Game.GetAllPlayerIDs() ) {
+			var playerPanel = playerContainer.FindChild("player_" + playerId);
+			if (playerPanel !== null && Players.GetTeam(playerId) != teamId)
+				playerPanel.DeleteAsync(0)
+		}
+	}
+
 	for ( var playerId of teamPlayers )
 	{
-		UpdatePlayer( teamPanel, playerId );
+		UpdatePlayer( teamPanel, playerId, teamId );
 	}
 }
 
-function UpdatePlayer( teamPanel, playerId )
+function UpdatePlayer( teamPanel, playerId, teamId )
 {
 	var playerContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
 	var playerPanelName = "player_" + playerId;
 	var playerPanel = playerContainer.FindChild( playerPanelName );
+
 	if ( playerPanel === null )
 	{
 		playerPanel = $.CreatePanel( "Image", playerContainer, playerPanelName );

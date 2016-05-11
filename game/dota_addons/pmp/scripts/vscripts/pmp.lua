@@ -407,7 +407,7 @@ function PMP:OnPlayerPickHero(keys)
     local teamNumber = hero:GetTeamNumber()
 
     -- Setup bots team in FFA
-    if PlayerResource:IsFakeClient(playerID) then
+    if PlayerResource:IsFakeClient(playerID) and PlayerResource:GetPlayerCountForTeam(teamNumber) > 1 then
         for k,teamID in pairs(VALID_TEAMS) do
             local teamPlayerCount = PlayerResource:GetPlayerCountForTeam(teamID)
             if teamPlayerCount == 0 then
