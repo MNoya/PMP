@@ -156,11 +156,14 @@ function PMP:InitGameMode()
         statCollection:setFlags({fixed_positions = GameRules.Positions})    
     end
 
+    FFA_MAP = GetMapName() == "free_for_all"
     GameRules.BossRoam = false
-    GameRules.FillWithBots = GetMapName() == "free_for_all"
+    GameRules.FillWithBots = FFA_MAP
     GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori",}
 
-    statCollection:setFlags({FillWithBots = GameRules.FillWithBots})
+    if FFA_MAP then
+        statCollection:setFlags({FillWithBots = GameRules.FillWithBots})
+    end
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
     statCollection:setFlags({BossRoam = GameRules.BossRoam})
 
