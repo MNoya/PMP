@@ -13,6 +13,7 @@ function AI:Init()
     AI.Logs = {}
     AI.PrintLevels = {}
 
+    AI.PrintLevels["File"] = false
     AI.PrintLevels["Resource"] = false
     AI.PrintLevels["Upgrades"] = true
     AI.PrintLevels["Movement"] = false

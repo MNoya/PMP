@@ -19,6 +19,16 @@ function PMP:FilterDamage( filterTable )
         if IsSuperPeon(attacker) and IsBoss(victim) then
             return false
         end
+
+        if IsCityCenter(attacker) and not IsBoss(victim) then
+            if victim:GetHealthPercent() > 70 then
+                local hp = victim:GetHealth()
+                victim:SetHealth(hp - (hp*0.70))
+            else
+                victim:Kill(nil, attacker)
+            end
+            return false
+        end
 		
 		-- Reassign the new damage
 		filterTable["damage"] = damage

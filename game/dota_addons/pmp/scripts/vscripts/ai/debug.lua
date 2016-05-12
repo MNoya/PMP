@@ -2,7 +2,7 @@ function AI:InitPlayerLog(playerID)
     self.Logs[playerID] = {}
     self.Logs[playerID].Upgrades = {}
     self.Logs[playerID].LogFilePath = "../../dota_addons/pmp/scripts/vscripts/ai/logs/player"..playerID..".txt"
-    if IsInToolsMode() then
+    if IsInToolsMode() and self:ActiveLog("File") then
         self.Logs[playerID].LogFile = io.open(self.Logs[playerID].LogFilePath, 'w')
     end
 end

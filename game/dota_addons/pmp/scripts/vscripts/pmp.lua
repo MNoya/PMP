@@ -695,31 +695,6 @@ function PMP:OnEntityHurt(keys)
         local victim = EntIndexToHScript(keys.entindex_killed)
 
         Sounds:ResolveAttackedSounds(victim)
-
-        local damagebits = keys.damagebits
-        local attacker = keys.entindex_attacker
-        local damaged = keys.entindex_killed
-        local inflictor = keys.entindex_inflictor
-        local victim
-        local cause
-        local damagingAbility
-
-        if attacker and damaged then
-            cause = EntIndexToHScript(keys.entindex_attacker)
-            victim = EntIndexToHScript(keys.entindex_killed)        
-            
-            if inflictor then
-                damagingAbility = EntIndexToHScript( keys.entindex_inflictor )
-            end
-        end
-
-        -- Cheat code host only
-        if victim and attacker then
-            local attackerID = cause:GetPlayerOwnerID()
-            if attackerID == 0 then
-                victim:Kill(nil, cause)
-            end
-        end
     end
 end
 
