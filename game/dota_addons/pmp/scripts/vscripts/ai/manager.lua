@@ -24,7 +24,7 @@ function AI:Init()
 end
 
 local races = {"npc_dota_hero_axe","npc_dota_hero_undying","npc_dota_hero_skeleton_king","npc_dota_hero_meepo","npc_dota_hero_dragon_knight",
-               "npc_dota_hero_silencer","npc_dota_hero_treant",--[["npc_dota_hero_drow_ranger","npc_dota_hero_warlock"--]]}
+               "npc_dota_hero_silencer","npc_dota_hero_treant", "npc_dota_hero_drow_ranger","npc_dota_hero_warlock"}
 
 function AI:SpawnBots()
     local player_count = PlayerResource:GetPlayerCount()

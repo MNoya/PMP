@@ -31,13 +31,6 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 
 	var playerPanel = playersContainer.FindChild( playerPanelName );
 
-	if (Game.GetMapInfo().map_display_name == "free_for_all" && Players.GetTeam(playerId) != teamId)
-	{
-		if (playerPanel !== null)
-			playerPanel.DeleteAsync(0)
-		return
-	}
-
 	if ( playerPanel === null )
 	{
 		playerPanel = $.CreatePanel( "Panel", playersContainer, playerPanelName );
@@ -245,6 +238,17 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
 		for ( var playerId of teamPlayers )
 		{
 			_ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContainer, playerId, teamId, localPlayerTeamId )
+		}
+	}
+
+	if (Game.GetMapInfo().map_display_name == "free_for_all")
+	{
+		for (var playerId of Game.GetAllPlayerIDs() ) {
+			var playerPanel = playersContainer.FindChildTraverse("_dynamic_player_" + playerId);
+			if (playerPanel !== null && Players.GetTeam(playerId) != teamId)
+			{
+				playerPanel.DeleteAsync(0)
+			}
 		}
 	}
 	

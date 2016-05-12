@@ -252,8 +252,11 @@ function UpdateTeamPanel( teamPanel )
 	for ( var i = 0; i < teamPlayers.length; ++i )
 	{
 		var playerSlot = FindPlayerSlotInTeamPanel( teamPanel, i );
-		playerSlot.RemoveAndDeleteChildren();
-		FindOrCreatePanelForPlayer( teamPlayers[ i ], playerSlot );
+		if (playerSlot !== null)
+		{
+			playerSlot.RemoveAndDeleteChildren();
+			FindOrCreatePanelForPlayer( teamPlayers[ i ], playerSlot );
+		}
 	}
 
 	// Fill in the remaining player slots with the empty slot indicator

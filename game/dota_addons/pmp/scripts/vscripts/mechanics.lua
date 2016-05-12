@@ -866,6 +866,9 @@ function CreateOutpost( playerID, position )
     if ability and not PlayerResource:IsFakeClient(playerID) then
         ToggleOn(ability)
     end
+
+    local center = GetPlayerCityCenter(playerID).rally_point
+    PMP:OnBuildingRallyOrder({ pID = playerID, mainSelected = unit:GetEntityIndex(), pos_x = center.x, pos_y = center.y, pos_z = center.z})
 end
 
 function ChangeOutpostControl( unit, new_ownerID )
@@ -886,6 +889,9 @@ function ChangeOutpostControl( unit, new_ownerID )
 
     AddToPlayerOutposts(new_ownerID, unit)
     RemoveFromPlayerOutposts(old_ownerID, unit)
+
+    local center = GetPlayerCityCenter(playerID).rally_point
+    PMP:OnBuildingRallyOrder({ pID = playerID, mainSelected = unit:GetEntityIndex(), pos_x = center.x, pos_y = center.y, pos_z = center.z})
 end
 
 

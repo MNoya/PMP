@@ -468,7 +468,7 @@ function PMP:OnPlayerPickHero(keys)
     -- The main hero is an invulnerable fake just used to get global upgrades
     center_position.z = -128
     Timers:CreateTimer(1, function()
-        if (hero:GetAbsOrigin() - center_position):Length2D() > 200 then
+        if hero:IsAlive() and (hero:GetAbsOrigin() - center_position):Length2D() > 200 then
             hero:SetAbsOrigin(center_position)
             hero:AddNoDraw()
         end
@@ -695,6 +695,31 @@ function PMP:OnEntityHurt(keys)
         local victim = EntIndexToHScript(keys.entindex_killed)
 
         Sounds:ResolveAttackedSounds(victim)
+
+        local damagebits = keys.damagebits
+        local attacker = keys.entindex_attacker
+        local damaged = keys.entindex_killed
+        local inflictor = keys.entindex_inflictor
+        local victim
+        local cause
+        local damagingAbility
+
+        if attacker and damaged then
+            cause = EntIndexToHScript(keys.entindex_attacker)
+            victim = EntIndexToHScript(keys.entindex_killed)        
+            
+            if inflictor then
+                damagingAbility = EntIndexToHScript( keys.entindex_inflictor )
+            end
+        end
+
+        -- Cheat code host only
+        if victim and attacker then
+            local attackerID = cause:GetPlayerOwnerID()
+            if attackerID == 0 then
+                victim:Kill(nil, cause)
+            end
+        end
     end
 end
 
@@ -788,11 +813,15 @@ function PMP:OnEntityKilled( event )
 	end
 
     if killed:IsHero() then
+        local origin = killed:GetAbsOrigin()
+        killed:SetAbsOrigin(Vector(origin.x, origin.y, origin.z+10000))
         return
     end
 
     -- Safeguard
     if killed.reincarnating then return end
+
+    RemoveUnitFromSelection(killed)
 
     -- Killed credentials
     local killed_player = killed:GetPlayerOwner()

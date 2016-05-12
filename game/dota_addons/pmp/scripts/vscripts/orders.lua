@@ -187,7 +187,6 @@ function PMP:OnBuildingRallyOrder( event )
     -- Arguments
     local pID = event.pID
     local mainSelected = event.mainSelected
-    local rally_type = event.rally_type
     local position = event.position
     if position then
         position = Vector(position["0"], position["1"], position["2"])
@@ -199,8 +198,20 @@ function PMP:OnBuildingRallyOrder( event )
     local player = PlayerResource:GetPlayer(pID)
 
     local origin = building:GetAbsOrigin()
-    if IsOutpost(building) then
-        building = GetPlayerCityCenter(pID)
+
+    -- When used from the city center, disable any outposts
+    if IsCityCenter(building) then
+
+        local outp = GetActiveOutpost(pID)
+        if IsValidEntity(outp) then
+            ToggleOff(outp:FindAbilityByName("active_outpost"))
+        end
+
+    -- When used from the outpost, set it active
+    elseif IsOutpost(building) then
+        ToggleOn(building:FindAbilityByName("active_outpost"))
+
+        building = GetPlayerCityCenter(pID) -- always store on the city center
     end
 
     -- Remove the old flag if there is one
@@ -212,31 +223,29 @@ function PMP:OnBuildingRallyOrder( event )
         ParticleManager:DestroyParticle(building.line_particle, true)
     end
 
-    if IsCityCenter(building) then
-        EmitSoundOnClient("DOTA_Item.ObserverWard.Activate", player)
+    EmitSoundOnClient("DOTA_Item.ObserverWard.Activate", player)
 
-        -- Make a flag dummy on the position
-        local teamNumber = building:GetTeamNumber()
-        local color = TEAM_COLORS[teamNumber]
-        building.flag = ParticleManager:CreateParticleForTeam("particles/custom/rally_flag.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
-        ParticleManager:SetParticleControl(building.flag, 0, position) -- Position
-        ParticleManager:SetParticleControl(building.flag, 1, building:GetAbsOrigin()) --Orientation
-        ParticleManager:SetParticleControl(building.flag, 15, Vector(color[1], color[2], color[3])) --Color
-        
-        building.rally_point = position
+    -- Make a flag dummy on the position
+    local teamNumber = building:GetTeamNumber()
+    local color = TEAM_COLORS[teamNumber]
+    building.flag = ParticleManager:CreateParticleForTeam("particles/custom/rally_flag.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
+    ParticleManager:SetParticleControl(building.flag, 0, position) -- Position
+    ParticleManager:SetParticleControl(building.flag, 1, building:GetAbsOrigin()) --Orientation
+    ParticleManager:SetParticleControl(building.flag, 15, Vector(color[1], color[2], color[3])) --Color
+    
+    building.rally_point = position
 
-        -- Extra X
-        local Xparticle = ParticleManager:CreateParticleForTeam("particles/custom/x_marker.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
-        ParticleManager:SetParticleControl(Xparticle, 0, position) --Orientation
-        ParticleManager:SetParticleControl(Xparticle, 15, Vector(color[1], color[2], color[3])) --Color   
+    -- Extra X
+    local Xparticle = ParticleManager:CreateParticleForTeam("particles/custom/x_marker.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
+    ParticleManager:SetParticleControl(Xparticle, 0, position) --Orientation
+    ParticleManager:SetParticleControl(Xparticle, 15, Vector(color[1], color[2], color[3])) --Color   
 
-        -- Line Particle
-        building.line_particle = ParticleManager:CreateParticleForTeam("particles/custom/range_finder_line.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
-        ParticleManager:SetParticleControl(building.line_particle, 0, origin)
-        ParticleManager:SetParticleControl(building.line_particle, 1, origin)
-        ParticleManager:SetParticleControl(building.line_particle, 2, position)
-        ParticleManager:SetParticleControl(building.line_particle, 15, Vector(color[1], color[2], color[3])) --Color
-    end
+    -- Line Particle
+    building.line_particle = ParticleManager:CreateParticleForTeam("particles/custom/range_finder_line.vpcf", PATTACH_CUSTOMORIGIN, building, teamNumber)
+    ParticleManager:SetParticleControl(building.line_particle, 0, origin)
+    ParticleManager:SetParticleControl(building.line_particle, 1, origin)
+    ParticleManager:SetParticleControl(building.line_particle, 2, position)
+    ParticleManager:SetParticleControl(building.line_particle, 15, Vector(color[1], color[2], color[3])) --Color
 end
 
 
