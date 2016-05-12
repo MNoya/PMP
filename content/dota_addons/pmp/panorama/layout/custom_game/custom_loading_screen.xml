@@ -16,6 +16,17 @@
             <Image src="file://{images}/custom_game/loading_screen/10_frontlight.png" />
             <!--<Image id="seq_11_infobar" src="file://{images}/custom_game/loading_screen/11_infobar.png" />-->
             <Image id="seq_12_logo" src="file://{images}/custom_game/loading_screen/12_logo.png" />
+
+            <Panel id="Content">
+                <Panel id="Changelog">
+                    <Label id="ChangelogText" text="#loading_screen_change_text" html="true"/>
+                </Panel>
+            </Panel>
+            <DOTAScenePanel id="Demon" map="background" camera="loading"/>
+            <Panel id="Contact">
+                <Image id="Hammer" src="file://{images}/custom_game/loading_screen/hammer.png" />
+                <Label id="Web" text="#loading_screen_web" html="true"/>
+            </Panel>
         </Panel>
 	</Panel>
 </root>

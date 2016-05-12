@@ -2,10 +2,10 @@
 {
     width: 300px;
     height: fit-children;
-    horizontal-align: left;
+    horizontal-align: center;
     vertical-align: top;  
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-right: 20px;
+    margin-top: 90px;
     flow-children: down;
 
     background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
@@ -13,6 +13,13 @@
     border-bottom: 1px solid #404b4a11;
     border-radius: 10px;
     opacity: 0.8;
+}
+
+.AspectRatio4x3 #Settings, .AspectRatio16x10 #Settings
+{
+    horizontal-align: right;
+    margin-right: 70px;
+    margin-top: 20px;
 }
 
 #ToggleSettings
@@ -51,6 +58,11 @@
     font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
     font-size: 40px;
     color: #ffffff;
+}
+
+#AdvancedOptions
+{
+    margin-top: -20px;
 }
  
 .SettingHeader
@@ -230,6 +242,16 @@
     horizontal-align: left;
     flow-children: right;
     visibility: collapse;
+}
+
+.AspectRatio4x3 #ShuffleTeamAssignmentButton
+{  
+    margin-left: 250px;
+}
+
+.AspectRatio16x10 #ShuffleTeamAssignmentButton
+{  
+    margin-left: 200px;
 }
 
 .player_has_host_privileges #ShuffleTeamAssignmentButton
