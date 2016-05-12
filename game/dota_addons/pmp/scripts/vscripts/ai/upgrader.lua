@@ -39,8 +39,30 @@ function AI:UseResources(playerID)
             elseif upgrade_ability:CanBeAffordedByPlayer(playerID) then
                 AI:Log(playerID, "Used "..nextGold)
                 self:print("SUCCESS: Upgraded "..nextGold,"Resource")
+                local needed = upgrade_ability:GetCustomGoldCost()
                 ExecuteOrderFromTable({UnitIndex = unit:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET, AbilityIndex = upgrade_ability:GetEntityIndex(), Queue = 1}) 
                 self:IncrementNextGoldUpgrade(playerID)
+            end
+        else
+            local upgrade_ability
+            local unit
+            local upgrade_health = shop:FindAbilityByName("upgrade_health")
+            local upgrade_food_limit = garage:FindAbilityByName("upgrade_food_limit")
+            
+            if upgrade_food_limit and GetFoodUsed(playerID) == GetFoodLimit(playerID) then
+                upgrade_ability = upgrade_food_limit
+                unit = garage
+            elseif upgrade_health then
+                upgrade_ability = upgrade_health
+                unit = shop
+            end
+
+            if upgrade_ability then
+                if upgrade_ability:CanBeAffordedByPlayer(playerID) then
+                    self:print(GetBotName(playerID).." ran out of gold upgrades and choose to upgrade "..upgrade_ability:GetAbilityName())
+                    AI:Log(playerID, "Used "..upgrade_ability:GetAbilityName())
+                    ExecuteOrderFromTable({UnitIndex = unit:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET, AbilityIndex = upgrade_ability:GetEntityIndex(), Queue = 1}) 
+                end
             end
         end
 

@@ -43,7 +43,7 @@
         //  • for bullets
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
-        "loading_screen_change_text" "<h1>LATEST CHANGES</h1><i>Version 0.44</i><br><h2>General</h2>• New Race: <b>Demons</b>!<br>• Added <b>Bots</b>! New option on the Free for All <br>map to <b>Fill with Bots</b> all empty slots<br>• Added physics to dying units<br>• Improved Rally Point particle<br><br><h2>Balance</h2>• Reworked Bash ability upgrade scaling<br>• Garage now takes 70% of the targets HP per hit<br><h2>Bug Fixes</h2>• Fixed rally point right click on minimap<br>• Fixed player heroes being visible<br>• Rally point from outpost now updates properly<br>• Units removed from selection when killed<br><br>Discuss the changes & the game on<br> the new forum: <b>moddota.com/pmp</b><br>"
+        "loading_screen_change_text" "<h1>LATEST CHANGES</h1><i>Version 0.44</i><br><h2>General</h2>• New Race: <b>Demons</b>!<br>• Added <b>Bots</b>! New option on the Free for All <br>map to <b>Fill with Bots</b> all empty slots<br>• Added physics to dying units<br>• Improved Rally Point particle<br><br><h2>Balance</h2>• Reworked Bash ability upgrade scaling<br>• Garage now takes 70% of the targets HP per hit<br>• Gold & Lumber tick time is now 2 seconds faster<br><br><h2>Bug Fixes</h2>• Fixed rally point right click on minimap<br>• Fixed player heroes being visible<br>• Rally point from outpost now updates properly<br>• Units removed from selection when killed<br><br>Discuss the changes & the game on<br> the new forum: <b>moddota.com/pmp</b><br>"
         "loading_screen_web" "mnoya.com<br>moddota.com/pmp"
 
 		// Error Messages

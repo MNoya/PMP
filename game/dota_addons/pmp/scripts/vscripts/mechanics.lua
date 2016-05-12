@@ -994,7 +994,7 @@ end
 -------------------------------
 
 function CDOTABaseAbility:CanBeAffordedByPlayer(playerID)
-    local gold_cost = self:GetLevelSpecialValueFor("gold_cost", self:GetLevel()-1) or self:GetGoldCost(self:GetLevel())
+    local gold_cost = self:GetCustomGoldCost()
     local lumber_cost = self:GetLevelSpecialValueFor("lumber_cost", self:GetLevel()-1)
     local current_gold = GetGold(playerID)
     local current_lumber = GetLumber(playerID)
@@ -1003,6 +1003,10 @@ function CDOTABaseAbility:CanBeAffordedByPlayer(playerID)
     local enoughLumber = not lumber_cost or current_lumber >= lumber_cost
 
     return enoughGold and enoughLumber
+end
+
+function CDOTABaseAbility:GetCustomGoldCost()
+    return math.max(self:GetLevelSpecialValueFor("gold_cost", self:GetLevel()-1), self:GetGoldCost(self:GetLevel()))
 end
 
 function CDOTA_BaseNPC:FindItemByName(item_name)

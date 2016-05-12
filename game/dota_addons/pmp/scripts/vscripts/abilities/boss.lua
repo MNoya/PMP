@@ -66,6 +66,7 @@ restricted_devour_skills = {
 ["skeleton_reincarnation_aura"]={},
 ["demon_evasion"]={},
 ["demon_rush"]={},
+["demon_unholy_aura"]={},
 }
 
 function ApplyStacks( event )
