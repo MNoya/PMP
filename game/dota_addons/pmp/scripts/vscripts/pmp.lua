@@ -159,7 +159,7 @@ function PMP:InitGameMode()
     FFA_MAP = GetMapName() == "free_for_all"
     GameRules.BossRoam = false
     GameRules.FillWithBots = FFA_MAP
-    GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori",}
+    GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori","Loda","Puppey"}
 
     if FFA_MAP then
         statCollection:setFlags({FillWithBots = GameRules.FillWithBots})
@@ -550,12 +550,6 @@ function PMP:OnPlayerPickHero(keys)
         if PlayerResource:HasRandomed(playerID) then
             gold = gold + 10
             lumber = lumber + 10
-        end
-
-        -- Small bot advantage
-        if PlayerResource:IsFakeClient(playerID) then
-            gold = gold + 20
-            lumber = lumber + 20
         end
 
         SetGold(playerID, gold)
@@ -1044,7 +1038,9 @@ function PMP:MakePlayerLose( playerID )
         local team_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(playerID)) )
         GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.."</font> was defeated", 0, 0)
 
-        FindClearSpaceForUnit(hero, position, true)
+        if not PlayerResource:IsFakeClient(playerID) then
+            FindClearSpaceForUnit(hero, position, true)
+        end
     end
 end
 
