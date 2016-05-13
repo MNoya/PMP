@@ -28,7 +28,7 @@ function AI:ControlUnits(playerID)
 end
 
 function AI:MoveUnitAggresive(unit, target_pos)
-    if IsInToolsMode() or AI:ActiveLog("Movement") then
+    if IsInToolsMode() and AI:ActiveLog("Movement") then
         local color = PMP:ColorForTeam(unit:GetTeamNumber())
         DebugDrawLine(unit:GetAbsOrigin(), target_pos, color[1], color[2], color[3], true, 5)
         DebugDrawCircle(target_pos, Vector(color[1], color[2], color[3]), 255, 10, true, 5)

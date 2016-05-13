@@ -212,6 +212,8 @@ function PMP:OnBuildingRallyOrder( event )
         ToggleOn(building:FindAbilityByName("active_outpost"))
 
         building = GetPlayerCityCenter(pID) -- always store on the city center
+    else
+        return
     end
 
     -- Remove the old flag if there is one
