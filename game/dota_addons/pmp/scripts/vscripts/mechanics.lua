@@ -37,8 +37,7 @@ function SendDefeatedMessage( pID_attacker, pID_killed )
 end
 
 function SendBossFocusMessage( pID_target )
-    local playerName = PlayerResource:GetPlayerName(pID_target)
-    if playerName == "" then playerName = "Player "..pID_target+1 end
+    local playerName = GetPlayerName(pID_target)
 
     local player_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_target)) )
 
@@ -51,8 +50,7 @@ function SendBossFocusMessage( pID_target )
 end
 
 function SendBossSlain( pID_target )
-    local playerName = PlayerResource:GetPlayerName(pID_target)
-    if playerName == "" then playerName = "Player "..pID_target end
+    local playerName = GetPlayerName(pID_target)
 
     local player_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(pID_target)))
     local race = GetRace(PlayerResource:GetSelectedHeroEntity(pID_target))
@@ -75,6 +73,8 @@ function GetPlayerName(playerID)
         else
             return "Player "..playerID+1
         end
+    else
+        return playerName
     end
 end
 
