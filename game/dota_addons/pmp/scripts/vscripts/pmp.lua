@@ -1009,7 +1009,7 @@ function PMP:MakePlayerLose( playerID )
         --UTIL_Remove(playerShop)
         playerShop:SetAbsOrigin(position)
         playerShop:SetAngles(0,90,0)
-        --ApplyModifier(playerShop, "modifier_hide")
+        ApplyModifier(playerShop, "modifier_hide")
     end
 
     if IsValidAlive(playerGarage) then
@@ -1041,8 +1041,6 @@ function PMP:MakePlayerLose( playerID )
 
         if not PlayerResource:IsFakeClient(playerID) then
             FindClearSpaceForUnit(hero, position, true)
-        elseif IsValidAlive(playerShop) then
-            playerShop:SetCustomHealthLabel(playerName, color[1], color[2], color[3])
         end
     end
 end
@@ -1078,15 +1076,28 @@ function PMP:CheckWinCondition()
         return
     end
 
-    -- Check if all the heroes still in game belong to the same team
-    for k,hero in pairs(GameRules.StillInGame) do
-        local teamNumber = hero:GetTeamNumber()
-        if not winnerTeamID then
-            winnerTeamID = teamNumber
-        elseif winnerTeamID ~= teamNumber and not hero:HasOwnerAbandoned() then
-            return
+    -- If everyone is a bot and all humans disconnected, default win to the highest kill count bot
+    if GetConnectedPlayerCount() == 0 and GetBotCount() > 0 then
+        local maxKills = 0
+        ForAllBotIDs(function(playerID)
+            local thisPlayerKills = PlayerResource:GetKills(playerID)
+            if thisPlayerKills > maxKills then
+                maxKills = thisPlayerKills
+                winnerTeamID = PlayerResource:GetTeam(playerID)
+            end
+        end)
+    else
+
+        -- Check if all the heroes still in game belong to the same team
+        for k,hero in pairs(GameRules.StillInGame) do
+            local teamNumber = hero:GetTeamNumber()
+            if not winnerTeamID then
+                winnerTeamID = teamNumber
+            elseif winnerTeamID ~= teamNumber and not hero:HasOwnerAbandoned() then
+                return
+            end
         end
-    end    
+    end
 
     if winnerTeamID then
         PMP:GG(winnerTeamID)

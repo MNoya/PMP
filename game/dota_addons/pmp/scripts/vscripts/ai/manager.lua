@@ -10,6 +10,7 @@ require("ai/super_unit_ai")
 
 function AI:Init()
     AI.Players = {}
+    AI.BotIDs = {}
     AI.Logs = {}
     AI.PrintLevels = {}
 
@@ -67,6 +68,7 @@ function AI:InitFakePlayer(playerID)
         AI:InitPlayerLog(playerID)
 
         local build = LoadKeyValues("scripts/kv/ai_settings.kv")
+        table.insert(AI.BotIDs, playerID)
         AI.Players[playerID] = {}
         AI.Players[playerID].Build = build['Builds'][race] or build['Builds']['Generic']
         AI.Players[playerID].Build.next_gold_upgrade = 1

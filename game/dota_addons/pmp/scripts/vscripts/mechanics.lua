@@ -467,6 +467,43 @@ end
 
 --------------------------------------------
 
+function ForAllPlayerIDs(callback)
+    for playerID = 0, PMP_MAX_PLAYERS-1 do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            callback(playerID)
+        end
+    end
+end
+
+function ForAllBotIDs(callback)
+    for _,playerID in pairs(AI.BotIDs) do
+        callback(playerID)
+    end
+end
+
+function ForAllConnectedPlayerIDs(callback)
+    ForAllPlayerIDs(function(playerID)
+        if PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
+            callback(playerID)
+        end
+    end)
+end
+
+function GetConnectedPlayerCount()
+    local connected_players = 0
+    ForAllConnectedPlayerIDs(function(playerID)
+        connected_players = connected_players + 1
+    end)
+    return connected_players
+end
+
+function GetBotCount()
+    return #AI.BotIDs
+end
+
+
+--------------------------------------------
+
 function GetPlayerUnits( playerID )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
