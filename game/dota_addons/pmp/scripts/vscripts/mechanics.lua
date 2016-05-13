@@ -892,7 +892,7 @@ function ChangeOutpostControl( unit, new_ownerID )
     AddToPlayerOutposts(new_ownerID, unit)
     RemoveFromPlayerOutposts(old_ownerID, unit)
 
-    if not PlayerResource:IsFakeClient(playerID) then
+    if not PlayerResource:IsFakeClient(new_ownerID) then
         local center = GetPlayerCityCenter(playerID).rally_point
         PMP:OnBuildingRallyOrder({ pID = playerID, mainSelected = unit:GetEntityIndex(), pos_x = center.x, pos_y = center.y, pos_z = center.z})
     end

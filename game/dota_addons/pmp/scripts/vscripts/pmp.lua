@@ -1009,7 +1009,7 @@ function PMP:MakePlayerLose( playerID )
         --UTIL_Remove(playerShop)
         playerShop:SetAbsOrigin(position)
         playerShop:SetAngles(0,90,0)
-        ApplyModifier(playerShop, "modifier_hide")
+        --ApplyModifier(playerShop, "modifier_hide")
     end
 
     if IsValidAlive(playerGarage) then
@@ -1035,11 +1035,14 @@ function PMP:MakePlayerLose( playerID )
         hero:AddNoDraw()
 
         local playerName = GetPlayerName(playerID)
-        local team_color = rgbToHex(PMP:ColorForTeam( PlayerResource:GetTeam(playerID)) )
+        local color = PMP:ColorForTeam( PlayerResource:GetTeam(playerID))
+        local team_color = rgbToHex(color)
         GameRules:SendCustomMessage("<font color='"..team_color.."'>"..playerName.."</font> was defeated", 0, 0)
 
         if not PlayerResource:IsFakeClient(playerID) then
             FindClearSpaceForUnit(hero, position, true)
+        elseif IsValidAlive(playerShop) then
+            playerShop:SetCustomHealthLabel(playerName, color[1], color[2], color[3])
         end
     end
 end
