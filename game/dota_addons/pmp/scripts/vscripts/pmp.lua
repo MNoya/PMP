@@ -158,7 +158,7 @@ function PMP:InitGameMode()
 
     FFA_MAP = GetMapName() == "free_for_all"
     GameRules.BossRoam = false
-    GameRules.FillWithBots = FFA_MAP
+    GameRules.FillWithBots = false
     GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori","Loda","Puppey"}
 
     if FFA_MAP then

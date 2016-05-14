@@ -10,7 +10,7 @@ var settings = ["TeamRow"];
 //Defaults
 $("#Positions").checked = true;
 $("#BossRoam").checked = false;
-$("#FillWithBots").checked = true;
+$("#FillWithBots").checked = false;
 
 function OnGameEnd() {
 	var pitch = 15
