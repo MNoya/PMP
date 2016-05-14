@@ -10,7 +10,7 @@ var settings = ["TeamRow"];
 //Defaults
 $("#Positions").checked = true;
 $("#BossRoam").checked = false;
-$("#FillWithBots").checked = false;
+$("#FillWithBots").checked = Game.GetAllPlayerIDs().length == 1;
 
 function OnGameEnd() {
 	var pitch = 15

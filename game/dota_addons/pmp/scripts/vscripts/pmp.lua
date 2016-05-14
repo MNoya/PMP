@@ -158,12 +158,8 @@ function PMP:InitGameMode()
 
     FFA_MAP = GetMapName() == "free_for_all"
     GameRules.BossRoam = false
-    GameRules.FillWithBots = false
     GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori","Loda","Puppey"}
 
-    if FFA_MAP then
-        statCollection:setFlags({FillWithBots = GameRules.FillWithBots})
-    end
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
     statCollection:setFlags({BossRoam = GameRules.BossRoam})
 
@@ -768,7 +764,13 @@ function PMP:OnGameRulesStateChange(keys)
 
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		PMP:OnGameInProgress()
-	end
+	elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+
+        GameRules.FillWithBots = FFA_MAP and PlayerResource:GetPlayerCount() == 1
+        if FFA_MAP then
+            statCollection:setFlags({FillWithBots = GameRules.FillWithBots})
+        end
+    end
 end
 
 -- An entity died
