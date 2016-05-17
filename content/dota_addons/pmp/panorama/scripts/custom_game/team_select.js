@@ -11,6 +11,7 @@ var settings = ["TeamRow"];
 $("#Positions").checked = true;
 $("#BossRoam").checked = false;
 $("#FillWithBots").checked = Game.GetAllPlayerIDs().length == 1;
+var activeDifficulty = "normal"
 
 function OnGameEnd() {
 	var pitch = 15
@@ -69,12 +70,20 @@ function OnSettingChanged(event)
 
 		ChangeSetting($("#" + setting), choice);
 	}
+	else if (setting == "FillWithBots")
+	{
+		$("#DifficultyDropdown").SetHasClass("Hidden", choice == 0)
+	}
+	else if (setting == "BotDifficulty")
+	{
+		$("#DifficultyDropdown").SetSelected(choice)
+		activeDifficulty = choice
+	}
 	else
 	{
 		var panel = $('#' + setting);
 		panel.checked = choice;
 	}
-
 }
 
 function MouseOver (setting, choice) {
@@ -102,6 +111,18 @@ function ChangeSetting(panel, choice)
         else if(child.BHasClass("SettingBoxSelected"))
             child.RemoveClass("SettingBoxSelected");
     };
+}
+
+function OnDifficultyChanged()
+{
+	if (!IsHost){ 
+		$("#DifficultyDropdown").SetSelected(activeDifficulty)
+		return
+	}
+
+    var difficulty = $("#DifficultyDropdown").GetSelected().id
+    $.Msg("Bot difficulty changed to "+difficulty)
+    GameEvents.SendCustomGameEventToServer("set_setting", {setting: "BotDifficulty", value: difficulty});
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -492,13 +513,14 @@ function ConstructTeamPanels () {
 		$('#Settings').RemoveClass('Hidden')
 		$('#FillWithBots').DeleteAsync(0)
 
-		GameEvents.SendCustomGameEventToServer( "set_setting", {setting: settings[0], value: 2});
+		GameEvents.SendCustomGameEventToServer("set_setting", {setting: settings[0], value: 2});
     }
     else
     {
     	$('#PlayersPerTeam').DeleteAsync(0)
     	$('#TeamRow').DeleteAsync(0)
     	$('#Positions').DeleteAsync(0)
+    	$("#DifficultyDropdown").RemoveClass("Hidden")
 
     	// Construct the panels for each team
 		ConstructTeamPanels();
@@ -520,3 +542,8 @@ function ConstructTeamPanels () {
 	GameEvents.Subscribe( "gg", OnGameEnd );
 
 })();
+
+
+function Test () {
+	$.Msg("TEST")
+}

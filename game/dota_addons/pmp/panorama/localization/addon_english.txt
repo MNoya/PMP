@@ -38,6 +38,10 @@
 		"DOTA_Custom7"    								"Brown Team"
 		"DOTA_Custom8"    								"Olive Team"
 
+		"bots_easy"										"Easy"
+		"bots_normal"									"Normal"
+		"bots_hard"										"Hard"
+
 		// Usage
         //  <br> for break lines
         //  • for bullets

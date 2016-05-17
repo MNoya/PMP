@@ -847,3 +847,21 @@ DOTAAvatarImage
 	background-position: 50% 50%;
 }
 
+
+
+#DifficultyDropdown
+{
+    width: 230px;
+    margin-left: 30px;
+}
+
+DropDownMenu
+{
+    width: 230px;
+}
+
+.Hidden
+{
+    visibility: collapse;
+    opacity: 0;
+}
