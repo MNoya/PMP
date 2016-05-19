@@ -770,6 +770,7 @@ function PMP:OnGameRulesStateChange(keys)
 
         GameRules.FillWithBots = FFA_MAP and PlayerResource:GetPlayerCount() == 1
         if FFA_MAP then
+            statCollection:setFlags({BotDifficulty = "normal"})
             statCollection:setFlags({FillWithBots = GameRules.FillWithBots})
         end
     end

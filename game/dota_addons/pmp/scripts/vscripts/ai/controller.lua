@@ -26,8 +26,8 @@ function AI:ControlUnits(playerID)
             end
         end
 
-        -- Easy bots don't attack. Normal bots attack half the time
-        if self:GetBotDifficulty() == "easy" or (self:GetBotDifficulty() == "normal" and RollPercentage(50)) then
+        -- Easy bots don't attack.
+        if self:GetBotDifficulty() == "easy" then
             pos = garage.entrance_points[RandomInt(1,4)]
             AI:MoveUnitsInFormation(playerID, units, pos)
         else
