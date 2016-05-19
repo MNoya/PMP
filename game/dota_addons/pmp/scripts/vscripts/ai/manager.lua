@@ -15,8 +15,8 @@ function AI:Init()
     AI.PrintLevels = {}
 
     AI.PrintLevels["File"] = false
-    AI.PrintLevels["Resource"] = true
-    AI.PrintLevels["Upgrades"] = true
+    AI.PrintLevels["Resource"] = false
+    AI.PrintLevels["Upgrades"] = false
     AI.PrintLevels["Movement"] = false
 
     AI.Settings = LoadKeyValues("scripts/kv/ai_settings.kv")

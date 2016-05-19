@@ -38,14 +38,11 @@ function AI:UseResources(playerID)
                 end
             elseif upgrade_ability:CanBeAffordedByPlayer(playerID) then
                 
-                -- Normal and Easy bots have a chance to forget they have resources to use gold on their next upgrade
-                if self:GetBotDifficulty() == "hard" or RollPercentage(70) then 
-                    AI:Log(playerID, "Used "..nextGold)
-                    self:print("SUCCESS: Upgraded "..nextGold,"Resource")
-                    local needed = upgrade_ability:GetCustomGoldCost()
-                    ExecuteOrderFromTable({UnitIndex = unit:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET, AbilityIndex = upgrade_ability:GetEntityIndex(), Queue = 1}) 
-                    self:IncrementNextGoldUpgrade(playerID)
-                end
+                AI:Log(playerID, "Used "..nextGold)
+                self:print("SUCCESS: Upgraded "..nextGold,"Resource")
+                local needed = upgrade_ability:GetCustomGoldCost()
+                ExecuteOrderFromTable({UnitIndex = unit:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET, AbilityIndex = upgrade_ability:GetEntityIndex(), Queue = 1}) 
+                self:IncrementNextGoldUpgrade(playerID)
             end
         else
             local upgrade_ability
