@@ -15,12 +15,19 @@ function AI:Init()
     AI.PrintLevels = {}
 
     AI.PrintLevels["File"] = false
-    AI.PrintLevels["Resource"] = false
+    AI.PrintLevels["Resource"] = true
     AI.PrintLevels["Upgrades"] = true
     AI.PrintLevels["Movement"] = false
 
     AI.Settings = LoadKeyValues("scripts/kv/ai_settings.kv")
-    AI_THINK_TIME = 1
+    AI.ThinkTimes = {
+        ["easy"] = {["Upgrade"]=30,["Attack"]=10},
+        ["normal"] = {["Upgrade"]=10,["Attack"]=10},
+        ["hard"] = {["Upgrade"]=1,["Attack"]=1},
+    }
+    -- Default normal
+    AI.ATTACK_THINK_TIME = 15
+    AI.UPGRADE_THINK_TIME = 15
 
     Convars:RegisterCommand("aidebug_upgrades", function(...) AI:DebugUpgrades(...) end, "", 0)
 end
@@ -34,11 +41,11 @@ function AI:SpawnBots()
 
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, bots_required + PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) )
     for playerID=player_count,player_count+bots_required-1 do
-        Timers:CreateTimer((playerID-1)*3, function()
+        Timers((playerID-1)*3, function()
             AI:print("AddBot "..playerID)
             Tutorial:AddBot(races[RandomInt(1,#races)],'','',false)
 
-            Timers:CreateTimer(2, function()
+            Timers(2, function()
                 if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:IsFakeClient(playerID) then
                     if PlayerResource:GetSelectedHeroEntity(playerID) then
                         AI:InitFakePlayer(playerID)
@@ -74,17 +81,9 @@ function AI:InitFakePlayer(playerID)
         AI.Players[playerID].Build.next_gold_upgrade = 1
         AI.Players[playerID].Build.next_lumber_upgrade = 1
 
-        GarageAI:Start(playerID, GetPlayerCityCenter(playerID))
-
-        Timers:CreateTimer(AI_THINK_TIME, function()
-            local state = GameRules:State_Get()
-            if state >= DOTA_GAMERULES_STATE_PRE_GAME and state < DOTA_GAMERULES_STATE_POST_GAME then
-                if not hero.lost then
-                    self:Think(playerID)
-                    return AI_THINK_TIME
-                end
-            end
-            return AI_THINK_TIME
+        Timers(1, function()
+            GarageAI:Start(playerID, GetPlayerCityCenter(playerID))
+            self:StartThink(playerID, hero)
         end)
     else
         AI:print("Tried to initialize a player AI without a hero or teamnumber")
@@ -92,9 +91,30 @@ function AI:InitFakePlayer(playerID)
     end
 end
 
-function AI:Think(playerID)
-    AI:UseResources(playerID)
-    AI:ControlUnits(playerID)
+function AI:SetBotDifficulty(option)
+    self.ATTACK_THINK_TIME = AI.ThinkTimes[option]["Attack"]
+    self.UPGRADE_THINK_TIME = AI.ThinkTimes[option]["Upgrade"]
+end
+
+function AI:GetBotDifficulty()
+    return GameRules.BotDifficulty
+end
+
+function AI:StartThink(playerID, hero)
+    Timers(function()
+        if not hero.lost then
+            AI:ControlUnits(playerID)
+            return self.ATTACK_THINK_TIME
+        end
+    end)
+
+    Timers(function()
+        local state = GameRules:State_Get()
+        if not hero.lost and state < DOTA_GAMERULES_STATE_POST_GAME then
+            AI:UseResources(playerID)
+            return self.UPGRADE_THINK_TIME
+        end
+    end)  
 end
 
 function AI:print(str, level)

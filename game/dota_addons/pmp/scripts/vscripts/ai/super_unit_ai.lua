@@ -13,13 +13,7 @@ function SuperUnitAI:Start(playerID, unit)
     ai.playerID = playerID
     unit.range = unit:GetAttackRange()
     unit:SetIdleAcquire(true)
-    unit.move_points = {}
-    local mid_point = unit:GetAbsOrigin()
-
-    for i=0,3 do    
-        local rotate_pos = mid_point + Vector(1,0,0) * 400
-        table.insert(unit.move_points, RotatePosition(mid_point, QAngle(0, 90*i, 0), rotate_pos) )      
-    end
+    unit.move_points = GenerateNumPointsAround(4, unit:GetAbsOrigin(), 400)
 
     --Start thinking
     Timers:CreateTimer(function()

@@ -1,6 +1,6 @@
 print ('[PMP] pmp.lua' )
 
-PMPVERSION = "0.44"
+PMPVERSION = "0.45"
 DISABLE_FOG_OF_WAR_ENTIRELY = false
 CAMERA_DISTANCE_OVERRIDE = 1600
 GOLD_PER_TICK = 5
@@ -158,6 +158,7 @@ function PMP:InitGameMode()
 
     FFA_MAP = GetMapName() == "free_for_all"
     GameRules.BossRoam = false
+    GameRules.BotDifficulty = "normal"
     GameRules.BotNames = {"Noya","Baumi","Icefrog","Dendi","Fear","Bulldong","Arteezy","Pyrion Flax","ODPixel","KotLGuy","Zyori","Loda","Puppey"}
 
     statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
@@ -575,6 +576,7 @@ function PMP:OnPlayerPickHero(keys)
         for i=1,INITIAL_PEONS do
             local unit = CreateUnitByName(race, center_position, true, hero, hero, teamNumber)
             unit:SetOwner(hero)
+            unit:SetIdleAcquire(true)
             unit:SetControllableByPlayer(playerID, true)
             FindClearSpaceForUnit(unit, center_position, true)
             ModifyFoodUsed(playerID, 1)
@@ -1183,9 +1185,9 @@ FIXED_POSITIONS = {
 
 function PMP:SetSetting( event )
     local setting = event.setting
-    local value = tonumber(event.value)
 
     if setting == "TeamRow" then
+        local value = tonumber(event.value)
         local playersPerTeam = TEAM_OPTIONS[value]
         local teamCount = 12 / playersPerTeam
         for i=1,teamCount do
@@ -1203,19 +1205,23 @@ function PMP:SetSetting( event )
 
         statCollection:setFlags({team_setting = GameRules.PlayersPerTeam})
 
-    else
-        local option = tobool(value)
+    elseif setting == "BotDifficulty" then
+        local value = event.value
 
+        GameRules[setting] = value
+        statCollection:setFlags({setting = value})
+        AI:SetBotDifficulty(value)
+    else
+        local value = tonumber(event.value)
+        local option = tobool(value)
         statCollection:setFlags({setting = option})
 
         GameRules[setting] = option
         
         if setting == "Positions" then
-
             if option then
                 PMP:SetTeamPositions(GameRules.PlayersPerTeam)
             else
-
                 for k,v in pairs(GameRules.ShuffledPositionEntities) do
                     local pos_table = {}
                     pos_table.position = v:GetAbsOrigin()
@@ -1223,11 +1229,11 @@ function PMP:SetSetting( event )
                     GameRules.StartingPositions[k-1] = pos_table
                 end
             end
-        end      
+        end
     end
 
     -- Update UI on the clients
-    CustomGameEventManager:Send_ServerToAllClients("setting_changed", { setting = setting, value = value})
+    CustomGameEventManager:Send_ServerToAllClients("setting_changed", { setting = setting, value = event.value})
 end
 
 function PMP:SetTeamPositions( playersPerTeam )

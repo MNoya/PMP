@@ -10,9 +10,13 @@ function GarageAI:Start(playerID, unit)
     ai.unit = unit --The unit this AI is controlling
     ai.playerID = playerID
     ai.ThinkInterval = 0.5
+    ai.difficulty = AI:GetBotDifficulty()
     unit.range = unit:GetAttackRange()
     unit:SetIdleAcquire(true)
     unit.superPeonAbility = GetSuperUnitAbility(unit)
+
+    unit.entrance_points = GenerateNumPointsAround(4, unit:GetAbsOrigin(), 400)
+    unit.rally_point = unit.entrance_points[RandomInt(1,4)]
 
     --Start thinking
     Timers:CreateTimer(function()
@@ -55,6 +59,8 @@ function GarageAI:Think()
     end
 
     -- Should we use a super peon?
+    if self.difficulty == "easy" then return end --Easy bots don't use super peon
+
     local charges = unit:GetModifierStackCount("modifier_super_unit_charges", unit)
     local numEnemies = #enemies
     if numEnemies > 0 and charges > 0 and unit.superPeonAbility and unit.superPeonAbility:IsFullyCastable() then
@@ -62,11 +68,12 @@ function GarageAI:Think()
 
         -- Cast early for advantage
         if charges == 3 then
-            bCast = numEnemies > 10
+            -- Normal bots will cast super peon at least when 1 tower is down
+            bCast = (numEnemies > 10 and self.difficulty == "hard") or (numEnemies > 10 and GetInvunerabilityCount(self.playerID) <= 3)
 
         -- Later if we can secure many kills with it
         elseif charges == 2 then
-            bCast = numEnemies >= 20 or (numEnemies >= 10 and GetInvunerabilityCount(self.playerID) <= 2 and GetFoodUsed(self.playerID) <= GetSpawnRate(self.playerID))
+            bCast = (numEnemies >= 20 and self.difficulty == "hard") or (numEnemies >= 10 and GetInvunerabilityCount(self.playerID) <= 2 and GetFoodUsed(self.playerID) <= GetSpawnRate(self.playerID))
 
         -- Last one for emergency
         elseif charges <= 2 then

@@ -148,21 +148,21 @@ function IsCityCenter( entityIndex ){
 }
 
 function AddToSelection ( args ) {
-	$.Msg("Add To Selection")
+	//$.Msg("Add To Selection")
 	var entIndex = args.ent_index
 	GameUI.SelectUnit(entIndex, true)
 	OnUpdateSelectedUnit( args )
 }
 
 function NewSelection ( args ) {
-	$.Msg("New Selection")
+	//$.Msg("New Selection")
 	var entIndex = args.ent_index
 	GameUI.SelectUnit(entIndex, false)
 	OnUpdateSelectedUnit( args )
 }
 
 function RemoveFromSelection ( args ) {
-	$.Msg("Remove From Selection")
+	//$.Msg("Remove From Selection")
 	var entIndex = args.ent_index
 
 	var iPlayerID = Players.GetLocalPlayer();

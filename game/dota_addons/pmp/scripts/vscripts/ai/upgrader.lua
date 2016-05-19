@@ -37,11 +37,15 @@ function AI:UseResources(playerID)
                     AI:Log(playerID, "    " ..k..": "..v)
                 end
             elseif upgrade_ability:CanBeAffordedByPlayer(playerID) then
-                AI:Log(playerID, "Used "..nextGold)
-                self:print("SUCCESS: Upgraded "..nextGold,"Resource")
-                local needed = upgrade_ability:GetCustomGoldCost()
-                ExecuteOrderFromTable({UnitIndex = unit:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET, AbilityIndex = upgrade_ability:GetEntityIndex(), Queue = 1}) 
-                self:IncrementNextGoldUpgrade(playerID)
+                
+                -- Normal and Easy bots have a chance to forget they have resources to use gold on their next upgrade
+                if self:GetBotDifficulty() == "hard" or RollPercentage(70) then 
+                    AI:Log(playerID, "Used "..nextGold)
+                    self:print("SUCCESS: Upgraded "..nextGold,"Resource")
+                    local needed = upgrade_ability:GetCustomGoldCost()
+                    ExecuteOrderFromTable({UnitIndex = unit:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET, AbilityIndex = upgrade_ability:GetEntityIndex(), Queue = 1}) 
+                    self:IncrementNextGoldUpgrade(playerID)
+                end
             end
         else
             local upgrade_ability
@@ -57,7 +61,8 @@ function AI:UseResources(playerID)
                 unit = shop
             end
 
-            if upgrade_ability then
+            -- Only Hard bots keep using their gold after running out of upgrades
+            if upgrade_ability and self:GetBotDifficulty() == "hard" then
                 if upgrade_ability:CanBeAffordedByPlayer(playerID) then
                     self:print(GetBotName(playerID).." ran out of gold upgrades and choose to upgrade "..upgrade_ability:GetAbilityName())
                     AI:Log(playerID, "Used "..upgrade_ability:GetAbilityName())

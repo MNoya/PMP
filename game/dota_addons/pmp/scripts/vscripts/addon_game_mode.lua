@@ -119,13 +119,6 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
 	PrecacheUnitByNameSync("npc_dota_hero_faceless_void", context)
 
-	PrecacheItemByNameSync("upgrade_critical_strike", context)
-	PrecacheItemByNameSync("upgrade_stun_hit", context)
-	PrecacheItemByNameSync("upgrade_pulverize", context)
-	PrecacheItemByNameSync("upgrade_poisoned_weapons", context)
-	PrecacheItemByNameSync("upgrade_dodge", context)
-	PrecacheItemByNameSync("upgrade_spiked_armor", context)
-
 	PrecacheResource("particle", "particles/radiant_fx2/frostivus_wking_altar_smokering.vpcf", context)
 	PrecacheResource("particle_folder", "particles/custom", context)
 	PrecacheResource("particle_folder", "particles/units/heroes/hero_techies", context)
@@ -152,6 +145,7 @@ function Precache( context )
 	PrecacheResource("particle", "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf", context)
 	PrecacheResource("particle", "particles/econ/items/enigma/enigma_world_chasm/enigma_blackhole_ti5.vpcf", context)
 	PrecacheResource("particle", "particles/units/heroes/hero_enigma/enigma_blackhole.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_undying/undying_tnt_wlk_golem.vpcf", context)
 	
 	--Barricade models
 	GameRules.Barricades = LoadKeyValues("scripts/kv/barricades.kv")
