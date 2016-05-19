@@ -332,7 +332,7 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "5.00"
     "AttackAnimationPoint"      "0.3"
-    "AttackAcquisitionRange"    "500"
+    "AttackAcquisitionRange"    "800"
     "AttackRange"               "500"
     "ProjectileModel"           "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"
     "ProjectileSpeed"           "1200"

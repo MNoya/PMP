@@ -35,7 +35,7 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "2.00"
     "AttackAnimationPoint"      "0.5"
-    "AttackAcquisitionRange"    "500"
+    "AttackAcquisitionRange"    "800"
     "AttackRange"               "128"
     
     // Bounty
@@ -119,7 +119,7 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "1.75"
     "AttackAnimationPoint"      "0.43"
-    "AttackAcquisitionRange"    "500"
+    "AttackAcquisitionRange"    "800"
     "AttackRange"               "128"
     "ProjectileModel"           "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_base_attack.vpcf"
     "ProjectileSpeed"           "1100"
@@ -315,7 +315,7 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "5.00"
     "AttackAnimationPoint"      "0.3"
-    "AttackAcquisitionRange"    "500"
+    "AttackAcquisitionRange"    "800"
     "AttackRange"               "500"
     "ProjectileModel"           "particles/units/heroes/hero_queenofpain/queen_base_attack.vpcf"
     "ProjectileSpeed"           "1200"

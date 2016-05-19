@@ -1,14 +1,17 @@
 function AI:ControlUnits(playerID)
+    local state = GameRules:State_Get()
     local units = GetPlayerUnits(playerID)
 
     -- First, make sure the units are in a group
-    if not AI:AreUnitsGrouped(playerID, units) then
-        local pos = GetPlayerCityCenter(playerID).rally_point
+    if not AI:AreUnitsGrouped(playerID, units) or state == DOTA_GAMERULES_STATE_PRE_GAME then
+        local garage = GetPlayerCityCenter(playerID)
+        local pos = garage.rally_point
         AI:AcquireWeakEnemy(playerID)
         AI:MoveUnitsInFormation(playerID, units, pos)
 
-    else --Attack together
-        local pos = GetPlayerCityCenter(playerID).rally_point
+    elseif state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then --Attack together
+        local garage = GetPlayerCityCenter(playerID)
+        local pos = garage.rally_point
         local targetEnemy = AI:GetBotAttackTarget(playerID)
         if not targetEnemy or PlayerResource:GetSelectedHeroEntity(targetEnemy).lost then
             AI:AcquireWeakEnemy(playerID)
@@ -23,7 +26,13 @@ function AI:ControlUnits(playerID)
             end
         end
 
-        AI:MoveUnitsInFormation(playerID, units, pos)
+        -- Easy bots don't attack. Normal bots attack half the time
+        if self:GetBotDifficulty() == "easy" or (self:GetBotDifficulty() == "normal" and RollPercentage(50)) then
+            pos = garage.entrance_points[RandomInt(1,4)]
+            AI:MoveUnitsInFormation(playerID, units, pos)
+        else
+            AI:MoveUnitsInFormation(playerID, units, pos)
+        end
     end
 end
 

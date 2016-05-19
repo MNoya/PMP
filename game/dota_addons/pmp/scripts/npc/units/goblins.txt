@@ -35,7 +35,7 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "2.00"
     "AttackAnimationPoint"      "0.5"
-    "AttackAcquisitionRange"    "500"
+    "AttackAcquisitionRange"    "800"
     "AttackRange"               "128"
     
     // Bounty
@@ -127,7 +127,7 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "1.75"
     "AttackAnimationPoint"      "0.43"
-    "AttackAcquisitionRange"    "500"
+    "AttackAcquisitionRange"    "800"
     "AttackRange"               "128"
     
     // Bounty
@@ -329,7 +329,7 @@
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "5.00"
     "AttackAnimationPoint"      "0.3"
-    "AttackAcquisitionRange"    "500"
+    "AttackAcquisitionRange"    "800"
     "AttackRange"               "500"
     "ProjectileModel"           "particles/econ/items/techies/techies_arcana/techies_base_attack_arcana.vpcf"
     "ProjectileSpeed"           "1200"

@@ -26,7 +26,7 @@
     "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"                "0"
-    "AttackAcquisitionRange"    "500"
+    "AttackAcquisitionRange"    "800"
     
     // Bounty
     //----------------------------------------------------------------
