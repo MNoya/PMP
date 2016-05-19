@@ -322,7 +322,12 @@ function statCollection:sendStage2()
     end
 
     -- Save the player count
-    local playerCount = PlayerResource:GetPlayerCount()
+    local playerCount = 0
+    for i = 0, DOTA_MAX_TEAM_PLAYERS do
+        if PlayerResource:IsValidPlayerID(i) and not PlayerResource:IsFakeClient(i) then
+            playerCount = playerCount + 1
+        end
+    end
     if playerCount <= 0 then playerCount = 1 end
     statCollection:setFlags({ numPlayers = playerCount })
 
