@@ -1210,12 +1210,14 @@ function PMP:SetSetting( event )
         local value = event.value
 
         GameRules[setting] = value
-        statCollection:setFlags({setting = value})
+        statCollection:setFlags({BotDifficulty = value})
         AI:SetBotDifficulty(value)
     else
         local value = tonumber(event.value)
         local option = tobool(value)
-        statCollection:setFlags({setting = option})
+        local flag = {}
+        flag[setting] = option
+        statCollection:setFlags(flag)
 
         GameRules[setting] = option
         
