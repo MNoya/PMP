@@ -1043,7 +1043,7 @@ function PMP:MakePlayerLose( playerID )
         for k,v in pairs(points) do
             local points2 = GenerateNumPointsAround(4, v, 4000)
             for k2,v2 in pairs(points2) do
-                AddFOWViewer(DOTA_TEAM_GOODGUYS, v2, 20000, 10000, false)
+                AddFOWViewer(hero:GetTeamNumber(), v2, 20000, 10000, false)
             end
         end
 
