@@ -1039,6 +1039,8 @@ function PMP:MakePlayerLose( playerID )
         hero:SetRespawnsDisabled(true)
         hero:AddNoDraw()
 
+        AddFOWViewer(hero:GetTeamNumber(), Vector(0,0,0), 20000, 9999, false)
+
         local playerName = GetPlayerName(playerID)
         local color = PMP:ColorForTeam( PlayerResource:GetTeam(playerID))
         local team_color = rgbToHex(color)
