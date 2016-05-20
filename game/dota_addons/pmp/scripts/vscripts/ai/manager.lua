@@ -22,7 +22,7 @@ function AI:Init()
     AI.Settings = LoadKeyValues("scripts/kv/ai_settings.kv")
     AI.ThinkTimes = {
         ["easy"] = {["Upgrade"]=30,["Attack"]=10},
-        ["normal"] = {["Upgrade"]=10,["Attack"]=10},
+        ["normal"] = {["Upgrade"]=15,["Attack"]=10},
         ["hard"] = {["Upgrade"]=1,["Attack"]=1},
     }
     -- Default normal
@@ -110,7 +110,7 @@ function AI:StartThink(playerID, hero)
 
     Timers(function()
         local state = GameRules:State_Get()
-        if not hero.lost and state < DOTA_GAMERULES_STATE_POST_GAME then
+        if not hero.lost then
             AI:UseResources(playerID)
             return self.UPGRADE_THINK_TIME
         end

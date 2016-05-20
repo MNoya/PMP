@@ -216,6 +216,8 @@ function PMP:OnBuildingRallyOrder( event )
         return
     end
 
+    if not IsValidEntity(building) then return end
+
     -- Remove the old flag if there is one
     if building.flag then
         ParticleManager:DestroyParticle(building.flag, true)

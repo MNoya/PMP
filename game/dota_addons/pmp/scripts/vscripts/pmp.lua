@@ -1039,7 +1039,13 @@ function PMP:MakePlayerLose( playerID )
         hero:SetRespawnsDisabled(true)
         hero:AddNoDraw()
 
-        AddFOWViewer(hero:GetTeamNumber(), Vector(0,0,0), 20000, 9999, false)
+        local points = GenerateNumPointsAround(4, Vector(0,0,0), 2000)
+        for k,v in pairs(points) do
+            local points2 = GenerateNumPointsAround(4, v, 4000)
+            for k2,v2 in pairs(points2) do
+                AddFOWViewer(DOTA_TEAM_GOODGUYS, v2, 20000, 10000, false)
+            end
+        end
 
         local playerName = GetPlayerName(playerID)
         local color = PMP:ColorForTeam( PlayerResource:GetTeam(playerID))

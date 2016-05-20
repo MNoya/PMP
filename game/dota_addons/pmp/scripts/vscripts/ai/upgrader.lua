@@ -14,6 +14,7 @@ end
 function AI:UseResources(playerID)
     local shop = GetPlayerShop(playerID)
     local garage = GetPlayerCityCenter(playerID)
+    if GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then return end
     
     self:print("UseResources "..GetGold(playerID).." gold & "..GetLumber(playerID).." lumber","Resource")
 
