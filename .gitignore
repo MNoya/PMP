@@ -3,16 +3,12 @@
 
 # Compiled formats
 *.vpcf_c
-*.vtex_c
 *.vsndevts_c
 *.vmat_c
 *.vjs_c
 *.vxml_c
 *.vcss_c
 *.vsnd_c
-
-# Map files
-*.vpk
 
 # Stat keys
 game/dota_addons/*/scripts/vscripts/statcollection/settings.kv
