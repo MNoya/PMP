@@ -32,18 +32,18 @@ function AI:Init()
     Convars:RegisterCommand("aidebug_upgrades", function(...) AI:DebugUpgrades(...) end, "", 0)
 end
 
-local races = {"npc_dota_hero_axe","npc_dota_hero_undying","npc_dota_hero_skeleton_king","npc_dota_hero_meepo","npc_dota_hero_dragon_knight",
-               "npc_dota_hero_silencer","npc_dota_hero_treant", "npc_dota_hero_drow_ranger","npc_dota_hero_warlock"}
-
+PLAYER_CREATED_HEROES = {}
 function AI:SpawnBots()
     local player_count = PlayerResource:GetPlayerCount()
-    local bots_required = PMP_MAX_PLAYERS - player_count
+    -- Limit the bots to available hero count
+    local bots_required = math.min(PMP_MAX_PLAYERS - player_count, PMP_ENABLED_HERO_COUNT - player_count) - 1
+    local added_bots = 0
 
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, bots_required + PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) )
     for playerID=player_count,player_count+bots_required-1 do
         Timers((playerID-1)*3, function()
             AI:print("AddBot "..playerID)
-            Tutorial:AddBot(races[RandomInt(1,#races)],'','',false)
+            Tutorial:AddBot(RACES[RandomInt(1,#RACES)],'','',false)
 
             Timers(2, function()
                 if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:IsFakeClient(playerID) then
@@ -51,11 +51,14 @@ function AI:SpawnBots()
                         AI:InitFakePlayer(playerID)
                     else
                         local player = PlayerResource:GetPlayer(playerID)
-                        if player then
-                            CreateHeroForPlayer(races[RandomInt(1,#races)], player)
+                        if player and not PLAYER_CREATED_HEROES[playerID] then
+                            CreateHeroForPlayer(RACES[RandomInt(1,#RACES)], player)
+                            PLAYER_CREATED_HEROES[playerID] = True
                             AI:print("CreateHeroForPlayer "..playerID)
+                        else
+                            return
                         end
-                        return 0.1
+                        return 0.5
                     end
                 end
             end)

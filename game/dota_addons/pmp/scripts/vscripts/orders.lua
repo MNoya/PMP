@@ -23,6 +23,10 @@ function PMP:FilterExecuteOrder( filterTable )
         Queue = queue
     end
 
+    if not units["0"] then
+        return false
+    end
+
     -- Skip Prevents order loops
     local unit = EntIndexToHScript(units["0"])
     if unit and unit.skip then

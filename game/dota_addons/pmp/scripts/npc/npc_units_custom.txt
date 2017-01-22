@@ -233,7 +233,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -734,8 +734,8 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
-	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -905,7 +905,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -1709,7 +1709,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -2305,7 +2305,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -2901,7 +2901,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -3392,7 +3392,7 @@
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"                            // Team name.
 	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_WEAK"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    "WakesNeutrals"             "0"
@@ -3635,7 +3635,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -4222,7 +4222,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -4974,7 +4974,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
@@ -5570,7 +5570,7 @@
 	    // Team
 	    //----------------------------------------------------------------
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
-	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "UnitRelationShipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	    
 	    // Creature Data
