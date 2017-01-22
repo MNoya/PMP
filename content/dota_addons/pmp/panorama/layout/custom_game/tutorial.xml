@@ -14,5 +14,6 @@
 			<Image id="TutorialButton"  src="file://{images}/custom_game/tutorial/gold_button.png" />
 			<Label id="TutorialText" text="TUTORIAL" class="TitleFont" />
 		</Panel>
+		<Image style="opacity:0;" src="file://{images}/custom_game/warlock.png" />
 	</Panel>
 </root>
