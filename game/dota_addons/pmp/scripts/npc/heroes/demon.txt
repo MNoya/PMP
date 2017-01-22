@@ -23,6 +23,13 @@
     "Ability5"                  ""
     "Ability6"                  ""
     "Ability10"                 ""
+    "Ability11"                 ""
+    "Ability12"                 ""
+    "Ability13"                 ""
+    "Ability14"                 ""
+    "Ability15"                 ""
+    "Ability16"                 ""
+    "Ability17"                 ""
     
     // Armor
     //----------------------------------------------------------------
