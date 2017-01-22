@@ -67,6 +67,11 @@ XP_PER_LEVEL_TABLE = {
     39000, 39600, 40200, 40800, 41400, 42000, 42600, 43200, 43800
 }
 
+RACES = {"npc_dota_hero_axe","npc_dota_hero_undying","npc_dota_hero_skeleton_king","npc_dota_hero_meepo","npc_dota_hero_dragon_knight",
+               "npc_dota_hero_silencer","npc_dota_hero_treant", "npc_dota_hero_drow_ranger","npc_dota_hero_warlock"}
+
+PMP_ENABLED_HERO_COUNT = 9
+
 --------------
 
 -- This function initializes the game mode and is called before anyone loads into the game
@@ -79,7 +84,7 @@ function PMP:InitGameMode()
 	GameRules:SetUseUniversalShopMode( false )
 	GameRules:SetSameHeroSelectionEnabled( true )
 	GameRules:SetHeroSelectionTime( 30 )
-	GameRules:SetPreGameTime( 10 )
+	GameRules:SetPreGameTime( 0 )
 	GameRules:SetPostGameTime( 100 )
 	GameRules:SetTreeRegrowTime( 10000.0 )
 	GameRules:SetUseCustomHeroXPValues ( true )
@@ -395,13 +400,20 @@ end
 
 -- A player picked a hero
 function PMP:OnPlayerPickHero(keys)
-	--print ('[PMP] OnPlayerPickHero')
-
     local heroName = keys.hero
     local hero = EntIndexToHScript(keys.heroindex)
     local player = EntIndexToHScript(keys.player)
     local playerID = player:GetPlayerID()
     local teamNumber = hero:GetTeamNumber()
+
+    --print('[PMP] OnPlayerPickHero', playerID, heroName, FORCED_RANDOM[playerID])
+
+    -- Creating heroes during showcase causes the hero to be created again on game in progress, so skip the double creation
+    if FORCED_RANDOM[playerID] then
+        UTIL_Remove(hero)
+        FORCED_RANDOM[playerID] = nil
+        return
+    end
 
     -- Setup bots team in FFA
     if PlayerResource:IsFakeClient(playerID) and PlayerResource:GetPlayerCountForTeam(teamNumber) > 1 then
@@ -420,7 +432,7 @@ function PMP:OnPlayerPickHero(keys)
         hero:SetOwner(PlayerResource:GetPlayer(playerID))
     end
 
-    local race = GetRace(hero)
+    local race = GameRules.HeroKV[heroName]["Race"]
     local playerName = GetPlayerName(playerID)
 
     -- Color
@@ -541,6 +553,10 @@ function PMP:OnPlayerPickHero(keys)
 
     -- Set Resources
     Timers:CreateTimer(function()
+        if not PlayerResource:GetSelectedHeroEntity(playerID) then
+            return 0.5
+        end
+
         local gold = INITIAL_GOLD
         local lumber = INITIAL_LUMBER
 
@@ -636,7 +652,10 @@ function PMP:OnHeroInGame(hero)
     ClearAbilities(hero)
     TeachAbility(hero, "hide_hero", 1)
 
+    if IsValidEntity(hero) and hero:GetPlayerID() and FORCED_RANDOM[hero:GetPlayerID()] then return end
+
     Timers:CreateTimer(1, function()
+        if not IsValidEntity(hero) then return end
         Setup_Hero_Panel(hero)
 
         if hero:HasModifier("modifier_silencer_int_steal") then
@@ -707,6 +726,23 @@ function Create_Hero_Panel(playerid, heroID, heroname, imagestyle, HeroIndex)
     CustomGameEventManager:Send_ServerToPlayer(player, "create_hero", {heroid=heroID, heroname=heroname, imagestyle=imagestyle, playerid = playerid, hero=HeroIndex})
 end
 
+-- Tries to random for players with unpicked heroes
+FORCED_RANDOM = {}
+function PMP:ForceRandom()
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+            if not hero then
+                local player = PlayerResource:GetPlayer(playerID)
+                if player then
+                    FORCED_RANDOM[playerID] = true
+                    CreateHeroForPlayer(RACES[RandomInt(1,#RACES)], player)
+                end
+            end
+        end
+    end
+end
+
 function PMP:OnGameInProgress()
 	print("[PMP] The game has officially begun")
 
@@ -763,7 +799,8 @@ function PMP:OnGameRulesStateChange(keys)
         if GameRules.FillWithBots then
             Timers:CreateTimer(0.1, function() AI:SpawnBots() end)
         end
-
+    elseif newState == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
+        PMP:ForceRandom()
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		PMP:OnGameInProgress()
 	elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
