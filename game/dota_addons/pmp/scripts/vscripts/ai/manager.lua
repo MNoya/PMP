@@ -36,12 +36,12 @@ PLAYER_CREATED_HEROES = {}
 function AI:SpawnBots()
     local player_count = PlayerResource:GetPlayerCount()
     -- Limit the bots to available hero count
-    local bots_required = math.min(PMP_MAX_PLAYERS - player_count, PMP_ENABLED_HERO_COUNT - player_count) - 1
+    local bots_required = math.min(PMP_MAX_PLAYERS - player_count, PMP_ENABLED_HERO_COUNT - player_count) - 2
     local added_bots = 0
 
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, bots_required + PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) )
     for playerID=player_count,player_count+bots_required-1 do
-        Timers((playerID-1)*3, function()
+        Timers((playerID-1)*5, function()
             AI:print("AddBot "..playerID)
             Tutorial:AddBot(RACES[RandomInt(1,#RACES)],'','',false)
 
@@ -51,12 +51,12 @@ function AI:SpawnBots()
                         AI:InitFakePlayer(playerID)
                     else
                         local player = PlayerResource:GetPlayer(playerID)
-                        if player and not PLAYER_CREATED_HEROES[playerID] then
-                            CreateHeroForPlayer(RACES[RandomInt(1,#RACES)], player)
-                            PLAYER_CREATED_HEROES[playerID] = True
-                            AI:print("CreateHeroForPlayer "..playerID)
-                        else
-                            return
+                        if player then
+                            if not PLAYER_CREATED_HEROES[playerID] then
+                                CreateHeroForPlayer(RACES[RandomInt(1,#RACES)], player)
+                                PLAYER_CREATED_HEROES[playerID] = true
+                                AI:print("CreateHeroForPlayer "..playerID)
+                            end
                         end
                         return 0.5
                     end
@@ -66,9 +66,14 @@ function AI:SpawnBots()
     end
 end
 
-function AI:InitFakePlayer(playerID)
-    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+function AI:InitFakePlayer(playerID, hero)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID) or hero
     if hero then
+        if hero.initialized then
+            return
+        end
+
+        hero.initialized = true
         local teamNumber = hero:GetTeamNumber()
         local color = PMP:ColorForTeam( teamNumber )
         local race = GetRace(hero)
